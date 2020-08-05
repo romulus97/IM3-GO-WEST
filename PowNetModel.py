@@ -4,11 +4,11 @@ from pyomo.environ import *
 from pyomo.opt import SolverFactory
 import itertools
 
-gd_nodes = ['GS1','GS2','GS3','GS5','GS7','KPCM','KPT','SHV','SRP'] ##Dispatchables with demand
-gn_nodes = ['STH','Thai','Viet'] ##Dispatchables without demand
+# gd_nodes = ['GS1','GS2','GS3','GS5','GS7','KPCM','KPT','SHV','SRP'] ##Dispatchables with demand
+# gn_nodes = ['STH','Thai','Viet'] ##Dispatchables without demand
 
-g_nodes = gd_nodes + gn_nodes 
-print ('Gen_Nodes:',len(g_nodes))
+# g_nodes = gd_nodes + gn_nodes 
+# print ('Gen_Nodes:',len(g_nodes))
 
 
 model = AbstractModel()
@@ -60,15 +60,14 @@ model.nodes = Set()
 model.sources = Set(within=model.nodes)
 model.sinks = Set(within=model.nodes)
 
-
 model.s_nodes = Set() # nodes with solar generation
+model.w_nodes = Set() # nodes with wind generation
 model.h_nodes = Set() # nodes with hydro generation
 model.d_nodes = Set() # nodes with demand
 model.gd_nodes = Set() # nodes with generation and demand
 model.gn_nodes = Set() # nodes with generation but *no* demand
 model.td_nodes = Set() # nodes with demand but *no* generation 
 model.tn_nodes = Set() # nodes with *no* demand and *no* generation
-
 
 
 ######=================================================########
