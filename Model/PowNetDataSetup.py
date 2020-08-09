@@ -16,24 +16,21 @@ n1criterion = 0.75 ##maximum line-usage as a percent of line-capacity
 res_margin = 0.15  ##minimum reserve as a percent of system demand
 spin_margin = 0.50 ##minimum spinning reserve as a percent of total reserve
 
-data_name = 'pownet_data_camb_2016'
+data_name = 'WECC_data'
 
 
 ######=================================================########
 ######               Segment A.2                       ########
 ######=================================================########
 
-#read parameters for dispatchable resources (coal/gas/oil/biomass generators, imports) 
-df_gen = pd.read_csv('data_camb_genparams.csv',header=0)
+#read parameters for dispatchable resources
+df_gen = pd.read_csv('data_genparams.csv',header=0)
 
 #read gen_matrix assignments
 df_gen_mat = pd.read_csv('gen_mat.csv',header=0)
 
 ##hourly ts of dispatchable hydropower at each domestic dam
-df_hydro = pd.read_csv('data_camb_hydro_2016.csv',header=0)
-
-##hourly ts of dispatchable hydropower at each import dam
-df_hydro_import = pd.read_csv('data_camb_hydro_import_2016.csv',header=0)
+df_hydro = pd.read_csv('data_hydro.csv',header=0)
 
 ####hourly ts of dispatchable solar-power at each plant
 ##df_solar = pd.read_csv('data_solar.csv',header=0)   
@@ -42,10 +39,10 @@ df_hydro_import = pd.read_csv('data_camb_hydro_import_2016.csv',header=0)
 ##df_wind = pd.read_csv('data_wind.csv',header=0)
 
 ##hourly ts of load at substation-level
-df_load = pd.read_csv('data_camb_load_2016.csv',header=0) 
+df_load = pd.read_csv('data_load.csv',header=0) 
 
 #capacity and susceptence of each transmission line (one direction)
-df_trans1 = pd.read_csv('data_camb_transparam.csv',header=0)
+df_trans1 = pd.read_csv('data_transparams.csv',header=0)
 
 #hourly minimum reserve as a function of load (e.g., 15% of current load)
 df_reserves = pd.DataFrame((df_load.iloc[:,4:].sum(axis=1)*res_margin).values,columns=['Reserve'])
@@ -62,8 +59,7 @@ df_paths.index = np.arange(len(df_paths))
 ######=================================================########
 
 ####======== Lists of Nodes of the Power System ========########
-h_nodes = ['TTYh','LRCh','ATYh','KIR1h','KIR3h','KMCh']
-h_imports = ['Salabam']
+# h_nodes = ['hydro1','hydro2']
 ##s_nodes = ['solar1','solar2']
 ##w_nodes =['wind1','wind2']
 
