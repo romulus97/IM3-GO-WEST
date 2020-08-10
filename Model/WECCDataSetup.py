@@ -104,7 +104,7 @@ with open(''+str(data_name)+'.dat', 'w') as f:
     f.write('set Coal :=\n')
     # pull relevant generators
     for gen in range(0,len(df_gen)):
-        if df_gen.loc[gen,'type'] == 'coal':
+        if df_gen.loc[gen,'typ'] == 'coal':
             unit_name = df_gen.loc[gen,'name']
             unit_name = unit_name.replace(' ','_')
             f.write(unit_name + ' ')
@@ -114,7 +114,7 @@ with open(''+str(data_name)+'.dat', 'w') as f:
     f.write('set Oil :=\n')
     # pull relevant generators
     for gen in range(0,len(df_gen)):
-        if df_gen.loc[gen,'type'] == 'oil':
+        if df_gen.loc[gen,'typ'] == 'oil':
             unit_name = df_gen.loc[gen,'name']
             unit_name = unit_name.replace(' ','_')
             f.write(unit_name + ' ')
@@ -124,11 +124,11 @@ with open(''+str(data_name)+'.dat', 'w') as f:
     f.write('set Gas :=\n')
     # pull relevant generators
     for gen in range(0,len(df_gen)):
-        if df_gen.loc[gen,'type'] == 'ngcc':
+        if df_gen.loc[gen,'typ'] == 'ngcc':
             unit_name = df_gen.loc[gen,'name']
             unit_name = unit_name.replace(' ','_')
             f.write(unit_name + ' ')
-        elif df_gen.loc[gen,'type'] == 'ngct':
+        elif df_gen.loc[gen,'typ'] == 'ngct':
             unit_name = df_gen.loc[gen,'name']
             unit_name = unit_name.replace(' ','_')
             f.write(unit_name + ' ')        
@@ -138,7 +138,7 @@ with open(''+str(data_name)+'.dat', 'w') as f:
     f.write('set Slack :=\n')
     # pull relevant generators
     for gen in range(0,len(df_gen)):
-        if df_gen.loc[gen,'type'] == 'slack':
+        if df_gen.loc[gen,'typ'] == 'slack':
             unit_name = df_gen.loc[gen,'name']
             unit_name = unit_name.replace(' ','_')
             f.write(unit_name + ' ')
@@ -148,7 +148,7 @@ with open(''+str(data_name)+'.dat', 'w') as f:
     f.write('set Hydro :=\n')
     # pull relevant generators
     for gen in range(0,len(df_gen)):
-        if df_gen.loc[gen,'type'] == 'hydro':
+        if df_gen.loc[gen,'typ'] == 'hydro':
             unit_name = df_gen.loc[gen,'name']
             unit_name = unit_name.replace(' ','_')
             f.write(unit_name + ' ')
@@ -158,7 +158,7 @@ with open(''+str(data_name)+'.dat', 'w') as f:
     f.write('set Must_Run :=\n')
     # pull relevant generators
     for gen in range(0,len(df_gen)):
-        if df_gen.loc[gen,'type'] == 'must_run':
+        if df_gen.loc[gen,'typ'] == 'must_run':
             unit_name = df_gen.loc[gen,'name']
             unit_name = unit_name.replace(' ','_')
             f.write(unit_name + ' ')
@@ -308,8 +308,9 @@ with open(''+str(data_name)+'.dat', 'w') as f:
     f.write(';\n\n')
 
     # hydro (hourly)
-    f.write('param:' + '\t' + 'SimHydro:=' + '\n')      
-    for z in h_nodes:
+    f.write('param:' + '\t' + 'SimHydro:=' + '\n')
+    h_gens = df_hydro.columns      
+    for z in h_gens:
         for h in range(0,len(df_hydro)): 
             f.write(z + '\t' + str(h+1) + '\t' + str(df_hydro.loc[h,z]) + '\n')
     f.write(';\n\n')

@@ -1,4 +1,4 @@
-name,type,node,maxcap,heat_rate,mincap,var_om,fix_om,st_cost,ramp,minup,mindn
+name,typ,node,maxcap,heat_rate,mincap,var_om,fix_om,st_cost,ramp,minup,mindn
 MOHAVE_7_UNIT 1,coal,HOOVER_20,442,11.63,154.7,4.2,1326,30940,145.86,12,12
 MOHAVE_7_UNIT 2,coal,HOOVER_20,442,11.89,154.7,4.2,1326,30940,145.86,12,12
 GWFPWR_6_UNIT,coal,MC_CALL_20,22,11.76,7.7,4.2,66,1540,7.26,12,12

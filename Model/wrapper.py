@@ -6,7 +6,7 @@ Created on Tue Jun 20 22:14:07 2017
 """
 
 from pyomo.opt import SolverFactory
-from PowNetModel import model as m1
+from WECC_MILP import model as m1
 from pyomo.core import Var
 from pyomo.core import Constraint
 from pyomo.core import Param
@@ -19,7 +19,7 @@ import pyomo.environ as pyo
 def sim(days):
 
 
-    instance = m1.create_instance('pownet_data_camb_2016.dat')
+    instance = m1.create_instance('WECC_data.dat')
     opt = SolverFactory("cplex")
 
     H = instance.HorizonHours
@@ -33,13 +33,9 @@ def sim(days):
     switch=[]
     srsv=[]
     nrsv=[]
-    solar=[]
-    wind=[]
-    hydro = []
-    hydro_import=[]
     vlt_angle=[]
     
-    df_generators = pd.read_csv('data_camb_genparams.csv',header=0)
+    df_generators = pd.read_csv('data_genparams.csv',header=0)
 
     #max here can be (1,365)
     for day in range(1,days):
@@ -50,7 +46,7 @@ def sim(days):
                 instance.HorizonDemand[z,i] = instance.SimDemand[z,(day-1)*24+i]
                 instance.HorizonReserves[i] = instance.SimReserves[(day-1)*24+i]
 
-        for z in instance.h_nodes:
+        for z in instance.Hydro:
         #load Hydropower time series data
             
             for i in K:
@@ -66,10 +62,6 @@ def sim(days):
         #     for i in K:
         #         instance.HorizonWind[z,i] = instance.SimWind[z,(day-1)*24+i]
         
-        for z in instance.h_imports:
-        #load Hydropower time series data
-            for i in K:
-                instance.HorizonHydroImport[z,i] = instance.SimHydroImport[z,(day-1)*24+i]
 
         result = opt.solve(instance) ##,tee=True to check number of variables\n",
         instance.solutions.load_from(result)  
@@ -78,12 +70,7 @@ def sim(days):
         for v in instance.component_objects(Var, active=True):
             varobject = getattr(instance, str(v))
             a=str(v)
-            if a=='hydro':
-                for index in varobject:
-                    if int(index[1]>0 and index[1]<25):
-                        if index[0] in instance.h_nodes:
-                            hydro.append((index[0],index[1]+((day-1)*24),varobject[index].value))  
-            
+           
             # if a=='solar':
             #     for index in varobject:
             #         if int(index[1]>0 and index[1]<25):
@@ -96,12 +83,6 @@ def sim(days):
             #             if index[0] in instance.w_nodes:
             #                 wind.append((index[0],index[1]+((day-1)*24),varobject[index].value))   
             
-            if a=='hydro_import':
-                for index in varobject:
-                    if int(index[1]>0 and index[1]<25):
-                        if index[0] in instance.h_imports:
-                            hydro_import.append((index[0],index[1]+((day-1)*24),varobject[index].value))  
-
             if a=='vlt_angle':
                 for index in varobject:
                     if int(index[1]>0 and index[1]<25):
@@ -135,8 +116,6 @@ def sim(days):
 
         print(day)
             
-    hydro_pd=pd.DataFrame(hydro,columns=('Node','Time','Value'))
-    hydro_import_pd=pd.DataFrame(hydro_import,columns=('Node','Time','Value'))
     # solar_pd=pd.DataFrame(solar,columns=('Node','Time','Value'))
     # wind_pd=pd.DataFrame(wind,columns=('Node','Time','Value'))
     vlt_angle_pd=pd.DataFrame(vlt_angle,columns=('Node','Time','Value'))
@@ -148,8 +127,6 @@ def sim(days):
     
     #to save outputs
     mwh_pd.to_csv('mwh.csv')
-    hydro_pd.to_csv('hydro.csv')
-    hydro_import_pd.to_csv('hydro_import.csv')
     # solar_pd.to_csv('solar.csv')
     # wind_pd.to_csv('wind.csv')
     vlt_angle_pd.to_csv('vlt_angle.csv')

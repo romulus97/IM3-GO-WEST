@@ -12,9 +12,6 @@ model = AbstractModel()
 ######               Segment B.1                       ########
 ######=================================================########
 
-## string indentifiers for the set of generators (in the order of g_nodes list)model.GN1Gens =  Set()
-model.Generators =  Set()
-
 ### Generators by fuel-type
 model.Coal = Set()
 model.Oil = Set()
@@ -22,6 +19,9 @@ model.Gas = Set()
 model.Slack = Set()
 model.Hydro = Set()
 model.Must_run = Set()
+
+#all generators
+model.Generators = model.Coal | model.Oil | model.Gas | model.Slack | model.Hydro | model.Must_run
 
 
 ###Allocate generators that will ensure minimum reserves
@@ -52,7 +52,7 @@ model.t_nodes = Set()
 #####==== Parameters for dispatchable resources ===####
 
 #Generator type
-model.type = Param(model.Generators)
+model.typ = Param(model.Generators)
 
 #Node name
 model.node = Param(model.Generators)
@@ -134,12 +134,12 @@ model.SimReserves = Param(model.SH_periods, within=NonNegativeReals)
 model.HorizonReserves = Param(model.hh_periods, within=NonNegativeReals,mutable=True)
 
 ##Variable resources over simulation period
-model.SimHydro = Param(model.h_nodes, model.SH_periods, within=NonNegativeReals)
+model.SimHydro = Param(model.Hydro, model.SH_periods, within=NonNegativeReals)
 ##model.SimSolar = Param(model.s_nodes, model.SH_periods, within=NonNegativeReals)
 ##model.SimWind = Param(model.w_nodes, model.SH_periods, within=NonNegativeReals)
 
 #Variable resources over horizon
-model.HorizonHydro = Param(model.h_nodes,model.hh_periods,within=NonNegativeReals,mutable=True)
+model.HorizonHydro = Param(model.Hydro,model.hh_periods,within=NonNegativeReals,mutable=True)
 ##model.HorizonSolar = Param(model.s_nodes,model.hh_periods,within=NonNegativeReals,mutable=True)
 ##model.HorizonWind = Param(model.w_nodes,model.hh_periods,within=NonNegativeReals,mutable=True)
 
@@ -254,7 +254,7 @@ model.RampCon2 = Constraint(model.Generators,model.ramp_periods,rule=Ramp2)
 #Constraints for Max & Min Capacity of dispatchable resources
 #derate factor can be below 1 for dry years, otherwise 1
 def MaxC(model,j,i):
-    return model.mwh[j,i]  <= model.on[j,i] * model.maxcap[j] *model.deratef[j]
+    return model.mwh[j,i]  <= model.on[j,i] * model.maxcap[j] 
 model.MaxCap= Constraint(model.Generators,model.hh_periods,rule=MaxC)
 
 def MinC(model,j,i):
@@ -263,13 +263,8 @@ model.MinCap= Constraint(model.Generators,model.hh_periods,rule=MinC)
 
 #Max capacity constraints on domestic hydropower 
 def HydroC(model,z,i):
-    return model.hydro[z,i] <= model.HorizonHydro[z,i]  
-model.HydroConstraint= Constraint(model.h_nodes,model.hh_periods,rule=HydroC)
-
-#Max capacity constraints on hydropower import
-def HydroImportC(model,z,i):
-    return model.hydro_import[z,i] <= model.HorizonHydroImport[z,i]  
-model.HydroImportConstraint= Constraint(model.h_imports,model.hh_periods,rule=HydroImportC)
+    return model.mwh[z,i] <= model.HorizonHydro[z,i]  
+model.HydroConstraint= Constraint(model.Hydro,model.hh_periods,rule=HydroC)
 
 ###Max capacity constraints on solar 
 ##def SolarC(model,z,i):
@@ -282,64 +277,24 @@ model.HydroImportConstraint= Constraint(model.h_imports,model.hh_periods,rule=Hy
 ##model.WindConstraint= Constraint(model.w_nodes,model.hh_periods,rule=WindC)
 
 
-
 ######=================================================########
 ######               Segment B.11.1                    ########
 ######=================================================########
 
 #########======================== Power balance in sub-station nodes (with/without demand) ====================#######
 ###With demand
-def TDnodes_Balance(model,z,i):
+def Dnodes_Balance(model,z,i):
     demand = model.HorizonDemand[z,i]
     impedance = sum(model.linesus[z,k] * (model.vlt_angle[z,i] - model.vlt_angle[k,i]) for k in model.sinks)   
     return - demand == impedance
-model.TDnodes_BalConstraint= Constraint(model.td_nodes,model.hh_periods,rule= TDnodes_Balance)
+model.Dnodes_BalConstraint= Constraint(model.d_nodes,model.hh_periods,rule= Dnodes_Balance)
 
 ###Without demand
-def TNnodes_Balance(model,z,i):
+def Tnodes_Balance(model,z,i):
     #demand = model.HorizonDemand[z,i]
     impedance = sum(model.linesus[z,k] * (model.vlt_angle[z,i] - model.vlt_angle[k,i]) for k in model.sinks)   
     return 0 == impedance
-model.TNnodes_BalConstraint= Constraint(model.tn_nodes,model.hh_periods,rule= TNnodes_Balance)
-
-
-
-######=================================================########
-######               Segment B.11.2                    ########
-######=================================================########
-
-######=================== Power balance in nodes of variable resources (without demand in this case) =================########
-
-###Hydropower Plants
-def HPnodes_Balance(model,z,i):
-    dis_hydro = model.hydro[z,i]
-    #demand = model.HorizonDemand[z,i]
-    impedance = sum(model.linesus[z,k] * (model.vlt_angle[z,i] - model.vlt_angle[k,i]) for k in model.sinks)
-    return (1 - model.TransLoss) * dis_hydro == impedance ##- demand
-model.HPnodes_BalConstraint= Constraint(model.h_nodes,model.hh_periods,rule= HPnodes_Balance)
-
-###Hydropower Imports
-def HP_Imports_Balance(model,z,i):
-    hp_import = model.hydro_import[z,i]
-    #demand = model.HorizonDemand[z,i]
-    impedance = sum(model.linesus[z,k] * (model.vlt_angle[z,i] - model.vlt_angle[k,i]) for k in model.sinks)
-    return (1 - model.TransLoss) * hp_import == impedance ##- demand
-model.HP_Imports_BalConstraint= Constraint(model.h_imports,model.hh_periods,rule= HP_Imports_Balance)
-
-######Solar Plants
-##def Solarnodes_Balance(model,z,i):
-##    dis_solar = model.solar[z,i]
-##    impedance = sum(model.linesus[z,k] * (model.vlt_angle[z,i] - model.vlt_angle[k,i]) for k in model.sinks)
-##    return (1 - model.TransLoss) * dis_solar == impedance ##- demand
-##model.Solarnodes_BalConstraint= Constraint(model.s_nodes,model.hh_periods,rule= Solarnodes_Balance)
-##
-#######Wind Plants
-##def Windnodes_Balance(model,z,i):
-##    dis_wind = model.wind[z,i]
-##    impedance = sum(model.linesus[z,k] * (model.vlt_angle[z,i] - model.vlt_angle[k,i]) for k in model.sinks)
-##    return (1 - model.TransLoss) * dis_wind == impedance ##- demand
-##model.Windnodes_BalConstraint= Constraint(model.w_nodes,model.hh_periods,rule= Windnodes_Balance)
-
+model.Tnodes_BalConstraint= Constraint(model.t_nodes,model.hh_periods,rule= Tnodes_Balance)
 
 
 ######=================================================########
@@ -348,114 +303,13 @@ model.HP_Imports_BalConstraint= Constraint(model.h_imports,model.hh_periods,rule
 
 # ##########============ Power balance in nodes of dispatchable resources with demand ==============############
 
-def GD_Balance(model,i,z):
-    thermo = sum(model.mwh[j,i]*model.gen_mat[j,z] for j in model.Generators)
-    demand = model.HorizonDemand[z,i]
+
+#########============ Power balance in nodes of dispatchable resources without demand ==============############
+def G_Balance(model,i,z):
+    thermo = sum(model.mwh[j,i]*model.gen_mat[j,z] for j in model.Generators)    
     impedance = sum(model.linesus[z,k] * (model.vlt_angle[z,i] - model.vlt_angle[k,i]) for k in model.sinks)   
-    return (1 - model.TransLoss) * thermo - demand == impedance
-model.GD_BalConstraint= Constraint(model.hh_periods,model.gd_nodes,rule= GD_Balance)
-
-
-# def GD1_Balance(model,i):
-#     gd = 1
-#     thermo = sum(model.mwh[j,i] for j in model.GD1Gens)
-#     demand = model.HorizonDemand[gd_nodes[gd-1],i]
-#     impedance = sum(model.linesus[gd_nodes[gd-1],k] * (model.vlt_angle[gd_nodes[gd-1],i] - model.vlt_angle[k,i]) for k in model.sinks)   
-#     return (1 - model.TransLoss) * thermo - demand == impedance
-# model.GD1_BalConstraint= Constraint(model.hh_periods,rule= GD1_Balance)
-
-# def GD2_Balance(model,i):
-#     gd = 2
-#     thermo = sum(model.mwh[j,i] for j in model.GD2Gens)
-#     demand = model.HorizonDemand[gd_nodes[gd-1],i]
-#     impedance = sum(model.linesus[gd_nodes[gd-1],k] * (model.vlt_angle[gd_nodes[gd-1],i] - model.vlt_angle[k,i]) for k in model.sinks)   
-#     return (1 - model.TransLoss) * thermo - demand == impedance
-# model.GD2_BalConstraint= Constraint(model.hh_periods,rule= GD2_Balance)
-
-# def GD3_Balance(model,i):
-#     gd = 3
-#     thermo = sum(model.mwh[j,i] for j in model.GD3Gens)
-#     demand = model.HorizonDemand[gd_nodes[gd-1],i]
-#     impedance = sum(model.linesus[gd_nodes[gd-1],k] * (model.vlt_angle[gd_nodes[gd-1],i] - model.vlt_angle[k,i]) for k in model.sinks)   
-#     return (1 - model.TransLoss) * thermo - demand == impedance
-# model.GD3_BalConstraint= Constraint(model.hh_periods,rule= GD3_Balance)
-
-# def GD4_Balance(model,i):
-#     gd = 4
-#     thermo = sum(model.mwh[j,i] for j in model.GD4Gens)
-#     demand = model.HorizonDemand[gd_nodes[gd-1],i]
-#     impedance = sum(model.linesus[gd_nodes[gd-1],k] * (model.vlt_angle[gd_nodes[gd-1],i] - model.vlt_angle[k,i]) for k in model.sinks)   
-#     return (1 - model.TransLoss) * thermo - demand == impedance
-# model.GD4_BalConstraint= Constraint(model.hh_periods,rule= GD4_Balance)
-
-# def GD5_Balance(model,i):
-#     gd = 5
-#     thermo = sum(model.mwh[j,i] for j in model.GD5Gens)
-#     demand = model.HorizonDemand[gd_nodes[gd-1],i]
-#     impedance = sum(model.linesus[gd_nodes[gd-1],k] * (model.vlt_angle[gd_nodes[gd-1],i] - model.vlt_angle[k,i]) for k in model.sinks)   
-#     return (1 - model.TransLoss) * thermo - demand == impedance
-# model.GD5_BalConstraint= Constraint(model.hh_periods,rule= GD5_Balance)
-
-# def GD6_Balance(model,i):
-#     gd = 6
-#     thermo = sum(model.mwh[j,i] for j in model.GD6Gens)
-#     demand = model.HorizonDemand[gd_nodes[gd-1],i]
-#     impedance = sum(model.linesus[gd_nodes[gd-1],k] * (model.vlt_angle[gd_nodes[gd-1],i] - model.vlt_angle[k,i]) for k in model.sinks)   
-#     return (1 - model.TransLoss) * thermo - demand == impedance
-# model.GD6_BalConstraint= Constraint(model.hh_periods,rule= GD6_Balance)
-
-# def GD7_Balance(model,i):
-#     gd = 7
-#     thermo = sum(model.mwh[j,i] for j in model.GD7Gens)
-#     demand = model.HorizonDemand[gd_nodes[gd-1],i]
-#     impedance = sum(model.linesus[gd_nodes[gd-1],k] * (model.vlt_angle[gd_nodes[gd-1],i] - model.vlt_angle[k,i]) for k in model.sinks)   
-#     return (1 - model.TransLoss) * thermo - demand == impedance
-# model.GD7_BalConstraint= Constraint(model.hh_periods,rule= GD7_Balance)
-
-# def GD8_Balance(model,i):
-#     gd = 8
-#     thermo = sum(model.mwh[j,i] for j in model.GD8Gens)
-#     demand = model.HorizonDemand[gd_nodes[gd-1],i]
-#     impedance = sum(model.linesus[gd_nodes[gd-1],k] * (model.vlt_angle[gd_nodes[gd-1],i] - model.vlt_angle[k,i]) for k in model.sinks)   
-#     return (1 - model.TransLoss) * thermo - demand == impedance
-# model.GD8_BalConstraint= Constraint(model.hh_periods,rule= GD8_Balance)
-
-# def GD9_Balance(model,i):
-#     gd = 9
-#     thermo = sum(model.mwh[j,i] for j in model.GD9Gens)
-#     demand = model.HorizonDemand[gd_nodes[gd-1],i]
-#     impedance = sum(model.linesus[gd_nodes[gd-1],k] * (model.vlt_angle[gd_nodes[gd-1],i] - model.vlt_angle[k,i]) for k in model.sinks)   
-#     return (1 - model.TransLoss) * thermo - demand == impedance
-# model.GD9_BalConstraint= Constraint(model.hh_periods,rule= GD9_Balance)
-
-##########============ Power balance in nodes of dispatchable resources without demand ==============############
-# def GN_Balance(model,i,z):
-#     thermo = sum(model.mwh[j,i]*model.gen_mat[j,z] for j in model.Generators)    
-#     impedance = sum(model.linesus[z,k] * (model.vlt_angle[z,i] - model.vlt_angle[k,i]) for k in model.sinks)   
-#     return (1 - model.TransLoss) * thermo == impedance #- demand
-# model.GN_BalConstraint= Constraint(model.hh_periods,model.gn_nodes,rule= GN_Balance)
-
-def GN1_Balance(model,i):
-    gn = 1
-    thermo = sum(model.mwh[j,i] for j in model.GN1Gens)    
-    impedance = sum(model.linesus[gn_nodes[gn-1],k] * (model.vlt_angle[gn_nodes[gn-1],i] - model.vlt_angle[k,i]) for k in model.sinks)   
-    return (1 - model.TransLoss) * thermo == impedance #- demand
-model.GN1_BalConstraint= Constraint(model.hh_periods,rule= GN1_Balance)
-
-def GN2_Balance(model,i):
-    gn = 2
-    thermo = sum(model.mwh[j,i] for j in model.GN2Gens)    
-    impedance = sum(model.linesus[gn_nodes[gn-1],k] * (model.vlt_angle[gn_nodes[gn-1],i] - model.vlt_angle[k,i]) for k in model.sinks)   
-    return (1 - model.TransLoss) * thermo == impedance #- demand
-model.GN2_BalConstraint= Constraint(model.hh_periods,rule= GN2_Balance)
-
-def GN3_Balance(model,i):
-    gn = 3
-    thermo = sum(model.mwh[j,i] for j in model.GN3Gens)    
-    impedance = sum(model.linesus[gn_nodes[gn-1],k] * (model.vlt_angle[gn_nodes[gn-1],i] - model.vlt_angle[k,i]) for k in model.sinks)   
-    return (1 - model.TransLoss) * thermo == impedance #- demand
-model.GN3_BalConstraint= Constraint(model.hh_periods,rule= GN3_Balance)
-
+    return (1 - model.TransLoss) * thermo == impedance 
+model.G_BalConstraint= Constraint(model.hh_periods,model.g_nodes,rule= G_Balance)
 
 
 ######=================================================########
@@ -466,7 +320,7 @@ model.GN3_BalConstraint= Constraint(model.hh_periods,rule= GN3_Balance)
 
 ####=== Reference Node =====#####
 def ref_node(model,i):
-    return model.vlt_angle['GS1',i] == 0
+    return model.vlt_angle['ADELANTO_500',i] == 0
 model.Ref_NodeConstraint= Constraint(model.hh_periods,rule= ref_node)
 
 
@@ -505,12 +359,12 @@ model.SpinReq = Constraint(model.hh_periods,rule=SpinningReq)
 
 ##Spinning reserve can only be offered by units that are online
 def SpinningReq2(model,j,i):
-    return model.srsv[j,i] <= model.on[j,i]*model.maxcap[j] *model.deratef[j]
+    return model.srsv[j,i] <= model.on[j,i]*model.maxcap[j]
 model.SpinReq2= Constraint(model.Generators,model.hh_periods,rule=SpinningReq2) 
 
 ##Non-Spinning reserve can only be offered by units that are offline
 def NonSpinningReq(model,j,i):
-    return model.nrsv[j,i] <= (1 - model.on[j,i])*model.maxcap[j] *model.deratef[j]
+    return model.nrsv[j,i] <= (1 - model.on[j,i])*model.maxcap[j]
 model.NonSpinReq= Constraint(model.Generators,model.hh_periods,rule=NonSpinningReq)
 
 
