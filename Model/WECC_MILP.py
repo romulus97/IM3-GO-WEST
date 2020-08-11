@@ -18,10 +18,10 @@ model.Oil = Set()
 model.Gas = Set()
 model.Slack = Set()
 model.Hydro = Set()
-model.Must_run = Set()
+model.Must = Set()
 
 #all generators
-model.Generators = model.Coal | model.Oil | model.Gas | model.Slack | model.Hydro | model.Must_run
+model.Generators = model.Coal | model.Oil | model.Gas | model.Slack | model.Hydro | model.Must
 
 
 ###Allocate generators that will ensure minimum reserves
@@ -164,8 +164,8 @@ model.on = Var(model.Generators,model.HH_periods, within=Binary, initialize=0)
 #1 if unit is switching on in hour i, otherwise 0
 model.switch = Var(model.Generators,model.HH_periods, within=Binary,initialize=0)
 
-# #Amount of spining reserve offered by an unit in each hour
-# model.srsv = Var(model.Generators,model.HH_periods, within=NonNegativeReals,initialize=0)
+#Amount of spining reserve offered by an unit in each hour
+model.srsv = Var(model.Generators,model.HH_periods, within=NonNegativeReals,initialize=0)
 
 #Amount of non-sping reserve offered by an unit in each hour
 model.nrsv = Var(model.Generators,model.HH_periods, within=NonNegativeReals,initialize=0)
@@ -188,16 +188,16 @@ model.vlt_angle = Var(model.nodes,model.HH_periods)
 ######================Objective function=============########
 
 def SysCost(model):
-    fixed = sum(model.maxcap[j]*model.fix_om[j]*model.on[j,i] for i in model.hh_periods for j in model.Generators)
-    starts = sum(model.maxcap[j]*model.st_cost[j]*model.switch[j,i] for i in model.hh_periods for j in model.Generators)
+    # fixed = sum(model.maxcap[j]*model.fix_om[j]*model.on[j,i] for i in model.hh_periods for j in model.Generators)
+    # starts = sum(model.maxcap[j]*model.st_cost[j]*model.switch[j,i] for i in model.hh_periods for j in model.Generators)
     coal = sum(model.mwh[j,i]*(model.heat_rate[j]*2 + model.var_om[j]) for i in model.hh_periods for j in model.Coal)  
     oil = sum(model.mwh[j,i]*(model.heat_rate[j]*10 + model.var_om[j]) for i in model.hh_periods for j in model.Oil)
     gas = sum(model.mwh[j,i]*(model.heat_rate[j]*4.5 + model.var_om[j]) for i in model.hh_periods for j in model.Gas)
     hydro = sum(model.mwh[j,i]*(model.heat_rate[j] + model.var_om[j]) for i in model.hh_periods for j in model.Hydro)
-    must_run = sum(model.mwh[j,i]*(model.heat_rate[j] + model.var_om[j]) for i in model.hh_periods for j in model.Must_run)    
+    must_run = sum(model.mwh[j,i]*(model.heat_rate[j] + model.var_om[j]) for i in model.hh_periods for j in model.Must)    
     slack = sum(model.mwh[j,i]*model.heat_rate[j]*1000 for i in model.hh_periods for j in model.Slack)
     
-    return fixed +starts +coal +oil + gas + hydro + must_run + slack  ## +biomass_st +gas_cc +gas_st
+    return coal +oil + gas + hydro + must_run + slack  ## fixed +starts 
 
 model.SystemCost = Objective(rule=SysCost, sense=minimize)
 
@@ -208,14 +208,14 @@ model.SystemCost = Objective(rule=SysCost, sense=minimize)
 ######=================================================########
 
 ######========== Logical Constraint =========#############
-##Switch is 1 if unit is turned on in current period
+#Switch is 1 if unit is turned on in current period
 def SwitchCon(model,j,i):
     return model.switch[j,i] >= 1 - model.on[j,i-1] - (1 - model.on[j,i])
 model.SwitchConstraint = Constraint(model.Generators,model.hh_periods,rule = SwitchCon)
 
 
 ######========== Up/Down Time Constraint =========#############
-##Min Up time
+#Min Up time
 def MinUp(model,j,i,k):
     if i > 0 and k > i and k < min(i+model.minup[j]-1,model.HorizonHours):
         return model.on[j,i] - model.on[j,i-1] <= model.on[j,k]
@@ -225,10 +225,10 @@ model.MinimumUp = Constraint(model.Generators,model.HH_periods,model.HH_periods,
 
 ##Min Down time
 def MinDown(model,j,i,k):
-   if i > 0 and k > i and k < min(i+model.mindn[j]-1,model.HorizonHours):
-       return model.on[j,i-1] - model.on[j,i] <= 1 - model.on[j,k]
-   else:
-       return Constraint.Skip
+    if i > 0 and k > i and k < min(i+model.mindn[j]-1,model.HorizonHours):
+        return model.on[j,i-1] - model.on[j,i] <= 1 - model.on[j,k]
+    else:
+        return Constraint.Skip
 model.MinimumDown = Constraint(model.Generators,model.HH_periods,model.HH_periods,rule=MinDown)
 
 
@@ -252,14 +252,15 @@ model.RampCon2 = Constraint(model.Generators,model.ramp_periods,rule=Ramp2)
 
 ######=========== Capacity Constraints ============##########
 #Constraints for Max & Min Capacity of dispatchable resources
-#derate factor can be below 1 for dry years, otherwise 1
 def MaxC(model,j,i):
     return model.mwh[j,i]  <= model.on[j,i] * model.maxcap[j] 
 model.MaxCap= Constraint(model.Generators,model.hh_periods,rule=MaxC)
 
+
 def MinC(model,j,i):
     return model.mwh[j,i] >= model.on[j,i] * model.mincap[j]
 model.MinCap= Constraint(model.Generators,model.hh_periods,rule=MinC)
+
 
 #Max capacity constraints on domestic hydropower 
 def HydroC(model,z,i):
@@ -283,18 +284,22 @@ model.HydroConstraint= Constraint(model.Hydro,model.hh_periods,rule=HydroC)
 
 #########======================== Power balance in sub-station nodes (with/without demand) ====================#######
 ###With demand
-def Dnodes_Balance(model,z,i):
+def Dnodes_Balance(model,z,k,i):
+    if model.linesus[z,k] < .01:
+        return Constraint.Skip
     demand = model.HorizonDemand[z,i]
     impedance = sum(model.linesus[z,k] * (model.vlt_angle[z,i] - model.vlt_angle[k,i]) for k in model.sinks)   
     return - demand == impedance
-model.Dnodes_BalConstraint= Constraint(model.d_nodes,model.hh_periods,rule= Dnodes_Balance)
+model.Dnodes_BalConstraint= Constraint(model.d_nodes,model.sinks,model.hh_periods,rule= Dnodes_Balance)
 
 ###Without demand
-def Tnodes_Balance(model,z,i):
+def Tnodes_Balance(model,z,k,i):
     #demand = model.HorizonDemand[z,i]
+    if model.linesus[z,k] < .01:
+        return Constraint.Skip
     impedance = sum(model.linesus[z,k] * (model.vlt_angle[z,i] - model.vlt_angle[k,i]) for k in model.sinks)   
-    return 0 == impedance
-model.Tnodes_BalConstraint= Constraint(model.t_nodes,model.hh_periods,rule= Tnodes_Balance)
+    return impedance == 0
+model.Tnodes_BalConstraint= Constraint(model.t_nodes,model.sinks,model.hh_periods,rule= Tnodes_Balance)
 
 
 ######=================================================########
@@ -305,11 +310,13 @@ model.Tnodes_BalConstraint= Constraint(model.t_nodes,model.hh_periods,rule= Tnod
 
 
 #########============ Power balance in nodes of dispatchable resources without demand ==============############
-def G_Balance(model,i,z):
+def G_Balance(model,i,z,k):
+    if model.linesus[z,k] < .01:
+        return Constraint.Skip
     thermo = sum(model.mwh[j,i]*model.gen_mat[j,z] for j in model.Generators)    
     impedance = sum(model.linesus[z,k] * (model.vlt_angle[z,i] - model.vlt_angle[k,i]) for k in model.sinks)   
     return (1 - model.TransLoss) * thermo == impedance 
-model.G_BalConstraint= Constraint(model.hh_periods,model.g_nodes,rule= G_Balance)
+model.G_BalConstraint= Constraint(model.hh_periods,model.g_nodes,model.sinks,rule= G_Balance)
 
 
 ######=================================================########

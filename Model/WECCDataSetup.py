@@ -8,7 +8,7 @@ import numpy as np
 ######               Segment A.1                       ########
 ######=================================================########
 
-SimDays = 365
+SimDays = 10
 SimHours = SimDays * 24
 HorizonHours = 24  ##planning horizon (e.g., 24, 48, 72 hours etc.)
 TransLoss = 0.075  ##transmission loss as a percent of generation
@@ -51,7 +51,7 @@ df_load = pd.read_csv('data_load.csv',header=0)
 # df_trans1 = pd.read_csv('data_transparams.csv',header=0)
 
 #hourly minimum reserve as a function of load (e.g., 15% of current load)
-df_reserves = pd.DataFrame((df_load.iloc[:,4:].sum(axis=1)*res_margin).values,columns=['Reserve'])
+df_reserves = pd.DataFrame((df_load.iloc[:,:].sum(axis=1)*res_margin).values,columns=['Reserve'])
 
 # #capacity and susceptence of each transmission line (both directions)
 # df_trans2 = pd.DataFrame([df_trans1['sink'],df_trans1['source'],df_trans1['linemva'],df_trans1['linesus']]).transpose()
@@ -87,8 +87,8 @@ all_nodes = g_nodes + t_nodes + d_nodes
 print ('Total_Nodes:',len(all_nodes))
 
 
-##list of types of dispatchable units
-types = ['coal','oil','slack','ngcc','ngct','hydro','must_run'] 
+# ##list of types of dispatchable units
+# types = ['coal','oil','slack','ngcc','ngct','hydro','must'] 
 
 
 ######=================================================########
@@ -155,10 +155,10 @@ with open(''+str(data_name)+'.dat', 'w') as f:
     f.write(';\n\n') 
 
     # Must run
-    f.write('set Must_Run :=\n')
+    f.write('set Must :=\n')
     # pull relevant generators
     for gen in range(0,len(df_gen)):
-        if df_gen.loc[gen,'typ'] == 'must_run':
+        if df_gen.loc[gen,'typ'] == 'must':
             unit_name = df_gen.loc[gen,'name']
             unit_name = unit_name.replace(' ','_')
             f.write(unit_name + ' ')
@@ -189,11 +189,11 @@ with open(''+str(data_name)+'.dat', 'w') as f:
         f.write(z + ' ')
     f.write(';\n\n')
 
-    # hydro_nodes
-    f.write('set h_nodes :=\n')
-    for z in h_nodes:
-        f.write(z + ' ')
-    f.write(';\n\n')
+    # # hydro_nodes
+    # f.write('set h_nodes :=\n')
+    # for z in h_nodes:
+    #     f.write(z + ' ')
+    # f.write(';\n\n')
 
 ##    # solar_nodes
 ##    f.write('set s_nodes :=\n')
@@ -231,11 +231,11 @@ with open(''+str(data_name)+'.dat', 'w') as f:
         f.write(z + ' ')
     f.write(';\n\n')
 
-    # transformer without demand nodes
-    f.write('set h_nodes :=\n')
-    for z in h_nodes:
-        f.write(z + ' ')
-    f.write(';\n\n')
+    # # transformer without demand nodes
+    # f.write('set h_nodes :=\n')
+    # for z in h_nodes:
+    #     f.write(z + ' ')
+    # f.write(';\n\n')
     
     print('nodes')
     
@@ -273,6 +273,8 @@ with open(''+str(data_name)+'.dat', 'w') as f:
             if c == 'name':
                 unit_name = df_gen.loc[i,'name']
                 unit_name = unit_name.replace(' ','_')
+                unit_name = unit_name.replace('&','_')
+                unit_name = unit_name.replace('.','')
                 f.write(unit_name + '\t')  
             else:
                 f.write(str((df_gen.loc[i,c])) + '\t')               
@@ -303,7 +305,8 @@ with open(''+str(data_name)+'.dat', 'w') as f:
     # load (hourly)
     f.write('param:' + '\t' + 'SimDemand:=' + '\n')      
     for z in d_nodes:
-        for h in range(0,len(df_load)): 
+        for h in range(0,240):        
+        # for h in range(0,len(df_load)): 
             f.write(z + '\t' + str(h+1) + '\t' + str(df_load.loc[h,z]) + '\n')
     f.write(';\n\n')
 
@@ -311,7 +314,8 @@ with open(''+str(data_name)+'.dat', 'w') as f:
     f.write('param:' + '\t' + 'SimHydro:=' + '\n')
     h_gens = df_hydro.columns      
     for z in h_gens:
-        for h in range(0,len(df_hydro)): 
+        # for h in range(0,len(df_hydro)): 
+        for h in range(0,240):
             f.write(z + '\t' + str(h+1) + '\t' + str(df_hydro.loc[h,z]) + '\n')
     f.write(';\n\n')
 
@@ -331,7 +335,8 @@ with open(''+str(data_name)+'.dat', 'w') as f:
     
 ###### System-wide hourly reserve
     f.write('param' + '\t' + 'SimReserves:=' + '\n')
-    for h in range(0,len(df_load)):
+    for h in range(0,240):
+    # for h in range(0,len(df_load)):
             f.write(str(h+1) + '\t' + str(df_reserves.loc[h,'Reserve']) + '\n')
     f.write(';\n\n')
     
