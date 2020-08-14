@@ -16,8 +16,8 @@ import numpy as np
 from datetime import datetime
 import pyomo.environ as pyo
 
+days =2
 # def sim(days):
-
 
 instance = m1.create_instance('WECC_data.dat')
 opt = SolverFactory("cplex")
@@ -29,18 +29,18 @@ K=range(1,H+1)
 
 #Space to store results
 mwh=[]
-on=[]
-switch=[]
-srsv=[]
-nrsv=[]
+# on=[]
+# switch=[]
+# srsv=[]
+# nrsv=[]
 vlt_angle=[]
 
 df_generators = pd.read_csv('data_genparams.csv',header=0)
 
 #max here can be (1,365)
-for day in range(1,2):
+for day in range(1,days):
     
-    for z in instance.d_nodes:
+    for z in instance.nodes:
     #load Demand and Reserve time series data
         for i in K:
             instance.HorizonDemand[z,i] = instance.SimDemand[z,(day-1)*24+i]
@@ -63,7 +63,7 @@ for day in range(1,2):
     #         instance.HorizonWind[z,i] = instance.SimWind[z,(day-1)*24+i]
     
 
-    result = opt.solve(instance) ##,tee=True to check number of variables\n",
+    result = opt.solve(instance,tee=True,symbolic_solver_labels=True) ##,tee=True to check number of variables\n",
     instance.solutions.load_from(result)  
 
  
@@ -94,25 +94,25 @@ for day in range(1,2):
                 if int(index[1]>0 and index[1]<25):
                     mwh.append((index[0],index[1]+((day-1)*24),varobject[index].value))                                            
         
-        if a=='on':  
-            for index in varobject:
-                if int(index[1]>0 and index[1]<25):
-                    on.append((index[0],index[1]+((day-1)*24),varobject[index].value))
+        # if a=='on':  
+        #     for index in varobject:
+        #         if int(index[1]>0 and index[1]<25):
+        #             on.append((index[0],index[1]+((day-1)*24),varobject[index].value))
 
-        if a=='switch':
-            for index in varobject:
-                if int(index[1]>0 and index[1]<25):
-                    switch.append((index[0],index[1]+((day-1)*24),varobject[index].value))
+        # if a=='switch':
+        #     for index in varobject:
+        #         if int(index[1]>0 and index[1]<25):
+        #             switch.append((index[0],index[1]+((day-1)*24),varobject[index].value))
                     
-        if a=='srsv':    
-            for index in varobject:
-                if int(index[1]>0 and index[1]<25):
-                    srsv.append((index[0],index[1]+((day-1)*24),varobject[index].value))
+        # if a=='srsv':    
+        #     for index in varobject:
+        #         if int(index[1]>0 and index[1]<25):
+        #             srsv.append((index[0],index[1]+((day-1)*24),varobject[index].value))
 
-        if a=='nrsv':    
-            for index in varobject:
-                if int(index[1]>0 and index[1]<25):
-                    nrsv.append((index[0],index[1]+((day-1)*24),varobject[index].value))
+        # if a=='nrsv':    
+        #     for index in varobject:
+        #         if int(index[1]>0 and index[1]<25):
+        #             nrsv.append((index[0],index[1]+((day-1)*24),varobject[index].value))
 
     print(day)
         
@@ -120,20 +120,20 @@ for day in range(1,2):
 # wind_pd=pd.DataFrame(wind,columns=('Node','Time','Value'))
 vlt_angle_pd=pd.DataFrame(vlt_angle,columns=('Node','Time','Value'))
 mwh_pd=pd.DataFrame(mwh,columns=('Generator','Time','Value'))
-on_pd=pd.DataFrame(on,columns=('Generator','Time','Value'))
-switch_pd=pd.DataFrame(switch,columns=('Generator','Time','Value'))
-srsv_pd=pd.DataFrame(srsv,columns=('Generator','Time','Value'))
-nrsv_pd=pd.DataFrame(nrsv,columns=('Generator','Time','Value'))
+# on_pd=pd.DataFrame(on,columns=('Generator','Time','Value'))
+# switch_pd=pd.DataFrame(switch,columns=('Generator','Time','Value'))
+# srsv_pd=pd.DataFrame(srsv,columns=('Generator','Time','Value'))
+# nrsv_pd=pd.DataFrame(nrsv,columns=('Generator','Time','Value'))
 
 #to save outputs
 mwh_pd.to_csv('mwh.csv')
 # solar_pd.to_csv('solar.csv')
 # wind_pd.to_csv('wind.csv')
 vlt_angle_pd.to_csv('vlt_angle.csv')
-on_pd.to_csv('on.csv')
-switch_pd.to_csv('switch.csv')
-srsv_pd.to_csv('srsv.csv')
-nrsv_pd.to_csv('nrsv.csv')
+# on_pd.to_csv('on.csv')
+# switch_pd.to_csv('switch.csv')
+# srsv_pd.to_csv('srsv.csv')
+# nrsv_pd.to_csv('nrsv.csv')
 
 
     # return None
