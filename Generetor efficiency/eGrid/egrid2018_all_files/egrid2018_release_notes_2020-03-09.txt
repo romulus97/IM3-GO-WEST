@@ -1,0 +1,147 @@
+>>> eGRID Release Notes <<<
+
+*****************************************************************************
+*                                                                           *
+*  3/9/2020  eGRID2018v2 Data Released 					    *
+*                                                                           *
+*****************************************************************************
+
+eGRID2018 Data was orginally released on 1/28/2020.
+eGRID2018v2 Data was released on 3/9/2020.
+
+The following files representing eGRID2018 are available on the eGRID web site (epa.gov/energy/egrid):
+
+			egrid2018_data_v2.xlsx
+                     	egrid2018_technical_support_document.pdf
+			egrid2018_summary_tables.pdf
+			egrid2018_summary_tables.xlsx
+			egrid2016_egrid_subregions.jpg
+			egrid2016_nerc_regions.jpg		
+			egrid2018_data_metric.xlsx
+			egrid2018_release_notes_2020-01-28.txt (this file)
+			egrid2018_all_files.zip			
+			egrid2018_historical_files_since_1996.zip
+			egrid2018_sequence_numbers.xlsx
+
+
+egrid2018_all_files.zip contains files released for eGRID2018, including:
+
+			egrid2018_data_v2.xlsx
+			egrid2018_release_notes_2020-01-28.txt (this file)
+			egrid2018_summary_tables.pdf
+			egrid2018_summary_tables.xlsx
+                     	egrid2018_technical_support_document.pdf
+						
+
+egrid2018_historical_files_since_1996.zip contains all files from all historical editions of eGRID including data for the following years:
+  1996, 1997, 1998, 1999, 2000, 2004, 2005, 2007, 2009, 2010, 2012, 2014, and 2016.
+
+	
+The complete list of files is as follows, organized by year:  
+ 
+  eGRID2016:
+	eGRID2016_Data.xls
+	eGRID2016_Data_Metric.xls
+	eGRID2016_SummaryTables.pdf
+	eGRID2016_SummaryTables.xls
+        eGRID2016_eGRID_subregions.jpg
+	eGRID2016_NERC_regions.jpg
+	eGRID2016_TechnicalSupportDocument.pdf
+	eGRID_Release_Notes_2018-02-15.txt
+
+  eGRID2014:
+	eGRID2014_Data_v2.xls
+	eGRID2014_Data_Metric_v2.xls
+	eGRID2014_GHGOutputRates_v2.pdf
+	eGRID2014_SummaryTables_v2.pdf
+	eGRID2014_SummaryTables_v2.xls
+        eGRID2014_eGRID_subregions.jpg (unchanged from version 1)
+	eGRID2014_NERC_regions.jpg (unchanged from version 1)
+	eGRID2014_TechnicalSupportDocument_v2.pdf
+	eGRID_Release_Notes_2017-02-27.txt
+	
+  eGRID2012:
+        eGRID2012_Data.xls
+	eGRID2012_GHGOutputRates.pdf
+	eGRID2012_SummaryTables.pdf
+        eGRID2012_eGRID_subregions.jpg
+	eGRID2012_NERC_regions.jpg
+	eGRID2012_TechnicalSupportDocument.pdf
+
+  eGRID2010:
+	eGRID2010_Data.xls
+	eGRID2010_GHGOutputRates.pdf
+	eGRID2010_SummaryTables.pdf
+	eGRID2010_eGRID_subregions.jpg
+	eGRID2010_NERC_regions.jpg
+	eGRID2010_TechnicalSupportDocument.pdf
+
+  eGRID2009:
+	eGRID2009_data.xls
+	eGRID2009_GHGOutputRates.pdf
+	eGRID2009_SummaryTables.pdf
+	eGRID2009_eGRID_subregions.jpg
+	eGRID2009_NERC_regions.jpg
+	eGRID2009_FileStructure.pdf
+	eGRID2009_TechnicalSupportDocument.pdf
+
+  eGRID2007:
+	eGRID2007_FileStructure.pdf
+	eGRID2007_TechnicalSupportDocument.pdf
+	eGRID2007_STIE_USGC.xls
+	eGRID2007_aggregation.xls
+	eGRID2007_GHGOutputRates.pdf
+	eGRID2007_plant.xls
+	eGRID2007_SummaryTables.pdf
+	eGRID2007_eGRID_subregions.jpg
+	eGRID2007_NERC_regions.jpg
+
+  eGRID 2005:
+	eGRID2005_TechnicalSupportDocument.pdf
+	eGRID2005_plant.xls
+	eGRID2005_aggregation.xls
+	eGRID2004_and_2005_STIE_USGC.xls
+	eGRID2005_GHGOutputRates.pdf
+	eGRID2005_SummaryTables.pdf
+	eGRID2005_eGRID_subregions.jpg
+	eGRID2005_NERC_regions.jpg
+ 
+  eGRID2004:
+	eGRID2004_SummaryTables.pdf
+	eGRID2004_TechnicalSupportDocument.pdf
+	eGRID2004_aggregation.xls
+	eGRID2004_plant.xls
+  	eGRID2004_and_2005_STIE_USGC.xls
+
+  eGRID2000:
+	eGRID2000_location.xls
+	eGRID2000_owner.xls
+	eGRID2000_plant.xls
+	eGRID2000_StateSummary.pdf
+
+  eGRID1999:
+	eGRID1999_location.xls
+	eGRID1999_owner.xls
+	eGRID1999_plant.xls
+
+  eGRID1998:
+	eGRID1998_location.xls
+	eGRID1998_owner.xls
+	eGRID1998_plant.xls
+
+  eGRID1997:
+	eGRID1997_location.xls
+	eGRID1997_owner.xls
+	eGRID1997_plant.xls
+
+  eGRID1996:
+	eGRID_1996_location.xls
+	eGRID_1996_owner.xls
+	eGRID_1996_plant.xls
+
+  For eGRID1996 through eGRID 2000, the following files are also available:
+	eGRID1996_thru_2000_TechSupport.pdf
+	eGRID1996_thru_2000_UsersManual.pdf
+	eGRID1996_thru_2000_powerflow.xls
+
+
