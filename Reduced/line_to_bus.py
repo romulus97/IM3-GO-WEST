@@ -102,7 +102,7 @@ for i in range(0,len(df)):
             ref_node += 1
 
 df_line_to_bus['line'] = lines
-df_line_to_bus.to_csv('line_to_bus.csv')
+#df_line_to_bus.to_csv('line_to_bus.csv')
 
 
 df_line_params = pd.DataFrame()
