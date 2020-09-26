@@ -1,12 +1,7 @@
 # coding: utf-8
-from __future__ import division # convert int or long division arguments to floating point values before division
 from pyomo.environ import *
-from pyomo.opt import SolverFactory
-import itertools
-
 
 model = AbstractModel()
-
 
 ######=================================================########
 ######               Segment B.1                       ########
@@ -24,30 +19,18 @@ model.Must = Set()
 model.Generators = model.Coal | model.Oil | model.Gas | model.Slack | model.Hydro | model.Must
 
 
-###Allocate generators that will ensure minimum reserves
+### allocate generators that will ensure minimum reserves
 model.ResGenerators = model.Coal | model.Oil | model.Gas
 
-
-######=================================================########
-######               Segment B.2                       ########
-######=================================================########
-
-### Nodal sets
-model.nodes = Set()
-model.sources = Set(within=model.nodes)
-model.sinks = Set(within=model.nodes)
-
-######=================================================########
-######               Segment B.3                       ########
-######=================================================########
-
-#####==== Parameters for dispatchable resources ===####
+# transmission sets
+model.lines = Set() #Set of linearized segments l
+model.buses = Set() #Set of linearized segments b
 
 #Generator type
-model.typ = Param(model.Generators)
+model.typ = Param(model.Generators,within=Any)
 
 #Node name
-model.node = Param(model.Generators)
+model.node = Param(model.Generators,within=Any)
 
 #Max capacity
 model.maxcap = Param(model.Generators)
@@ -77,13 +60,10 @@ model.minup = Param(model.Generators)
 model.mindn = Param(model.Generators)
 
 
-######=================================================########
-######               Segment B.4                       ########
-######=================================================########
-
-######==== Transmission line parameters =======#######
-model.linemva = Param(model.sources, model.sinks)
-model.linesus = Param(model.sources, model.sinks)
+model.Reactance = Param(model.lines)
+model.FlowLim = Param(model.lines)
+model.LinetoBusMap=Param(model.lines,model.buses)
+model.BustoUnitMap=Param(model.Generators,model.buses)
 
 ### Transmission Loss as a %discount on production
 model.TransLoss = Param(within=NonNegativeReals)
@@ -117,9 +97,9 @@ model.ramp_periods = RangeSet(2,24)
 ######=================================================########
 
 #Demand over simulation period
-model.SimDemand = Param(model.nodes*model.SH_periods, within=NonNegativeReals)
+model.SimDemand = Param(model.buses*model.SH_periods, within=NonNegativeReals)
 #Horizon demand
-model.HorizonDemand = Param(model.nodes*model.hh_periods,within=NonNegativeReals,mutable=True)
+model.HorizonDemand = Param(model.buses*model.hh_periods,within=NonNegativeReals,mutable=True)
 
 #Reserve for the entire system
 model.SimReserves = Param(model.SH_periods, within=NonNegativeReals)
@@ -134,13 +114,6 @@ model.SimHydro = Param(model.Hydro, model.SH_periods, within=NonNegativeReals)
 model.HorizonHydro = Param(model.Hydro,model.hh_periods,within=NonNegativeReals,mutable=True)
 ##model.HorizonSolar = Param(model.s_nodes,model.hh_periods,within=NonNegativeReals,mutable=True)
 ##model.HorizonWind = Param(model.w_nodes,model.hh_periods,within=NonNegativeReals,mutable=True)
-
-##Initial conditions
-model.ini_on = Param(model.Generators, within=Binary, initialize=0,mutable=True) 
-model.ini_mwh = Param(model.Generators,initialize=0,mutable=True)
-
-model.gen_mat = Param(model.Generators,model.nodes,within=Binary)
-
 
 ######=================================================########
 ######               Segment B.7                       ########
@@ -168,9 +141,9 @@ model.mwh = Var(model.Generators,model.HH_periods, within=NonNegativeReals,initi
 ###dispatch of wind-power in each hour
 ##model.wind = Var(model.w_nodes,model.HH_periods,within=NonNegativeReals)
 
-#Voltage angle at each node in each hour
-model.vlt_angle = Var(model.nodes,model.HH_periods,bounds = (-3.14,3.14), initialize=0)
-
+# transmission line variables 
+model.Flow= Var(model.lines,model.hh_periods)
+model.Theta= Var(model.buses,model.hh_periods)
 
 
 ######=================================================########
@@ -225,17 +198,17 @@ model.SystemCost = Objective(rule=SysCost, sense=minimize)
 
 
 ######==========Ramp Rate Constraints =========#############
-def Ramp1(model,j,i):
-    a = model.mwh[j,i]
-    b = model.mwh[j,i-1]
-    return a - b <= model.ramp[j] 
-model.RampCon1 = Constraint(model.Generators,model.ramp_periods,rule=Ramp1)
+# def Ramp1(model,j,i):
+#     a = model.mwh[j,i]
+#     b = model.mwh[j,i-1]
+#     return a - b <= model.ramp[j] 
+# model.RampCon1 = Constraint(model.Generators,model.ramp_periods,rule=Ramp1)
 
-def Ramp2(model,j,i):
-    a = model.mwh[j,i]
-    b = model.mwh[j,i-1]
-    return b - a <= model.ramp[j] 
-model.RampCon2 = Constraint(model.Generators,model.ramp_periods,rule=Ramp2)
+# def Ramp2(model,j,i):
+#     a = model.mwh[j,i]
+#     b = model.mwh[j,i-1]
+#     return b - a <= model.ramp[j] 
+# model.RampCon2 = Constraint(model.Generators,model.ramp_periods,rule=Ramp2)
 
 
 ######=================================================########
@@ -279,34 +252,52 @@ model.HydroConstraint= Constraint(model.Hydro,model.hh_periods,rule=HydroC)
 ######=================================================########
 
 #########======================== Power balance in sub-station nodes 
+# #Balance Constraint 
+# def Nodal_Balance(model,b,k):
+#     value1=sum(model.cost1[i,k]*model.BustoUnitMap[i,b] for i in model.unit)
+#     value2=sum (model.Flow[l,k]*model.LinetoBusMap[l,b] for l in model.lines)
+#     return value1 - value2 == model.Load[b,k]
+# model.Node_Constraint = Constraint(model.buses,model.hours,rule=Nodal_Balance)
+    
+
 def Nodal_Balance(model,z,i):
-    demand = model.HorizonDemand[z,i]
-    power_flow = 100*sum(model.linesus[z,k] * (model.vlt_angle[z,i] - model.vlt_angle[k,i]) for k in model.sinks)   
-    gen = sum(model.mwh[j,i]*model.gen_mat[j,z] for j in model.Generators)    
-    return power_flow + demand <= (1 - model.TransLoss)*gen
+    power_flow = sum(model.Flow[l,i]*model.LinetoBusMap[l,z] for l in model.lines)   
+    gen = sum(model.mwh[j,i]*model.BustoUnitMap[j,z] for j in model.Generators)    
+    return gen - power_flow == model.HorizonDemand[z,i] 
+model.Node_Constraint = Constraint(model.buses,model.hh_periods,rule=Nodal_Balance)
 
-model.Node_Constraint = Constraint(model.nodes,model.hh_periods,rule=Nodal_Balance)
+def Flow_line(model,l,i):
+    value = sum(model.Theta[z,i]*model.LinetoBusMap[l,z] for z in model.buses)
+    return  100*value == model.Flow[l,i]*model.Reactance[l]
+model.FlowL_Constraint = Constraint(model.lines,model.hh_periods,rule=Flow_line)
 
-####=== Reference Node =====#####
-def ref_node(model,i):
-    return model.vlt_angle['HOOVER_20',i] == 0
-model.Ref_NodeConstraint= Constraint(model.hh_periods,rule= ref_node)
+def Theta_bus(model,i):
+        return model.Theta['HOOVER_20',i] == 0
+model.ThetaB_Constraint = Constraint(model.hh_periods,rule=Theta_bus)
+
+def FlowUP_line(model,l,i):
+    return  model.Flow[l,i] <= model.FlowLim[l]
+model.FlowU_Constraint = Constraint(model.lines,model.hh_periods,rule=FlowUP_line)
+
+def FlowLow_line(model,l,i):
+    return  -1*model.Flow[l,i] <= model.FlowLim[l]
+model.FlowLL_Constraint = Constraint(model.lines,model.hh_periods,rule=FlowLow_line)
 
 
-######========== Transmission Capacity Constraints (N-1 Criterion) =========#############
-def MaxLine(model,s,k,i):
-    if model.linemva[s,k] > 0:
-        return (model.n1criterion) * model.linemva[s,k] >= model.linesus[s,k] * (model.vlt_angle[s,i] - model.vlt_angle[k,i])
-    else:
-        return Constraint.Skip
-model.MaxLineConstraint= Constraint(model.sources,model.sinks,model.hh_periods,rule=MaxLine)
+# ######========== Transmission Capacity Constraints (N-1 Criterion) =========#############
+# def MaxLine(model,s,k,i):
+#     if model.linemva[s,k] > 0:
+#         return (model.n1criterion) * model.linemva[s,k] >= model.linesus[s,k] * (model.vlt_angle[s,i] - model.vlt_angle[k,i])
+#     else:
+#         return Constraint.Skip
+# model.MaxLineConstraint= Constraint(model.sources,model.sinks,model.hh_periods,rule=MaxLine)
 
-def MinLine(model,s,k,i):
-    if model.linemva[s,k] > 0:
-        return (-model.n1criterion) * model.linemva[s,k] <= model.linesus[s,k] * (model.vlt_angle[s,i] - model.vlt_angle[k,i])
-    else:
-        return Constraint.Skip
-model.MinLineConstraint= Constraint(model.sources,model.sinks,model.hh_periods,rule=MinLine)
+# def MinLine(model,s,k,i):
+#     if model.linemva[s,k] > 0:
+#         return (-model.n1criterion) * model.linemva[s,k] <= model.linesus[s,k] * (model.vlt_angle[s,i] - model.vlt_angle[k,i])
+#     else:
+#         return Constraint.Skip
+# model.MinLineConstraint= Constraint(model.sources,model.sinks,model.hh_periods,rule=MinLine)
 
 
 
