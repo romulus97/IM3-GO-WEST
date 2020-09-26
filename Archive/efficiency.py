@@ -10,14 +10,13 @@ import pandas as pd
 import numpy as np
 
 
-eff = pd.read_csv("efficiency.csv")
-gen = pd.read_csv("generators.csv")
+generators = pd.read_csv("generators.csv")
+MasterControl = pd.read_csv("MasterControl2.csv")
 
 
-for i in eff.index:
-    for j in gen.index:
-        if gen.loc[j,'DOE'] == eff.loc[i,'DOE']:
-            gen.loc[j,'CapFac'] = eff.loc[i,'Plant_capacity_factor']
-            gen.loc[j,'CalCapFac'] = eff.loc[i,'CalCapFac']
+for i in generators.index:
+    for j in MasterControl.index:
+        if generators.loc[i,'name'] == MasterControl.loc[j,'Resource_ID']:
+            generators.loc[i,'Name_Description'] = MasterControl.loc[j,'Name_Description']
             
-gen.to_csv (r'export_dataframe.csv', index = False, header=True)
+generators.to_csv (r'new_generators.csv', index = False, header=True)

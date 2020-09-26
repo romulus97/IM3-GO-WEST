@@ -1,0 +1,119 @@
+,PLANT,NERC,fips,state,facilityname
+1,228,CA,6013,CA,Contra Costa Generating Station
+2,246,CA,6023,CA,Humboldt Bay
+3,259,CA,6079,CA,"Morro Bay Power Plant, LLC"
+4,260,CA,6053,CA,Moss Landing
+5,271,CA,6013,CA,Pittsburg Generating Station (CA)
+6,273,CA,6075,CA,Potrero Generating Station
+7,302,CA,6073,CA,Cabrillo Power I Encina Power Station
+8,310,CA,6073,CA,"Dynegy South Bay, LLC"
+9,315,CA,6037,CA,AES Alamitos
+10,329,CA,6071,CA,Coolwater Generating Station
+11,330,CA,6037,CA,El Segundo
+12,331,CA,6071,CA,Etiwanda Generating Station
+13,335,CA,6059,CA,AES Huntington Beach
+14,341,CA,6037,CA,Long Beach Generating Station
+15,345,CA,6111,CA,Mandalay Generating Station
+16,350,CA,6111,CA,Ormond Beach Generating Station
+17,356,CA,6037,CA,AES Redondo Beach
+18,358,CA,6071,CA,Mountainview Generating Station
+19,377,CA,6037,CA,Grayson Power Plant
+20,389,CA,6025,CA,El Centro
+21,399,CA,6037,CA,Harbor Generating Station
+22,400,CA,6037,CA,Haynes Generating Station
+23,404,CA,6037,CA,Scattergood Generating Station
+24,408,CA,6037,CA,Valley Generating Station
+25,420,CA,6037,CA,Broadway
+26,422,CA,6037,CA,Glenarm
+27,6013,CA,6037,CA,Olive
+28,7266,CA,6099,CA,Woodland Generation Station
+29,7307,CA,6089,CA,Redding Power Plant
+30,7315,CA,6099,CA,Almond Power Plant
+31,7449,CA,6077,CA,NCPA Combustion Turbine Project #2
+32,7527,CA,6067,CA,Carson Cogeneration
+33,7551,CA,6067,CA,SCA Cogen II
+34,7552,CA,6067,CA,Sacramento Power Authority Cogen
+35,7693,CA,6059,CA,Anaheim Combustion Turbine
+36,7987,CA,6037,CA,Lake
+37,10034,CA,6085,CA,"Calpine Gilroy Cogen, LP"
+38,10156,CA,6019,CA,"Fresno Cogeneration Partners, LP"
+39,10169,CA,6037,CA,Carson Cogeneration Company
+40,10294,CA,6053,CA,King City Power Plant
+41,10349,CA,6101,CA,Yuba City Energy Center
+42,10350,CA,6101,CA,Greenleaf One
+43,10405,CA,6019,CA,Kingsburg Cogen Facility
+44,10812,CA,6073,CA,North Island
+45,50131,CA,6019,CA,Coalinga Cogeneration Facility
+46,50864,CA,6053,CA,Sargent Canyon Cogen Facility
+47,50865,CA,6053,CA,Salinas River Cogeneration Facility
+48,54238,CA,6077,CA,DTE Stockton
+49,54749,CA,6073,CA,Goal Line
+50,55112,CA,6101,CA,Calpine Sutter Energy Center
+51,55151,CA,6029,CA,La Paloma Generating Plant
+52,55182,CA,6029,CA,Sunrise Power Company
+53,55217,CA,6013,CA,"Los Medanos Energy Center, LLC"
+54,55295,CA,6065,CA,Blythe Energy
+55,55333,CA,6013,CA,"Delta Energy Center, LLC"
+56,55345,CA,6073,CA,"Otay Mesa Energy Center, LLC"
+57,55393,CA,6085,CA,Metcalf Energy Center
+58,55499,CA,6095,CA,CalPeak Power - Vaca Dixon
+59,55508,CA,6019,CA,CalPeak Power - Panoche
+60,55510,CA,6073,CA,CalPeak Power - Border
+61,55512,CA,6073,CA,Cuyamaca Peak Energy
+62,55513,CA,6073,CA,CalPeak Power - Enterprise
+63,55518,CA,6071,CA,High Desert Power Project
+64,55538,CA,6073,CA,"Escondido Energy Center, LLC"
+65,55540,CA,6073,CA,Chula Vista Energy Center
+66,55541,CA,6065,CA,Indigo Generation Facility
+67,55542,CA,6073,CA,Larkspur Energy Faciity
+68,55625,CA,6095,CA,Creed Energy Center
+69,55626,CA,6095,CA,Lambie Energy Center
+70,55627,CA,6095,CA,Goose Haven Energy Center
+71,55656,CA,6029,CA,Pastoria Energy Facility
+72,55698,CA,6031,CA,Hanford Energy Park Peaker
+73,55748,CA,6085,CA,Los Esteros Critical Energy Facility
+74,55807,CA,6031,CA,Henrietta Peaker Plant
+75,55810,CA,6085,CA,"Gilroy Energy Center, LLC"
+76,55847,CA,6101,CA,Feather River Energy Center
+77,55853,CA,6065,CA,Inland Empire Energy Center
+78,55855,CA,6095,CA,Wolfskill Energy Center
+79,55875,CA,6019,CA,"Wellhead Power Gates, LLC"
+80,55933,CA,6077,CA,Tracy Combined Cycle Power Plant
+81,55951,CA,6071,CA,Agua Mansa Power
+82,55963,CA,6013,CA,Riverview Energy Center
+83,55970,CA,6067,CA,Cosumnes Power Plant
+84,55985,CA,6073,CA,Palomar Energy Center
+85,56026,CA,6085,CA,Donald Von Raesfeld
+86,56041,CA,6037,CA,Malburg Generating Station
+87,56046,CA,6037,CA,Magnolia
+88,56078,CA,6099,CA,Walnut Energy Center
+89,56135,CA,6077,CA,Ripon Generation Station
+90,56143,CA,6065,CA,Riverside Energy Resource Center
+91,56232,CA,6073,CA,Miramar Energy Facility
+92,56239,CA,6019,CA,Malaga Power
+93,56298,CA,6061,CA,Roseville Energy Park
+94,56467,CA,6001,CA,Russell City Energy Company LLC
+95,56471,CA,6111,CA,McGrath Generating Station
+96,56472,CA,6071,CA,Grapeland Generating Station
+97,56473,CA,6071,CA,Mira Loma Generating Station
+98,56474,CA,6059,CA,Barre Generating Station
+99,56475,CA,6037,CA,Center Generating Station
+100,56476,CA,6013,CA,Gateway Generating Station
+101,56532,CA,6011,CA,Colusa Generating Station
+102,56569,CA,6025,CA,Niland Gas Turbine Plant
+103,56639,CA,6019,CA,Midway Peaking
+104,56803,CA,6019,CA,Panoche Energy Center
+105,56914,CA,6073,CA,Orange Grove Project
+106,57001,CA,6073,CA,El Cajon Energy Center
+107,57027,CA,6059,CA,Canyon Power Plant
+108,57073,CA,6071,CA,Ivanpah 2
+109,57074,CA,6071,CA,Ivanpah 1
+110,57075,CA,6071,CA,Ivanpah 3
+111,57267,CA,6013,CA,Marsh Landing Generating Station
+112,57482,CA,6065,CA,"Sentinel Energy Center, LLC"
+113,57483,CA,6001,CA,Mariposa Energy Project
+114,57515,CA,6037,CA,Walnut Creek Energy Park
+115,57555,CA,6073,CA,Pio Pico Energy Center LLC
+116,57564,CA,6019,CA,Algonquin Power Sanger
+117,57978,CA,6077,CA,Lodi Energy Center
+118,58122,CA,6107,CA,"Delano Energy Center, LLC"
