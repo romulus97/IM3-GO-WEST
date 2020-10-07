@@ -1,0 +1,1614 @@
+PNAME,ORISPL,PLPRMFL,PLFUELCT,NAMEPCAP
+1420 Coil Av #C,57310,SUN,SOLAR,1.3
+2081 Terzian Solar Project,58918,SUN,SOLAR,1.2
+2097 Helton Solar Project,58920,SUN,SOLAR,1.5
+2127 Harris Solar Project,58919,SUN,SOLAR,1.3
+2555 E Olympic Bl,57871,SUN,SOLAR,1
+85 A,52162,WND,WIND,14.1
+85 B,52163,WND,WIND,21.2
+A G Wishon,293,WAT,HYDRO,12.8
+ABEC #2 dba West-Star Dairy,61501,OBG,BIOMASS,1
+ABEC #3 dba Lakeview Dairy,61502,OBG,BIOMASS,1
+ABEC #4 dba CE&S Dairy,61503,OBG,BIOMASS,1
+ABEC Bidart-Old River LLC,58699,OBG,BIOMASS,2
+Acorn I Energy Storage LLC,62874,MWH,OTHF,2
+"Adelanto Solar II, LLC",59440,SUN,SOLAR,7
+Adelanto Solar Project,57305,SUN,SOLAR,10
+"Adelanto Solar, LLC",59441,SUN,SOLAR,20
+Adera Solar,60027,SUN,SOLAR,20
+Adobe San Jose,57811,NG,GAS,1.2
+Adobe Solar,57651,SUN,SOLAR,20
+Aera San Ardo Cogen Facility,55184,NG,GAS,6.2
+Aera South Belridge Cogen Facility,55185,NG,GAS,9
+Aerojet I,57697,SUN,SOLAR,3
+Aerojet II,57698,SUN,SOLAR,2.7
+Aerolease,61718,SUN,SOLAR,1.5
+AES Alamitos,315,NG,GAS,"2,055.00"
+AES Alamitos Energy Center,62115,NG,GAS,678
+"AES ES ALAMITOS, LLC",61204,MWH,OTHF,100
+AES Huntington Beach,335,NG,GAS,"1,021.00"
+AES Huntington Beach Energy Project,62116,NG,GAS,678
+AES Redondo Beach,356,NG,GAS,"1,316.40"
+Agnews Power Plant,50748,NG,GAS,32
+Agua Mansa Power,55951,NG,GAS,60.5
+Aidlin Geothermal Power Plant,52158,GEO,GEOTHERMAL,25
+Alameda,7450,NG,GAS,54.8
+Alamo,905,WAT,HYDRO,19.6
+Alamo Solar,59469,SUN,SOLAR,20
+Algonquin Power Sanger,57564,NG,GAS,74
+"Algonquin SKIC 10 Solar, LLC",60242,SUN,SOLAR,10
+Algonquin SKIC20 Solar LLC,59412,SUN,SOLAR,20
+Almond,62546,SUN,SOLAR,19.9
+Almond Power Plant,7315,NG,GAS,223.5
+Alpaugh 50,58003,SUN,SOLAR,50
+Alpaugh North,58002,SUN,SOLAR,20
+Alpine Solar,57295,SUN,SOLAR,132
+Alta Mesa Project Phase IV,55352,WND,WIND,40
+Alta Powerhouse,214,WAT,HYDRO,2
+Alta Wind Energy Center I,57282,WND,WIND,150
+Alta Wind Energy Center II,57291,WND,WIND,150
+Alta Wind Energy Center III,57292,WND,WIND,150
+Alta Wind Energy Center IV,57293,WND,WIND,102
+Alta Wind Energy Center V,57294,WND,WIND,168
+Alta Wind VIII,57835,WND,WIND,150
+Alta Wind X,58394,WND,WIND,138
+Alta Wind XI,58395,WND,WIND,90
+AltaGas Pomona Energy Inc.,50300,MWH,OTHF,66
+AltaGas Ripon Energy Inc.,50299,NG,GAS,49.5
+Altamont Gas Recovery,50571,LFG,BIOMASS,8.6
+Altamont Midway Ltd,50001,WND,WIND,10.9
+Altech III,50485,WND,WIND,25.1
+Alvarado Hydro Facility,54242,WAT,HYDRO,2.1
+Amazon - Patterson PV,61377,SUN,SOLAR,2.5
+Amazon San Bernardino,59800,NG,GAS,1.1
+Amedee Geothermal Venture I,50964,GEO,GEOTHERMAL,3
+Ameresco Butte County,57771,LFG,BIOMASS,2.3
+Ameresco Chiquita Canyon,56898,LFG,BIOMASS,9.2
+Ameresco Forward,58437,LFG,BIOMASS,4.4
+Ameresco Johnson Canyon,58397,LFG,BIOMASS,1.4
+Ameresco Keller Canyon,56897,LFG,BIOMASS,3.8
+Ameresco Ox Mountain,56895,LFG,BIOMASS,11.4
+Ameresco San Joaquin,58436,LFG,BIOMASS,4.4
+Ameresco Santa Cruz Energy,56428,LFG,BIOMASS,3
+Ameresco Vasco Road,58435,LFG,BIOMASS,4.4
+American Canyon Solar,62687,SUN,SOLAR,3
+"American Kings Solar, LLC",60777,SUN,SOLAR,123
+Ampersand Chowchilla Biomass LLC,56706,WDS,BIOMASS,12.5
+Anaheim Combustion Turbine,7693,NG,GAS,49.2
+Anaheim Solar Energy Plant,59416,SUN,SOLAR,2.1
+Angels,215,WAT,HYDRO,1.4
+Anheuser-Busch #2,59331,WND,WIND,1.6
+Antelope Big Sky Ranch,60279,SUN,SOLAR,20
+Antelope DSR 1,60186,SUN,SOLAR,50
+Antelope DSR 2,60187,SUN,SOLAR,5
+Antelope DSR 3,61265,SUN,SOLAR,20
+Antelope Expansion 1B,62320,SUN,SOLAR,17
+Antelope Expansion 2,61264,SUN,SOLAR,105
+Antelope Expansion 3A,62673,SUN,SOLAR,15
+Antelope Expansion 3B,62674,SUN,SOLAR,5
+"AP North Lake I, LP",59610,SUN,SOLAR,20
+APP Prune A-D,62577,NG,GAS,4
+Apple Campus 2 Fuel Cell,59557,LFG,BIOMASS,4
+Apple Campus 2 PV,59473,SUN,SOLAR,14.4
+Aquamarine,62547,SUN,SOLAR,250
+Argus Cogen Plant,10684,RC,COAL,62.5
+Arrache 4006,58445,SUN,SOLAR,2
+Arrache 4013,58446,SUN,SOLAR,1.5
+Arrache 8083,58447,SUN,SOLAR,4
+Aspiration G,59737,SUN,SOLAR,9
+ASTI,58889,SUN,SOLAR,1
+AT&T Anaheim,61154,NG,GAS,1.3
+AT&T Holger,61153,NG,GAS,1.3
+ATT  Kelvin,62573,NG,GAS,1
+ATT Van Nyus,62574,NG,GAS,1
+Atwell Island,58366,SUN,SOLAR,20.2
+Atwell Island West Solar,59414,SUN,SOLAR,20
+AV Solar Ranch One,57378,SUN,SOLAR,253
+Avenal Park,57359,SUN,SOLAR,6
+AVS Lancaster 1,60085,SUN,SOLAR,3.7
+Axium Modesto Solar,58039,SUN,SOLAR,25
+Azusa,6449,WAT,HYDRO,3
+B Braun Medical,50200,NG,GAS,6.1
+Badger Creek Limited,10650,NG,GAS,46
+Baker Creek Hydroelectric,59428,WAT,HYDRO,1.5
+Bakersfield 111,59948,SUN,SOLAR,1.4
+Bakersfield College Solar 01,57655,SUN,SOLAR,1.1
+Bakersfield Industrial PV 1,61118,SUN,SOLAR,1
+Bakersfield PV 1,61117,SUN,SOLAR,5.3
+Balch 1,217,WAT,HYDRO,31
+Balch 2,218,WAT,HYDRO,97.2
+Barre Generating Station,56474,NG,GAS,49.8
+"Bayshore Solar A, LLC",60481,SUN,SOLAR,20
+"Bayshore Solar B, LLC",60474,SUN,SOLAR,20
+"Bayshore Solar C, LLC",60475,SUN,SOLAR,20
+Beacon BESS 1,61431,MWH,OTHF,20
+Beacon Solar Plant Site 2,59309,SUN,SOLAR,47.3
+Beacon Solar Plant Site 5,59308,SUN,SOLAR,37.8
+Bear Canyon Power Plant,10469,GEO,GEOTHERMAL,24.4
+Bear Creek,50156,WAT,HYDRO,3.2
+Bear Creek Solar,58508,SUN,SOLAR,1.5
+Bear Mountain Limited,10649,NG,GAS,46
+Bear Valley,457,WAT,HYDRO,1.4
+Bear Valley Power Plant,56346,NG,GAS,8.4
+Beardsley,414,WAT,HYDRO,10
+Belden,219,WAT,HYDRO,117.9
+Beringer,58890,SUN,SOLAR,1.2
+Berry Cogen,50170,NG,GAS,38.7
+Berry Cogen Tanne Hills 18,50622,NG,GAS,17.6
+Berry NMW Cogens,62176,NG,GAS,9.6
+Berry Placerita Cogen,52096,NG,GAS,42.8
+Bidwell Ditch Project,10880,WAT,HYDRO,1.8
+Big Creek 1,317,WAT,HYDRO,88.4
+Big Creek 2,318,WAT,HYDRO,66.6
+Big Creek 2A,322,WAT,HYDRO,110
+Big Creek 3,319,WAT,HYDRO,174.5
+Big Creek 4,320,WAT,HYDRO,100
+Big Creek 8,321,WAT,HYDRO,75
+Big Creek Water Works,10282,WAT,HYDRO,5
+Big Pine Creek,391,WAT,HYDRO,3.2
+Big Valley Power LLC,10288,WDS,BIOMASS,9.3
+Biola University,54296,NG,GAS,5.5
+Bishop Creek 2,323,WAT,HYDRO,7.3
+Bishop Creek 3,324,WAT,HYDRO,8.4
+Bishop Creek 4,325,WAT,HYDRO,8.2
+Bishop Creek 5,326,WAT,HYDRO,4.5
+Bishop Creek 6,327,WAT,HYDRO,1.6
+Black Butte,7229,WAT,HYDRO,6.1
+Black Rock I,57477,GEO,GEOTHERMAL,70
+Black Rock II,57478,GEO,GEOTHERMAL,70
+Black Rock III,57479,GEO,GEOTHERMAL,70
+Blacksand Generating Facility,56090,PRG,OTHF,8
+Blackwell Solar Park,59524,SUN,SOLAR,20
+Blue Lake Power LLC,10764,WDS,BIOMASS,13.8
+Blue Shld Of Cal- El Dorado Hlls Mtr B,62077,SUN,SOLAR,2.1
+Blythe Energy,55295,NG,GAS,591
+"Blythe Solar 110, LLC",60093,SUN,SOLAR,109.8
+"Blythe Solar II, LLC",60092,SUN,SOLAR,131.2
+"Blythe Solar III, LLC",60094,SUN,SOLAR,124.8
+"Blythe Solar IV, LLC",60095,SUN,SOLAR,124.8
+Bolthouse Farms Fuel Cell,61845,NG,GAS,5
+Bolthouse S&P and Rowen Farms Solar,56862,SUN,SOLAR,1.2
+Borden Solar Farm,59531,SUN,SOLAR,50
+Borel,328,WAT,HYDRO,12
+Borrego Springs Energy Storage,60565,MWH,OTHF,1.5
+Bottle Rock Power,902,GEO,GEOTHERMAL,55
+"Bowerman Power LFG, LLC",59461,LFG,BIOMASS,23.8
+Bowman,50546,WAT,HYDRO,3.6
+Box Canyon Dam,50179,WAT,HYDRO,5
+BP Carson Refinery,50540,OG,OFSL,13.5
+Brawley,383,DFO,OIL,23
+Brea Expansion Plant,58007,LFG,BIOMASS,35.7
+Britton Powerhouse,56820,WAT,HYDRO,2.8
+Broadridge Cogen,57580,NG,GAS,5
+Broadway (CA),420,NG,GAS,167
+Brookfield Tehachapi 1,57962,WND,WIND,102
+Buckeye Geothermal Power Plant,57180,GEO,GEOTHERMAL,56.9
+Bucks Creek,220,WAT,HYDRO,66
+Buena Vista Biomass Power,58472,WDS,BIOMASS,22.5
+Buena Vista Energy LLC,56446,WND,WIND,38
+Buidling L,60154,SUN,SOLAR,1
+Building F,60151,SUN,SOLAR,1.3
+Building G,60153,SUN,SOLAR,1.2
+Burney Creek,10706,WAT,HYDRO,3
+Burney Forest Products,10652,WDS,BIOMASS,31
+Butt Valley,221,WAT,HYDRO,40
+Butte College Main Campus Solar,57970,SUN,SOLAR,3.5
+C P Kelco San Diego Plant,52147,NG,GAS,28
+C&H Sugar Plant,58251,PUR,OTHF,8
+CA Dept of Public Health at Richmond,60428,SUN,SOLAR,2.2
+"CA Flats Solar 130, LLC",60033,SUN,SOLAR,130
+"CA Flats Solar 150, LLC",60034,SUN,SOLAR,150
+Cabazon Wind Partners,56011,WND,WIND,41
+Cabrillo Power I Encina Power Station,302,NG,GAS,999.6
+Calabasas Gas to Energy Facility,57163,LFG,BIOMASS,13.8
+California Institute of Technology,10262,NG,GAS,24.3
+California PV Energy at ISD WWTP,59283,SUN,SOLAR,1
+California State University San Bernardi,57544,NG,GAS,1.4
+California Valley Solar Ranch,57439,SUN,SOLAR,249.8
+Calipatria Solar Farm,59088,SUN,SOLAR,20
+Calistoga Power Plant,50066,GEO,GEOTHERMAL,176.4
+CalPeak Power - Border,55510,NG,GAS,60.5
+CalPeak Power - Enterprise,55513,NG,GAS,58.9
+CalPeak Power - Panoche,55508,NG,GAS,110.4
+CalPeak Power - Vaca Dixon,55499,NG,GAS,60.5
+"Calpine Gilroy Cogen, LP",10034,NG,GAS,130
+Calpine Sutter Energy Center,55112,NG,GAS,636
+CalRenew-1,56768,SUN,SOLAR,5
+Caltech Central,57460,OBG,BIOMASS,1.1
+Camanche,537,WAT,HYDRO,10.8
+Cameron Ridge LLC,10586,WND,WIND,59.6
+Camino,430,WAT,HYDRO,157.8
+Camp Far West,531,WAT,HYDRO,7.2
+Campo Verde Solar,58467,SUN,SOLAR,147.4
+Cantua Solar Station,57522,SUN,SOLAR,20
+Canyon Crest Academy,60568,MWH,OTHF,1
+Canyon Power Plant,57027,NG,GAS,200
+Caribou 1,222,WAT,HYDRO,73.8
+Caribou 2,223,WAT,HYDRO,117.9
+Carlsbad Energy Center,59002,NG,GAS,764.5
+Carson Cogeneration,7527,NG,GAS,125.5
+Carson Cogeneration Company,10169,NG,GAS,55.8
+"Cascade Energy Storage, LLC",61801,MWH,OTHF,25
+Cascade Solar,58590,SUN,SOLAR,18.5
+Castaic,392,WAT,HYDRO,"1,682.00"
+Castle Rock Vineyards,57870,SUN,SOLAR,1
+Castor Solar,60277,SUN,SOLAR,1.5
+"Catalina Solar 2, LLC",59334,SUN,SOLAR,18
+Catalina Solar LLC,57708,SUN,SOLAR,110
+CBS Studio Center,58440,NG,GAS,2.4
+CBS Television City,58253,SUN,SOLAR,1.6
+CCCSD Wastewater Treatment Plnt,57573,NG,GAS,3.5
+CDCR (CA) - Corcoran State Prison,61620,SUN,SOLAR,5
+CDCR (CA) - Pleasant Valley State Prison,59748,SUN,SOLAR,1.2
+CDCR (CA) - Solano State Prison,61619,SUN,SOLAR,1.1
+CDCR (CA) - Wasco State Prison,61621,SUN,SOLAR,1.5
+CE Leathers,10631,GEO,GEOTHERMAL,45.5
+CE Turbo LLC,55984,GEO,GEOTHERMAL,11.5
+CE&P Imperial Valley 1,60670,OTH,OTHF,50
+CED Avenal,60077,SUN,SOLAR,15.8
+CED Ducor 1,60078,SUN,SOLAR,20
+CED Ducor 2,60079,SUN,SOLAR,20
+CED Ducor 3,60080,SUN,SOLAR,15
+CED Ducor 4,60081,SUN,SOLAR,20
+Center Generating Station,56475,NG,GAS,59.8
+Centerville PH,224,WAT,HYDRO,6.4
+Centinela Solar Energy,58430,SUN,SOLAR,174.8
+Central Antelope Dry Ranch B LLC,60281,SUN,SOLAR,3
+Central Antelope Dry Ranch C,59963,SUN,SOLAR,20
+Central Utilities Plant LAX,10048,NG,GAS,8
+Central Utilities Plant LAX 2,58258,NG,GAS,9.2
+Central Valley Ag Power,58978,OBG,BIOMASS,1.5
+Century Generating Facility,55934,NG,GAS,44.8
+CES Placerita Power Plant,10677,NG,GAS,150
+CFW Solar X LLC - Vaughn,62378,SUN,SOLAR,1.6
+Chaffey College Rancho Cucamonga Campus,62150,SUN,SOLAR,4
+Chalk Cliff Limited,50003,NG,GAS,46
+Chalk Mountain Powerhouse,56821,WAT,HYDRO,2.2
+Chicago Park,412,WAT,HYDRO,44
+Childrens Hospital,10175,NG,GAS,12.8
+Chili Bar,225,WAT,HYDRO,7
+Chowchilla II,56185,NG,GAS,49.6
+Chuckawalla Solar,58506,SUN,SOLAR,4
+Chuckawalla Valley State Prison,57011,SUN,SOLAR,1
+Chula Vista Energy Center,55540,NG,GAS,44
+"CID Solar, LLC",59183,SUN,SOLAR,20
+Citizen B,59738,SUN,SOLAR,5
+Citizens Imperial Solar,62052,SUN,SOLAR,30
+City of Hayward WWTP,58525,OBG,BIOMASS,2.1
+City of Madera WWTP,57682,SUN,SOLAR,1.2
+City of Palo Alto,57714,NG,GAS,4.4
+City of Soledad Water Reclamation,59329,WND,WIND,1
+City of Tulare Water Facility,59395,SUN,SOLAR,3
+Civic Center,10623,NG,GAS,34.5
+Clear Lake Hydro Project,50128,WAT,HYDRO,2.5
+Clearwater Power Plant,56356,NG,GAS,49
+Cloverdale Solar Center,60813,SUN,SOLAR,1
+Cloverdale Solar I,58949,SUN,SOLAR,1.5
+Coachella,6060,NG,GAS,92.4
+Coal Canyon,226,WAT,HYDRO,1
+Coalinga 25D Cogen,52086,NG,GAS,13.6
+Coalinga 6C Cogen,52083,NG,GAS,6.8
+Coalinga Cogeneration Facility,50131,NG,GAS,38.4
+Coalinga Cogeneration Facility,50750,NG,GAS,6.8
+Coca Cola American Canyon,57807,NG,GAS,1.1
+Cold Canyon 1,58379,LFG,BIOMASS,1.5
+Coleman PH,227,WAT,HYDRO,12.1
+Colgate,454,WAT,HYDRO,315
+Colgreen North Shore Solar Farm,60825,SUN,SOLAR,74.8
+Collierville Powerhouse,54555,WAT,HYDRO,253
+Collins Pine Project,10661,WDS,BIOMASS,12
+Colon PV,59798,SUN,SOLAR,1.3
+"Colton Solar One, LLC",59597,SUN,SOLAR,2.5
+"Colton Solar Two, LLC",59598,SUN,SOLAR,1
+Columbia 3,58502,SUN,SOLAR,10
+"Columbia Solar Energy, LLC",59979,SUN,SOLAR,19.2
+Colusa Generating Station,56532,NG,GAS,712.4
+Combie South,846,WAT,HYDRO,1.5
+Commerce Refuse To Energy,10090,MSW,BIOMASS,12
+Community Solar 1,58545,SUN,SOLAR,5.7
+Con Dios Solar 11,59264,SUN,SOLAR,1.5
+Con Dios Solar 3,59263,SUN,SOLAR,1.5
+Control Gorge,393,WAT,HYDRO,37.5
+Coolwater,329,NG,GAS,727.3
+Copco 1,294,WAT,HYDRO,20
+Copco 2,295,WAT,HYDRO,27
+Coram Energy LLC,54299,WND,WIND,4.4
+Coram Energy LLC (ECT),54298,WND,WIND,10.8
+Coram Tehachapi,54750,WND,WIND,6.5
+Corcoran,60450,SUN,SOLAR,1.1
+Corcoran Solar,58374,SUN,SOLAR,20
+Corcoran Solar 2,59413,SUN,SOLAR,19.8
+Corcoran Solar 3,59900,SUN,SOLAR,20
+"CoreSite Real Estate 1656 McCarthy, L.P.",61475,DFO,OIL,5
+"CoreSite Real Estate 2901 Coronado, L.P.",61476,DFO,OIL,10
+"CoreSite Real Estate 2972 Stender, L.P.",61464,DFO,OIL,12
+"CoreSite Real Estate 3032 Coronado, L.P.",61482,DFO,OIL,30
+CoreSite Real Estate 55 S. Market Street,61474,DFO,OIL,8
+Corona,480,WAT,HYDRO,2.9
+"Corona Energy Partners, Ltd",10635,NG,GAS,47
+Coronal Lost Hills,59638,SUN,SOLAR,20
+Coronus Adelanto West 1,59536,SUN,SOLAR,1.5
+Coronus Adelanto West 2,59537,SUN,SOLAR,1.5
+Coso Energy Developers,10875,GEO,GEOTHERMAL,90
+Coso Finance Partners,10873,GEO,GEOTHERMAL,92.2
+Coso Power Developers,10874,GEO,GEOTHERMAL,90
+Cosumnes Power Plant,55970,OG,OFSL,530
+Cottonwood,394,WAT,HYDRO,1.6
+"Cottonwood Solar, LLC (City of Corcoran)",59087,SUN,SOLAR,12
+"Cottonwood Solar, LLC (Goose Lake)",59086,SUN,SOLAR,12
+"Cottonwood Solar, LLC Cottonwood Carport",59703,SUN,SOLAR,1
+County of San Diego SBRC,62242,SUN,SOLAR,1.3
+Covanta Delano Energy,10840,WDS,BIOMASS,57
+Covanta Mendota,10837,WDS,BIOMASS,28
+Covanta Stanislaus Energy,50632,MSW,BIOMASS,24
+Cove Hydroelectric,10707,WAT,HYDRO,5
+Cow Creek,229,WAT,HYDRO,1.4
+Coyote Creek,483,WAT,HYDRO,3.1
+Crafton Hills College Solar Farm,58170,SUN,SOLAR,1.3
+Crazy Horse Solar Project,61285,SUN,SOLAR,2
+Creed Energy Center,55625,NG,GAS,47
+Cresta,231,WAT,HYDRO,73.8
+Crockett Cogen Project,55084,NG,GAS,247.4
+Crown Cooling Facility,58527,SUN,SOLAR,1
+CSD 2 - Heritage High,59130,SUN,SOLAR,1.3
+CSD 2- Freedom High,59129,SUN,SOLAR,1.1
+CSU East Bay,57042,NG,GAS,1.4
+CSU Fresno Solar Project,56813,SUN,SOLAR,1
+CSU Long Beach Lots 7 & 14,62028,SUN,SOLAR,4.5
+CSU Northridge Plant,58422,NG,GAS,2.8
+CSUCI Site Authority,50851,NG,GAS,31.1
+CSUF Nutwood Solar,60979,SUN,SOLAR,1.9
+CSUF State College,60978,SUN,SOLAR,1
+CSUF Trigeneration,58169,NG,GAS,8.5
+CTV Power Purchase Contract Trust,54300,WND,WIND,4.6
+"Cuyama Solar, LLC",60043,SUN,SOLAR,40
+Cuyamaca Peak Energy,55512,NG,GAS,48.7
+Cymric 31X Cogen,52081,NG,GAS,6.8
+Cymric 36W Cogen,52104,NG,GAS,12.4
+Cymric 6Z Cogen,52082,NG,GAS,6.8
+De Sabla,232,WAT,HYDRO,18.4
+Deadwood Creek,7507,WAT,HYDRO,2
+Deer Creek PH,233,WAT,HYDRO,5.5
+Del Ranch Company,10632,GEO,GEOTHERMAL,45.5
+"Delano Energy Center, LLC",58122,NG,GAS,48.5
+Delano Land 1,61116,SUN,SOLAR,1
+"Delta Energy Center, LLC",55333,NG,GAS,943.5
+Depot Park Solar System,58119,SUN,SOLAR,3
+Dept of General Services -FTB,60861,SUN,SOLAR,2.7
+Desert Green Solar Farm LLC,57959,SUN,SOLAR,6.3
+"Desert Harvest, LLC",62177,SUN,SOLAR,150
+Desert Hot Springs Solar,58514,SUN,SOLAR,2.3
+Desert Quartzite,59871,SUN,SOLAR,580
+"Desert Sunlight 250, LLC",58542,SUN,SOLAR,249.7
+"Desert Sunlight 300, LLC",57993,SUN,SOLAR,313.7
+Desert View Power,10300,WDS,BIOMASS,55.5
+DESI-1 Battery Energy Storage Facility,60699,MWH,OTHF,2.4
+DESI-2 Battery Storage Facility,62460,MWH,OTHF,1.4
+Devil Canyon,436,WAT,HYDRO,276.2
+DGS Central Utility Plant,58593,DFO,OIL,3.9
+Diablo Canyon,6099,NUC,NUCLEAR,"2,323.00"
+Diablo Energy Storage,62175,MWH,OTHF,250
+Diablo Winds LLC,56271,WND,WIND,18
+Diamond Valley Lake,7942,WAT,HYDRO,39.6
+Diamond Valley Solar Project,59405,SUN,SOLAR,1.3
+Difwind Farms Ltd I,54681,WND,WIND,7.3
+Difwind Farms Ltd II,54682,WND,WIND,5.5
+Difwind Farms Ltd V,54685,WND,WIND,11.7
+Difwind Farms Ltd VI,54686,WND,WIND,27.1
+Difwind Farms Ltd VII,10815,WND,WIND,24
+Difwind Farms Ltd VIII,54687,WND,WIND,15
+Dillon Wind LLC,56791,WND,WIND,45
+Dinosaur Point,10005,WND,WIND,17.4
+Dinuba Energy,60100,WDS,BIOMASS,11.5
+Dinuba Wastewater Treatment Plant,57827,SUN,SOLAR,1
+Dion R Holm,380,WAT,HYDRO,156.8
+Disney Prospect,62571,NG,GAS,1
+Division,300,DFO,OIL,16
+Division 1,59094,SUN,SOLAR,1.5
+Division 2,59095,SUN,SOLAR,1
+Division 3,59096,SUN,SOLAR,1
+Dome Project,54449,NG,GAS,6
+Dominguez Plant,52064,WH,OTHF,5
+Don Lee BESS 1 LLC,62872,MWH,OTHF,6.5
+Don Pedro,439,WAT,HYDRO,170.8
+Donald Von Raesfeld,56026,NG,GAS,154
+Donnells,415,WAT,HYDRO,72
+Double C Generation Limited Partnership,50493,NG,GAS,49.8
+Drews Generating Facility,55935,NG,GAS,44.8
+Drop 1,585,WAT,HYDRO,5.7
+Drop 2 (CA),385,WAT,HYDRO,10
+Drop 3 (CA),386,WAT,HYDRO,9.2
+Drop 4,387,WAT,HYDRO,19.6
+Drop 5,314,WAT,HYDRO,4
+Drum 1,235,WAT,HYDRO,49.2
+Drum 2,236,WAT,HYDRO,53.1
+DSH (CA) - Coalinga State Hospital,59746,SUN,SOLAR,2
+DTE Stockton,54238,WDS,BIOMASS,54
+Dulles,60182,SUN,SOLAR,2
+Dutch Flat,237,WAT,HYDRO,22
+Dutch Flat 2,413,WAT,HYDRO,27.3
+Dutch Wind Energy,57301,WND,WIND,8
+Dyer Road,50818,WND,WIND,10.5
+Dynegy Oakland Power Plant,6211,JF,OIL,223.5
+E F Oxnard Energy Facility,10776,NG,GAS,48.5
+E&B Resources,60446,SUN,SOLAR,1
+EAFB - North Base,59132,SUN,SOLAR,1.1
+EAFB - South Base,59133,SUN,SOLAR,1.1
+East Highline,586,WAT,HYDRO,2.4
+East Portal Generator,50375,WAT,HYDRO,1.2
+East Winds Project,50820,WND,WIND,3
+EDF Renewable Windfarm V Inc,54453,WND,WIND,15.5
+Edom Hills Project 1 LLC,50553,WND,WIND,31
+EDPR CA Solar Park VI LLC (CA),62892,,,241
+Edward C Hyatt,437,WAT,HYDRO,644.1
+Edwards Air Force Base,58076,SUN,SOLAR,3
+El Cajon,301,NG,GAS,18
+El Cajon Energy Center,57001,NG,GAS,49.9
+El Cajon Energy Storage,60569,MWH,OTHF,7.5
+El Centro,389,NG,GAS,438.3
+El Dorado,238,WAT,HYDRO,20
+El Nido Facility,56707,WDS,BIOMASS,12.5
+El Segundo,330,NG,GAS,"1,533.80"
+El Segundo Cogen,10213,NG,GAS,182.8
+ELACC Photovoltaic Power Facility,56814,SUN,SOLAR,1
+Eland 1 Solar Farm,61168,,,350
+Eland 2 Solar Farm,61169,,,350
+Electra,239,WAT,HYDRO,102.5
+Elevation Solar C,59964,SUN,SOLAR,40
+Elk Hills Cogen,55950,NG,GAS,46.6
+Elk Hills Power,55400,NG,GAS,623
+Elkhorn Battery Energy Storage System,62564,MWH,OTHF,182.5
+Ellwood,8076,NG,GAS,58
+Elmore Company,10634,GEO,GEOTHERMAL,45.5
+Encina Water Pollution Control,10026,OBG,BIOMASS,4.7
+Energy Center,58168,NG,GAS,2.4
+Energy Nuevo Storage Farm,60646,MWH,OTHF,20
+Enerparc CA1 LLC,59122,SUN,SOLAR,1.5
+"Enerparc CA2, LLC",59978,SUN,SOLAR,1.5
+Equilon Los Angeles Refining,50530,PRG,OTHF,83
+Equinix Caspian Dr. Fuel Cell,62671,NG,GAS,4.8
+Equinix Douglas St. Fuel Cell,62704,NG,GAS,1.5
+Equinix Great Oaks Blvd. Fuel Cell,62702,NG,GAS,4.5
+Equinix Lundy Ave. Fuel Cell,62703,NG,GAS,3.8
+Equinix Maple Ave. Fuel Cell,62705,NG,GAS,2
+Equinix San Jose,60223,NG,GAS,1.1
+"Escondido Energy Center, LLC",55538,NG,GAS,93.9
+Escondido Energy Storage,60570,MWH,OTHF,30
+ESI Project,50819,WND,WIND,1.2
+Etiwanda,745,WAT,HYDRO,23.9
+Etiwanda Generating Station,331,NG,GAS,"1,050.10"
+Exchequer,409,WAT,HYDRO,94.5
+Exeter Solar,58306,SUN,SOLAR,3.5
+Expressway Solar A,58761,SUN,SOLAR,2
+Expressway Solar B,58762,SUN,SOLAR,2
+Expressway Solar C2,58763,SUN,SOLAR,1.5
+ExxonMobil Santa Ynez Facility,50270,NG,GAS,49.3
+FAA NorCal TRACON,58261,SUN,SOLAR,1
+Fairhaven Power,10052,WDS,BIOMASS,18.8
+Fall Creek,296,WAT,HYDRO,2.1
+Fallbrook Energy Storage,61365,MWH,OTHF,40
+Farad,6512,WAT,HYDRO,2.8
+Farmersville,59203,SUN,SOLAR,4.5
+Feather River Energy Center,55847,NG,GAS,47
+Five Points Solar Park,59523,SUN,SOLAR,60
+Five Points Solar Station,57498,SUN,SOLAR,15
+FLEX Gibraltar,62575,NG,GAS,1
+Folsom,441,WAT,HYDRO,198.6
+Folsom SP and CSP Sacramento,61698,SUN,SOLAR,1.3
+Fontana,332,WAT,HYDRO,3
+Foothill,396,WAT,HYDRO,10.1
+Foothill Feeder,6645,WAT,HYDRO,9
+Foothill Solar Project,59799,SUN,SOLAR,1.1
+Forbestown,417,WAT,HYDRO,41.9
+"Forever 21 Retail, Inc.",59651,SUN,SOLAR,1.6
+Forks of Butte Hydro Project,50350,WAT,HYDRO,14.5
+Foster Wheeler Martinez,10342,NG,GAS,113.5
+Foundation AB,57791,WND,WIND,1.5
+Foundation California Training Facility,61442,WND,WIND,1.8
+Foundation CDCR LAC,61066,WND,WIND,1.9
+Foundation Cemex BMQ,58102,WND,WIND,3
+Foundation Cemex Madison,58112,WND,WIND,1
+Foundation Cemex River Plant,58101,WND,WIND,3.2
+Foundation Dole Fresh Vegetables,62654,WND,WIND,5.6
+Foundation IE,57792,WND,WIND,1
+Foundation Mann Packing,61443,WND,WIND,1.8
+Foundation NWNA,58114,WND,WIND,5.1
+Foundation RRM,58113,WND,WIND,2
+Foundation SaIinas Valley State Prison,61444,WND,WIND,1.8
+Foundation Scheid Vineyards,61067,WND,WIND,1.9
+Foundation ST,57626,WND,WIND,2
+Foundation Superior Farms,58104,WND,WIND,1
+Foundation Wal-Mart Red Bluff,58105,WND,WIND,1
+Four Mile Hill,55845,GEO,GEOTHERMAL,49.9
+FPL Energy Montezuma Winds LLC,57201,WND,WIND,36.8
+Francisco St. Solar,62287,SUN,SOLAR,1.2
+Frankenheimer Power Plant,50219,WAT,HYDRO,5.3
+Franklin (CA),397,WAT,HYDRO,2
+Franklin Templeton San Mateo,57809,NG,GAS,1.1
+Freeway Springs,60183,SUN,SOLAR,2
+French Meadows,424,WAT,HYDRO,15.3
+"Fresno Cogeneration Partners, LP",10156,NG,GAS,104.9
+Fresno Solar,60083,SUN,SOLAR,3
+Friant Hydro Facility,50393,WAT,HYDRO,37.5
+Frito-Lay Cogen Plant,10110,NG,GAS,6
+Frontier HS Solar Project,62275,SUN,SOLAR,1.4
+Frontier Solar LLC,60039,SUN,SOLAR,20
+FRV SI Transport Solar LP,57506,SUN,SOLAR,1
+Fullerton Mill CHP,58083,NG,GAS,21
+G2 Energy Hay Rd,58320,LFG,BIOMASS,1.6
+G2 Energy Ostrom Road LLC,57133,LFG,BIOMASS,3.5
+Gap Pacific Distribution Center,56909,SUN,SOLAR,1.2
+Garnet Solar Generation Station I LLC,58528,SUN,SOLAR,4
+Garnet Wind Energy Center,57302,WND,WIND,6.5
+Gas Utilization Facility,50492,OBG,BIOMASS,6.1
+Gates Peaker,55875,NG,GAS,46.5
+Gates Solar Station,57892,SUN,SOLAR,20
+Gateway Generating Station,56476,NG,GAS,619.7
+Gavilan District College Solar Project,61993,SUN,SOLAR,1.9
+Gaviota Oil Plant,50623,NG,GAS,14
+GE - Tehachapi,57566,WND,WIND,8.7
+Genentech Vacaville Meter #1,60844,SUN,SOLAR,6.1
+Genentech-Oceanside,60231,SUN,SOLAR,6.5
+Genesis Solar Energy Project,57394,SUN,SOLAR,250
+Geo East Mesa II,54038,GEO,GEOTHERMAL,21.6
+Geo East Mesa III,10763,GEO,GEOTHERMAL,29.6
+Geothermal 1,7368,GEO,GEOTHERMAL,110
+Geothermal 2,7369,GEO,GEOTHERMAL,110
+Geysers Unit 5-20,286,GEO,GEOTHERMAL,"1,273.00"
+Gianera,7231,NG,GAS,64.6
+Giffen,57521,SUN,SOLAR,20
+Giffen Solar Park,59522,SUN,SOLAR,20
+"Gilroy Energy Center, LLC",55810,NG,GAS,135
+Glenarm,422,NG,GAS,265.6
+Glendale Battery Energy Storage System,60974,MWH,OTHF,2
+Goal Line,54749,NG,GAS,51.4
+Golden Acorn Casino,59328,WND,WIND,1
+"Golden Fields Solar I, LLC",60590,SUN,SOLAR,54
+Golden Hills North Wind Energy Center,61222,WND,WIND,46
+Golden Hills Wind,60049,WND,WIND,85.9
+Golden Springs Building C-1,57796,SUN,SOLAR,1.2
+Golden Springs Building D,57797,SUN,SOLAR,1.3
+Goose Haven Energy Center,55627,NG,GAS,47
+Gosselin Hydro Plant,10128,WAT,HYDRO,2
+GPS Cabazon Wind LLC,50552,WND,WIND,38.9
+Granger,60516,SUN,SOLAR,3
+Grapeland Generating Station,56472,NG,GAS,59.8
+Grassland 1&2 Solar Project,58217,SUN,SOLAR,2.5
+Grassland 3&4 Solar Project,58204,SUN,SOLAR,2.5
+Grayson Power Plant,377,NG,GAS,353.9
+"Great Valley Solar Portfolio Holdings, LLC",59940,SUN,SOLAR,305.3
+Green Acres Solar Facility 1,57849,SUN,SOLAR,3
+Green Acres Solar Facility 2,57850,SUN,SOLAR,1
+Green Beanworks B PV,61339,SUN,SOLAR,3
+Green Beanworks C PV,61215,SUN,SOLAR,3
+Green Beanworks D PV,61216,SUN,SOLAR,3
+Green Power I,55396,WND,WIND,16.5
+Greenleaf One,10350,NG,GAS,66
+Greg Avenue,6643,WAT,HYDRO,1
+Gridley Main,58370,SUN,SOLAR,1
+Gridley Main Two,58371,SUN,SOLAR,2.5
+Grizzly,7338,WAT,HYDRO,22
+Grossmont Hospital,10115,NG,GAS,6.1
+GRS American Canyon,10392,LFG,BIOMASS,1.6
+GRS Newby I,10388,LFG,BIOMASS,2
+Guadalupe Solar Farm,62690,SUN,SOLAR,1.7
+Guernsey Solar Station,57891,SUN,SOLAR,20
+H. Gonzales,56039,NG,GAS,11.8
+Haas,240,WAT,HYDRO,135
+Haiwee,398,WAT,HYDRO,5.6
+Halsey,241,WAT,HYDRO,13.6
+Hamilton Branch,242,WAT,HYDRO,5.3
+Hanford 1 and 2,59300,SUN,SOLAR,3
+Hanford Energy Park Peaker,55698,NG,GAS,92.2
+Harbor Cogen,50541,NG,GAS,107.4
+Harbor Generating Station,399,NG,GAS,595.1
+Hat Creek 1,243,WAT,HYDRO,10
+Hat Creek 2,244,WAT,HYDRO,10
+Hatchet Creek Project,10882,WAT,HYDRO,6.8
+Hatchet Ridge Wind Project,56654,WND,WIND,101.2
+Haynes Generating Station,400,NG,GAS,"2,885.10"
+Haypress,10253,WAT,HYDRO,10
+Hayworth Solar,59009,SUN,SOLAR,27
+Heber Geothermal,54689,GEO,GEOTHERMAL,81.5
+Heber Solar,58398,SUN,SOLAR,10.9
+HEBT Irvine 1,61722,MWH,OTHF,5.5
+HEBT Irvine 2,61723,MWH,OTHF,5.8
+HEBT WLA 1,61721,MWH,OTHF,27.8
+Hecate Energy Beacon Solar 1,59315,SUN,SOLAR,56
+Hecate Energy Beacon Solar 3,59316,SUN,SOLAR,56
+Hecate Energy Beacon Solar 4,59317,SUN,SOLAR,50
+Hecate Energy Johanna Facility,62889,MWH,OTHF,15
+Heliocentric,57831,SUN,SOLAR,1.5
+Hellyer Solar Farm,62689,SUN,SOLAR,2.2
+Helms Energy Center,56955,NG,GAS,48
+Helms Pumped Storage,6100,WAT,HYDRO,"1,053.00"
+Helzel & Schwarzhoff 86,56275,WND,WIND,2.4
+Helzel & Schwarzhoff 88 Wind Farm,52165,WND,WIND,1.8
+Henrietta D Energy Storage LLC,60641,MWH,OTHF,10
+Henrietta Peaker Plant,55807,NG,GAS,98
+Henrietta Solar Project,58975,SUN,SOLAR,102
+Hesperia,59182,SUN,SOLAR,1.5
+Hickman,162,WAT,HYDRO,1
+High Desert Power Project,55518,NG,GAS,852
+High Sierra Cogeneration Plant,57977,NG,GAS,6
+High Sierra Limited,50495,NG,GAS,49.8
+High Winds LLC,56075,WND,WIND,162
+HL Power,10777,WDS,BIOMASS,36.2
+HL Solar,62655,SUN,SOLAR,7.6
+Hoag Hospital Cogen Plant,58223,NG,GAS,4.5
+Hollister Solar LLC,59268,SUN,SOLAR,1.5
+Honda Torrance,58300,NG,GAS,1.1
+Horn,58452,SUN,SOLAR,1.5
+Houweling Nurseries,58432,NG,GAS,13.2
+Hudson Ranch Power II LLC,58211,GEO,GEOTHERMAL,55
+Humboldt Bay,246,NG,GAS,269.4
+Humboldt Sawmill Company,50049,WDS,BIOMASS,32.5
+Hunters Point,247,,,427.4
+Huron Solar Station,57523,SUN,SOLAR,20
+Hybrid Holdings 1 Capistrano,62515,MWH,OTHF,4
+Hyperion Treatment Plant CHP Plant,60960,OBG,BIOMASS,33
+IKEA Tejon 345,58028,SUN,SOLAR,1.5
+Imperial Solar Energy Center South,57490,SUN,SOLAR,128.9
+Imperial Solar Energy Center West,57491,SUN,SOLAR,148.7
+"Imperial Valley Solar Co (IVSC) 2, LLC",59657,SUN,SOLAR,20
+Imperial Valley Solar Company 1 LLC,58062,SUN,SOLAR,23
+"Imperial Valley Solar, LLC",56917,SUN,SOLAR,599.9
+Improvement Dst No. 4,57895,SUN,SOLAR,1.1
+Indian Valley Dam Hydro Project,50129,WAT,HYDRO,2.9
+Indigo Generation Facility,55541,NG,GAS,149.7
+Industry MetroLink PV 1,57860,SUN,SOLAR,1.5
+Industry Solar Power Generation Station 1 LLC,58609,SUN,SOLAR,1.5
+Ingredion Stockton,52115,NG,GAS,10
+Inland Empire Energy Center,55853,NG,GAS,819
+Inskip,248,WAT,HYDRO,7.6
+Intel Folsom,58086,SUN,SOLAR,1
+Intel Folsom Phase 2,58954,SUN,SOLAR,1
+Intel Folsom Phase 3,61152,SUN,SOLAR,5.2
+Intel Santa Clara,60224,NG,GAS,1.1
+Iron Gate,297,WAT,HYDRO,18
+Ironwood Solar LLC,58513,SUN,SOLAR,4
+Isabella Hydro Project,10139,WAT,HYDRO,11.8
+ISH Solar Hospital Downey,57841,SUN,SOLAR,1.1
+ISH Solar Hospital SDMC,57840,SUN,SOLAR,1.1
+Ivanhoe Solar,58307,SUN,SOLAR,3.5
+Ivanpah 1,57074,SUN,SOLAR,133
+Ivanpah 2,57073,SUN,SOLAR,133.4
+Ivanpah 3,57075,SUN,SOLAR,133.4
+IVC Solar,61692,SUN,SOLAR,3
+J S Eastwood,104,WAT,HYDRO,199.8
+J&A-Santa Maria II LLC,57101,LFG,BIOMASS,1.4
+J.R. Simplot Company,58216,WH,OTHF,4
+Jacumba Solar Farm,60947,SUN,SOLAR,20
+James B Black,249,WAT,HYDRO,168.6
+Jaybird,431,WAT,HYDRO,161.6
+John L. Featherstone Plant,57475,GEO,GEOTHERMAL,55
+Jones Fork,534,WAT,HYDRO,10
+Judge F Carr,442,WAT,HYDRO,154.4
+Juniper Networks Sunnyvale,58301,NG,GAS,1.1
+Kaiser Deer Valley Rd. Fuel Cell,62699,NG,GAS,1.4
+Kaiser Downey,58128,LFG,BIOMASS,1
+Kaiser East La Palma Ave. Fuel Cell,62698,NG,GAS,1.5
+Kaiser Napa Valley Corporate Dr Fuel Cell,62701,NG,GAS,4.8
+Kaiser Ontario,58132,OBG,BIOMASS,1
+Kaiser Owens Dr. Fuel Cell,62700,NG,GAS,1
+Kanaka,54653,WAT,HYDRO,1.1
+Karen Avenue Wind Farm,10718,WND,WIND,11.7
+Kaweah 1,337,WAT,HYDRO,2.3
+Kaweah 2,336,WAT,HYDRO,1.8
+Kaweah 3,338,WAT,HYDRO,4.8
+Kaweah Delta District Hospital,10042,NG,GAS,5.2
+Kearny,303,NG,GAS,161.5
+Kearny Mesa Storage LLC,62441,MWH,OTHF,1
+Kekawaka Power House,54654,WAT,HYDRO,4.9
+Kellogg's - San Jose,59280,NG,GAS,1.1
+Kelly Ridge,418,WAT,HYDRO,10
+Kerckhoff,250,WAT,HYDRO,33.9
+Kerckhoff 2,682,WAT,HYDRO,139.5
+Kern Canyon,7911,WAT,HYDRO,9.5
+Kern Front Limited,50494,NG,GAS,49.8
+Kern Oil & Refining Co,58100,NG,GAS,4.5
+Kern River 1,340,WAT,HYDRO,26.4
+Kern River 3,339,WAT,HYDRO,40.3
+Kern River Cogeneration,10496,NG,GAS,300
+Kern River Eastridge Cogen,52107,NG,GAS,48.8
+Kern River Fee A Cogen,52094,NG,GAS,7.4
+Kern River Fee B Cogen,52092,NG,GAS,3.7
+Kern River Fee C Cogen,52095,NG,GAS,7.9
+Keswick,443,WAT,HYDRO,117
+Kettering Solar 1,59098,SUN,SOLAR,1
+Kettering Solar 2,59099,SUN,SOLAR,1
+Kettleman Solar,57921,SUN,SOLAR,22
+Kettleman Solar -Centaurus,59633,SUN,SOLAR,20
+Kettleman Solar Project,58510,SUN,SOLAR,1
+Kiefer Landfill,55766,LFG,BIOMASS,9
+Kilarc,253,WAT,HYDRO,3
+Kilroy Solar,61628,SUN,SOLAR,1.1
+King City Peaking,55811,NG,GAS,47.3
+King City Power Plant,10294,NG,GAS,133.2
+Kingbird A Solar LLC,59868,SUN,SOLAR,20
+"Kingbird B Solar, LLC",60091,SUN,SOLAR,20
+Kings Beach,6518,DFO,OIL,31.2
+Kings River PH,254,WAT,HYDRO,48.6
+Kingsburg Cogen Facility,10405,NG,GAS,36.2
+Kingsburg Solar,58304,SUN,SOLAR,3.7
+"Kingston Energy Storage, LLC",61802,MWH,OTHF,50
+Kohls San Bernardino Solar Facility,57009,SUN,SOLAR,1
+Kumeyaay Wind,56295,WND,WIND,50
+Kyocera America Project,10720,NG,GAS,3.8
+L-8 Solar Project,57836,SUN,SOLAR,1.5
+La Grange,440,WAT,HYDRO,4.5
+La Joya Del Sol,58118,SUN,SOLAR,1.5
+La Paloma Generating Plant,55151,NG,GAS,"1,200.00"
+Laguna Water Reclamation Facility,58960,OBG,BIOMASS,4.4
+Lake,7987,NG,GAS,60.5
+Lake Hodges Hydroelectric Facility,57729,WAT,HYDRO,42
+Lake Mathews,6644,WAT,HYDRO,4.9
+Lake Mendocino,7489,WAT,HYDRO,3.5
+Lake Perris Solar,60973,SUN,SOLAR,1.5
+Lambie Energy Center,55626,NG,GAS,47
+Lancaster,62056,SUN,SOLAR,3
+Lancaster Baptist Church,58634,SUN,SOLAR,1
+Lancaster Dry Farm Ranch B,58750,SUN,SOLAR,5
+Lancaster Little Rock,59262,SUN,SOLAR,5
+Lancaster Solar 1,59167,SUN,SOLAR,1.5
+Lancaster Solar 2,59169,SUN,SOLAR,1.5
+Lancaster WAD B,59739,SUN,SOLAR,5
+Larkspur Energy Faciity,55542,NG,GAS,99.8
+Las Virgenes Municipal Water District,58963,SUN,SOLAR,1
+LATTC South Campus Solar,57312,SUN,SOLAR,1.1
+Lavio Solar,61792,SUN,SOLAR,1
+Lemoore 1,60142,SUN,SOLAR,1.5
+Liberty HS Solar Project,62274,SUN,SOLAR,1.5
+Life Technologies - Pleasanton,59279,NG,GAS,1.1
+Life Technologies Carlsbad,58302,NG,GAS,1.1
+Lime Saddle,255,WAT,HYDRO,2
+Lincoln Landfill,57988,LFG,BIOMASS,4.8
+Lindberg FIeld Solar,60060,SUN,SOLAR,3.2
+Lindberg Field Solar 2,60984,SUN,SOLAR,1.9
+Linde Wilmington,50148,NG,GAS,31
+Lindsay Solar,58308,SUN,SOLAR,4
+Little Bear 3,62463,SUN,SOLAR,20
+Little Bear 4,62464,SUN,SOLAR,50
+Little Bear 5,62465,SUN,SOLAR,50
+"Little Bear Solar 1, LLC",59870,SUN,SOLAR,40
+"Little Bear Solar 2, LLC",59885,SUN,SOLAR,20
+Little Rock Pham Solar,60026,SUN,SOLAR,3
+Live Oak Limited,54768,NG,GAS,46
+Lockheed Martin Sunnyvale,57808,NG,GAS,1.1
+Lodi,7451,NG,GAS,27.4
+Lodi Energy Center,57978,NG,GAS,288.9
+Loma Linda University Cogen,10206,NG,GAS,14.3
+Loma Rica Hydroelectric Powerhouse,60988,WAT,HYDRO,1.4
+Lone Valley Solar Park I LLC,58417,SUN,SOLAR,10
+Lone Valley Solar Park II LLC,59237,SUN,SOLAR,20
+Long Beach Generating Station,341,NG,GAS,587.4
+"Longboat Solar, LLC",60485,SUN,SOLAR,20
+Loon Lake,432,WAT,HYDRO,74.1
+Lopez Canyon,57730,LFG,BIOMASS,1.5
+Los Angeles Harbor College,57314,SUN,SOLAR,1.2
+Los Angeles Refinery Wilmington,54451,OG,OFSL,68.5
+Los Esteros Critical Energy Facility,55748,NG,GAS,306.1
+"Los Medanos Energy Center, LLC",55217,NG,GAS,678.3
+Lost Creek I,10708,WAT,HYDRO,1.1
+Lost Hills Cogeneration Plant,52077,NG,GAS,10.5
+Lost Hills/Blackwell,58711,SUN,SOLAR,32
+Lower Tule River,365,WAT,HYDRO,2.6
+Lundy,342,WAT,HYDRO,3
+Ma,58451,SUN,SOLAR,1.5
+Maclay Solar Project,57308,SUN,SOLAR,2.2
+"Madelyn Solar, LLC",59409,SUN,SOLAR,1
+Madera 1 PV,61421,SUN,SOLAR,1.5
+Madera Community Hospital,58522,SUN,SOLAR,1
+Magnolia,375,NG,GAS,87.6
+Magnolia,56046,NG,GAS,387.6
+Malaga Power,56239,NG,GAS,121
+Malburg Generating Station,56041,NG,GAS,130
+Malech Solar Farm,62688,SUN,SOLAR,3.1
+Mammoth Pacific I,10480,GEO,GEOTHERMAL,10
+Mammoth Pacific II,10481,GEO,GEOTHERMAL,30
+Mammoth Pool,344,WAT,HYDRO,190
+Mandalay Generating Station,345,NG,GAS,574
+Manteca Land PV,61115,SUN,SOLAR,1
+Manzana Wind LLC,57484,WND,WIND,189
+Margarita Energy Center,56676,NG,GAS,48.2
+Mariani Packing Vacaville Solar,57005,SUN,SOLAR,1
+"Maricopa West Solar PV, LLC",59607,SUN,SOLAR,20
+Marin Clean Energy Solar One,61013,SUN,SOLAR,10.5
+Marina Landfill Gas,10748,LFG,BIOMASS,9
+Mariposa Energy Project,57483,NG,GAS,199.6
+Marsh Landing Generating Station,57267,NG,GAS,828
+Martinez Refining,54912,NG,GAS,100
+Martinez Sulfuric Acid Regeneration Plt,52063,WH,OTHF,4
+"Maverick Solar, LLC",62178,SUN,SOLAR,225
+Maxim,59802,NG,GAS,1.1
+MCAGCC Cogen Plant,58914,NG,GAS,16.4
+McClellan (CA),535,NG,GAS,77
+McClure,151,DFO,OIL,142.4
+McCoy Solar Energy Project,58462,SUN,SOLAR,270.6
+McGrath Generating Station,56471,NG,GAS,49.8
+McKittrick Cogen,52076,NG,GAS,21.6
+McKittrick Limited,50612,NG,GAS,46
+McSwain,410,WAT,HYDRO,9
+Merced 1 PV,61420,SUN,SOLAR,3
+Merced Falls,258,WAT,HYDRO,3.4
+Merced Solar LLC,59265,SUN,SOLAR,1.5
+Meridian Vineyards,57982,SUN,SOLAR,1.1
+Mesa Wind Power Corp,50535,WND,WIND,29.9
+Mesquite Lake Energy Park Plant 2,50363,WDS,BIOMASS,21
+Mesquite Lake Water & Power Plant 1,57154,WDS,BIOMASS,18.1
+Metcalf Energy Center,55393,NG,GAS,635
+Metro Support Services Center Solar,57313,SUN,SOLAR,1.2
+Micro Santa Clara,62459,NG,GAS,2
+Middle Fork,425,WAT,HYDRO,122.4
+Middle Gorge,401,WAT,HYDRO,37.5
+Mid-Set Cogeneration,10501,NG,GAS,39.1
+Midway Peaking,56639,NG,GAS,139.8
+Midway Solar Farm 1,60336,SUN,SOLAR,50
+Midway Solar Farm II,60237,SUN,SOLAR,30
+Midway Solar Farm III,60315,SUN,SOLAR,20
+Midway Sunset Cogen,52169,NG,GAS,234
+Mill Creek 3,7147,WAT,HYDRO,3
+MillerCoors Irwindale Brewery,58056,NG,GAS,13.9
+Millikan BESS,60760,MWH,OTHF,2
+Mira Loma,58698,SUN,SOLAR,3
+Mira Loma Energy Storage Facility,60661,MWH,OTHF,20
+Mira Loma Generating Station,56473,NG,GAS,49.8
+Miramar,305,NG,GAS,49
+Miramar Energy Facility,56232,NG,GAS,106
+Mission College Blvd. Fuel Cell,62697,NG,GAS,5
+Mission Rock Energy Center,60650,,,300
+Mission Solar LLC,59267,SUN,SOLAR,1.5
+"Mitchell Solar, LLC",59411,SUN,SOLAR,1.5
+MM Lopez Energy,55161,LFG,BIOMASS,6
+MM San Diego-Miramar,55094,LFG,BIOMASS,6.4
+MM San Diego-North City,55602,LFG,BIOMASS,3.6
+MM Tulare Energy,55160,LFG,BIOMASS,1.8
+MM West Covina,54015,LFG,BIOMASS,11.7
+MM Yolo Power,54567,LFG,BIOMASS,2.8
+Mobile GT,6212,DFO,OIL,39.9
+Moccasin,381,WAT,HYDRO,100
+Moccasin Low Head Hydro Project,751,WAT,HYDRO,2.9
+Mojave 16,50821,WND,WIND,48
+Mojave 18,50823,WND,WIND,40.5
+Mojave 3,52143,WND,WIND,23.5
+Mojave 4,52142,WND,WIND,29
+Mojave 5,52144,WND,WIND,22.5
+Mojave Siphon,7072,WAT,HYDRO,32.7
+Mojave Solar Project,57331,SUN,SOLAR,280
+Monterey One Water,54951,OBG,BIOMASS,1.8
+Monterey Regional Water Pollution Contro,58633,SUN,SOLAR,1
+Montezuma Wind II,57701,WND,WIND,78.2
+Montgomery Creek Hydro,55009,WAT,HYDRO,2.6
+Monticello Dam,7646,WAT,HYDRO,11.5
+Morelos del Sol,60007,SUN,SOLAR,15
+Morgan Lancaster 1,59942,SUN,SOLAR,1.5
+Moss Landing,260,NG,GAS,"3,102.00"
+Mount Signal Solar 2,61353,SUN,SOLAR,153.5
+Mount Signal Solar Farm V,61202,SUN,SOLAR,252.3
+Mountain View I&2,55719,WND,WIND,66.6
+Mountain View III,56112,WND,WIND,22.4
+Mountain View IV,57459,WND,WIND,49
+Mountainview Generating Station,358,NG,GAS,"1,167.40"
+Mt Poso Cogeneration,54626,WDS,BIOMASS,62
+Muck Valley Hydroelectric,10458,WAT,HYDRO,29.9
+Municipal Cogen Plant,50674,NG,GAS,2.6
+Munro Valley Solar,60412,SUN,SOLAR,4
+Murphys,261,WAT,HYDRO,3.6
+Mustang Hills LLC,57833,WND,WIND,150
+Mustang Two,62015,SUN,SOLAR,150
+Nacimiento Hydro Project,50352,WAT,HYDRO,4.4
+Narrows 2,455,WAT,HYDRO,46.7
+Narrows PH,262,WAT,HYDRO,10.2
+National Raisin,61894,SUN,SOLAR,2.9
+Navajo Solar Power Generation Station 1 LLC,58610,SUN,SOLAR,1.5
+Naval Air Weapons Station China Lake,57764,SUN,SOLAR,11.1
+Naval Hospital Medical Center,50963,NG,GAS,7.7
+Naval Station,306,NG,GAS,26
+Naval Station Energy Facility,10811,NG,GAS,55.2
+Naval Training Center,6707,NG,GAS,16
+NCPA Combustion Turbine Project #2,7449,NG,GAS,50
+Neenach Solar Center,60826,SUN,SOLAR,1.5
+Nelson Creek,50223,WAT,HYDRO,1.2
+New Hogan Power Plant,50755,WAT,HYDRO,3
+New Melones,6158,WAT,HYDRO,300
+Newberry Solar 1 LLC,58226,SUN,SOLAR,1.5
+Newcastle,632,WAT,HYDRO,12.7
+New-Indy Ontario Mill,10427,NG,GAS,67
+NextEra Westside PV,60981,SUN,SOLAR,20
+Nickel 1 Solar Facility,58034,SUN,SOLAR,1.5
+Nicolis Solar PV Plant,59600,SUN,SOLAR,20
+Niland Gas Turbine Plant,56569,NG,GAS,121
+Nimbus,444,WAT,HYDRO,13.4
+Nordhoff Place,59652,SUN,SOLAR,1.2
+North Bay Solar 1,58748,SUN,SOLAR,1
+North Brawley Geothermal Plant,56832,GEO,GEOTHERMAL,64
+North City Cogeneration Facility,60571,LFG,BIOMASS,1.6
+North Fork Community Power,60192,OBG,BIOMASS,2
+North Hollywood,57854,WAT,HYDRO,9
+North Island,307,,,37
+North Island Energy Facility,10812,NG,GAS,40.3
+North Lancaster Ranch,59962,SUN,SOLAR,20
+North Midway Cogen,52078,NG,GAS,10.5
+North Palm Springs 1A,57743,SUN,SOLAR,2.5
+North Palm Springs 4A,57722,SUN,SOLAR,4
+North Rosamond Solar LLC,59879,SUN,SOLAR,151
+North Sky River Energy LLC,58154,WND,WIND,162
+North Star Solar,58713,SUN,SOLAR,62.5
+Nove Power Plant,50831,LFG,BIOMASS,3
+NRG Energy San Diego,54337,NG,GAS,1.6
+NRG Solar Blythe LLC,56939,SUN,SOLAR,21
+NRG Solar Borrego I,57455,SUN,SOLAR,26
+NRG Solar Oasis LLC,59528,SUN,SOLAR,20
+NTC/MCRD Energy Facility,10810,NG,GAS,25.6
+Nunn,58448,SUN,SOLAR,1
+Oak Creek Energy Systems I,50754,WND,WIND,34.5
+Oak Flat,626,WAT,HYDRO,1.4
+Oakley Generating Station,57552,NG,GAS,672.3
+Oakley Solar Project,58376,SUN,SOLAR,1.5
+Oasis Wind,56302,WND,WIND,59
+Occidental College Solar Project,57311,SUN,SOLAR,1
+Ocotillo Express LLC,57514,WND,WIND,265.4
+Olinda Landfill Gas Recovery Plant,10648,LFG,BIOMASS,5.4
+Olive,6013,NG,GAS,171.9
+Olive View Medical Center,10884,NG,GAS,5.6
+OLS Energy Chino,50850,NG,GAS,30.8
+Olsen,50180,WAT,HYDRO,5
+Oltmans SCE at Champagne,58581,SUN,SOLAR,1
+Oltmans SCE at Jurupa,58582,SUN,SOLAR,1.5
+One Market Plaza,58607,NG,GAS,1.5
+One Ten Partners PV,61419,SUN,SOLAR,2
+ONeill,446,WAT,HYDRO,25.2
+Orange County Energy Storage 2,62497,MWH,OTHF,9
+Orange County Energy Storage 3,62499,MWH,OTHF,6
+Orange Grove Project,56914,NG,GAS,118
+Ord Mountain Solar,61372,SUN,SOLAR,60
+Orion Solar I,58718,SUN,SOLAR,12
+Orion Solar II,58721,SUN,SOLAR,8
+Ormesa I,50766,GEO,GEOTHERMAL,55.2
+Ormesa IE,50764,GEO,GEOTHERMAL,14.4
+Ormesa IH,50762,GEO,GEOTHERMAL,14.4
+Ormesa II,54724,GEO,GEOTHERMAL,48
+Ormond Beach Generating Station,350,NG,GAS,"1,612.00"
+ORNI 34 LLC,62801,MWH,OTHF,10
+Oro Loma,59915,SUN,SOLAR,20
+Oroville Cogeneration LP,54477,NG,GAS,7.7
+Ortega Highway Energy Storage,60567,MWH,OTHF,2
+"Otay Landfill Gas, LLC",52204,LFG,BIOMASS,10.5
+"Otay Mesa Energy Center, LLC",55345,NG,GAS,688.5
+Otoe Solar Power Generation Station 1 LL,58612,SUN,SOLAR,1.5
+Owens Valley Solar Project 11,60953,SUN,SOLAR,1
+Oxbow (CA),426,WAT,HYDRO,6.1
+Oxnard,50464,NG,GAS,68.7
+Oxnard Paper Mill,57585,NG,GAS,29
+Oxnard Wastewater Treatment Plant,50224,OBG,BIOMASS,1.5
+P Plant,59456,NG,GAS,9.2
+Pacific Cruise Ship Terminals Berth 93,57309,SUN,SOLAR,1.1
+Pacific Ethanol Madera Solar Array,61989,SUN,SOLAR,4.3
+Pacific Ethanol Stockton Cogen Plant,61027,NG,GAS,4.8
+Pacific Rim Dairy Digester,59447,OBG,BIOMASS,1
+Pacific Union College BESS,61795,MWH,OTHF,1
+Pacific Wind LLC,57757,WND,WIND,151.7
+Pacific-Ultrapower Chinese Station,50560,WDS,BIOMASS,25
+Painted Hills Wind Park,50533,WND,WIND,19
+Painter Energy Storage,62729,MWH,OTHF,10
+Pala Energy Storage Yard,60566,MWH,OTHF,1.5
+Palo Verde College,57773,SUN,SOLAR,1.2
+Palomar Energy Center,55985,NG,GAS,559
+Palos Verdes Gas to Energy,10473,LFG,BIOMASS,13
+Panoche Energy Center,56803,NG,GAS,432
+Panoche Valley Solar Farm,57340,SUN,SOLAR,140
+Paramount Refinery,58058,NG,GAS,6.7
+Pardee,376,WAT,HYDRO,23.6
+Park Meridian #1,59539,SUN,SOLAR,1.5
+Parker,428,WAT,HYDRO,2.7
+Parker Dam,447,WAT,HYDRO,120
+Parnassus Central Utility Plant,58198,NG,GAS,13.4
+Pastoria Energy Facility,55656,NG,GAS,779
+Patterson Pass,56213,WND,WIND,21.9
+PE Berkeley,50849,NG,GAS,28.5
+Peak Valley Solar Farm,61167,SUN,SOLAR,200
+Pebbly Beach,6704,DFO,OIL,12.9
+Perris,481,WAT,HYDRO,7.9
+PFMG Solar Grossmont Helix LLC,62611,SUN,SOLAR,1.2
+Phillips 66 Carbon Plant,50388,PC,OIL,27.3
+Phillips 66 Rodeo Refinery,50119,OG,OFSL,54.9
+Phoenix,264,WAT,HYDRO,1.6
+Phoenix Wind Power LLC,55339,WND,WIND,2.1
+Pierce College,58248,SUN,SOLAR,1.9
+Pilot Knob,388,WAT,HYDRO,33
+Pine Flat,7907,WAT,HYDRO,165
+Pine Tree Solar Project,57306,SUN,SOLAR,8.5
+Pine Tree Wind Power Project,56433,WND,WIND,135
+Pinyon Pine I,57834,WND,WIND,168
+Pinyon Pine II,57837,WND,WIND,132
+Pio Pico Energy Center LLC,57555,NG,GAS,395.4
+Pit 1,265,WAT,HYDRO,69.2
+Pit 3,266,WAT,HYDRO,80.1
+Pit 4,267,WAT,HYDRO,103.4
+Pit 5,268,WAT,HYDRO,141.6
+Pit 6,269,WAT,HYDRO,79.2
+Pit 7,270,WAT,HYDRO,109.8
+Pitchess Cogen Station,10478,NG,GAS,28.3
+Pixar - Emeryville,59803,NG,GAS,1.1
+Plant No 1 Orange County,50696,OBG,BIOMASS,7.5
+Plant No 2 Orange County,52099,OBG,BIOMASS,16
+Pleasant Valley Hydro,402,WAT,HYDRO,3.2
+Ples I,10479,GEO,GEOTHERMAL,15
+Poe,272,WAT,HYDRO,142.8
+"Pomerado Energy Storage, LLC",61390,MWH,OTHF,6
+Ponderosa Bailey Creek,10709,WAT,HYDRO,1.1
+Poole,353,WAT,HYDRO,11.3
+Port of LA Solar FiT Project,61319,SUN,SOLAR,1.1
+Portal,354,WAT,HYDRO,10.8
+"Portal Ridge Solar A, LLC",60309,SUN,SOLAR,18.5
+"Portal Ridge Solar B, LLC",60310,SUN,SOLAR,20
+"Portal Ridge Solar C, LLC",60311,SUN,SOLAR,11.4
+Porterville 6 and 7,59219,SUN,SOLAR,3
+Porterville Solar,58309,SUN,SOLAR,3.5
+Portola,6524,DFO,OIL,6
+Potrero Hills Energy Producers,59952,LFG,BIOMASS,8
+Potter Valley,274,WAT,HYDRO,9.4
+Power Generation Station (PGS) 2,57696,OBG,BIOMASS,4.6
+Powhatan Solar Power Generation Station 1 LLC,58611,SUN,SOLAR,1.5
+PRC-Desoto Intl/PPG Aerospace,58085,DFO,OIL,1.5
+Preferred Freezer San Leandro,62578,SUN,SOLAR,2
+Prima Plant,55601,LFG,BIOMASS,6
+Puente Hills Energy Recovery,10472,LFG,BIOMASS,62.7
+Pumpjack Solar I,59322,SUN,SOLAR,20
+Putah Creek Solar Farm,59550,SUN,SOLAR,2
+"PVN Milliken, LLC",60790,SUN,SOLAR,3
+Q Plant,59457,NG,GAS,4.6
+Quinto Solar PV Project,59339,SUN,SOLAR,108
+R C Kirkwood,382,WAT,HYDRO,115.5
+R E Badger Filtration Plant,50147,WAT,HYDRO,1.4
+Radiance Solar 4,58354,SUN,SOLAR,1.5
+Radiance Solar 5,58355,SUN,SOLAR,1.5
+Ralston,427,WAT,HYDRO,79.2
+Ramona 1,58909,SUN,SOLAR,2
+Ramona 2,58911,SUN,SOLAR,5
+Ramona Solar Energy,60995,SUN,SOLAR,4.3
+Rancho Cucamonga Dist #1,59540,SUN,SOLAR,1.8
+Rancho Penasquitos,56615,WAT,HYDRO,4.6
+Rancho Seco Solar,529,SUN,SOLAR,2
+"Rancho Seco Solar, LLC",60226,SUN,SOLAR,10.8
+Ratkovich Alhambra,62458,NG,GAS,1
+RCWD PV Project,60426,SUN,SOLAR,5
+RCWMD Badlands Landfill Gas Project,55820,LFG,BIOMASS,2.5
+"RE Adams East, LLC",58984,SUN,SOLAR,19
+RE Astoria,59976,SUN,SOLAR,100
+RE Astoria 2,59977,SUN,SOLAR,75
+RE Barren Ridge 1,60389,SUN,SOLAR,60
+RE Bruceville 1,57783,SUN,SOLAR,5
+RE Bruceville 2,57784,SUN,SOLAR,5
+RE Bruceville 3,57785,SUN,SOLAR,5
+RE Camelot LLC,58983,SUN,SOLAR,45
+"RE Columbia Two, LLC",58990,SUN,SOLAR,15
+RE Dillard 1,57777,SUN,SOLAR,3
+RE Dillard 2,57779,SUN,SOLAR,3
+RE Dillard 3,57781,SUN,SOLAR,3
+RE Dillard 4,57806,SUN,SOLAR,0.4
+RE Garland,60233,SUN,SOLAR,185
+RE Garland A,60386,SUN,SOLAR,20
+RE Gaskell West 1 LLC,61445,SUN,SOLAR,20
+RE Gaskell West 2 LLC,61446,SUN,SOLAR,45
+RE Gaskell West 3 LLC,61447,SUN,SOLAR,20
+RE Gaskell West 4 LLC,61448,SUN,SOLAR,20
+RE Gaskell West 5 LLC,61449,SUN,SOLAR,20
+RE Kammerer 1,57778,SUN,SOLAR,5
+RE Kammerer 2,57780,SUN,SOLAR,5
+RE Kammerer 3,57782,SUN,SOLAR,5
+"RE Kansas Solar, LLC",58985,SUN,SOLAR,20
+RE Kansas South LLC,58148,SUN,SOLAR,20
+"RE Kent South, LLC",58991,SUN,SOLAR,20
+RE McKenzie 1,57816,SUN,SOLAR,5
+RE McKenzie 2,57817,SUN,SOLAR,5
+RE McKenzie 3,57818,SUN,SOLAR,5
+RE McKenzie 4,57819,SUN,SOLAR,5
+RE McKenzie 5,57820,SUN,SOLAR,5
+RE McKenzie 6,57821,SUN,SOLAR,5
+RE Mustang LLC,59150,SUN,SOLAR,100
+"RE Old River One, LLC",58986,SUN,SOLAR,20
+RE Tranquillity,59939,SUN,SOLAR,205.3
+RE Victor Phelan Solar One LLC,58202,SUN,SOLAR,20
+Red Bluff,56184,NG,GAS,46.4
+Red Mountain,484,WAT,HYDRO,5.9
+Redcrest Solar Farm,58831,SUN,SOLAR,16.6
+Redding Power Plant,7307,NG,GAS,183.1
+Redwood 4 Solar Farm,60490,SUN,SOLAR,20
+Regional Wastewater Control Facility,56134,DFO,OIL,4.8
+Regulus Solar Project,57650,SUN,SOLAR,60
+Renew Solar ABC Sacramento LLC,62545,SUN,SOLAR,1.7
+Richard J Donovan Correctional Facility,54936,NG,GAS,2.6
+Richmond Cogen,52109,NG,GAS,198.6
+Richmond Refinery TG800,52105,OG,OFSL,21
+Ridgetop,54931,WND,WIND,46.8
+Ridgetop Energy LLC,10597,WND,WIND,29
+Rio Bravo Fresno,10767,WDS,BIOMASS,28
+Rio Bravo Hydro Project,50037,WAT,HYDRO,14
+Rio Bravo Rocklin,10772,WDS,BIOMASS,27.9
+Rio Bravo Solar 1 LLC,59249,SUN,SOLAR,20
+Rio Bravo Solar II LLC,59250,SUN,SOLAR,20
+Rio Grande Solar,58500,SUN,SOLAR,5
+Rio Hondo,482,WAT,HYDRO,1.9
+Ripon Generation Station,56135,NG,GAS,121
+Rising Tree Wind Farm,57621,WND,WIND,79.2
+Rising Tree Wind Farm II,59235,WND,WIND,19.8
+Rising Tree Wind Farm III,59236,WND,WIND,99
+Riverside Energy Resource Center,56143,NG,GAS,196
+Riverside RWQCP Fuel Cell,59877,OBG,BIOMASS,1.4
+Riverview Energy Center,55963,NG,GAS,47
+Roaring Creek Water Power,10881,WAT,HYDRO,2
+Robbs Peak,433,WAT,HYDRO,25.5
+Robert O Schulz Solar Farm,57579,SUN,SOLAR,1.3
+Rock Creek,275,WAT,HYDRO,126
+Rock Creek Dam,56822,WAT,HYDRO,3.6
+Rock Creek LP,50892,WAT,HYDRO,3
+Rockwood,7824,NG,GAS,49.8
+Rodeo Solar C2,58751,SUN,SOLAR,1.5
+Rodeo Solar D2,58752,SUN,SOLAR,1.5
+"Rohr Inc., a Collins Aerospace Company",57713,NG,GAS,9.6
+Roll Delano,58297,NG,GAS,1.1
+Roll Delano 2,58296,NG,GAS,1
+Roll Lost Hills,58298,NG,GAS,1.1
+Rollins,34,WAT,HYDRO,12.1
+Rosamond One,58498,SUN,SOLAR,20
+Rosamond Two,58499,SUN,SOLAR,20
+Roseburg Forest Products Biomass,56469,WDS,BIOMASS,13.4
+Roseville,7452,NG,GAS,54.8
+Roseville Energy Park,56298,NG,GAS,164
+Roseville Solar,62114,SUN,SOLAR,1
+RPI Fuel Cell LLC,57419,OBG,BIOMASS,3
+"Rudy Solar, LLC",59410,SUN,SOLAR,1.5
+Rugged Solar LLC,57960,SUN,SOLAR,80
+Rush Creek,357,WAT,HYDRO,13.1
+Russell City Energy Company LLC,56467,NG,GAS,655
+Rutan,58449,SUN,SOLAR,4
+Sacramento (SMUD),59323,SUN,SOLAR,1.5
+Sacramento Fairbain Water Treatment Plan,58636,SUN,SOLAR,1
+Sacramento Power Authority Cogen,7552,NG,GAS,173.9
+Sacramento Regional County Sanitation PV,61209,SUN,SOLAR,3.5
+Sacramento Soleil LLC,56875,SUN,SOLAR,1
+Saint Agnes Medical Center,54800,NG,GAS,7.7
+Saint Johns Health Center,50610,NG,GAS,1.2
+Salinas River Cogeneration Facility,50865,NG,GAS,38.9
+Salt Springs,279,WAT,HYDRO,42
+Salton Sea Power Gen Co - Unit 2,10879,GEO,GEOTHERMAL,20
+Salton Sea Power Gen Co - Unit 3,10759,GEO,GEOTHERMAL,53.9
+Salton Sea Power Gen Co - Unit 4,54996,GEO,GEOTHERMAL,47.5
+Salton Sea Power Gen Co Unit 1,10878,GEO,GEOTHERMAL,10
+Salton Sea Power LLC - Unit 5,55983,GEO,GEOTHERMAL,58.3
+San Antonio Regional Hospital,50234,NG,GAS,2.7
+San Antonio West Solar Rooftop,57904,SUN,SOLAR,1.5
+San Diego International Airport BESS,62754,MWH,OTHF,2
+San Diego State University,50061,NG,GAS,17.6
+San Dimas,6646,WAT,HYDRO,9.9
+San Dimas Wash Generating Station,50233,WAT,HYDRO,1
+San Fernando,403,WAT,HYDRO,5.6
+San Francisco Electric Reliability Proj,56305,NG,GAS,151.5
+San Francisco Intl Airport Ct Project,56306,NG,GAS,48
+San Francisquito 1,6479,WAT,HYDRO,65.5
+San Francisquito 2,6480,WAT,HYDRO,46
+San Gabriel Hydro Project,54017,WAT,HYDRO,5
+San Gorgonio 1,7148,WAT,HYDRO,1.5
+San Gorgonio Farms Wind Farm,50281,WND,WIND,31
+San Gorgonio Westwinds II LLC,50690,WND,WIND,43.4
+San Gorgonio Windplant WPP1993,54454,WND,WIND,84
+San Jacinto Solar,60972,SUN,SOLAR,1.5
+San Joaquin 2,276,WAT,HYDRO,2.8
+San Joaquin 3,277,WAT,HYDRO,4
+San Joaquin Solar,60678,SUN,SOLAR,21.3
+San Jose Cogeneration,10548,NG,GAS,6
+San Onofre Nuclear Generating Station,360,NUC,NUCLEAR,"2,254.00"
+San Pablo Raceway,62004,SUN,SOLAR,100
+Sand Bar Power Plant,50400,WAT,HYDRO,16.2
+Sand Drag LLC,57361,SUN,SOLAR,19
+Santa Ana 1,361,WAT,HYDRO,3.2
+Santa Ana 3,363,WAT,HYDRO,3.1
+Santa Clara (85C),50534,WND,WIND,18
+Santa Clara Cogen,7232,NG,GAS,7.8
+Santa Cruz Energy,57876,LFG,BIOMASS,1.6
+Santa Fe Springs Rooftop Solar BLDG H,58913,SUN,SOLAR,1.5
+Santa Fe Springs Rooftop Solar BLDG M,58912,SUN,SOLAR,1.8
+Santa Felicia Dam,50076,WAT,HYDRO,1.3
+Santa Maria Cogen Plant,10733,NG,GAS,9
+Santa Maria EPG,56284,PRG,OTHF,5.5
+Santa Maria LFG Power Plant,57100,LFG,BIOMASS,1.1
+Santa Paula Energy Storage,60946,MWH,OTHF,5
+Santa Rita Jail,58625,NG,GAS,6.7
+Santa Rita Jail Fuel Cell,60385,NG,GAS,1.4
+Santa Rosa Junior College Petaluma Solar,62039,SUN,SOLAR,1.2
+Sargent Canyon Cogen Facility,50864,NG,GAS,38.2
+"SC 1 Data Center, Phase 2",59074,DFO,OIL,92.7
+SCA Cogen II,7551,NG,GAS,193.4
+Scattergood Generating Station,404,NG,GAS,"1,718.80"
+SCDA Solar 1,61006,SUN,SOLAR,7
+SCE-Snowline-Duncan Road (North),59359,SUN,SOLAR,1.5
+SCE-Snowline-Duncan Road (South),59360,SUN,SOLAR,1
+SCE-Snowline-White Rd (Central),59423,SUN,SOLAR,1.5
+SCE-Snowline-White Road (North),59422,SUN,SOLAR,1.5
+SCE-Snowline-White Road (South),59421,SUN,SOLAR,1.5
+Scott Flat,839,WAT,HYDRO,1
+SDCCD - Miramar,59138,SUN,SOLAR,1.1
+SDCWA - Twin Oaks,59139,SUN,SOLAR,1.1
+SeaWorld Aquatica,61843,SUN,SOLAR,1
+Second Imperial Geothermal,54111,GEO,GEOTHERMAL,80
+SEGS III,10439,NG,GAS,34.2
+SEGS IV,10440,NG,GAS,34.2
+SEGS IX,10446,NG,GAS,92
+SEGS V,10441,NG,GAS,34.2
+SEGS VI,10442,NG,GAS,35
+SEGS VII,10443,NG,GAS,35
+SEGS VIII,10444,NG,GAS,92
+"Sentinel Energy Center, LLC",57482,NG,GAS,800
+Sepulveda Canyon,316,WAT,HYDRO,8.5
+SEPV 1,58073,SUN,SOLAR,2
+SEPV 18,59730,SUN,SOLAR,2
+SEPV 2,58074,SUN,SOLAR,2
+SEPV 8,58234,SUN,SOLAR,12
+SEPV Imperial Dixieland East,60745,SUN,SOLAR,2
+SEPV Imperial Dixieland West,60744,SUN,SOLAR,3
+SEPV Mojave West,59740,SUN,SOLAR,20
+SEPV Palmdale East,59273,SUN,SOLAR,10
+SEPV9 Power Plant,58227,SUN,SOLAR,9
+Seville 1,59722,SUN,SOLAR,20
+Seville 2,59723,SUN,SOLAR,30
+SF Southeast Cogen Plant,57971,OBG,BIOMASS,2.1
+SF State University,57043,NG,GAS,1.6
+SFDK Solar,62649,SUN,SOLAR,6.3
+Shafter Solar LLC,59408,SUN,SOLAR,20
+Shasta,445,WAT,HYDRO,714
+Shasta Solar Farm,58814,SUN,SOLAR,3
+Shelter Creek Condominiums Solar,62806,SUN,SOLAR,2.5
+Shiloh I Wind Project,56362,WND,WIND,150
+Shiloh III Wind Project LLC,57586,WND,WIND,102.5
+Shiloh IV Wind Project LLC,57725,WND,WIND,102.5
+Shiloh Wind Project 2 LLC,56874,WND,WIND,150
+"Sierra Energy Storage, LLC",61803,MWH,OTHF,10
+Sierra Nevada Brewing Co,58585,NG,GAS,5.2
+Sierra Pacific Anderson Facility,55049,WDS,BIOMASS,4
+Sierra Pacific Burney Facility,50110,WDS,BIOMASS,20
+Sierra Pacific Lincoln Facility,10144,WDS,BIOMASS,32.2
+Sierra Pacific Loyalton Facility,50111,WDS,BIOMASS,20
+Sierra Pacific Quincy Facility,50112,WDS,BIOMASS,62.7
+Sierra Pacific Sonora,54517,WDS,BIOMASS,15
+Sierra Solar Greenworks,59431,SUN,SOLAR,20
+Sierra SunTower Solar Gen Station,57323,SUN,SOLAR,7.5
+Signal Hill West Unit,57702,PRG,OTHF,5.7
+Silicon Valley Clean Water,60249,OBG,BIOMASS,1.2
+Silver Gate,309,DFO,OIL,247
+Siphon Drop Power Plant,57364,WAT,HYDRO,4.4
+Site 980 65,50322,WAT,HYDRO,2.1
+SJ/SC WPCP,56080,NG,GAS,28.4
+Sky River LLC,50536,WND,WIND,76.9
+Slate Creek,50961,WAT,HYDRO,4.2
+Sly Creek,776,WAT,HYDRO,12.1
+SMUD at Fleshman,57671,SUN,SOLAR,2.9
+SMUD at Grundman,57669,SUN,SOLAR,17
+SMUD at Lawrence,57753,SUN,SOLAR,1
+SMUD at Van Conett,57670,SUN,SOLAR,2.9
+Soboba Community Solar Project,61834,SUN,SOLAR,1
+Sol Orchard El Centro PV,58621,SUN,SOLAR,20
+Solano County Cogen Plant,50985,NG,GAS,2.8
+Solano Wind,7526,WND,WIND,228.2
+Solar Blythe 2,60558,SUN,SOLAR,20
+Solar Gen 2,58592,SUN,SOLAR,155.1
+Solar Photovoltaic Project #01,56976,SUN,SOLAR,2
+Solar Photovoltaic Project #02,56996,SUN,SOLAR,1
+Solar Photovoltaic Project #03,57217,SUN,SOLAR,1
+Solar Photovoltaic Project #04,57218,SUN,SOLAR,1.5
+Solar Photovoltaic Project #05,57219,SUN,SOLAR,2.5
+Solar Photovoltaic Project #06,57220,SUN,SOLAR,2
+Solar Photovoltaic Project #07,57221,SUN,SOLAR,2.5
+Solar Photovoltaic Project #08,57222,SUN,SOLAR,2.5
+Solar Photovoltaic Project #09,57223,SUN,SOLAR,1.5
+Solar Photovoltaic Project #10,57224,SUN,SOLAR,2
+Solar Photovoltaic Project #11,57225,SUN,SOLAR,3.5
+Solar Photovoltaic Project #12,57226,SUN,SOLAR,1
+Solar Photovoltaic Project #13,57227,SUN,SOLAR,3.5
+Solar Photovoltaic Project #14,57228,SUN,SOLAR,1.5
+Solar Photovoltaic Project #15,57229,SUN,SOLAR,3.5
+Solar Photovoltaic Project #16,57230,SUN,SOLAR,1.5
+Solar Photovoltaic Project #17,57231,SUN,SOLAR,4
+Solar Photovoltaic Project #18,57232,SUN,SOLAR,2
+Solar Photovoltaic Project #19,57233,SUN,SOLAR,5
+Solar Photovoltaic Project #20,57234,SUN,SOLAR,3.5
+Solar Photovoltaic Project #21,57235,SUN,SOLAR,2.5
+Solar Photovoltaic Project #22,57237,SUN,SOLAR,2
+Solar Photovoltaic Project #23,57236,SUN,SOLAR,3
+Solar Photovoltaic Project #24,57127,SUN,SOLAR,4
+Solar Photovoltaic Project #25,57528,SUN,SOLAR,4.5
+Solar Photovoltaic Project #26,57245,SUN,SOLAR,6
+Solar Photovoltaic Project #27,57246,SUN,SOLAR,3
+Solar Photovoltaic Project #28,57247,SUN,SOLAR,4
+Solar Photovoltaic Project #30,57532,SUN,SOLAR,1.5
+Solar Photovoltaic Project #31,57533,SUN,SOLAR,1
+Solar Photovoltaic Project #32,57534,SUN,SOLAR,1.5
+Solar Photovoltaic Project #33,57535,SUN,SOLAR,1
+Solar Photovoltaic Project #40,57538,SUN,SOLAR,10
+Solar Photovoltaic Project #41,57539,SUN,SOLAR,10
+Solar Photovoltaic Project #42,57441,SUN,SOLAR,5
+Solar Photovoltaic Project #44,57540,SUN,SOLAR,8
+Solar Photovoltaic Project #45,57541,SUN,SOLAR,6
+Solar Photovoltaic Project #47,57543,SUN,SOLAR,1
+Solar Photovoltaic Project #48,57900,SUN,SOLAR,5
+Solar Star 1,58388,SUN,SOLAR,318
+Solar Star 2,58389,SUN,SOLAR,279
+Solar Star California II LLC,57933,SUN,SOLAR,2
+"Solar Star California, XLI, LLC",60591,SUN,SOLAR,54
+"Solar Star California, XLIV, LLC",60869,SUN,SOLAR,9.5
+"Solar Star Palo Alto I, LLC",62732,SUN,SOLAR,1.3
+Solverde 1,60185,SUN,SOLAR,85
+Sonoma California Geothermal,510,GEO,GEOTHERMAL,78
+Sonoma Central Landfill Phase I,55752,LFG,BIOMASS,3.2
+Sonoma Central Landfill Phase II,55753,LFG,BIOMASS,3.2
+Sonoma Central Landfill Phase III,55880,LFG,BIOMASS,1.6
+Sonoma County Fuel Cell,57793,NG,GAS,1.4
+Sonora 1,58578,SUN,SOLAR,1.5
+South,280,WAT,HYDRO,6.7
+South Bay Fuel Cell Plant,57770,OBG,BIOMASS,1.5
+South Belridge Cogeneration Facility,50752,NG,GAS,94.2
+Southeast Kern River Cogen,50751,NG,GAS,30.8
+Southeast Resource Recovery,50837,MSW,BIOMASS,35.6
+Southern Owens Valley Solar Ranch,57304,SUN,SOLAR,200
+Spadra Landfill Gas to Energy,10471,LFG,BIOMASS,10.6
+Spaulding 1,281,WAT,HYDRO,7
+Spaulding 2,282,WAT,HYDRO,3.7
+Spaulding 3,283,WAT,HYDRO,6.6
+SPI Anderson 2,59658,WDS,BIOMASS,30.2
+Spicer Meadow Project,54554,WAT,HYDRO,5.9
+Spreckels Sugar Company,57916,NG,GAS,8.9
+Spring Creek,450,WAT,HYDRO,180
+Spring Gap,284,WAT,HYDRO,6
+Springbok 3 Solar Farm,60491,SUN,SOLAR,90
+Springbok Solar Farm 1,59532,SUN,SOLAR,105
+Springbok Solar Farm 2,59840,SUN,SOLAR,155
+Springs Generating Station,56144,NG,GAS,40
+Springville Hydroelectric,56125,WAT,HYDRO,1
+SPVP #35,57537,SUN,SOLAR,7
+SPVP #46,57545,SUN,SOLAR,3.5
+SRI International Cogen Project,50537,NG,GAS,6
+Stage Gulch Solar,61791,SUN,SOLAR,1
+Stampede,7066,WAT,HYDRO,3.6
+Stanford Campus Solar,62020,SUN,SOLAR,3.4
+Stanislaus,285,WAT,HYDRO,81.9
+Stanton Energy Reliability Center,60698,NG,GAS,121
+"Staples La Mirada, CA",57683,SUN,SOLAR,1.1
+Starbucks - Evolution Fresh,59804,NG,GAS,1.1
+Stateline Solar,58646,SUN,SOLAR,299.5
+Stenner Creek Solar,61607,SUN,SOLAR,4.5
+Stony Gorge,7151,WAT,HYDRO,5
+Strata Roof 1,60219,SUN,SOLAR,1
+Strauss Wind Farm,62113,WND,WIND,98.8
+Stroud Solar Station,57497,SUN,SOLAR,20
+Summer North Solar,58757,SUN,SOLAR,6.5
+Summer Solar A2,58753,SUN,SOLAR,1.5
+Summer Solar B2,58754,SUN,SOLAR,1.5
+Summer Solar C2,58755,SUN,SOLAR,1.5
+Summer Solar D2,58756,SUN,SOLAR,1
+Summer Solar LLC,60280,SUN,SOLAR,20
+Sun City Project LLC,57360,SUN,SOLAR,20
+Sun Harvest Solar NDP1,59687,SUN,SOLAR,1.5
+SunAnza,60791,SUN,SOLAR,2
+SunE- E Philadelphia Ontario,59916,SUN,SOLAR,1
+SunE Rochester,60032,SUN,SOLAR,1
+SunEdison Anheuser Busch Fairfield,57010,SUN,SOLAR,1
+SunEdison Ironwood State Prison,57007,SUN,SOLAR,1
+SunEdison Procter & Gamble Oxnard,57008,SUN,SOLAR,1
+SunEdison Walgreens Moreno Valley,57004,SUN,SOLAR,1
+SunEdison Walmart Apple Valley DC,57012,SUN,SOLAR,1
+Sunnyvale City of WPCP,57557,LFG,BIOMASS,1.6
+Sunray 2,10437,SUN,SOLAR,33.8
+Sunray 3,10438,SUN,SOLAR,43.8
+Sunrise Power Company,55182,NG,GAS,605.4
+SunSelect1,61754,NG,GAS,6.6
+Sunset Reservoir North Basin,57559,SUN,SOLAR,4.5
+Sunshine Gas Producers,58429,LFG,BIOMASS,23
+Swanmill Windfarm I,54650,WND,WIND,18.7
+Sycamore Cogeneration,50134,NG,GAS,300
+Sycamore Energy 1,10387,LFG,BIOMASS,7.2
+"TA-Acacia, LLC",59443,SUN,SOLAR,20
+Taft 26C Cogen,52085,NG,GAS,12.4
+TA-High Desert LLC,58149,SUN,SOLAR,20
+Tahquitz High School,58232,SUN,SOLAR,1
+Tajiguas Plant,55603,LFG,BIOMASS,3
+Target Shafter,61824,SUN,SOLAR,3
+Target Woodland Solar Project,62246,SUN,SOLAR,2.3
+Taylor Farms,59330,WND,WIND,1
+Taylor Farms Salinas,58303,NG,GAS,1.1
+Tehachapi Energy Storage Project,59661,MWH,OTHF,8
+Tehachapi Spindle,58291,MWH,OTHF,20
+Tehachapi Wind Resource I,10191,WND,WIND,9.3
+Tehachapi Wind Resource II,54909,WND,WIND,37.4
+Teichert Materials-Teichert Vernalis,57594,WND,WIND,1
+Telephone Flat,55846,GEO,GEOTHERMAL,49.9
+Temescal,479,WAT,HYDRO,2.9
+"Temescal Canyon RV, LLC",57656,SUN,SOLAR,1.5
+Tequesquite Landfill Solar PV Project,60035,SUN,SOLAR,7.3
+Terminus Hydroelectric Project,54343,WAT,HYDRO,20.1
+Terra Francesco,59541,SUN,SOLAR,1.5
+Terra-Gen 251 Wind LLC,52161,WND,WIND,18.4
+Terra-Gen VG Wind LLC,56570,WND,WIND,7.4
+TESLA Power Project,55937,NG,GAS,"1,322.00"
+Tesoro Wilmington Calciner,10601,WH,OTHF,34
+Thermal Energy Development Part LP,10502,WDS,BIOMASS,23
+Thermalito,438,WAT,HYDRO,115.1
+Thermalito Diverson Dam,7129,WAT,HYDRO,3.4
+Thomas M Knott Cogen Facility,58190,NG,GAS,1.4
+Three Forks Water Power Project,54308,WAT,HYDRO,1.3
+THUMS,56051,NG,GAS,57.4
+Tierra Bonita Solar,57923,SUN,SOLAR,22
+Tiger Creek,287,WAT,HYDRO,52.2
+Toadtown,714,WAT,HYDRO,1.8
+Top Gun Energy Storage,61366,MWH,OTHF,30
+Topaz Solar Farm,57695,SUN,SOLAR,585.9
+"Torrance Refining Company, LLC",50624,PRG,OTHF,49.3
+Total Energy Facilities,10091,OBG,BIOMASS,58.2
+TPC Windfarms LLC,54647,WND,WIND,28.7
+Tracy Combined Cycle Power Plant,55933,NG,GAS,336.1
+Transamerica Pyramid,58619,NG,GAS,1
+Tres Vaqueros Wind Farms LLC,50826,WND,WIND,28.3
+Trinity,451,WAT,HYDRO,140
+Tropico Solar PV Plant,59599,SUN,SOLAR,14
+Tulare 1 and 2,58642,SUN,SOLAR,3
+Tulare Success Power Project,10222,WAT,HYDRO,1.4
+Tulare WWTP BioMat Fuel Cell,61846,OBG,BIOMASS,2.8
+Tule River,289,WAT,HYDRO,8.4
+Tule Wind LLC,57913,WND,WIND,143
+Tulloch,416,WAT,HYDRO,24.2
+Turlock Irrigation District Fuel Cell,56631,OBG,BIOMASS,1.2
+Turlock Lake,161,WAT,HYDRO,3.3
+UC Davis South Campus,59872,SUN,SOLAR,13
+UC Merced Solar,61995,SUN,SOLAR,5
+UC Riverside Lots 30 & 32,62016,SUN,SOLAR,4
+UCI Facilities Management Central Plant,57122,NG,GAS,19
+UCI Fuel Cell,60120,NG,GAS,1.4
+UCLA So Campus Cogen Project,52073,NG,GAS,43
+UCSD Fuel Cell Plant,57735,NG,GAS,3
+Union Valley,6612,WAT,HYDRO,38.6
+Univ of Calif Santa Cruz Cogeneration,50064,NG,GAS,7.2
+Univ of California San Diego Solar,57856,SUN,SOLAR,1.2
+Univ of San Francisco Cogen,50089,NG,GAS,1.5
+University of California San Diego,57584,NG,GAS,35.5
+Upper Dawson,489,WAT,HYDRO,4.4
+Upper Gorge,407,WAT,HYDRO,37.5
+US Borax,50115,NG,GAS,48.2
+US GSA - Sacramento,60846,SUN,SOLAR,1.1
+USG 1,61682,SUN,SOLAR,1
+USG 2,61683,SUN,SOLAR,1
+USPS PV,61250,SUN,SOLAR,10.7
+US-TOPCO (Soccer Center),60086,SUN,SOLAR,3
+UTS SJ1 LLC,57420,NG,GAS,1.5
+VA Sepulveda Ambulatory Care Center,58249,SUN,SOLAR,3.5
+Vaca Dixon Battery Storage System,59256,MWH,OTHF,2
+Vaca Dixon Solar Station,57041,SUN,SOLAR,2
+Vacaville,59058,SUN,SOLAR,1
+Valencia 1 Solar CA,61418,SUN,SOLAR,3
+"Valentine Solar, LLC",62288,SUN,SOLAR,111.2
+Valero Refinery Cogeneration Unit 1,55851,NG,GAS,51
+Valero Refinery Cogeneration Unit 2,55852,OG,OFSL,51
+Valley Center,60509,SUN,SOLAR,3
+Valley Center 1,58906,SUN,SOLAR,2.5
+Valley Center 2,58907,SUN,SOLAR,5
+Valley Generating Station,408,NG,GAS,"1,236.10"
+Valley Sanitary District WTP Solar,60824,SUN,SOLAR,1
+Valley View,487,WAT,HYDRO,4.1
+Van Norman Bypass Solar Project,57307,SUN,SOLAR,2
+Vanadium Redox Flow Battery Plant,61107,MWH,OTHF,2
+Vandenberg Solar Project,61463,SUN,SOLAR,22.5
+Vasco Winds,57700,WND,WIND,78.2
+Vega Solar,59555,SUN,SOLAR,20
+Venable Solar 1,58289,SUN,SOLAR,1.5
+Venable Solar 2,58290,SUN,SOLAR,1.5
+Venice Hydro,72,WAT,HYDRO,10.1
+Verizon-Torrance,59261,NG,GAS,1
+Vernon,7436,DFO,OIL,30
+Verwey-Hanford Dairy Digester #1,60918,OBG,BIOMASS,1
+Verwey-Hanford Dairy Digester #2,62418,OBG,BIOMASS,1
+Verwey-Hanford Dairy Digester #3,62419,OBG,BIOMASS,1
+Victor Dry Farm Ranch A,58418,SUN,SOLAR,5
+Victor Dry Farm Ranch B,58419,SUN,SOLAR,5
+Victor Mesa Linda B2,59269,SUN,SOLAR,1.5
+Victor Mesa Linda C2,59270,SUN,SOLAR,1.5
+Victor Mesa Linda D2,59271,SUN,SOLAR,1.5
+Victor Mesa Linda E2,59272,SUN,SOLAR,1.5
+Victor Valley CC CPV Solar,57254,SUN,SOLAR,1
+"Victorville Energy Center, LLC (CA)",62726,WH,OTHF,19.9
+Victory Garden (Tehachapi),50532,WND,WIND,18.8
+Victory Garden Phase IV LLC,52160,WND,WIND,22
+Vinam,58450,SUN,SOLAR,1.5
+Vintner Solar,58509,SUN,SOLAR,1.5
+Vista Energy Storage System,61661,MWH,OTHF,40
+Vitro Flat Glass LLC,58053,DFO,OIL,3.3
+Volta 1,290,WAT,HYDRO,8.5
+Volta 2,180,WAT,HYDRO,1
+Voyager Wind I,60594,WND,WIND,131.1
+Voyager Wind II,61582,WND,WIND,128.7
+Voyager Wind III,61583,WND,WIND,43.2
+Voyager Wind IV,61584,WND,WIND,21.6
+Vulcan-BN Geothermal Power Company,50210,GEO,GEOTHERMAL,39.6
+W E Warne,6196,WAT,HYDRO,74.2
+W Plant,59458,NG,GAS,4.6
+W R Gianelli,448,WAT,HYDRO,424
+Wadham Energy LP,50293,AB,BIOMASS,29.1
+Wagner Wind LLC,58233,WND,WIND,6
+Walgreens Woodland Distribution Center,57006,SUN,SOLAR,1
+Walnut,4256,NG,GAS,49.8
+Walnut Creek Energy Park,57515,NG,GAS,500
+Walnut Energy Center,56078,NG,GAS,300.6
+Warm Springs Hydro Project,54261,WAT,HYDRO,2.7
+Waste Management Tri-Cities LFGTE,57164,LFG,BIOMASS,4.8
+Waste Mangement Redwood LFGTE,59299,LFG,BIOMASS,4
+Waterman Turnout Hydroelectric,60466,WAT,HYDRO,1
+Watkins Manufacturing Co.,57715,NG,GAS,2
+Watson Cogeneration,50216,NG,GAS,499.2
+Watts 3115,58454,SUN,SOLAR,2
+Welport Lease Project,54447,NG,GAS,5
+West Ford Flat Power Plant,10199,GEO,GEOTHERMAL,38
+West Gates Solar Station,58206,SUN,SOLAR,10
+West Point PH,291,WAT,HYDRO,13.6
+West Valley High School Solar,58244,SUN,SOLAR,1
+Westend Facility,10685,NG,GAS,20
+Western Antelope Blue Sky B,59961,SUN,SOLAR,20
+Western Antelope Blue Sky Ranch A,58626,SUN,SOLAR,20
+Western Antelope Dry Ranch,58627,SUN,SOLAR,10
+Western Power & Steam Inc,54410,NG,GAS,36
+Westlands Solar PV Farm,58616,SUN,SOLAR,18
+Westmont 300A,61249,SUN,SOLAR,2.9
+Westmont 300B,60914,SUN,SOLAR,3
+Westmont 301,61593,SUN,SOLAR,1.8
+Westmont 400A,61348,SUN,SOLAR,2.3
+Westmont 400B,61349,SUN,SOLAR,2.2
+Westmont 401,61594,SUN,SOLAR,2.9
+Westside Solar Power PV1,60275,SUN,SOLAR,2
+Westside Solar Station,57499,SUN,SOLAR,15
+Westwind Trust,54258,WND,WIND,31.6
+Weymouth Solar Plant,60255,SUN,SOLAR,3
+Wheelabrator Lassen,50298,NG,GAS,38.8
+Wheelabrator Martell,50950,WDS,BIOMASS,23
+Wheelabrator Norwalk Energy,50876,NG,GAS,30.7
+Wheelabrator Shasta,50881,WDS,BIOMASS,62.7
+Whiskeytown,7189,WAT,HYDRO,3.5
+White River Solar,58373,SUN,SOLAR,20
+White River Solar 2,58973,SUN,SOLAR,19.8
+White Rock/Slab Creek,435,WAT,HYDRO,269.2
+Whitethorn Solar LLC,60193,SUN,SOLAR,3.3
+Whitewater Hill Wind Partners,56012,WND,WIND,61.5
+Whitewater Hydro Plant,10162,WAT,HYDRO,1.3
+Whitney Point Solar,60975,SUN,SOLAR,20
+Whittier LFG Power Plant #1,57102,LFG,BIOMASS,2.2
+Wild Horse Power Plant,57181,GEO,GEOTHERMAL,48
+Wildcat I Energy Storage LLC,62875,MWH,OTHF,3
+"Wildwood Solar I, LLC",59380,SUN,SOLAR,19.5
+Wildwood Solar II,59253,SUN,SOLAR,15
+"Willow Spring Solar 3, LLC",60325,SUN,SOLAR,75
+"Willow Spring Solar, LLC",60324,SUN,SOLAR,100
+Wilmington Hydrogen Plant,55557,WH,OTHF,31.9
+Windhub Solar A LLC,59878,SUN,SOLAR,20
+"Windhub Solar B, LLC",59969,SUN,SOLAR,20
+Windland,50386,WND,WIND,15.3
+Windpark Unlimited 1,10027,WND,WIND,9.4
+Windpark Unlimited 2,60321,WND,WIND,16.1
+Windsor Floating Solar,62902,SUN,SOLAR,1.5
+Windstar 1,57774,WND,WIND,120
+Wintec Energy Ltd,50276,WND,WIND,5.9
+Wise,292,WAT,HYDRO,16.4
+Wistaria Ranch Solar,61750,SUN,SOLAR,106.7
+Wolfskill Energy Center,55855,NG,GAS,47
+Woodland Biomass Power Ltd,10836,WDS,BIOMASS,28
+Woodland Generation Station,7266,NG,GAS,199
+Woodleaf,419,WAT,HYDRO,67.2
+Woodmere Solar Farm,59008,SUN,SOLAR,15
+Woodward Power Plant,50218,WAT,HYDRO,2.8
+Wright Solar Park,59525,SUN,SOLAR,200
+WWTP Power Generation Station,56036,OBG,BIOMASS,6.6
+Xebec 1,62286,SUN,SOLAR,1.9
+Xilinx San Jose,58299,NG,GAS,1.1
+Yahoo! - HQ,59805,NG,GAS,1.1
+Yerba Buena,59257,MWH,OTHF,4
+Yolo County Solar Project,57422,SUN,SOLAR,1
+Yorba Linda,6647,WAT,HYDRO,5.1
+Yuba City Cogen Partners,52186,NG,GAS,49
+Yuba City Energy Center,10349,NG,GAS,49.5
+Yuba City Energy Center,55813,NG,GAS,47.3
+ZCO,56276,WND,WIND,1.6
+Zero Waste Energy Development Co LLC,60220,OBG,BIOMASS,1.6
