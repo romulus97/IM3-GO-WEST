@@ -44,13 +44,11 @@ for day in range(1,days):
     #load Demand and Reserve time series data
         for i in K:
             instance.HorizonDemand[z,i] = instance.SimDemand[z,(day-1)*24+i]
-            instance.HorizonReserves[i] = instance.SimReserves[(day-1)*24+i]
+            # instance.HorizonReserves[i] = instance.SimReserves[(day-1)*24+i]
 
     for z in instance.Hydro:
     #load Hydropower time series data
-        
-        for i in K:
-            instance.HorizonHydro[z,i] = instance.SimHydro[z,(day-1)*24+i]
+        instance.HorizonHydro[z] = instance.SimHydro[z,day]
     
     # for z in instance.s_nodes:
     # #load Solar time series data

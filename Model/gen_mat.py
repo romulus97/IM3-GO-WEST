@@ -8,7 +8,7 @@ Created on Sun Aug  9 00:47:29 2020
 import pandas as pd
 import numpy as np
 
-df = pd.read_excel('WECC generators.xlsx',sheet_name = 'data_genparams',header=0)
+df = pd.read_csv('data_genparams.csv',header=0)
 gens = df.loc[:,'name']
 gen_nodes = df.loc[:,'node']
 unique_nodes = gen_nodes.unique()

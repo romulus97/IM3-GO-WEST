@@ -32,7 +32,7 @@ for i in range(0,len(df)):
     s = df.loc[i,'source']
     k = df.loc[i,'sink']
     line = s + '_' + k
-    if s == 'HOOVER_20': 
+    if s == 'MESA_CAL_20': 
         lines.append(line)
         positive.append(s)
         negative.append(k)
@@ -41,7 +41,7 @@ for i in range(0,len(df)):
         reactance.append(df.loc[i,'reactance'])
         limit.append(df.loc[i,'linemva'])
         ref_node += 1
-    elif k == 'HOOVER_20':      
+    elif k == 'MESA_CAL_20':      
         lines.append(line)
         positive.append(k)
         negative.append(s)
@@ -55,8 +55,8 @@ for i in range(0,len(df)):
     s = df.loc[i,'source']
     k = df.loc[i,'sink']
     line = s + '_' + k
-    if s != 'HOOVER_20':
-        if k != 'HOOVER_20':
+    if s != 'MESA_CAL_20':
+        if k != 'MESA_CAL_20':
             lines.append(line)
             
             if s in positive and k in negative:
@@ -102,7 +102,7 @@ for i in range(0,len(df)):
             ref_node += 1
 
 df_line_to_bus['line'] = lines
-# df_line_to_bus.to_csv('line_to_bus.csv')
+df_line_to_bus.to_csv('line_to_bus.csv')
 
 
 df_line_params = pd.DataFrame()
