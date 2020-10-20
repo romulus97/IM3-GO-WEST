@@ -29,10 +29,11 @@ K=range(1,H+1)
 
 #Space to store results
 mwh=[]
-# on=[]
-# switch=[]
+on=[]
+switch=[]
 # srsv=[]
 # nrsv=[]
+slack = []
 vlt_angle=[]
 
 df_generators = pd.read_csv('data_genparams.csv',header=0)
@@ -92,16 +93,21 @@ for day in range(1,days):
                 if int(index[1]>0 and index[1]<25):
                     mwh.append((index[0],index[1]+((day-1)*24),varobject[index].value))                                            
         
-        # if a=='on':  
-        #     for index in varobject:
-        #         if int(index[1]>0 and index[1]<25):
-        #             on.append((index[0],index[1]+((day-1)*24),varobject[index].value))
+        if a=='on':  
+            for index in varobject:
+                if int(index[1]>0 and index[1]<25):
+                    on.append((index[0],index[1]+((day-1)*24),varobject[index].value))
 
-        # if a=='switch':
-        #     for index in varobject:
-        #         if int(index[1]>0 and index[1]<25):
-        #             switch.append((index[0],index[1]+((day-1)*24),varobject[index].value))
+        if a=='switch':
+            for index in varobject:
+                if int(index[1]>0 and index[1]<25):
+                    switch.append((index[0],index[1]+((day-1)*24),varobject[index].value))
                     
+        if a=='S':    
+            for index in varobject:
+                if index[0] in instance.buses:
+                        slack.append((index[0],index[1]+((day-1)*24),varobject[index].value))
+
         # if a=='srsv':    
         #     for index in varobject:
         #         if int(index[1]>0 and index[1]<25):
@@ -122,6 +128,7 @@ mwh_pd=pd.DataFrame(mwh,columns=('Generator','Time','Value'))
 # switch_pd=pd.DataFrame(switch,columns=('Generator','Time','Value'))
 # srsv_pd=pd.DataFrame(srsv,columns=('Generator','Time','Value'))
 # nrsv_pd=pd.DataFrame(nrsv,columns=('Generator','Time','Value'))
+slack_pd = pd.DataFrame(slack,columns=('Node','Time','Value'))
 
 #to save outputs
 mwh_pd.to_csv('mwh.csv')
@@ -132,6 +139,7 @@ vlt_angle_pd.to_csv('vlt_angle.csv')
 # switch_pd.to_csv('switch.csv')
 # srsv_pd.to_csv('srsv.csv')
 # nrsv_pd.to_csv('nrsv.csv')
+slack_pd.to_csv('slack.csv')
 
 
     # return None
