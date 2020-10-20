@@ -3,7 +3,6 @@ import csv
 import pandas as pd
 import numpy as np
 
-
 ######=================================================########
 ######               Segment A.1                       ########
 ######=================================================########
@@ -111,15 +110,15 @@ with open(''+str(data_name)+'.dat', 'w') as f:
             f.write(unit_name + ' ')        
     f.write(';\n\n')  
 
-    # Slack
-    f.write('set Slack :=\n')
-    # pull relevant generators
-    for gen in range(0,len(df_gen)):
-        if df_gen.loc[gen,'typ'] == 'slack':
-            unit_name = df_gen.loc[gen,'name']
-            unit_name = unit_name.replace(' ','_')
-            f.write(unit_name + ' ')
-    f.write(';\n\n')  
+    # # Slack
+    # f.write('set Slack :=\n')
+    # # pull relevant generators
+    # for gen in range(0,len(df_gen)):
+    #     if df_gen.loc[gen,'typ'] == 'slack':
+    #         unit_name = df_gen.loc[gen,'name']
+    #         unit_name = unit_name.replace(' ','_')
+    #         f.write(unit_name + ' ')
+    # f.write(';\n\n')  
 
     # Hydro
     f.write('set Hydro :=\n')
@@ -162,7 +161,7 @@ with open(''+str(data_name)+'.dat', 'w') as f:
         f.write(z + ' ')
     f.write(';\n\n')
     
-    print('nodes')
+    print('lines')
     
 ######=================================================########
 ######               Segment A.6                       ########

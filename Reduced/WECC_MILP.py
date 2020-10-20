@@ -11,12 +11,12 @@ model = AbstractModel()
 model.Coal = Set()
 model.Oil = Set()
 model.Gas = Set()
-model.Slack = Set()
+# model.Slack = Set()
 model.Hydro = Set()
 model.Must = Set()
 
-#all generators
-model.Generators = model.Coal | model.Oil | model.Gas | model.Slack | model.Hydro | model.Must
+#all generators TOOK SLACK OUT HERE
+model.Generators = model.Coal | model.Oil | model.Gas | model.Hydro | model.Must
 
 
 ### allocate generators that will ensure minimum reserves
@@ -129,6 +129,9 @@ model.on = Var(model.Generators,model.HH_periods, within=Binary, initialize=0)
 #1 if unit is switching on in hour i, otherwise 0
 model.switch = Var(model.Generators,model.HH_periods, within=Binary,initialize=0)
 
+#1 if unit is switching on in hour i, otherwise 0
+model.S = Var(model.buses,model.HH_periods, within=NonNegativeReals,initialize=0)
+
 # #Amount of spining reserve offered by an unit in each hour
 # model.srsv = Var(model.Generators,model.HH_periods, within=NonNegativeReals,initialize=0)
 
@@ -153,16 +156,16 @@ model.Theta= Var(model.buses,model.hh_periods)
 ######================Objective function=============########
 
 def SysCost(model):
-    fixed = sum(model.maxcap[j]*model.fix_om[j]*model.on[j,i] for i in model.hh_periods for j in model.Generators)
-    starts = sum(model.maxcap[j]*model.st_cost[j]*model.switch[j,i] for i in model.hh_periods for j in model.Generators)
+    # fixed = sum(model.maxcap[j]*model.fix_om[j]*model.on[j,i] for i in model.hh_periods for j in model.Generators)
+    # starts = sum(model.maxcap[j]*model.st_cost[j]*model.switch[j,i] for i in model.hh_periods for j in model.Generators)
     coal = sum(model.mwh[j,i]*(model.heat_rate[j]*2 + model.var_om[j]) for i in model.hh_periods for j in model.Coal)  
     oil = sum(model.mwh[j,i]*(model.heat_rate[j]*10 + model.var_om[j]) for i in model.hh_periods for j in model.Oil)
     gas = sum(model.mwh[j,i]*(model.heat_rate[j]*4.5 + model.var_om[j]) for i in model.hh_periods for j in model.Gas)
     hydro = sum(model.mwh[j,i]*(model.heat_rate[j] + model.var_om[j]) for i in model.hh_periods for j in model.Hydro)
     must_run = sum(model.mwh[j,i]*(model.heat_rate[j] + model.var_om[j]) for i in model.hh_periods for j in model.Must)    
-    slack = sum(model.mwh[j,i]*model.heat_rate[j]*1000 for i in model.hh_periods for j in model.Slack)
-    
-    return coal +oil + gas + hydro + must_run + slack + fixed + starts 
+    slack = sum(model.S[z,i]*100000 for i in model.hh_periods for z in model.buses)
+
+    return coal +oil + gas + hydro + must_run + slack #+ fixed + starts 
 
 model.SystemCost = Objective(rule=SysCost, sense=minimize)
 
@@ -174,12 +177,12 @@ model.SystemCost = Objective(rule=SysCost, sense=minimize)
 
 #####========== Logical Constraint =========#############
 # Switch is 1 if unit is turned on in current period
-def SwitchCon(model,j,i):
-    return model.switch[j,i] >= 1 - model.on[j,i-1] - (1 - model.on[j,i])
-model.SwitchConstraint = Constraint(model.Generators,model.hh_periods,rule = SwitchCon)
+# def SwitchCon(model,j,i):
+#     return model.switch[j,i] >= 1 - model.on[j,i-1] - (1 - model.on[j,i])
+# model.SwitchConstraint = Constraint(model.Generators,model.hh_periods,rule = SwitchCon)
 
 
-# ######========== Up/Down Time Constraint =========#############
+# # ######========== Up/Down Time Constraint =========#############
 # #Min Up time
 # def MinUp(model,j,i,k):
 #     if i > 0 and k > i and k < min(i+model.minup[j]-1,model.HorizonHours):
@@ -198,17 +201,17 @@ model.SwitchConstraint = Constraint(model.Generators,model.hh_periods,rule = Swi
 
 
 #####==========Ramp Rate Constraints =========#############
-def Ramp1(model,j,i):
-    a = model.mwh[j,i]
-    b = model.mwh[j,i-1]
-    return a - b <= model.ramp[j] 
-model.RampCon1 = Constraint(model.Generators,model.ramp_periods,rule=Ramp1)
+# def Ramp1(model,j,i):
+#     a = model.mwh[j,i]
+#     b = model.mwh[j,i-1]
+#     return a - b <= model.ramp[j] 
+# model.RampCon1 = Constraint(model.Generators,model.ramp_periods,rule=Ramp1)
 
-def Ramp2(model,j,i):
-    a = model.mwh[j,i]
-    b = model.mwh[j,i-1]
-    return b - a <= model.ramp[j] 
-model.RampCon2 = Constraint(model.Generators,model.ramp_periods,rule=Ramp2)
+# def Ramp2(model,j,i):
+#     a = model.mwh[j,i]
+#     b = model.mwh[j,i-1]
+#     return b - a <= model.ramp[j] 
+# model.RampCon2 = Constraint(model.Generators,model.ramp_periods,rule=Ramp2)
 
 
 ######=================================================########
@@ -217,14 +220,18 @@ model.RampCon2 = Constraint(model.Generators,model.ramp_periods,rule=Ramp2)
 
 #####=========== Capacity Constraints ============##########
 # Constraints for Max & Min Capacity of dispatchable resources
+# def MaxC(model,j,i):
+#     return model.mwh[j,i]  <= model.on[j,i] * model.maxcap[j] 
+# model.MaxCap= Constraint(model.Generators,model.hh_periods,rule=MaxC)
+
+
+# def MinC(model,j,i):
+#     return model.mwh[j,i] >= model.on[j,i] * model.mincap[j]
+# model.MinCap= Constraint(model.Generators,model.hh_periods,rule=MinC)
+
 def MaxC(model,j,i):
-    return model.mwh[j,i]  <= model.on[j,i] * model.maxcap[j] 
+    return model.mwh[j,i]  <= model.maxcap[j] 
 model.MaxCap= Constraint(model.Generators,model.hh_periods,rule=MaxC)
-
-
-def MinC(model,j,i):
-    return model.mwh[j,i] >= model.on[j,i] * model.mincap[j]
-model.MinCap= Constraint(model.Generators,model.hh_periods,rule=MinC)
 
 
 #Max capacity constraints on domestic hydropower 
@@ -250,7 +257,8 @@ model.HydroConstraint= Constraint(model.Hydro,model.hh_periods,rule=HydroC)
 def Nodal_Balance(model,z,i):
     power_flow = sum(model.Flow[l,i]*model.LinetoBusMap[l,z] for l in model.lines)   
     gen = sum(model.mwh[j,i]*model.BustoUnitMap[j,z] for j in model.Generators)    
-    return gen - power_flow == model.HorizonDemand[z,i] 
+    slack = model.S[z,i]
+    return gen + slack - power_flow == model.HorizonDemand[z,i] 
 model.Node_Constraint = Constraint(model.buses,model.hh_periods,rule=Nodal_Balance)
 
 def Flow_line(model,l,i):
