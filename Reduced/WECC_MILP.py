@@ -11,12 +11,12 @@ model = AbstractModel()
 model.Coal = Set()
 model.Oil = Set()
 model.Gas = Set()
-model.Slack = Set()
+# model.Slack = Set()
 model.Hydro = Set()
 model.Must = Set()
 
-#all generators
-model.Generators = model.Coal | model.Oil | model.Gas | model.Slack | model.Hydro | model.Must
+#all generators TOOK SLACK OUT HERE
+model.Generators = model.Coal | model.Oil | model.Gas | model.Hydro | model.Must
 
 
 ### allocate generators that will ensure minimum reserves
@@ -129,6 +129,9 @@ model.on = Var(model.Generators,model.HH_periods, within=Binary, initialize=0)
 #1 if unit is switching on in hour i, otherwise 0
 model.switch = Var(model.Generators,model.HH_periods, within=Binary,initialize=0)
 
+#1 if unit is switching on in hour i, otherwise 0
+model.S = Var(model.buses,model.HH_periods, within=NonNegativeReals,initialize=0)
+
 # #Amount of spining reserve offered by an unit in each hour
 # model.srsv = Var(model.Generators,model.HH_periods, within=NonNegativeReals,initialize=0)
 
@@ -158,10 +161,10 @@ def SysCost(model):
     coal = sum(model.mwh[j,i]*(model.heat_rate[j]*2 + model.var_om[j]) for i in model.hh_periods for j in model.Coal)  
     oil = sum(model.mwh[j,i]*(model.heat_rate[j]*10 + model.var_om[j]) for i in model.hh_periods for j in model.Oil)
     gas = sum(model.mwh[j,i]*(model.heat_rate[j]*4.5 + model.var_om[j]) for i in model.hh_periods for j in model.Gas)
-    hydro = sum(model.mwh[j,i]*1 for i in model.hh_periods for j in model.Hydro)
-    must_run = sum(model.mwh[j,i]*1 for i in model.hh_periods for j in model.Must)    
-    slack = sum(model.mwh[j,i]*model.heat_rate[j]*1000 for i in model.hh_periods for j in model.Slack)
-    
+    hydro = sum(model.mwh[j,i]*(model.heat_rate[j] + model.var_om[j]) for i in model.hh_periods for j in model.Hydro)
+    must_run = sum(model.mwh[j,i]*(model.heat_rate[j] + model.var_om[j]) for i in model.hh_periods for j in model.Must)    
+    slack = sum(model.S[z,i]*100000 for i in model.hh_periods for z in model.buses)
+
     return coal +oil + gas + hydro + must_run + slack #+ fixed + starts 
 
 model.SystemCost = Objective(rule=SysCost, sense=minimize)
@@ -254,7 +257,8 @@ model.HydroConstraint= Constraint(model.Hydro,model.hh_periods,rule=HydroC)
 def Nodal_Balance(model,z,i):
     power_flow = sum(model.Flow[l,i]*model.LinetoBusMap[l,z] for l in model.lines)   
     gen = sum(model.mwh[j,i]*model.BustoUnitMap[j,z] for j in model.Generators)    
-    return gen - power_flow == model.HorizonDemand[z,i] 
+    slack = model.S[z,i]
+    return gen + slack - power_flow == model.HorizonDemand[z,i] 
 model.Node_Constraint = Constraint(model.buses,model.hh_periods,rule=Nodal_Balance)
 
 def Flow_line(model,l,i):
