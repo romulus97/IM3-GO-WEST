@@ -12,10 +12,13 @@ model.Coal = Set()
 model.Oil = Set()
 model.Gas = Set()
 model.Hydro = Set()
+model.Solar = Set()
+model.Wind = Set()
 
 #all generators
 model.Thermal = model.Coal | model.Oil | model.Gas
-model.Generators = model.Thermal | model.Hydro 
+model.Dispatchable = model.Thermal | model.Hydro 
+model.Generators = model.Dispatchable | model.Solar | model.Wind
 
 
 # transmission sets
@@ -52,7 +55,7 @@ model.ramp  = Param(model.Generators)
 #Minimun up time
 model.minup = Param(model.Generators)
 
-#Minmun down time
+#Minimun down time
 model.mindn = Param(model.Generators)
 
 
@@ -103,13 +106,13 @@ model.HorizonDemand = Param(model.buses*model.hh_periods,within=NonNegativeReals
 
 ##Variable resources over simulation period
 model.SimHydro = Param(model.Hydro, model.SH_periods, within=NonNegativeReals)
-##model.SimSolar = Param(model.s_nodes, model.SH_periods, within=NonNegativeReals)
-##model.SimWind = Param(model.w_nodes, model.SH_periods, within=NonNegativeReals)
+model.SimSolar = Param(model.Solar, model.SH_periods, within=NonNegativeReals)
+model.SimWind = Param(model.Wind, model.SH_periods, within=NonNegativeReals)
 
 #Variable resources over horizon
 model.HorizonHydro = Param(model.Hydro,within=NonNegativeReals,mutable=True)
-##model.HorizonSolar = Param(model.s_nodes,model.hh_periods,within=NonNegativeReals,mutable=True)
-##model.HorizonWind = Param(model.w_nodes,model.hh_periods,within=NonNegativeReals,mutable=True)
+model.HorizonSolar = Param(model.Solar,model.hh_periods,within=NonNegativeReals,mutable=True)
+model.HorizonWind = Param(model.Wind,model.hh_periods,within=NonNegativeReals,mutable=True)
 
 #Must run resources
 model.Must = Param(model.buses,within=NonNegativeReals)
@@ -123,22 +126,16 @@ model.Must = Param(model.buses,within=NonNegativeReals)
 model.mwh = Var(model.Generators,model.HH_periods, within=NonNegativeReals,initialize=0)
 
 #1 if unit is on in hour i, otherwise 0
-model.on = Var(model.Generators,model.HH_periods, within=Binary, initialize=0)
+model.on = Var(model.Dispatchable,model.HH_periods, within=Binary, initialize=0)
 
 #1 if unit is switching on in hour i, otherwise 0
-model.switch = Var(model.Generators,model.HH_periods, within=Binary,initialize=0)
+model.switch = Var(model.Dispatchable,model.HH_periods, within=Binary,initialize=0)
 
 # #Amount of spining reserve offered by an unit in each hour
 # model.srsv = Var(model.Generators,model.HH_periods, within=NonNegativeReals,initialize=0)
 
 # #Amount of non-sping reserve offered by an unit in each hour
 # model.nrsv = Var(model.Generators,model.HH_periods, within=NonNegativeReals,initialize=0)
-
-###dispatch of solar-power in each hour
-##model.solar = Var(model.s_nodes,model.HH_periods,within=NonNegativeReals)
-##
-###dispatch of wind-power in each hour
-##model.wind = Var(model.w_nodes,model.HH_periods,within=NonNegativeReals)
 
 # slack variables
 model.S = Var(model.buses,model.hh_periods, within=NonNegativeReals,initialize=0)
@@ -156,8 +153,8 @@ model.Theta= Var(model.buses,model.hh_periods)
 ######================Objective function=============########
 
 def SysCost(model):
-    fixed = sum(model.no_load[j]*model.on[j,i] for i in model.hh_periods for j in model.Generators)
-    starts = sum(model.st_cost[j]*model.switch[j,i] for i in model.hh_periods for j in model.Generators)
+    fixed = sum(model.no_load[j]*model.on[j,i] for i in model.hh_periods for j in model.Dispatchable)
+    starts = sum(model.st_cost[j]*model.switch[j,i] for i in model.hh_periods for j in model.Dispatchable)
     coal = sum(model.mwh[j,i]*(model.heat_rate[j]*2 + model.var_om[j]) for i in model.hh_periods for j in model.Coal)  
     oil = sum(model.mwh[j,i]*(model.heat_rate[j]*10 + model.var_om[j]) for i in model.hh_periods for j in model.Oil)
     gas = sum(model.mwh[j,i]*(model.heat_rate[j]*4.5 + model.var_om[j]) for i in model.hh_periods for j in model.Gas)
@@ -177,7 +174,7 @@ model.SystemCost = Objective(rule=SysCost, sense=minimize)
 # Switch is 1 if unit is turned on in current period
 def SwitchCon(model,j,i):
     return model.switch[j,i] >= 1 - model.on[j,i-1] - (1 - model.on[j,i])
-model.SwitchConstraint = Constraint(model.Generators,model.hh_periods,rule = SwitchCon)
+model.SwitchConstraint = Constraint(model.Dispatchable,model.hh_periods,rule = SwitchCon)
 
 
 ######========== Up/Down Time Constraint =========#############
@@ -220,12 +217,12 @@ model.RampCon2 = Constraint(model.Thermal,model.ramp_periods,rule=Ramp2)
 # Constraints for Max & Min Capacity of dispatchable resources
 def MaxC(model,j,i):
     return model.mwh[j,i]  <= model.on[j,i] * model.maxcap[j] 
-model.MaxCap= Constraint(model.Generators,model.hh_periods,rule=MaxC)
+model.MaxCap= Constraint(model.Dispatchable,model.hh_periods,rule=MaxC)
 
 
 def MinC(model,j,i):
     return model.mwh[j,i] >= model.on[j,i] * model.mincap[j]
-model.MinCap= Constraint(model.Generators,model.hh_periods,rule=MinC)
+model.MinCap= Constraint(model.Dispatchable,model.hh_periods,rule=MinC)
 
 
 #Max capacity constraints on domestic hydropower 
@@ -234,15 +231,16 @@ def HydroC(model,j,i):
     return  daily <= model.HorizonHydro[j]    
 model.HydroConstraint= Constraint(model.Hydro,model.hh_periods,rule=HydroC)
 
-###Max capacity constraints on solar 
-##def SolarC(model,z,i):
-##    return model.solar[z,i] <= model.HorizonSolar[z,i]  
-##model.SolarConstraint= Constraint(model.s_nodes,model.hh_periods,rule=SolarC)
-##
-###Max capacity constraints on wind
-##def WindC(model,z,i):
-##    return model.wind[z,i] <= model.HorizonWind[z,i]  
-##model.WindConstraint= Constraint(model.w_nodes,model.hh_periods,rule=WindC)
+
+#Max capacity constraints on solar
+def SolarC(model,j,i): 
+    return  model.mwh[j,i] <= model.HorizonSolar[j,i]    
+model.SolarConstraint= Constraint(model.Solar,model.hh_periods,rule=SolarC)
+
+#Max capacity constraints on wind
+def WindC(model,j,i): 
+    return  model.mwh[j,i] <= model.HorizonWind[j,i]    
+model.WindConstraint= Constraint(model.Wind,model.hh_periods,rule=WindC)
 
 
 ######=================================================########

@@ -34,13 +34,13 @@ lines = list(df_line_params['line'])
 
 
 ##daily ts of hydro at nodal-level
-df_hydro = pd.read_csv('data_hydro.csv',header=0)
+df_hydro = pd.read_csv('data_hydro.csv',header=0,index_col=0)
 
-####hourly ts of dispatchable solar-power at each plant
-##df_solar = pd.read_csv('data_solar.csv',header=0)   
+##hourly ts of dispatchable solar-power at each plant
+df_solar = pd.read_csv('data_solar.csv',header=0)   
 ##
-####hourly ts of dispatchable wind-power at each plant
-##df_wind = pd.read_csv('data_wind.csv',header=0)
+##hourly ts of dispatchable wind-power at each plant
+df_wind = pd.read_csv('data_wind.csv',header=0)
 
 ##hourly ts of load at substation-level
 df_load = pd.read_csv('data_load.csv',header=0) 
@@ -119,6 +119,26 @@ with open(''+str(data_name)+'.dat', 'w') as f:
     # pull relevant generators
     for gen in range(0,len(df_gen)):
         if df_gen.loc[gen,'typ'] == 'hydro':
+            unit_name = df_gen.loc[gen,'name']
+            unit_name = unit_name.replace(' ','_')
+            f.write(unit_name + ' ')
+    f.write(';\n\n') 
+    
+    # Solar
+    f.write('set Solar :=\n')
+    # pull relevant generators
+    for gen in range(0,len(df_gen)):
+        if df_gen.loc[gen,'typ'] == 'solar':
+            unit_name = df_gen.loc[gen,'name']
+            unit_name = unit_name.replace(' ','_')
+            f.write(unit_name + ' ')
+    f.write(';\n\n') 
+    
+    # Wind
+    f.write('set Wind :=\n')
+    # pull relevant generators
+    for gen in range(0,len(df_gen)):
+        if df_gen.loc[gen,'typ'] == 'wind':
             unit_name = df_gen.loc[gen,'name']
             unit_name = unit_name.replace(' ','_')
             f.write(unit_name + ' ')
@@ -222,7 +242,22 @@ with open(''+str(data_name)+'.dat', 'w') as f:
 
     f.write(';\n\n')
     
-    # hydro (hourly)
+    # wind and solar (hourly)
+    f.write('param:' + '\t' + 'SimSolar:=' + '\n')
+    s_gens = df_solar.columns
+    for z in s_gens:
+        for h in range(0,len(df_solar)):
+            f.write(z + '\t' + str(h+1) + '\t' + str(df_solar.loc[h,z]) + '\n')
+    f.write(';\n\n')
+    
+    f.write('param:' + '\t' + 'SimWind:=' + '\n')
+    w_gens = df_wind.columns
+    for z in w_gens:
+        for h in range(0,len(df_wind)):
+            f.write(z + '\t' + str(h+1) + '\t' + str(df_wind.loc[h,z]) + '\n')
+    f.write(';\n\n')
+    
+    # hydro (daily)
     f.write('param:' + '\t' + 'SimHydro:=' + '\n')
     h_gens = df_hydro.columns      
     for z in h_gens:

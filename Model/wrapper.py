@@ -16,8 +16,8 @@ import numpy as np
 from datetime import datetime
 import pyomo.environ as pyo
 
+# Max = 365
 days = 4
-# def sim(days):
 
 instance = m1.create_instance('WECC_data.dat')
 opt = SolverFactory("cplex")
@@ -51,15 +51,15 @@ for day in range(1,days):
     #load Hydropower time series data
         instance.HorizonHydro[z] = instance.SimHydro[z,day]
     
-    # for z in instance.s_nodes:
-    # #load Solar time series data
-    #     for i in K:
-    #         instance.HorizonSolar[z,i] = instance.SimSolar[z,(day-1)*24+i]
+    for z in instance.Solar:
+    #load Solar time series data
+        for i in K:
+            instance.HorizonSolar[z,i] = instance.SimSolar[z,(day-1)*24+i]
  
-    # for z in instance.w_nodes:
-    # #load Wind time series data
-    #     for i in K:
-    #         instance.HorizonWind[z,i] = instance.SimWind[z,(day-1)*24+i]
+    for z in instance.Wind:
+    #load Wind time series data
+        for i in K:
+            instance.HorizonWind[z,i] = instance.SimWind[z,(day-1)*24+i]
     
 
     result = opt.solve(instance,tee=True,symbolic_solver_labels=True) ##,tee=True to check number of variables\n",
@@ -69,19 +69,7 @@ for day in range(1,days):
     for v in instance.component_objects(Var, active=True):
         varobject = getattr(instance, str(v))
         a=str(v)
-       
-        # if a=='solar':
-        #     for index in varobject:
-        #         if int(index[1]>0 and index[1]<25):
-        #             if index[0] in instance.s_nodes:
-        #                 solar.append((index[0],index[1]+((day-1)*24),varobject[index].value))  
-        
-        # if a=='wind':
-        #     for index in varobject:
-        #         if int(index[1]>0 and index[1]<25):
-        #             if index[0] in instance.w_nodes:
-        #                 wind.append((index[0],index[1]+((day-1)*24),varobject[index].value))   
-        
+                  
         if a=='Theta':
             for index in varobject:
                 if int(index[1]>0 and index[1]<25):
@@ -120,8 +108,6 @@ for day in range(1,days):
 
     print(day)
         
-# solar_pd=pd.DataFrame(solar,columns=('Node','Time','Value'))
-# wind_pd=pd.DataFrame(wind,columns=('Node','Time','Value'))
 vlt_angle_pd=pd.DataFrame(vlt_angle,columns=('Node','Time','Value'))
 mwh_pd=pd.DataFrame(mwh,columns=('Generator','Time','Value'))
 # on_pd=pd.DataFrame(on,columns=('Generator','Time','Value'))
@@ -132,8 +118,6 @@ slack_pd = pd.DataFrame(slack,columns=('Node','Time','Value'))
 
 #to save outputs
 mwh_pd.to_csv('mwh.csv')
-# solar_pd.to_csv('solar.csv')
-# wind_pd.to_csv('wind.csv')
 vlt_angle_pd.to_csv('vlt_angle.csv')
 # on_pd.to_csv('on.csv')
 # switch_pd.to_csv('switch.csv')
@@ -142,6 +126,5 @@ vlt_angle_pd.to_csv('vlt_angle.csv')
 slack_pd.to_csv('slack.csv')
 
 
-    # return None
 
 
