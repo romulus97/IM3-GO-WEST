@@ -97,6 +97,7 @@ model.ramp_periods = RangeSet(2,24)
 
 #Demand over simulation period
 model.SimDemand = Param(model.buses*model.SH_periods, within=NonNegativeReals)
+
 #Horizon demand
 model.HorizonDemand = Param(model.buses*model.hh_periods,within=NonNegativeReals,mutable=True)
 
