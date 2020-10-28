@@ -7,6 +7,7 @@ Created on Tue Jun 20 22:14:07 2017
 
 from pyomo.opt import SolverFactory
 from WECC_MILP import model as m1
+from WECC_LP import model as m2
 from pyomo.core import Var
 from pyomo.core import Constraint
 from pyomo.core import Param
@@ -20,6 +21,9 @@ import pyomo.environ as pyo
 days = 4
 
 instance = m1.create_instance('WECC_data.dat')
+instance2 = m2.create_instance('WECC_data.dat')
+instance2.dual = pyo.Suffix(direction=pyo.Suffix.IMPORT)
+
 opt = SolverFactory("cplex")
 
 H = instance.HorizonHours
@@ -31,10 +35,12 @@ K=range(1,H+1)
 mwh=[]
 on=[]
 switch=[]
+flow=[]
 # srsv=[]
 # nrsv=[]
 slack = []
 vlt_angle=[]
+duals=[]
 
 df_generators = pd.read_csv('data_genparams.csv',header=0)
 
@@ -45,27 +51,64 @@ for day in range(1,days):
     #load Demand and Reserve time series data
         for i in K:
             instance.HorizonDemand[z,i] = instance.SimDemand[z,(day-1)*24+i]
+            instance2.HorizonDemand[z,i] = instance.SimDemand[z,(day-1)*24+i]
+
             # instance.HorizonReserves[i] = instance.SimReserves[(day-1)*24+i]
 
     for z in instance.Hydro:
     #load Hydropower time series data
         instance.HorizonHydro[z] = instance.SimHydro[z,day]
-    
+        instance2.HorizonHydro[z] = instance.SimHydro[z,day]
+        
     for z in instance.Solar:
     #load Solar time series data
         for i in K:
             instance.HorizonSolar[z,i] = instance.SimSolar[z,(day-1)*24+i]
- 
+            instance2.HorizonSolar[z,i] = instance.SimSolar[z,(day-1)*24+i]
+
     for z in instance.Wind:
     #load Wind time series data
         for i in K:
             instance.HorizonWind[z,i] = instance.SimWind[z,(day-1)*24+i]
-    
+            instance2.HorizonWind[z,i] = instance.SimWind[z,(day-1)*24+i]
 
     result = opt.solve(instance,tee=True,symbolic_solver_labels=True) ##,tee=True to check number of variables\n",
     instance.solutions.load_from(result)  
+    
+    print('MILP')
+    
+    
+    for j in instance.Dispatchable:
+        for t in K:
+            if instance.on[j,t] == 1:
+                instance2.on[j,t] = 1
+                instance2.on[j,t].fixed = True
+            else:
+                instance.on[j,t] = 0
+                instance2.on[j,t] = 0
+                instance2.on[j,t].fixed = True
 
- 
+            if instance.switch[j,t] == 1:
+                instance2.switch[j,t] = 1
+                instance2.switch[j,t].fixed = True
+            else:
+                instance2.switch[j,t] = 0
+                instance2.switch[j,t] = 0
+                instance2.switch[j,t].fixed = True
+                    
+    results = opt.solve(instance2,tee=True,symbolic_solver_labels=True)
+    instance2.solutions.load_from(results)
+
+    for c in instance2.component_objects(Constraint, active=True):
+        cobject = getattr(instance2, str(c))
+        if str(c) in ['Node_Constraint']:
+            for index in cobject:
+                 if int(index[1]>0 and index[1]<25):
+                     try:
+                         duals.append((str(c),index[0],index[1]+((day-1)*24), instance2.dual[cobject[index]]))
+                     except KeyError:
+                         duals.append((str(c),index[0],index[1]+((day-1)*24),-999))
+
     for v in instance.component_objects(Var, active=True):
         varobject = getattr(instance, str(v))
         a=str(v)
@@ -96,6 +139,11 @@ for day in range(1,days):
                 if index[0] in instance.buses:
                         slack.append((index[0],index[1]+((day-1)*24),varobject[index].value))
 
+        if a=='Flow':    
+            for index in varobject:
+                if int(index[1]>0 and index[1]<25):
+                    flow.append((index[0],index[1]+((day-1)*24),varobject[index].value))                                            
+
         # if a=='srsv':    
         #     for index in varobject:
         #         if int(index[1]>0 and index[1]<25):
@@ -115,6 +163,8 @@ mwh_pd=pd.DataFrame(mwh,columns=('Generator','Time','Value'))
 # srsv_pd=pd.DataFrame(srsv,columns=('Generator','Time','Value'))
 # nrsv_pd=pd.DataFrame(nrsv,columns=('Generator','Time','Value'))
 slack_pd = pd.DataFrame(slack,columns=('Node','Time','Value'))
+flow_pd = pd.DataFrame(flow,columns=('Line','Time','Value'))
+duals_pd = pd.DataFrame(duals,columns=['Constraint','Bus','Time','Value'])
 
 #to save outputs
 mwh_pd.to_csv('mwh.csv')
@@ -124,6 +174,8 @@ vlt_angle_pd.to_csv('vlt_angle.csv')
 # srsv_pd.to_csv('srsv.csv')
 # nrsv_pd.to_csv('nrsv.csv')
 slack_pd.to_csv('slack.csv')
+flow_pd.to_csv('flow.csv')
+duals_pd.to_csv('duals.csv')
 
 
 
