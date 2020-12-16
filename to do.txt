@@ -1,7 +1,0 @@
-line errors
-pumped storage/batteries
-transmission losses
-reserves
-expand mix/load
-
-

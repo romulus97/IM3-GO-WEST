@@ -1,0 +1,729 @@
+eGRID2016 Generator file sequence number,Plant state abbreviation,Plant name,DOE/EIA ORIS plant or facility code,Generator ID,Number of associated boilers,Generator status,Generator prime mover type,Generator primary fuel,Generator nameplate capacity (MW),Generator capacity factor,Generator annual net generation (MWh),Generator ozone season net generation (MWh),Generation data source,Generator year on-line,Generator planned or actual retirement year,area,utility,state,NGCC,NGCT,Coal,Oil,Wind,SolarPV,SolarCSP,Hydro,Nuclear,Other,Bus,,
+1539,AZ,Saguaro,118,GT2,0,OP,GT,NG,53.1,0.01,4532.351,3085.844,Distributed from 923 Generation And Fuel,1973,,AZPS,Arizona Public Service Co,Arizona,0,53.1,0,0,0,0,0,0,0,0,PALOVRD2_22,,
+1538,AZ,Saguaro,118,GT1,0,OP,GT,NG,53.1,0.01,4532.351,3085.844,Distributed from 923 Generation And Fuel,1972,,AZPS,Arizona Public Service Co,Arizona,0,53.1,0,0,0,0,0,0,0,0,PALOVRD2_21,,
+1245,AZ,Agua Fria,141,AF1,1,OP,ST,NG,113.6,0.02,19839,20818,EIA-923 Generator File,1958,,SRP,Salt River Project,Arizona,113.6,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1246,AZ,Agua Fria,141,AF2,1,OP,ST,NG,113.6,0.027,26480,22830,EIA-923 Generator File,1957,,SRP,Salt River Project,Arizona,113.6,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1247,AZ,Agua Fria,141,AF3,1,OP,ST,NG,163.2,0.027,38612,32860,EIA-923 Generator File,1961,,SRP,Salt River Project,Arizona,163.2,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1248,AZ,Agua Fria,141,AF4,0,OP,GT,NG,80.5,,-83.064,128.569,Data from EIA-923 Generator File overwritten with distributed data from EIA-923 Generation and Fuel,1975,,SRP,Salt River Project,Arizona,0,80.5,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1249,AZ,Agua Fria,141,AF5,0,OP,GT,NG,71.2,,-73.468,113.716,Data from EIA-923 Generator File overwritten with distributed data from EIA-923 Generation and Fuel,1974,,SRP,Salt River Project,Arizona,0,71.2,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1250,AZ,Agua Fria,141,AF6,0,OP,GT,NG,71.2,,-73.468,113.716,Data from EIA-923 Generator File overwritten with distributed data from EIA-923 Generation and Fuel,1974,,SRP,Salt River Project,Arizona,0,71.2,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1251,AZ,Agua Fria,141,PV-3,0,OP,PV,SUN,0.2,0.087,153,115,Distributed from 923 Generation And Fuel,2001,,SRP,Salt River Project,Arizona,0,0,0,0,0,0.2,0,0,0,0,PALOVRD2_20,,
+1270,AZ,Arlington Valley Energy Facility,55282,CTG1,0,OP,CT,NG,198,0.327,567682,468372,EIA-923 Generator File,2002,,DEAA,Salt River Project,Arizona,198,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1271,AZ,Arlington Valley Energy Facility,55282,CTG2,0,OP,CT,NG,198,0.33,571560,472849,EIA-923 Generator File,2002,,DEAA,Salt River Project,Arizona,198,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1272,AZ,Arlington Valley Energy Facility,55282,STG1,2,OP,CA,NG,317,0.269,746587,617816,EIA-923 Generator File,2002,,DEAA,Salt River Project,Arizona,317,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1274,AZ,Arlington Valley Solar Energy II,57680,AVSE1,0,OP,PV,SUN,19,0.322,53670.729,27253.07,Distributed from 923 Generation And Fuel,2013,,AZPS,Salt River Project,Arizona,0,0,0,0,0,19,0,0,0,0,PALOVRD2_20,,
+1275,AZ,Arlington Valley Solar Energy II,57680,AVSE2,0,OP,PV,SUN,28,0.322,79093.705,40162.419,Distributed from 923 Generation And Fuel,2013,,AZPS,Salt River Project,Arizona,0,0,0,0,0,28,0,0,0,0,PALOVRD2_20,,
+1276,AZ,Arlington Valley Solar Energy II,57680,AVSE3,0,OP,PV,SUN,28,0.322,79093.705,40162.419,Distributed from 923 Generation And Fuel,2013,,AZPS,Salt River Project,Arizona,0,0,0,0,0,28,0,0,0,0,PALOVRD2_20,,
+1277,AZ,Arlington Valley Solar Energy II,57680,AVSE4,0,OP,PV,SUN,26,0.322,73444.155,37293.674,Distributed from 923 Generation And Fuel,2013,,AZPS,Salt River Project,Arizona,0,0,0,0,0,26,0,0,0,0,PALOVRD2_20,,
+1278,AZ,Arlington Valley Solar Energy II,57680,AVSE5,0,OP,PV,SUN,28,0.322,79093.705,40162.419,Distributed from 923 Generation And Fuel,2013,,AZPS,Salt River Project,Arizona,0,0,0,0,0,28,0,0,0,0,PALOVRD2_20,,
+1349,AZ,Desert Basin,55129,CTG1,0,OP,CT,NG,187,0.263,430642,259416,EIA-923 Generator File,2001,,SRP,Salt River Project,Arizona,187,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1350,AZ,Desert Basin,55129,CTG2,0,OP,CT,NG,187,0.149,243294,111463,EIA-923 Generator File,2001,,SRP,Salt River Project,Arizona,187,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1351,AZ,Desert Basin,55129,STG,2,OP,CA,NG,272.1,0.202,480792,270499,EIA-923 Generator File,2001,,SRP,Salt River Project,Arizona,272.1,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1353,AZ,Douglas,114,1,0,OP,GT,DFO,26.1,0,84,27,Distributed from 923 Generation And Fuel,1972,,AZPS,Arizona Public Service Co,Arizona,0,0,0,26.1,0,0,0,0,0,0,PALOVRD2_20,,
+1373,AZ,Gila River Power Station,55306,CTG7,0,OP,CT,NG,174,0.581,885233,415415,EIA-923 Generator File,2003,,GRMA,Arizona Public Service Co,Arizona,174,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1374,AZ,Gila River Power Station,55306,CTG8,0,OP,CT,NG,174,0.545,831160,409149,EIA-923 Generator File,2003,,GRMA,Arizona Public Service Co,Arizona,174,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1375,AZ,Gila River Power Station,55306,ST12,2,OP,CA,NG,271,0.474,1124831,542973,EIA-923 Generator File,2003,,GRMA,Arizona Public Service Co,Arizona,271,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1376,AZ,Gila River Power Station,55306,CTG1,0,OP,CT,NG,174,0.232,510666,392287.5,Data from EIA-923 Generator File overwritten with distributed data from EIA-923 Generation and Fuel,2003,,GRMA,Arizona Public Service Co,Arizona,174,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1377,AZ,Gila River Power Station,55306,CTG2,0,OP,CT,NG,174,0.11,510666,392287.5,Data from EIA-923 Generator File overwritten with distributed data from EIA-923 Generation and Fuel,2003,,GRMA,Arizona Public Service Co,Arizona,174,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1378,AZ,Gila River Power Station,55306,ST9,2,OP,CA,NG,271,0.135,659648,508426,Data from EIA-923 Generator File overwritten with distributed data from EIA-923 Generation and Fuel,2003,,GRMA,Arizona Public Service Co,Arizona,271,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1379,AZ,Gila River Power Station,55306,CTG5,0,OP,CT,NG,174,0.425,647756,338501,EIA-923 Generator File,2003,,GRMA,Arizona Public Service Co,Arizona,174,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1380,AZ,Gila River Power Station,55306,CTG6,0,OP,CT,NG,174,0.512,781011,324368,EIA-923 Generator File,2003,,GRMA,Arizona Public Service Co,Arizona,174,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1381,AZ,Gila River Power Station,55306,ST11,2,OP,CA,NG,271,0.404,958134,449290,EIA-923 Generator File,2003,,GRMA,Arizona Public Service Co,Arizona,271,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1395,AZ,Griffith Energy LLC,55124,CTG1,0,OP,CT,NG,176.6,0.349,539813,406630,EIA-923 Generator File,2002,,GRIF,WAPA-- Western Area Power Administration,Arizona,176.6,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1396,AZ,Griffith Energy LLC,55124,CTG2,0,OP,CT,NG,176.6,0.441,682324,423581,EIA-923 Generator File,2002,,GRIF,WAPA-- Western Area Power Administration,Arizona,176.6,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1397,AZ,Griffith Energy LLC,55124,STG,2,OP,CA,NG,301.8,0.327,864595,650652,EIA-923 Generator File,2002,,GRIF,WAPA-- Western Area Power Administration,Arizona,301.8,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1404,AZ,Harquahala Generating Project,55372,CTG1,0,OP,CT,NG,281.7,0.368,907801,614660,EIA-923 Generator File,2004,,HGMA,Salt River Project,Arizona,281.7,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1405,AZ,Harquahala Generating Project,55372,CTG2,0,OP,CT,NG,281.7,0.252,621208,384285,EIA-923 Generator File,2004,,HGMA,Salt River Project,Arizona,281.7,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1406,AZ,Harquahala Generating Project,55372,CTG3,0,OP,CT,NG,281.7,0.283,697579,475567,EIA-923 Generator File,2004,,HGMA,Salt River Project,Arizona,281.7,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1407,AZ,Harquahala Generating Project,55372,STG1,1,OP,CA,NG,160,0.294,411587,363608,EIA-923 Generator File,2004,,HGMA,Salt River Project,Arizona,160,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1408,AZ,Harquahala Generating Project,55372,STG2,1,OP,CA,NG,160,0.228,319855,219529,EIA-923 Generator File,2004,,HGMA,Salt River Project,Arizona,160,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1409,AZ,Harquahala Generating Project,55372,STG3,1,OP,CA,NG,160,0.297,415702,276065,EIA-923 Generator File,2004,,HGMA,Salt River Project,Arizona,160,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1444,AZ,Kyrene,147,KY4,0,OP,GT,NG,53.1,,-571.047,-110.663,Data from EIA-923 Generator File overwritten with distributed data from EIA-923 Generation and Fuel,1971,,SRP,Salt River Project,Arizona,0,53.1,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1445,AZ,Kyrene,147,KY5,0,OP,GT,NG,60.3,,-648.477,-125.668,Data from EIA-923 Generator File overwritten with distributed data from EIA-923 Generation and Fuel,1973,,SRP,Salt River Project,Arizona,0,60.3,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1446,AZ,Kyrene,147,KY6,0,OP,GT,NG,60.3,,-648.477,-125.668,Data from EIA-923 Generator File overwritten with distributed data from EIA-923 Generation and Fuel,1973,,SRP,Salt River Project,Arizona,0,60.3,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1447,AZ,Kyrene,147,KY7,0,OP,CT,NG,170,0.516,768549,439037,EIA-923 Generator File,2002,,SRP,Salt River Project,Arizona,170,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1448,AZ,Kyrene,147,KY7A,1,OP,CA,NG,122,0.404,431319,248557,EIA-923 Generator File,2002,,SRP,Salt River Project,Arizona,122,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1456,AZ,Mesquite Generating Station,55481,GT3,0,OP,CT,NG,185.3,0.438,710620,439730,EIA-923 Generator File,2003,,SRP,Salt River Project,Arizona,185.3,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1457,AZ,Mesquite Generating Station,55481,GT4,0,OP,CT,NG,185.3,0.457,741359,438863,EIA-923 Generator File,2003,,SRP,Salt River Project,Arizona,185.3,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1458,AZ,Mesquite Generating Station,55481,ST2,2,OP,CA,NG,321,0.375,1055713,651056,EIA-923 Generator File,2003,,SRP,Salt River Project,Arizona,321,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1459,AZ,Mesquite Generating Station,55481,GT1,0,OP,CT,NG,185.3,0.325,527264,353495,EIA-923 Generator File,2003,,SRP,Salt River Project,Arizona,185.3,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1460,AZ,Mesquite Generating Station,55481,GT2,0,OP,CT,NG,185.3,0.357,579861,381651,EIA-923 Generator File,2003,,SRP,Salt River Project,Arizona,185.3,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1461,AZ,Mesquite Generating Station,55481,ST1,2,OP,CA,NG,321,0.31,872875,601326,EIA-923 Generator File,2003,,SRP,Salt River Project,Arizona,321,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1462,AZ,Mesquite Solar 1,57707,1,0,OP,PV,SUN,16,0.274,38423.529,18103.435,Distributed from 923 Generation And Fuel,2011,,SRP,Salt River Project,Arizona,0,0,0,0,0,16,0,0,0,0,PALOVRD2_20,,
+1463,AZ,Mesquite Solar 1,57707,10,0,OP,PV,SUN,12,0.274,28817.647,13577.576,Distributed from 923 Generation And Fuel,2012,,SRP,Salt River Project,Arizona,0,0,0,0,0,12,0,0,0,0,PALOVRD2_20,,
+1464,AZ,Mesquite Solar 1,57707,11,0,OP,PV,SUN,16,0.274,38423.529,18103.435,Distributed from 923 Generation And Fuel,2012,,SRP,Salt River Project,Arizona,0,0,0,0,0,16,0,0,0,0,PALOVRD2_20,,
+1465,AZ,Mesquite Solar 1,57707,12,0,OP,PV,SUN,16,0.274,38423.529,18103.435,Distributed from 923 Generation And Fuel,2012,,SRP,Salt River Project,Arizona,0,0,0,0,0,16,0,0,0,0,PALOVRD2_20,,
+1466,AZ,Mesquite Solar 1,57707,2,0,OP,PV,SUN,16,0.274,38423.529,18103.435,Distributed from 923 Generation And Fuel,2012,,SRP,Salt River Project,Arizona,0,0,0,0,0,16,0,0,0,0,PALOVRD2_20,,
+1467,AZ,Mesquite Solar 1,57707,3,0,OP,PV,SUN,10,0.274,24014.706,11314.647,Distributed from 923 Generation And Fuel,2011,,SRP,Salt River Project,Arizona,0,0,0,0,0,10,0,0,0,0,PALOVRD2_20,,
+1468,AZ,Mesquite Solar 1,57707,4,0,OP,PV,SUN,16,0.274,38423.529,18103.435,Distributed from 923 Generation And Fuel,2012,,SRP,Salt River Project,Arizona,0,0,0,0,0,16,0,0,0,0,PALOVRD2_20,,
+1469,AZ,Mesquite Solar 1,57707,5,0,OP,PV,SUN,16,0.274,38423.529,18103.435,Distributed from 923 Generation And Fuel,2012,,SRP,Salt River Project,Arizona,0,0,0,0,0,16,0,0,0,0,PALOVRD2_20,,
+1470,AZ,Mesquite Solar 1,57707,6,0,OP,PV,SUN,8,0.274,19211.765,9051.718,Distributed from 923 Generation And Fuel,2012,,SRP,Salt River Project,Arizona,0,0,0,0,0,8,0,0,0,0,PALOVRD2_20,,
+1471,AZ,Mesquite Solar 1,57707,7,0,OP,PV,SUN,16,0.274,38423.529,18103.435,Distributed from 923 Generation And Fuel,2012,,SRP,Salt River Project,Arizona,0,0,0,0,0,16,0,0,0,0,PALOVRD2_20,,
+1472,AZ,Mesquite Solar 1,57707,8,0,OP,PV,SUN,12,0.274,28817.647,13577.576,Distributed from 923 Generation And Fuel,2012,,SRP,Salt River Project,Arizona,0,0,0,0,0,12,0,0,0,0,PALOVRD2_20,,
+1473,AZ,Mesquite Solar 1,57707,9,0,OP,PV,SUN,16,0.274,38423.529,18103.435,Distributed from 923 Generation And Fuel,2012,,SRP,Salt River Project,Arizona,0,0,0,0,0,16,0,0,0,0,PALOVRD2_20,,
+1474,AZ,"Mesquite Solar 2, LLC",60307,1,0,OP,PV,SUN,100,0.015,13255,0,Distributed from 923 Generation And Fuel,2016,,CISO,San Diego Gas & Electric Co,Arizona,0,0,0,0,0,100,0,0,0,0,PALOVRD2_20,,
+1475,AZ,"Mesquite Solar 3, LLC",60308,1,0,OP,PV,SUN,150,0.016,21060,0,Distributed from 923 Generation And Fuel,2016,,CISO,San Diego Gas & Electric Co,Arizona,0,0,0,0,0,150,0,0,0,0,PALOVRD2_20,,
+1487,AZ,Northwest Regional,57403,GEN1,0,OP,IC,LFG,1.6,0.812,11383.5,4779.5,Distributed from 923 Generation And Fuel,2012,,AZPS,Arizona Public Service Co,Arizona,0,0,0,0,0,0,0,0,0,1.6,PALOVRD2_20,,
+1488,AZ,Northwest Regional,57403,GEN2,0,OP,IC,LFG,1.6,0.812,11383.5,4779.5,Distributed from 923 Generation And Fuel,2012,,AZPS,Arizona Public Service Co,Arizona,0,0,0,0,0,0,0,0,0,1.6,PALOVRD2_20,,
+1502,AZ,Palo Verde,6008,1,1,OP,ST,NUC,1403.2,0.878,10792492.33,4525005.667,Distributed from 923 Generation And Fuel,1986,,SRP,Salt River Project,Arizona,0,0,0,0,0,0,0,0,1403.2,0,PALOVRD2_20,,
+1503,AZ,Palo Verde,6008,2,1,OP,ST,NUC,1403.2,0.878,10792492.33,4525005.667,Distributed from 923 Generation And Fuel,1986,,SRP,Salt River Project,Arizona,0,0,0,0,0,0,0,0,1403.2,0,PALOVRD2_20,,
+1504,AZ,Palo Verde,6008,3,1,OP,ST,NUC,1403.2,0.878,10792492.33,4525005.667,Distributed from 923 Generation And Fuel,1988,,SRP,Salt River Project,Arizona,0,0,0,0,0,0,0,0,1403.2,0,PALOVRD2_20,,
+1523,AZ,Red Hawk,55455,CT1A,0,OP,CT,NG,187.5,0.498,818050,405187,EIA-923 Generator File,2002,,SRP,Salt River Project,Arizona,187.5,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1524,AZ,Red Hawk,55455,CT1B,0,OP,CT,NG,181.6,0.515,819313,407646,EIA-923 Generator File,2002,,SRP,Salt River Project,Arizona,181.6,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1525,AZ,Red Hawk,55455,CT2A,0,OP,CT,NG,181.6,0.479,762627,390311,EIA-923 Generator File,2002,,SRP,Salt River Project,Arizona,181.6,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1526,AZ,Red Hawk,55455,CT2B,0,OP,CT,NG,181.6,0.489,777971,380800,EIA-923 Generator File,2002,,SRP,Salt River Project,Arizona,181.6,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1527,AZ,Red Hawk,55455,ST1,2,OP,CA,NG,204,0.566,1010640,500825,EIA-923 Generator File,2002,,SRP,Salt River Project,Arizona,204,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1528,AZ,Red Hawk,55455,ST2,2,OP,CA,NG,204,0.543,970298,490024,EIA-923 Generator File,2002,,SRP,Salt River Project,Arizona,204,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1535,AZ,Roosevelt,149,ROOS,0,OP,HY,WAT,36,0.187,58948,26050,Distributed from 923 Generation And Fuel,1973,,SRP,Salt River Project,Arizona,0,0,0,0,0,0,0,36,0,0,PALOVRD2_20,,
+1537,AZ,Saguaro,118,GE1,0,OP,GT,NG,78.3,0.01,6683.298,4550.312,Distributed from 923 Generation And Fuel,2002,,AZPS,Arizona Public Service Co,Arizona,0,78.3,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1609,AZ,West Phoenix,117,1B,1,OP,CS,NG,132,0.119,137112,72312,EIA-923 Generator File,1976,,AZPS,Arizona Public Service Co,Arizona,0,132,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1610,AZ,West Phoenix,117,2B,1,OP,CS,NG,132,0.087,100219,61172,EIA-923 Generator File,1976,,AZPS,Arizona Public Service Co,Arizona,0,132,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1611,AZ,West Phoenix,117,3B,1,OP,CS,NG,132,0.139,160851,83458,EIA-923 Generator File,1976,,AZPS,Arizona Public Service Co,Arizona,0,132,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1612,AZ,West Phoenix,117,C4-1,0,OP,CT,NG,91,0.239,190448,127039,EIA-923 Generator File,2001,,AZPS,Arizona Public Service Co,Arizona,91,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1613,AZ,West Phoenix,117,C4-2,1,OP,CA,NG,44.6,0,0,0,EIA-923 Generator File,2001,,AZPS,Arizona Public Service Co,Arizona,44.6,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1614,AZ,West Phoenix,117,C5-1,0,OP,CT,NG,184.5,0.401,648364,334438,EIA-923 Generator File,2003,,AZPS,Arizona Public Service Co,Arizona,184.5,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1615,AZ,West Phoenix,117,C5-2,0,OP,CT,NG,184.5,0.394,636947,312172,EIA-923 Generator File,2003,,AZPS,Arizona Public Service Co,Arizona,184.5,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1616,AZ,West Phoenix,117,C5-3,2,OP,CA,NG,200.6,0.394,692869,347532,EIA-923 Generator File,2003,,AZPS,Arizona Public Service Co,Arizona,200.6,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1617,AZ,West Phoenix,117,GT1,0,OP,GT,NG,53.1,0.003,1609.5,434.5,Distributed from 923 Generation And Fuel,1972,,AZPS,Arizona Public Service Co,Arizona,0,53.1,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1618,AZ,West Phoenix,117,GT2,0,OP,GT,NG,53.1,0.003,1609.5,434.5,Distributed from 923 Generation And Fuel,1973,,AZPS,Arizona Public Service Co,Arizona,0,53.1,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1624,AZ,Yucca,120,GT1,0,OP,GT,NG,23.6,0.052,10808.005,3799.44,Distributed from 923 Generation And Fuel,1971,,AZPS,Arizona Public Service Co,Arizona,0,23.6,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1625,AZ,Yucca,120,GT2,0,OP,GT,NG,23.6,0.052,10808.005,3799.44,Distributed from 923 Generation And Fuel,1971,,AZPS,Arizona Public Service Co,Arizona,0,23.6,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1626,AZ,Yucca,120,GT21,0,OP,GT,DFO,25.3,0.052,11586.547,4073.128,Distributed from 923 Generation And Fuel,1978,,AZPS,Arizona Public Service Co,Arizona,0,0,0,25.3,0,0,0,0,0,0,PALOVRD2_20,,
+1627,AZ,Yucca,120,GT3,0,OP,GT,NG,72.4,0.052,33156.76,11655.908,Distributed from 923 Generation And Fuel,1973,,AZPS,Arizona Public Service Co,Arizona,0,72.4,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1628,AZ,Yucca,120,GT4,0,OP,GT,DFO,72.4,0.052,33156.76,11655.908,Distributed from 923 Generation And Fuel,1974,,AZPS,Arizona Public Service Co,Arizona,0,0,0,72.4,0,0,0,0,0,0,PALOVRD2_20,,
+1629,AZ,Yucca,120,GT5,0,OP,GT,NG,60.5,0.052,27706.961,9740.089,Distributed from 923 Generation And Fuel,2008,,AZPS,Arizona Public Service Co,Arizona,0,60.5,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1630,AZ,Yucca,120,GT6,0,OP,GT,NG,60.5,0.052,27706.961,9740.089,Distributed from 923 Generation And Fuel,2008,,AZPS,Arizona Public Service Co,Arizona,0,60.5,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1631,AZ,Yucca,120,ST1,1,OP,ST,NG,86.7,0.271,205774,129422,EIA-923 Generator File,1959,,AZPS,Arizona Public Service Co,Arizona,86.7,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1556,AZ,South Point Energy Center,55177,A,0,OP,CT,NG,236,0.034,69493,17092,EIA-923 Generator File,2001,,WALC,WAPA-- Western Area Power Administration,Arizona,236,0,0,0,0,0,0,0,0,0,HOOVER_20,,
+1558,AZ,South Point Energy Center,55177,ST1,2,OP,CA,NG,236,0.015,30911,7926,EIA-923 Generator File,2001,,WALC,WAPA-- Western Area Power Administration,Arizona,236,0,0,0,0,0,0,0,0,0,HOOVER_20,,
+1571,AZ,Sundance,55522,CT1,0,OP,GT,NG,60.5,0.044,23437.2,9176.9,Distributed from 923 Generation And Fuel,2002,,WALC,WAPA-- Western Area Power Administration,Arizona,0,60.5,0,0,0,0,0,0,0,0,HOOVER_20,,
+1572,AZ,Sundance,55522,CT10,0,OP,GT,NG,60.5,0.044,23437.2,9176.9,Distributed from 923 Generation And Fuel,2002,,WALC,WAPA-- Western Area Power Administration,Arizona,0,60.5,0,0,0,0,0,0,0,0,HOOVER_20,,
+1573,AZ,Sundance,55522,CT2,0,OP,GT,NG,60.5,0.044,23437.2,9176.9,Distributed from 923 Generation And Fuel,2002,,WALC,WAPA-- Western Area Power Administration,Arizona,0,60.5,0,0,0,0,0,0,0,0,HOOVER_20,,
+1574,AZ,Sundance,55522,CT3,0,OP,GT,NG,60.5,0.044,23437.2,9176.9,Distributed from 923 Generation And Fuel,2002,,WALC,WAPA-- Western Area Power Administration,Arizona,0,60.5,0,0,0,0,0,0,0,0,HOOVER_20,,
+1575,AZ,Sundance,55522,CT4,0,OP,GT,NG,60.5,0.044,23437.2,9176.9,Distributed from 923 Generation And Fuel,2002,,WALC,WAPA-- Western Area Power Administration,Arizona,0,60.5,0,0,0,0,0,0,0,0,HOOVER_20,,
+1576,AZ,Sundance,55522,CT5,0,OP,GT,NG,60.5,0.044,23437.2,9176.9,Distributed from 923 Generation And Fuel,2002,,WALC,WAPA-- Western Area Power Administration,Arizona,0,60.5,0,0,0,0,0,0,0,0,HOOVER_20,,
+1577,AZ,Sundance,55522,CT6,0,OP,GT,NG,60.5,0.044,23437.2,9176.9,Distributed from 923 Generation And Fuel,2002,,WALC,WAPA-- Western Area Power Administration,Arizona,0,60.5,0,0,0,0,0,0,0,0,HOOVER_20,,
+1578,AZ,Sundance,55522,CT7,0,OP,GT,NG,60.5,0.044,23437.2,9176.9,Distributed from 923 Generation And Fuel,2002,,WALC,WAPA-- Western Area Power Administration,Arizona,0,60.5,0,0,0,0,0,0,0,0,HOOVER_20,,
+1579,AZ,Sundance,55522,CT8,0,OP,GT,NG,60.5,0.044,23437.2,9176.9,Distributed from 923 Generation And Fuel,2002,,WALC,WAPA-- Western Area Power Administration,Arizona,0,60.5,0,0,0,0,0,0,0,0,HOOVER_20,,
+1580,AZ,Sundance,55522,CT9,0,OP,GT,NG,60.5,0.044,23437.2,9176.9,Distributed from 923 Generation And Fuel,2002,,WALC,WAPA-- Western Area Power Administration,Arizona,0,60.5,0,0,0,0,0,0,0,0,HOOVER_20,,
+1490,AZ,Ocotillo,116,1,1,OP,ST,NG,113.6,0.068,67415,39680,EIA-923 Generator File,1960,,AZPS,Arizona Public Service Co,Arizona,113.6,0,0,0,0,0,0,0,0,0,FCNGN4CC_20,,
+1491,AZ,Ocotillo,116,2,1,OP,ST,NG,113.6,0.066,65603,37512,EIA-923 Generator File,1960,,AZPS,Arizona Public Service Co,Arizona,113.6,0,0,0,0,0,0,0,0,0,FCNGN4CC_20,,
+1492,AZ,Ocotillo,116,GT1,0,OP,GT,NG,53.1,0.003,1493.5,821,Distributed from 923 Generation And Fuel,1972,,AZPS,Arizona Public Service Co,Arizona,0,53.1,0,0,0,0,0,0,0,0,FCNGN4CC_20,,
+1493,AZ,Ocotillo,116,GT2,0,OP,GT,NG,53.1,0.003,1493.5,821,Distributed from 923 Generation And Fuel,1973,,AZPS,Arizona Public Service Co,Arizona,0,53.1,0,0,0,0,0,0,0,0,FCNGN4CC_20,,
+1260,AZ,Apache Station,160,ST2,1,OP,ST,SUB,204,0.5,893348,432914,EIA-923 Generator File,1979,,WALC,Arizona Electric Pwr Coop Inc,Arizona,0,0,204,0,0,0,0,0,0,0,CORONADO_20,,
+1261,AZ,Apache Station,160,ST3,1,OP,ST,SUB,204,0.593,1060251,502337,EIA-923 Generator File,1979,,WALC,Arizona Electric Pwr Coop Inc,Arizona,0,0,204,0,0,0,0,0,0,0,CORONADO_20,,
+1544,AZ,Santan,8068,ST1,1,OP,CS,NG,103.5,0.18,163472,75226,EIA-923 Generator File,1974,,SRP,Salt River Project,Arizona,0,103.5,0,0,0,0,0,0,0,0,CORONADO_20,,
+1545,AZ,Santan,8068,ST2,1,OP,CS,NG,103.5,0.175,158376,69608,EIA-923 Generator File,1974,,SRP,Salt River Project,Arizona,0,103.5,0,0,0,0,0,0,0,0,CORONADO_20,,
+1546,AZ,Santan,8068,ST3,1,OP,CS,NG,103.5,0.18,163261,75243,EIA-923 Generator File,1974,,SRP,Salt River Project,Arizona,0,103.5,0,0,0,0,0,0,0,0,CORONADO_20,,
+1547,AZ,Santan,8068,ST4,1,OP,CS,NG,103.5,0.177,160904,72158,EIA-923 Generator File,1975,,SRP,Salt River Project,Arizona,0,103.5,0,0,0,0,0,0,0,0,CORONADO_20,,
+1548,AZ,Santan,8068,ST5A,0,OP,CT,NG,153.8,0.263,354037,286558,EIA-923 Generator File,2005,,SRP,Salt River Project,Arizona,153.8,0,0,0,0,0,0,0,0,0,CORONADO_20,,
+1549,AZ,Santan,8068,ST5B,0,OP,CT,NG,153.8,0.311,418866,334368,EIA-923 Generator File,2005,,SRP,Salt River Project,Arizona,153.8,0,0,0,0,0,0,0,0,0,CORONADO_20,,
+1550,AZ,Santan,8068,ST5S,2,OP,CA,NG,314.5,0.201,554317,448683,EIA-923 Generator File,2005,,SRP,Salt River Project,Arizona,314.5,0,0,0,0,0,0,0,0,0,CORONADO_20,,
+1551,AZ,Santan,8068,ST6A,0,OP,CT,NG,153.8,0.442,595585,420496,EIA-923 Generator File,2006,,SRP,Salt River Project,Arizona,153.8,0,0,0,0,0,0,0,0,0,CORONADO_20,,
+1552,AZ,Santan,8068,ST6S,1,OP,CA,NG,136.1,0.349,416361,295684,EIA-923 Generator File,2006,,SRP,Salt River Project,Arizona,136.1,0,0,0,0,0,0,0,0,0,CORONADO_20,,
+2020,CA,Carson Cogeneration,10169,GEN1,0,OP,CT,NG,45.3,0.068,26885,17374,EIA-923 Generator File,1989,,CISO,Southern California Edison Co,California,45.3,0,0,0,0,0,0,0,0,0,RNCHSECO_20,,
+2021,CA,Carson Cogeneration,10169,GEN2,1,OP,CA,NG,10.5,0.112,10274,6309,EIA-923 Generator File,1990,,CISO,Southern California Edison Co,California,10.5,0,0,0,0,0,0,0,0,0,RNCHSECO_20,,
+1872,CA,Blythe Energy Inc,55295,CT1,0,OP,CT,NG,182,0.173,276408,191940,EIA-923 Generator File,2003,,CISO,Southern California Edison Co,California,182,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1873,CA,Blythe Energy Inc,55295,CT2,0,OP,CT,NG,182,0.181,289076,186849,EIA-923 Generator File,2003,,CISO,Southern California Edison Co,California,182,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1874,CA,Blythe Energy Inc,55295,ST1,2,OP,CA,NG,227,0.149,297240,201122,EIA-923 Generator File,2003,,CISO,Southern California Edison Co,California,227,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1875,CA,"Blythe Solar 110, LLC",60093,BLCK1,0,OP,PV,SUN,38.7,0.22,74485.516,49620.59,Distributed from 923 Generation And Fuel,2016,,CISO,Southern California Edison Co,California,0,0,0,0,0,38.7,0,0,0,0,PALOVRD2_20,,
+1876,CA,"Blythe Solar 110, LLC",60093,BLCK2,0,OP,PV,SUN,36.3,0.22,69866.26,46543.344,Distributed from 923 Generation And Fuel,2016,,CISO,Southern California Edison Co,California,0,0,0,0,0,36.3,0,0,0,0,PALOVRD2_20,,
+1877,CA,"Blythe Solar 110, LLC",60093,BLCK3,0,OP,PV,SUN,34.8,0.22,66979.224,44620.066,Distributed from 923 Generation And Fuel,2016,,CISO,Southern California Edison Co,California,0,0,0,0,0,34.8,0,0,0,0,PALOVRD2_20,,
+1878,CA,"Blythe Solar II, LLC",60092,BLCK4,0,OP,PV,SUN,33.2,0.088,25686.982,11655.174,Distributed from 923 Generation And Fuel,2016,,CISO,Southern California Edison Co,California,0,0,0,0,0,33.2,0,0,0,0,PALOVRD2_20,,
+1879,CA,"Blythe Solar II, LLC",60092,BLCK5,0,OP,PV,SUN,33.9,0.088,26228.575,11900.915,Distributed from 923 Generation And Fuel,2016,,CISO,Southern California Edison Co,California,0,0,0,0,0,33.9,0,0,0,0,PALOVRD2_20,,
+1880,CA,"Blythe Solar II, LLC",60092,BLCK6,0,OP,PV,SUN,32,0.088,24758.537,11233.902,Distributed from 923 Generation And Fuel,2016,,CISO,Southern California Edison Co,California,0,0,0,0,0,32,0,0,0,0,PALOVRD2_20,,
+1881,CA,"Blythe Solar II, LLC",60092,BLCK7,0,OP,PV,SUN,32.1,0.088,24835.907,11269.008,Distributed from 923 Generation And Fuel,2016,,CISO,Southern California Edison Co,California,0,0,0,0,0,32.1,0,0,0,0,PALOVRD2_20,,
+3051,CA,Magnolia Power Project,56046,1,0,OP,CT,NG,198.9,0.57,993203,421945,EIA-923 Generator File,2005,,LDWP,City of Burbank Water and Power,California,198.9,0,0,0,0,0,0,0,0,0,OLIVE_20,,
+3052,CA,Magnolia Power Project,56046,2,1,OP,CA,NG,188.7,0.384,635266,269073,EIA-923 Generator File,2005,,LDWP,City of Burbank Water and Power,California,188.7,0,0,0,0,0,0,0,0,0,OLIVE_20,,
+3332,CA,Olive View Medical Center,10884,CTC1,0,OP,GT,NG,2.8,0.367,8993,4219,Distributed from 923 Generation And Fuel,1987,,LDWP,Los Angeles Department of Water & Power,California,0,2.8,0,0,0,0,0,0,0,0,OLIVE_20,,
+3333,CA,Olive View Medical Center,10884,CTC2,0,OP,GT,NG,2.8,0.367,8993,4219,Distributed from 923 Generation And Fuel,1987,,LDWP,Los Angeles Department of Water & Power,California,0,2.8,0,0,0,0,0,0,0,0,OLIVE_20,,
+2656,CA,Grayson,377,1,2,OP,CA,NG,20,0.003,607,607,EIA-923 Generator File,1977,,LDWP,Los Angeles Department of Water & Power,California,20,0,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+2657,CA,Grayson,377,2,2,OP,CA,NG,20,0.009,1528,338,EIA-923 Generator File,1977,,LDWP,Los Angeles Department of Water & Power,California,20,0,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+2658,CA,Grayson,377,3,1,OP,ST,LFG,23,0.069,13946,13227,EIA-923 Generator File,1953,,LDWP,Los Angeles Department of Water & Power,California,0,0,0,0,0,0,0,0,0,23,HAYNES3G_20,,
+2659,CA,Grayson,377,4,1,OP,ST,NG,50,0.093,40580,19122,EIA-923 Generator File,1959,,LDWP,Los Angeles Department of Water & Power,California,50,0,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+2660,CA,Grayson,377,5,1,OP,ST,NG,50,0.137,60133,5663,EIA-923 Generator File,1964,,LDWP,Los Angeles Department of Water & Power,California,50,0,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+2661,CA,Grayson,377,8A,0,OP,CT,NG,25.4,0.014,3078,1102,EIA-923 Generator File,1977,,LDWP,Los Angeles Department of Water & Power,California,25.4,0,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+2662,CA,Grayson,377,8BC,0,OP,CT,NG,55.1,0.005,2354,1674,EIA-923 Generator File,1977,,LDWP,Los Angeles Department of Water & Power,California,55.1,0,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+2663,CA,Grayson,377,9,0,OP,GT,NG,57.4,0.045,22421,14591,Distributed from 923 Generation And Fuel,2004,,LDWP,Los Angeles Department of Water & Power,California,0,57.4,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+2703,CA,Harbor,399,10A,0,OP,CT,NG,85.3,0.037,27526,22312,EIA-923 Generator File,1994,,LDWP,Los Angeles Department of Water & Power,California,85.3,0,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+2704,CA,Harbor,399,10B,0,OP,CT,NG,85.3,0.041,30518,25174,EIA-923 Generator File,1994,,LDWP,Los Angeles Department of Water & Power,California,85.3,0,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+2705,CA,Harbor,399,5,2,OP,CA,NG,75,0.032,20784,17572,EIA-923 Generator File,1949,,LDWP,Los Angeles Department of Water & Power,California,75,0,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+2706,CA,Harbor,399,GT10,0,OP,GT,NG,60.5,0.021,11317.2,7350.4,Distributed from 923 Generation And Fuel,2002,,LDWP,Los Angeles Department of Water & Power,California,0,60.5,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+2707,CA,Harbor,399,GT11,0,OP,GT,NG,60.5,0.021,11317.2,7350.4,Distributed from 923 Generation And Fuel,2002,,LDWP,Los Angeles Department of Water & Power,California,0,60.5,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+2708,CA,Harbor,399,GT12,0,OP,GT,NG,60.5,0.021,11317.2,7350.4,Distributed from 923 Generation And Fuel,2002,,LDWP,Los Angeles Department of Water & Power,California,0,60.5,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+2709,CA,Harbor,399,GT13,0,OP,GT,NG,60.5,0.021,11317.2,7350.4,Distributed from 923 Generation And Fuel,2002,,LDWP,Los Angeles Department of Water & Power,California,0,60.5,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+2710,CA,Harbor,399,GT14,0,OP,GT,NG,60.5,0.021,11317.2,7350.4,Distributed from 923 Generation And Fuel,2002,,LDWP,Los Angeles Department of Water & Power,California,0,60.5,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+2713,CA,Harbor Cogen,50541,GEN1,0,OP,CT,NG,82.3,0.022,15875,10756,EIA-923 Generator File,1988,,CISO,Southern California Edison Co,California,82.3,0,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+2714,CA,Harbor Cogen,50541,ST1,2,OP,CA,NG,13.6,0.006,662,516,EIA-923 Generator File,2001,,CISO,Southern California Edison Co,California,13.6,0,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+2715,CA,Harbor Cogen,50541,ST2,2,OP,CA,NG,11.5,0.009,865,681,EIA-923 Generator File,2001,,CISO,Southern California Edison Co,California,11.5,0,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+2720,CA,Haynes,400,1,1,OP,ST,NG,230,0.132,265971,160011,EIA-923 Generator File,1962,,LDWP,Los Angeles Department of Water & Power,California,230,0,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+2721,CA,Haynes,400,10,0,OP,CT,NG,182.8,0.346,553399,200546,EIA-923 Generator File,2005,,LDWP,Los Angeles Department of Water & Power,California,182.8,0,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+2722,CA,Haynes,400,11,0,OP,GT,NG,108.2,0.074,70226.5,36635.833,Distributed from 923 Generation And Fuel,2013,,LDWP,Los Angeles Department of Water & Power,California,0,108.2,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+2723,CA,Haynes,400,12,0,OP,GT,NG,108.2,0.074,70226.5,36635.833,Distributed from 923 Generation And Fuel,2013,,LDWP,Los Angeles Department of Water & Power,California,0,108.2,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+2724,CA,Haynes,400,13,0,OP,GT,NG,108.2,0.074,70226.5,36635.833,Distributed from 923 Generation And Fuel,2013,,LDWP,Los Angeles Department of Water & Power,California,0,108.2,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+2725,CA,Haynes,400,14,0,OP,GT,NG,108.2,0.074,70226.5,36635.833,Distributed from 923 Generation And Fuel,2013,,LDWP,Los Angeles Department of Water & Power,California,0,108.2,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+2726,CA,Haynes,400,15,0,OP,GT,NG,108.2,0.074,70226.5,36635.833,Distributed from 923 Generation And Fuel,2013,,LDWP,Los Angeles Department of Water & Power,California,0,108.2,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+2727,CA,Haynes,400,16,0,OP,GT,NG,108.2,0.074,70226.5,36635.833,Distributed from 923 Generation And Fuel,2013,,LDWP,Los Angeles Department of Water & Power,California,0,108.2,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+2728,CA,Haynes,400,2,1,OP,ST,NG,230,0.131,264081,210369,EIA-923 Generator File,1963,,LDWP,Los Angeles Department of Water & Power,California,230,0,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+2729,CA,Haynes,400,8,2,OP,CA,NG,264.3,0.391,905562,353441,EIA-923 Generator File,2005,,LDWP,Los Angeles Department of Water & Power,California,264.3,0,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+2730,CA,Haynes,400,9,0,OP,CT,NG,182.8,0.598,957738,388541,EIA-923 Generator File,2005,,LDWP,Los Angeles Department of Water & Power,California,182.8,0,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+3913,CA,Scattergood,404,1,1,OP,ST,NG,163.2,0.25,356820,156605,EIA-923 Generator File,1958,2020,LDWP,Los Angeles Department of Water & Power,California,163.2,0,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+3914,CA,Scattergood,404,2,1,OP,ST,NG,163.2,0.047,66579,34195,EIA-923 Generator File,1959,2020,LDWP,Los Angeles Department of Water & Power,California,163.2,0,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+3915,CA,Scattergood,404,4,0,OP,CT,NG,216.9,0.284,539812,246806,EIA-923 Generator File,2016,,LDWP,Los Angeles Department of Water & Power,California,216.9,0,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+3916,CA,Scattergood,404,5,0,OP,CA,NG,118.9,0.265,276097,125482,EIA-923 Generator File,2016,,LDWP,Los Angeles Department of Water & Power,California,118.9,0,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+3917,CA,Scattergood,404,6,0,OP,GT,NG,106.9,0.096,90326,77061,Distributed from 923 Generation And Fuel,2016,,LDWP,Los Angeles Department of Water & Power,California,0,106.9,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+3918,CA,Scattergood,404,7,0,OP,GT,NG,106.9,0.096,90326,77061,Distributed from 923 Generation And Fuel,2016,,LDWP,Los Angeles Department of Water & Power,California,0,106.9,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+4581,CA,Valley (CA),408,5,0,OP,GT,NG,60.5,0.016,8262,6138,Distributed from 923 Generation And Fuel,2002,,LDWP,Los Angeles Department of Water & Power,California,0,60.5,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+4582,CA,Valley (CA),408,6,0,OP,CT,NG,182.8,0.379,607109,366605,EIA-923 Generator File,2004,,LDWP,Los Angeles Department of Water & Power,California,182.8,0,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+4583,CA,Valley (CA),408,7,0,OP,CT,NG,182.8,0.323,517671,239399,EIA-923 Generator File,2004,,LDWP,Los Angeles Department of Water & Power,California,182.8,0,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+4584,CA,Valley (CA),408,8,2,OP,CA,NG,264.4,0.294,681725,370005,EIA-923 Generator File,2004,,LDWP,Los Angeles Department of Water & Power,California,264.4,0,0,0,0,0,0,0,0,0,HAYNES3G_20,,
+4763,CO,Airport 1 Solar (DIA),59807,GBDIA,0,OP,PV,SUN,1.5,0.192,2523,1133,Distributed from 923 Generation And Fuel,2009,,SWPP,Public Service Co of Colorado,Colorado,0,0,0,0,0,1.5,0,0,0,0,COLOEAST_20,,
+4858,CO,Denver Intl Airport IV Solar,59462,DIA4,0,OP,PV,SUN,1.5,0.22,2897,1301,Distributed from 923 Generation And Fuel,2014,,SWPP,Public Service Co of Colorado,Colorado,0,0,0,0,0,1.5,0,0,0,0,COLOEAST_20,,
+17359,NM,Reeves,2450,1,1,OP,ST,NG,44,0.101,38967,25404,EIA-923 Generator File,1960,,PNM,Public Service Co of NM,New Mexico,44,0,0,0,0,0,0,0,0,0,SJUAN_G4_20,,
+17360,NM,Reeves,2450,2,1,OP,ST,NG,44,0.074,28387,17839,EIA-923 Generator File,1960,,PNM,Public Service Co of NM,New Mexico,44,0,0,0,0,0,0,0,0,0,SJUAN_G4_20,,
+17361,NM,Reeves,2450,3,1,OP,ST,NG,66,0.135,78267,51107,EIA-923 Generator File,1962,,PNM,Public Service Co of NM,New Mexico,66,0,0,0,0,0,0,0,0,0,SJUAN_G4_20,,
+17372,NM,San Juan,2451,1,1,OP,ST,BIT,369,0.695,2245867,960107,EIA-923 Generator File,1976,,PNM,Public Service Co of NM,New Mexico,0,0,0,0,0,0,0,0,0,369,SJUAN_G4_20,,
+17373,NM,San Juan,2451,2,1,OP,ST,BIT,369,0.603,1948943,848819,EIA-923 Generator File,1973,2017,PNM,Public Service Co of NM,New Mexico,0,0,0,0,0,0,0,0,0,369,SJUAN_G4_20,,
+17374,NM,San Juan,2451,3,1,OP,ST,BIT,555,0.57,2773322,1248145,EIA-923 Generator File,1979,2017,PNM,Public Service Co of NM,New Mexico,0,0,0,0,0,0,0,0,0,555,SJUAN_G4_20,,
+17375,NM,San Juan,2451,4,1,OP,ST,BIT,555,0.681,3309432,1415760,EIA-923 Generator File,1982,,PNM,Public Service Co of NM,New Mexico,0,0,0,0,0,0,0,0,0,555,SJUAN_G4_20,,
+17352,NM,Pyramid,7975,1,0,OP,GT,NG,46.5,0.015,6310.5,2893,Distributed from 923 Generation And Fuel,2003,,PNM,Public Service Co of NM,New Mexico,0,46.5,0,0,0,0,0,0,0,0,CORONADO_20,,
+17353,NM,Pyramid,7975,2,0,OP,GT,NG,46.5,0.015,6310.5,2893,Distributed from 923 Generation And Fuel,2003,,PNM,Public Service Co of NM,New Mexico,0,46.5,0,0,0,0,0,0,0,0,CORONADO_20,,
+17354,NM,Pyramid,7975,3,0,OP,GT,NG,46.5,0.015,6310.5,2893,Distributed from 923 Generation And Fuel,2003,,PNM,Public Service Co of NM,New Mexico,0,46.5,0,0,0,0,0,0,0,0,CORONADO_20,,
+17355,NM,Pyramid,7975,4,0,OP,GT,NG,46.5,0.015,6310.5,2893,Distributed from 923 Generation And Fuel,2003,,PNM,Public Service Co of NM,New Mexico,0,46.5,0,0,0,0,0,0,0,0,CORONADO_20,,
+14797,MT,Noxon Rapids,2199,1,0,OP,HY,WAT,113.9,0.34,339128.4,151813.2,Distributed from 923 Generation And Fuel,1959,,AVA,Avista Corp,Montana,0,0,0,0,0,0,0,113.9,0,0,HANFORD_20,,
+14798,MT,Noxon Rapids,2199,2,0,OP,HY,WAT,113.9,0.34,339128.4,151813.2,Distributed from 923 Generation And Fuel,1959,,AVA,Avista Corp,Montana,0,0,0,0,0,0,0,113.9,0,0,HANFORD_20,,
+14799,MT,Noxon Rapids,2199,3,0,OP,HY,WAT,113.9,0.34,339128.4,151813.2,Distributed from 923 Generation And Fuel,1959,,AVA,Avista Corp,Montana,0,0,0,0,0,0,0,113.9,0,0,HANFORD_20,,
+14800,MT,Noxon Rapids,2199,4,0,OP,HY,WAT,113.8,0.34,338830.658,151679.914,Distributed from 923 Generation And Fuel,1960,,AVA,Avista Corp,Montana,0,0,0,0,0,0,0,113.8,0,0,HANFORD_20,,
+14801,MT,Noxon Rapids,2199,5,0,OP,HY,WAT,114,0.34,339426.142,151946.486,Distributed from 923 Generation And Fuel,1977,,AVA,Avista Corp,Montana,0,0,0,0,0,0,0,114,0,0,HANFORD_20,,
+1363,AZ,Foothills Solar Plant,57997,PV1,0,OP,PV,SUN,17,0.316,47073,23651.371,Distributed from 923 Generation And Fuel,2013,,AZPS,Arizona Public Service Co,Arizona,0,0,0,0,0,17,0,0,0,0,CORONADO_20,,
+1364,AZ,Foothills Solar Plant,57997,PV2,0,OP,PV,SUN,18,0.316,49842,25042.629,Distributed from 923 Generation And Fuel,2013,,AZPS,Arizona Public Service Co,Arizona,0,0,0,0,0,18,0,0,0,0,CORONADO_20,,
+1368,AZ,Gila Bend,59020,PV1,0,OP,PV,SUN,32,0.367,102975,50097,Distributed from 923 Generation And Fuel,2014,,AZPS,Arizona Public Service Co,Arizona,0,0,0,0,0,32,0,0,0,0,CORONADO_20,,
+1427,AZ,Hyder II,58383,PV1,0,OP,PV,SUN,14,0.303,37104,18296,Distributed from 923 Generation And Fuel,2013,,AZPS,Arizona Public Service Co,Arizona,0,0,0,0,0,14,0,0,0,0,CORONADO_20,,
+1428,AZ,Hyder Solar,57563,PV1,0,OP,PV,SUN,17,0.211,31415.227,15490.864,Distributed from 923 Generation And Fuel,2011,,AZPS,Arizona Public Service Co,Arizona,0,0,0,0,0,17,0,0,0,0,CORONADO_20,,
+1429,AZ,Hyder Solar,57563,PV2,0,OP,PV,SUN,5,0.211,9239.773,4556.136,Distributed from 923 Generation And Fuel,2012,,AZPS,Arizona Public Service Co,Arizona,0,0,0,0,0,5,0,0,0,0,CORONADO_20,,
+1302,AZ,Cholla,113,1,1,OP,ST,SUB,113.6,0.124,123185,70323,EIA-923 Generator File,1962,,AZPS,Arizona Public Service Co,Arizona,0,0,113.6,0,0,0,0,0,0,0,FCNGN4CC_20,,
+1303,AZ,Cholla,113,3,1,OP,ST,SUB,312.3,0.208,568885,200444,EIA-923 Generator File,1980,,AZPS,Arizona Public Service Co,Arizona,0,0,312.3,0,0,0,0,0,0,0,FCNGN4CC_20,,
+1304,AZ,Cholla,113,4,1,OP,ST,SUB,414,0.48,1740097,918229,EIA-923 Generator File,1981,,AZPS,Arizona Public Service Co,Arizona,0,0,414,0,0,0,0,0,0,0,FCNGN4CC_20,,
+17270,NM,Four Corners,2442,4,1,OP,ST,SUB,818.1,0.517,3706469,1313210,EIA-923 Generator File,1969,,AZPS,Arizona Public Service Co,New Mexico,0,0,818.1,0,0,0,0,0,0,0,FCNGN4CC_20,,
+17271,NM,Four Corners,2442,5,1,OP,ST,SUB,818.1,0.442,3166816,1536654,EIA-923 Generator File,1970,,AZPS,Arizona Public Service Co,New Mexico,0,0,818.1,0,0,0,0,0,0,0,FCNGN4CC_20,,
+1355,AZ,Dry Lake Wind II LLC,57379,1,0,OP,WT,WND,65.1,0.204,116380,48256,Distributed from 923 Generation And Fuel,2010,,AZPS,Arizona Public Service Co,Arizona,0,0,0,0,65.1,0,0,0,0,0,PALOVRD2_20,,
+1553,AZ,Solana Generating Station,56812,GEN 1,1,OP,CP,SUN,140,0.262,321835,178236,Distributed from 923 Generation And Fuel,2013,,AZPS,Arizona Public Service Co,Arizona,0,0,0,0,0,140,0,0,0,0,PALOVRD2_20,,
+1554,AZ,Solana Generating Station,56812,GEN2,1,OP,CP,SUN,140,0.262,321835,178236,Distributed from 923 Generation And Fuel,2013,,AZPS,Arizona Public Service Co,Arizona,0,0,0,0,0,140,0,0,0,0,PALOVRD2_20,,
+1632,AZ,Yuma Cogeneration Associates,54694,GEN1,0,OP,CT,NG,44.1,0.022,8355,3740,EIA-923 Generator File,1994,,AZPS,Arizona Public Service Co,Arizona,44.1,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+1633,AZ,Yuma Cogeneration Associates,54694,GEN2,1,OP,CA,NG,18.5,0.018,2851,1426,EIA-923 Generator File,1994,,AZPS,Arizona Public Service Co,Arizona,18.5,0,0,0,0,0,0,0,0,0,PALOVRD2_20,,
+19930,OR,Coffin Butte,7725,1,0,OP,IC,LFG,0.8,0.913,6400.143,2624,Distributed from 923 Generation And Fuel,1995,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,0,0,0.8,DALLES21_20,,
+19931,OR,Coffin Butte,7725,2,0,OP,IC,LFG,0.8,0.913,6400.143,2624,Distributed from 923 Generation And Fuel,1995,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,0,0,0.8,DALLES21_20,,
+19932,OR,Coffin Butte,7725,3,0,OP,IC,LFG,0.8,0.913,6400.143,2624,Distributed from 923 Generation And Fuel,1995,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,0,0,0.8,DALLES21_20,,
+19933,OR,Coffin Butte,7725,4,0,OP,IC,LFG,1.6,0.913,12800.286,5248,Distributed from 923 Generation And Fuel,2007,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,0,0,1.6,DALLES21_20,,
+19934,OR,Coffin Butte,7725,5,0,OP,IC,LFG,1.6,0.913,12800.286,5248,Distributed from 923 Generation And Fuel,2007,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,0,0,1.6,DALLES21_20,,
+24751,WA,Cosmo Specialty Fibers Plant,50185,TG1,4,OP,ST,WDL,7.5,0.78,51246,20449,EIA-923 Generator File,1957,,BPAT,PUD No 1 of Grays Harbor County,Washington,0,0,0,0,0,0,0,0,0,7.5,JOHN_DAY_20,,
+24752,WA,Cosmo Specialty Fibers Plant,50185,TG2,4,OP,ST,WDL,7.5,1.04,68330,27265,EIA-923 Generator File,1957,,BPAT,PUD No 1 of Grays Harbor County,Washington,0,0,0,0,0,0,0,0,0,7.5,JOHN_DAY_20,,
+19943,OR,Cougar,3076,1,0,OP,HY,WAT,13,0.155,17700,5725,Distributed from 923 Generation And Fuel,1964,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,13,0,0,NORTH_G3_20,,
+19944,OR,Cougar,3076,2,0,OP,HY,WAT,13,0.155,17700,5725,Distributed from 923 Generation And Fuel,1964,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,13,0,0,NORTH_G3_20,,
+7979,ID,Albeni Falls,851,1,0,OP,HY,WAT,14,0.566,69466.667,33851,Distributed from 923 Generation And Fuel,1955,,BPAT,Bonneville Power Administration,Idaho,0,0,0,0,0,0,0,14,0,0,WCASCADE_20,,
+7980,ID,Albeni Falls,851,2,0,OP,HY,WAT,14,0.566,69466.667,33851,Distributed from 923 Generation And Fuel,1955,,BPAT,Bonneville Power Administration,Idaho,0,0,0,0,0,0,0,14,0,0,WCASCADE_20,,
+7981,ID,Albeni Falls,851,3,0,OP,HY,WAT,14,0.566,69466.667,33851,Distributed from 923 Generation And Fuel,1955,,BPAT,Bonneville Power Administration,Idaho,0,0,0,0,0,0,0,14,0,0,WCASCADE_20,,
+19868,OR,Arlington Wind Power Project,56855,GEN1,0,OP,WT,WND,103,0.224,201811,108372,Distributed from 923 Generation And Fuel,2008,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,103,0,0,0,0,0,WCASCADE_20,,
+24671,WA,Big Horn Wind II,57319,1,0,OP,WT,WND,50,0.281,123028,47617,Distributed from 923 Generation And Fuel,2011,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,50,0,0,0,0,0,WCASCADE_20,,
+24672,WA,Big Horn Wind Project,56361,1,0,OP,WT,WND,199,0.288,502920,218558,Distributed from 923 Generation And Fuel,2006,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,199,0,0,0,0,0,WCASCADE_20,,
+19895,OR,Bonneville,3075,1,0,OP,HY,WAT,53.5,0.454,212961.124,57556.654,Distributed from 923 Generation And Fuel,1938,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,53.5,0,0,WCASCADE_20,,
+19896,OR,Bonneville,3075,10,0,OP,HY,WAT,62.1,0.454,247194.127,66808.751,Distributed from 923 Generation And Fuel,1944,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,62.1,0,0,WCASCADE_20,,
+19897,OR,Bonneville,3075,11,0,OP,HY,WAT,66.5,0.454,264708.687,71542.383,Distributed from 923 Generation And Fuel,1982,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,66.5,0,0,WCASCADE_20,,
+19899,OR,Bonneville,3075,13,0,OP,HY,WAT,66.5,0.454,264708.687,71542.383,Distributed from 923 Generation And Fuel,1982,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,66.5,0,0,WCASCADE_20,,
+19900,OR,Bonneville,3075,14,0,OP,HY,WAT,66.5,0.454,264708.687,71542.383,Distributed from 923 Generation And Fuel,1982,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,66.5,0,0,WCASCADE_20,,
+19901,OR,Bonneville,3075,15,0,OP,HY,WAT,66.5,0.454,264708.687,71542.383,Distributed from 923 Generation And Fuel,1982,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,66.5,0,0,WCASCADE_20,,
+19902,OR,Bonneville,3075,16,0,OP,HY,WAT,66.5,0.454,264708.687,71542.383,Distributed from 923 Generation And Fuel,1981,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,66.5,0,0,WCASCADE_20,,
+19903,OR,Bonneville,3075,17,0,OP,HY,WAT,66.5,0.454,264708.687,71542.383,Distributed from 923 Generation And Fuel,1981,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,66.5,0,0,WCASCADE_20,,
+19904,OR,Bonneville,3075,18,0,OP,HY,WAT,66.5,0.454,264708.687,71542.383,Distributed from 923 Generation And Fuel,1981,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,66.5,0,0,WCASCADE_20,,
+19905,OR,Bonneville,3075,2,0,OP,HY,WAT,53.5,0.454,212961.124,57556.654,Distributed from 923 Generation And Fuel,1938,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,53.5,0,0,WCASCADE_20,,
+19906,OR,Bonneville,3075,3,0,OP,HY,WAT,62.1,0.454,247194.127,66808.751,Distributed from 923 Generation And Fuel,1941,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,62.1,0,0,WCASCADE_20,,
+19907,OR,Bonneville,3075,4,0,OP,HY,WAT,62.1,0.454,247194.127,66808.751,Distributed from 923 Generation And Fuel,1941,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,62.1,0,0,WCASCADE_20,,
+19908,OR,Bonneville,3075,5,0,OP,HY,WAT,62.1,0.454,247194.127,66808.751,Distributed from 923 Generation And Fuel,1941,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,62.1,0,0,WCASCADE_20,,
+19909,OR,Bonneville,3075,6,0,OP,HY,WAT,62.1,0.454,247194.127,66808.751,Distributed from 923 Generation And Fuel,1942,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,62.1,0,0,WCASCADE_20,,
+19912,OR,Bonneville,3075,9,0,OP,HY,WAT,62.1,0.454,247194.127,66808.751,Distributed from 923 Generation And Fuel,1943,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,62.1,0,0,WCASCADE_20,,
+19913,OR,Bonneville,3075,F1,0,OP,HY,WAT,13.1,0.454,52145.621,14093.311,Distributed from 923 Generation And Fuel,1982,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,13.1,0,0,WCASCADE_20,,
+19914,OR,Bonneville,3075,F2,0,OP,HY,WAT,13.1,0.454,52145.621,14093.311,Distributed from 923 Generation And Fuel,1981,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,13.1,0,0,WCASCADE_20,,
+19920,OR,Carmen Smith,3067,1,0,OP,HY,WAT,52.2,0.26,119061.669,38508.803,Distributed from 923 Generation And Fuel,1963,,BPAT,City of Eugene - (OR),Oregon,0,0,0,0,0,0,0,52.2,0,0,WCASCADE_20,,
+19921,OR,Carmen Smith,3067,2,0,OP,HY,WAT,52.2,0.26,119061.669,38508.803,Distributed from 923 Generation And Fuel,1963,,BPAT,City of Eugene - (OR),Oregon,0,0,0,0,0,0,0,52.2,0,0,WCASCADE_20,,
+19922,OR,Carmen Smith,3067,3,0,OP,HY,WAT,9.9,0.26,22580.661,7303.394,Distributed from 923 Generation And Fuel,1963,,BPAT,City of Eugene - (OR),Oregon,0,0,0,0,0,0,0,9.9,0,0,WCASCADE_20,,
+24712,WA,Chandler,6406,1,0,OP,HY,WAT,6,0.512,26930,10566.5,Distributed from 923 Generation And Fuel,1956,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,6,0,0,WCASCADE_20,,
+24713,WA,Chandler,6406,2,0,OP,HY,WAT,6,0.512,26930,10566.5,Distributed from 923 Generation And Fuel,1956,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,6,0,0,WCASCADE_20,,
+24714,WA,Chehalis Generating Facility,55662,CA,1,OP,CA,NG,230,0.252,507357,237888,EIA-923 Generator File,2003,,BPAT,Bonneville Power Administration,Washington,230,0,0,0,0,0,0,0,0,0,WCASCADE_20,,
+24715,WA,Chehalis Generating Facility,55662,CT1,0,OP,CT,NG,234,0.242,496681,232663,EIA-923 Generator File,2003,,BPAT,Bonneville Power Administration,Washington,234,0,0,0,0,0,0,0,0,0,WCASCADE_20,,
+24716,WA,Chehalis Generating Facility,55662,CT2,0,OP,CT,NG,234,0.203,415990,188540,EIA-923 Generator File,2003,,BPAT,Bonneville Power Administration,Washington,234,0,0,0,0,0,0,0,0,0,WCASCADE_20,,
+24719,WA,Chief Joseph,3921,1,0,OP,HY,WAT,88.2,0.541,417917.828,173251.739,Distributed from 923 Generation And Fuel,1958,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,88.2,0,0,WCASCADE_20,,
+24720,WA,Chief Joseph,3921,10,0,OP,HY,WAT,88.2,0.541,417917.828,173251.739,Distributed from 923 Generation And Fuel,1955,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,88.2,0,0,WCASCADE_20,,
+24721,WA,Chief Joseph,3921,11,0,OP,HY,WAT,88.2,0.541,417917.828,173251.739,Distributed from 923 Generation And Fuel,1955,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,88.2,0,0,WCASCADE_20,,
+24722,WA,Chief Joseph,3921,12,0,OP,HY,WAT,88.2,0.541,417917.828,173251.739,Distributed from 923 Generation And Fuel,1955,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,88.2,0,0,WCASCADE_20,,
+24723,WA,Chief Joseph,3921,13,0,OP,HY,WAT,88.2,0.541,417917.828,173251.739,Distributed from 923 Generation And Fuel,1957,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,88.2,0,0,WCASCADE_20,,
+24725,WA,Chief Joseph,3921,15,0,OP,HY,WAT,88.2,0.541,417917.828,173251.739,Distributed from 923 Generation And Fuel,1957,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,88.2,0,0,WCASCADE_20,,
+24726,WA,Chief Joseph,3921,16,0,OP,HY,WAT,88.2,0.541,417917.828,173251.739,Distributed from 923 Generation And Fuel,1957,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,88.2,0,0,WCASCADE_20,,
+24727,WA,Chief Joseph,3921,17,0,OP,HY,WAT,95,0.541,450138.25,186609.016,Distributed from 923 Generation And Fuel,1977,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,95,0,0,WCASCADE_20,,
+24728,WA,Chief Joseph,3921,18,0,OP,HY,WAT,95,0.541,450138.25,186609.016,Distributed from 923 Generation And Fuel,1977,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,95,0,0,WCASCADE_20,,
+24729,WA,Chief Joseph,3921,19,0,OP,HY,WAT,95,0.541,450138.25,186609.016,Distributed from 923 Generation And Fuel,1977,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,95,0,0,WCASCADE_20,,
+24730,WA,Chief Joseph,3921,2,0,OP,HY,WAT,88.2,0.541,417917.828,173251.739,Distributed from 923 Generation And Fuel,1958,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,88.2,0,0,WCASCADE_20,,
+24731,WA,Chief Joseph,3921,20,0,OP,HY,WAT,95,0.541,450138.25,186609.016,Distributed from 923 Generation And Fuel,1978,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,95,0,0,WCASCADE_20,,
+24732,WA,Chief Joseph,3921,21,0,OP,HY,WAT,95,0.541,450138.25,186609.016,Distributed from 923 Generation And Fuel,1978,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,95,0,0,WCASCADE_20,,
+24733,WA,Chief Joseph,3921,22,0,OP,HY,WAT,95,0.541,450138.25,186609.016,Distributed from 923 Generation And Fuel,1978,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,95,0,0,WCASCADE_20,,
+24734,WA,Chief Joseph,3921,23,0,OP,HY,WAT,95,0.541,450138.25,186609.016,Distributed from 923 Generation And Fuel,1978,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,95,0,0,WCASCADE_20,,
+24735,WA,Chief Joseph,3921,24,0,OP,HY,WAT,95,0.541,450138.25,186609.016,Distributed from 923 Generation And Fuel,1979,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,95,0,0,WCASCADE_20,,
+24736,WA,Chief Joseph,3921,25,0,OP,HY,WAT,95,0.541,450138.25,186609.016,Distributed from 923 Generation And Fuel,1979,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,95,0,0,WCASCADE_20,,
+24737,WA,Chief Joseph,3921,26,0,OP,HY,WAT,95,0.541,450138.25,186609.016,Distributed from 923 Generation And Fuel,1979,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,95,0,0,WCASCADE_20,,
+24738,WA,Chief Joseph,3921,27,0,OP,HY,WAT,95,0.541,450138.25,186609.016,Distributed from 923 Generation And Fuel,1979,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,95,0,0,WCASCADE_20,,
+24741,WA,Chief Joseph,3921,5,0,OP,HY,WAT,88.2,0.541,417917.828,173251.739,Distributed from 923 Generation And Fuel,1957,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,88.2,0,0,WCASCADE_20,,
+24742,WA,Chief Joseph,3921,6,0,OP,HY,WAT,88.2,0.541,417917.828,173251.739,Distributed from 923 Generation And Fuel,1956,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,88.2,0,0,WCASCADE_20,,
+24743,WA,Chief Joseph,3921,7,0,OP,HY,WAT,88.2,0.541,417917.828,173251.739,Distributed from 923 Generation And Fuel,1956,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,88.2,0,0,WCASCADE_20,,
+24744,WA,Chief Joseph,3921,8,0,OP,HY,WAT,88.2,0.541,417917.828,173251.739,Distributed from 923 Generation And Fuel,1956,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,88.2,0,0,WCASCADE_20,,
+24745,WA,Chief Joseph,3921,9,0,OP,HY,WAT,88.2,0.541,417917.828,173251.739,Distributed from 923 Generation And Fuel,1955,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,88.2,0,0,WCASCADE_20,,
+24746,WA,Coastal Energy Project,57756,1,0,OP,WT,WND,6,0.269,14164,6286,Distributed from 923 Generation And Fuel,2010,,BPAT,PUD No 1 of Grays Harbor County,Washington,0,0,0,0,6,0,0,0,0,0,WCASCADE_20,,
+24747,WA,Columbia Generating Station,371,2,1,OP,ST,NUC,1200,0.916,9625622,4097709,Distributed from 923 Generation And Fuel,1984,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,0,1200,0,WCASCADE_20,,
+19938,OR,Condon Windpower LLC,55739,GEN1,0,OP,WT,WND,24.6,0.222,47865.277,15172.964,Distributed from 923 Generation And Fuel,2001,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,24.6,0,0,0,0,0,WCASCADE_20,,
+19939,OR,Condon Windpower LLC,55739,GEN2,0,OP,WT,WND,25.2,0.222,49032.723,15543.036,Distributed from 923 Generation And Fuel,2002,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,25.2,0,0,0,0,0,WCASCADE_20,,
+24754,WA,Cowlitz Falls,7427,U#1,0,OP,HY,WAT,35,0.409,125421,49212,Distributed from 923 Generation And Fuel,1994,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,35,0,0,WCASCADE_20,,
+24755,WA,Cowlitz Falls,7427,U#2,0,OP,HY,WAT,35,0.409,125421,49212,Distributed from 923 Generation And Fuel,1994,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,35,0,0,WCASCADE_20,,
+19950,OR,Dalles Dam North Fishway Project,7431,1,0,OP,HY,WAT,6.5,0.747,42540,13759,Distributed from 923 Generation And Fuel,1991,,BPAT,PUD No 1 of Klickitat County,Oregon,0,0,0,0,0,0,0,6.5,0,0,WCASCADE_20,,
+24765,WA,Darrington,57969,GEN1,0,OP,ST,WDS,4.5,0.484,19086,7907.306,EIA-923 Generator File,2007,,BPAT,4-County Electric Power Assn,Washington,0,0,0,0,0,0,0,0,0,4.5,WCASCADE_20,,
+19951,OR,Detroit,3077,1,0,OP,HY,WAT,50,0.322,141100,45637,Distributed from 923 Generation And Fuel,1953,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,50,0,0,WCASCADE_20,,
+19952,OR,Detroit,3077,2,0,OP,HY,WAT,50,0.322,141100,45637,Distributed from 923 Generation And Fuel,1953,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,50,0,0,WCASCADE_20,,
+19953,OR,Dexter,3078,1,0,OP,HY,WAT,15,0.558,73300,23708,Distributed from 923 Generation And Fuel,1955,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,15,0,0,WCASCADE_20,,
+8071,ID,Dworshak,840,2,0,OP,HY,WAT,90,0.483,381079.35,223503.075,Distributed from 923 Generation And Fuel,1975,,BPAT,Bonneville Power Administration,Idaho,0,0,0,0,0,0,0,90,0,0,WCASCADE_20,,
+24891,WA,Juniper Canyon I Wind Project,57320,1,0,OP,WT,WND,151.2,0.243,322142,147343,Distributed from 923 Generation And Fuel,2011,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,151.2,0,0,0,0,0,DALLES21_20,,
+20219,OR,The Dalles,3895,1,0,OP,HY,WAT,78,0.423,289093.538,89902.062,Distributed from 923 Generation And Fuel,1957,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,78,0,0,DALLES21_20,,
+20220,OR,The Dalles,3895,10,0,OP,HY,WAT,78,0.423,289093.538,89902.062,Distributed from 923 Generation And Fuel,1959,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,78,0,0,DALLES21_20,,
+20221,OR,The Dalles,3895,11,0,OP,HY,WAT,78,0.423,289093.538,89902.062,Distributed from 923 Generation And Fuel,1960,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,78,0,0,DALLES21_20,,
+20222,OR,The Dalles,3895,12,0,OP,HY,WAT,78,0.423,289093.538,89902.062,Distributed from 923 Generation And Fuel,1960,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,78,0,0,DALLES21_20,,
+20223,OR,The Dalles,3895,13,0,OP,HY,WAT,78,0.423,289093.538,89902.062,Distributed from 923 Generation And Fuel,1960,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,78,0,0,DALLES21_20,,
+20224,OR,The Dalles,3895,14,0,OP,HY,WAT,78,0.423,289093.538,89902.062,Distributed from 923 Generation And Fuel,1960,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,78,0,0,DALLES21_20,,
+20227,OR,The Dalles,3895,17,0,OP,HY,WAT,86,0.423,318744.158,99122.786,Distributed from 923 Generation And Fuel,1973,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,86,0,0,DALLES21_20,,
+20228,OR,The Dalles,3895,18,0,OP,HY,WAT,86,0.423,318744.158,99122.786,Distributed from 923 Generation And Fuel,1973,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,86,0,0,DALLES21_20,,
+20229,OR,The Dalles,3895,19,0,OP,HY,WAT,86,0.423,318744.158,99122.786,Distributed from 923 Generation And Fuel,1973,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,86,0,0,DALLES21_20,,
+20230,OR,The Dalles,3895,2,0,OP,HY,WAT,78,0.423,289093.538,89902.062,Distributed from 923 Generation And Fuel,1957,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,78,0,0,DALLES21_20,,
+20231,OR,The Dalles,3895,20,0,OP,HY,WAT,86,0.423,318744.158,99122.786,Distributed from 923 Generation And Fuel,1973,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,86,0,0,DALLES21_20,,
+20233,OR,The Dalles,3895,22,0,OP,HY,WAT,86,0.423,318744.158,99122.786,Distributed from 923 Generation And Fuel,1973,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,86,0,0,DALLES21_20,,
+20235,OR,The Dalles,3895,4,0,OP,HY,WAT,78,0.423,289093.538,89902.062,Distributed from 923 Generation And Fuel,1958,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,78,0,0,DALLES21_20,,
+20236,OR,The Dalles,3895,5,0,OP,HY,WAT,89.7,0.423,332457.569,103387.371,Distributed from 923 Generation And Fuel,1958,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,89.7,0,0,DALLES21_20,,
+20237,OR,The Dalles,3895,6,0,OP,HY,WAT,78,0.423,289093.538,89902.062,Distributed from 923 Generation And Fuel,1958,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,78,0,0,DALLES21_20,,
+20238,OR,The Dalles,3895,7,0,OP,HY,WAT,78,0.423,289093.538,89902.062,Distributed from 923 Generation And Fuel,1959,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,78,0,0,DALLES21_20,,
+20239,OR,The Dalles,3895,8,0,OP,HY,WAT,78,0.423,289093.538,89902.062,Distributed from 923 Generation And Fuel,1959,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,78,0,0,DALLES21_20,,
+20240,OR,The Dalles,3895,9,0,OP,HY,WAT,78,0.423,289093.538,89902.062,Distributed from 923 Generation And Fuel,1959,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,78,0,0,DALLES21_20,,
+20241,OR,The Dalles,3895,F1,0,OP,HY,WAT,14,0.423,51888.584,16136.268,Distributed from 923 Generation And Fuel,1957,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,14,0,0,DALLES21_20,,
+20242,OR,The Dalles,3895,F2,0,OP,HY,WAT,14,0.423,51888.584,16136.268,Distributed from 923 Generation And Fuel,1957,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,14,0,0,DALLES21_20,,
+19983,OR,Foster,6552,1,0,OP,HY,WAT,10,0.434,38050,12307,Distributed from 923 Generation And Fuel,1968,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,10,0,0,JOHN_DAY_20,,
+19984,OR,Foster,6552,2,0,OP,HY,WAT,10,0.434,38050,12307,Distributed from 923 Generation And Fuel,1968,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,10,0,0,JOHN_DAY_20,,
+20027,OR,John Day,3082,1,0,OP,HY,WAT,135,0.485,573238.25,195608.688,Distributed from 923 Generation And Fuel,1968,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,135,0,0,JOHN_DAY_20,,
+20028,OR,John Day,3082,10,0,OP,HY,WAT,135,0.485,573238.25,195608.688,Distributed from 923 Generation And Fuel,1969,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,135,0,0,JOHN_DAY_20,,
+20029,OR,John Day,3082,11,0,OP,HY,WAT,135,0.485,573238.25,195608.688,Distributed from 923 Generation And Fuel,1970,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,135,0,0,JOHN_DAY_20,,
+20030,OR,John Day,3082,12,0,OP,HY,WAT,135,0.485,573238.25,195608.688,Distributed from 923 Generation And Fuel,1970,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,135,0,0,JOHN_DAY_20,,
+20031,OR,John Day,3082,13,0,OP,HY,WAT,135,0.485,573238.25,195608.688,Distributed from 923 Generation And Fuel,1970,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,135,0,0,JOHN_DAY_20,,
+20032,OR,John Day,3082,14,0,OP,HY,WAT,135,0.485,573238.25,195608.688,Distributed from 923 Generation And Fuel,1971,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,135,0,0,JOHN_DAY_20,,
+20033,OR,John Day,3082,15,0,OP,HY,WAT,135,0.485,573238.25,195608.688,Distributed from 923 Generation And Fuel,1971,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,135,0,0,JOHN_DAY_20,,
+20034,OR,John Day,3082,16,0,OP,HY,WAT,135,0.485,573238.25,195608.688,Distributed from 923 Generation And Fuel,1971,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,135,0,0,JOHN_DAY_20,,
+20035,OR,John Day,3082,2,0,OP,HY,WAT,135,0.485,573238.25,195608.688,Distributed from 923 Generation And Fuel,1968,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,135,0,0,JOHN_DAY_20,,
+20037,OR,John Day,3082,4,0,OP,HY,WAT,135,0.485,573238.25,195608.688,Distributed from 923 Generation And Fuel,1968,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,135,0,0,JOHN_DAY_20,,
+20038,OR,John Day,3082,5,0,OP,HY,WAT,135,0.485,573238.25,195608.688,Distributed from 923 Generation And Fuel,1969,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,135,0,0,JOHN_DAY_20,,
+20040,OR,John Day,3082,7,0,OP,HY,WAT,135,0.485,573238.25,195608.688,Distributed from 923 Generation And Fuel,1969,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,135,0,0,JOHN_DAY_20,,
+20041,OR,John Day,3082,8,0,OP,HY,WAT,135,0.485,573238.25,195608.688,Distributed from 923 Generation And Fuel,1969,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,135,0,0,JOHN_DAY_20,,
+20042,OR,John Day,3082,9,0,OP,HY,WAT,135,0.485,573238.25,195608.688,Distributed from 923 Generation And Fuel,1969,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,135,0,0,JOHN_DAY_20,,
+24989,WA,Packwood,3929,1,0,OP,HY,WAT,27.5,0.401,96505,37866,Distributed from 923 Generation And Fuel,1964,,BPAT,PUD No 1 of Lewis County,Washington,0,0,0,0,0,0,0,27.5,0,0,JOHN_DAY_20,,
+25028,WA,River Road Gen Plant,7605,1,1,OP,CS,NG,248,0.663,1440649,593847,EIA-923 Generator File,1997,,BPAT,PUD No 1 of Clark County - (WA),Washington,0,248,0,0,0,0,0,0,0,0,JOHN_DAY_20,,
+25185,WA,Windy Flats Wind Project,57159,GEN1,0,OP,WT,WND,262.2,0.289,663771,370481,Distributed from 923 Generation And Fuel,2009,,BPAT,PUD No 1 of Klickitat County,Washington,0,0,0,0,262.2,0,0,0,0,0,JOHN_DAY_20,,
+24823,WA,Frederickson Power LP,55818,FICT,0,OP,CT,NG,192,0.321,539706,387666,EIA-923 Generator File,2002,,BPAT,Bonneville Power Administration,Washington,192,0,0,0,0,0,0,0,0,0,NORTH_G3_20,,
+24824,WA,Frederickson Power LP,55818,FIST,1,OP,CA,NG,126.3,0.269,297856,216893,EIA-923 Generator File,2002,,BPAT,Bonneville Power Administration,Washington,126.3,0,0,0,0,0,0,0,0,0,NORTH_G3_20,,
+24838,WA,Grand Coulee,6163,1,0,OP,HY,WAT,125,0.334,365931.678,151656.563,Distributed from 923 Generation And Fuel,1942,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,125,0,0,NORTH_G3_20,,
+24839,WA,Grand Coulee,6163,10,0,OP,HY,WAT,125,0.334,365931.678,151656.563,Distributed from 923 Generation And Fuel,1951,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,125,0,0,NORTH_G3_20,,
+24840,WA,Grand Coulee,6163,11,0,OP,HY,WAT,125,0.334,365931.678,151656.563,Distributed from 923 Generation And Fuel,1951,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,125,0,0,NORTH_G3_20,,
+24841,WA,Grand Coulee,6163,12,0,OP,HY,WAT,125,0.334,365931.678,151656.563,Distributed from 923 Generation And Fuel,1951,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,125,0,0,NORTH_G3_20,,
+24842,WA,Grand Coulee,6163,13,0,OP,HY,WAT,125,0.334,365931.678,151656.563,Distributed from 923 Generation And Fuel,1950,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,125,0,0,NORTH_G3_20,,
+24843,WA,Grand Coulee,6163,14,0,OP,HY,WAT,125,0.334,365931.678,151656.563,Distributed from 923 Generation And Fuel,1950,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,125,0,0,NORTH_G3_20,,
+24844,WA,Grand Coulee,6163,15,0,OP,HY,WAT,125,0.334,365931.678,151656.563,Distributed from 923 Generation And Fuel,1950,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,125,0,0,NORTH_G3_20,,
+24845,WA,Grand Coulee,6163,16,0,OP,HY,WAT,125,0.334,365931.678,151656.563,Distributed from 923 Generation And Fuel,1949,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,125,0,0,NORTH_G3_20,,
+24846,WA,Grand Coulee,6163,17,0,OP,HY,WAT,125,0.334,365931.678,151656.563,Distributed from 923 Generation And Fuel,1949,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,125,0,0,NORTH_G3_20,,
+24847,WA,Grand Coulee,6163,18,0,OP,HY,WAT,125,0.334,365931.678,151656.563,Distributed from 923 Generation And Fuel,1949,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,125,0,0,NORTH_G3_20,,
+24848,WA,Grand Coulee,6163,19,0,OP,HY,WAT,600,0.334,1756472.055,727951.501,Distributed from 923 Generation And Fuel,1975,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,600,0,0,NORTH_G3_20,,
+24849,WA,Grand Coulee,6163,2,0,OP,HY,WAT,125,0.334,365931.678,151656.563,Distributed from 923 Generation And Fuel,1942,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,125,0,0,NORTH_G3_20,,
+24850,WA,Grand Coulee,6163,20,0,OP,HY,WAT,600,0.334,1756472.055,727951.501,Distributed from 923 Generation And Fuel,1976,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,600,0,0,NORTH_G3_20,,
+24851,WA,Grand Coulee,6163,21,0,OP,HY,WAT,600,0.334,1756472.055,727951.501,Distributed from 923 Generation And Fuel,1976,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,600,0,0,NORTH_G3_20,,
+24852,WA,Grand Coulee,6163,22,0,OP,HY,WAT,805,0.334,2356600.008,976668.264,Distributed from 923 Generation And Fuel,1978,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,805,0,0,NORTH_G3_20,,
+24853,WA,Grand Coulee,6163,23,0,OP,HY,WAT,805,0.334,2356600.008,976668.264,Distributed from 923 Generation And Fuel,1979,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,805,0,0,NORTH_G3_20,,
+24854,WA,Grand Coulee,6163,24,0,OP,HY,WAT,805,0.334,2356600.008,976668.264,Distributed from 923 Generation And Fuel,1980,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,805,0,0,NORTH_G3_20,,
+24855,WA,Grand Coulee,6163,3,0,OP,HY,WAT,125,0.334,365931.678,151656.563,Distributed from 923 Generation And Fuel,1941,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,125,0,0,NORTH_G3_20,,
+24856,WA,Grand Coulee,6163,4,0,OP,HY,WAT,125,0.334,365931.678,151656.563,Distributed from 923 Generation And Fuel,1944,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,125,0,0,NORTH_G3_20,,
+24857,WA,Grand Coulee,6163,5,0,OP,HY,WAT,125,0.334,365931.678,151656.563,Distributed from 923 Generation And Fuel,1943,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,125,0,0,NORTH_G3_20,,
+24858,WA,Grand Coulee,6163,6,0,OP,HY,WAT,125,0.334,365931.678,151656.563,Distributed from 923 Generation And Fuel,1943,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,125,0,0,NORTH_G3_20,,
+24859,WA,Grand Coulee,6163,7,0,OP,HY,WAT,125,0.334,365931.678,151656.563,Distributed from 923 Generation And Fuel,1947,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,125,0,0,NORTH_G3_20,,
+24860,WA,Grand Coulee,6163,8,0,OP,HY,WAT,125,0.334,365931.678,151656.563,Distributed from 923 Generation And Fuel,1943,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,125,0,0,NORTH_G3_20,,
+24861,WA,Grand Coulee,6163,9,0,OP,HY,WAT,125,0.334,365931.678,151656.563,Distributed from 923 Generation And Fuel,1948,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,125,0,0,NORTH_G3_20,,
+24862,WA,Grand Coulee,6163,LS1,0,OP,HY,WAT,10,0.334,29274.534,12132.525,Distributed from 923 Generation And Fuel,1941,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,10,0,0,NORTH_G3_20,,
+24863,WA,Grand Coulee,6163,LS2,0,OP,HY,WAT,10,0.334,29274.534,12132.525,Distributed from 923 Generation And Fuel,1941,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,10,0,0,NORTH_G3_20,,
+24864,WA,Grand Coulee,6163,LS3,0,OP,HY,WAT,10,0.334,29274.534,12132.525,Distributed from 923 Generation And Fuel,1951,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,10,0,0,NORTH_G3_20,,
+24865,WA,Grand Coulee,6163,PG10,0,OP,PS,WAT,53.5,,-394.946,-163.226,Data from EIA-923 Generator File overwritten with distributed data from EIA-923 Generation and Fuel,1983,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,53.5,0,0,NORTH_G3_20,,
+24866,WA,Grand Coulee,6163,PG11,0,OP,PS,WAT,53.5,,-394.946,-163.226,Data from EIA-923 Generator File overwritten with distributed data from EIA-923 Generation and Fuel,1983,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,53.5,0,0,NORTH_G3_20,,
+24867,WA,Grand Coulee,6163,PG12,0,OP,PS,WAT,53.5,,-394.946,-163.226,Data from EIA-923 Generator File overwritten with distributed data from EIA-923 Generation and Fuel,1984,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,53.5,0,0,NORTH_G3_20,,
+24868,WA,Grand Coulee,6163,PG7,0,OP,PS,WAT,50,,-369.108,-152.548,Data from EIA-923 Generator File overwritten with distributed data from EIA-923 Generation and Fuel,1973,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,50,0,0,NORTH_G3_20,,
+24869,WA,Grand Coulee,6163,PG8,0,OP,PS,WAT,50,,-369.108,-152.548,Data from EIA-923 Generator File overwritten with distributed data from EIA-923 Generation and Fuel,1973,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,50,0,#NAME?,NORTH_G3_20,,
+24870,WA,Grand Coulee,6163,PG9,0,OP,PS,WAT,53.5,,-394.946,-163.226,Data from EIA-923 Generator File overwritten with distributed data from EIA-923 Generation and Fuel,1983,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,53.5,0,0,NORTH_G3_20,,
+24877,WA,H M Jackson,7588,1,0,OP,HY,WAT,47.5,0.494,205552.214,80653.555,Distributed from 923 Generation And Fuel,1984,,BPAT,PUD 1 of Snohomish County,Washington,0,0,0,0,0,0,0,47.5,0,0,NORTH_G3_20,,
+24878,WA,H M Jackson,7588,2,0,OP,HY,WAT,47.5,0.494,205552.214,80653.555,Distributed from 923 Generation And Fuel,1984,,BPAT,PUD 1 of Snohomish County,Washington,0,0,0,0,0,0,0,47.5,0,0,NORTH_G3_20,,
+24879,WA,H M Jackson,7588,3,0,OP,HY,WAT,8.4,0.494,36350.286,14262.945,Distributed from 923 Generation And Fuel,1984,,BPAT,PUD 1 of Snohomish County,Washington,0,0,0,0,0,0,0,8.4,0,0,NORTH_G3_20,,
+24880,WA,H M Jackson,7588,4,0,OP,HY,WAT,8.4,0.494,36350.286,14262.945,Distributed from 923 Generation And Fuel,1984,,BPAT,PUD 1 of Snohomish County,Washington,0,0,0,0,0,0,0,8.4,0,0,NORTH_G3_20,,
+20015,OR,Hills Creek,3081,1,0,OP,HY,WAT,15,0.367,48250,15606,Distributed from 923 Generation And Fuel,1962,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,15,0,0,NORTH_G3_20,,
+20016,OR,Hills Creek,3081,2,0,OP,HY,WAT,15,0.367,48250,15606,Distributed from 923 Generation And Fuel,1962,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,15,0,0,NORTH_G3_20,,
+24922,WA,Longview Fibre,54562,4,8,OP,ST,BLQ,10,0,0,0,EIA-923 Generator File,1949,,BPAT,PUD No 1 of Cowlitz County,Washington,0,0,0,0,0,0,0,0,0,10,NORTH_G3_20,,
+24923,WA,Longview Fibre,54562,6,8,OP,ST,BLQ,20,0.769,134707,49126,EIA-923 Generator File,1958,,BPAT,PUD No 1 of Cowlitz County,Washington,0,0,0,0,0,0,0,0,0,20,NORTH_G3_20,,
+24924,WA,Longview Fibre,54562,7,8,OP,ST,BLQ,25,0.751,164451,68087,EIA-923 Generator File,1966,,BPAT,PUD No 1 of Cowlitz County,Washington,0,0,0,0,0,0,0,0,0,25,NORTH_G3_20,,
+24943,WA,Lower Snake River Wind Energy Project,57195,LSR 1,0,OP,WT,WND,342.7,0.288,865023,355298,Distributed from 923 Generation And Fuel,2012,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,342.7,0,0,0,0,0,NORTH_G3_20,,
+8189,ID,Moyie Springs,6506,1,0,OP,HY,WAT,1,0.886,7765.128,3783.846,Distributed from 923 Generation And Fuel,1941,,BPAT,City of Bonners Ferry,Idaho,0,0,0,0,0,0,0,1,0,0,NORTH_G3_20,,
+8190,ID,Moyie Springs,6506,2,0,OP,HY,WAT,0.4,0.886,3106.051,1513.538,Distributed from 923 Generation And Fuel,1921,,BPAT,City of Bonners Ferry,Idaho,0,0,0,0,0,0,0,0.4,0,0,NORTH_G3_20,,
+8191,ID,Moyie Springs,6506,3,0,OP,HY,WAT,1,0.886,7765.128,3783.846,Distributed from 923 Generation And Fuel,1950,,BPAT,City of Bonners Ferry,Idaho,0,0,0,0,0,0,0,1,0,0,NORTH_G3_20,,
+8192,ID,Moyie Springs,6506,4,0,OP,HY,WAT,1.5,0.886,11647.692,5675.769,Distributed from 923 Generation And Fuel,1982,,BPAT,City of Bonners Ferry,Idaho,0,0,0,0,0,0,0,1.5,0,0,NORTH_G3_20,,
+20098,OR,North Hurlburt Wind LLC,57526,NORTH,0,OP,WT,WND,265,0.237,550227,303590,Distributed from 923 Generation And Fuel,2012,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,265,0,0,0,0,0,NORTH_G3_20,,
+20125,OR,PaTu Wind Farm LLC,57578,PATU,0,OP,WT,WND,9,0.366,28853,15110,Distributed from 923 Generation And Fuel,2010,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,9,0,0,0,0,0,NORTH_G3_20,,
+8242,ID,Smith Falls Hydro Project,54249,GEN1,0,OP,HY,WAT,18,0.268,42204.094,20566.299,Distributed from 923 Generation And Fuel,1990,,BPAT,City of Eugene - (OR),Idaho,0,0,0,0,0,0,0,18,0,0,NORTH_G3_20,,
+8243,ID,Smith Falls Hydro Project,54249,GEN2,0,OP,HY,WAT,18,0.268,42204.094,20566.299,Distributed from 923 Generation And Fuel,1990,,BPAT,City of Eugene - (OR),Idaho,0,0,0,0,0,0,0,18,0,0,NORTH_G3_20,,
+8244,ID,Smith Falls Hydro Project,54249,GEN3,0,OP,HY,WAT,2.1,0.268,4923.811,2399.402,Distributed from 923 Generation And Fuel,1989,,BPAT,City of Eugene - (OR),Idaho,0,0,0,0,0,0,0,2.1,0,0,NORTH_G3_20,,
+20196,OR,South Hurlburt Wind LLC,57549,SOUTH,0,OP,WT,WND,290,0.23,585383,319039,Distributed from 923 Generation And Fuel,2012,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,290,0,0,0,0,0,NORTH_G3_20,,
+19970,OR,Eurus Combine Hills Turbine Ranch 2,57137,1,0,OP,WT,WND,63,0.314,173247,68873,Distributed from 923 Generation And Fuel,2010,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,63,0,0,0,0,0,WCASCADE_20,,
+19979,OR,Finley Buttes Landfill Gas,58687,GEN1,0,OP,IC,LFG,1.6,0.664,9303.333,3814.333,Distributed from 923 Generation And Fuel,2007,,BPAT,Umatilla Electric Coop Assn,Oregon,0,0,0,0,0,0,0,0,0,1.6,WCASCADE_20,,
+19980,OR,Finley Buttes Landfill Gas,58687,GEN2,0,OP,IC,LFG,1.6,0.664,9303.333,3814.333,Distributed from 923 Generation And Fuel,2007,,BPAT,Umatilla Electric Coop Assn,Oregon,0,0,0,0,0,0,0,0,0,1.6,WCASCADE_20,,
+19981,OR,Finley Buttes Landfill Gas,58687,GEN3,0,OP,IC,LFG,1.6,0.664,9303.333,3814.333,Distributed from 923 Generation And Fuel,2007,,BPAT,Umatilla Electric Coop Assn,Oregon,0,0,0,0,0,0,0,0,0,1.6,WCASCADE_20,,
+20103,OR,Opal Springs Hydro,54251,1,0,OP,HY,WAT,4.3,0.803,30244,9782,Distributed from 923 Generation And Fuel,1985,,PACW,PacifiCorp,Oregon,0,0,0,0,0,0,0,4.3,0,0,WCASCADE_20,,
+26145,WY,Shoshone (WY),4183,1,0,OP,HY,WAT,3,0.669,17579,8890,Distributed from 923 Generation And Fuel,1922,,WAUW,WAPA-- Western Area Power Administration,Wyoming,0,0,0,0,0,0,0,3,0,0,WCASCADE_20,,
+20115,OR,Oregon University System Rabbit Field,59790,PV1,0,OP,PV,SUN,1.2,0.145,1519,808,Distributed from 923 Generation And Fuel,2014,,PACW,PacifiCorp,Oregon,0,0,0,0,0,1.2,0,0,0,0,WCASCADE_20,,
+20127,OR,Pelton,3048,1,0,OP,HY,WAT,45,0.418,164586.475,53233.607,Distributed from 923 Generation And Fuel,1957,,PGE,Portland General Electric Co,Oregon,0,0,0,0,0,0,0,45,0,0,WCASCADE_20,,
+20128,OR,Pelton,3048,2,0,OP,HY,WAT,32.4,0.418,118502.262,38328.197,Distributed from 923 Generation And Fuel,1958,,PGE,Portland General Electric Co,Oregon,0,0,0,0,0,0,0,32.4,0,0,WCASCADE_20,,
+20265,OR,Warm Springs Power Enterprises,54721,1,0,OP,HY,WAT,19.6,0.478,82063,29171,Distributed from 923 Generation And Fuel,1982,,PACW,PacifiCorp,Oregon,0,0,0,0,0,0,0,19.6,0,0,WCASCADE_20,,
+26080,WY,Garland Canal Power Plant,57551,MAIN,0,OP,HY,WAT,2.9,0.377,9584,7164,Distributed from 923 Generation And Fuel,1983,,PACE,WAPA-- Western Area Power Administration,Wyoming,0,0,0,0,0,0,0,2.9,0,0,WCASCADE_20,,
+19971,OR,Evergreen BioPower LLC,56781,1,1,OP,ST,WDS,21,0.263,48384.903,24505,EIA-923 Generator File,2007,,PACW,PacifiCorp,Oregon,0,0,0,0,0,0,0,0,0,21,WCASCADE_20,,
+20119,OR,Oxbow (OR),3014,1,0,OP,HY,WAT,47.5,0.541,225229.5,72847.75,Distributed from 923 Generation And Fuel,1961,,IPCO,Idaho Power Co,Oregon,0,0,0,0,0,0,0,47.5,0,0,WCASCADE_20,,
+24871,WA,Grays Harbor Energy Facility,7999,CT1,0,OP,CT,NG,198.9,0.494,861258,456835,EIA-923 Generator File,2008,,BPAT,Bonneville Power Administration,Washington,198.9,0,0,0,0,0,0,0,0,0,WCASCADE_20,,
+24872,WA,Grays Harbor Energy Facility,7999,CT2,0,OP,CT,NG,198.9,0.516,899677,479135,EIA-923 Generator File,2008,,BPAT,Bonneville Power Administration,Washington,198.9,0,0,0,0,0,0,0,0,0,WCASCADE_20,,
+24873,WA,Grays Harbor Energy Facility,7999,ST1,2,OP,CA,NG,300,0.402,1057357,577250,EIA-923 Generator File,2008,,BPAT,Bonneville Power Administration,Washington,300,0,0,0,0,0,0,0,0,0,WCASCADE_20,,
+19994,OR,Green Peter,3080,1,0,OP,HY,WAT,40,0.308,107950,34915,Distributed from 923 Generation And Fuel,1967,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,40,0,0,WCASCADE_20,,
+19995,OR,Green Peter,3080,2,0,OP,HY,WAT,40,0.308,107950,34915,Distributed from 923 Generation And Fuel,1967,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,40,0,0,WCASCADE_20,,
+19996,OR,Green Springs,6403,1,0,OP,HY,WAT,17.2,0.347,52255,16901,Distributed from 923 Generation And Fuel,1960,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,17.2,0,0,WCASCADE_20,,
+24882,WA,Harvest Wind Project,57152,HWP1,0,OP,WT,WND,98.9,0.302,261218,124971,Distributed from 923 Generation And Fuel,2009,,BPAT,PUD No 1 of Klickitat County,Washington,0,0,0,0,98.9,0,0,0,0,0,WCASCADE_20,,
+20004,OR,Hay Canyon Wind Power LLC,56790,1,0,OP,WT,WND,100.8,0.233,206106,108132,Distributed from 923 Generation And Fuel,2009,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,100.8,0,0,0,0,0,WCASCADE_20,,
+24883,WA,Hopkins Ridge Wind,56255,1,0,OP,WT,WND,149.4,0.303,395986.322,154870.368,Distributed from 923 Generation And Fuel,2005,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,149.4,0,0,0,0,0,WCASCADE_20,,
+24884,WA,Hopkins Ridge Wind,56255,2,0,OP,WT,WND,7.2,0.303,19083.678,7463.632,Distributed from 923 Generation And Fuel,2008,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,7.2,0,0,0,0,0,WCASCADE_20,,
+20017,OR,Horseshoe Bend Wind LLC,57550,HORSE,0,OP,WT,WND,290,0.241,612344,335426,Distributed from 923 Generation And Fuel,2012,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,290,0,0,0,0,0,WCASCADE_20,,
+14756,MT,Hungry Horse,2203,1,0,OP,HY,WAT,107,0.223,208790.5,104665.75,Distributed from 923 Generation And Fuel,1952,,BPAT,Bonneville Power Administration,Montana,0,0,0,0,0,0,0,107,0,0,WCASCADE_20,,
+14757,MT,Hungry Horse,2203,2,0,OP,HY,WAT,107,0.223,208790.5,104665.75,Distributed from 923 Generation And Fuel,1952,,BPAT,Bonneville Power Administration,Montana,0,0,0,0,0,0,0,107,0,0,WCASCADE_20,,
+14758,MT,Hungry Horse,2203,3,0,OP,HY,WAT,107,0.223,208790.5,104665.75,Distributed from 923 Generation And Fuel,1953,,BPAT,Bonneville Power Administration,Montana,0,0,0,0,0,0,0,107,0,0,WCASCADE_20,,
+14759,MT,Hungry Horse,2203,4,0,OP,HY,WAT,107,0.223,208790.5,104665.75,Distributed from 923 Generation And Fuel,1953,,BPAT,Bonneville Power Administration,Montana,0,0,0,0,0,0,0,107,0,0,WCASCADE_20,,
+24885,WA,Ice Harbor,3925,1,0,OP,HY,WAT,90,0.316,248946.567,79383.134,Distributed from 923 Generation And Fuel,1962,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,90,0,0,WCASCADE_20,,
+24887,WA,Ice Harbor,3925,3,0,OP,HY,WAT,90,0.316,248946.567,79383.134,Distributed from 923 Generation And Fuel,1962,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,90,0,0,WCASCADE_20,,
+24888,WA,Ice Harbor,3925,4,0,OP,HY,WAT,111,0.316,307034.1,97905.866,Distributed from 923 Generation And Fuel,1975,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,111,0,0,WCASCADE_20,,
+24890,WA,Ice Harbor,3925,6,0,OP,HY,WAT,111,0.316,307034.1,97905.866,Distributed from 923 Generation And Fuel,1976,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,111,0,0,WCASCADE_20,,
+20022,OR,IP Springfield Oregon,50191,TG4,3,OP,ST,BLQ,40,0.222,77787,32993,EIA-923 Generator File,1976,,BPAT,City of Eugene - (OR),Oregon,0,0,0,0,0,0,0,0,0,40,WCASCADE_20,,
+20052,OR,Klondike Wind Power,55871,Ph 1,0,OP,WT,WND,24.5,0.234,50129,26252,Distributed from 923 Generation And Fuel,2002,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,24.5,0,0,0,0,0,WCASCADE_20,,
+20053,OR,Klondike Windpower II,56359,PH2,0,OP,WT,WND,75,0.319,209298,122627,Distributed from 923 Generation And Fuel,2005,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,75,0,0,0,0,0,WCASCADE_20,,
+20054,OR,Klondike Windpower III,56468,1,0,OP,WT,WND,221,0.291,563974.171,324202.171,Distributed from 923 Generation And Fuel,2007,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,221,0,0,0,0,0,WCASCADE_20,,
+20055,OR,Klondike Windpower III,56468,2,0,OP,WT,WND,76.5,0.291,195221.829,112223.829,Distributed from 923 Generation And Fuel,2008,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,76.5,0,0,0,0,0,WCASCADE_20,,
+20058,OR,Leaburg,3068,1,0,OP,HY,WAT,8.4,0.594,43687.396,14129.962,Distributed from 923 Generation And Fuel,1930,,BPAT,City of Eugene - (OR),Oregon,0,0,0,0,0,0,0,8.4,0,0,WCASCADE_20,,
+20059,OR,Leaburg,3068,2,0,OP,HY,WAT,7.5,0.594,39006.604,12616.038,Distributed from 923 Generation And Fuel,1950,,BPAT,City of Eugene - (OR),Oregon,0,0,0,0,0,0,0,7.5,0,0,WCASCADE_20,,
+20061,OR,Leaning Juniper Wind Power II,57333,1,0,OP,WT,WND,201,0.22,387149,211544,Distributed from 923 Generation And Fuel,2011,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,201,0,0,0,0,0,WCASCADE_20,,
+14769,MT,Libby,6172,1,0,OP,HY,WAT,105,0.475,437097,162938.2,Distributed from 923 Generation And Fuel,1975,,BPAT,Bonneville Power Administration,Montana,0,0,0,0,0,0,0,105,0,0,WCASCADE_20,,
+14770,MT,Libby,6172,2,0,OP,HY,WAT,105,0.475,437097,162938.2,Distributed from 923 Generation And Fuel,1975,,BPAT,Bonneville Power Administration,Montana,0,0,0,0,0,0,0,105,0,0,WCASCADE_20,,
+14771,MT,Libby,6172,3,0,OP,HY,WAT,105,0.475,437097,162938.2,Distributed from 923 Generation And Fuel,1976,,BPAT,Bonneville Power Administration,Montana,0,0,0,0,0,0,0,105,0,0,WCASCADE_20,,
+14772,MT,Libby,6172,4,0,OP,HY,WAT,105,0.475,437097,162938.2,Distributed from 923 Generation And Fuel,1976,,BPAT,Bonneville Power Administration,Montana,0,0,0,0,0,0,0,105,0,0,WCASCADE_20,,
+14773,MT,Libby,6172,5,0,OP,HY,WAT,105,0.475,437097,162938.2,Distributed from 923 Generation And Fuel,1984,,BPAT,Bonneville Power Administration,Montana,0,0,0,0,0,0,0,105,0,0,WCASCADE_20,,
+24912,WA,Little Goose,3926,1,0,OP,HY,WAT,135,0.287,339918,130260.333,Distributed from 923 Generation And Fuel,1970,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,135,0,0,WCASCADE_20,,
+24913,WA,Little Goose,3926,2,0,OP,HY,WAT,135,0.287,339918,130260.333,Distributed from 923 Generation And Fuel,1970,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,135,0,0,WCASCADE_20,,
+24914,WA,Little Goose,3926,3,0,OP,HY,WAT,135,0.287,339918,130260.333,Distributed from 923 Generation And Fuel,1971,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,135,0,0,WCASCADE_20,,
+24915,WA,Little Goose,3926,4,0,OP,HY,WAT,135,0.287,339918,130260.333,Distributed from 923 Generation And Fuel,1978,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,135,0,0,WCASCADE_20,,
+24916,WA,Little Goose,3926,5,0,OP,HY,WAT,135,0.287,339918,130260.333,Distributed from 923 Generation And Fuel,1978,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,135,0,0,WCASCADE_20,,
+24917,WA,Little Goose,3926,6,0,OP,HY,WAT,135,0.287,339918,130260.333,Distributed from 923 Generation And Fuel,1978,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,135,0,0,WCASCADE_20,,
+20065,OR,Lookout Point,3083,1,0,OP,HY,WAT,40,0.32,111966.667,36214.333,Distributed from 923 Generation And Fuel,1955,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,40,0,0,WCASCADE_20,,
+20066,OR,Lookout Point,3083,2,0,OP,HY,WAT,40,0.32,111966.667,36214.333,Distributed from 923 Generation And Fuel,1955,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,40,0,0,WCASCADE_20,,
+20067,OR,Lookout Point,3083,3,0,OP,HY,WAT,40,0.32,111966.667,36214.333,Distributed from 923 Generation And Fuel,1955,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,40,0,0,WCASCADE_20,,
+24933,WA,Lower Granite,6175,3,0,OP,HY,WAT,135,0.297,350684,129335.833,Distributed from 923 Generation And Fuel,1975,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,135,0,0,WCASCADE_20,,
+24934,WA,Lower Granite,6175,4,0,OP,HY,WAT,135,0.297,350684,129335.833,Distributed from 923 Generation And Fuel,1978,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,135,0,0,WCASCADE_20,,
+24935,WA,Lower Granite,6175,5,0,OP,HY,WAT,135,0.297,350684,129335.833,Distributed from 923 Generation And Fuel,1978,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,135,0,0,WCASCADE_20,,
+24936,WA,Lower Granite,6175,6,0,OP,HY,WAT,135,0.297,350684,129335.833,Distributed from 923 Generation And Fuel,1978,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,135,0,0,WCASCADE_20,,
+24938,WA,Lower Monumental,3927,2,0,OP,HY,WAT,135,0.28,331188.5,107064.5,Distributed from 923 Generation And Fuel,1969,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,135,0,0,WCASCADE_20,,
+24939,WA,Lower Monumental,3927,3,0,OP,HY,WAT,135,0.28,331188.5,107064.5,Distributed from 923 Generation And Fuel,1970,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,135,0,0,WCASCADE_20,,
+24940,WA,Lower Monumental,3927,4,0,OP,HY,WAT,135,0.28,331188.5,107064.5,Distributed from 923 Generation And Fuel,1979,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,135,0,0,WCASCADE_20,,
+24941,WA,Lower Monumental,3927,5,0,OP,HY,WAT,135,0.28,331188.5,107064.5,Distributed from 923 Generation And Fuel,1979,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,135,0,0,WCASCADE_20,,
+24942,WA,Lower Monumental,3927,6,0,OP,HY,WAT,135,0.28,331188.5,107064.5,Distributed from 923 Generation And Fuel,1979,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,135,0,0,WCASCADE_20,,
+20070,OR,McNary,3084,1,0,OP,HY,WAT,70,0.649,397712.58,129656.82,Distributed from 923 Generation And Fuel,1953,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,70,0,0,WCASCADE_20,,
+20071,OR,McNary,3084,10,0,OP,HY,WAT,70,0.649,397712.58,129656.82,Distributed from 923 Generation And Fuel,1955,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,70,0,0,WCASCADE_20,,
+20072,OR,McNary,3084,11,0,OP,HY,WAT,70,0.649,397712.58,129656.82,Distributed from 923 Generation And Fuel,1956,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,70,0,0,WCASCADE_20,,
+20073,OR,McNary,3084,12,0,OP,HY,WAT,70,0.649,397712.58,129656.82,Distributed from 923 Generation And Fuel,1956,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,70,0,0,WCASCADE_20,,
+20075,OR,McNary,3084,14,0,OP,HY,WAT,80.5,0.649,457369.466,149105.343,Distributed from 923 Generation And Fuel,1957,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,80.5,0,0,WCASCADE_20,,
+20076,OR,McNary,3084,2,0,OP,HY,WAT,70,0.649,397712.58,129656.82,Distributed from 923 Generation And Fuel,1954,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,70,0,0,WCASCADE_20,,
+20077,OR,McNary,3084,3,0,OP,HY,WAT,70,0.649,397712.58,129656.82,Distributed from 923 Generation And Fuel,1954,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,70,0,0,WCASCADE_20,,
+20078,OR,McNary,3084,4,0,OP,HY,WAT,70,0.649,397712.58,129656.82,Distributed from 923 Generation And Fuel,1954,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,70,0,0,WCASCADE_20,,
+20079,OR,McNary,3084,5,0,OP,HY,WAT,70,0.649,397712.58,129656.82,Distributed from 923 Generation And Fuel,1954,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,70,0,0,WCASCADE_20,,
+20080,OR,McNary,3084,6,0,OP,HY,WAT,70,0.649,397712.58,129656.82,Distributed from 923 Generation And Fuel,1955,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,70,0,0,WCASCADE_20,,
+20081,OR,McNary,3084,7,0,OP,HY,WAT,70,0.649,397712.58,129656.82,Distributed from 923 Generation And Fuel,1955,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,70,0,0,WCASCADE_20,,
+20082,OR,McNary,3084,8,0,OP,HY,WAT,70,0.649,397712.58,129656.82,Distributed from 923 Generation And Fuel,1955,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,70,0,0,WCASCADE_20,,
+20083,OR,McNary,3084,9,0,OP,HY,WAT,70,0.649,397712.58,129656.82,Distributed from 923 Generation And Fuel,1956,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,0,0,0,70,0,0,WCASCADE_20,,
+24959,WA,McNary Dam Fish Attraction Project,7511,1,0,OP,HY,WAT,10,0,0,0,Distributed from 923 Generation And Fuel,1997,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,10,0,0,WCASCADE_20,,
+20087,OR,Middle Fork Irrigation District,50917,GEN1,0,OP,HY,WAT,2,0.882,15448.485,4996.364,Distributed from 923 Generation And Fuel,1986,,BPAT,Hood River Electric Coop,Oregon,0,0,0,0,0,0,0,2,0,0,WCASCADE_20,,
+20088,OR,Middle Fork Irrigation District,50917,GEN2,0,OP,HY,WAT,0.5,0.882,3862.121,1249.091,Distributed from 923 Generation And Fuel,1986,,BPAT,Hood River Electric Coop,Oregon,0,0,0,0,0,0,0,0.5,0,0,WCASCADE_20,,
+20089,OR,Middle Fork Irrigation District,50917,GEN3,0,OP,HY,WAT,0.8,0.882,6179.394,1998.545,Distributed from 923 Generation And Fuel,1986,,BPAT,Hood River Electric Coop,Oregon,0,0,0,0,0,0,0,0.8,0,0,WCASCADE_20,,
+24975,WA,Nine Canyon,7936,1,0,OP,WT,WND,95.9,0.293,245759,87633,Distributed from 923 Generation And Fuel,2002,,BPAT,PUD No 1 of Benton County,Washington,0,0,0,0,95.9,0,0,0,0,0,WCASCADE_20,,
+20117,OR,Outback Solar At Christmas Valley,58131,PV1,0,OP,PV,SUN,4.4,0.245,9439,5022,Distributed from 923 Generation And Fuel,2012,,BPAT,"Midstate Electric Coop, Inc",Oregon,0,0,0,0,0,4.4,0,0,0,0,WCASCADE_20,,
+20126,OR,Pebble Springs Wind LLC,56789,1,0,OP,WT,WND,98.7,0.231,199872,107290,Distributed from 923 Generation And Fuel,2009,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,98.7,0,0,0,0,0,WCASCADE_20,,
+24992,WA,Port Townsend Paper,50544,GEN6,3,OP,ST,BLQ,7.5,0.473,31073.388,12721,EIA-923 Generator File,1986,,BPAT,PUD No 1 of Jefferson County,Washington,0,0,0,0,0,0,0,0,0,7.5,WCASCADE_20,,
+20167,OR,Riverbend Landfill,57019,GEN1,0,OP,IC,LFG,0.8,0.833,5835.833,2392.667,Distributed from 923 Generation And Fuel,2010,,BPAT,City of McMinnville - (OR),Oregon,0,0,0,0,0,0,0,0,0,0.8,WCASCADE_20,,
+20168,OR,Riverbend Landfill,57019,GEN2,0,OP,IC,LFG,0.8,0.833,5835.833,2392.667,Distributed from 923 Generation And Fuel,2010,,BPAT,City of McMinnville - (OR),Oregon,0,0,0,0,0,0,0,0,0,0.8,WCASCADE_20,,
+20169,OR,Riverbend Landfill,57019,GEN3,0,OP,IC,LFG,0.8,0.833,5835.833,2392.667,Distributed from 923 Generation And Fuel,2010,,BPAT,City of McMinnville - (OR),Oregon,0,0,0,0,0,0,0,0,0,0.8,WCASCADE_20,,
+20170,OR,Riverbend Landfill,57019,GEN4,0,OP,IC,LFG,0.8,0.833,5835.833,2392.667,Distributed from 923 Generation And Fuel,2010,,BPAT,City of McMinnville - (OR),Oregon,0,0,0,0,0,0,0,0,0,0.8,WCASCADE_20,,
+20171,OR,Riverbend Landfill,57019,GEN5,0,OP,IC,LFG,0.8,0.833,5835.833,2392.667,Distributed from 923 Generation And Fuel,2010,,BPAT,City of McMinnville - (OR),Oregon,0,0,0,0,0,0,0,0,0,0.8,WCASCADE_20,,
+20172,OR,Riverbend Landfill,57019,GEN6,0,OP,IC,LFG,0.8,0.833,5835.833,2392.667,Distributed from 923 Generation And Fuel,2010,,BPAT,City of McMinnville - (OR),Oregon,0,0,0,0,0,0,0,0,0,0.8,WCASCADE_20,,
+25060,WA,Roosevelt Biogas 1,7832,1,0,OP,IC,LFG,2.1,0,0,0,Distributed from 923 Generation And Fuel,1999,,BPAT,PUD No 1 of Klickitat County,Washington,0,0,0,0,0,0,0,0,0,2.1,WCASCADE_20,,
+25061,WA,Roosevelt Biogas 1,7832,2,0,OP,IC,LFG,2.1,0,0,0,Distributed from 923 Generation And Fuel,1999,,BPAT,PUD No 1 of Klickitat County,Washington,0,0,0,0,0,0,0,0,0,2.1,WCASCADE_20,,
+25062,WA,Roosevelt Biogas 1,7832,3,0,OP,IC,LFG,2.1,0,0,0,Distributed from 923 Generation And Fuel,1999,,BPAT,PUD No 1 of Klickitat County,Washington,0,0,0,0,0,0,0,0,0,2.1,WCASCADE_20,,
+25063,WA,Roosevelt Biogas 1,7832,4,0,OP,IC,LFG,2.1,0,0,0,Distributed from 923 Generation And Fuel,1999,,BPAT,PUD No 1 of Klickitat County,Washington,0,0,0,0,0,0,0,0,0,2.1,WCASCADE_20,,
+25064,WA,Roosevelt Biogas 1,7832,5,0,OP,IC,LFG,2.1,0,0,0,Distributed from 923 Generation And Fuel,2000,,BPAT,PUD No 1 of Klickitat County,Washington,0,0,0,0,0,0,0,0,0,2.1,WCASCADE_20,,
+25065,WA,Roosevelt Biogas 1,7832,7,0,OP,CT,LFG,10,0.546,47787,12526,EIA-923 Generator File,2011,,BPAT,PUD No 1 of Klickitat County,Washington,0,0,0,0,0,0,0,0,0,10,WCASCADE_20,,
+25066,WA,Roosevelt Biogas 1,7832,8,0,OP,CT,LFG,10,0.726,63633,28535,EIA-923 Generator File,2011,,BPAT,PUD No 1 of Klickitat County,Washington,0,0,0,0,0,0,0,0,0,10,WCASCADE_20,,
+25067,WA,Roosevelt Biogas 1,7832,9,1,OP,CA,LFG,6,0.669,35137,13126,EIA-923 Generator File,2011,,BPAT,PUD No 1 of Klickitat County,Washington,0,0,0,0,0,0,0,0,0,6,WCASCADE_20,,
+25073,WA,Roza,6407,1,0,OP,HY,WAT,12.9,0.598,67630,26536,Distributed from 923 Generation And Fuel,1958,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,12.9,0,0,WCASCADE_20,,
+25075,WA,Sagebrush Power Partners,56858,GEN1,0,OP,WT,WND,100.7,0.285,251119,161655,Distributed from 923 Generation And Fuel,2010,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,100.7,0,0,0,0,0,WCASCADE_20,,
+20179,OR,Seneca Sustainable Energy LLC,57457,1,1,OP,ST,WDS,19.8,0.682,118216,47147,EIA-923 Generator File,2011,,BPAT,City of Eugene - (OR),Oregon,0,0,0,0,0,0,0,0,0,19.8,WCASCADE_20,,
+25083,WA,Skookumchuck,7259,1,0,OP,HY,WAT,1,0.508,4451,1746,Distributed from 923 Generation And Fuel,1990,,BPAT,Bonneville Power Administration,Washington,0,0,0,0,0,0,0,1,0,0,WCASCADE_20,,
+20202,OR,Star Point Wind Project LLC,57096,1,0,OP,WT,WND,98.7,0.259,224270,119156,Distributed from 923 Generation And Fuel,2010,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,98.7,0,0,0,0,0,WCASCADE_20,,
+20256,OR,Vansycle,55125,WGNS,0,OP,WT,WND,25,0.349,76522,27913,Distributed from 923 Generation And Fuel,1998,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,25,0,0,0,0,0,WCASCADE_20,,
+20260,OR,Walterville,3071,1,0,OP,HY,WAT,8,0.735,51500,16657,Distributed from 923 Generation And Fuel,1949,,BPAT,City of Eugene - (OR),Oregon,0,0,0,0,0,0,0,8,0,0,WCASCADE_20,,
+20279,OR,Wheat Field Wind Power Project,56854,GEN1,0,OP,WT,WND,97,0.234,199030,106575,Distributed from 923 Generation And Fuel,2009,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,97,0,0,0,0,0,WCASCADE_20,,
+25175,WA,White Creek Wind Farm,56487,1,0,OP,WT,WND,204,0.311,555512,257849,Distributed from 923 Generation And Fuel,2007,,BPAT,PUD No 1 of Klickitat County,Washington,0,0,0,0,204,0,0,0,0,0,WCASCADE_20,,
+20280,OR,Willow Creek Energy Center,56952,1,0,OP,WT,WND,72,0.241,152128,83080,Distributed from 923 Generation And Fuel,2009,,BPAT,Bonneville Power Administration,Oregon,0,0,0,0,72,0,0,0,0,0,WCASCADE_20,,
+25192,WA,Youngs Creek Hydroelectric Project,57763,1,0,OP,HY,WAT,7.5,0.282,18552,7279,Distributed from 923 Generation And Fuel,2011,,BPAT,PUD 1 of Snohomish County,47.7916,-121.8,Washington,0,0,0,0,0,0,0,7.5,0,0,WCASCADE_20
+19985,OR,Four Corners Windfarm LLC,56969,1,0,OP,WT,WND,10,0.32,28062,14696,Distributed from 923 Generation And Fuel,2009,,PACW,PacifiCorp,45.7286,-119.4181,Oregon,0,0,0,0,10,0,0,0,0,0,COLOEAST_20
+19986,OR,Four Mile Canyon Windfarm LLC,56970,1,0,OP,WT,WND,10,0.288,25264,13230,Distributed from 923 Generation And Fuel,2009,,PACW,PacifiCorp,45.6447,-119.4533,Oregon,0,0,0,0,10,0,0,0,0,0,COLOEAST_20
+19946,OR,Coyote Springs,7350,1,0,OP,CT,NG,185.7,0.601,978192,447570,EIA-923 Generator File,1995,,BPAT,Bonneville Power Administration,45.847998,-119.67392,Oregon,185.7,0,0,0,0,0,0,0,0,0,JOHN_DAY_20
+19947,OR,Coyote Springs,7350,2,1,OP,CA,NG,80.6,0.675,476472,224682,EIA-923 Generator File,1995,,BPAT,Bonneville Power Administration,45.847998,-119.67392,Oregon,80.6,0,0,0,0,0,0,0,0,0,JOHN_DAY_20
+19948,OR,Coyote Springs II,7931,1,0,OP,CT,NG,170,0.749,1115657,470970,EIA-923 Generator File,2003,,BPAT,Avista Corp,45.848039,-119.673965,Oregon,170,0,0,0,0,0,0,0,0,0,JOHN_DAY_20
+19949,OR,Coyote Springs II,7931,2,1,OP,CA,NG,117,0.634,649749,280705,EIA-923 Generator File,2003,,BPAT,Avista Corp,45.848039,-119.673965,Oregon,117,0,0,0,0,0,0,0,0,0,JOHN_DAY_20
+19973,OR,Faraday,3045,1,0,OP,HY,WAT,3.1,0.494,13417.749,4339.831,Distributed from 923 Generation And Fuel,1907,,PGE,Portland General Electric Co,45.268045,-122.32009,Oregon,0,0,0,0,0,0,0,3.1,0,0,JOHN_DAY_20
+19974,OR,Faraday,3045,2,0,OP,HY,WAT,3.1,0.494,13417.749,4339.831,Distributed from 923 Generation And Fuel,1907,,PGE,Portland General Electric Co,45.268045,-122.32009,Oregon,0,0,0,0,0,0,0,3.1,0,0,JOHN_DAY_20
+19975,OR,Faraday,3045,3,0,OP,HY,WAT,2.7,0.494,11686.426,3779.852,Distributed from 923 Generation And Fuel,1908,,PGE,Portland General Electric Co,45.268045,-122.32009,Oregon,0,0,0,0,0,0,0,2.7,0,0,JOHN_DAY_20
+19976,OR,Faraday,3045,4,0,OP,HY,WAT,4.5,0.494,19477.377,6299.754,Distributed from 923 Generation And Fuel,1909,,PGE,Portland General Electric Co,45.268045,-122.32009,Oregon,0,0,0,0,0,0,0,4.5,0,0,JOHN_DAY_20
+19977,OR,Faraday,3045,5,0,OP,HY,WAT,4,0.494,17313.224,5599.781,Distributed from 923 Generation And Fuel,1910,,PGE,Portland General Electric Co,45.268045,-122.32009,Oregon,0,0,0,0,0,0,0,4,0,0,JOHN_DAY_20
+19978,OR,Faraday,3045,6,0,OP,HY,WAT,19.2,0.494,83103.475,26878.951,Distributed from 923 Generation And Fuel,1958,,PGE,Portland General Electric Co,45.268045,-122.32009,Oregon,0,0,0,0,0,0,0,19.2,0,0,JOHN_DAY_20
+19872,OR,Beaver,8073,1,0,OP,CT,NG,68.3,0.099,59082,45866,EIA-923 Generator File,1974,,PGE,Portland General Electric Co,46.172401,-123.17392,Oregon,68.3,0,0,0,0,0,0,0,0,0,WCASCADE_20
+1569,AZ,Sulphur Springs,60381,SSSP,0,OP,PV,SUN,20,0.027,4656,0,Distributed from 923 Generation And Fuel,2016,,WALC,Sulphur Springs Valley E C Inc,32.0628,-109.919283,Arizona,0,0,0,0,0,20,0,0,0,0,0
+26165,WY,Swift Creek,6394,3,0,OP,HY,WAT,0.8,0.496,3479.059,2600.471,Distributed from 923 Generation And Fuel,2009,,BPAT,Lower Valley Energy Inc,42.728439,-110.916592,Wyoming,0,0,0,0,0,0,0,0.8,0,0,0
+26166,WY,Swift Creek,6394,4,0,OP,HY,WAT,0.6,0.496,2609.294,1950.353,Distributed from 923 Generation And Fuel,2010,,BPAT,Lower Valley Energy Inc,42.728439,-110.916592,Wyoming,0,0,0,0,0,0,0,0.6,0,0,0
+26167,WY,Swift Creek,6394,5,0,OP,HY,WAT,0.3,0.496,1304.647,975.176,Distributed from 923 Generation And Fuel,2010,,BPAT,Lower Valley Energy Inc,42.728439,-110.916592,Wyoming,0,0,0,0,0,0,0,0.3,0,0,0
+17678,NV,Terra-Gen Dixie Valley,52015,GEN1,0,OP,ST,GEO,60.5,0.935,495329,203871,Distributed from 923 Generation And Fuel,1998,,CISO,Southern California Edison Co,39.9663,-117.8557,Nevada,0,0,0,0,0,0,0,0,0,60.5,0
+17398,NM,Texico Wind Ranch LP,57258,1,0,OP,WT,WND,0.7,0.261,1603,567.737,Distributed from 923 Generation And Fuel,2003,,SWPP,Southwestern Public Service Co,34.36,-103.0667,New Mexico,0,0,0,0,0.7,0,0,0,0,0,0
+17399,NM,Texico Wind Ranch LP,57258,2,0,OP,WT,WND,0.6,0.261,1374,486.632,Distributed from 923 Generation And Fuel,1999,,SWPP,Southwestern Public Service Co,34.36,-103.0667,New Mexico,0,0,0,0,0.6,0,0,0,0,0,0
+19873,OR,Beaver,8073,2,0,OP,CT,NG,68.3,0.083,49686,42948,EIA-923 Generator File,1974,,PGE,Portland General Electric Co,46.172401,-123.17392,Oregon,68.3,0,0,0,0,0,0,0,0,0,WCASCADE_20
+19874,OR,Beaver,8073,3,0,OP,CT,NG,68.3,0.117,70169,54603,EIA-923 Generator File,1974,,PGE,Portland General Electric Co,46.172401,-123.17392,Oregon,68.3,0,0,0,0,0,0,0,0,0,WCASCADE_20
+19875,OR,Beaver,8073,4,0,OP,CT,NG,68.3,0.1,60071,45193,EIA-923 Generator File,1974,,PGE,Portland General Electric Co,46.172401,-123.17392,Oregon,68.3,0,0,0,0,0,0,0,0,0,WCASCADE_20
+19876,OR,Beaver,8073,5,0,OP,CT,NG,68.3,0.052,31144,21758,EIA-923 Generator File,1974,,PGE,Portland General Electric Co,46.172401,-123.17392,Oregon,68.3,0,0,0,0,0,0,0,0,0,WCASCADE_20
+19877,OR,Beaver,8073,6,0,OP,CT,NG,68.3,0.113,67417,54893,EIA-923 Generator File,1974,,PGE,Portland General Electric Co,46.172401,-123.17392,Oregon,68.3,0,0,0,0,0,0,0,0,0,WCASCADE_20
+14842,MT,Tiber Dam Hydroelectric Plant,56499,HY1,0,OP,HY,WAT,7.5,0.796,52297,22523,Distributed from 923 Generation And Fuel,2004,,WAUW,WAPA-- Western Area Power Administration,48.318,-111.1018,Montana,0,0,0,0,0,0,0,7.5,0,0,0
+19878,OR,Beaver,8073,7,6,OP,CA,NG,176.4,0.078,119920,99753,EIA-923 Generator File,1977,,PGE,Portland General Electric Co,46.172401,-123.17392,Oregon,176.4,0,0,0,0,0,0,0,0,0,WCASCADE_20
+19879,OR,Beaver,8073,8,0,OP,GT,NG,24.5,,-15,-6,Data from EIA-923 Generator File overwritten with distributed data from EIA-923 Generation and Fuel,2001,,PGE,Portland General Electric Co,46.172401,-123.17392,Oregon,0,24.5,0,0,0,0,0,0,0,0,WCASCADE_20
+19880,OR,Bellevue Solar Project,57372,INV-1,0,OP,PV,SUN,1.6,0.123,1722,916,Distributed from 923 Generation And Fuel,2011,,PGE,Portland General Electric Co,45.112222,-123.234722,Oregon,0,0,0,0,0,1.6,0,0,0,0,WCASCADE_20
+26170,WY,Top of the World Windpower Project,57327,TOTW1,0,OP,WT,WND,200,0.358,627052,168606,Distributed from 923 Generation And Fuel,2010,,PACE,PacifiCorp,42.9258,-105.7872,Wyoming,0,0,0,0,200,0,0,0,0,0,0
+25112,WA,Transalta Centralia Generation,3845,1,1,OP,ST,RC,729.9,0.333,2128325,1171352,EIA-923 Generator File,1972,2020,BPAT,Bonneville Power Administration,46.755938,-122.859764,Washington,0,0,0,0,0,0,0,0,0,729.9,0
+25113,WA,Transalta Centralia Generation,3845,2,1,OP,ST,RC,729.9,0.383,2448510,1223568,EIA-923 Generator File,1973,2025,BPAT,Bonneville Power Administration,46.755938,-122.859764,Washington,0,0,0,0,0,0,0,0,0,729.9,0
+26171,WY,TransAlta Wyoming Wind,56093,GE15,0,OP,WT,WND,144,0.287,362139,111605,Distributed from 923 Generation And Fuel,2003,,PACE,PacifiCorp,41.2874,-110.5556,Wyoming,0,0,0,0,144,0,0,0,0,0,0
+26172,WY,Tronox,57915,1,7,OP,ST,SUB,3.5,0.817,25059,10461,EIA-923 Generator File,1953,,PACE,PacifiCorp,41.621667,-109.811944,Wyoming,0,0,3.5,0,0,0,0,0,0,0,0
+26173,WY,Tronox,57915,2,7,OP,ST,SUB,3.5,0.846,25925,10670,EIA-923 Generator File,1953,,PACE,PacifiCorp,41.621667,-109.811944,Wyoming,0,0,3.5,0,0,0,0,0,0,0,0
+26174,WY,Tronox,57915,3,7,OP,ST,SUB,4,0.79,27688,11617,EIA-923 Generator File,1964,,PACE,PacifiCorp,41.621667,-109.811944,Wyoming,0,0,4,0,0,0,0,0,0,0,0
+26175,WY,Tronox,57915,4,7,OP,ST,SUB,10,0.789,69135,27237,EIA-923 Generator File,1972,,PACE,PacifiCorp,41.621667,-109.811944,Wyoming,0,0,10,0,0,0,0,0,0,0,0
+26176,WY,Tronox,57915,5,7,OP,ST,SUB,10,0.587,51382,31714,EIA-923 Generator File,1975,,PACE,PacifiCorp,41.621667,-109.811944,Wyoming,0,0,10,0,0,0,0,0,0,0,0
+26177,WY,Tronox,57915,6,7,OP,ST,SUB,10,0.89,77958,31985,EIA-923 Generator File,1975,,PACE,PacifiCorp,41.621667,-109.811944,Wyoming,0,0,10,0,0,0,0,0,0,0,0
+25119,WA,Tucannon River Wind Farm,58571,1,0,OP,WT,WND,266.8,0.372,869351,358239,Distributed from 923 Generation And Fuel,2014,,BPAT,Bonneville Power Administration,46.421111,-118.026944,Washington,0,0,0,0,266.8,0,0,0,0,0,0
+25120,WA,Tuolumne Wind Project,56702,WPT1,0,OP,WT,WND,136.3,0.324,386317,199737,Distributed from 923 Generation And Fuel,2009,,BPAT,Bonneville Power Administration,45.8797,-120.8072,Washington,0,0,0,0,136.3,0,0,0,0,0,0
+25124,WA,Twin Reservoirs,50382,GEN1,0,OP,HY,WAT,2.2,0.621,11976,4699,Distributed from 923 Generation And Fuel,1988,,BPAT,"Columbia Rural Elec Assn, Inc",46.088333,-118.254722,Washington,0,0,0,0,0,0,0,2.2,0,0,0
+23607,UT,Uintah,3704,1,0,OP,HY,WAT,0.6,0.616,3237,1492,Distributed from 923 Generation And Fuel,1920,,WACM,Moon Lake Electric Assn Inc,40.538056,-110.066111,Utah,0,0,0,0,0,0,0,0.6,0,0,0
+23608,UT,Uintah,3704,2,0,OP,HY,WAT,0.6,0.616,3237,1492,Distributed from 923 Generation And Fuel,1940,,WACM,Moon Lake Electric Assn Inc,40.538056,-110.066111,Utah,0,0,0,0,0,0,0,0.6,0,0,0
+1594,AZ,Union HS at Casa Grande,58516,PV1,0,OP,PV,SUN,1.6,0.243,3404,1678,Distributed from 923 Generation And Fuel,2012,,AZPS,Arizona Public Service Co,32.936944,-111.738611,Arizona,0,0,0,0,0,1.6,0,0,0,0,0
+19881,OR,Bend,6484,1,0,OP,HY,WAT,0.2,0.203,356,115.091,Distributed from 923 Generation And Fuel,1913,,PACW,PacifiCorp,44.062326,-121.313331,Oregon,0,0,0,0,0,0,0,0.2,0,0,WCASCADE_20
+19882,OR,Bend,6484,2,0,OP,HY,WAT,0.3,0.203,534,172.636,Distributed from 923 Generation And Fuel,1916,,PACW,PacifiCorp,44.062326,-121.313331,Oregon,0,0,0,0,0,0,0,0.3,0,0,WCASCADE_20
+25130,WA,University of Washington Power Plant,54809,TG2,0,OP,ST,NG,5,0.452,19812.25,0,EIA-923 Generator File,1969,,SCL,City of Seattle - (WA),47.6539,-122.3036,Washington,5,0,0,0,0,0,0,0,0,0,0
+8274,ID,Upper Power Plant,844,4,0,OP,HY,WAT,8,0.608,42607,20762,Distributed from 923 Generation And Fuel,1982,,PACE,City of Idaho Falls - (ID),43.552695,-112.050953,Idaho,0,0,0,0,0,0,0,8,0,0,0
+19883,OR,Bend,6484,3,0,OP,HY,WAT,0.6,0.203,1068,345.273,Distributed from 923 Generation And Fuel,1917,,PACW,PacifiCorp,44.062326,-121.313331,Oregon,0,0,0,0,0,0,0,0.6,0,0,WCASCADE_20
+17409,NM,Valencia Energy Facility,55802,CTG1,0,OP,GT,NG,159.5,0.044,60911,36679,Distributed from 923 Generation And Fuel,2008,,PNM,Public Service Co of NM,34.611549,-106.732234,New Mexico,0,159.5,0,0,0,0,0,0,0,0,0
+19887,OR,Biglow Canyon Wind Farm,56485,1,0,OP,WT,WND,125.4,0.269,295062.826,176508.099,Distributed from 923 Generation And Fuel,2007,,BPAT,Bonneville Power Administration,45.653745,-120.603414,Oregon,0,0,0,0,125.4,0,0,0,0,0,WCASCADE_20
+1602,AZ,Vista Grande HS at Casa Grande,58517,PV1,0,OP,PV,SUN,1.8,0.196,3095,1526,Distributed from 923 Generation And Fuel,2012,,AZPS,Arizona Public Service Co,32.891389,-111.713056,Arizona,0,0,0,0,0,1.8,0,0,0,0,0
+1603,AZ,Waddell,7164,PG3,0,OP,PS,WAT,10,0.122,10708,10651.5,Distributed from 923 Generation And Fuel,1993,,WALC,Arizona Public Service Co,33.8447,-112.2714,Arizona,0,0,0,0,0,0,0,10,0,0,CORONADO_20
+1604,AZ,Waddell,7164,PG6,0,OP,PS,WAT,10,0.122,10708,10651.5,Distributed from 923 Generation And Fuel,1993,,WALC,Arizona Public Service Co,33.8447,-112.2714,Arizona,0,0,0,0,0,0,0,10,0,0,CORONADO_20
+1605,AZ,Waddell,7164,PG7,0,OP,PS,WAT,10,0.122,10708,10651.5,Distributed from 923 Generation And Fuel,1993,,WALC,Arizona Public Service Co,33.8447,-112.2714,Arizona,0,0,0,0,0,0,0,10,0,0,CORONADO_20
+1606,AZ,Waddell,7164,PS1,0,OP,PS,WAT,10,0.122,10708,10651.5,Distributed from 923 Generation And Fuel,1993,,WALC,Arizona Public Service Co,33.8447,-112.2714,Arizona,0,0,0,0,0,0,0,10,0,0,CORONADO_20
+19888,OR,Biglow Canyon Wind Farm,56485,2,0,OP,WT,WND,163.3,0.269,384240.506,229854.645,Distributed from 923 Generation And Fuel,2009,,BPAT,Bonneville Power Administration,45.653745,-120.603414,Oregon,0,0,0,0,163.3,0,0,0,0,0,WCASCADE_20
+19891,OR,Biomass One LP,10869,GE,2,OP,ST,WDS,15,0.67,87992,22632,EIA-923 Generator File,1985,,PACW,PacifiCorp,42.436111,-122.849958,Oregon,0,0,0,0,0,0,0,0,0,15,WCASCADE_20
+1607,AZ,Walmart Casa Grande,57939,1,0,OP,PV,SUN,1,0.184,1614,796,Distributed from 923 Generation And Fuel,2011,,AZPS,Arizona Public Service Co,32.866837,-111.771751,Arizona,0,0,0,0,0,1,0,0,0,0,0
+1608,AZ,Walmart Casa Grande,57939,2,0,OP,PV,SUN,1,0.184,1614,796,Distributed from 923 Generation And Fuel,2011,,AZPS,Arizona Public Service Co,32.866837,-111.771751,Arizona,0,0,0,0,0,1,0,0,0,0,0
+17415,NM,Wal-Mart Truth or Consequences PV,60341,WMTOC,0,OP,PV,SUN,1,0.213,1869,777,Distributed from 923 Generation And Fuel,2015,,PNM,City of Truth or Consequences - (NM),33.1526,-107.249831,New Mexico,0,0,0,0,0,1,0,0,0,0,0
+25140,WA,Wanapum,3888,10A,0,OP,HY,WAT,122,0.52,555361.399,220443.971,Distributed from 923 Generation And Fuel,2014,,GCPD,PUD No 2 of Grant County,46.8731,-119.9703,Washington,0,0,0,0,0,0,0,122,0,0,NORTH_G3_20
+25141,WA,Wanapum,3888,1A,0,OP,HY,WAT,122,0.52,555361.399,220443.971,Distributed from 923 Generation And Fuel,2013,,GCPD,PUD No 2 of Grant County,46.8731,-119.9703,Washington,0,0,0,0,0,0,0,122,0,0,NORTH_G3_20
+25142,WA,Wanapum,3888,2A,0,OP,HY,WAT,122,0.52,555361.399,220443.971,Distributed from 923 Generation And Fuel,2012,,GCPD,PUD No 2 of Grant County,46.8731,-119.9703,Washington,0,0,0,0,0,0,0,122,0,0,NORTH_G3_20
+25143,WA,Wanapum,3888,4,0,OP,HY,WAT,103.8,0.52,472512.403,187558.067,Distributed from 923 Generation And Fuel,1963,2019,GCPD,PUD No 2 of Grant County,46.8731,-119.9703,Washington,0,0,0,0,0,0,0,103.8,0,0,NORTH_G3_20
+25144,WA,Wanapum,3888,5A,0,OP,HY,WAT,122,0.52,555361.399,220443.971,Distributed from 923 Generation And Fuel,2012,,GCPD,PUD No 2 of Grant County,46.8731,-119.9703,Washington,0,0,0,0,0,0,0,122,0,0,NORTH_G3_20
+25145,WA,Wanapum,3888,6A,0,OP,HY,WAT,122,0.52,555361.399,220443.971,Distributed from 923 Generation And Fuel,2016,,GCPD,PUD No 2 of Grant County,46.8731,-119.9703,Washington,0,0,0,0,0,0,0,122,0,0,NORTH_G3_20
+25146,WA,Wanapum,3888,7A,0,OP,HY,WAT,122,0.52,555361.399,220443.971,Distributed from 923 Generation And Fuel,2011,,GCPD,PUD No 2 of Grant County,46.8731,-119.9703,Washington,0,0,0,0,0,0,0,122,0,0,NORTH_G3_20
+25147,WA,Wanapum,3888,8,0,OP,HY,WAT,103.8,0.52,472512.403,187558.067,Distributed from 923 Generation And Fuel,1963,2017,GCPD,PUD No 2 of Grant County,46.8731,-119.9703,Washington,0,0,0,0,0,0,0,103.8,0,0,NORTH_G3_20
+25148,WA,Wanapum,3888,9A,0,OP,HY,WAT,122,0.52,555361.399,220443.971,Distributed from 923 Generation And Fuel,2015,,GCPD,PUD No 2 of Grant County,46.8731,-119.9703,Washington,0,0,0,0,0,0,0,122,0,0,NORTH_G3_20
+19892,OR,Biomass One LP,10869,GE-2,2,OP,ST,WDS,15,0.489,64275,14255,EIA-923 Generator File,2009,,PACW,PacifiCorp,42.436111,-122.849958,Oregon,0,0,0,0,0,0,0,0,0,15,WCASCADE_20
+19894,OR,Boardman,6106,1,1,OP,ST,SUB,642.2,0.338,1903052,1071539,EIA-923 Generator File,1980,2021,BPAT,Bonneville Power Administration,45.693182,-119.808819,Oregon,0,0,642.2,0,0,0,0,0,0,0,WCASCADE_20
+19923,OR,Carty Generating Station,58503,GEN1,0,OP,CT,NG,300,0.322,846452,339189,EIA-923 Generator File,2016,,BPAT,Bonneville Power Administration,45.698611,-119.813056,Oregon,300,0,0,0,0,0,0,0,0,0,WCASCADE_20
+19924,OR,Carty Generating Station,58503,GEN2,1,OP,CA,NG,200,0.295,516330,222895,EIA-923 Generator File,2016,,BPAT,Bonneville Power Administration,45.698611,-119.813056,Oregon,200,0,0,0,0,0,0,0,0,0,WCASCADE_20
+19927,OR,Clearwater 1,3020,1,0,OP,HY,WAT,15,0.308,40459,13086,Distributed from 923 Generation And Fuel,1953,,PACW,PacifiCorp,43.251244,-122.337924,Oregon,0,0,0,0,0,0,0,15,0,0,WCASCADE_20
+19928,OR,Clearwater 2,3021,1,0,OP,HY,WAT,26,0.2,45439,14697,Distributed from 923 Generation And Fuel,1953,,PACW,PacifiCorp,43.266894,-122.409807,Oregon,0,0,0,0,0,0,0,26,0,0,WCASCADE_20
+19937,OR,Combine Hills I,56195,1,0,OP,WT,WND,41,0.325,116764,45641,Distributed from 923 Generation And Fuel,2003,,PACW,PacifiCorp,45.943,-118.591,Oregon,0,0,0,0,41,0,0,0,0,0,WCASCADE_20
+19962,OR,Dry Creek LFG to Energy Project,56461,DC1,0,OP,IC,LFG,1.6,0.769,10780,4420,Distributed from 923 Generation And Fuel,2007,,PACW,PacifiCorp,42.3844,-122.7718,Oregon,0,0,0,0,0,0,0,0,0,1.6,WCASCADE_20
+19963,OR,Dry Creek LFG to Energy Project,56461,DC2,0,OP,IC,LFG,1.6,0.769,10780,4420,Distributed from 923 Generation And Fuel,2007,,PACW,PacifiCorp,42.3844,-122.7718,Oregon,0,0,0,0,0,0,0,0,0,1.6,WCASCADE_20
+19967,OR,Eagle Point,3024,1,0,OP,HY,WAT,2.8,0.755,18526,5992,Distributed from 923 Generation And Fuel,1957,,PACW,PacifiCorp,42.514575,-122.757062,Oregon,0,0,0,0,0,0,0,2.8,0,0,WCASCADE_20
+19968,OR,East Side,3025,1,0,OP,HY,WAT,3.2,0,0,0,Distributed from 923 Generation And Fuel,1924,,PACW,PacifiCorp,42.224847,-121.795496,Oregon,0,0,0,0,0,0,0,3.2,0,0,WCASCADE_20
+19982,OR,Fish Creek,3026,1,0,OP,HY,WAT,11,0.362,34839,11268,Distributed from 923 Generation And Fuel,1952,,PACW,PacifiCorp,43.274221,-122.448978,Oregon,0,0,0,0,0,0,0,11,0,0,WCASCADE_20
+19987,OR,FPL Energy Vansycle LLC (OR),55989,V-47,0,OP,WT,WND,122.8,0.265,284876,115124,Distributed from 923 Generation And Fuel,2001,,BPAT,Bonneville Power Administration,46.01279,-118.816246,Oregon,0,0,0,0,122.8,0,0,0,0,0,WCASCADE_20
+20123,OR,Pacific Canyon Windfarm LLC,56972,1,0,OP,WT,WND,8.3,0.244,17759,9300,Distributed from 923 Generation And Fuel,2009,,PACW,PacifiCorp,45.6542,-119.4869,Oregon,0,0,0,0,8.3,0,0,0,0,0,COLOEAST_20
+20178,OR,Sand Ranch Windfarm LLC,56973,1,0,OP,WT,WND,9.9,0.244,21179,11091,Distributed from 923 Generation And Fuel,2009,,PACW,PacifiCorp,45.6447,-119.4767,Oregon,0,0,0,0,9.9,0,0,0,0,0,COLOEAST_20
+20243,OR,Threemile Canyon,56933,1,0,OP,WT,WND,9.9,0.237,20559,10766,Distributed from 923 Generation And Fuel,2009,,BPAT,PacifiCorp,45.6758,-119.9375,Oregon,0,0,0,0,9.9,0,0,0,0,0,COLOEAST_20
+20244,OR,Threemile Digester,58382,GEN1,0,OP,IC,OBG,1.6,0.368,5154,2113,Distributed from 923 Generation And Fuel,2012,,PACW,PacifiCorp,45.71,-119.901111,Oregon,0,0,0,0,0,0,0,0,0,1.6,COLOEAST_20
+20245,OR,Threemile Digester,58382,GEN2,0,OP,IC,OBG,1.6,0.368,5154,2113,Distributed from 923 Generation And Fuel,2012,,PACW,PacifiCorp,45.71,-119.901111,Oregon,0,0,0,0,0,0,0,0,0,1.6,COLOEAST_20
+20246,OR,Threemile Digester,58382,GEN3,0,OP,IC,OBG,1.6,0.368,5154,2113,Distributed from 923 Generation And Fuel,2012,,PACW,PacifiCorp,45.71,-119.901111,Oregon,0,0,0,0,0,0,0,0,0,1.6,COLOEAST_20
+17321,NM,Lordsburg Generating,7967,GT1,0,OP,GT,NG,44,0.016,6276.5,2912.5,Distributed from 923 Generation And Fuel,2002,,PNM,Public Service Co of NM,32.35051,-108.69799,New Mexico,0,44,0,0,0,0,0,0,0,0,CORONADO_20
+17322,NM,Lordsburg Generating,7967,GT2,0,OP,GT,NG,44,0.016,6276.5,2912.5,Distributed from 923 Generation And Fuel,2002,,PNM,Public Service Co of NM,32.35051,-108.69799,New Mexico,0,44,0,0,0,0,0,0,0,0,CORONADO_20
+20154,OR,Prospect 1,3032,1,0,OP,HY,WAT,3.8,0,0,0,Distributed from 923 Generation And Fuel,1912,,PACW,PacifiCorp,42.730717,-122.515122,Oregon,0,0,0,0,0,0,0,3.8,0,0,JOHN_DAY_20
+20155,OR,Prospect 2,3033,1,0,OP,HY,WAT,16,0.856,119946,38795,Distributed from 923 Generation And Fuel,1928,,PACW,PacifiCorp,42.731237,-122.513974,Oregon,0,0,0,0,0,0,0,16,0,0,JOHN_DAY_20
+20156,OR,Prospect 2,3033,2,0,OP,HY,WAT,16,0.856,119946,38795,Distributed from 923 Generation And Fuel,1928,,PACW,PacifiCorp,42.731237,-122.513974,Oregon,0,0,0,0,0,0,0,16,0,0,JOHN_DAY_20
+20157,OR,Prospect 3,3034,1,0,OP,HY,WAT,7.2,0.523,32997,10672,Distributed from 923 Generation And Fuel,1932,,PACW,PacifiCorp,42.730606,-122.41846,Oregon,0,0,0,0,0,0,0,7.2,0,0,JOHN_DAY_20
+20158,OR,Prospect 4,3035,1,0,OP,HY,WAT,1,0,0,0,Distributed from 923 Generation And Fuel,1944,,PACW,PacifiCorp,42.733073,-122.515079,Oregon,0,0,0,0,0,0,0,1,0,0,JOHN_DAY_20
+20186,OR,Slide Creek,3036,1,0,OP,HY,WAT,18,0.48,75625,24460,Distributed from 923 Generation And Fuel,1951,,PACW,PacifiCorp,43.2939,-122.4728,Oregon,0,0,0,0,0,0,0,18,0,0,JOHN_DAY_20
+20187,OR,Soda Springs,3037,1,0,OP,HY,WAT,11,0.634,61093,19760,Distributed from 923 Generation And Fuel,1952,,PACW,PacifiCorp,43.3061,-122.5014,Oregon,0,0,0,0,0,0,0,11,0,0,JOHN_DAY_20
+25162,WA,Wells,3886,U-1,0,OP,HY,WAT,77.4,0.637,432097.8,176369.6,Distributed from 923 Generation And Fuel,1967,,DOPD,PUD No 1 of Douglas County,47.9469,-119.8653,Washington,0,0,0,0,0,0,0,77.4,0,0,JOHN_DAY_20
+25163,WA,Wells,3886,U-10,0,OP,HY,WAT,77.4,0.637,432097.8,176369.6,Distributed from 923 Generation And Fuel,1969,,DOPD,PUD No 1 of Douglas County,47.9469,-119.8653,Washington,0,0,0,0,0,0,0,77.4,0,0,JOHN_DAY_20
+25164,WA,Wells,3886,U-2,0,OP,HY,WAT,77.4,0.637,432097.8,176369.6,Distributed from 923 Generation And Fuel,1967,,DOPD,PUD No 1 of Douglas County,47.9469,-119.8653,Washington,0,0,0,0,0,0,0,77.4,0,0,JOHN_DAY_20
+25165,WA,Wells,3886,U-3,0,OP,HY,WAT,77.4,0.637,432097.8,176369.6,Distributed from 923 Generation And Fuel,1967,,DOPD,PUD No 1 of Douglas County,47.9469,-119.8653,Washington,0,0,0,0,0,0,0,77.4,0,0,JOHN_DAY_20
+25167,WA,Wells,3886,U-5,0,OP,HY,WAT,77.4,0.637,432097.8,176369.6,Distributed from 923 Generation And Fuel,1967,,DOPD,PUD No 1 of Douglas County,47.9469,-119.8653,Washington,0,0,0,0,0,0,0,77.4,0,0,JOHN_DAY_20
+25168,WA,Wells,3886,U-6,0,OP,HY,WAT,77.4,0.637,432097.8,176369.6,Distributed from 923 Generation And Fuel,1967,,DOPD,PUD No 1 of Douglas County,47.9469,-119.8653,Washington,0,0,0,0,0,0,0,77.4,0,0,JOHN_DAY_20
+25169,WA,Wells,3886,U-7,0,OP,HY,WAT,77.4,0.637,432097.8,176369.6,Distributed from 923 Generation And Fuel,1967,,DOPD,PUD No 1 of Douglas County,47.9469,-119.8653,Washington,0,0,0,0,0,0,0,77.4,0,0,JOHN_DAY_20
+25170,WA,Wells,3886,U-8,0,OP,HY,WAT,77.4,0.637,432097.8,176369.6,Distributed from 923 Generation And Fuel,1968,,DOPD,PUD No 1 of Douglas County,47.9469,-119.8653,Washington,0,0,0,0,0,0,0,77.4,0,0,JOHN_DAY_20
+25171,WA,Wells,3886,U-9,0,OP,HY,WAT,77.4,0.637,432097.8,176369.6,Distributed from 923 Generation And Fuel,1969,,DOPD,PUD No 1 of Douglas County,47.9469,-119.8653,Washington,0,0,0,0,0,0,0,77.4,0,0,JOHN_DAY_20
+20044,OR,Klamath Cogeneration Plant,55103,CT1,0,OP,CT,NG,161.5,0.606,857254.96,350789,EIA-923 Generator File,2001,,PACW,Bonneville Power Administration,42.173889,-121.810556,Oregon,161.5,0,0,0,0,0,0,0,0,0,MALIN_20
+20045,OR,Klamath Cogeneration Plant,55103,CT2,0,OP,CT,NG,161.5,0.506,715659.21,317470,EIA-923 Generator File,2001,,PACW,Bonneville Power Administration,42.173889,-121.810556,Oregon,161.5,0,0,0,0,0,0,0,0,0,MALIN_20
+20046,OR,Klamath Cogeneration Plant,55103,ST1,2,OP,CA,NG,178.5,0.547,854704.83,375461,EIA-923 Generator File,2001,,PACW,Bonneville Power Administration,42.173889,-121.810556,Oregon,178.5,0,0,0,0,0,0,0,0,0,MALIN_20
+20047,OR,Klamath Expansion Project,55544,GT1,0,OP,GT,NG,29.4,0.047,12150.75,5537,Distributed from 923 Generation And Fuel,2002,,PACW,PacifiCorp,42.172718,-121.814393,Oregon,0,29.4,0,0,0,0,0,0,0,0,MALIN_20
+20048,OR,Klamath Expansion Project,55544,GT2,0,OP,GT,NG,29.4,0.047,12150.75,5537,Distributed from 923 Generation And Fuel,2002,,PACW,PacifiCorp,42.172718,-121.814393,Oregon,0,29.4,0,0,0,0,0,0,0,0,MALIN_20
+20049,OR,Klamath Expansion Project,55544,GT3,0,OP,GT,NG,29.4,0.047,12150.75,5537,Distributed from 923 Generation And Fuel,2002,,PACW,PacifiCorp,42.172718,-121.814393,Oregon,0,29.4,0,0,0,0,0,0,0,0,MALIN_20
+20050,OR,Klamath Expansion Project,55544,GT4,0,OP,GT,NG,29.4,0.047,12150.75,5537,Distributed from 923 Generation And Fuel,2002,,PACW,PacifiCorp,42.172718,-121.814393,Oregon,0,29.4,0,0,0,0,0,0,0,0,MALIN_20
+20113,OR,Oregon Trail Windfarm LLC,56971,1,0,OP,WT,WND,9.9,0.249,21616,11320,Distributed from 923 Generation And Fuel,2009,,PACW,PacifiCorp,45.7122,-119.4044,Oregon,0,0,0,0,9.9,0,0,0,0,0,NORTH_G3_20
+24991,WA,PEC Headworks,7113,1,0,OP,HY,WAT,6.6,0.368,21280,8350,Distributed from 923 Generation And Fuel,1990,,GCPD,PUD No 2 of Grant County,47.159553,-119.896306,Washington,0,0,0,0,0,0,0,6.6,0,0,NORTH_G3_20
+24997,WA,Priest Rapids,3887,1,0,OP,HY,WAT,95,0.568,473054.27,181297.201,Distributed from 923 Generation And Fuel,1961,,BPAT,Bonneville Power Administration,46.6451,-119.908,Washington,0,0,0,0,0,0,0,95,0,0,NORTH_G3_20
+24998,WA,Priest Rapids,3887,10,0,OP,HY,WAT,95,0.568,473054.27,181297.201,Distributed from 923 Generation And Fuel,1959,,BPAT,Bonneville Power Administration,46.6451,-119.908,Washington,0,0,0,0,0,0,0,95,0,0,NORTH_G3_20
+24999,WA,Priest Rapids,3887,2,0,OP,HY,WAT,97.8,0.568,486996.922,186640.697,Distributed from 923 Generation And Fuel,1961,,BPAT,Bonneville Power Administration,46.6451,-119.908,Washington,0,0,0,0,0,0,0,97.8,0,0,NORTH_G3_20
+25000,WA,Priest Rapids,3887,3,0,OP,HY,WAT,95,0.568,473054.27,181297.201,Distributed from 923 Generation And Fuel,1960,,BPAT,Bonneville Power Administration,46.6451,-119.908,Washington,0,0,0,0,0,0,0,95,0,0,NORTH_G3_20
+25001,WA,Priest Rapids,3887,4,0,OP,HY,WAT,95,0.568,473054.27,181297.201,Distributed from 923 Generation And Fuel,1960,,BPAT,Bonneville Power Administration,46.6451,-119.908,Washington,0,0,0,0,0,0,0,95,0,0,NORTH_G3_20
+25002,WA,Priest Rapids,3887,5,0,OP,HY,WAT,95,0.568,473054.27,181297.201,Distributed from 923 Generation And Fuel,1960,,BPAT,Bonneville Power Administration,46.6451,-119.908,Washington,0,0,0,0,0,0,0,95,0,0,NORTH_G3_20
+25003,WA,Priest Rapids,3887,6,0,OP,HY,WAT,95,0.568,473054.27,181297.201,Distributed from 923 Generation And Fuel,1960,,BPAT,Bonneville Power Administration,46.6451,-119.908,Washington,0,0,0,0,0,0,0,95,0,0,NORTH_G3_20
+25004,WA,Priest Rapids,3887,7,0,OP,HY,WAT,95,0.568,473054.27,181297.201,Distributed from 923 Generation And Fuel,1960,,BPAT,Bonneville Power Administration,46.6451,-119.908,Washington,0,0,0,0,0,0,0,95,0,0,NORTH_G3_20
+25005,WA,Priest Rapids,3887,8,0,OP,HY,WAT,95,0.568,473054.27,181297.201,Distributed from 923 Generation And Fuel,1959,,BPAT,Bonneville Power Administration,46.6451,-119.908,Washington,0,0,0,0,0,0,0,95,0,0,NORTH_G3_20
+25006,WA,Priest Rapids,3887,9,0,OP,HY,WAT,97.8,0.568,486996.922,186640.697,Distributed from 923 Generation And Fuel,1959,,BPAT,Bonneville Power Administration,46.6451,-119.908,Washington,0,0,0,0,0,0,0,97.8,0,0,NORTH_G3_20
+25007,WA,Quincy Chute,917,1,0,OP,HY,WAT,9.4,0.319,26235,10294,Distributed from 923 Generation And Fuel,1985,,GCPD,PUD No 2 of Grant County,46.982514,-119.257764,Washington,0,0,0,0,0,0,0,9.4,0,0,NORTH_G3_20
+20008,OR,Hermiston Generating Plant,54761,GEN1,1,OP,CA,NG,106.1,0.352,327009,134159,EIA-923 Generator File,1996,,PACW,Bonneville Power Administration,45.8042,-119.37,Oregon,106.1,0,0,0,0,0,0,0,0,0,WCASCADE_20
+20009,OR,Hermiston Generating Plant,54761,GEN2,0,OP,CT,NG,204.5,0.334,598436,236975,EIA-923 Generator File,1996,,PACW,Bonneville Power Administration,45.8042,-119.37,Oregon,204.5,0,0,0,0,0,0,0,0,0,WCASCADE_20
+20010,OR,Hermiston Generating Plant,54761,GEN3,1,OP,CA,NG,106.1,0.396,368025,109700,EIA-923 Generator File,1996,,PACW,Bonneville Power Administration,45.8042,-119.37,Oregon,106.1,0,0,0,0,0,0,0,0,0,WCASCADE_20
+20011,OR,Hermiston Generating Plant,54761,GEN4,0,OP,CT,NG,204.5,0.37,662791,205546,EIA-923 Generator File,1996,,PACW,Bonneville Power Administration,45.8042,-119.37,Oregon,204.5,0,0,0,0,0,0,0,0,0,WCASCADE_20
+20012,OR,Hermiston Power Partnership,55328,CTG1,0,OP,CT,NG,212.5,0.534,994245,456318,EIA-923 Generator File,2002,,CSTO,Bonneville Power Administration,45.794046,-119.313323,Oregon,212.5,0,0,0,0,0,0,0,0,0,WCASCADE_20
+20013,OR,Hermiston Power Partnership,55328,CTG2,0,OP,CT,NG,212.5,0.53,987380,456026,EIA-923 Generator File,2002,,CSTO,Bonneville Power Administration,45.794046,-119.313323,Oregon,212.5,0,0,0,0,0,0,0,0,0,WCASCADE_20
+20014,OR,Hermiston Power Partnership,55328,STG1,2,OP,CA,NG,264.4,0.517,1198109,578744,EIA-923 Generator File,2002,,CSTO,Bonneville Power Administration,45.794046,-119.313323,Oregon,264.4,0,0,0,0,0,0,0,0,0,WCASCADE_20
+20025,OR,John C Boyle,3028,1,0,OP,HY,WAT,50.3,0.248,109455.246,35402.129,Distributed from 923 Generation And Fuel,1958,,PACW,PacifiCorp,42.093611,-122.0703,Oregon,0,0,0,0,0,0,0,50.3,0,0,WCASCADE_20
+20026,OR,John C Boyle,3028,2,0,OP,HY,WAT,48.4,0.248,105320.754,34064.871,Distributed from 923 Generation And Fuel,1958,,PACW,PacifiCorp,42.093611,-122.0703,Oregon,0,0,0,0,0,0,0,48.4,0,0,WCASCADE_20
+20060,OR,Leaning Juniper,56360,1,0,OP,WT,WND,100.5,0.23,202614,107770,Distributed from 923 Generation And Fuel,2006,,PACW,PacifiCorp,45.652457,-120.209783,Oregon,0,0,0,0,100.5,0,0,0,0,0,WCASCADE_20
+20062,OR,Lemolo 1,3029,1,0,OP,HY,WAT,32,0.478,134067,43362,Distributed from 923 Generation And Fuel,1955,,PACW,PacifiCorp,43.3558,-122.2494,Oregon,0,0,0,0,0,0,0,32,0,0,WCASCADE_20
+20063,OR,Lemolo 2,6421,1,0,OP,HY,WAT,38.5,0.435,146665,47437,Distributed from 923 Generation And Fuel,1956,,PACW,PacifiCorp,43.280611,-122.40248,Oregon,0,0,0,0,0,0,0,38.5,0,0,WCASCADE_20
+20100,OR,Oak Grove,6505,1,0,OP,HY,WAT,25.5,0.419,93694.5,30304.5,Distributed from 923 Generation And Fuel,1924,,PGE,Portland General Electric Co,45.122009,-122.06987,Oregon,0,0,0,0,0,0,0,25.5,0,0,WCASCADE_20
+20101,OR,Oak Grove,6505,2,0,OP,HY,WAT,25.5,0.419,93694.5,30304.5,Distributed from 923 Generation And Fuel,1931,,PGE,Portland General Electric Co,45.122009,-122.06987,Oregon,0,0,0,0,0,0,0,25.5,0,0,WCASCADE_20
+20129,OR,Pelton,3048,3,0,OP,HY,WAT,32.4,0.418,118502.262,38328.197,Distributed from 923 Generation And Fuel,1958,,PGE,Portland General Electric Co,44.694374,-121.231379,Oregon,0,0,0,0,0,0,0,32.4,0,0,WCASCADE_20
+20135,OR,PHP 1,4213,1,0,OP,HY,WAT,23.7,0.257,53385,17267,Distributed from 923 Generation And Fuel,1982,,PGE,Portland General Electric Co,45.481708,-122.083188,Oregon,0,0,0,0,0,0,0,23.7,0,0,WCASCADE_20
+20136,OR,PHP 2,4214,2,0,OP,HY,WAT,11.8,0.355,36712,11874,Distributed from 923 Generation And Fuel,1982,,PGE,Portland General Electric Co,45.448977,-122.151257,Oregon,0,0,0,0,0,0,0,11.8,0,0,WCASCADE_20
+20138,OR,Port Westward,56227,1,0,OP,CT,NG,312,0.555,1517168,788445,EIA-923 Generator File,2007,,PGE,Portland General Electric Co,46.17894,-123.172039,Oregon,312,0,0,0,0,0,0,0,0,0,WCASCADE_20
+20139,OR,Port Westward,56227,2,1,OP,CA,NG,171,0.59,883349,466036,EIA-923 Generator File,2007,,PGE,Portland General Electric Co,46.17894,-123.172039,Oregon,171,0,0,0,0,0,0,0,0,0,WCASCADE_20
+20140,OR,Port Westward Unit 2,58266,1,0,OP,IC,NG,18.8,0.074,12197.083,7099.833,Distributed from 923 Generation And Fuel,2014,,PGE,Portland General Electric Co,46.178889,-123.171944,Oregon,0,18.8,0,0,0,0,0,0,0,0,WCASCADE_20
+20141,OR,Port Westward Unit 2,58266,10,0,OP,IC,NG,18.8,0.074,12197.083,7099.833,Distributed from 923 Generation And Fuel,2014,,PGE,Portland General Electric Co,46.178889,-123.171944,Oregon,0,18.8,0,0,0,0,0,0,0,0,WCASCADE_20
+20142,OR,Port Westward Unit 2,58266,11,0,OP,IC,NG,18.8,0.074,12197.083,7099.833,Distributed from 923 Generation And Fuel,2014,,PGE,Portland General Electric Co,46.178889,-123.171944,Oregon,0,18.8,0,0,0,0,0,0,0,0,WCASCADE_20
+20143,OR,Port Westward Unit 2,58266,12,0,OP,IC,NG,18.8,0.074,12197.083,7099.833,Distributed from 923 Generation And Fuel,2014,,PGE,Portland General Electric Co,46.178889,-123.171944,Oregon,0,18.8,0,0,0,0,0,0,0,0,WCASCADE_20
+20144,OR,Port Westward Unit 2,58266,2,0,OP,IC,NG,18.8,0.074,12197.083,7099.833,Distributed from 923 Generation And Fuel,2014,,PGE,Portland General Electric Co,46.178889,-123.171944,Oregon,0,18.8,0,0,0,0,0,0,0,0,WCASCADE_20
+20145,OR,Port Westward Unit 2,58266,3,0,OP,IC,NG,18.8,0.074,12197.083,7099.833,Distributed from 923 Generation And Fuel,2014,,PGE,Portland General Electric Co,46.178889,-123.171944,Oregon,0,18.8,0,0,0,0,0,0,0,0,WCASCADE_20
+20146,OR,Port Westward Unit 2,58266,4,0,OP,IC,NG,18.8,0.074,12197.083,7099.833,Distributed from 923 Generation And Fuel,2014,,PGE,Portland General Electric Co,46.178889,-123.171944,Oregon,0,18.8,0,0,0,0,0,0,0,0,WCASCADE_20
+20147,OR,Port Westward Unit 2,58266,5,0,OP,IC,NG,18.8,0.074,12197.083,7099.833,Distributed from 923 Generation And Fuel,2014,,PGE,Portland General Electric Co,46.178889,-123.171944,Oregon,0,18.8,0,0,0,0,0,0,0,0,WCASCADE_20
+20148,OR,Port Westward Unit 2,58266,6,0,OP,IC,NG,18.8,0.074,12197.083,7099.833,Distributed from 923 Generation And Fuel,2014,,PGE,Portland General Electric Co,46.178889,-123.171944,Oregon,0,18.8,0,0,0,0,0,0,0,0,WCASCADE_20
+20149,OR,Port Westward Unit 2,58266,7,0,OP,IC,NG,18.8,0.074,12197.083,7099.833,Distributed from 923 Generation And Fuel,2014,,PGE,Portland General Electric Co,46.178889,-123.171944,Oregon,0,18.8,0,0,0,0,0,0,0,0,WCASCADE_20
+20150,OR,Port Westward Unit 2,58266,8,0,OP,IC,NG,18.8,0.074,12197.083,7099.833,Distributed from 923 Generation And Fuel,2014,,PGE,Portland General Electric Co,46.178889,-123.171944,Oregon,0,18.8,0,0,0,0,0,0,0,0,WCASCADE_20
+20151,OR,Port Westward Unit 2,58266,9,0,OP,IC,NG,18.8,0.074,12197.083,7099.833,Distributed from 923 Generation And Fuel,2015,,PGE,Portland General Electric Co,46.178889,-123.171944,Oregon,0,18.8,0,0,0,0,0,0,0,0,WCASCADE_20
+20162,OR,River Mill,3049,1,0,OP,HY,WAT,3.3,0.639,18469.293,5973.702,Distributed from 923 Generation And Fuel,1911,,PGE,Portland General Electric Co,45.299991,-122.350023,Oregon,0,0,0,0,0,0,0,3.3,0,0,WCASCADE_20
+20163,OR,River Mill,3049,2,0,OP,HY,WAT,3.3,0.639,18469.293,5973.702,Distributed from 923 Generation And Fuel,1911,,PGE,Portland General Electric Co,45.299991,-122.350023,Oregon,0,0,0,0,0,0,0,3.3,0,0,WCASCADE_20
+20164,OR,River Mill,3049,3,0,OP,HY,WAT,3.3,0.639,18469.293,5973.702,Distributed from 923 Generation And Fuel,1912,,PGE,Portland General Electric Co,45.299991,-122.350023,Oregon,0,0,0,0,0,0,0,3.3,0,0,WCASCADE_20
+20165,OR,River Mill,3049,4,0,OP,HY,WAT,3.9,0.639,21827.346,7059.83,Distributed from 923 Generation And Fuel,1927,,PGE,Portland General Electric Co,45.299991,-122.350023,Oregon,0,0,0,0,0,0,0,3.9,0,0,WCASCADE_20
+20166,OR,River Mill,3049,5,0,OP,HY,WAT,5,0.639,27983.777,9051.064,Distributed from 923 Generation And Fuel,1952,,PGE,Portland General Electric Co,45.299991,-122.350023,Oregon,0,0,0,0,0,0,0,5,0,0,WCASCADE_20
+20173,OR,Roseburg LFG,57911,1,0,OP,IC,LFG,1.6,0.878,12303,5044,Distributed from 923 Generation And Fuel,2011,,PACW,PacifiCorp,43.186111,-123.380278,Oregon,0,0,0,0,0,0,0,0,0,1.6,WCASCADE_20
+20174,OR,Round Butte,3050,1,0,OP,HY,WAT,112.5,0.285,281224.933,105226.611,Distributed from 923 Generation And Fuel,1964,,PGE,Portland General Electric Co,44.605837,-121.277334,Oregon,0,0,0,0,0,0,0,112.5,0,0,WCASCADE_20
+20175,OR,Round Butte,3050,2,0,OP,HY,WAT,130,0.285,324971.034,121595.195,Distributed from 923 Generation And Fuel,1964,,PGE,Portland General Electric Co,44.605837,-121.277334,Oregon,0,0,0,0,0,0,0,130,0,0,WCASCADE_20
+20176,OR,Round Butte,3050,3,0,OP,HY,WAT,130,0.285,324971.034,121595.195,Distributed from 923 Generation And Fuel,1964,,PGE,Portland General Electric Co,44.605837,-121.277334,Oregon,0,0,0,0,0,0,0,130,0,0,WCASCADE_20
+20184,OR,Siphon Power Project,50980,GEN1,0,OP,HY,WAT,2.7,0.455,10763,3481,Distributed from 923 Generation And Fuel,1989,,PACW,PacifiCorp,44.033022,-121.3297,Oregon,0,0,0,0,0,0,0,2.7,0,0,WCASCADE_20
+20185,OR,Siphon Power Project,50980,GEN2,0,OP,HY,WAT,2.7,0.455,10763,3481,Distributed from 923 Generation And Fuel,1989,,PACW,PacifiCorp,44.033022,-121.3297,Oregon,0,0,0,0,0,0,0,2.7,0,0,WCASCADE_20
+20205,OR,Sullivan,3053,1,0,OP,HY,WAT,1.2,0.764,8026.286,2595.974,Distributed from 923 Generation And Fuel,1952,,PGE,Portland General Electric Co,45.354004,-122.618954,Oregon,0,0,0,0,0,0,0,1.2,0,0,WCASCADE_20
+20206,OR,Sullivan,3053,10,0,OP,HY,WAT,1.2,0.764,8026.286,2595.974,Distributed from 923 Generation And Fuel,1952,,PGE,Portland General Electric Co,45.354004,-122.618954,Oregon,0,0,0,0,0,0,0,1.2,0,0,WCASCADE_20
+20207,OR,Sullivan,3053,11,0,OP,HY,WAT,1.2,0.764,8026.286,2595.974,Distributed from 923 Generation And Fuel,1952,,PGE,Portland General Electric Co,45.354004,-122.618954,Oregon,0,0,0,0,0,0,0,1.2,0,0,WCASCADE_20
+20208,OR,Sullivan,3053,12,0,OP,HY,WAT,1.2,0.764,8026.286,2595.974,Distributed from 923 Generation And Fuel,1952,,PGE,Portland General Electric Co,45.354004,-122.618954,Oregon,0,0,0,0,0,0,0,1.2,0,0,WCASCADE_20
+20209,OR,Sullivan,3053,13,0,OP,HY,WAT,1.2,0.764,8026.286,2595.974,Distributed from 923 Generation And Fuel,1952,,PGE,Portland General Electric Co,45.354004,-122.618954,Oregon,0,0,0,0,0,0,0,1.2,0,0,WCASCADE_20
+20210,OR,Sullivan,3053,2,0,OP,HY,WAT,1.2,0.764,8026.286,2595.974,Distributed from 923 Generation And Fuel,1952,,PGE,Portland General Electric Co,45.354004,-122.618954,Oregon,0,0,0,0,0,0,0,1.2,0,0,WCASCADE_20
+20211,OR,Sullivan,3053,3,0,OP,HY,WAT,1.2,0.764,8026.286,2595.974,Distributed from 923 Generation And Fuel,1952,,PGE,Portland General Electric Co,45.354004,-122.618954,Oregon,0,0,0,0,0,0,0,1.2,0,0,WCASCADE_20
+20212,OR,Sullivan,3053,4,0,OP,HY,WAT,1.2,0.764,8026.286,2595.974,Distributed from 923 Generation And Fuel,1952,,PGE,Portland General Electric Co,45.354004,-122.618954,Oregon,0,0,0,0,0,0,0,1.2,0,0,WCASCADE_20
+20213,OR,Sullivan,3053,5,0,OP,HY,WAT,1.2,0.764,8026.286,2595.974,Distributed from 923 Generation And Fuel,1952,,PGE,Portland General Electric Co,45.354004,-122.618954,Oregon,0,0,0,0,0,0,0,1.2,0,0,WCASCADE_20
+20214,OR,Sullivan,3053,6,0,OP,HY,WAT,1.2,0.764,8026.286,2595.974,Distributed from 923 Generation And Fuel,1952,,PGE,Portland General Electric Co,45.354004,-122.618954,Oregon,0,0,0,0,0,0,0,1.2,0,0,WCASCADE_20
+20215,OR,Sullivan,3053,7,0,OP,HY,WAT,1.2,0.764,8026.286,2595.974,Distributed from 923 Generation And Fuel,1952,,PGE,Portland General Electric Co,45.354004,-122.618954,Oregon,0,0,0,0,0,0,0,1.2,0,0,WCASCADE_20
+20216,OR,Sullivan,3053,8,0,OP,HY,WAT,1.2,0.764,8026.286,2595.974,Distributed from 923 Generation And Fuel,1952,,PGE,Portland General Electric Co,45.354004,-122.618954,Oregon,0,0,0,0,0,0,0,1.2,0,0,WCASCADE_20
+20217,OR,Sullivan,3053,9,0,OP,HY,WAT,1,0.764,6688.571,2163.312,Distributed from 923 Generation And Fuel,1924,,PGE,Portland General Electric Co,45.354004,-122.618954,Oregon,0,0,0,0,0,0,0,1,0,0,WCASCADE_20
+20249,OR,Toketee Falls,3040,1,0,OP,HY,WAT,14.2,0.624,77606.667,25101,Distributed from 923 Generation And Fuel,1950,,PACW,PacifiCorp,43.272729,-122.447498,Oregon,0,0,0,0,0,0,0,14.2,0,0,WCASCADE_20
+20250,OR,Toketee Falls,3040,2,0,OP,HY,WAT,14.2,0.624,77606.667,25101,Distributed from 923 Generation And Fuel,1949,,PACW,PacifiCorp,43.272729,-122.447498,Oregon,0,0,0,0,0,0,0,14.2,0,0,WCASCADE_20
+20251,OR,Toketee Falls,3040,3,0,OP,HY,WAT,14.2,0.624,77606.667,25101,Distributed from 923 Generation And Fuel,1950,,PACW,PacifiCorp,43.272729,-122.447498,Oregon,0,0,0,0,0,0,0,14.2,0,0,WCASCADE_20
+20257,OR,Vansycle II Wind Energy Center,58324,SIE23,0,OP,WT,WND,98.9,0.303,262620,92162,Distributed from 923 Generation And Fuel,2009,,PACW,PacifiCorp,45.899167,-118.591389,Oregon,0,0,0,0,98.9,0,0,0,0,0,WCASCADE_20
+24969,WA,Mint Farm Generating Station,55700,1STG,1,OP,CA,NG,133,0.378,440542,276591,EIA-923 Generator File,2008,,BPAT,Bonneville Power Administration,46.138824,-122.985506,Washington,133,0,0,0,0,0,0,0,0,0,DALLES21_20
+24970,WA,Mint Farm Generating Station,55700,CTG1,0,OP,CT,NG,186,0.379,617406,371790,EIA-923 Generator File,2008,,BPAT,Bonneville Power Administration,46.138824,-122.985506,Washington,186,0,0,0,0,0,0,0,0,0,DALLES21_20
+24669,WA,Alder,3913,11,0,OP,HY,WAT,25,0.574,125627.5,49293,Distributed from 923 Generation And Fuel,1947,,TPWR,City of Tacoma  - (WA),46.8016,-122.3102,Washington,0,0,0,0,0,0,0,25,0,0,JOHN_DAY_20
+24670,WA,Alder,3913,12,0,OP,HY,WAT,25,0.574,125627.5,49293,Distributed from 923 Generation And Fuel,1945,,TPWR,City of Tacoma  - (WA),46.8016,-122.3102,Washington,0,0,0,0,0,0,0,25,0,0,JOHN_DAY_20
+24681,WA,Boundary,6433,51,0,OP,HY,WAT,158.4,0.396,550069.135,207017.585,Distributed from 923 Generation And Fuel,1967,,SCL,Bonneville Power Administration,48.987111,-117.347847,Washington,0,0,0,0,0,0,0,158.4,0,0,JOHN_DAY_20
+24682,WA,Boundary,6433,52,0,OP,HY,WAT,161.5,0.396,560834.377,211069.065,Distributed from 923 Generation And Fuel,1967,,SCL,Bonneville Power Administration,48.987111,-117.347847,Washington,0,0,0,0,0,0,0,161.5,0,0,JOHN_DAY_20
+24683,WA,Boundary,6433,53,0,OP,HY,WAT,158.4,0.396,550069.135,207017.585,Distributed from 923 Generation And Fuel,1967,,SCL,Bonneville Power Administration,48.987111,-117.347847,Washington,0,0,0,0,0,0,0,158.4,0,0,JOHN_DAY_20
+24684,WA,Boundary,6433,54,0,OP,HY,WAT,161.5,0.396,560834.377,211069.065,Distributed from 923 Generation And Fuel,1967,,SCL,Bonneville Power Administration,48.987111,-117.347847,Washington,0,0,0,0,0,0,0,161.5,0,0,JOHN_DAY_20
+24685,WA,Boundary,6433,55,0,OP,HY,WAT,239.4,0.396,831354.488,312878.85,Distributed from 923 Generation And Fuel,1985,,SCL,Bonneville Power Administration,48.987111,-117.347847,Washington,0,0,0,0,0,0,0,239.4,0,0,JOHN_DAY_20
+24686,WA,Boundary,6433,56,0,OP,HY,WAT,239.4,0.396,831354.488,312878.85,Distributed from 923 Generation And Fuel,1986,,SCL,Bonneville Power Administration,48.987111,-117.347847,Washington,0,0,0,0,0,0,0,239.4,0,0,JOHN_DAY_20
+24758,WA,Cushman 1,3914,21,0,OP,HY,WAT,21.6,0.489,92517,36301.5,Distributed from 923 Generation And Fuel,1926,,TPWR,City of Tacoma  - (WA),47.4181,-123.2252,Washington,0,0,0,0,0,0,0,21.6,0,0,JOHN_DAY_20
+24759,WA,Cushman 1,3914,22,0,OP,HY,WAT,21.6,0.489,92517,36301.5,Distributed from 923 Generation And Fuel,1926,,TPWR,City of Tacoma  - (WA),47.4181,-123.2252,Washington,0,0,0,0,0,0,0,21.6,0,0,JOHN_DAY_20
+24760,WA,Cushman 2,3915,31,0,OP,HY,WAT,27,0.433,102406.596,40181.809,Distributed from 923 Generation And Fuel,1930,,TPWR,City of Tacoma  - (WA),47.3698,-123.1603,Washington,0,0,0,0,0,0,0,27,0,0,JOHN_DAY_20
+24761,WA,Cushman 2,3915,32,0,OP,HY,WAT,27,0.433,102406.596,40181.809,Distributed from 923 Generation And Fuel,1931,,TPWR,City of Tacoma  - (WA),47.3698,-123.1603,Washington,0,0,0,0,0,0,0,27,0,0,JOHN_DAY_20
+24762,WA,Cushman 2,3915,33,0,OP,HY,WAT,27,0.433,102406.596,40181.809,Distributed from 923 Generation And Fuel,1952,,TPWR,City of Tacoma  - (WA),47.3698,-123.1603,Washington,0,0,0,0,0,0,0,27,0,0,JOHN_DAY_20
+24763,WA,Cushman 2,3915,34,0,OP,HY,WAT,1.8,0.433,6827.106,2678.787,Distributed from 923 Generation And Fuel,2013,,TPWR,City of Tacoma  - (WA),47.3698,-123.1603,Washington,0,0,0,0,0,0,0,1.8,0,0,JOHN_DAY_20
+24764,WA,Cushman 2,3915,35,0,OP,HY,WAT,1.8,0.433,6827.106,2678.787,Distributed from 923 Generation And Fuel,2013,,TPWR,City of Tacoma  - (WA),47.3698,-123.1603,Washington,0,0,0,0,0,0,0,1.8,0,0,JOHN_DAY_20
+24766,WA,Diablo,6432,31,0,OP,HY,WAT,90,0.544,428850.493,168270.395,Distributed from 923 Generation And Fuel,1937,,SCL,City of Seattle - (WA),48.713853,-121.131736,Washington,0,0,0,0,0,0,0,90,0,0,JOHN_DAY_20
+24767,WA,Diablo,6432,32,0,OP,HY,WAT,90,0.544,428850.493,168270.395,Distributed from 923 Generation And Fuel,1936,,SCL,City of Seattle - (WA),48.713853,-121.131736,Washington,0,0,0,0,0,0,0,90,0,0,JOHN_DAY_20
+24768,WA,Diablo,6432,35,0,OP,HY,WAT,1.2,0.544,5718.007,2243.605,Distributed from 923 Generation And Fuel,1936,,SCL,City of Seattle - (WA),48.713853,-121.131736,Washington,0,0,0,0,0,0,0,1.2,0,0,JOHN_DAY_20
+24769,WA,Diablo,6432,36,0,OP,HY,WAT,1.2,0.544,5718.007,2243.605,Distributed from 923 Generation And Fuel,1936,,SCL,City of Seattle - (WA),48.713853,-121.131736,Washington,0,0,0,0,0,0,0,1.2,0,0,JOHN_DAY_20
+24834,WA,Gorge,6431,21,0,OP,HY,WAT,36.8,0.57,183817.686,63195.168,Distributed from 923 Generation And Fuel,1924,,SCL,City of Seattle - (WA),48.698056,-121.208611,Washington,0,0,0,0,0,0,0,36.8,0,0,JOHN_DAY_20
+24835,WA,Gorge,6431,22,0,OP,HY,WAT,36.8,0.57,183817.686,63195.168,Distributed from 923 Generation And Fuel,1924,,SCL,City of Seattle - (WA),48.698056,-121.208611,Washington,0,0,0,0,0,0,0,36.8,0,0,JOHN_DAY_20
+24836,WA,Gorge,6431,23,0,OP,HY,WAT,36.8,0.57,183817.686,63195.168,Distributed from 923 Generation And Fuel,1929,,SCL,City of Seattle - (WA),48.698056,-121.208611,Washington,0,0,0,0,0,0,0,36.8,0,0,JOHN_DAY_20
+24837,WA,Gorge,6431,24,0,OP,HY,WAT,96.9,0.57,484019.941,166402.495,Distributed from 923 Generation And Fuel,1951,,SCL,City of Seattle - (WA),48.698056,-121.208611,Washington,0,0,0,0,0,0,0,96.9,0,0,JOHN_DAY_20
+24895,WA,LaGrande,3916,1,0,OP,HY,WAT,6,0.675,35460.469,13913.812,Distributed from 923 Generation And Fuel,1912,,TPWR,City of Tacoma  - (WA),46.8328,-122.3196,Washington,0,0,0,0,0,0,0,6,0,0,JOHN_DAY_20
+24896,WA,LaGrande,3916,2,0,OP,HY,WAT,6,0.675,35460.469,13913.812,Distributed from 923 Generation And Fuel,1912,,TPWR,City of Tacoma  - (WA),46.8328,-122.3196,Washington,0,0,0,0,0,0,0,6,0,0,JOHN_DAY_20
+24897,WA,LaGrande,3916,3,0,OP,HY,WAT,6,0.675,35460.469,13913.812,Distributed from 923 Generation And Fuel,1912,,TPWR,City of Tacoma  - (WA),46.8328,-122.3196,Washington,0,0,0,0,0,0,0,6,0,0,JOHN_DAY_20
+24898,WA,LaGrande,3916,4,0,OP,HY,WAT,6,0.675,35460.469,13913.812,Distributed from 923 Generation And Fuel,1912,,TPWR,City of Tacoma  - (WA),46.8328,-122.3196,Washington,0,0,0,0,0,0,0,6,0,0,JOHN_DAY_20
+24899,WA,LaGrande,3916,5,0,OP,HY,WAT,40,0.675,236403.125,92758.75,Distributed from 923 Generation And Fuel,1945,,TPWR,City of Tacoma  - (WA),46.8328,-122.3196,Washington,0,0,0,0,0,0,0,40,0,0,JOHN_DAY_20
+24955,WA,Mayfield,3917,41,0,OP,HY,WAT,40.5,0.553,196200.25,76984.25,Distributed from 923 Generation And Fuel,1983,,TPWR,City of Tacoma  - (WA),46.5035,-122.5885,Washington,0,0,0,0,0,0,0,40.5,0,0,JOHN_DAY_20
+24956,WA,Mayfield,3917,42,0,OP,HY,WAT,40.5,0.553,196200.25,76984.25,Distributed from 923 Generation And Fuel,1963,,TPWR,City of Tacoma  - (WA),46.5035,-122.5885,Washington,0,0,0,0,0,0,0,40.5,0,0,JOHN_DAY_20
+24957,WA,Mayfield,3917,43,0,OP,HY,WAT,40.5,0.553,196200.25,76984.25,Distributed from 923 Generation And Fuel,1963,,TPWR,City of Tacoma  - (WA),46.5035,-122.5885,Washington,0,0,0,0,0,0,0,40.5,0,0,JOHN_DAY_20
+24958,WA,Mayfield,3917,44,0,OP,HY,WAT,40.5,0.553,196200.25,76984.25,Distributed from 923 Generation And Fuel,1963,,TPWR,City of Tacoma  - (WA),46.5035,-122.5885,Washington,0,0,0,0,0,0,0,40.5,0,0,JOHN_DAY_20
+24972,WA,Mossyrock,3918,51,0,OP,HY,WAT,150,0.457,601068,163109.5,Distributed from 923 Generation And Fuel,1968,,TPWR,City of Tacoma  - (WA),46.5347,-122.4247,Washington,0,0,0,0,0,0,0,150,0,0,JOHN_DAY_20
+24973,WA,Mossyrock,3918,52,0,OP,HY,WAT,150,0.457,601068,163109.5,Distributed from 923 Generation And Fuel,1968,,TPWR,City of Tacoma  - (WA),46.5347,-122.4247,Washington,0,0,0,0,0,0,0,150,0,0,JOHN_DAY_20
+25069,WA,Ross,6202,41,0,OP,HY,WAT,112.5,0.2,197373.5,62642,Distributed from 923 Generation And Fuel,1956,,SCL,City of Seattle - (WA),48.732577,-121.06788,Washington,0,0,0,0,0,0,0,112.5,0,0,JOHN_DAY_20
+25070,WA,Ross,6202,42,0,OP,HY,WAT,112.5,0.2,197373.5,62642,Distributed from 923 Generation And Fuel,1954,,SCL,City of Seattle - (WA),48.732577,-121.06788,Washington,0,0,0,0,0,0,0,112.5,0,0,JOHN_DAY_20
+25071,WA,Ross,6202,43,0,OP,HY,WAT,112.5,0.2,197373.5,62642,Distributed from 923 Generation And Fuel,1953,,SCL,City of Seattle - (WA),48.732577,-121.06788,Washington,0,0,0,0,0,0,0,112.5,0,0,JOHN_DAY_20
+25072,WA,Ross,6202,44,0,OP,HY,WAT,112.5,0.2,197373.5,62642,Distributed from 923 Generation And Fuel,1952,,SCL,City of Seattle - (WA),48.732577,-121.06788,Washington,0,0,0,0,0,0,0,112.5,0,0,JOHN_DAY_20
+24692,WA,Cedar Falls (WA),6430,5,0,OP,HY,WAT,15,0.259,33982,13333.5,Distributed from 923 Generation And Fuel,1921,,SCL,City of Seattle - (WA),47.4193,-121.781858,Washington,0,0,0,0,0,0,0,15,0,0,NORTH_G3_20
+24693,WA,Cedar Falls (WA),6430,6,0,OP,HY,WAT,15,0.259,33982,13333.5,Distributed from 923 Generation And Fuel,1929,,SCL,City of Seattle - (WA),47.4193,-121.781858,Washington,0,0,0,0,0,0,0,15,0,0,NORTH_G3_20
+25093,WA,South Fork Tolt,622,1,0,OP,HY,WAT,16.8,0.354,52101,20443,Distributed from 923 Generation And Fuel,1995,,SCL,City of Seattle - (WA),47.699167,-121.783333,Washington,0,0,0,0,0,0,0,16.8,0,0,NORTH_G3_20
+24803,WA,Eltopia Branch Canal 4.6,56696,1,0,OP,HY,WAT,2.2,0.291,5604,2199,Distributed from 923 Generation And Fuel,1983,,BPAT,Bonneville Power Administration,46.378381,-119.254522,Washington,0,0,0,0,0,0,0,2.2,0,0,WCASCADE_20
+24980,WA,Nippon Dynawave Packaging Longview WA,50187,TG1,2,OP,ST,BLQ,8,0.617,43246.753,17445,EIA-923 Generator File,1948,,BPAT,PUD No 1 of Cowlitz County,46.1236,-122.9728,Washington,0,0,0,0,0,0,0,0,0,8,WCASCADE_20
+24981,WA,Nippon Dynawave Packaging Longview WA,50187,TG2,2,OP,ST,BLQ,5,0.82,35906.95,13376,EIA-923 Generator File,1948,,BPAT,PUD No 1 of Cowlitz County,46.1236,-122.9728,Washington,0,0,0,0,0,0,0,0,0,5,WCASCADE_20
+24982,WA,Nippon Dynawave Packaging Longview WA,50187,TG4,2,OP,ST,BLQ,18,0.609,96039.427,40042,EIA-923 Generator File,1954,,BPAT,PUD No 1 of Cowlitz County,46.1236,-122.9728,Washington,0,0,0,0,0,0,0,0,0,18,WCASCADE_20
+24983,WA,Nippon Dynawave Packaging Longview WA,50187,TG5,1,OP,ST,WDS,31.4,0.396,108870.25,35818,EIA-923 Generator File,1976,,BPAT,PUD No 1 of Cowlitz County,46.1236,-122.9728,Washington,0,0,0,0,0,0,0,0,0,31.4,WCASCADE_20
+24996,WA,Potholes East Canal 66.0,56697,1,0,OP,HY,WAT,2.3,0.449,9043,3548,Distributed from 923 Generation And Fuel,1985,,BPAT,Bonneville Power Administration,46.378469,-119.254443,Washington,0,0,0,0,0,0,0,2.3,0,0,WCASCADE_20
