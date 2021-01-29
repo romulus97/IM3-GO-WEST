@@ -380,7 +380,7 @@ full = list(df_BA_states['Number'])
 excluded = [i for i in full if i not in selected_nodes]
 
 df_excluded_nodes = pd.DataFrame(excluded)
-df_excluded_nodes.to_csv('excluded_nodes')
+df_excluded_nodes.to_csv('excluded_nodes.csv')
 
 df_selected_nodes = pd.DataFrame(selected_nodes)
-df_selected_nodes.to_csv('selected_nodes')
+df_selected_nodes.to_csv('selected_nodes.csv')
