@@ -30,41 +30,41 @@ joined = gpd.sjoin(nodes_df,BAs_gdf,how='left',op='within')
 joined2 = gpd.sjoin(nodes_df,states_gdf,how='left',op='within')
 joined['State'] = joined2['state_name']
 
-# buses = list(joined['Number'])
-# B = []
-# for b in buses:
-#     if b in B:
-#         pass
-#     else:
-#         B.append(b)
+buses = list(joined['Number'])
+B = []
+for b in buses:
+    if b in B:
+        pass
+    else:
+        B.append(b)
         
-# #elimate redundant buses (overlapping BAs) based on peak load
+#elimate redundant buses (overlapping BAs) based on peak load
 
-# for b in B:
+for b in B:
     
-#     sample = joined[joined['Number'] == b]
+    sample = joined[joined['Number'] == b]
     
-#     if len(sample) > 1:
-#         smallest = min(sample['PEAK_LOAD'])
-#         selection = sample[sample['PEAK_LOAD']==smallest]
+    if len(sample) > 1:
+        smallest = min(sample['PEAK_LOAD'])
+        selection = sample[sample['PEAK_LOAD']==smallest]
     
-#     else:
+    else:
         
-#         selection = sample
+        selection = sample
         
-#     b_idx = B.index(b)
-#     print(b_idx)
+    b_idx = B.index(b)
+    # print(b_idx)
     
-#     if b_idx < 1:
+    if b_idx < 1:
         
-#         combined = selection
+        combined = selection
     
-#     else:
+    else:
         
-#         combined = combined.append(selection) 
+        combined = combined.append(selection) 
     
 
-# combined.to_csv('nodes_to_BA_state.csv')
+combined.to_csv('nodes_to_BA_state.csv')
 
 ##############################
 #  Generators
@@ -358,7 +358,6 @@ plt.axis('off')
 plt.savefig('MIDC_topology.jpg',dpi=330)
 
 
-
 #SF Bay Area
 fig,ax = plt.subplots()
 states_gdf.plot(ax=ax,color='white',edgecolor='black',linewidth=0.5)
@@ -374,3 +373,7 @@ ax.set_xlim(-2000000,-1500000)
 ax.set_ylim([-750000,0])
 plt.axis('off')
 plt.savefig('SF_topology.jpg',dpi=330)
+
+selected_nodes = demand_nodes_selected + gen_nodes_selected + trans_nodes_selected
+df_selected_nodes = pd.DataFrame(selected_nodes)
+df_selected_nodes.to_csv('selected_nodes')
