@@ -375,5 +375,12 @@ plt.axis('off')
 plt.savefig('SF_topology.jpg',dpi=330)
 
 selected_nodes = demand_nodes_selected + gen_nodes_selected + trans_nodes_selected
+full = list(df_BA_states['Number'])
+
+excluded = [i for i in full if i not in selected_nodes]
+
+df_excluded_nodes = pd.DataFrame(excluded)
+df_excluded_nodes.to_csv('excluded_nodes')
+
 df_selected_nodes = pd.DataFrame(selected_nodes)
 df_selected_nodes.to_csv('selected_nodes')
