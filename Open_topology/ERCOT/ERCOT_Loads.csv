@@ -1,0 +1,1351 @@
+BusNum,BusName,AreaName,ZoneName,ID,Status,MW,Mvar,MVA,SMW,SMvar,DistStatus,DistMWInput,DistMvarInput
+1001,ODESSA 2 0,Far West,Far West Texas,1,Closed,20.78,5.89,21.6,20.78,5.89,Closed,0,0
+1002,PRESIDIO 2 0,Far West,Far West Texas,1,Closed,15.41,4.37,16.02,15.41,4.37,Closed,0,0
+1007,VAN HORN 0,Far West,Far West Texas,1,Closed,7.01,1.99,7.28,7.01,1.99,Closed,0,0
+1012,SANDERSON 0,Far West,Far West Texas,1,Closed,2.99,0.85,3.1,2.99,0.85,Closed,0,0
+1013,MONAHANS 2 0,Far West,Far West Texas,3,Closed,27.2,7.71,28.27,27.2,7.71,Closed,0,0
+1013,MONAHANS 2 0,Far West,Far West Texas,2,Closed,1.52,0.43,1.58,1.52,0.43,Closed,0,0
+1013,MONAHANS 2 0,Far West,Far West Texas,1,Closed,0.51,0.14,0.53,0.51,0.14,Closed,0,0
+1014,GRANDFALLS 0,Far West,Far West Texas,1,Closed,2.22,0.63,2.31,2.22,0.63,Closed,0,0
+1015,MARFA 0,Far West,Far West Texas,1,Closed,7.51,2.13,7.8,7.51,2.13,Closed,0,0
+1016,GARDEN CITY 0,Far West,Far West Texas,1,Closed,2.89,0.82,3,2.89,0.82,Closed,0,0
+1017,ODESSA 4 0,Far West,Far West Texas,1,Closed,18.34,5.2,19.07,18.34,5.2,Closed,0,0
+1018,NOTREES 0,Far West,Far West Texas,1,Closed,0.07,0.02,0.07,0.07,0.02,Closed,0,0
+1019,MIDLAND 4 0,Far West,Far West Texas,1,Closed,61.78,17.5,64.21,61.78,17.5,Closed,0,0
+1024,ODESSA 6 0,Far West,Far West Texas,1,Closed,63.04,17.86,65.52,63.04,17.86,Closed,0,0
+1027,MIDLAND 2 0,Far West,Far West Texas,2,Closed,100.61,28.51,104.57,100.61,28.51,Closed,0,0
+1027,MIDLAND 2 0,Far West,Far West Texas,1,Closed,0.6,0.17,0.63,0.6,0.17,Closed,0,0
+1028,COAHOMA 0,Far West,Far West Texas,3,Closed,4.9,1.39,5.09,4.9,1.39,Closed,0,0
+1028,COAHOMA 0,Far West,Far West Texas,4,Closed,2.94,0.83,3.05,2.94,0.83,Closed,0,0
+1028,COAHOMA 0,Far West,Far West Texas,1,Closed,1.43,0.4,1.48,1.43,0.4,Closed,0,0
+1028,COAHOMA 0,Far West,Far West Texas,2,Closed,0.75,0.21,0.78,0.75,0.21,Closed,0,0
+1029,MIDLAND 3 0,Far West,Far West Texas,1,Closed,83.18,23.57,86.46,83.18,23.57,Closed,0,0
+1030,ALPINE 0,Far West,Far West Texas,1,Closed,23.05,6.53,23.95,23.05,6.53,Closed,0,0
+1030,ALPINE 0,Far West,Far West Texas,2,Closed,1.58,0.45,1.64,1.58,0.45,Closed,0,0
+1031,FORT DAVIS 0,Far West,Far West Texas,1,Closed,9.25,2.62,9.61,9.25,2.62,Closed,0,0
+1036,CRANE 0,Far West,Far West Texas,2,Closed,12.58,3.56,13.07,12.58,3.56,Closed,0,0
+1036,CRANE 0,Far West,Far West Texas,1,Closed,1.02,0.29,1.06,1.02,0.29,Closed,0,0
+1037,ODESSA 5 0,Far West,Far West Texas,1,Closed,102.24,28.97,106.26,102.24,28.97,Closed,0,0
+1040,ANDREWS 0,Far West,Far West Texas,1,Closed,44.36,12.57,46.1,44.36,12.57,Closed,0,0
+1044,BIG LAKE 0,Far West,Far West Texas,2,Closed,10.17,2.88,10.57,10.17,2.88,Closed,0,0
+1044,BIG LAKE 0,Far West,Far West Texas,1,Closed,4.51,1.28,4.69,4.51,1.28,Closed,0,0
+1045,MIDLAND 5 0,Far West,Far West Texas,1,Closed,98.56,27.93,102.44,98.56,27.93,Closed,0,0
+1046,OZONA 0,Far West,Far West Texas,2,Closed,11.08,3.14,11.52,11.08,3.14,Closed,0,0
+1046,OZONA 0,Far West,Far West Texas,1,Closed,0.01,0,0.01,0.01,0,Closed,0,0
+1054,STANTON 0,Far West,Far West Texas,3,Closed,12.69,3.6,13.19,12.69,3.6,Closed,0,0
+1054,STANTON 0,Far West,Far West Texas,1,Closed,1.78,0.5,1.85,1.78,0.5,Closed,0,0
+1054,STANTON 0,Far West,Far West Texas,2,Closed,0.52,0.15,0.54,0.52,0.15,Closed,0,0
+1055,ODONNELL 0,Far West,Far West Texas,1,Closed,3.98,1.13,4.13,3.98,1.13,Closed,0,0
+1058,IRAAN 3 0,Far West,Far West Texas,2,Closed,9.37,2.65,9.74,9.37,2.65,Closed,0,0
+1058,IRAAN 3 0,Far West,Far West Texas,1,Closed,4.09,1.16,4.25,4.09,1.16,Closed,0,0
+1064,ODESSA 3 0,Far West,Far West Texas,2,Closed,117.17,33.2,121.78,117.17,33.2,Closed,0,0
+1064,ODESSA 3 0,Far West,Far West Texas,1,Closed,6.59,1.87,6.85,6.59,1.87,Closed,0,0
+1067,BIG SPRING 7 0,Far West,Far West Texas,1,Closed,101.55,28.77,105.55,101.55,28.77,Closed,0,0
+1068,MIDLAND 1 0,Far West,Far West Texas,2,Closed,58.71,16.64,61.02,58.71,16.64,Closed,0,0
+1068,MIDLAND 1 0,Far West,Far West Texas,1,Closed,0.69,0.2,0.72,0.69,0.2,Closed,0,0
+1071,ODESSA 1 0,Far West,Far West Texas,1,Closed,91.46,25.91,95.06,91.46,25.91,Closed,0,0
+1083,FORT STOCKTON 3 0,Far West,Far West Texas,1,Closed,39.95,11.32,41.52,39.95,11.32,Closed,0,0
+1085,KERMIT 0,Far West,Far West Texas,2,Closed,18.38,5.21,19.1,18.38,5.21,Closed,0,0
+1085,KERMIT 0,Far West,Far West Texas,1,Closed,2.92,0.83,3.04,2.92,0.83,Closed,0,0
+1086,PECOS 0,Far West,Far West Texas,1,Closed,39.67,11.24,41.23,39.67,11.24,Closed,0,0
+1087,SHEFFIELD 0,Far West,Far West Texas,1,Closed,0.91,0.26,0.94,0.91,0.26,Closed,0,0
+1089,LAMESA 0,Far West,Far West Texas,2,Closed,39.77,11.27,41.34,39.77,11.27,Closed,0,0
+1089,LAMESA 0,Far West,Far West Texas,1,Closed,0.83,0.24,0.86,0.83,0.24,Closed,0,0
+1091,RALLS 2 0,Far West,Far West Texas,2,Closed,6.91,1.96,7.18,6.91,1.96,Closed,0,0
+1091,RALLS 2 0,Far West,Far West Texas,1,Closed,4.71,1.34,4.9,4.71,1.34,Closed,0,0
+2001,PARIS 3 0,North,Red River,2,Closed,34.05,9.65,35.39,34.05,9.65,Closed,0,0
+2001,PARIS 3 0,North,Red River,1,Closed,14.31,4.05,14.87,14.31,4.05,Closed,0,0
+2007,HONEY GROVE 0,North,Red River,1,Closed,9.54,2.7,9.92,9.54,2.7,Closed,0,0
+2008,MEMPHIS 0,North,Panhandle,1,Closed,8.06,2.28,8.38,8.06,2.28,Closed,0,0
+2009,IOWA PARK 0,North,Red River,1,Closed,39.14,11.09,40.68,39.14,11.09,Closed,0,0
+2010,VERNON 2 0,North,Panhandle,5,Closed,38.97,11.04,40.51,38.97,11.04,Closed,0,0
+2010,VERNON 2 0,North,Panhandle,2,Closed,9.61,2.72,9.98,9.61,2.72,Closed,0,0
+2010,VERNON 2 0,North,Panhandle,1,Closed,5.11,1.45,5.31,5.11,1.45,Closed,0,0
+2010,VERNON 2 0,North,Panhandle,3,Closed,2.93,0.83,3.04,2.93,0.83,Closed,0,0
+2010,VERNON 2 0,North,Panhandle,4,Closed,0.19,0.05,0.2,0.19,0.05,Closed,0,0
+2014,CHILDRESS 0,North,Panhandle,2,Closed,21.8,6.18,22.66,21.8,6.18,Closed,0,0
+2014,CHILDRESS 0,North,Panhandle,1,Closed,3.62,1.03,3.77,3.62,1.03,Closed,0,0
+2015,FORESTBURG 0,North,Red River,1,Closed,4.69,1.33,4.87,4.69,1.33,Closed,0,0
+2016,SHERMAN 3 0,North,Red River,1,Closed,69.27,19.63,71.99,69.27,19.63,Closed,0,0
+2020,WICHITA FALLS 6 0,North,Red River,1,Closed,47.97,13.59,49.86,47.97,13.59,Closed,0,0
+2022,PARIS 2 1,North,Red River,1,Closed,11.56,3.28,12.02,11.56,3.28,Closed,0,0
+2025,WICHITA FALLS 4 0,North,Red River,1,Closed,39.62,11.23,41.18,39.62,11.23,Closed,0,0
+2026,WHEELER 0,North,Panhandle,4,Closed,7.94,2.25,8.25,7.94,2.25,Closed,0,0
+2026,WHEELER 0,North,Panhandle,3,Closed,7.17,2.03,7.46,7.17,2.03,Closed,0,0
+2026,WHEELER 0,North,Panhandle,1,Closed,2.51,0.71,2.61,2.51,0.71,Closed,0,0
+2026,WHEELER 0,North,Panhandle,2,Closed,0.95,0.27,0.99,0.95,0.27,Closed,0,0
+2027,DEPORT 0,North,Red River,1,Closed,3.55,1.01,3.69,3.55,1.01,Closed,0,0
+2028,WICHITA FALLS 3 0,North,Red River,1,Closed,14.24,4.03,14.8,14.24,4.03,Closed,0,0
+2029,SILVERTON 0,North,Panhandle,1,Closed,3.2,0.91,3.33,3.2,0.91,Closed,0,0
+2030,BONHAM 0,North,Red River,2,Closed,43.23,12.25,44.93,43.23,12.25,Closed,0,0
+2030,BONHAM 0,North,Red River,1,Closed,3.91,1.11,4.07,3.91,1.11,Closed,0,0
+2031,MATADOR 0,North,Panhandle,3,Closed,3.71,1.05,3.85,3.71,1.05,Closed,0,0
+2031,MATADOR 0,North,Panhandle,2,Closed,1.27,0.36,1.32,1.27,0.36,Closed,0,0
+2031,MATADOR 0,North,Panhandle,1,Closed,0.79,0.22,0.82,0.79,0.22,Closed,0,0
+2032,ARTHUR CITY 0,North,Red River,1,Closed,3.35,0.95,3.49,3.35,0.95,Closed,0,0
+2033,LEONARD 0,North,Red River,2,Closed,12.27,3.48,12.75,12.27,3.48,Closed,0,0
+2033,LEONARD 0,North,Red River,1,Closed,1.3,0.37,1.35,1.3,0.37,Closed,0,0
+2034,GORDONVILLE 0,North,Red River,1,Closed,5.34,1.51,5.55,5.34,1.51,Closed,0,0
+2035,KNOX CITY 0,North,Panhandle,1,Closed,4.15,1.18,4.31,4.15,1.18,Closed,0,0
+2035,KNOX CITY 0,North,Panhandle,2,Closed,0.53,0.15,0.56,0.53,0.15,Closed,0,0
+2036,WICHITA FALLS 7 0,North,Red River,1,Closed,41.59,11.78,43.22,41.59,11.78,Closed,0,0
+2037,LINDSAY 0,North,Red River,2,Closed,2.81,0.8,2.92,2.81,0.8,Closed,0,0
+2037,LINDSAY 0,North,Red River,1,Closed,0.69,0.2,0.72,0.69,0.2,Closed,0,0
+2038,ECTOR 0,North,Red River,1,Closed,2.6,0.74,2.71,2.6,0.74,Closed,0,0
+2039,SUNSET 0,North,Red River,1,Closed,5.56,1.58,5.78,5.56,1.58,Closed,0,0
+2040,CLARKSVILLE 0,North,Red River,1,Closed,15.9,4.51,16.53,15.9,4.51,Closed,0,0
+2043,SADLER 0,North,Red River,1,Closed,4.24,1.2,4.4,4.24,1.2,Closed,0,0
+2044,WHITESBORO 0,North,Red River,1,Closed,27.4,7.76,28.48,27.4,7.76,Closed,0,0
+2045,SHEPPARD AFB 0,North,Red River,1,Closed,22.61,6.4,23.49,22.61,6.4,Closed,0,0
+2046,POTTSBORO 0,North,Red River,1,Closed,22.13,6.27,23.01,22.13,6.27,Closed,0,0
+2047,BELLS 0,North,Red River,1,Closed,9.41,2.67,9.78,9.41,2.67,Closed,0,0
+2047,BELLS 0,North,Red River,2,Closed,5.55,1.57,5.77,5.55,1.57,Closed,0,0
+2048,CROSBYTON 0,North,Panhandle,1,Closed,6.42,1.82,6.67,6.42,1.82,Closed,0,0
+2049,ELECTRA 0,North,Panhandle,3,Closed,10.51,2.98,10.92,10.51,2.98,Closed,0,0
+2049,ELECTRA 0,North,Panhandle,2,Closed,0.58,0.16,0.6,0.58,0.16,Closed,0,0
+2049,ELECTRA 0,North,Panhandle,1,Closed,0.49,0.14,0.51,0.49,0.14,Closed,0,0
+2050,PATTONVILLE 0,North,Red River,1,Closed,3.66,1.04,3.8,3.66,1.04,Closed,0,0
+2051,HENRIETTA 0,North,Red River,1,Closed,17.85,5.06,18.55,17.85,5.06,Closed,0,0
+2052,PANHANDLE 6 0,North,Panhandle,2,Closed,15.38,4.36,15.98,15.38,4.36,Closed,0,0
+2052,PANHANDLE 6 0,North,Panhandle,1,Closed,9.46,2.68,9.83,9.46,2.68,Closed,0,0
+2053,BOWIE 0,North,Red River,1,Closed,29.13,8.25,30.28,29.13,8.25,Closed,0,0
+2055,WICHITA FALLS 1 1,North,Red River,1,Closed,49.62,14.06,51.57,49.62,14.06,Closed,0,0
+2060,ROXTON 0,North,Red River,1,Closed,3.8,1.08,3.94,3.8,1.08,Closed,0,0
+2063,DENISON 2 0,North,Red River,1,Closed,65.62,18.59,68.2,65.62,18.59,Closed,0,0
+2064,SUMNER 0,North,Red River,1,Closed,7.04,1.99,7.32,7.04,1.99,Closed,0,0
+2064,SUMNER 0,North,Red River,2,Closed,3.01,0.85,3.13,3.01,0.85,Closed,0,0
+2065,GAINESVILLE 0,North,Red River,1,Closed,78.36,22.2,81.44,78.36,22.2,Closed,0,0
+2066,ASPERMONT 0,North,Panhandle,1,Closed,4.05,1.15,4.21,4.05,1.15,Closed,0,0
+2066,ASPERMONT 0,North,Panhandle,2,Closed,2.54,0.72,2.64,2.54,0.72,Closed,0,0
+2066,ASPERMONT 0,North,Panhandle,3,Closed,0.52,0.15,0.54,0.52,0.15,Closed,0,0
+2067,WICHITA FALLS 5 0,North,Red River,1,Closed,53.97,15.29,56.09,53.97,15.29,Closed,0,0
+2068,WINDTHORST 0,North,Red River,1,Closed,5.76,1.63,5.99,5.76,1.63,Closed,0,0
+2069,HOWE 0,North,Red River,1,Closed,21.92,6.21,22.79,21.92,6.21,Closed,0,0
+2072,COLLINSVILLE 0,North,Red River,1,Closed,9.71,2.75,10.09,9.71,2.75,Closed,0,0
+2079,PADUCAH 0,North,Panhandle,1,Closed,4.48,1.27,4.66,4.48,1.27,Closed,0,0
+2080,NOCONA 0,North,Red River,1,Closed,16.93,4.8,17.6,16.93,4.8,Closed,0,0
+2081,DODD CITY 0,North,Red River,1,Closed,4.46,1.26,4.64,4.46,1.26,Closed,0,0
+2082,WICHITA FALLS 2 0,North,Red River,1,Closed,59.03,16.73,61.35,59.03,16.73,Closed,0,0
+2086,MONTAGUE 0,North,Red River,1,Closed,2.19,0.62,2.28,2.19,0.62,Closed,0,0
+2087,SPUR 0,North,Panhandle,1,Closed,7.9,2.24,8.21,7.9,2.24,Closed,0,0
+2090,ANNONA 0,North,Red River,1,Closed,2.42,0.69,2.52,2.42,0.69,Closed,0,0
+2091,SEYMOUR 0,North,Panhandle,1,Closed,17.05,4.83,17.72,17.05,4.83,Closed,0,0
+2092,DENISON 1 0,North,Red River,1,Closed,24.11,6.83,25.06,24.11,6.83,Closed,0,0
+2106,WHITEWRIGHT 0,North,Red River,1,Closed,14.4,4.08,14.97,14.4,4.08,Closed,0,0
+2107,SHERMAN 2 0,North,Red River,1,Closed,74.15,21.01,77.07,74.15,21.01,Closed,0,0
+2108,ROCHESTER 0,North,Panhandle,1,Closed,2.14,0.61,2.23,2.14,0.61,Closed,0,0
+2109,BURKBURNETT 0,North,Red River,1,Closed,33.81,9.58,35.14,33.81,9.58,Closed,0,0
+2110,MUENSTER 2 0,North,Red River,1,Closed,8.59,2.43,8.93,8.59,2.43,Closed,0,0
+2111,ARCHER CITY 0,North,Red River,1,Closed,7,1.98,7.28,7,1.98,Closed,0,0
+2111,ARCHER CITY 0,North,Red River,2,Closed,6.95,1.97,7.22,6.95,1.97,Closed,0,0
+2112,PETROLIA 0,North,Red River,1,Closed,4.54,1.29,4.72,4.54,1.29,Closed,0,0
+2114,PARIS 1 1,North,Red River,1,Closed,70.78,20.05,73.56,70.78,20.05,Closed,0,0
+2121,BAGWELL 0,North,Red River,1,Closed,2.33,0.66,2.43,2.33,0.66,Closed,0,0
+2122,TELEPHONE 0,North,Red River,1,Closed,6.72,1.9,6.99,6.72,1.9,Closed,0,0
+2124,VAN ALSTYNE 0,North,Red River,1,Closed,21.29,6.03,22.12,21.29,6.03,Closed,0,0
+2125,TIOGA 0,North,Red River,1,Closed,4.06,1.15,4.22,4.06,1.15,Closed,0,0
+2126,VALLEY VIEW 0,North,Red River,1,Closed,14.24,4.03,14.8,14.24,4.03,Closed,0,0
+2129,TRENTON 0,North,Red River,1,Closed,6.63,1.88,6.89,6.63,1.88,Closed,0,0
+2132,HASKELL 2,North,Panhandle,1,Closed,11.94,3.38,12.41,11.94,3.38,Closed,0,0
+2133,SAINT JO 0,North,Red River,1,Closed,5.68,1.61,5.9,5.68,1.61,Closed,0,0
+3002,KERRVILLE 1,West,Hill Country,1,Closed,112.86,31.98,117.3,112.86,31.98,Closed,0,0
+3005,LEAKEY 0,West,Hill Country,3,Closed,5.72,1.62,5.95,5.72,1.62,Closed,0,0
+3005,LEAKEY 0,West,Hill Country,2,Closed,0.82,0.23,0.86,0.82,0.23,Closed,0,0
+3005,LEAKEY 0,West,Hill Country,1,Closed,0.79,0.22,0.82,0.79,0.22,Closed,0,0
+3006,HAMLIN 0,West,Abilene,1,Closed,7.35,2.08,7.64,7.35,2.08,Closed,0,0
+3007,MERKEL 3 0,West,Abilene,1,Closed,14.96,4.24,15.55,14.96,4.24,Closed,0,0
+3008,COLEMAN 0,West,Abilene,1,Closed,19,5.38,19.74,19,5.38,Closed,0,0
+3008,COLEMAN 0,West,Abilene,2,Closed,0.81,0.23,0.85,0.81,0.23,Closed,0,0
+3009,SONORA 0,West,Hill Country,1,Closed,12.54,3.55,13.03,12.54,3.55,Closed,0,0
+3010,CAMP WOOD 0,West,Hill Country,1,Closed,4.67,1.32,4.85,4.67,1.32,Closed,0,0
+3011,LLANO 0,West,Hill Country,1,Closed,18.98,5.38,19.73,18.98,5.38,Closed,0,0
+3011,LLANO 0,West,Hill Country,2,Closed,8.16,2.31,8.48,8.16,2.31,Closed,0,0
+3012,WILLOW CITY 0,West,Hill Country,1,Closed,0.56,0.16,0.59,0.56,0.16,Closed,0,0
+3013,ABILENE 4 0,West,Abilene,1,Closed,64.56,18.29,67.1,64.56,18.29,Closed,0,0
+3014,KINGSLAND 0,West,Hill Country,1,Closed,22,6.23,22.87,22,6.23,Closed,0,0
+3015,ROSCOE 6 0,West,Abilene,1,Closed,5.36,1.52,5.58,5.36,1.52,Closed,0,0
+3021,LUEDERS 0,West,Abilene,2,Closed,1.42,0.4,1.47,1.42,0.4,Closed,0,0
+3021,LUEDERS 0,West,Abilene,1,Closed,0.52,0.15,0.55,0.52,0.15,Closed,0,0
+3022,COLORADO CITY 0,West,Abilene,1,Closed,24.59,6.97,25.56,24.59,6.97,Closed,0,0
+3023,STAMFORD 0,West,Abilene,1,Closed,10.41,2.95,10.82,10.41,2.95,Closed,0,0
+3024,ELDORADO 0,West,Hill Country,1,Closed,10.13,2.87,10.53,10.13,2.87,Closed,0,0
+3025,SAN SABA 0,West,Hill Country,1,Closed,13.67,3.87,14.21,13.67,3.87,Closed,0,0
+3029,LOMETA 0,West,Hill Country,1,Closed,4.87,1.38,5.06,4.87,1.38,Closed,0,0
+3030,SAN ANGELO 1 0,West,Abilene,1,Closed,129.72,36.75,134.83,129.72,36.75,Closed,0,0
+3031,TUSCOLA 0,West,Abilene,1,Closed,14.73,4.17,15.31,14.73,4.17,Closed,0,0
+3032,ABILENE 7 0,West,Abilene,1,Closed,72.86,20.64,75.73,72.86,20.64,Closed,0,0
+3035,CHEROKEE 0,West,Hill Country,1,Closed,3.47,0.98,3.6,3.47,0.98,Closed,0,0
+3036,RICHLAND SPRINGS 0,West,Hill Country,2,Closed,4.5,1.28,4.68,4.5,1.28,Closed,0,0
+3036,RICHLAND SPRINGS 0,West,Hill Country,1,Closed,1.3,0.37,1.35,1.3,0.37,Closed,0,0
+3040,BALLINGER 0,West,Abilene,1,Closed,14.61,4.14,15.18,14.61,4.14,Closed,0,0
+3042,SILVER 1,West,Abilene,1,Closed,5.02,1.42,5.21,5.02,1.42,Closed,0,0
+3042,SILVER 1,West,Abilene,2,Closed,3.74,1.06,3.89,3.74,1.06,Closed,0,0
+3049,ANSON 0,West,Abilene,1,Closed,10.58,3,11,10.58,3,Closed,0,0
+3051,DEL RIO 1,West,Hill Country,2,Closed,144.45,40.93,150.13,144.45,40.93,Closed,0,0
+3051,DEL RIO 1,West,Hill Country,1,Closed,0.84,0.24,0.88,0.84,0.24,Closed,0,0
+3052,HUNT 0,West,Hill Country,1,Closed,8.08,2.29,8.39,8.08,2.29,Closed,0,0
+3066,BRADY 0,West,Hill Country,1,Closed,22.03,6.24,22.9,22.03,6.24,Closed,0,0
+3069,OVALO 0,West,Abilene,1,Closed,3.81,1.08,3.96,3.81,1.08,Closed,0,0
+3072,MILES 0,West,Abilene,1,Closed,5.98,1.7,6.22,5.98,1.7,Closed,0,0
+3075,MASON 0,West,Hill Country,1,Closed,12.18,3.45,12.66,12.18,3.45,Closed,0,0
+3076,BRACKETTVILLE 3 0,West,Hill Country,1,Closed,10.79,3.06,11.22,10.79,3.06,Closed,0,0
+3077,ABILENE 6 0,West,Abilene,1,Closed,68.66,19.45,71.36,68.66,19.45,Closed,0,0
+3093,ROCKSPRINGS 0,West,Hill Country,1,Closed,5.05,1.43,5.24,5.05,1.43,Closed,0,0
+3099,DYESS AFB 0,West,Abilene,1,Closed,12.08,3.42,12.55,12.08,3.42,Closed,0,0
+3100,HAWLEY 0,West,Abilene,1,Closed,8.53,2.42,8.86,8.53,2.42,Closed,0,0
+3101,BUCHANAN DAM 2 0,West,Hill Country,3,Closed,6.53,1.85,6.79,6.53,1.85,Closed,0,0
+3101,BUCHANAN DAM 2 0,West,Hill Country,2,Closed,2.79,0.79,2.9,2.79,0.79,Closed,0,0
+3101,BUCHANAN DAM 2 0,West,Hill Country,1,Closed,0.1,0.03,0.11,0.1,0.03,Closed,0,0
+3102,ABILENE 3 0,West,Abilene,1,Closed,75.26,21.32,78.22,75.26,21.32,Closed,0,0
+3103,SWEETWATER 5 0,West,Abilene,2,Closed,38.98,11.05,40.52,38.98,11.05,Closed,0,0
+3103,SWEETWATER 5 0,West,Abilene,1,Closed,0.33,0.09,0.35,0.33,0.09,Closed,0,0
+3107,INGRAM 0,West,Hill Country,1,Closed,14.87,4.21,15.45,14.87,4.21,Closed,0,0
+3108,KEMPNER 0,West,Hill Country,1,Closed,23.52,6.66,24.45,23.52,6.66,Closed,0,0
+3114,SAN ANGELO 2 0,West,Abilene,2,Closed,98.15,27.81,102.02,98.15,27.81,Closed,0,0
+3114,SAN ANGELO 2 0,West,Abilene,1,Closed,0.15,0.04,0.16,0.15,0.04,Closed,0,0
+3115,ROTAN 0,West,Abilene,1,Closed,6.02,1.71,6.25,6.02,1.71,Closed,0,0
+3115,ROTAN 0,West,Abilene,2,Closed,3.56,1.01,3.7,3.56,1.01,Closed,0,0
+3123,UVALDE 0,West,Hill Country,1,Closed,66.07,18.72,68.67,66.07,18.72,Closed,0,0
+3124,FREDERICKSBURG 0,West,Hill Country,1,Closed,64.54,18.29,67.08,64.54,18.29,Closed,0,0
+3125,ABILENE 5 0,West,Abilene,1,Closed,91.26,25.86,94.85,91.26,25.86,Closed,0,0
+3126,SABINAL 0,West,Hill Country,1,Closed,9.96,2.82,10.35,9.96,2.82,Closed,0,0
+3128,LORAINE 2 0,West,Abilene,1,Closed,2.82,0.8,2.93,2.82,0.8,Closed,0,0
+3130,SAN ANGELO 3 0,West,Abilene,4,Closed,83.91,23.77,87.21,83.91,23.77,Closed,0,0
+3130,SAN ANGELO 3 0,West,Abilene,3,Closed,3.89,1.1,4.04,3.89,1.1,Closed,0,0
+3130,SAN ANGELO 3 0,West,Abilene,1,Closed,3.43,0.97,3.56,3.43,0.97,Closed,0,0
+3130,SAN ANGELO 3 0,West,Abilene,2,Closed,0.93,0.26,0.97,0.93,0.26,Closed,0,0
+3132,EDEN 0,West,Hill Country,1,Closed,9.56,2.71,9.94,9.56,2.71,Closed,0,0
+3136,SNYDER 2 3,West,Abilene,1,Closed,46.96,13.3,48.8,46.96,13.3,Closed,0,0
+3138,MENARD 0,West,Hill Country,1,Closed,6.13,1.74,6.37,6.13,1.74,Closed,0,0
+3138,MENARD 0,West,Hill Country,2,Closed,4.82,1.37,5.01,4.82,1.37,Closed,0,0
+3139,WINTERS 0,West,Abilene,3,Closed,10.12,2.87,10.52,10.12,2.87,Closed,0,0
+3139,WINTERS 0,West,Abilene,2,Closed,4.32,1.22,4.49,4.32,1.22,Closed,0,0
+3139,WINTERS 0,West,Abilene,1,Closed,0.48,0.14,0.5,0.48,0.14,Closed,0,0
+3140,GOLDSBORO 0,West,Abilene,1,Closed,0.22,0.06,0.23,0.22,0.06,Closed,0,0
+3142,GOODFELLOW AFB 0,West,Abilene,2,Closed,6.03,1.71,6.27,6.03,1.71,Closed,0,0
+3142,GOODFELLOW AFB 0,West,Abilene,1,Closed,1.04,0.29,1.08,1.04,0.29,Closed,0,0
+3143,SANTA ANNA 0,West,Hill Country,1,Closed,5.75,1.63,5.98,5.75,1.63,Closed,0,0
+3144,ROWENA 0,West,Hill Country,3,Closed,2,0.57,2.08,2,0.57,Closed,0,0
+3144,ROWENA 0,West,Hill Country,2,Closed,1.87,0.53,1.94,1.87,0.53,Closed,0,0
+3144,ROWENA 0,West,Hill Country,1,Closed,1.68,0.48,1.75,1.68,0.48,Closed,0,0
+3145,TRENT 2 0,West,Abilene,2,Closed,1.99,0.56,2.06,1.99,0.56,Closed,0,0
+3145,TRENT 2 0,West,Abilene,1,Closed,0.95,0.27,0.99,0.95,0.27,Closed,0,0
+3146,JUNCTION 0,West,Hill Country,2,Closed,11.83,3.35,12.3,11.83,3.35,Closed,0,0
+3146,JUNCTION 0,West,Hill Country,1,Closed,0.2,0.06,0.21,0.2,0.06,Closed,0,0
+3147,LAMPASAS 0,West,Hill Country,1,Closed,34.76,9.85,36.13,34.76,9.85,Closed,0,0
+4002,LAUGHLIN A F B 0,South,Laredo,1,Closed,1.01,0.29,1.05,1.01,0.29,Closed,0,0
+4003,EDINBURG 3 0,South,McAllen,1,Closed,127.29,36.07,132.3,127.29,36.07,Closed,0,0
+4005,LAREDO 7 1,South,Laredo,1,Closed,164.14,46.51,170.6,164.14,46.51,Closed,0,0
+4006,BRUNI 2 0,South,Laredo,2,Closed,1.42,0.4,1.48,1.42,0.4,Closed,0,0
+4006,BRUNI 2 0,South,Laredo,1,Closed,1.33,0.38,1.38,1.33,0.38,Closed,0,0
+4007,MCALLEN 2 0,South,McAllen,1,Closed,183.66,52.04,190.89,183.66,52.04,Closed,0,0
+4008,POTEET 0,South,Laredo,1,Closed,32.49,9.21,33.77,32.49,9.21,Closed,0,0
+4011,HEBBRONVILLE 0,South,McAllen,1,Closed,16.05,4.55,16.68,16.05,4.55,Closed,0,0
+4012,PROGRESO 0,South,McAllen,1,Closed,13.74,3.89,14.28,13.74,3.89,Closed,0,0
+4013,EDINBURG 2 0,South,McAllen,1,Closed,92.35,26.17,95.98,92.35,26.17,Closed,0,0
+4015,EAGLE PASS 1,South,Laredo,1,Closed,159.81,45.28,166.1,159.81,45.28,Closed,0,0
+4016,CHARLOTTE 0,South,Laredo,1,Closed,6.25,1.77,6.49,6.25,1.77,Closed,0,0
+4017,CORPUS CHRISTI 4 0,South,Corpus Christi,1,Closed,89.56,25.38,93.09,89.56,25.38,Closed,0,0
+4018,WOODSBORO 0,South,Corpus Christi,1,Closed,7.14,2.02,7.42,7.14,2.02,Closed,0,0
+4019,MERCEDES 0,South,McAllen,2,Closed,97.58,27.65,101.42,97.58,27.65,Closed,0,0
+4019,MERCEDES 0,South,McAllen,1,Closed,38.25,10.84,39.76,38.25,10.84,Closed,0,0
+4020,CORPUS CHRISTI 16 0,South,Corpus Christi,1,Closed,117.81,33.38,122.45,117.81,33.38,Closed,0,0
+4021,EDCOUCH 0,South,McAllen,1,Closed,31.97,9.06,33.23,31.97,9.06,Closed,0,0
+4022,ENCINAL 0,South,Laredo,1,Closed,5.56,1.58,5.78,5.56,1.58,Closed,0,0
+4023,MOORE 0,South,Laredo,1,Closed,5.06,1.43,5.26,5.06,1.43,Closed,0,0
+4027,MCALLEN 3 0,South,McAllen,1,Closed,65.12,18.45,67.68,65.12,18.45,Closed,0,0
+4031,SAN YGNACIO 0,South,Laredo,1,Closed,2.75,0.78,2.86,2.75,0.78,Closed,0,0
+4032,KINGSVILLE 0,South,Corpus Christi,1,Closed,91.39,25.89,94.99,91.39,25.89,Closed,0,0
+4033,LAREDO 6 0,South,Laredo,1,Closed,126.25,35.77,131.22,126.25,35.77,Closed,0,0
+4034,HIDALGO 0,South,McAllen,1,Closed,37.64,10.66,39.12,37.64,10.66,Closed,0,0
+4035,CORPUS CHRISTI 18 0,South,Corpus Christi,1,Closed,79.16,22.43,82.28,79.16,22.43,Closed,0,0
+4036,CRYSTAL CITY 0,South,Laredo,2,Closed,25.73,7.29,26.75,25.73,7.29,Closed,0,0
+4036,CRYSTAL CITY 0,South,Laredo,1,Closed,9.34,2.65,9.7,9.34,2.65,Closed,0,0
+4037,SINTON 0,South,Corpus Christi,1,Closed,28.72,8.14,29.85,28.72,8.14,Closed,0,0
+4038,BEEVILLE 0,South,Corpus Christi,1,Closed,82.78,23.45,86.04,82.78,23.45,Closed,0,0
+4038,BEEVILLE 0,South,Corpus Christi,2,Closed,0.52,0.15,0.55,0.52,0.15,Closed,0,0
+4040,MISSION 4 1,South,McAllen,1,Closed,225.66,63.94,234.55,225.66,63.94,Closed,0,0
+4042,SAN JUAN 1,South,McAllen,2,Closed,114.01,32.3,118.5,114.01,32.3,Closed,0,0
+4042,SAN JUAN 1,South,McAllen,1,Closed,101.17,28.66,105.15,101.17,28.66,Closed,0,0
+4043,FALCON HEIGHTS 2 0,South,McAllen,1,Closed,2.47,0.7,2.57,2.47,0.7,Closed,0,0
+4048,LA JOYA 0,South,McAllen,1,Closed,13.1,3.71,13.62,13.1,3.71,Closed,0,0
+4051,BISHOP 0,South,Corpus Christi,2,Closed,73.95,20.95,76.86,73.95,20.95,Closed,0,0
+4051,BISHOP 0,South,Corpus Christi,1,Closed,15.44,4.37,16.05,15.44,4.37,Closed,0,0
+4053,ARMSTRONG 2 0,South,McAllen,1,Closed,0.11,0.03,0.12,0.11,0.03,Closed,0,0
+4054,SKIDMORE 0,South,Corpus Christi,1,Closed,5.6,1.59,5.82,5.6,1.59,Closed,0,0
+4055,CORPUS CHRISTI 9 0,South,Corpus Christi,2,Closed,16.17,4.58,16.81,16.17,4.58,Closed,0,0
+4055,CORPUS CHRISTI 9 0,South,Corpus Christi,1,Closed,1.61,0.46,1.67,1.61,0.46,Closed,0,0
+4064,CORPUS CHRISTI 2 0,South,Corpus Christi,1,Closed,8.82,2.5,9.16,8.82,2.5,Closed,0,0
+4066,WESLACO 0,South,McAllen,1,Closed,191.53,54.27,199.07,191.53,54.27,Closed,0,0
+4067,HARLINGEN 1 0,South,McAllen,1,Closed,159.46,45.18,165.73,159.46,45.18,Closed,0,0
+4068,ELSA 0,South,McAllen,2,Closed,25.34,7.18,26.34,25.34,7.18,Closed,0,0
+4068,ELSA 0,South,McAllen,1,Closed,2.65,0.75,2.75,2.65,0.75,Closed,0,0
+4069,CORPUS CHRISTI 17 0,South,Corpus Christi,1,Closed,4.24,1.2,4.41,4.24,1.2,Closed,0,0
+4071,BROWNSVILLE 2 1,South,McAllen,1,Closed,281.45,79.75,292.53,281.45,79.75,Closed,0,0
+4072,CORPUS CHRISTI 10 0,South,Corpus Christi,1,Closed,51.71,14.65,53.74,51.71,14.65,Closed,0,0
+4078,CORPUS CHRISTI 8 0,South,Corpus Christi,1,Closed,84.07,23.82,87.38,84.07,23.82,Closed,0,0
+4079,MISSION 3 0,South,McAllen,1,Closed,171.21,48.51,177.95,171.21,48.51,Closed,0,0
+4086,RIO HONDO 0,South,McAllen,1,Closed,19.87,5.63,20.65,19.87,5.63,Closed,0,0
+4087,CORPUS CHRISTI 5 0,South,Corpus Christi,1,Closed,2.08,0.59,2.16,2.08,0.59,Closed,0,0
+4088,PHARR 0,South,McAllen,1,Closed,212.52,60.21,220.89,212.52,60.21,Closed,0,0
+4089,SANTA ROSA 1 0,South,McAllen,1,Closed,8.6,2.44,8.94,8.6,2.44,Closed,0,0
+4099,ODEM 0,South,Corpus Christi,1,Closed,15.17,4.3,15.77,15.17,4.3,Closed,0,0
+4100,CORPUS CHRISTI 13 0,South,Corpus Christi,1,Closed,50.6,14.34,52.59,50.6,14.34,Closed,0,0
+4101,LAREDO 3 0,South,Laredo,1,Closed,128.14,36.31,133.18,128.14,36.31,Closed,0,0
+4102,OLMITO 0,South,McAllen,1,Closed,24.17,6.85,25.12,24.17,6.85,Closed,0,0
+4103,EDINBURG 1 0,South,McAllen,1,Closed,189.88,53.8,197.35,189.88,53.8,Closed,0,0
+4106,PORT ISABEL 0,South,McAllen,1,Closed,37.55,10.64,39.03,37.55,10.64,Closed,0,0
+4107,DONNA 0,South,McAllen,1,Closed,118.36,33.54,123.02,118.36,33.54,Closed,0,0
+4108,INGLESIDE 0,South,Corpus Christi,1,Closed,28.34,8.03,29.46,28.34,8.03,Closed,0,0
+4109,CORPUS CHRISTI 11 0,South,Corpus Christi,1,Closed,110.86,31.41,115.22,110.86,31.41,Closed,0,0
+4110,LOS FRESNOS 0,South,McAllen,1,Closed,57.35,16.25,59.6,57.35,16.25,Closed,0,0
+4111,HARLINGEN 2 0,South,McAllen,2,Closed,102.33,28.99,106.36,102.33,28.99,Closed,0,0
+4111,HARLINGEN 2 0,South,McAllen,1,Closed,1.74,0.49,1.81,1.74,0.49,Closed,0,0
+4112,RIVIERA 0,South,Corpus Christi,1,Closed,5.59,1.58,5.81,5.59,1.58,Closed,0,0
+4117,JOURDANTON 0,South,Laredo,1,Closed,18.89,5.35,19.63,18.89,5.35,Closed,0,0
+4118,GEORGE WEST 0,South,Corpus Christi,1,Closed,13.88,3.93,14.43,13.88,3.93,Closed,0,0
+4119,ROMA 0,South,McAllen,2,Closed,54.38,15.41,56.52,54.38,15.41,Closed,0,0
+4119,ROMA 0,South,McAllen,1,Closed,1.19,0.34,1.23,1.19,0.34,Closed,0,0
+4120,CORPUS CHRISTI 12 0,South,Corpus Christi,1,Closed,46.52,13.18,48.36,46.52,13.18,Closed,0,0
+4121,SANTA MARIA 0,South,McAllen,1,Closed,4.11,1.16,4.27,4.11,1.16,Closed,0,0
+4122,MCALLEN 1 0,South,McAllen,1,Closed,146.11,41.4,151.86,146.11,41.4,Closed,0,0
+4123,CORPUS CHRISTI 7 0,South,Corpus Christi,1,Closed,90.5,25.64,94.06,90.5,25.64,Closed,0,0
+4124,FALFURRIAS 0,South,McAllen,2,Closed,21.24,6.02,22.08,21.24,6.02,Closed,0,0
+4124,FALFURRIAS 0,South,McAllen,1,Closed,3.14,0.89,3.26,3.14,0.89,Closed,0,0
+4125,PETTUS 0,South,Corpus Christi,1,Closed,4.5,1.28,4.68,4.5,1.28,Closed,0,0
+4126,BROWNSVILLE 3 0,South,McAllen,1,Closed,127.38,36.09,132.39,127.38,36.09,Closed,0,0
+4127,ALICE 0,South,Corpus Christi,1,Closed,87.29,24.73,90.72,87.29,24.73,Closed,0,0
+4128,RIO GRANDE CITY 0,South,McAllen,2,Closed,121.36,34.39,126.14,121.36,34.39,Closed,0,0
+4128,RIO GRANDE CITY 0,South,McAllen,1,Closed,2.15,0.61,2.23,2.15,0.61,Closed,0,0
+4129,PREMONT 0,South,Laredo,4,Closed,10.06,2.85,10.45,10.06,2.85,Closed,0,0
+4129,PREMONT 0,South,Laredo,1,Closed,5.28,1.5,5.49,5.28,1.5,Closed,0,0
+4129,PREMONT 0,South,Laredo,2,Closed,1.66,0.47,1.73,1.66,0.47,Closed,0,0
+4129,PREMONT 0,South,Laredo,3,Closed,1.52,0.43,1.57,1.52,0.43,Closed,0,0
+4130,FREER 0,South,Laredo,1,Closed,9.48,2.69,9.86,9.48,2.69,Closed,0,0
+4132,PEARSALL 1,South,Laredo,1,Closed,33.09,9.38,34.4,33.09,9.38,Closed,0,0
+4139,SANDIA 0,South,Corpus Christi,1,Closed,10.62,3.01,11.03,10.62,3.01,Closed,0,0
+4143,DILLEY 0,South,Laredo,1,Closed,14.36,4.07,14.93,14.36,4.07,Closed,0,0
+4144,ORANGE GROVE 0,South,Corpus Christi,1,Closed,16.36,4.63,17,16.36,4.63,Closed,0,0
+4145,PORTLAND 0,South,Corpus Christi,1,Closed,49.86,14.13,51.82,49.86,14.13,Closed,0,0
+4147,LAREDO 4 1,South,Laredo,1,Closed,193.64,54.87,201.27,193.64,54.87,Closed,0,0
+4148,THREE RIVERS 0,South,Laredo,3,Closed,12.74,3.61,13.25,12.74,3.61,Closed,0,0
+4148,THREE RIVERS 0,South,Laredo,1,Closed,1.52,0.43,1.57,1.52,0.43,Closed,0,0
+4148,THREE RIVERS 0,South,Laredo,2,Closed,0.38,0.11,0.39,0.38,0.11,Closed,0,0
+4149,ROCKPORT 0,South,Corpus Christi,2,Closed,60.22,17.06,62.59,60.22,17.06,Closed,0,0
+4149,ROCKPORT 0,South,Corpus Christi,1,Closed,1.14,0.32,1.18,1.14,0.32,Closed,0,0
+4150,CORPUS CHRISTI 15 0,South,Corpus Christi,1,Closed,12.53,3.55,13.02,12.53,3.55,Closed,0,0
+4154,PENITAS 0,South,McAllen,1,Closed,26.32,7.46,27.36,26.32,7.46,Closed,0,0
+4155,SULLIVAN CITY 0,South,McAllen,2,Closed,18.25,5.17,18.96,18.25,5.17,Closed,0,0
+4155,SULLIVAN CITY 0,South,McAllen,1,Closed,1.21,0.34,1.25,1.21,0.34,Closed,0,0
+4156,CORPUS CHRISTI 6 0,South,Corpus Christi,1,Closed,108.01,30.6,112.26,108.01,30.6,Closed,0,0
+4157,MISSION 2 0,South,McAllen,1,Closed,104.67,29.66,108.79,104.67,29.66,Closed,0,0
+4159,CORPUS CHRISTI 1 1,South,Corpus Christi,1,Closed,36.18,10.25,37.61,36.18,10.25,Closed,0,0
+4164,GRULLA 0,South,McAllen,1,Closed,2.03,0.57,2.1,2.03,0.57,Closed,0,0
+4167,HARGILL 0,South,McAllen,2,Closed,2.97,0.84,3.09,2.97,0.84,Closed,0,0
+4167,HARGILL 0,South,McAllen,1,Closed,2.34,0.66,2.43,2.34,0.66,Closed,0,0
+4168,CORPUS CHRISTI 14 0,South,Corpus Christi,1,Closed,8.87,2.51,9.21,8.87,2.51,Closed,0,0
+4169,MATHIS 0,South,Corpus Christi,1,Closed,27.68,7.84,28.77,27.68,7.84,Closed,0,0
+4170,ARANSAS PASS 0,South,Corpus Christi,1,Closed,35.86,10.16,37.27,35.86,10.16,Closed,0,0
+4171,SAN BENITO 0,South,McAllen,1,Closed,167.63,47.5,174.23,167.63,47.5,Closed,0,0
+4172,PLEASANTON 0,South,Laredo,1,Closed,42.31,11.99,43.97,42.31,11.99,Closed,0,0
+4173,REFUGIO 0,South,Corpus Christi,2,Closed,11.46,3.25,11.91,11.46,3.25,Closed,0,0
+4173,REFUGIO 0,South,Corpus Christi,1,Closed,0.59,0.17,0.61,0.59,0.17,Closed,0,0
+4174,LYTLE 0,South,Laredo,1,Closed,19.16,5.43,19.92,19.16,5.43,Closed,0,0
+4175,LAREDO 2 0,South,Laredo,1,Closed,1.94,0.55,2.02,1.94,0.55,Closed,0,0
+4175,LAREDO 2 0,South,Laredo,2,Closed,1.21,0.34,1.26,1.21,0.34,Closed,0,0
+4178,GOLIAD 0,South,Corpus Christi,2,Closed,16.38,4.64,17.02,16.38,4.64,Closed,0,0
+4178,GOLIAD 0,South,Corpus Christi,1,Closed,1.08,0.31,1.12,1.08,0.31,Closed,0,0
+4179,SAN DIEGO 0,South,Laredo,1,Closed,19.92,5.64,20.7,19.92,5.64,Closed,0,0
+4180,PORT ARANSAS 0,South,Corpus Christi,1,Closed,10.76,3.05,11.18,10.76,3.05,Closed,0,0
+4182,TAFT 1 1,South,Corpus Christi,1,Closed,22.68,6.43,23.57,22.68,6.43,Closed,0,0
+4185,ZAPATA 0,South,McAllen,1,Closed,37.84,10.72,39.33,37.84,10.72,Closed,0,0
+4186,SANTA ROSA 2 0,South,McAllen,2,Closed,18.97,5.38,19.72,18.97,5.38,Closed,0,0
+4186,SANTA ROSA 2 0,South,McAllen,1,Closed,18.09,5.12,18.8,18.09,5.12,Closed,0,0
+4187,COTULLA 0,South,Laredo,1,Closed,15.06,4.27,15.65,15.06,4.27,Closed,0,0
+4188,QUEMADO 0,South,Laredo,1,Closed,2.97,0.84,3.08,2.97,0.84,Closed,0,0
+4189,CARRIZO SPRINGS 0,South,Laredo,3,Closed,23.49,6.65,24.41,23.49,6.65,Closed,0,0
+4189,CARRIZO SPRINGS 0,South,Laredo,2,Closed,4.04,1.14,4.2,4.04,1.14,Closed,0,0
+4189,CARRIZO SPRINGS 0,South,Laredo,1,Closed,2.36,0.67,2.45,2.36,0.67,Closed,0,0
+4190,LAREDO 5 0,South,Laredo,1,Closed,132.46,37.53,137.67,132.46,37.53,Closed,0,0
+4191,RAYMONDVILLE 0,South,McAllen,2,Closed,44.89,12.72,46.66,44.89,12.72,Closed,0,0
+4191,RAYMONDVILLE 0,South,McAllen,1,Closed,1.54,0.44,1.61,1.54,0.44,Closed,0,0
+4193,BROWNSVILLE 1 1,South,McAllen,1,Closed,178.22,50.5,185.24,178.22,50.5,Closed,0,0
+5003,GARLAND 5 0,North Central,Dallas,1,Closed,113.64,32.2,118.12,113.64,32.2,Closed,0,0
+5004,KERENS 0,North Central,Corsicana,2,Closed,9.87,2.8,10.26,9.87,2.8,Closed,0,0
+5004,KERENS 0,North Central,Corsicana,1,Closed,1.81,0.51,1.89,1.81,0.51,Closed,0,0
+5005,LIPAN 0,North Central,Glen Rose,1,Closed,8.95,2.53,9.3,8.95,2.53,Closed,0,0
+5006,DALLAS 24 0,North Central,Dallas,1,Closed,100.19,28.39,104.13,100.19,28.39,Closed,0,0
+5007,DENTON 4 0,North Central,Fort Worth,1,Closed,72.05,20.42,74.89,72.05,20.42,Closed,0,0
+5008,ALBANY 2 0,North Central,Central Texas,1,Closed,7.6,2.15,7.9,7.6,2.15,Closed,0,0
+5009,DALLAS 21 0,North Central,Dallas,1,Closed,62.68,17.76,65.14,62.68,17.76,Closed,0,0
+5010,PLANO 2 0,North Central,Dallas,1,Closed,133.87,37.93,139.14,133.87,37.93,Closed,0,0
+5011,THORNTON 0,North Central,Waco,1,Closed,7.64,2.17,7.94,7.64,2.17,Closed,0,0
+5012,DENTON 5 0,North Central,Fort Worth,1,Closed,81.32,23.04,84.52,81.32,23.04,Closed,0,0
+5013,EARLY 0,North Central,Central Texas,1,Closed,19.34,5.48,20.1,19.34,5.48,Closed,0,0
+5014,DECATUR 0,North Central,Fort Worth,1,Closed,46.76,13.25,48.6,46.76,13.25,Closed,0,0
+5016,KELLER 2 1,North Central,Fort Worth,1,Closed,181.16,51.33,188.3,181.16,51.33,Closed,0,0
+5017,PONDER 0,North Central,Fort Worth,1,Closed,13.85,3.93,14.4,13.85,3.93,Closed,0,0
+5022,ALEDO 1 1,North Central,Fort Worth,1,Closed,140.24,39.73,145.76,140.24,39.73,Closed,0,0
+5024,GATESVILLE 4 0,North Central,Waco,1,Closed,50.92,14.43,52.93,50.92,14.43,Closed,0,0
+5025,CLEBURNE 2 0,North Central,Glen Rose,1,Closed,74.46,21.1,77.39,74.46,21.1,Closed,0,0
+5026,FORT WORTH 14 0,North Central,Fort Worth,1,Closed,71.11,20.15,73.91,71.11,20.15,Closed,0,0
+5027,FORT WORTH 23 0,North Central,Fort Worth,1,Closed,74.13,21,77.04,74.13,21,Closed,0,0
+5028,FORT WORTH 1 0,North Central,Fort Worth,1,Closed,9.35,2.65,9.71,9.35,2.65,Closed,0,0
+5029,TROY 0,North Central,Waco,1,Closed,12.77,3.62,13.28,12.77,3.62,Closed,0,0
+5030,SPRINGTOWN 0,North Central,Jacksboro,1,Closed,79.61,22.55,82.74,79.61,22.55,Closed,0,0
+5031,PRINCETON 0,North Central,Dallas,1,Closed,42.36,12,44.03,42.36,12,Closed,0,0
+5032,DALLAS 27 0,North Central,Dallas,1,Closed,47.16,13.36,49.02,47.16,13.36,Closed,0,0
+5034,DALLAS 1 1,North Central,Dallas,1,Closed,55.35,15.68,57.53,55.35,15.68,Closed,0,0
+5043,ROYSE CITY 0,North Central,Dallas,1,Closed,68.1,19.29,70.78,68.1,19.29,Closed,0,0
+5044,BOYD 0,North Central,Fort Worth,1,Closed,17.5,4.96,18.18,17.5,4.96,Closed,0,0
+5046,STEPHENVILLE 1,North Central,Glen Rose,1,Closed,77.11,21.85,80.14,77.11,21.85,Closed,0,0
+5048,MANSFIELD 1,North Central,Fort Worth,2,Closed,184.08,52.16,191.33,184.08,52.16,Closed,0,0
+5048,MANSFIELD 1,North Central,Fort Worth,1,Closed,0.46,0.13,0.47,0.46,0.13,Closed,0,0
+5050,GREENVILLE 1 1,North Central,Dallas,1,Closed,64.6,18.3,67.15,64.6,18.3,Closed,0,0
+5053,PLANO 4 0,North Central,Dallas,1,Closed,152.78,43.29,158.79,152.78,43.29,Closed,0,0
+5054,GROESBECK 0,North Central,Corsicana,1,Closed,21.17,6,22,21.17,6,Closed,0,0
+5056,GRAHAM 1,North Central,Jacksboro,1,Closed,40.4,11.45,41.99,40.4,11.45,Closed,0,0
+5062,MABANK 2 3,North Central,Corsicana,1,Closed,43.74,12.39,45.46,43.74,12.39,Closed,0,0
+5064,ARLINGTON 1 1,North Central,Fort Worth,1,Closed,77.07,21.84,80.1,77.07,21.84,Closed,0,0
+5070,DALLAS 41 0,North Central,Fort Worth,1,Closed,74.65,21.15,77.59,74.65,21.15,Closed,0,0
+5071,WACO 3 0,North Central,Waco,2,Closed,50.09,14.19,52.06,50.09,14.19,Closed,0,0
+5071,WACO 3 0,North Central,Waco,1,Closed,24.02,6.81,24.97,24.02,6.81,Closed,0,0
+5072,DALLAS 19 0,North Central,Dallas,1,Closed,72.34,20.5,75.18,72.34,20.5,Closed,0,0
+5073,BANGS 0,North Central,Central Texas,1,Closed,8.83,2.5,9.18,8.83,2.5,Closed,0,0
+5074,PROSPER 0,North Central,Dallas,1,Closed,31.78,9,33.03,31.78,9,Closed,0,0
+5075,EVANT 0,North Central,Glen Rose,2,Closed,3.19,0.9,3.31,3.19,0.9,Closed,0,0
+5075,EVANT 0,North Central,Glen Rose,1,Closed,0.77,0.22,0.8,0.77,0.22,Closed,0,0
+5077,TERRELL 1 1,North Central,Dallas,1,Closed,18.49,5.24,19.22,18.49,5.24,Closed,0,0
+5078,AUBREY 0,North Central,Fort Worth,1,Closed,66.42,18.82,69.04,66.42,18.82,Closed,0,0
+5079,WACO 4 0,North Central,Waco,1,Closed,38.19,10.82,39.69,38.19,10.82,Closed,0,0
+5080,LORENA 0,North Central,Waco,3,Closed,23.49,6.66,24.42,23.49,6.66,Closed,0,0
+5080,LORENA 0,North Central,Waco,1,Closed,8.6,2.44,8.94,8.6,2.44,Closed,0,0
+5080,LORENA 0,North Central,Waco,2,Closed,5.52,1.56,5.74,5.52,1.56,Closed,0,0
+5081,FORT HOOD 0,North Central,Waco,1,Closed,89.83,25.45,93.37,89.83,25.45,Closed,0,0
+5082,ARLINGTON 5 0,North Central,Fort Worth,1,Closed,102.22,28.96,106.24,102.22,28.96,Closed,0,0
+5084,MCKINNEY 3 1,North Central,Dallas,1,Closed,224.2,63.52,233.03,224.2,63.52,Closed,0,0
+5085,DALLAS 38 0,North Central,Fort Worth,1,Closed,51.3,14.54,53.32,51.3,14.54,Closed,0,0
+5086,ARLINGTON 9 0,North Central,Fort Worth,1,Closed,92.04,26.08,95.66,92.04,26.08,Closed,0,0
+5087,MILFORD 0,North Central,Corsicana,1,Closed,4.13,1.17,4.29,4.13,1.17,Closed,0,0
+5090,DALLAS 15 0,North Central,Dallas,1,Closed,108.74,30.81,113.02,108.74,30.81,Closed,0,0
+5091,FROST 0,North Central,Corsicana,1,Closed,5.33,1.51,5.54,5.33,1.51,Closed,0,0
+5092,GRANDVIEW 0,North Central,Corsicana,1,Closed,17.62,4.99,18.32,17.62,4.99,Closed,0,0
+5093,HASLET 0,North Central,Fort Worth,1,Closed,47.98,13.6,49.87,47.98,13.6,Closed,0,0
+5094,BARDWELL 0,North Central,Corsicana,1,Closed,2.66,0.75,2.77,2.66,0.75,Closed,0,0
+5095,LAKE DALLAS 0,North Central,Fort Worth,1,Closed,32.24,9.14,33.51,32.24,9.14,Closed,0,0
+5096,PLANO 1 0,North Central,Dallas,1,Closed,61.74,17.49,64.17,61.74,17.49,Closed,0,0
+5097,EULESS 2 0,North Central,Fort Worth,1,Closed,82.57,23.4,85.82,82.57,23.4,Closed,0,0
+5098,FORT WORTH 24 0,North Central,Fort Worth,2,Closed,89.17,25.26,92.68,89.17,25.26,Closed,0,0
+5098,FORT WORTH 24 0,North Central,Fort Worth,1,Closed,67.06,19,69.7,67.06,19,Closed,0,0
+5099,FLOWER MOUND 2 0,North Central,Fort Worth,1,Closed,67.63,19.16,70.3,67.63,19.16,Closed,0,0
+5100,DALLAS 11 0,North Central,Dallas,1,Closed,22.45,6.36,23.33,22.45,6.36,Closed,0,0
+5101,COMANCHE 0,North Central,Central Texas,1,Closed,22.63,6.41,23.53,22.63,6.41,Closed,0,0
+5103,RICHARDSON 2 1,North Central,Dallas,1,Closed,132.03,37.41,137.22,132.03,37.41,Closed,0,0
+5103,RICHARDSON 2 1,North Central,Dallas,2,Closed,102.47,29.03,106.5,102.47,29.03,Closed,0,0
+5104,FORT WORTH 8 0,North Central,Fort Worth,1,Closed,79.02,22.39,82.13,79.02,22.39,Closed,0,0
+5105,IRVING 1 0,North Central,Fort Worth,1,Closed,105.27,29.83,109.41,105.27,29.83,Closed,0,0
+5108,DALLAS 44 0,North Central,Fort Worth,1,Closed,40.12,11.37,41.7,40.12,11.37,Closed,0,0
+5109,LANCASTER 1 0,North Central,Dallas,1,Closed,53.98,15.29,56.1,53.98,15.29,Closed,0,0
+5110,PALO PINTO 2 0,North Central,Jacksboro,1,Closed,3.44,0.97,3.58,3.44,0.97,Closed,0,0
+5111,ADDISON 0,North Central,Dallas,1,Closed,37.24,10.55,38.71,37.24,10.55,Closed,0,0
+5112,HICO 0,North Central,Glen Rose,1,Closed,14.25,4.04,14.81,14.25,4.04,Closed,0,0
+5113,KRUM 0,North Central,Fort Worth,1,Closed,21.58,6.11,22.43,21.58,6.11,Closed,0,0
+5114,KAUFMAN 0,North Central,Dallas,1,Closed,56.95,16.13,59.19,56.95,16.13,Closed,0,0
+5115,CADDO MILLS 0,North Central,Dallas,1,Closed,17.73,5.02,18.43,17.73,5.02,Closed,0,0
+5116,PLANO 7 0,North Central,Dallas,1,Closed,141.56,40.11,147.13,141.56,40.11,Closed,0,0
+5117,FORT WORTH 5 0,North Central,Fort Worth,1,Closed,128.28,36.35,133.33,128.28,36.35,Closed,0,0
+5118,BAIRD 0,North Central,Central Texas,1,Closed,8.65,2.45,8.99,8.65,2.45,Closed,0,0
+5119,PERRIN 0,North Central,Jacksboro,1,Closed,4.4,1.25,4.57,4.4,1.25,Closed,0,0
+5121,BROWNWOOD 1,North Central,Central Texas,1,Closed,76.66,21.72,79.67,76.66,21.72,Closed,0,0
+5122,DALLAS 6 0,North Central,Dallas,1,Closed,65,18.42,67.55,65,18.42,Closed,0,0
+5124,MARLIN 1,North Central,Waco,1,Closed,26.69,7.56,27.74,26.69,7.56,Closed,0,0
+5125,ARLINGTON 6 0,North Central,Fort Worth,1,Closed,67.92,19.24,70.59,67.92,19.24,Closed,0,0
+5126,DALLAS 8 0,North Central,Dallas,1,Closed,166.22,47.1,172.76,166.22,47.1,Closed,0,0
+5126,DALLAS 8 0,North Central,Dallas,2,Closed,6.99,1.98,7.27,6.99,1.98,Closed,0,0
+5127,JONESBORO 0,North Central,Glen Rose,2,Closed,2.28,0.65,2.37,2.28,0.65,Closed,0,0
+5127,JONESBORO 0,North Central,Glen Rose,1,Closed,1.61,0.46,1.67,1.61,0.46,Closed,0,0
+5128,DALLAS 33 0,North Central,Dallas,1,Closed,90.51,25.65,94.08,90.51,25.65,Closed,0,0
+5129,GOLDTHWAITE 2 0,North Central,Glen Rose,2,Closed,10.65,3.02,11.07,10.65,3.02,Closed,0,0
+5129,GOLDTHWAITE 2 0,North Central,Glen Rose,1,Closed,4.24,1.2,4.41,4.24,1.2,Closed,0,0
+5130,PLANO 5 0,North Central,Dallas,1,Closed,99.79,28.27,103.71,99.79,28.27,Closed,0,0
+5132,BELTON 1,North Central,Waco,1,Closed,102.52,29.05,106.55,102.52,29.05,Closed,0,0
+5133,TOLAR 0,North Central,Glen Rose,1,Closed,12.16,3.45,12.64,12.16,3.45,Closed,0,0
+5134,BRECKENRIDGE 0,North Central,Central Texas,1,Closed,26.98,7.64,28.04,26.98,7.64,Closed,0,0
+5135,EASTLAND 0,North Central,Central Texas,2,Closed,17.88,5.07,18.58,17.88,5.07,Closed,0,0
+5135,EASTLAND 0,North Central,Central Texas,1,Closed,9.71,2.75,10.1,9.71,2.75,Closed,0,0
+5136,COOPER 0,North Central,Dallas,1,Closed,11.94,3.38,12.41,11.94,3.38,Closed,0,0
+5138,WACO 1 1,North Central,Waco,1,Closed,105.04,29.76,109.18,105.04,29.76,Closed,0,0
+5139,DALLAS 42 0,North Central,Dallas,1,Closed,86.38,24.47,89.78,86.38,24.47,Closed,0,0
+5140,GATESVILLE 1 0,North Central,Waco,1,Closed,8.65,2.45,8.99,8.65,2.45,Closed,0,0
+5141,ANNA 0,North Central,Dallas,2,Closed,35.49,10.06,36.89,35.49,10.06,Closed,0,0
+5141,ANNA 0,North Central,Dallas,1,Closed,9.89,2.8,10.28,9.89,2.8,Closed,0,0
+5142,MOODY 0,North Central,Waco,1,Closed,15.53,4.4,16.15,15.53,4.4,Closed,0,0
+5143,FORT WORTH 2 0,North Central,Fort Worth,1,Closed,45.85,12.99,47.65,45.85,12.99,Closed,0,0
+5143,FORT WORTH 2 0,North Central,Fort Worth,2,Closed,41.6,11.79,43.24,41.6,11.79,Closed,0,0
+5144,WACO 6 0,North Central,Waco,1,Closed,73.43,20.8,76.32,73.43,20.8,Closed,0,0
+5145,GRAND PRAIRIE 1 0,North Central,Fort Worth,1,Closed,117.86,33.39,122.49,117.86,33.39,Closed,0,0
+5146,ROWLETT 2 0,North Central,Dallas,1,Closed,90.75,25.71,94.33,90.75,25.71,Closed,0,0
+5147,PLANO 6 0,North Central,Dallas,1,Closed,108.12,30.63,112.37,108.12,30.63,Closed,0,0
+5148,IRVING 5 0,North Central,Fort Worth,1,Closed,83.41,23.63,86.69,83.41,23.63,Closed,0,0
+5149,DALLAS 7 0,North Central,Dallas,1,Closed,91.45,25.91,95.05,91.45,25.91,Closed,0,0
+5150,BRYSON 2 0,North Central,Jacksboro,3,Closed,2.41,0.68,2.51,2.41,0.68,Closed,0,0
+5150,BRYSON 2 0,North Central,Jacksboro,2,Closed,1.26,0.36,1.31,1.26,0.36,Closed,0,0
+5150,BRYSON 2 0,North Central,Jacksboro,1,Closed,0.44,0.12,0.46,0.44,0.12,Closed,0,0
+5151,MORGAN 0,North Central,Glen Rose,1,Closed,5.33,1.51,5.54,5.33,1.51,Closed,0,0
+5152,SACHSE 0,North Central,Dallas,1,Closed,60.98,17.28,63.38,60.98,17.28,Closed,0,0
+5153,PARADISE 0,North Central,Jacksboro,1,Closed,15.98,4.53,16.61,15.98,4.53,Closed,0,0
+5154,RIO VISTA 0,North Central,Glen Rose,2,Closed,10.78,3.05,11.2,10.78,3.05,Closed,0,0
+5154,RIO VISTA 0,North Central,Glen Rose,1,Closed,4.8,1.36,4.99,4.8,1.36,Closed,0,0
+5155,STRAWN 0,North Central,Jacksboro,1,Closed,3.71,1.05,3.85,3.71,1.05,Closed,0,0
+5156,May-00,North Central,Central Texas,1,Closed,6.22,1.76,6.46,6.22,1.76,Closed,0,0
+5157,DESOTO 0,North Central,Fort Worth,1,Closed,146.63,41.55,152.4,146.63,41.55,Closed,0,0
+5158,MESQUITE 2 0,North Central,Dallas,1,Closed,168.19,47.66,174.82,168.19,47.66,Closed,0,0
+5159,ROSEBUD 0,North Central,Waco,1,Closed,7.72,2.19,8.02,7.72,2.19,Closed,0,0
+5159,ROSEBUD 0,North Central,Waco,2,Closed,6.83,1.93,7.1,6.83,1.93,Closed,0,0
+5160,DENTON 2 0,North Central,Fort Worth,1,Closed,59.35,16.81,61.68,59.35,16.81,Closed,0,0
+5161,DALLAS 4 0,North Central,Dallas,1,Closed,199.65,56.57,207.51,199.65,56.57,Closed,0,0
+5162,AXTELL 0,North Central,Corsicana,1,Closed,6.69,1.9,6.96,6.69,1.9,Closed,0,0
+5163,NOLANVILLE 0,North Central,Waco,1,Closed,15.15,4.29,15.75,15.15,4.29,Closed,0,0
+5165,DENTON 1 1,North Central,Fort Worth,1,Closed,55.53,15.73,57.72,55.53,15.73,Closed,0,0
+5168,DALLAS 39 0,North Central,Dallas,1,Closed,125.67,35.61,130.62,125.67,35.61,Closed,0,0
+5171,MERTENS 0,North Central,Corsicana,1,Closed,1.06,0.3,1.11,1.06,0.3,Closed,0,0
+5172,WEATHERFORD 1 0,North Central,Jacksboro,1,Closed,74.24,21.03,77.16,74.24,21.03,Closed,0,0
+5173,PLANO 3 0,North Central,Dallas,1,Closed,136.36,38.63,141.72,136.36,38.63,Closed,0,0
+5174,MALONE 0,North Central,Corsicana,1,Closed,2.76,0.78,2.87,2.76,0.78,Closed,0,0
+5174,MALONE 0,North Central,Corsicana,2,Closed,1.57,0.44,1.63,1.57,0.44,Closed,0,0
+5175,DENTON 3 0,North Central,Fort Worth,1,Closed,118.67,33.62,123.34,118.67,33.62,Closed,0,0
+5176,GRAFORD 0,North Central,Jacksboro,1,Closed,7.3,2.07,7.59,7.3,2.07,Closed,0,0
+5177,ARLINGTON 8 0,North Central,Fort Worth,1,Closed,91.38,25.89,94.98,91.38,25.89,Closed,0,0
+5178,ROCKWALL 1 0,North Central,Dallas,1,Closed,83.96,23.79,87.26,83.96,23.79,Closed,0,0
+5180,CORSICANA 2 1,North Central,Corsicana,2,Closed,84.4,23.91,87.72,84.4,23.91,Closed,0,0
+5180,CORSICANA 2 1,North Central,Corsicana,1,Closed,3.97,1.12,4.12,3.97,1.12,Closed,0,0
+5181,GARLAND 2 0,North Central,Dallas,1,Closed,178.22,50.5,185.23,178.22,50.5,Closed,0,0
+5182,GATESVILLE 2 0,North Central,Waco,1,Closed,3.82,1.08,3.97,3.82,1.08,Closed,0,0
+5183,CARROLLTON 3 0,North Central,Dallas,1,Closed,139.09,39.41,144.57,139.09,39.41,Closed,0,0
+5184,FORT WORTH 26 0,North Central,Fort Worth,2,Closed,74.22,21.03,77.14,74.22,21.03,Closed,0,0
+5184,FORT WORTH 26 0,North Central,Fort Worth,1,Closed,6.01,1.7,6.25,6.01,1.7,Closed,0,0
+5185,RHOME 0,North Central,Fort Worth,1,Closed,25.72,7.29,26.73,25.72,7.29,Closed,0,0
+5186,VENUS 0,North Central,Fort Worth,1,Closed,24.98,7.08,25.96,24.98,7.08,Closed,0,0
+5187,OLNEY 2 0,North Central,Jacksboro,1,Closed,15.41,4.37,16.01,15.41,4.37,Closed,0,0
+5188,CARROLLTON 1 0,North Central,Dallas,1,Closed,64.82,18.37,67.37,64.82,18.37,Closed,0,0
+5189,DALLAS 20 0,North Central,Dallas,1,Closed,78.84,22.34,81.94,78.84,22.34,Closed,0,0
+5190,GORDON 0,North Central,Jacksboro,1,Closed,3.38,0.96,3.51,3.38,0.96,Closed,0,0
+5191,MERIDIAN 0,North Central,Glen Rose,1,Closed,7.58,2.15,7.88,7.58,2.15,Closed,0,0
+5193,KILLEEN 4 1,North Central,Waco,2,Closed,133.47,37.82,138.72,133.47,37.82,Closed,0,0
+5193,KILLEEN 4 1,North Central,Waco,1,Closed,1.3,0.37,1.35,1.3,0.37,Closed,0,0
+5194,DUNCANVILLE 1 0,North Central,Fort Worth,1,Closed,59.01,16.72,61.33,59.01,16.72,Closed,0,0
+5195,ARGYLE 0,North Central,Fort Worth,1,Closed,55.26,15.66,57.43,55.26,15.66,Closed,0,0
+5199,FORT WORTH 12 0,North Central,Fort Worth,1,Closed,24.33,6.89,25.29,24.33,6.89,Closed,0,0
+5200,MINERAL WELLS 0,North Central,Jacksboro,1,Closed,66.35,18.8,68.96,66.35,18.8,Closed,0,0
+5201,COOLIDGE 0,North Central,Corsicana,1,Closed,4.81,1.36,5,4.81,1.36,Closed,0,0
+5202,RICE 0,North Central,Corsicana,1,Closed,8.64,2.45,8.98,8.64,2.45,Closed,0,0
+5203,DALLAS 35 0,North Central,Dallas,1,Closed,147.01,41.65,152.8,147.01,41.65,Closed,0,0
+5209,WALNUT SPRINGS 0,North Central,Glen Rose,1,Closed,3.59,1.02,3.73,3.59,1.02,Closed,0,0
+5210,BEDFORD 2 0,North Central,Fort Worth,1,Closed,39.64,11.23,41.2,39.64,11.23,Closed,0,0
+5211,HUBBARD 0,North Central,Corsicana,1,Closed,6.91,1.96,7.18,6.91,1.96,Closed,0,0
+5212,FERRIS 0,North Central,Corsicana,1,Closed,33.89,9.6,35.23,33.89,9.6,Closed,0,0
+5213,GARLAND 4 0,North Central,Dallas,1,Closed,92.1,26.09,95.73,92.1,26.09,Closed,0,0
+5214,DALLAS 32 0,North Central,Dallas,1,Closed,102.1,28.93,106.12,102.1,28.93,Closed,0,0
+5215,PILOT POINT 0,North Central,Dallas,1,Closed,19.98,5.66,20.76,19.98,5.66,Closed,0,0
+5216,FORT WORTH 6 0,North Central,Fort Worth,1,Closed,66.58,18.86,69.2,66.58,18.86,Closed,0,0
+5217,NORTH RICHLAND HILLS 2 0,North Central,Fort Worth,1,Closed,100.33,28.43,104.28,100.33,28.43,Closed,0,0
+5218,JUSTIN 0,North Central,Fort Worth,1,Closed,39.29,11.13,40.84,39.29,11.13,Closed,0,0
+5219,SCURRY 0,North Central,Corsicana,1,Closed,13.35,3.78,13.87,13.35,3.78,Closed,0,0
+5220,SANGER 0,North Central,Fort Worth,1,Closed,40.49,11.47,42.08,40.49,11.47,Closed,0,0
+5221,KILLEEN 1 0,North Central,Waco,1,Closed,91.29,25.87,94.88,91.29,25.87,Closed,0,0
+5222,MABANK 1 0,North Central,Corsicana,1,Closed,19.81,5.61,20.59,19.81,5.61,Closed,0,0
+5222,MABANK 1 0,North Central,Corsicana,2,Closed,13.34,3.78,13.86,13.34,3.78,Closed,0,0
+5223,MEXIA 0,North Central,Corsicana,1,Closed,34.79,9.86,36.16,34.79,9.86,Closed,0,0
+5224,CARROLLTON 2 0,North Central,Dallas,1,Closed,154.87,43.88,160.97,154.87,43.88,Closed,0,0
+5225,NEVADA 0,North Central,Dallas,1,Closed,13.06,3.7,13.57,13.06,3.7,Closed,0,0
+5226,ZEPHYR 0,North Central,Central Texas,1,Closed,5.49,1.56,5.71,5.49,1.56,Closed,0,0
+5227,TERRELL 2 0,North Central,Dallas,1,Closed,70.88,20.08,73.67,70.88,20.08,Closed,0,0
+5228,DALLAS 14 0,North Central,Dallas,1,Closed,81.2,23.01,84.39,81.2,23.01,Closed,0,0
+5229,DALLAS 13 0,North Central,Dallas,1,Closed,43.94,12.45,45.67,43.94,12.45,Closed,0,0
+5230,DALLAS 28 0,North Central,Dallas,1,Closed,66.37,18.81,68.98,66.37,18.81,Closed,0,0
+5231,HAMILTON 0,North Central,Glen Rose,1,Closed,14.93,4.23,15.52,14.93,4.23,Closed,0,0
+5232,ARLINGTON 7 0,North Central,Fort Worth,1,Closed,49.97,14.16,51.94,49.97,14.16,Closed,0,0
+5233,EULESS 1 0,North Central,Fort Worth,1,Closed,98.77,27.99,102.66,98.77,27.99,Closed,0,0
+5234,FRISCO 1 0,North Central,Dallas,1,Closed,142.66,40.42,148.27,142.66,40.42,Closed,0,0
+5235,SALADO 0,North Central,Waco,1,Closed,20.37,5.77,21.17,20.37,5.77,Closed,0,0
+5244,FORT WORTH 22 0,North Central,Fort Worth,1,Closed,65.13,18.45,67.69,65.13,18.45,Closed,0,0
+5245,GRAPEVINE 0,North Central,Fort Worth,1,Closed,138.96,39.37,144.43,138.96,39.37,Closed,0,0
+5246,GLEN ROSE 2 0,North Central,Glen Rose,1,Closed,21.21,6.01,22.05,21.21,6.01,Closed,0,0
+5247,KOPPERL 0,North Central,Glen Rose,1,Closed,3.26,0.92,3.39,3.26,0.92,Closed,0,0
+5248,BEDFORD 1 0,North Central,Fort Worth,1,Closed,101.02,28.62,105,101.02,28.62,Closed,0,0
+5249,FORT WORTH 29 0,North Central,Fort Worth,1,Closed,114.68,32.49,119.2,114.68,32.49,Closed,0,0
+5250,DALLAS 5 0,North Central,Dallas,1,Closed,165.09,46.77,171.59,165.09,46.77,Closed,0,0
+5251,GRAND PRAIRIE 2 0,North Central,Fort Worth,1,Closed,123.12,34.88,127.97,123.12,34.88,Closed,0,0
+5252,DALLAS 22 0,North Central,Dallas,1,Closed,80.8,22.89,83.98,80.8,22.89,Closed,0,0
+5253,FLOWER MOUND 1 0,North Central,Fort Worth,1,Closed,126.68,35.89,131.66,126.68,35.89,Closed,0,0
+5254,ROANOKE 0,North Central,Fort Worth,1,Closed,82.94,23.5,86.21,82.94,23.5,Closed,0,0
+5255,MILLSAP 0,North Central,Jacksboro,1,Closed,9.43,2.67,9.8,9.43,2.67,Closed,0,0
+5256,FORRESTON 0,North Central,Corsicana,1,Closed,1.3,0.37,1.35,1.3,0.37,Closed,0,0
+5257,ITALY 0,North Central,Corsicana,1,Closed,9.9,2.8,10.29,9.9,2.8,Closed,0,0
+5258,FORNEY 0,North Central,Dallas,1,Closed,100.19,28.39,104.13,100.19,28.39,Closed,0,0
+5259,LAVON 0,North Central,Dallas,1,Closed,9.21,2.61,9.57,9.21,2.61,Closed,0,0
+5264,DE LEON 0,North Central,Central Texas,1,Closed,12.13,3.44,12.6,12.13,3.44,Closed,0,0
+5265,KELLER 1 0,North Central,Fort Worth,1,Closed,103.94,29.45,108.03,103.94,29.45,Closed,0,0
+5266,CEDAR HILL 0,North Central,Fort Worth,1,Closed,136.12,38.57,141.48,136.12,38.57,Closed,0,0
+5267,MC GREGOR 0,North Central,Waco,2,Closed,27.92,7.91,29.02,27.92,7.91,Closed,0,0
+5267,MC GREGOR 0,North Central,Waco,3,Closed,8.51,2.41,8.85,8.51,2.41,Closed,0,0
+5267,MC GREGOR 0,North Central,Waco,1,Closed,2.89,0.82,3,2.89,0.82,Closed,0,0
+5268,COMMERCE 0,North Central,Dallas,1,Closed,32.23,9.13,33.5,32.23,9.13,Closed,0,0
+5269,MIDLOTHIAN 2 0,North Central,Fort Worth,1,Closed,86.96,24.64,90.38,86.96,24.64,Closed,0,0
+5270,WEST 0,North Central,Waco,2,Closed,19.36,5.49,20.12,19.36,5.49,Closed,0,0
+5270,WEST 0,North Central,Waco,1,Closed,3.04,0.86,3.16,3.04,0.86,Closed,0,0
+5271,BARTLETT 0,North Central,Waco,1,Closed,10.01,2.83,10.4,10.01,2.83,Closed,0,0
+5272,DALLAS 16 0,North Central,Dallas,2,Closed,10.52,2.98,10.93,10.52,2.98,Closed,0,0
+5272,DALLAS 16 0,North Central,Dallas,1,Closed,8.31,2.35,8.64,8.31,2.35,Closed,0,0
+5273,COPPELL 0,North Central,Fort Worth,1,Closed,116,32.87,120.56,116,32.87,Closed,0,0
+5274,WILMER 0,North Central,Dallas,1,Closed,11.87,3.36,12.34,11.87,3.36,Closed,0,0
+5275,DAWSON 0,North Central,Corsicana,1,Closed,4.75,1.35,4.94,4.75,1.35,Closed,0,0
+5276,MART 0,North Central,Corsicana,1,Closed,10.54,2.99,10.96,10.54,2.99,Closed,0,0
+5277,LITTLE ELM 0,North Central,Dallas,1,Closed,104.8,29.69,108.93,104.8,29.69,Closed,0,0
+5278,TEMPLE 2 0,North Central,Waco,1,Closed,50.69,14.36,52.69,50.69,14.36,Closed,0,0
+5280,TEMPLE 1 1,North Central,Waco,2,Closed,94.63,26.81,98.36,94.63,26.81,Closed,0,0
+5280,TEMPLE 1 1,North Central,Waco,1,Closed,0,0,0,0,0,Closed,0,0
+5284,QUINLAN 0,North Central,Dallas,1,Closed,44.65,12.65,46.4,44.65,12.65,Closed,0,0
+5285,CHICO 0,North Central,Jacksboro,1,Closed,10.15,2.88,10.55,10.15,2.88,Closed,0,0
+5286,DUBLIN 2 0,North Central,Glen Rose,1,Closed,27,7.65,28.06,27,7.65,Closed,0,0
+5286,DUBLIN 2 0,North Central,Glen Rose,2,Closed,2.54,0.72,2.64,2.54,0.72,Closed,0,0
+5286,DUBLIN 2 0,North Central,Glen Rose,3,Closed,0.64,0.18,0.66,0.64,0.18,Closed,0,0
+5287,ARLINGTON 2 0,North Central,Fort Worth,2,Closed,90.81,25.73,94.38,90.81,25.73,Closed,0,0
+5287,ARLINGTON 2 0,North Central,Fort Worth,3,Closed,80.81,22.9,84,80.81,22.9,Closed,0,0
+5287,ARLINGTON 2 0,North Central,Fort Worth,1,Closed,15.16,4.3,15.76,15.16,4.3,Closed,0,0
+5288,WOLFE CITY 0,North Central,Dallas,1,Closed,13.61,3.86,14.15,13.61,3.86,Closed,0,0
+5289,DALLAS 26 0,North Central,Dallas,1,Closed,69.76,19.77,72.51,69.76,19.77,Closed,0,0
+5290,WHITNEY 0,North Central,Glen Rose,1,Closed,30.34,8.6,31.54,30.34,8.6,Closed,0,0
+5291,FORT WORTH 25 0,North Central,Fort Worth,1,Closed,144.17,40.85,149.85,144.17,40.85,Closed,0,0
+5292,FORT WORTH 27 0,North Central,Fort Worth,1,Closed,62.05,17.58,64.49,62.05,17.58,Closed,0,0
+5293,JOSHUA 0,North Central,Glen Rose,1,Closed,62.97,17.84,65.45,62.97,17.84,Closed,0,0
+5294,DALLAS 12 0,North Central,Dallas,1,Closed,111.16,31.49,115.53,111.16,31.49,Closed,0,0
+5296,MCKINNEY 1 1,North Central,Dallas,1,Closed,102.32,28.99,106.35,102.32,28.99,Closed,0,0
+5305,ALLEN 1 1,North Central,Dallas,1,Closed,189.42,53.67,196.88,189.42,53.67,Closed,0,0
+5306,ALEDO 2 0,North Central,Fort Worth,1,Closed,40.81,11.56,42.41,40.81,11.56,Closed,0,0
+5307,THE COLONY 0,North Central,Dallas,1,Closed,143.56,40.67,149.21,143.56,40.67,Closed,0,0
+5308,SUNNYVALE 0,North Central,Dallas,1,Closed,15.35,4.35,15.96,15.35,4.35,Closed,0,0
+5309,DALLAS 10 0,North Central,Dallas,1,Closed,98.85,28.01,102.74,98.85,28.01,Closed,0,0
+5310,FORT WORTH 4 0,North Central,Fort Worth,1,Closed,69.99,19.83,72.75,69.99,19.83,Closed,0,0
+5311,DALLAS 30 0,North Central,Dallas,1,Closed,40.96,11.61,42.57,40.96,11.61,Closed,0,0
+5312,AZLE 0,North Central,Fort Worth,1,Closed,81.81,23.18,85.03,81.81,23.18,Closed,0,0
+5313,HUTCHINS 0,North Central,Dallas,1,Closed,16.12,4.57,16.76,16.12,4.57,Closed,0,0
+5314,VALLEY MILLS 0,North Central,Waco,1,Closed,11.99,3.4,12.46,11.99,3.4,Closed,0,0
+5315,DENTON 6 0,North Central,Fort Worth,1,Closed,31.74,8.99,32.99,31.74,8.99,Closed,0,0
+5316,MESQUITE 3 0,North Central,Dallas,1,Closed,176.19,49.92,183.13,176.19,49.92,Closed,0,0
+5323,DALLAS 2 1,North Central,Fort Worth,1,Closed,219.44,62.17,228.08,219.44,62.17,Closed,0,0
+5327,MOUNT CALM 0,North Central,Corsicana,1,Closed,4.01,1.14,4.17,4.01,1.14,Closed,0,0
+5328,RIESEL 2 0,North Central,Waco,3,Closed,7.98,2.26,8.29,7.98,2.26,Closed,0,0
+5328,RIESEL 2 0,North Central,Waco,2,Closed,5.33,1.51,5.54,5.33,1.51,Closed,0,0
+5328,RIESEL 2 0,North Central,Waco,1,Closed,0.32,0.09,0.34,0.32,0.09,Closed,0,0
+5329,DALLAS 17 0,North Central,Dallas,1,Closed,148.25,42,154.08,148.25,42,Closed,0,0
+5330,ARLINGTON 4 0,North Central,Fort Worth,1,Closed,64.78,18.35,67.33,64.78,18.35,Closed,0,0
+5331,CELINA 0,North Central,Dallas,1,Closed,26.36,7.47,27.39,26.36,7.47,Closed,0,0
+5332,FORT WORTH 16 0,North Central,Fort Worth,1,Closed,85.12,24.12,88.47,85.12,24.12,Closed,0,0
+5333,RED OAK 0,North Central,Corsicana,1,Closed,108.12,30.63,112.38,108.12,30.63,Closed,0,0
+5334,CLYDE 0,North Central,Central Texas,1,Closed,23.95,6.78,24.89,23.95,6.78,Closed,0,0
+5335,IRVING 2 0,North Central,Fort Worth,1,Closed,166.71,47.23,173.27,166.71,47.23,Closed,0,0
+5336,ROWLETT 1 0,North Central,Dallas,1,Closed,74.14,21.01,77.05,74.14,21.01,Closed,0,0
+5337,JACKSBORO 2 0,North Central,Jacksboro,1,Closed,18.78,5.32,19.52,18.78,5.32,Closed,0,0
+5338,GRANBURY 3 0,North Central,Glen Rose,1,Closed,80.26,22.74,83.42,80.26,22.74,Closed,0,0
+5339,SOUTHLAKE 0,North Central,Fort Worth,1,Closed,80.01,22.67,83.16,80.01,22.67,Closed,0,0
+5340,DALLAS 29 0,North Central,Dallas,1,Closed,28.94,8.2,30.08,28.94,8.2,Closed,0,0
+5340,DALLAS 29 0,North Central,Dallas,3,Closed,5,1.42,5.19,5,1.42,Closed,0,0
+5340,DALLAS 29 0,North Central,Dallas,2,Closed,0,0,0,0,0,Closed,0,0
+5341,LEWISVILLE 1 0,North Central,Fort Worth,1,Closed,38.7,10.97,40.22,38.7,10.97,Closed,0,0
+5344,DALLAS 36 0,North Central,Dallas,1,Closed,94.71,26.84,98.44,94.71,26.84,Closed,0,0
+5345,HILLSBORO 0,North Central,Corsicana,1,Closed,33.12,9.38,34.42,33.12,9.38,Closed,0,0
+5346,FORT WORTH 15 0,North Central,Fort Worth,1,Closed,91.3,25.87,94.9,91.3,25.87,Closed,0,0
+5347,CISCO 0,North Central,Central Texas,1,Closed,18.68,5.29,19.42,18.68,5.29,Closed,0,0
+5348,ITASCA 0,North Central,Corsicana,1,Closed,9.25,2.62,9.62,9.25,2.62,Closed,0,0
+5349,LANCASTER 2 0,North Central,Dallas,1,Closed,60.83,17.23,63.22,60.83,17.23,Closed,0,0
+5351,GARLAND 1 1,North Central,Dallas,1,Closed,174.28,49.38,181.14,174.28,49.38,Closed,0,0
+5352,DALLAS 9 0,North Central,Dallas,1,Closed,41.84,11.85,43.49,41.84,11.85,Closed,0,0
+5353,DUNCANVILLE 2 0,North Central,Fort Worth,1,Closed,56.58,16.03,58.81,56.58,16.03,Closed,0,0
+5354,MESQUITE 1 0,North Central,Dallas,1,Closed,77.72,22.02,80.78,77.72,22.02,Closed,0,0
+5355,MAYPEARL 0,North Central,Corsicana,1,Closed,5.65,1.6,5.87,5.65,1.6,Closed,0,0
+5356,GARLAND 3 0,North Central,Dallas,1,Closed,122.43,34.69,127.25,122.43,34.69,Closed,0,0
+5357,ALLEN 2 0,North Central,Dallas,1,Closed,91.04,25.79,94.62,91.04,25.79,Closed,0,0
+5362,BRIDGEPORT 1,North Central,Jacksboro,1,Closed,33.91,9.61,35.24,33.91,9.61,Closed,0,0
+5370,LEWISVILLE 2 0,North Central,Fort Worth,1,Closed,105.99,30.03,110.16,105.99,30.03,Closed,0,0
+5371,SEAGOVILLE 0,North Central,Dallas,1,Closed,69,19.55,71.71,69,19.55,Closed,0,0
+5372,DALLAS 31 0,North Central,Dallas,1,Closed,39.8,11.28,41.36,39.8,11.28,Closed,0,0
+5373,HALTOM CITY 0,North Central,Fort Worth,1,Closed,91.94,26.05,95.55,91.94,26.05,Closed,0,0
+5373,HALTOM CITY 0,North Central,Fort Worth,2,Closed,65.06,18.43,67.62,65.06,18.43,Closed,0,0
+5374,BALCH SPRINGS 0,North Central,Dallas,1,Closed,69.09,19.58,71.81,69.09,19.58,Closed,0,0
+5375,FORT WORTH 13 0,North Central,Fort Worth,1,Closed,62.09,17.59,64.53,62.09,17.59,Closed,0,0
+5376,DALLAS 43 0,North Central,Fort Worth,1,Closed,47.85,13.56,49.73,47.85,13.56,Closed,0,0
+5377,KILLEEN 2 0,North Central,Waco,1,Closed,57.62,16.33,59.89,57.62,16.33,Closed,0,0
+5378,WACO 5 0,North Central,Waco,1,Closed,68.06,19.28,70.74,68.06,19.28,Closed,0,0
+5379,FORT WORTH 9 0,North Central,Fort Worth,1,Closed,164.73,46.67,171.22,164.73,46.67,Closed,0,0
+5381,ENNIS 1,North Central,Corsicana,1,Closed,79.8,22.61,82.94,79.8,22.61,Closed,0,0
+5385,DALLAS 3 1,North Central,Dallas,1,Closed,240.97,68.28,250.46,240.97,68.28,Closed,0,0
+5386,RICHARDSON 1 0,North Central,Dallas,1,Closed,63.55,18,66.05,63.55,18,Closed,0,0
+5387,FORT WORTH 21 0,North Central,Fort Worth,1,Closed,77.75,22.03,80.81,77.75,22.03,Closed,0,0
+5389,WACO 2 1,North Central,Waco,1,Closed,87.47,24.78,90.91,87.47,24.78,Closed,0,0
+5392,ROGERS 2,North Central,Waco,1,Closed,7.49,2.12,7.79,7.49,2.12,Closed,0,0
+5393,CHINA SPRING 0,North Central,Waco,1,Closed,14.92,4.23,15.51,14.92,4.23,Closed,0,0
+5400,MCKINNEY 2 0,North Central,Dallas,1,Closed,108.27,30.68,112.53,108.27,30.68,Closed,0,0
+5402,GRANBURY 2 1,North Central,Glen Rose,1,Closed,65.97,18.69,68.56,65.97,18.69,Closed,0,0
+5407,CLIFTON 2 0,North Central,Glen Rose,1,Closed,21.28,6.03,22.12,21.28,6.03,Closed,0,0
+5408,FARMERSVILLE 0,North Central,Dallas,1,Closed,26.57,7.53,27.62,26.57,7.53,Closed,0,0
+5409,ARLINGTON 10 0,North Central,Fort Worth,1,Closed,92.56,26.22,96.2,92.56,26.22,Closed,0,0
+5411,KILLEEN 3 1,North Central,Waco,1,Closed,120.07,34.02,124.8,120.07,34.02,Closed,0,0
+5412,WYLIE 0,North Central,Dallas,1,Closed,144.59,40.97,150.28,144.59,40.97,Closed,0,0
+5420,FORT WORTH 10 0,North Central,Fort Worth,1,Closed,14.67,4.16,15.25,14.67,4.16,Closed,0,0
+5421,JOSEPHINE 0,North Central,Dallas,1,Closed,2.01,0.57,2.09,2.01,0.57,Closed,0,0
+5422,LEWSIVILLE 0,North Central,Fort Worth,1,Closed,182.95,51.83,190.15,182.95,51.83,Closed,0,0
+5425,DALLAS 40 0,North Central,Dallas,3,Closed,51.53,14.6,53.56,51.53,14.6,Closed,0,0
+5425,DALLAS 40 0,North Central,Dallas,1,Closed,1.4,0.4,1.46,1.4,0.4,Closed,0,0
+5425,DALLAS 40 0,North Central,Dallas,2,Closed,0,0,0,0,0,Closed,0,0
+5426,KEMP 0,North Central,Corsicana,1,Closed,43.86,12.43,45.58,43.86,12.43,Closed,0,0
+5427,WAXAHACHIE 2 0,North Central,Corsicana,1,Closed,25.31,7.17,26.3,25.31,7.17,Closed,0,0
+5428,HURST 0,North Central,Fort Worth,1,Closed,85.26,24.16,88.62,85.26,24.16,Closed,0,0
+5429,FORT WORTH 18 0,North Central,Fort Worth,1,Closed,106.17,30.08,110.35,106.17,30.08,Closed,0,0
+5430,WEATHERFORD 2 0,North Central,Jacksboro,1,Closed,60.59,17.17,62.97,60.59,17.17,Closed,0,0
+5431,ROCKWALL 2 0,North Central,Dallas,1,Closed,84.43,23.92,87.76,84.43,23.92,Closed,0,0
+5432,WEATHERFORD 3 0,North Central,Jacksboro,1,Closed,34.5,9.77,35.85,34.5,9.77,Closed,0,0
+5432,WEATHERFORD 3 0,North Central,Jacksboro,2,Closed,7.52,2.13,7.82,7.52,2.13,Closed,0,0
+5433,FORT WORTH 3 0,North Central,Fort Worth,1,Closed,116.98,33.14,121.58,116.98,33.14,Closed,0,0
+5434,NEWARK 0,North Central,Fort Worth,1,Closed,9.96,2.82,10.35,9.96,2.82,Closed,0,0
+5435,SANTO 0,North Central,Jacksboro,1,Closed,4.5,1.27,4.67,4.5,1.27,Closed,0,0
+5436,DALLAS 18 0,North Central,Dallas,1,Closed,72.89,20.65,75.76,72.89,20.65,Closed,0,0
+5437,ELM MOTT 0,North Central,Waco,1,Closed,9.01,2.55,9.37,9.01,2.55,Closed,0,0
+5438,FORT WORTH 17 0,North Central,Fort Worth,1,Closed,50.24,14.24,52.22,50.24,14.24,Closed,0,0
+5439,WAXAHACHIE 1 0,North Central,Corsicana,1,Closed,113.9,32.27,118.38,113.9,32.27,Closed,0,0
+5440,ARLINGTON 3 0,North Central,Fort Worth,1,Closed,167.12,47.35,173.7,167.12,47.35,Closed,0,0
+5441,FORT WORTH 20 0,North Central,Fort Worth,1,Closed,145.18,41.13,150.9,145.18,41.13,Closed,0,0
+5442,FORT WORTH 7 0,North Central,Fort Worth,1,Closed,43.72,12.39,45.44,43.72,12.39,Closed,0,0
+5443,FORT WORTH 11 0,North Central,Fort Worth,1,Closed,52.34,14.83,54.4,52.34,14.83,Closed,0,0
+5446,HEWITT 0,North Central,Waco,1,Closed,40.66,11.52,42.26,40.66,11.52,Closed,0,0
+5447,ARLINGTON 11 0,North Central,Fort Worth,2,Closed,134.17,38.02,139.45,134.17,38.02,Closed,0,0
+5447,ARLINGTON 11 0,North Central,Fort Worth,1,Closed,20.29,5.75,21.09,20.29,5.75,Closed,0,0
+5449,GRAND PRAIRIE 3 1,North Central,Fort Worth,1,Closed,266.99,75.65,277.5,266.99,75.65,Closed,0,0
+5450,MELISSA 0,North Central,Dallas,1,Closed,17.1,4.84,17.77,17.1,4.84,Closed,0,0
+5452,COPPERAS COVE 1,North Central,Waco,1,Closed,106.6,30.2,110.8,106.6,30.2,Closed,0,0
+5453,CLEBURNE 1 0,North Central,Fort Worth,2,Closed,53.28,15.1,55.37,53.28,15.1,Closed,0,0
+5453,CLEBURNE 1 0,North Central,Fort Worth,1,Closed,14.64,4.15,15.22,14.64,4.15,Closed,0,0
+5454,GREENVILLE 2 0,North Central,Dallas,1,Closed,47.76,13.53,49.64,47.76,13.53,Closed,0,0
+5455,ALVORD 0,North Central,Jacksboro,1,Closed,9.47,2.68,9.84,9.47,2.68,Closed,0,0
+5456,GORMAN 0,North Central,Central Texas,2,Closed,6.9,1.95,7.17,6.9,1.95,Closed,0,0
+5456,GORMAN 0,North Central,Central Texas,1,Closed,5.72,1.62,5.94,5.72,1.62,Closed,0,0
+5457,COLLEYVILLE 0,North Central,Fort Worth,1,Closed,68.24,19.34,70.93,68.24,19.34,Closed,0,0
+5457,COLLEYVILLE 0,North Central,Fort Worth,2,Closed,35.29,10,36.68,35.29,10,Closed,0,0
+5460,HOLLAND 2,North Central,Waco,1,Closed,14.16,4.01,14.71,14.16,4.01,Closed,0,0
+5461,TEMPLE 3 0,North Central,Waco,1,Closed,72.8,20.63,75.67,72.8,20.63,Closed,0,0
+5462,DALLAS 34 0,North Central,Dallas,1,Closed,86.05,24.38,89.43,86.05,24.38,Closed,0,0
+5463,IRVING 4 0,North Central,Fort Worth,1,Closed,160.33,45.43,166.64,160.33,45.43,Closed,0,0
+5465,FRISCO 2 1,North Central,Dallas,1,Closed,218.17,61.81,226.76,218.17,61.81,Closed,0,0
+5466,GATESVILLE 3 0,North Central,Waco,1,Closed,7.44,2.11,7.73,7.44,2.11,Closed,0,0
+5467,DALLAS 25 0,North Central,Dallas,1,Closed,28.23,8,29.34,28.23,8,Closed,0,0
+5468,DALLAS 37 0,North Central,Fort Worth,1,Closed,42.13,11.94,43.79,42.13,11.94,Closed,0,0
+5469,FORT WORTH 19 0,North Central,Fort Worth,1,Closed,8.5,2.41,8.83,8.5,2.41,Closed,0,0
+5470,WOODWAY 0,North Central,Waco,1,Closed,70.52,19.98,73.29,70.52,19.98,Closed,0,0
+5471,MINGUS 0,North Central,Jacksboro,1,Closed,1.44,0.41,1.5,1.44,0.41,Closed,0,0
+5472,THROCKMORTON 0,North Central,Central Texas,1,Closed,4.57,1.29,4.75,4.57,1.29,Closed,0,0
+5473,NEMO 0,North Central,Glen Rose,1,Closed,2.26,0.64,2.34,2.26,0.64,Closed,0,0
+5473,NEMO 0,North Central,Glen Rose,2,Closed,1.77,0.5,1.84,1.77,0.5,Closed,0,0
+5474,ABBOTT 0,North Central,Corsicana,1,Closed,3.11,0.88,3.23,3.11,0.88,Closed,0,0
+5475,ALVARADO 0,North Central,Fort Worth,1,Closed,59.28,16.8,61.61,59.28,16.8,Closed,0,0
+5476,CORSICANA 1 0,North Central,Corsicana,1,Closed,10.97,3.11,11.41,10.97,3.11,Closed,0,0
+5477,HARKER HEIGHTS 0,North Central,Waco,1,Closed,79.03,22.39,82.14,79.03,22.39,Closed,0,0
+5478,IRVING 3 0,North Central,Fort Worth,1,Closed,137.94,39.08,143.37,137.94,39.08,Closed,0,0
+5480,BURLESON 1,North Central,Fort Worth,1,Closed,179.23,50.78,186.29,179.23,50.78,Closed,0,0
+5481,FORT WORTH 28 0,North Central,Fort Worth,1,Closed,58.18,16.49,60.48,58.18,16.49,Closed,0,0
+5482,DALLAS 23 0,North Central,Dallas,1,Closed,69.18,19.6,71.91,69.18,19.6,Closed,0,0
+5483,NORTH RICHLAND HILLS 1 0,North Central,Fort Worth,1,Closed,84.63,23.98,87.96,84.63,23.98,Closed,0,0
+5484,CROSS PLAINS 0,North Central,Central Texas,2,Closed,5.69,1.61,5.92,5.69,1.61,Closed,0,0
+5484,CROSS PLAINS 0,North Central,Central Texas,1,Closed,0.6,0.17,0.62,0.6,0.17,Closed,0,0
+5485,BLOOMING GROVE 0,North Central,Corsicana,1,Closed,4.69,1.33,4.87,4.69,1.33,Closed,0,0
+6001,CONVERSE 0,South Central,San Marcos,1,Closed,103.81,29.41,107.9,103.81,29.41,Closed,0,0
+6002,SAN ANTONIO 46 0,South Central,San Antonio,1,Closed,32.48,9.2,33.76,32.48,9.2,Closed,0,0
+6005,BASTROP 2,South Central,Bastrop,1,Closed,75.48,21.39,78.45,75.48,21.39,Closed,0,0
+6011,MARION 2 0,South Central,San Marcos,2,Closed,16.83,4.77,17.49,16.83,4.77,Closed,0,0
+6011,MARION 2 0,South Central,San Marcos,1,Closed,7.19,2.04,7.47,7.19,2.04,Closed,0,0
+6012,PAIGE 0,South Central,Bastrop,1,Closed,13.51,3.83,14.04,13.51,3.83,Closed,0,0
+6013,SAN ANTONIO 42 0,South Central,San Antonio,2,Closed,94.19,26.69,97.89,94.19,26.69,Closed,0,0
+6013,SAN ANTONIO 42 0,South Central,San Antonio,1,Closed,0.71,0.2,0.73,0.71,0.2,Closed,0,0
+6014,WAELDER 0,South Central,Gonzales,1,Closed,5.51,1.56,5.73,5.51,1.56,Closed,0,0
+6015,ATASCOSA 0,South Central,San Antonio,1,Closed,24.76,7.02,25.74,24.76,7.02,Closed,0,0
+6016,SAN ANTONIO 40 0,South Central,San Antonio,1,Closed,176.43,49.99,183.38,176.43,49.99,Closed,0,0
+6017,CIBOLO 0,South Central,San Marcos,1,Closed,83.31,23.6,86.59,83.31,23.6,Closed,0,0
+6018,AUSTIN 6 0,South Central,Austin,1,Closed,2.46,0.7,2.56,2.46,0.7,Closed,0,0
+6019,AUSTIN 25 0,South Central,Austin,1,Closed,59.07,16.74,61.4,59.07,16.74,Closed,0,0
+6020,HORSESHOE BAY 0,South Central,Austin,1,Closed,16.53,4.68,17.18,16.53,4.68,Closed,0,0
+6023,LEANDER 1 2,South Central,Austin,1,Closed,132.89,37.65,138.12,132.89,37.65,Closed,0,0
+6024,AUSTIN 10 0,South Central,Austin,1,Closed,84.99,24.08,88.34,84.99,24.08,Closed,0,0
+6025,SAN ANTONIO 31 0,South Central,San Antonio,1,Closed,40.91,11.59,42.52,40.91,11.59,Closed,0,0
+6025,SAN ANTONIO 31 0,South Central,San Antonio,2,Closed,23.72,6.72,24.65,23.72,6.72,Closed,0,0
+6026,SAN ANTONIO 49 0,South Central,San Antonio,1,Closed,22.12,6.27,22.99,22.12,6.27,Closed,0,0
+6027,ELGIN 0,South Central,Austin,1,Closed,64.98,18.41,67.53,64.98,18.41,Closed,0,0
+6028,AUSTIN 31 0,South Central,Austin,1,Closed,103.35,29.28,107.42,103.35,29.28,Closed,0,0
+6029,RUNGE 0,South Central,Gonzales,2,Closed,4.04,1.14,4.2,4.04,1.14,Closed,0,0
+6029,RUNGE 0,South Central,Gonzales,1,Closed,1.77,0.5,1.84,1.77,0.5,Closed,0,0
+6029,RUNGE 0,South Central,Gonzales,3,Closed,1.17,0.33,1.22,1.17,0.33,Closed,0,0
+6031,YOAKUM 1,South Central,Gonzales,1,Closed,29.18,8.27,30.33,29.18,8.27,Closed,0,0
+6032,AUSTIN 37 0,South Central,Austin,1,Closed,36.4,10.31,37.83,36.4,10.31,Closed,0,0
+6035,PFLUGERVILLE 2,South Central,Austin,1,Closed,206.37,58.47,214.49,206.37,58.47,Closed,0,0
+6037,SAN ANTONIO 12 1,South Central,San Marcos,1,Closed,147.53,41.8,153.34,147.53,41.8,Closed,0,0
+6040,AUSTIN 3 2,South Central,Austin,1,Closed,80.78,22.89,83.96,80.78,22.89,Closed,0,0
+6043,SAN ANTONIO 48 0,South Central,San Antonio,1,Closed,148.3,42.02,154.14,148.3,42.02,Closed,0,0
+6044,SAN ANTONIO 19 0,South Central,San Antonio,1,Closed,18.3,5.18,19.02,18.3,5.18,Closed,0,0
+6047,SAN ANTONIO 2 2,South Central,San Antonio,1,Closed,149.85,42.46,155.75,149.85,42.46,Closed,0,0
+6055,BERGHEIM 0,South Central,San Antonio,1,Closed,4.93,1.4,5.12,4.93,1.4,Closed,0,0
+6058,NEW BRAUNFELS 2 2,South Central,San Marcos,1,Closed,178.64,50.61,185.67,178.64,50.61,Closed,0,0
+6059,D HANIS 0,South Central,San Antonio,1,Closed,3.44,0.97,3.57,3.44,0.97,Closed,0,0
+6060,SAN ANTONIO 24 0,South Central,San Antonio,1,Closed,74.53,21.12,77.47,74.53,21.12,Closed,0,0
+6061,AUSTIN 7 0,South Central,Austin,1,Closed,147.9,41.91,153.73,147.9,41.91,Closed,0,0
+6064,BRENHAM 2,South Central,Bastrop,1,Closed,82.48,23.37,85.72,82.48,23.37,Closed,0,0
+6065,BERTRAM 0,South Central,Austin,1,Closed,14.86,4.21,15.44,14.86,4.21,Closed,0,0
+6091,WIMBERLEY 0,South Central,Austin,1,Closed,37.81,10.71,39.29,37.81,10.71,Closed,0,0
+6092,GONZALES 0,South Central,Gonzales,1,Closed,35.66,10.1,37.06,35.66,10.1,Closed,0,0
+6093,SAN ANTONIO 11 0,South Central,San Marcos,1,Closed,40.54,11.49,42.13,40.54,11.49,Closed,0,0
+6094,SAN ANTONIO 14 0,South Central,San Marcos,1,Closed,67.98,19.26,70.66,67.98,19.26,Closed,0,0
+6095,HUTTO 0,South Central,Austin,1,Closed,68.37,19.37,71.06,68.37,19.37,Closed,0,0
+6096,LULING 0,South Central,Gonzales,1,Closed,25.78,7.3,26.79,25.78,7.3,Closed,0,0
+6097,SAN ANTONIO 21 0,South Central,San Antonio,1,Closed,105.36,29.85,109.51,105.36,29.85,Closed,0,0
+6098,AUSTIN 12 0,South Central,Austin,1,Closed,132.22,37.46,137.42,132.22,37.46,Closed,0,0
+6099,SAN ANTONIO 15 0,South Central,San Antonio,1,Closed,21.38,6.06,22.22,21.38,6.06,Closed,0,0
+6100,ADKINS 0,South Central,San Marcos,1,Closed,37.71,10.69,39.2,37.71,10.69,Closed,0,0
+6103,WINCHESTER 2,South Central,Bastrop,2,Closed,31.48,8.92,32.72,31.48,8.92,Closed,0,0
+6103,WINCHESTER 2,South Central,Bastrop,1,Closed,2.73,0.77,2.83,2.73,0.77,Closed,0,0
+6109,ROCKDALE 1 2,South Central,Bastrop,1,Closed,9.14,2.59,9.5,9.14,2.59,Closed,0,0
+6109,ROCKDALE 1 2,South Central,Bastrop,2,Closed,5.3,1.5,5.51,5.3,1.5,Closed,0,0
+6112,NATALIA 0,South Central,San Antonio,1,Closed,16.16,4.58,16.8,16.16,4.58,Closed,0,0
+6113,AUSTIN 20 0,South Central,Austin,1,Closed,20.52,5.81,21.33,20.52,5.81,Closed,0,0
+6114,SAN ANTONIO 43 0,South Central,San Antonio,1,Closed,70.54,19.99,73.32,70.54,19.99,Closed,0,0
+6115,SAN ANTONIO 5 0,South Central,San Marcos,1,Closed,131.13,37.15,136.29,131.13,37.15,Closed,0,0
+6116,TAYLOR 0,South Central,Austin,2,Closed,52.98,15.01,55.07,52.98,15.01,Closed,0,0
+6116,TAYLOR 0,South Central,Austin,1,Closed,3.87,1.1,4.02,3.87,1.1,Closed,0,0
+6117,SMITHVILLE 0,South Central,Bastrop,1,Closed,27.2,7.71,28.27,27.2,7.71,Closed,0,0
+6120,CEDAR PARK 2,South Central,Austin,1,Closed,195.3,55.33,202.98,195.3,55.33,Closed,0,0
+6121,SAN ANTONIO 25 0,South Central,San Antonio,1,Closed,120.8,34.23,125.56,120.8,34.23,Closed,0,0
+6122,HALLETTSVILLE 0,South Central,Gonzales,1,Closed,22.71,6.43,23.6,22.71,6.43,Closed,0,0
+6123,AUSTIN 5 0,South Central,Austin,1,Closed,45.11,12.78,46.88,45.11,12.78,Closed,0,0
+6124,NEW BRAUNFELS 3 0,South Central,San Marcos,1,Closed,57.42,16.27,59.68,57.42,16.27,Closed,0,0
+6125,SUTHERLAND SPRINGS 0,South Central,San Marcos,1,Closed,2.59,0.73,2.69,2.59,0.73,Closed,0,0
+6126,AUSTIN 34 0,South Central,Austin,1,Closed,50.38,14.27,52.36,50.38,14.27,Closed,0,0
+6127,CAMERON 0,South Central,Bastrop,1,Closed,25.24,7.15,26.23,25.24,7.15,Closed,0,0
+6128,SAN ANTONIO 35 0,South Central,San Antonio,1,Closed,52.8,14.96,54.88,52.8,14.96,Closed,0,0
+6129,MEDINA 0,South Central,San Antonio,3,Closed,5.32,1.51,5.53,5.32,1.51,Closed,0,0
+6129,MEDINA 0,South Central,San Antonio,2,Closed,3.47,0.98,3.61,3.47,0.98,Closed,0,0
+6129,MEDINA 0,South Central,San Antonio,1,Closed,1.06,0.3,1.1,1.06,0.3,Closed,0,0
+6130,MANCHACA 0,South Central,Austin,1,Closed,13.4,3.8,13.93,13.4,3.8,Closed,0,0
+6131,SPRING BRANCH 0,South Central,San Marcos,1,Closed,43.85,12.43,45.58,43.85,12.43,Closed,0,0
+6132,AUSTIN 19 0,South Central,Austin,1,Closed,64.74,18.34,67.29,64.74,18.34,Closed,0,0
+6133,FLATONIA 0,South Central,Bastrop,1,Closed,10.44,2.96,10.85,10.44,2.96,Closed,0,0
+6134,GRANGER 0,South Central,Austin,1,Closed,7.62,2.16,7.92,7.62,2.16,Closed,0,0
+6135,FAYETTEVILLE 0,South Central,Bastrop,1,Closed,14.66,4.15,15.23,14.66,4.15,Closed,0,0
+6135,FAYETTEVILLE 0,South Central,Bastrop,2,Closed,7.05,2,7.33,7.05,2,Closed,0,0
+6136,GEORGETOWN 2 0,South Central,Austin,1,Closed,71.18,20.17,73.98,71.18,20.17,Closed,0,0
+6137,AUSTIN 35 0,South Central,Austin,1,Closed,42.18,11.95,43.84,42.18,11.95,Closed,0,0
+6138,PIPE CREEK 0,South Central,San Antonio,1,Closed,27.68,7.84,28.77,27.68,7.84,Closed,0,0
+6139,RED ROCK 0,South Central,Bastrop,2,Closed,6.8,1.93,7.07,6.8,1.93,Closed,0,0
+6139,RED ROCK 0,South Central,Bastrop,1,Closed,2.8,0.79,2.91,2.8,0.79,Closed,0,0
+6140,JARRELL 0,South Central,Austin,1,Closed,11.69,3.31,12.15,11.69,3.31,Closed,0,0
+6150,SAN ANTONIO 36 0,South Central,San Antonio,1,Closed,117.27,33.23,121.88,117.27,33.23,Closed,0,0
+6151,SCHULENBURG 0,South Central,Bastrop,1,Closed,16.14,4.57,16.78,16.14,4.57,Closed,0,0
+6153,SAN ANTONIO 22 1,South Central,San Antonio,1,Closed,107.97,30.59,112.22,107.97,30.59,Closed,0,0
+6154,DRIPPING SPRINGS 0,South Central,Austin,1,Closed,43.1,12.21,44.8,43.1,12.21,Closed,0,0
+6155,SAN ANTONIO 26 0,South Central,San Antonio,1,Closed,37.02,10.49,38.47,37.02,10.49,Closed,0,0
+6156,MARBLE FALLS 3 0,South Central,Austin,1,Closed,52.66,14.92,54.73,52.66,14.92,Closed,0,0
+6157,BOERNE 1 0,South Central,San Antonio,1,Closed,28.81,8.16,29.94,28.81,8.16,Closed,0,0
+6158,WASHINGTON 0,South Central,Bastrop,1,Closed,5.64,1.6,5.86,5.64,1.6,Closed,0,0
+6159,SCHERTZ 0,South Central,San Marcos,1,Closed,91.04,25.79,94.62,91.04,25.79,Closed,0,0
+6160,AUSTIN 8 0,South Central,Austin,2,Closed,64,18.13,66.52,64,18.13,Closed,0,0
+6160,AUSTIN 8 0,South Central,Austin,1,Closed,34.28,9.71,35.62,34.28,9.71,Closed,0,0
+6168,SAN ANTONIO 45 0,South Central,San Antonio,1,Closed,138.23,39.17,143.67,138.23,39.17,Closed,0,0
+6171,SAN ANTONIO 52 2,South Central,San Antonio,2,Closed,87.02,24.66,90.45,87.02,24.66,Closed,0,0
+6171,SAN ANTONIO 52 2,South Central,San Antonio,1,Closed,26.74,7.58,27.79,26.74,7.58,Closed,0,0
+6173,CUERO 2 1,South Central,Gonzales,1,Closed,35.48,10.05,36.88,35.48,10.05,Closed,0,0
+6174,SAN ANTONIO 10 0,South Central,San Marcos,1,Closed,95.75,27.13,99.52,95.75,27.13,Closed,0,0
+6175,AUSTIN 16 0,South Central,Austin,1,Closed,96.6,27.37,100.4,96.6,27.37,Closed,0,0
+6176,AUSTIN 39 0,South Central,Austin,1,Closed,45.32,12.84,47.11,45.32,12.84,Closed,0,0
+6178,SAN ANTONIO 51 1,South Central,San Antonio,1,Closed,134.45,38.09,139.74,134.45,38.09,Closed,0,0
+6179,SAN ANTONIO 41 0,South Central,San Antonio,1,Closed,11.85,3.36,12.32,11.85,3.36,Closed,0,0
+6180,LA VERNIA 0,South Central,San Marcos,1,Closed,34.14,9.67,35.49,34.14,9.67,Closed,0,0
+6181,MANOR 0,South Central,Austin,1,Closed,49.13,13.92,51.06,49.13,13.92,Closed,0,0
+6182,SAN ANTONIO 38 0,South Central,San Antonio,1,Closed,95.83,27.15,99.6,95.83,27.15,Closed,0,0
+6183,GIDDINGS 0,South Central,Bastrop,1,Closed,26.97,7.64,28.03,26.97,7.64,Closed,0,0
+6184,AUSTIN 32 0,South Central,Austin,1,Closed,48.39,13.71,50.3,48.39,13.71,Closed,0,0
+6185,AUSTIN 38 0,South Central,Austin,1,Closed,20.84,5.9,21.66,20.84,5.9,Closed,0,0
+6186,AUSTIN 30 0,South Central,Austin,1,Closed,39.37,11.15,40.92,39.37,11.15,Closed,0,0
+6187,AUSTIN 28 0,South Central,Austin,1,Closed,80.44,22.79,83.61,80.44,22.79,Closed,0,0
+6189,COLUMBUS 1,South Central,Bastrop,3,Closed,20.14,5.71,20.93,20.14,5.71,Closed,0,0
+6189,COLUMBUS 1,South Central,Bastrop,2,Closed,4.3,1.22,4.47,4.3,1.22,Closed,0,0
+6189,COLUMBUS 1,South Central,Bastrop,1,Closed,2.93,0.83,3.05,2.93,0.83,Closed,0,0
+6190,SHINER 0,South Central,Gonzales,1,Closed,18.47,5.23,19.19,18.47,5.23,Closed,0,0
+6191,SAN ANTONIO 3 0,South Central,San Marcos,1,Closed,16.77,4.75,17.43,16.77,4.75,Closed,0,0
+6193,CALDWELL 1,South Central,Bastrop,1,Closed,35.69,10.11,37.09,35.69,10.11,Closed,0,0
+6194,AUSTIN 18 0,South Central,Austin,1,Closed,44.42,12.59,46.17,44.42,12.59,Closed,0,0
+6195,INDUSTRY 0,South Central,Bastrop,2,Closed,1.69,0.48,1.75,1.69,0.48,Closed,0,0
+6195,INDUSTRY 0,South Central,Bastrop,1,Closed,0.97,0.27,1.01,0.97,0.27,Closed,0,0
+6196,DALE 0,South Central,Austin,1,Closed,21.28,6.03,22.11,21.28,6.03,Closed,0,0
+6199,SAN ANTONIO 37 2,South Central,San Antonio,1,Closed,239.74,67.93,249.18,239.74,67.93,Closed,0,0
+6200,SAN ANTONIO 18 0,South Central,San Antonio,2,Closed,35.07,9.94,36.45,35.07,9.94,Closed,0,0
+6200,SAN ANTONIO 18 0,South Central,San Antonio,1,Closed,11.21,3.18,11.65,11.21,3.18,Closed,0,0
+6201,SAN ANTONIO 33 0,South Central,San Antonio,1,Closed,39.07,11.07,40.61,39.07,11.07,Closed,0,0
+6202,MARTINDALE 0,South Central,San Marcos,2,Closed,10.61,3.01,11.03,10.61,3.01,Closed,0,0
+6202,MARTINDALE 0,South Central,San Marcos,1,Closed,6.02,1.7,6.25,6.02,1.7,Closed,0,0
+6203,SAN ANTONIO 17 0,South Central,San Antonio,1,Closed,117.59,33.32,122.22,117.59,33.32,Closed,0,0
+6204,SAN ANTONIO 23 0,South Central,San Antonio,1,Closed,7.81,2.21,8.12,7.81,2.21,Closed,0,0
+6205,AUSTIN 29 0,South Central,Austin,1,Closed,121.95,34.55,126.75,121.95,34.55,Closed,0,0
+6206,LEXINGTON 0,South Central,Bastrop,3,Closed,13.43,3.8,13.95,13.43,3.8,Closed,0,0
+6206,LEXINGTON 0,South Central,Bastrop,1,Closed,2.86,0.81,2.97,2.86,0.81,Closed,0,0
+6206,LEXINGTON 0,South Central,Bastrop,2,Closed,2.55,0.72,2.65,2.55,0.72,Closed,0,0
+6207,LEANDER 2 0,South Central,Austin,1,Closed,29.32,8.31,30.47,29.32,8.31,Closed,0,0
+6208,AUSTIN 15 0,South Central,Austin,1,Closed,80.07,22.69,83.22,80.07,22.69,Closed,0,0
+6208,AUSTIN 15 0,South Central,Austin,2,Closed,60.9,17.25,63.29,60.9,17.25,Closed,0,0
+6209,MICO 0,South Central,San Antonio,2,Closed,5.75,1.63,5.98,5.75,1.63,Closed,0,0
+6209,MICO 0,South Central,San Antonio,1,Closed,1.77,0.5,1.84,1.77,0.5,Closed,0,0
+6217,AUSTIN 36 0,South Central,Austin,1,Closed,52.96,15.01,55.05,52.96,15.01,Closed,0,0
+6218,LOCKHART 0,South Central,Austin,1,Closed,51.24,14.52,53.26,51.24,14.52,Closed,0,0
+6219,AUSTIN 17 0,South Central,Austin,1,Closed,63.93,18.11,66.45,63.93,18.11,Closed,0,0
+6220,SAN ANTONIO 13 0,South Central,San Marcos,1,Closed,96.5,27.34,100.29,96.5,27.34,Closed,0,0
+6221,FALLS CITY 0,South Central,San Marcos,1,Closed,7.3,2.07,7.59,7.3,2.07,Closed,0,0
+6221,FALLS CITY 0,South Central,San Marcos,2,Closed,1.86,0.53,1.93,1.86,0.53,Closed,0,0
+6223,AUSTIN 27 1,South Central,Austin,1,Closed,166.84,47.27,173.41,166.84,47.27,Closed,0,0
+6224,AUSTIN 23 0,South Central,Austin,1,Closed,116.67,33.06,121.27,116.67,33.06,Closed,0,0
+6225,SAN ANTONIO 27 0,South Central,San Antonio,1,Closed,85.25,24.15,88.6,85.25,24.15,Closed,0,0
+6226,BLANCO 0,South Central,San Antonio,1,Closed,18.02,5.11,18.73,18.02,5.11,Closed,0,0
+6227,AUSTIN 24 0,South Central,Austin,1,Closed,126.35,35.8,131.32,126.35,35.8,Closed,0,0
+6230,SAN MARCOS 2,South Central,San Marcos,1,Closed,191.51,54.26,199.05,191.51,54.26,Closed,0,0
+6231,BUDA 0,South Central,Austin,1,Closed,70.51,19.98,73.28,70.51,19.98,Closed,0,0
+6232,DEL VALLE 0,South Central,Austin,1,Closed,66.63,18.88,69.25,66.63,18.88,Closed,0,0
+6233,AUSTIN 4 0,South Central,Austin,1,Closed,65.09,18.44,67.65,65.09,18.44,Closed,0,0
+6236,SAN ANTONIO 50 2,South Central,San Antonio,1,Closed,169.53,48.03,176.21,169.53,48.03,Closed,0,0
+6237,BURLINGTON 0,South Central,Bastrop,1,Closed,1.88,0.53,1.95,1.88,0.53,Closed,0,0
+6238,AUSTIN 13 0,South Central,Austin,1,Closed,134.8,38.19,140.11,134.8,38.19,Closed,0,0
+6241,ELMENDORF 2,South Central,San Marcos,2,Closed,151.91,43.04,157.89,151.91,43.04,Closed,0,0
+6241,ELMENDORF 2,South Central,San Marcos,1,Closed,23.82,6.75,24.76,23.82,6.75,Closed,0,0
+6250,SAN ANTONIO 6 0,South Central,San Marcos,1,Closed,86.21,24.43,89.6,86.21,24.43,Closed,0,0
+6251,CANYON LAKE 0,South Central,San Marcos,2,Closed,48.81,13.83,50.73,48.81,13.83,Closed,0,0
+6251,CANYON LAKE 0,South Central,San Marcos,1,Closed,2.44,0.69,2.54,2.44,0.69,Closed,0,0
+6252,JOHNSON CITY 0,South Central,Austin,2,Closed,11.25,3.19,11.69,11.25,3.19,Closed,0,0
+6252,JOHNSON CITY 0,South Central,Austin,1,Closed,2.24,0.63,2.33,2.24,0.63,Closed,0,0
+6253,YORKTOWN 0,South Central,Gonzales,2,Closed,11.39,3.23,11.84,11.39,3.23,Closed,0,0
+6253,YORKTOWN 0,South Central,Gonzales,1,Closed,1.81,0.51,1.88,1.81,0.51,Closed,0,0
+6256,AUSTIN 2 2,South Central,Austin,1,Closed,18.25,5.17,18.97,18.25,5.17,Closed,0,0
+6261,LACKLAND A F B 0,South Central,San Antonio,1,Closed,31.18,8.83,32.4,31.18,8.83,Closed,0,0
+6262,LIBERTY HILL 0,South Central,Austin,1,Closed,28.4,8.05,29.52,28.4,8.05,Closed,0,0
+6264,KENEDY 1,South Central,Gonzales,1,Closed,23.04,6.53,23.95,23.04,6.53,Closed,0,0
+6264,KENEDY 1,South Central,Gonzales,2,Closed,11.93,3.38,12.4,11.93,3.38,Closed,0,0
+6275,SAN ANTONIO 20 0,South Central,San Antonio,1,Closed,110.59,31.34,114.95,110.59,31.34,Closed,0,0
+6276,VON ORMY 0,South Central,San Antonio,1,Closed,39.92,11.31,41.5,39.92,11.31,Closed,0,0
+6278,KYLE 1,South Central,Austin,2,Closed,128.86,36.51,133.93,128.86,36.51,Closed,0,0
+6278,KYLE 1,South Central,Austin,1,Closed,6.81,1.93,7.08,6.81,1.93,Closed,0,0
+6280,SEGUIN 2 1,South Central,San Marcos,1,Closed,136.02,38.54,141.38,136.02,38.54,Closed,0,0
+6281,UNIVERSAL CITY 0,South Central,San Marcos,1,Closed,60.45,17.13,62.83,60.45,17.13,Closed,0,0
+6282,SPICEWOOD 0,South Central,Austin,1,Closed,26.19,7.42,27.22,26.19,7.42,Closed,0,0
+6283,SAINT HEDWIG 0,South Central,San Marcos,1,Closed,6.88,1.95,7.15,6.88,1.95,Closed,0,0
+6284,SAN ANTONIO 16 0,South Central,San Antonio,2,Closed,70.02,19.84,72.78,70.02,19.84,Closed,0,0
+6284,SAN ANTONIO 16 0,South Central,San Antonio,1,Closed,1.07,0.3,1.11,1.07,0.3,Closed,0,0
+6286,BOERNE 2 1,South Central,San Antonio,1,Closed,82.67,23.42,85.93,82.67,23.42,Closed,0,0
+6288,SAN ANTONIO 32 1,South Central,San Antonio,1,Closed,166.54,47.19,173.1,166.54,47.19,Closed,0,0
+6289,AUSTIN 26 0,South Central,Austin,1,Closed,73.84,20.92,76.75,73.84,20.92,Closed,0,0
+6290,AUSTIN 21 0,South Central,Austin,1,Closed,67.61,19.16,70.28,67.61,19.16,Closed,0,0
+6291,SAN ANTONIO 44 0,South Central,San Antonio,1,Closed,20.57,5.83,21.37,20.57,5.83,Closed,0,0
+6306,AUSTIN 11 0,South Central,Austin,1,Closed,54.19,15.35,56.33,54.19,15.35,Closed,0,0
+6307,SAN ANTONIO 39 0,South Central,San Antonio,1,Closed,110.79,31.39,115.15,110.79,31.39,Closed,0,0
+6307,SAN ANTONIO 39 0,South Central,San Antonio,2,Closed,19.94,5.65,20.73,19.94,5.65,Closed,0,0
+6309,HONDO 1,South Central,San Antonio,1,Closed,41.1,11.65,42.72,41.1,11.65,Closed,0,0
+6310,SAN ANTONIO 4 0,South Central,San Marcos,1,Closed,92.27,26.14,95.9,92.27,26.14,Closed,0,0
+6311,NEW ULM 0,South Central,Bastrop,3,Closed,6.11,1.73,6.35,6.11,1.73,Closed,0,0
+6311,NEW ULM 0,South Central,Bastrop,1,Closed,1.41,0.4,1.47,1.41,0.4,Closed,0,0
+6311,NEW ULM 0,South Central,Bastrop,2,Closed,1.06,0.3,1.1,1.06,0.3,Closed,0,0
+6312,SAN ANTONIO 8 0,South Central,San Marcos,1,Closed,45.68,12.94,47.47,45.68,12.94,Closed,0,0
+6313,AUSTIN 33 0,South Central,Austin,1,Closed,26.29,7.45,27.32,26.29,7.45,Closed,0,0
+6314,BULVERDE 0,South Central,San Antonio,1,Closed,29.51,8.36,30.68,29.51,8.36,Closed,0,0
+6319,GEORGETOWN 3 4,South Central,Austin,1,Closed,70.22,19.9,72.99,70.22,19.9,Closed,0,0
+6320,SAN ANTONIO 9 0,South Central,San Marcos,1,Closed,47.89,13.57,49.78,47.89,13.57,Closed,0,0
+6322,FLORESVILLE 1,South Central,San Marcos,2,Closed,60.31,17.09,62.68,60.31,17.09,Closed,0,0
+6322,FLORESVILLE 1,South Central,San Marcos,1,Closed,5.76,1.63,5.98,5.76,1.63,Closed,0,0
+6323,SAN ANTONIO 29 0,South Central,San Antonio,1,Closed,33.38,9.46,34.69,33.38,9.46,Closed,0,0
+6324,SAN ANTONIO 7 0,South Central,San Marcos,1,Closed,58.22,16.5,60.52,58.22,16.5,Closed,0,0
+6325,BUCKHOLTS 0,South Central,Bastrop,1,Closed,4.74,1.34,4.93,4.74,1.34,Closed,0,0
+6326,SOMERVILLE 0,South Central,Bastrop,2,Closed,14.01,3.97,14.56,14.01,3.97,Closed,0,0
+6326,SOMERVILLE 0,South Central,Bastrop,1,Closed,1.43,0.4,1.48,1.43,0.4,Closed,0,0
+6327,WEIMAR 0,South Central,Bastrop,2,Closed,14.28,4.05,14.84,14.28,4.05,Closed,0,0
+6327,WEIMAR 0,South Central,Bastrop,1,Closed,3.33,0.94,3.46,3.33,0.94,Closed,0,0
+6328,COMFORT 0,South Central,San Antonio,1,Closed,27.95,7.92,29.05,27.95,7.92,Closed,0,0
+6329,NORDHEIM 0,South Central,Gonzales,1,Closed,1.79,0.51,1.86,1.79,0.51,Closed,0,0
+6330,AUSTIN 9 0,South Central,Austin,2,Closed,128.46,36.4,133.52,128.46,36.4,Closed,0,0
+6330,AUSTIN 9 0,South Central,Austin,1,Closed,5.29,1.5,5.5,5.29,1.5,Closed,0,0
+6331,AUSTIN 22 0,South Central,Austin,1,Closed,81.32,23.04,84.53,81.32,23.04,Closed,0,0
+6332,HELOTES 0,South Central,San Antonio,1,Closed,73,20.68,75.88,73,20.68,Closed,0,0
+6335,SAN ANTONIO 47 2,South Central,San Antonio,1,Closed,164.71,46.67,171.19,164.71,46.67,Closed,0,0
+6336,BANDERA 0,South Central,San Antonio,1,Closed,26.07,7.39,27.09,26.07,7.39,Closed,0,0
+6337,SAN ANTONIO 30 0,South Central,San Antonio,1,Closed,121.19,34.34,125.96,121.19,34.34,Closed,0,0
+6338,ROCKDALE 2 0,South Central,Bastrop,3,Closed,26.95,7.64,28.01,26.95,7.64,Closed,0,0
+6338,ROCKDALE 2 0,South Central,Bastrop,1,Closed,4.38,1.24,4.56,4.38,1.24,Closed,0,0
+6338,ROCKDALE 2 0,South Central,Bastrop,2,Closed,2.27,0.64,2.36,2.27,0.64,Closed,0,0
+6339,CEDAR CREEK 2 0,South Central,Austin,1,Closed,34.37,9.74,35.72,34.37,9.74,Closed,0,0
+6340,NIXON 0,South Central,Gonzales,1,Closed,16.11,4.56,16.74,16.11,4.56,Closed,0,0
+6340,NIXON 0,South Central,Gonzales,2,Closed,13.07,3.7,13.59,13.07,3.7,Closed,0,0
+6341,CHAPPELL HILL 0,South Central,Bastrop,1,Closed,6.3,1.79,6.55,6.3,1.79,Closed,0,0
+6344,ROUND ROCK 3 2,South Central,Austin,1,Closed,158.8,44.99,165.05,158.8,44.99,Closed,0,0
+6345,AUSTIN 14 0,South Central,Austin,1,Closed,17.7,5.02,18.4,17.7,5.02,Closed,0,0
+6346,LEMING 0,South Central,San Antonio,1,Closed,2.3,0.65,2.39,2.3,0.65,Closed,0,0
+6351,AUSTIN 1 2,South Central,Austin,1,Closed,23.86,6.76,24.8,23.86,6.76,Closed,0,0
+6352,SAN ANTONIO 28 0,South Central,San Antonio,1,Closed,121.76,34.5,126.55,121.76,34.5,Closed,0,0
+6353,ROUND ROCK 2 0,South Central,Austin,1,Closed,107.96,30.59,112.2,107.96,30.59,Closed,0,0
+6355,ROUND ROCK 4 1,South Central,Austin,1,Closed,151.82,43.02,157.79,151.82,43.02,Closed,0,0
+6356,SAN ANTONIO 34 0,South Central,San Antonio,1,Closed,135.92,38.51,141.27,135.92,38.51,Closed,0,0
+6357,DEVINE 0,South Central,San Antonio,2,Closed,28.89,8.19,30.03,28.89,8.19,Closed,0,0
+6357,DEVINE 0,South Central,San Antonio,1,Closed,1.94,0.55,2.02,1.94,0.55,Closed,0,0
+6358,GEORGETOWN 1 0,South Central,Austin,1,Closed,77.99,22.1,81.06,77.99,22.1,Closed,0,0
+6360,BURNET 1,South Central,Austin,1,Closed,38.93,11.03,40.46,38.93,11.03,Closed,0,0
+7001,INEZ 0,Coast,Victoria,1,Closed,9.3,2.64,9.67,9.3,2.64,Closed,0,0
+7004,PASADENA 2 2,Coast,East Houston,1,Closed,221.92,62.88,230.65,221.92,62.88,Closed,0,0
+7010,PRAIRIE VIEW 0,Coast,Spring,1,Closed,15.65,4.43,16.27,15.65,4.43,Closed,0,0
+7011,CONROE 1 0,Coast,Spring,1,Closed,35.79,10.14,37.2,35.79,10.14,Closed,0,0
+7012,SIMONTON 0,Coast,Houston,1,Closed,0.94,0.27,0.98,0.94,0.27,Closed,0,0
+7013,HOUSTON 80 0,Coast,Spring,1,Closed,138.05,39.11,143.49,138.05,39.11,Closed,0,0
+7014,HOUSTON 1 0,Coast,East Houston,1,Closed,52.81,14.96,54.88,52.81,14.96,Closed,0,0
+7016,HOUSTON 9 0,Coast,East Houston,1,Closed,85.56,24.24,88.93,85.56,24.24,Closed,0,0
+7017,HOUSTON 73 0,Coast,Houston,1,Closed,135.83,38.48,141.17,135.83,38.48,Closed,0,0
+7020,NURSERY 2,Coast,Victoria,2,Closed,75.01,21.25,77.96,75.01,21.25,Closed,0,0
+7020,NURSERY 2,Coast,Victoria,1,Closed,0.38,0.11,0.39,0.38,0.11,Closed,0,0
+7026,BACLIFF 0,Coast,East Houston,1,Closed,26.02,7.37,27.04,26.02,7.37,Closed,0,0
+7026,BACLIFF 0,Coast,East Houston,2,Closed,17.37,4.92,18.05,17.37,4.92,Closed,0,0
+7027,SPRING 1 0,Coast,Spring,1,Closed,109.22,30.95,113.52,109.22,30.95,Closed,0,0
+7028,HOUSTON 72 0,Coast,Houston,1,Closed,77.01,21.82,80.04,77.01,21.82,Closed,0,0
+7036,CONROE 5 1,Coast,Spring,1,Closed,92.31,26.15,95.94,92.31,26.15,Closed,0,0
+7039,SUGAR LAND 3 2,Coast,Houston,1,Closed,235.5,66.73,244.77,235.5,66.73,Closed,0,0
+7041,DAYTON 1,Coast,East Houston,1,Closed,93.88,26.6,97.58,93.88,26.6,Closed,0,0
+7044,VICTORIA 2 2,Coast,Victoria,1,Closed,124.64,35.32,129.55,124.64,35.32,Closed,0,0
+7049,KATY 1 2,Coast,Houston,1,Closed,283.15,80.22,294.29,283.15,80.22,Closed,0,0
+7050,MAGNOLIA 2 0,Coast,Spring,1,Closed,72.03,20.41,74.87,72.03,20.41,Closed,0,0
+7051,HOUSTON 29 0,Coast,Houston,1,Closed,140.79,39.89,146.33,140.79,39.89,Closed,0,0
+7052,MISSOURI CITY 1 0,Coast,Houston,1,Closed,106.66,30.22,110.86,106.66,30.22,Closed,0,0
+7053,RICHMOND 1 0,Coast,Houston,1,Closed,105.96,30.02,110.13,105.96,30.02,Closed,0,0
+7054,HOUSTON 11 0,Coast,East Houston,1,Closed,92.85,26.31,96.5,92.85,26.31,Closed,0,0
+7055,HOUSTON 33 0,Coast,Houston,1,Closed,98.08,27.79,101.94,98.08,27.79,Closed,0,0
+7057,SPRING 8 1,Coast,Spring,1,Closed,106.11,30.06,110.28,106.11,30.06,Closed,0,0
+7067,HOUSTON 28 0,Coast,Houston,1,Closed,82.69,23.43,85.94,82.69,23.43,Closed,0,0
+7069,EL CAMPO 1,Coast,Bay City,1,Closed,51.16,14.5,53.18,51.16,14.5,Closed,0,0
+7070,HOUSTON 12 0,Coast,East Houston,1,Closed,101.03,28.63,105.01,101.03,28.63,Closed,0,0
+7071,PORT O CONNOR 0,Coast,Victoria,1,Closed,3.76,1.07,3.91,3.76,1.07,Closed,0,0
+7072,DICKINSON 0,Coast,East Houston,1,Closed,116.42,32.99,121,116.42,32.99,Closed,0,0
+7074,GALVESTON 1 1,Coast,Galveston,1,Closed,69.13,19.59,71.85,69.13,19.59,Closed,0,0
+7075,HOUSTON 10 0,Coast,East Houston,1,Closed,160.86,45.58,167.2,160.86,45.58,Closed,0,0
+7084,LEAGUE CITY 1,Coast,East Houston,1,Closed,214.74,60.84,223.19,214.74,60.84,Closed,0,0
+7085,LIVERPOOL 0,Coast,Galveston,1,Closed,4.1,1.16,4.27,4.1,1.16,Closed,0,0
+7086,HOUSTON 16 0,Coast,East Houston,1,Closed,53.44,15.14,55.55,53.44,15.14,Closed,0,0
+7087,SUGAR LAND 1 0,Coast,Houston,1,Closed,74.22,21.03,77.14,74.22,21.03,Closed,0,0
+7088,RICHMOND 2 0,Coast,Houston,1,Closed,101.05,28.63,105.02,101.05,28.63,Closed,0,0
+7089,HOUSTON 82 0,Coast,Houston,1,Closed,70.07,19.85,72.83,70.07,19.85,Closed,0,0
+7090,PINEHURST 0,Coast,Spring,1,Closed,13.8,3.91,14.34,13.8,3.91,Closed,0,0
+7091,PEARLAND 2 0,Coast,Houston,1,Closed,210.68,59.69,218.98,210.68,59.69,Closed,0,0
+7092,HOUSTON 47 0,Coast,Houston,1,Closed,39.23,11.11,40.77,39.23,11.11,Closed,0,0
+7093,HOUSTON 79 0,Coast,Houston,1,Closed,109.15,30.93,113.45,109.15,30.93,Closed,0,0
+7094,HOUSTON 49 0,Coast,Houston,1,Closed,76.69,21.73,79.71,76.69,21.73,Closed,0,0
+7100,HOUSTON 18 0,Coast,East Houston,1,Closed,62.16,17.61,64.6,62.16,17.61,Closed,0,0
+7101,HOUSTON 88 0,Coast,Houston,1,Closed,212.51,60.21,220.88,212.51,60.21,Closed,0,0
+7102,TOMBALL 1 0,Coast,Spring,1,Closed,118.05,33.45,122.7,118.05,33.45,Closed,0,0
+7103,HOUSTON 22 0,Coast,East Houston,1,Closed,58.64,16.61,60.95,58.64,16.61,Closed,0,0
+7106,DEER PARK 2,Coast,East Houston,1,Closed,92.07,26.09,95.69,92.07,26.09,Closed,0,0
+7116,WALLIS 0,Coast,Bay City,1,Closed,12.16,3.45,12.64,12.16,3.45,Closed,0,0
+7117,HOUSTON 67 0,Coast,Houston,1,Closed,84.03,23.81,87.33,84.03,23.81,Closed,0,0
+7118,SPRING 4 0,Coast,Spring,1,Closed,121.15,34.33,125.92,121.15,34.33,Closed,0,0
+7119,SOUTH HOUSTON 0,Coast,East Houston,1,Closed,49.7,14.08,51.66,49.7,14.08,Closed,0,0
+7120,HOUSTON 3 0,Coast,Houston,1,Closed,149.7,42.41,155.59,149.7,42.41,Closed,0,0
+7123,SEADRIFT 0,Coast,Victoria,1,Closed,6.63,1.88,6.89,6.63,1.88,Closed,0,0
+7124,HOUSTON 34 0,Coast,Houston,1,Closed,164.66,46.65,171.14,164.66,46.65,Closed,0,0
+7127,SUGAR LAND 2 2,Coast,Houston,1,Closed,223.54,63.34,232.34,223.54,63.34,Closed,0,0
+7128,CONROE 7 0,Coast,Spring,1,Closed,63.94,18.12,66.46,63.94,18.12,Closed,0,0
+7129,LOLITA 0,Coast,Victoria,1,Closed,3.62,1.03,3.76,3.62,1.03,Closed,0,0
+7129,LOLITA 0,Coast,Victoria,2,Closed,1.53,0.43,1.59,1.53,0.43,Closed,0,0
+7132,LAPORTE 2,Coast,East Houston,1,Closed,72.75,20.61,75.62,72.75,20.61,Closed,0,0
+7143,NEW CANEY 0,Coast,Spring,1,Closed,59.96,16.99,62.32,59.96,16.99,Closed,0,0
+7144,HOUSTON 14 0,Coast,East Houston,1,Closed,97.68,27.68,101.53,97.68,27.68,Closed,0,0
+7145,HOUSTON 2 0,Coast,East Houston,2,Closed,129.95,36.82,135.07,129.95,36.82,Closed,0,0
+7145,HOUSTON 2 0,Coast,East Houston,1,Closed,13.83,3.92,14.38,13.83,3.92,Closed,0,0
+7147,HOUSTON 78 0,Coast,Houston,1,Closed,47.29,13.4,49.15,47.29,13.4,Closed,0,0
+7148,HOUSTON 40 0,Coast,Houston,1,Closed,59.46,16.85,61.8,59.46,16.85,Closed,0,0
+7149,BLOOMINGTON 0,Coast,Victoria,2,Closed,7.85,2.22,8.16,7.85,2.22,Closed,0,0
+7149,BLOOMINGTON 0,Coast,Victoria,3,Closed,2.25,0.64,2.34,2.25,0.64,Closed,0,0
+7149,BLOOMINGTON 0,Coast,Victoria,1,Closed,2.15,0.61,2.24,2.15,0.61,Closed,0,0
+7151,WILLIS 2 1,Coast,Spring,1,Closed,44.05,12.48,45.79,44.05,12.48,Closed,0,0
+7152,HOUSTON 51 0,Coast,Houston,1,Closed,3.59,1.02,3.73,3.59,1.02,Closed,0,0
+7153,PALACIOS 0,Coast,Bay City,2,Closed,21.48,6.09,22.33,21.48,6.09,Closed,0,0
+7153,PALACIOS 0,Coast,Bay City,5,Closed,3.91,1.11,4.06,3.91,1.11,Closed,0,0
+7153,PALACIOS 0,Coast,Bay City,4,Closed,0.52,0.15,0.54,0.52,0.15,Closed,0,0
+7153,PALACIOS 0,Coast,Bay City,1,Closed,0.18,0.05,0.19,0.18,0.05,Closed,0,0
+7153,PALACIOS 0,Coast,Bay City,3,Closed,0.11,0.03,0.12,0.11,0.03,Closed,0,0
+7154,CONROE 4 0,Coast,Spring,1,Closed,58.6,16.6,60.91,58.6,16.6,Closed,0,0
+7155,HOUSTON 52 0,Coast,Houston,1,Closed,78.41,22.22,81.5,78.41,22.22,Closed,0,0
+7157,SPRING 2 1,Coast,Spring,1,Closed,163.83,46.42,170.28,163.83,46.42,Closed,0,0
+7158,KINGWOOD 1 0,Coast,East Houston,1,Closed,78.37,22.2,81.45,78.37,22.2,Closed,0,0
+7161,HOUSTON 5 2,Coast,Houston,1,Closed,137.54,38.97,142.96,137.54,38.97,Closed,0,0
+7172,TEXAS CITY 1 1,Coast,Galveston,1,Closed,91.12,25.82,94.71,91.12,25.82,Closed,0,0
+7173,KINGWOOD 2 0,Coast,East Houston,1,Closed,112.54,31.89,116.97,112.54,31.89,Closed,0,0
+7174,HOUSTON 8 0,Coast,East Houston,1,Closed,75.46,21.38,78.43,75.46,21.38,Closed,0,0
+7174,HOUSTON 8 0,Coast,East Houston,2,Closed,49.22,13.95,51.16,49.22,13.95,Closed,0,0
+7177,SPRING 7 2,Coast,Spring,1,Closed,211.63,59.96,219.96,211.63,59.96,Closed,0,0
+7178,HOUSTON 41 0,Coast,Houston,1,Closed,122.49,34.71,127.31,122.49,34.71,Closed,0,0
+7179,FRESNO 0,Coast,Houston,1,Closed,58.29,16.52,60.59,58.29,16.52,Closed,0,0
+7180,HOUSTON 48 0,Coast,Houston,1,Closed,91.45,25.91,95.05,91.45,25.91,Closed,0,0
+7181,HOUSTON 58 0,Coast,Houston,1,Closed,148.98,42.21,154.84,148.98,42.21,Closed,0,0
+7182,PATTISON 0,Coast,Houston,1,Closed,2.07,0.59,2.15,2.07,0.59,Closed,0,0
+7183,HOUSTON 77 0,Coast,Houston,1,Closed,215.91,61.17,224.41,215.91,61.17,Closed,0,0
+7185,MISSOURI CITY 2 1,Coast,Houston,1,Closed,168.93,47.86,175.58,168.93,47.86,Closed,0,0
+7188,HOUSTON 4 2,Coast,Houston,1,Closed,76.58,21.7,79.6,76.58,21.7,Closed,0,0
+7198,TOMBALL 2 0,Coast,Spring,1,Closed,86.12,24.4,89.51,86.12,24.4,Closed,0,0
+7201,CYPRESS 1 2,Coast,Spring,1,Closed,216.79,61.42,225.33,216.79,61.42,Closed,0,0
+7202,HEMPSTEAD 0,Coast,Spring,1,Closed,35.93,10.18,37.35,35.93,10.18,Closed,0,0
+7203,WEST COLUMBIA 0,Coast,Bay City,1,Closed,20.55,5.82,21.36,20.55,5.82,Closed,0,0
+7213,SANTA FE 1 0,Coast,Galveston,2,Closed,41.19,11.67,42.81,41.19,11.67,Closed,0,0
+7213,SANTA FE 1 0,Coast,Galveston,1,Closed,27.31,7.74,28.38,27.31,7.74,Closed,0,0
+7214,HOUSTON 27 0,Coast,Houston,1,Closed,83.89,23.77,87.2,83.89,23.77,Closed,0,0
+7215,SPRING 5 0,Coast,Spring,1,Closed,104.88,29.72,109.01,104.88,29.72,Closed,0,0
+7216,HOUSTON 46 0,Coast,Houston,1,Closed,92.56,26.23,96.2,92.56,26.23,Closed,0,0
+7217,HOUSTON 23 0,Coast,East Houston,1,Closed,76.39,21.64,79.4,76.39,21.64,Closed,0,0
+7218,MONTGOMERY 0,Coast,Spring,1,Closed,48.11,13.63,50,48.11,13.63,Closed,0,0
+7219,HUNGERFORD 0,Coast,Bay City,1,Closed,1.02,0.29,1.06,1.02,0.29,Closed,0,0
+7219,HUNGERFORD 0,Coast,Bay City,2,Closed,0.23,0.07,0.24,0.23,0.07,Closed,0,0
+7220,HOUSTON 84 0,Coast,Houston,1,Closed,141.27,40.03,146.83,141.27,40.03,Closed,0,0
+7221,HOUSTON 83 0,Coast,Houston,1,Closed,169.58,48.05,176.25,169.58,48.05,Closed,0,0
+7222,HOUSTON 24 0,Coast,Houston,1,Closed,86.99,24.65,90.42,86.99,24.65,Closed,0,0
+7223,HOUSTON 76 0,Coast,Spring,1,Closed,49.62,14.06,51.58,49.62,14.06,Closed,0,0
+7224,HOUSTON 43 0,Coast,Houston,1,Closed,30.77,8.72,31.99,30.77,8.72,Closed,0,0
+7225,HOUSTON 81 0,Coast,Houston,1,Closed,111.44,31.57,115.82,111.44,31.57,Closed,0,0
+7226,HOUSTON 35 0,Coast,Houston,1,Closed,45.25,12.82,47.04,45.25,12.82,Closed,0,0
+7229,HOUSTON 90 2,Coast,Houston,1,Closed,285.41,80.87,296.65,285.41,80.87,Closed,0,0
+7230,BEASLEY 0,Coast,Bay City,1,Closed,7.37,2.09,7.66,7.37,2.09,Closed,0,0
+7231,HOUSTON 7 0,Coast,East Houston,1,Closed,50.85,14.41,52.85,50.85,14.41,Closed,0,0
+7232,LA MARQUE 0,Coast,Galveston,1,Closed,42.92,12.16,44.61,42.92,12.16,Closed,0,0
+7233,WALLER 0,Coast,Spring,1,Closed,33.2,9.41,34.51,33.2,9.41,Closed,0,0
+7234,PORTER 0,Coast,Spring,1,Closed,77.31,21.9,80.35,77.31,21.9,Closed,0,0
+7235,CYPRESS 2 0,Coast,Houston,1,Closed,151.62,42.96,157.59,151.62,42.96,Closed,0,0
+7236,HOUSTON 30 0,Coast,Spring,1,Closed,38.27,10.84,39.78,38.27,10.84,Closed,0,0
+7237,FULSHEAR 0,Coast,Bay City,1,Closed,15.09,4.28,15.68,15.09,4.28,Closed,0,0
+7238,LIBERTY 0,Coast,East Houston,1,Closed,47.85,13.56,49.73,47.85,13.56,Closed,0,0
+7239,WINNIE 0,Coast,East Houston,1,Closed,42.4,12.01,44.06,42.4,12.01,Closed,0,0
+7240,HOUSTON 63 0,Coast,Houston,1,Closed,107.69,30.51,111.93,107.69,30.51,Closed,0,0
+7241,HOUSTON 70 0,Coast,Houston,1,Closed,104.32,29.56,108.43,104.32,29.56,Closed,0,0
+7242,HOUSTON 55 0,Coast,Houston,1,Closed,80.14,22.71,83.29,80.14,22.71,Closed,0,0
+7243,CROSBY 0,Coast,East Houston,1,Closed,78.71,22.3,81.81,78.71,22.3,Closed,0,0
+7244,MANVEL 0,Coast,Houston,1,Closed,38.02,10.77,39.51,38.02,10.77,Closed,0,0
+7245,HOUSTON 54 0,Coast,Spring,1,Closed,98.79,27.99,102.68,98.79,27.99,Closed,0,0
+7246,HOUSTON 89 0,Coast,Houston,1,Closed,199.51,56.53,207.36,199.51,56.53,Closed,0,0
+7247,DAMON 0,Coast,Bay City,1,Closed,6.85,1.94,7.12,6.85,1.94,Closed,0,0
+7247,DAMON 0,Coast,Bay City,2,Closed,2.35,0.67,2.44,2.35,0.67,Closed,0,0
+7248,HOUSTON 74 0,Coast,Houston,2,Closed,117.62,33.33,122.25,117.62,33.33,Closed,0,0
+7248,HOUSTON 74 0,Coast,Houston,1,Closed,102.9,29.15,106.95,102.9,29.15,Closed,0,0
+7249,HOUSTON 26 0,Coast,Houston,1,Closed,71.82,20.35,74.65,71.82,20.35,Closed,0,0
+7250,HOUSTON 32 0,Coast,Houston,1,Closed,32.62,9.24,33.91,32.62,9.24,Closed,0,0
+7251,HOCKLEY 0,Coast,Spring,1,Closed,35.62,10.09,37.02,35.62,10.09,Closed,0,0
+7253,ANGLETON 1,Coast,Galveston,1,Closed,90.93,25.76,94.51,90.93,25.76,Closed,0,0
+7254,CONROE 3 0,Coast,Spring,1,Closed,50.13,14.2,52.1,50.13,14.2,Closed,0,0
+7255,HOUSTON 39 0,Coast,Houston,1,Closed,58.99,16.71,61.31,58.99,16.71,Closed,0,0
+7256,HOUSTON 59 0,Coast,Houston,1,Closed,86.86,24.61,90.28,86.86,24.61,Closed,0,0
+7257,PEARLAND 1 0,Coast,East Houston,1,Closed,127.15,36.03,132.15,127.15,36.03,Closed,0,0
+7258,HOUSTON 56 0,Coast,Houston,1,Closed,42.99,12.18,44.69,42.99,12.18,Closed,0,0
+7259,HOUSTON 13 0,Coast,East Houston,1,Closed,146.05,41.38,151.8,146.05,41.38,Closed,0,0
+7260,CHANNELVIEW 2 0,Coast,East Houston,1,Closed,124.64,35.31,129.54,124.64,35.31,Closed,0,0
+7262,BAY CITY 1,Coast,Bay City,1,Closed,72.03,20.41,74.86,72.03,20.41,Closed,0,0
+7265,PASADENA 3 2,Coast,East Houston,1,Closed,62.91,17.82,65.39,62.91,17.82,Closed,0,0
+7271,BROOKSHIRE 0,Coast,Houston,1,Closed,28.45,8.06,29.57,28.45,8.06,Closed,0,0
+7272,HOUSTON 25 0,Coast,Houston,1,Closed,45.88,13,47.69,45.88,13,Closed,0,0
+7273,TEXAS CITY 2 0,Coast,Galveston,1,Closed,39.39,11.16,40.94,39.39,11.16,Closed,0,0
+7275,VICTORIA 3 1,Coast,Victoria,2,Closed,41.94,11.88,43.59,41.94,11.88,Closed,0,0
+7275,VICTORIA 3 1,Coast,Victoria,1,Closed,0.36,0.1,0.38,0.36,0.1,Closed,0,0
+7276,HOUSTON 36 0,Coast,Houston,1,Closed,88.67,25.12,92.16,88.67,25.12,Closed,0,0
+7277,GANADO 0,Coast,Victoria,1,Closed,15.99,4.53,16.62,15.99,4.53,Closed,0,0
+7279,MONT BELVIEU 1,Coast,East Houston,1,Closed,148.52,42.08,154.37,148.52,42.08,Closed,0,0
+7283,BAYTOWN 3 1,Coast,East Houston,1,Closed,109.47,31.02,113.78,109.47,31.02,Closed,0,0
+7290,SPRING 6 0,Coast,Spring,1,Closed,63.77,18.07,66.28,63.77,18.07,Closed,0,0
+7291,HUMBLE 2 0,Coast,Spring,1,Closed,101.91,28.88,105.92,101.91,28.88,Closed,0,0
+7292,HOUSTON 69 0,Coast,Spring,1,Closed,94.1,26.66,97.8,94.1,26.66,Closed,0,0
+7293,SANTA FE 2 0,Coast,Galveston,1,Closed,15.94,4.52,16.57,15.94,4.52,Closed,0,0
+7294,PORT BOLIVAR 0,Coast,East Houston,2,Closed,5.69,1.61,5.91,5.69,1.61,Closed,0,0
+7294,PORT BOLIVAR 0,Coast,East Houston,1,Closed,1.56,0.44,1.62,1.56,0.44,Closed,0,0
+7295,HOUSTON 42 0,Coast,Spring,1,Closed,104.37,29.57,108.48,104.37,29.57,Closed,0,0
+7296,HOUSTON 85 0,Coast,Houston,1,Closed,93.84,26.59,97.53,93.84,26.59,Closed,0,0
+7297,HOUSTON 50 0,Coast,Houston,1,Closed,93.77,26.57,97.46,93.77,26.57,Closed,0,0
+7298,HOUSTON 62 0,Coast,Houston,1,Closed,101.23,28.68,105.22,101.23,28.68,Closed,0,0
+7299,EAGLE LAKE 0,Coast,Bay City,1,Closed,18.08,5.12,18.79,18.08,5.12,Closed,0,0
+7299,EAGLE LAKE 0,Coast,Bay City,2,Closed,0.32,0.09,0.33,0.32,0.09,Closed,0,0
+7300,CONROE 2 0,Coast,Spring,1,Closed,54.35,15.4,56.49,54.35,15.4,Closed,0,0
+7301,WEBSTER 0,Coast,East Houston,1,Closed,69.18,19.6,71.9,69.18,19.6,Closed,0,0
+7302,SWEENY 0,Coast,Bay City,2,Closed,24.29,6.88,25.25,24.29,6.88,Closed,0,0
+7302,SWEENY 0,Coast,Bay City,1,Closed,0.14,0.04,0.14,0.14,0.04,Closed,0,0
+7303,BLESSING 0,Coast,Bay City,1,Closed,6.49,1.84,6.74,6.49,1.84,Closed,0,0
+7306,WHARTON 1 2,Coast,Bay City,2,Closed,7.52,2.13,7.81,7.52,2.13,Closed,0,0
+7306,WHARTON 1 2,Coast,Bay City,1,Closed,0.17,0.05,0.18,0.17,0.05,Closed,0,0
+7313,LAKE JACKSON 1,Coast,Galveston,1,Closed,86.22,24.43,89.61,86.22,24.43,Closed,0,0
+7314,BELLVILLE 0,Coast,Spring,1,Closed,28.76,8.15,29.89,28.76,8.15,Closed,0,0
+7315,KATY 4 0,Coast,Houston,1,Closed,69.31,19.64,72.04,69.31,19.64,Closed,0,0
+7316,HOUSTON 38 0,Coast,Houston,1,Closed,63.23,17.92,65.72,63.23,17.92,Closed,0,0
+7317,FRIENDSWOOD 0,Coast,East Houston,1,Closed,142.91,40.49,148.53,142.91,40.49,Closed,0,0
+7318,HOUSTON 17 0,Coast,East Houston,1,Closed,112.16,31.78,116.58,112.16,31.78,Closed,0,0
+7319,HOUSTON 66 0,Coast,Spring,1,Closed,30.19,8.55,31.38,30.19,8.55,Closed,0,0
+7330,HOUSTON 60 0,Coast,Houston,2,Closed,143.58,40.68,149.23,143.58,40.68,Closed,0,0
+7330,HOUSTON 60 0,Coast,Houston,1,Closed,52.47,14.87,54.54,52.47,14.87,Closed,0,0
+7333,PASADENA 1 2,Coast,East Houston,1,Closed,29.21,8.27,30.35,29.21,8.27,Closed,0,0
+7336,STAFFORD 0,Coast,Houston,1,Closed,107.69,30.51,111.93,107.69,30.51,Closed,0,0
+7337,EDNA 0,Coast,Victoria,1,Closed,24.56,6.96,25.53,24.56,6.96,Closed,0,0
+7338,HOUSTON 21 0,Coast,East Houston,1,Closed,109.2,30.94,113.5,109.2,30.94,Closed,0,0
+7339,NEEDVILLE 0,Coast,Bay City,1,Closed,32.04,9.08,33.3,32.04,9.08,Closed,0,0
+7340,SEALY 0,Coast,Houston,1,Closed,38.64,10.95,40.16,38.64,10.95,Closed,0,0
+7343,KATY 3 2,Coast,Houston,1,Closed,184.8,52.36,192.07,184.8,52.36,Closed,0,0
+7344,HOUSTON 37 0,Coast,Houston,1,Closed,101.41,28.73,105.4,101.41,28.73,Closed,0,0
+7345,HOUSTON 19 0,Coast,East Houston,1,Closed,73.37,20.79,76.26,73.37,20.79,Closed,0,0
+7362,HOUSTON 61 0,Coast,Houston,1,Closed,56.02,15.87,58.22,56.02,15.87,Closed,0,0
+7363,GALVESTON 3 0,Coast,Galveston,1,Closed,26.59,7.53,27.64,26.59,7.53,Closed,0,0
+7364,EAST BERNARD 0,Coast,Bay City,1,Closed,14.27,4.04,14.83,14.27,4.04,Closed,0,0
+7365,HOUSTON 20 0,Coast,East Houston,1,Closed,80.97,22.94,84.15,80.97,22.94,Closed,0,0
+7380,FREEPORT 3 0,Coast,Galveston,1,Closed,52.24,14.8,54.29,52.24,14.8,Closed,0,0
+7381,HOUSTON 15 0,Coast,East Houston,2,Closed,50.42,14.29,52.41,50.42,14.29,Closed,0,0
+7381,HOUSTON 15 0,Coast,East Houston,1,Closed,44.33,12.56,46.08,44.33,12.56,Closed,0,0
+7382,HOUSTON 31 0,Coast,Houston,1,Closed,78.13,22.14,81.2,78.13,22.14,Closed,0,0
+7383,ROSHARON 0,Coast,Galveston,1,Closed,85.59,24.25,88.96,85.59,24.25,Closed,0,0
+7384,HOUSTON 44 0,Coast,Houston,1,Closed,66.87,18.95,69.5,66.87,18.95,Closed,0,0
+7385,HOUSTON 75 0,Coast,Houston,1,Closed,135.24,38.32,140.57,135.24,38.32,Closed,0,0
+7386,HOUSTON 71 0,Coast,Houston,1,Closed,111.8,31.68,116.2,111.8,31.68,Closed,0,0
+7387,HUMBLE 1 0,Coast,East Houston,1,Closed,160.73,45.54,167.06,160.73,45.54,Closed,0,0
+7388,HOUSTON 68 0,Coast,Houston,1,Closed,125.97,35.69,130.93,125.97,35.69,Closed,0,0
+7391,WILLIS 1 2,Coast,Spring,1,Closed,42.84,12.14,44.53,42.84,12.14,Closed,0,0
+7392,BAYTOWN 4 0,Coast,East Houston,2,Closed,51.09,14.48,53.1,51.09,14.48,Closed,0,0
+7392,BAYTOWN 4 0,Coast,East Houston,1,Closed,0.94,0.27,0.97,0.94,0.27,Closed,0,0
+7393,VAN VLECK 0,Coast,Bay City,2,Closed,6.92,1.96,7.19,6.92,1.96,Closed,0,0
+7393,VAN VLECK 0,Coast,Bay City,1,Closed,0.39,0.11,0.41,0.39,0.11,Closed,0,0
+7394,HUFFMAN 0,Coast,East Houston,1,Closed,37.41,10.6,38.89,37.41,10.6,Closed,0,0
+7395,HOUSTON 53 0,Coast,Houston,1,Closed,70.42,19.95,73.19,70.42,19.95,Closed,0,0
+7396,HOUSTON 91 0,Coast,Houston,1,Closed,25.49,7.22,26.5,25.49,7.22,Closed,0,0
+7397,ROSENBERG 0,Coast,Houston,1,Closed,105.72,29.95,109.88,105.72,29.95,Closed,0,0
+7398,PASADENA 5 0,Coast,East Houston,1,Closed,73.59,20.85,76.48,73.59,20.85,Closed,0,0
+7399,HOUSTON 45 0,Coast,Houston,1,Closed,56.83,16.1,59.07,56.83,16.1,Closed,0,0
+7403,PASADENA 4 0,Coast,East Houston,1,Closed,69.67,19.74,72.41,69.67,19.74,Closed,0,0
+7404,HOUSTON 57 0,Coast,Spring,1,Closed,91.68,25.98,95.29,91.68,25.98,Closed,0,0
+7404,HOUSTON 57 0,Coast,Spring,2,Closed,86.05,24.38,89.44,86.05,24.38,Closed,0,0
+7405,GALVESTON 2 0,Coast,Galveston,1,Closed,53.26,15.09,55.36,53.26,15.09,Closed,0,0
+7408,POINT COMFORT 1 2,Coast,Victoria,1,Closed,53.66,15.2,55.77,53.66,15.2,Closed,0,0
+7410,KATY 2 1,Coast,Houston,1,Closed,215.67,61.11,224.16,215.67,61.11,Closed,0,0
+7411,SPRING 3 0,Coast,Spring,1,Closed,69.41,19.67,72.14,69.41,19.67,Closed,0,0
+7412,DANBURY 0,Coast,Galveston,1,Closed,8.59,2.43,8.93,8.59,2.43,Closed,0,0
+7413,WHARTON 2 0,Coast,Bay City,1,Closed,42.91,12.16,44.6,42.91,12.16,Closed,0,0
+7417,HOUSTON 64 0,Coast,Houston,1,Closed,97.88,27.73,101.74,97.88,27.73,Closed,0,0
+7418,HOUSTON 65 0,Coast,Houston,1,Closed,48.22,13.66,50.12,48.22,13.66,Closed,0,0
+7419,LA PORTE 0,Coast,East Houston,1,Closed,107,30.32,111.21,107,30.32,Closed,0,0
+7421,MAGNOLIA 1 1,Coast,Spring,1,Closed,90.64,25.68,94.21,90.64,25.68,Closed,0,0
+7424,ALVIN 2,Coast,Galveston,1,Closed,139.88,39.63,145.39,139.88,39.63,Closed,0,0
+7425,HOUSTON 86 0,Coast,Houston,1,Closed,105.98,30.03,110.15,105.98,30.03,Closed,0,0
+7426,BRAZORIA 0,Coast,Galveston,1,Closed,41.8,11.84,43.44,41.8,11.84,Closed,0,0
+7427,HOUSTON 87 0,Coast,Houston,1,Closed,156.45,44.33,162.61,156.45,44.33,Closed,0,0
+7430,FREEPORT 2 2,Coast,Galveston,1,Closed,46.92,13.29,48.76,46.92,13.29,Closed,0,0
+7431,CONROE 6 0,Coast,Spring,1,Closed,35.57,10.08,36.97,35.57,10.08,Closed,0,0
+7432,MADISONVILLE 0,Coast,Spring,1,Closed,22.94,6.5,23.84,22.94,6.5,Closed,0,0
+8001,NORMANGEE 0,East,Aggieland,1,Closed,10.82,3.07,11.24,10.82,3.07,Closed,0,0
+8002,ARP 0,East,Tyler,1,Closed,11.81,3.35,12.28,11.81,3.35,Closed,0,0
+8003,CENTERVILLE 0,East,Aggieland,1,Closed,11.99,3.4,12.46,11.99,3.4,Closed,0,0
+8005,LUFKIN 3 1,East,Tyler,1,Closed,102.01,28.9,106.03,102.01,28.9,Closed,0,0
+8006,FLINT 0,East,Tyler,1,Closed,37.4,10.6,38.87,37.4,10.6,Closed,0,0
+8007,BULLARD 0,East,Tyler,1,Closed,30.07,8.52,31.25,30.07,8.52,Closed,0,0
+8008,CHANDLER 0,East,Tyler,1,Closed,39.22,11.11,40.77,39.22,11.11,Closed,0,0
+8009,PLANTERSVILLE 0,East,Aggieland,1,Closed,9.81,2.78,10.19,9.81,2.78,Closed,0,0
+8010,MARQUEZ 0,East,Aggieland,1,Closed,5.39,1.53,5.61,5.39,1.53,Closed,0,0
+8011,TENNESSEE COLONY 0,East,Aggieland,2,Closed,27.05,7.66,28.12,27.05,7.66,Closed,0,0
+8011,TENNESSEE COLONY 0,East,Aggieland,1,Closed,0.2,0.06,0.21,0.2,0.06,Closed,0,0
+8012,ANDERSON 0,East,Aggieland,1,Closed,7.6,2.15,7.9,7.6,2.15,Closed,0,0
+8013,MINEOLA 0,East,Tyler,1,Closed,60.03,17.01,62.39,60.03,17.01,Closed,0,0
+8014,LOVELADY 0,East,Aggieland,1,Closed,15.15,4.29,15.75,15.15,4.29,Closed,0,0
+8015,HUNTINGTON 0,East,Tyler,1,Closed,23.93,6.78,24.87,23.93,6.78,Closed,0,0
+8016,BRYAN 4 0,East,Aggieland,1,Closed,69.86,19.79,72.61,69.86,19.79,Closed,0,0
+8017,FRANKSTON 0,East,Tyler,1,Closed,18.44,5.22,19.16,18.44,5.22,Closed,0,0
+8019,TYLER 4 1,East,Tyler,1,Closed,103.12,29.22,107.18,103.12,29.22,Closed,0,0
+8020,BEN WHEELER 0,East,Tyler,1,Closed,17.35,4.92,18.03,17.35,4.92,Closed,0,0
+8021,GARRISON 0,East,Tyler,1,Closed,10.73,3.04,11.16,10.73,3.04,Closed,0,0
+8022,ETOILE 0,East,Tyler,1,Closed,6.89,1.95,7.16,6.89,1.95,Closed,0,0
+8025,PALESTINE 1 0,East,Tyler,1,Closed,50.76,14.38,52.76,50.76,14.38,Closed,0,0
+8026,LINDALE 0,East,Tyler,1,Closed,55.08,15.61,57.25,55.08,15.61,Closed,0,0
+8027,WHITEHOUSE 0,East,Tyler,1,Closed,39.38,11.16,40.92,39.38,11.16,Closed,0,0
+8028,OVERTON 0,East,Tyler,1,Closed,24.06,6.82,25.01,24.06,6.82,Closed,0,0
+8029,GRAND SALINE 0,East,Tyler,1,Closed,20.87,5.91,21.7,20.87,5.91,Closed,0,0
+8029,GRAND SALINE 0,East,Tyler,2,Closed,4.78,1.35,4.97,4.78,1.35,Closed,0,0
+8032,SHIRO 2,East,Aggieland,3,Closed,73.49,20.82,76.39,73.49,20.82,Closed,0,0
+8032,SHIRO 2,East,Aggieland,1,Closed,3.88,1.1,4.03,3.88,1.1,Closed,0,0
+8032,SHIRO 2,East,Aggieland,2,Closed,0.59,0.17,0.61,0.59,0.17,Closed,0,0
+8037,MIDWAY 0,East,Aggieland,1,Closed,11.29,3.2,11.73,11.29,3.2,Closed,0,0
+8038,SULPHUR SPRINGS 0,East,Tyler,1,Closed,73.15,20.73,76.03,73.15,20.73,Closed,0,0
+8039,VAN 0,East,Tyler,1,Closed,12.61,3.57,13.11,12.61,3.57,Closed,0,0
+8040,MURCHISON 0,East,Tyler,2,Closed,9.76,2.77,10.15,9.76,2.77,Closed,0,0
+8040,MURCHISON 0,East,Tyler,1,Closed,8.33,2.36,8.66,8.33,2.36,Closed,0,0
+8041,NACOGDOCHES 2 0,East,Tyler,1,Closed,52.77,14.95,54.85,52.77,14.95,Closed,0,0
+8042,DIBOLL 0,East,Tyler,1,Closed,27.31,7.74,28.39,27.31,7.74,Closed,0,0
+8052,TYLER 8 0,East,Tyler,1,Closed,15.19,4.3,15.78,15.19,4.3,Closed,0,0
+8053,ATHENS 1 0,East,Tyler,1,Closed,20.96,5.94,21.78,20.96,5.94,Closed,0,0
+8054,BUFFALO 0,East,Aggieland,1,Closed,16.16,4.58,16.79,16.16,4.58,Closed,0,0
+8055,RUSK 0,East,Tyler,1,Closed,33.79,9.57,35.12,33.79,9.57,Closed,0,0
+8056,WINONA 0,East,Tyler,1,Closed,10.55,2.99,10.97,10.55,2.99,Closed,0,0
+8062,CUSHING 2 0,East,Tyler,1,Closed,10.19,2.89,10.6,10.19,2.89,Closed,0,0
+8063,NACOGDOCHES 3 0,East,Tyler,1,Closed,69.38,19.66,72.11,69.38,19.66,Closed,0,0
+8064,FAIRFIELD 3 0,East,Aggieland,1,Closed,21.23,6.01,22.06,21.23,6.01,Closed,0,0
+8065,TRINIDAD 2 0,East,Aggieland,1,Closed,6.85,1.94,7.12,6.85,1.94,Closed,0,0
+8066,DIKE 0,East,Tyler,1,Closed,3.23,0.92,3.36,3.23,0.92,Closed,0,0
+8072,PALESTINE 2 0,East,Tyler,2,Closed,67.19,19.04,69.84,67.19,19.04,Closed,0,0
+8072,PALESTINE 2 0,East,Tyler,1,Closed,2.89,0.82,3,2.89,0.82,Closed,0,0
+8073,EMORY 0,East,Tyler,1,Closed,19.05,5.4,19.8,19.05,5.4,Closed,0,0
+8081,TYLER 9 0,East,Tyler,1,Closed,26.05,7.38,27.08,26.05,7.38,Closed,0,0
+8086,FRANKLIN 4,East,Aggieland,1,Closed,21.25,6.02,22.09,21.25,6.02,Closed,0,0
+8089,TYLER 3 0,East,Tyler,1,Closed,21.47,6.08,22.31,21.47,6.08,Closed,0,0
+8090,ELKHART 0,East,Aggieland,1,Closed,15.21,4.31,15.81,15.21,4.31,Closed,0,0
+8091,WORTHAM 0,East,Aggieland,1,Closed,7.57,2.15,7.87,7.57,2.15,Closed,0,0
+8091,WORTHAM 0,East,Aggieland,2,Closed,4.3,1.22,4.47,4.3,1.22,Closed,0,0
+8092,OAKWOOD 0,East,Aggieland,1,Closed,7.11,2.01,7.39,7.11,2.01,Closed,0,0
+8093,COOKVILLE 0,East,Tyler,1,Closed,4.91,1.39,5.1,4.91,1.39,Closed,0,0
+8095,COLLEGE STATION 1 1,East,Aggieland,1,Closed,146.81,41.6,152.59,146.81,41.6,Closed,0,0
+8096,EDGEWOOD 0,East,Tyler,1,Closed,11.17,3.16,11.61,11.17,3.16,Closed,0,0
+8100,TYLER 2 0,East,Tyler,1,Closed,41.13,11.65,42.75,41.13,11.65,Closed,0,0
+8101,ALTO 0,East,Tyler,1,Closed,12.54,3.55,13.03,12.54,3.55,Closed,0,0
+8102,CALVERT 0,East,Aggieland,1,Closed,4.76,1.35,4.95,4.76,1.35,Closed,0,0
+8103,JEWETT 2 0,East,Aggieland,1,Closed,8.15,2.31,8.47,8.15,2.31,Closed,0,0
+8104,NAVASOTA 0,East,Aggieland,1,Closed,46.53,13.18,48.36,46.53,13.18,Closed,0,0
+8106,MOUNT PLEASANT 2 1,East,Tyler,5,Closed,84.88,24.05,88.22,84.88,24.05,Closed,0,0
+8106,MOUNT PLEASANT 2 1,East,Tyler,2,Closed,7.37,2.09,7.66,7.37,2.09,Closed,0,0
+8106,MOUNT PLEASANT 2 1,East,Tyler,1,Closed,4.62,1.31,4.8,4.62,1.31,Closed,0,0
+8106,MOUNT PLEASANT 2 1,East,Tyler,4,Closed,1.83,0.52,1.91,1.83,0.52,Closed,0,0
+8106,MOUNT PLEASANT 2 1,East,Tyler,3,Closed,1.19,0.34,1.23,1.19,0.34,Closed,0,0
+8107,SCROGGINS 0,East,Tyler,1,Closed,4.94,1.4,5.13,4.94,1.4,Closed,0,0
+8107,SCROGGINS 0,East,Tyler,2,Closed,4.27,1.21,4.44,4.27,1.21,Closed,0,0
+8108,WILLS POINT 0,East,Tyler,1,Closed,43.93,12.45,45.66,43.93,12.45,Closed,0,0
+8109,ATHENS 2 0,East,Tyler,1,Closed,51.76,14.67,53.8,51.76,14.67,Closed,0,0
+8110,POINT 0,East,Tyler,1,Closed,20.41,5.78,21.21,20.41,5.78,Closed,0,0
+8111,LUFKIN 2 0,East,Tyler,1,Closed,87.11,24.68,90.54,87.11,24.68,Closed,0,0
+8114,JACKSONVILLE 1 2,East,Tyler,2,Closed,22.78,6.45,23.68,22.78,6.45,Closed,0,0
+8114,JACKSONVILLE 1 2,East,Tyler,1,Closed,1.63,0.46,1.7,1.63,0.46,Closed,0,0
+8118,CROCKETT 0,East,Aggieland,2,Closed,36.04,10.21,37.45,36.04,10.21,Closed,0,0
+8118,CROCKETT 0,East,Aggieland,1,Closed,0.59,0.17,0.61,0.59,0.17,Closed,0,0
+8119,HENDERSON 1 0,East,Tyler,2,Closed,40.31,11.42,41.9,40.31,11.42,Closed,0,0
+8119,HENDERSON 1 0,East,Tyler,1,Closed,7.69,2.18,7.99,7.69,2.18,Closed,0,0
+8120,BRYAN 3 0,East,Aggieland,1,Closed,31.9,9.04,33.16,31.9,9.04,Closed,0,0
+8121,JACKSONVILLE 2 0,East,Tyler,1,Closed,79.16,22.43,82.28,79.16,22.43,Closed,0,0
+8122,BRYAN 5 0,East,Aggieland,1,Closed,29.41,8.33,30.57,29.41,8.33,Closed,0,0
+8123,MALAKOFF 0,East,Tyler,1,Closed,17.53,4.97,18.22,17.53,4.97,Closed,0,0
+8124,CUMBY 0,East,Tyler,1,Closed,11.55,3.27,12,11.55,3.27,Closed,0,0
+8124,CUMBY 0,East,Tyler,2,Closed,8.65,2.45,8.99,8.65,2.45,Closed,0,0
+8125,NACOGDOCHES 1 0,East,Tyler,1,Closed,45.16,12.8,46.94,45.16,12.8,Closed,0,0
+8132,TEAGUE 0,East,Aggieland,1,Closed,21.93,6.21,22.79,21.93,6.21,Closed,0,0
+8134,TYLER 7 1,East,Tyler,1,Closed,111.5,31.59,115.89,111.5,31.59,Closed,0,0
+8135,TYLER 6 0,East,Tyler,1,Closed,81.21,23.01,84.4,81.21,23.01,Closed,0,0
+8136,YANTIS 0,East,Tyler,1,Closed,10.05,2.85,10.45,10.05,2.85,Closed,0,0
+8137,POLLOK 0,East,Tyler,2,Closed,14.83,4.2,15.41,14.83,4.2,Closed,0,0
+8137,POLLOK 0,East,Tyler,1,Closed,5.71,1.62,5.93,5.71,1.62,Closed,0,0
+8137,POLLOK 0,East,Tyler,3,Closed,3.79,1.07,3.94,3.79,1.07,Closed,0,0
+8138,TYLER 1 0,East,Tyler,1,Closed,6.5,1.84,6.76,6.5,1.84,Closed,0,0
+8140,COLLEGE STATION 2 1,East,Aggieland,1,Closed,168.51,47.75,175.15,168.51,47.75,Closed,0,0
+8141,HEARNE 0,East,Aggieland,1,Closed,20.94,5.93,21.77,20.94,5.93,Closed,0,0
+8142,MOUNT VERNON 0,East,Tyler,1,Closed,22.36,6.34,23.24,22.36,6.34,Closed,0,0
+8143,IOLA 0,East,Aggieland,1,Closed,12.67,3.59,13.16,12.67,3.59,Closed,0,0
+8143,IOLA 0,East,Aggieland,2,Closed,10.28,2.91,10.68,10.28,2.91,Closed,0,0
+8144,STREETMAN 0,East,Aggieland,2,Closed,5.77,1.63,6,5.77,1.63,Closed,0,0
+8144,STREETMAN 0,East,Aggieland,1,Closed,0.28,0.08,0.29,0.28,0.08,Closed,0,0
+8145,COMO 0,East,Tyler,1,Closed,6.16,1.74,6.4,6.16,1.74,Closed,0,0
+8146,HENDERSON 2 0,East,Tyler,1,Closed,49.91,14.14,51.88,49.91,14.14,Closed,0,0
+8150,ZAVALLA 0,East,Tyler,1,Closed,8.51,2.41,8.84,8.51,2.41,Closed,0,0
+8151,GRAPELAND 0,East,Aggieland,1,Closed,17.38,4.92,18.06,17.38,4.92,Closed,0,0
+8152,BRYAN 2 0,East,Aggieland,1,Closed,46.35,13.13,48.17,46.35,13.13,Closed,0,0
+8153,CANTON 0,East,Tyler,1,Closed,38.55,10.92,40.07,38.55,10.92,Closed,0,0
+8154,TYLER 5 0,East,Tyler,1,Closed,26.31,7.46,27.35,26.31,7.46,Closed,0,0
+8160,BRYAN 1 2,East,Aggieland,1,Closed,90.76,25.71,94.33,90.76,25.71,Closed,0,0
