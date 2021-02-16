@@ -10,6 +10,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import descartes
 import geopandas as gpd
+import xlrd
 from shapely.geometry import Point, Polygon
 from matplotlib.colors import TwoSlopeNorm
 
@@ -22,6 +23,7 @@ nodes_df = nodes_df.to_crs(epsg=2163)
 
 BAs_gdf = gpd.read_file('WECC.shp')
 BAs_gdf = BAs_gdf.to_crs(epsg=2163)
+
 
 states_gdf = gpd.read_file('geo_export_9ef76f60-e019-451c-be6b-5a879a5e7c07.shp')
 states_gdf = states_gdf.to_crs(epsg=2163)
@@ -91,19 +93,27 @@ for n in names:
     
 df_gens['BusName'] = names
 df_gens['BA'] = BAs
+types = list(df_gens['FuelType'])
 
 #select a single bus for each plant/BA combination (generators with the same name)
 
 leftover = []
 reduced_gen_buses = []
 unique_bus_names = []
+unique_bus_types = []
 caps = []
 
 for n in names:
+    idx = names.index(n)
     if n in unique_bus_names:
         pass
     else:
         unique_bus_names.append(n)
+        unique_bus_types.append(types[idx])
+        
+df_T = pd.DataFrame(unique_bus_types)
+df_T.columns = ['Type']
+df_T.to_csv('reduced_types.csv')
 
 for n in unique_bus_names:
     sample_ba = list(df_gens.loc[df_gens['BusName'] == n,'BA'].values)

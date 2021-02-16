@@ -375,9 +375,9 @@ D_NODES.plot(ax=ax,color = 'deeppink',markersize=M,alpha=1,edgecolor='black',lin
 T_NODES.plot(ax=ax,color = 'limegreen',markersize=M,alpha=1,edgecolor='black',linewidth=0.3)   
 
 ax.set_box_aspect(1)
-ax.set_xlim(-800000,2700000)
-ax.set_ylim([-2000000,800000])
-# plt.axis('off')
+ax.set_xlim(1200000,2300000)
+ax.set_ylim([-1200000,-500000])
+plt.axis('off')
 plt.savefig('CACKALACKY_topology.jpg',dpi=330)
 
 

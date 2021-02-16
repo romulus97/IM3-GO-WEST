@@ -1,0 +1,316 @@
+,plant
+0,Venice
+1,Horse Mesa
+2,Roosevelt
+3,Stewart Mountain
+4,Davis
+5,Glen Canyon
+6,Hoover Dam (NV)
+7,Balch 1
+8,Balch 2
+9,Belden
+10,Bucks Creek
+11,Butt Valley
+12,Caribou 1
+13,Caribou 2
+14,Centerville
+15,Cow Creek
+16,Cresta
+17,Drum 1
+18,Drum 2
+19,Electra
+20,Haas
+21,Halsey
+22,Hamilton Branch
+23,James B Black
+24,Kerckhoff
+25,Kings River
+26,Pit 1
+27,Pit 3
+28,Pit 4
+29,Pit 5
+30,Pit 6
+31,Pit 7
+32,Poe
+33,Rock Creek
+34,Salt Springs
+35,Stanislaus
+36,Tiger Creek
+37,Big Creek 1
+38,Big Creek 2
+39,Big Creek 3
+40,Big Creek 4
+41,Big Creek 8
+42,Big Creek 2A
+43,Borel
+44,Kaweah 1
+45,Kern River No. 1
+46,Lundy
+47,Mammoth Pool
+48,Poole
+49,Pardee
+50,Dion R Holm
+51,Moccasin
+52,R C Kirkwood
+53,Drop 2
+54,Drop 3
+55,Drop 4
+56,Pilot Knob
+57,Big Pine
+58,Castaic
+59,Control Gorge
+60,Cottonwood
+61,Haiwee
+62,Middle Gorge
+63,Pleasant Valley
+64,Upper Gorge
+65,Exchequer
+66,McSwain
+67,Chicago Park
+68,Donnells
+69,Kelly Ridge
+70,Woodleaf
+71,French Meadows
+72,Middle Fork
+73,Oxbow
+74,Ralston
+75,Camino
+76,Jaybird
+77,Loon Lake
+78,Robbs Peak
+79,White Rock/Slab Creek
+80,Devil Canyon
+81,Edward C Hyatt
+82,Don Pedro
+83,La Grange
+84,Folsom
+85,Judge F Carr
+86,Keswick
+87,Shasta
+88,Parker
+89,Spring Creek
+90,Trinity
+91,Colgate
+92,Narrows 2
+93,Georgetown
+94,Salida No. 1
+95,Shoshone
+96,Upper Dawson
+97,Boysen
+98,Blue Mesa
+99,Estes
+100,Morrow Point
+101,Big Thompson
+102,Green Mountain
+103,Marys Lake
+104,Pole Hill
+105,Lower Molina
+106,Upper Molina
+107,Jones Fork
+108,Camanche
+109,Navajo Dam
+110,Drop 1
+111,East Highline
+112,South Fork Tolt
+113,Kerckhoff 2
+114,Etiwanda
+115,Gem State
+116,American Falls
+117,Bliss
+118,Brownlee
+119,C J Strike
+120,Cascade
+121,Clear Lake
+122,Lower Malad
+123,Lower Salmon
+124,Shoshone Falls
+125,Swan Falls
+126,Twin Falls
+127,Upper Salmon A
+128,Grace
+129,Oneida
+130,Soda
+131,Cabinet Gorge
+132,Post Falls
+133,Palisades
+134,Alamo
+135,Quincy Chute
+136,Black Eagle
+137,Cochrane
+138,Holter
+139,Séliš Ksanka QÍispé
+140,Morony
+141,Ryan
+142,Thompson Falls
+143,Noxon Rapids
+144,Yellowtail
+145,Hells Canyon
+146,Clearwater 1
+147,Clearwater 2
+148,Eagle Point
+149,East Side
+150,Fish Creek
+151,John C Boyle
+152,Lemolo 1
+153,Prospect 1
+154,Prospect 2
+155,Prospect 3
+156,Prospect 4
+157,Slide Creek
+158,Soda Springs
+159,Toketee
+160,Faraday
+161,North Fork
+162,Pelton
+163,River Mill
+164,Round Butte
+165,Sullivan
+166,Carmen Smith
+167,Leaburg
+168,Walterville
+169,Cutler
+170,Merwin
+171,Swift 1
+172,Yale
+173,Electron
+174,Lower Baker
+175,Upper Baker
+176,Little Falls
+177,Long Lake
+178,Meyers Falls
+179,Nine Mile
+180,Box Canyon
+181,Alder
+182,Cushman 1
+183,Cushman 2
+184,LaGrande
+185,Mayfield
+186,Mossyrock
+187,Packwood
+188,Fremont Canyon
+189,Glendo
+190,Guernsey
+191,Kortes
+192,Seminoe
+193,Fontenelle
+194,Portland No. 1
+195,Portland No. 2
+196,Echo Dam
+197,New Melones
+198,Crystal
+199,Libby
+200,W E Warne
+201,Ross
+202,Swift 2
+203,Anderson Ranch
+204,Black Canyon
+205,Boise R Diversion
+206,Minidoka
+207,Canyon Ferry
+208,Elephant Butte
+209,Green Springs
+210,Flaming Gorge
+211,Chandler
+212,Roza
+213,Heart Mountain
+214,Alcova
+215,Lemolo 2
+216,Chelan
+217,Cedar Falls
+218,Gorge
+219,Diablo
+220,Boundary
+221,San Francisquito 1
+222,San Francisquito 2
+223,Bend
+224,Oak Grove
+225,Moyie Springs
+226,Union Valley
+227,Fort Peck
+228,Mojave Siphon
+229,Upper Salmon B
+230,Potholes East Canal Headworks
+231,Wynoochee
+232,Stony Gorge
+233,Headgate Rock
+234,Whiskeytown
+235,Milner Hydro
+236,Tesla
+237,Buffalo Bill
+238,McPhee
+239,Towaoc
+240,Cowlitz Falls
+241,Stone Creek
+242,McNary Fish
+243,Spirit Mountain
+244,Jackson
+245,El Vado Dam
+246,Abiquiu Dam
+247,Pine Flat
+248,Hoover Dam (AZ)
+249,Monroe Street
+250,Upper Falls
+251,Lucky Peak
+252,Foothills Hydro Plant
+253,Strontia Springs Hydro Plant
+254,Dillon Hydro Plant
+255,Williams Fork Hydro Plant
+256,Muck Valley Hydroelectric
+257,Cove Hydroelectric
+258,Barber Dam
+259,Magic Dam Hydroelectric Project
+260,Hatchet Creek Project
+261,Lake Siskiyou
+262,Olsen
+263,Madera Canal (Site 980 65)
+264,Michell Butte Power Project
+265,Upriver Dam Hydro Plant
+266,New Hogan
+267,Twin Falls Hydro
+268,Bypass
+269,S E Hazelton A
+270,Central Oregon Siphon
+271,Smith Creek
+272,Koma Kulshan
+273,Wilson Lake Hydroelectric Project
+274,Blind Canyon Hydro
+275,Horseshoe Bend Hydro Partners
+276,Spicer Meadow Project
+277,Collierville Powerhouse
+278,Hazelton B Hydro
+279,Reregulating
+280,Mora Drop Hydroelectric Project
+281,Tiber
+282,Russell D Smith
+283,Summer Falls Power Plant
+284,Eltopia Branch Canal 4.6
+285,Potholes East Canal 66.0
+286,Dry Falls Dam (Main Canal Headworks)
+287,Tieton
+288,Dworshak
+289,Albeni Falls
+290,Hungry Horse
+291,Big Cliff
+292,Bonneville
+293,Cougar
+294,Detroit
+295,Dexter
+296,Green Peter
+297,Hills Creek
+298,John Day
+299,Lookout Point
+300,McNary
+301,Rocky Reach
+302,Wells
+303,Priest Rapids
+304,Wanapum
+305,The Dalles
+306,Chief Joseph
+307,Ice Harbor
+308,Little Goose
+309,Lower Monumental
+310,Grand Coulee
+311,Lost Creek
+312,Lower Granite
+313,Rock Island
+314,Foster
