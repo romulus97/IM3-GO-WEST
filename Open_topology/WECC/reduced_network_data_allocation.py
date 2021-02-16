@@ -66,6 +66,10 @@ for b in buses:
     else:
         B.append(b)
         
+#Make sure every BA in EIA dataset is selected at least once
+BAs_selected = []
+
+        
 #elimate redundant buses (overlapping BAs) 
 
 for b in B:
@@ -76,22 +80,29 @@ for b in B:
     
     if len(sample) > 1:
         TELL_ok = []
+        sample_BAs = []
         for i in range(0,len(sample)):
             if sample.loc[i,'NAME'] in BAs:
                 TELL_ok.append(i)
+                
         if len(TELL_ok)<1:
-            print('Remove me, I might not exist')
-        else:
-            smallest = 100000000
-            #assign BA with smallest peak load
-            for t in TELL_ok:
-                if sample.loc[i,'PEAK_LOAD'] < smallest:
-                    smallest = sample.loc[i,'PEAK_LOAD']
-                    selection = sample.loc[t,:]
-    
-    else:
+            print('Remove me, I might not exist')         
         
+        else:
+            for t in TELL_ok:
+                
+                if sample.loc[i,'NAME'] in BAs_selected:
+                    s = 0
+                else:
+                    s = t
+            selection = sample.loc[s,:]
+            if sample.loc[s,'NAME'] in BAs_selected:
+                BAs_selected.append(sample.loc[s,'NAME'])
+                    
+    else:
         selection = sample
+        if sample.loc[0,'NAME'] in BAs_selected:
+            BAs_selected.append(sample.loc[0,'NAME'])
         
     b_idx = B.index(b)
     # print(b_idx)
@@ -127,9 +138,62 @@ for i in range(0,len(combined)):
         weights.append(W)
 combined['BA Load Weight'] = weights
 
-START HERE -- FOR EACH SELECTED NODE, TAKE ITS LOAD, PLUS THE LOAD OF MERGED NODES AND ADD TOGETHER FOR A 
-SINGLE TIME SERIES, PRINT TO CSV
+# selected nodes
+df_selected = pd.read_csv('remaining_buses.csv',header=0)
+buses = list(df_selected['bus_i'])
+
+for b in buses:
     
+    T = np.zeros((8760,1))
+    
+    #load for original node
+    sample = combined.loc[combined['Number'] == b]
+    sample = sample.reset_index(drop=True)
+    name = sample['NAME'][0]
+    
+    if str(name) != 'nan':
+
+        abbr = df_BAs.loc[df_BAs['Name']==name,'Abbreviation'].values[0]
+        weight = sample['BA Load Weight']
+        T = T + np.reshape(df_load[abbr].values*weight.values[0],(8760,1))
+    
+    else:
+        pass
+              
+    #add loads from merged nodes
+    try:
+        m_nodes = merged[b]
+        
+        for m in m_nodes:
+            #load for original node
+            sample = combined.loc[combined['Number'] == b]
+            sample = sample.reset_index(drop=True)
+            name = sample['NAME'][0]
+            if str(name) == 'nan':
+                pass
+            else:
+                abbr = df_BAs.loc[df_BAs['Name']==name,'Abbreviation'].values[0]
+                weight = sample['BA Load Weight']
+        
+        T = T + np.reshape(df_load[abbr].values*weight.values[0],(8760,1))
+
+    
+    except KeyError:
+        pass
+    
+    idx = buses.index(b)
+    if idx < 1:
+        C = T
+    else:
+        C = np.column_stack((C,T))
+
+df_C = pd.DataFrame(C)
+df_C.columns = buses
+df_C.to_csv('nodal_load.csv')   
+
+
+START HERE -- WIND, SOLAR, GENS
+
 
 ##############################
 #  Generators

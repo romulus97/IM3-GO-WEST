@@ -10,7 +10,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import descartes
 import geopandas as gpd
-import xlrd
 from shapely.geometry import Point, Polygon
 from matplotlib.colors import TwoSlopeNorm
 
@@ -181,8 +180,9 @@ for i in major_V:
         
 #Calculate load weights for State/BA combinations
 states = list(df_BA_states['State'].unique())
+states = [x for x in states if str(x) != 'nan']
 BAs = list(df_BA_states['NAME'].unique())
-
+BAs = [x for x in BAs if str(x) != 'nan']
 
 keys=[]
 loads=[]
@@ -190,21 +190,26 @@ max_loads = []
 
 for i in non_zero:
     
-    area = df_BA_states.loc[df_BA_states['Number']==i,'NAME'].values
-    state = df_BA_states.loc[df_BA_states['Number']==i,'State'].values
-    l = df_load.loc[df_load['Number']==i,'Load MW'].values
+    area = df_BA_states.loc[df_BA_states['Number']==i,'NAME'].values[0]
+    state = df_BA_states.loc[df_BA_states['Number']==i,'State'].values[0]
     
-    t = tuple([str(area),str(state)])
-    
-    if t in keys:
-        idx=keys.index(t)
-        loads[idx] += l    
-        if max_loads[idx] < l:
-            max_loads[idx] = i
+    if str(area) == 'nan' or str(state) == 'nan':
+        pass
     else:
-        keys.append(t)
-        loads.append(l)
-        max_loads.append(i)
+    
+        l = df_load.loc[df_load['Number']==i,'Load MW'].values
+        
+        t = tuple([str(area),str(state)])
+        
+        if t in keys:
+            idx=keys.index(t)
+            loads[idx] += l    
+            if max_loads[idx] < l:
+                max_loads[idx] = i
+        else:
+            keys.append(t)
+            loads.append(l)
+            max_loads.append(i)
 
 load_weights = loads/sum(loads)
 
@@ -217,18 +222,22 @@ for i in reduced_gen_buses:
     
     x = reduced_gen_buses.index(i)
     
-    area = df_BA_states.loc[df_BA_states['Number']==i,'NAME'].values
-    state = df_BA_states.loc[df_BA_states['Number']==i,'State'].values
+    area = df_BA_states.loc[df_BA_states['Number']==i,'NAME'].values[0]
+    state = df_BA_states.loc[df_BA_states['Number']==i,'State'].values[0]
     
-    t = tuple([str(area),str(state)])
-    
-    if t in gen_keys:
-        idx=gen_keys.index(t)
-        gens[idx] += caps[x]
-        
+    if str(area) == 'nan' or str(state) == 'nan':
+        pass
     else:
-        gen_keys.append(t)
-        gens.append(caps[x])
+    
+        t = tuple([str(area),str(state)])
+        
+        if t in gen_keys:
+            idx=gen_keys.index(t)
+            gens[idx] += caps[x]
+            
+        else:
+            gen_keys.append(t)
+            gens.append(caps[x])
         
 gen_weights = gens/sum(gens)
 
