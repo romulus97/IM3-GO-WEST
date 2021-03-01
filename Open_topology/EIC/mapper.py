@@ -26,6 +26,7 @@ BAs_gdf = BAs_gdf.to_crs(epsg=2163)
 states_gdf = gpd.read_file('geo_export_9ef76f60-e019-451c-be6b-5a879a5e7c07.shp')
 states_gdf = states_gdf.to_crs(epsg=2163)
 
+
 # joined = gpd.sjoin(nodes_df,BAs_gdf,how='left',op='within')
 # joined2 = gpd.sjoin(nodes_df,states_gdf,how='left',op='within')
 # joined['State'] = joined2['state_name']
