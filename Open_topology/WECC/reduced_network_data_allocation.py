@@ -9,7 +9,7 @@ import pandas as pd
 import math
 import numpy as np
 import matplotlib.pyplot as plt
-import descartes
+# import descartes
 import geopandas as gpd
 from shapely.geometry import Point, Polygon
 
@@ -19,7 +19,7 @@ from shapely.geometry import Point, Polygon
 ########################################
 
 # read reduction algorithm summary and parse nodal operations
-df_summary = pd.read_csv('Reduction_Summary_LOAD.csv',header=4)
+df_summary = pd.read_csv('Reduction_Summary.csv',header=6)
 nodes=0
 merged = {}
 N = []
@@ -47,6 +47,11 @@ BAs = list(df_BAs['Name'])
 
 # calculate nodal weights within each BA
 
+df_gen = pd.read_csv('10k_Gen.csv',header=0)
+wind_nodes = list(df_gen.loc[df_gen['FuelType']=='WND (Wind)','BusNum'])
+solar_nodes = list(df_gen.loc[df_gen['FuelType']=='SUN (Solar)','BusNum'])
+
+
 df = pd.read_csv('10k_load.csv',header=0)
 crs = {'init':'epsg:4326'}
 # crs = {"init": "epsg:2163"}
@@ -59,6 +64,12 @@ BAs_gdf = BAs_gdf.to_crs(epsg=2163)
 
 joined = gpd.sjoin(nodes_df,BAs_gdf,how='left',op='within')
 
+
+# wind_BAs = []
+# for i in range(0,len(wind_nodes)):
+#     a = joined.loc[joined['Number']==wind_nodes[i],'NAME']
+#     wind_BAs.append(a)
+
 buses = list(joined['Number'])
 B = []
 for b in buses:
@@ -67,10 +78,9 @@ for b in buses:
     else:
         B.append(b)
         
-#Make sure every BA in EIA dataset is selected at least once
 BAs_selected = []
-
-#elimate redundant buses (overlapping BAs) 
+# wind_BAs = []
+# solar_BAs = []
 
 for b in B:
     
@@ -138,6 +148,11 @@ for i in range(0,len(combined)):
         weights.append(W)
 combined['BA Load Weight'] = weights
 
+# sums = []
+# for i in BAs:
+#     s = sum(combined.loc[combined['NAME']==i,'BA Load Weight'])
+#     sums.append(s)
+
 # selected nodes
 df_selected = pd.read_csv('remaining_buses.csv',header=0)
 buses = list(df_selected['bus_i'])
@@ -159,10 +174,10 @@ for b in buses:
         abbr = df_BAs.loc[df_BAs['Name']==name,'Abbreviation'].values[0]
         weight = sample['BA Load Weight'].values[0]
         T[:,idx] = T[:,idx] + np.reshape(df_load[abbr].values*weight,(8760,))
-        w+=weight
-    
+  
     else:
         pass
+    
               
     #add loads from merged nodes
     try:
@@ -199,8 +214,20 @@ df_C.to_csv('nodal_load.csv')
 df_wind = pd.read_csv('BA_wind.csv',header=0,index_col=0)
 df_solar = pd.read_csv('BA_solar.csv',header=0,index_col=0)
 
+#get rid of NaNs
+a = df_wind.values
+m=np.where(np.isnan(a))
+r,c=np.shape(m)
+for i in range(0,c):
+    df_wind.iloc[m[0][i],m[1][i]] = 0
+a = df_solar.values
+m=np.where(np.isnan(a))
+r,c=np.shape(m)
+for i in range(0,c):
+    df_solar.iloc[m[0][i],m[1][i]] = 0    
+
 # read reduction algorithm summary and parse nodal operations
-df_summary = pd.read_csv('Reduction_Summary.csv',header=4)
+df_summary = pd.read_csv('Reduction_Summary.csv',header=6)
 nodes=0
 merged = {}
 N = []
@@ -224,6 +251,9 @@ for n in N:
 
 ##################################
 # WIND ALLOCATION FROM BA TO NODE
+
+#### NOTE: TAMU DATASET DOES NOT INCLUDE ANY WIND IN: LADWP OR PSCO; EIA VALUES
+# FOR THESE BAs WERE MANUALLY ADDED TO CAISO AND WACM IN THE BA_wind.csv FILE.
 
 df_gen = pd.read_csv('10k_Gen.csv',header=0)
 MWMax = []
@@ -267,6 +297,11 @@ for i in range(0,len(combined)):
         weights.append(W)
 combined['BA Wind Weight'] = weights
 
+sums = []
+for i in BAs:
+    s = sum(combined.loc[combined['NAME']==i,'BA Wind Weight'])
+    sums.append(s)
+
 # selected nodes
 df_selected = pd.read_csv('remaining_buses.csv',header=0)
 buses = list(df_selected['bus_i'])
@@ -275,19 +310,24 @@ idx = 0
 w= 0
 T = np.zeros((8760,len(buses)))
 
+BA_sums = np.zeros((28,1))
+
 for b in buses:
     
     #load for original node
     sample = combined.loc[combined['Number'] == b]
     sample = sample.reset_index(drop=True)
     name = sample['NAME'][0]
+
     
     if str(name) != 'nan':
 
         abbr = df_BAs.loc[df_BAs['Name']==name,'Abbreviation'].values[0]
         weight = sample['BA Wind Weight'].values[0]
         T[:,idx] = T[:,idx] + np.reshape(df_wind[abbr].values*weight,(8760,))
-        w += weight 
+        w += weight
+        dx = BAs.index(name)
+        BA_sums[dx] = BA_sums[dx] + weight
         
     else:
         pass
@@ -306,7 +346,9 @@ for b in buses:
             else:
                 abbr = df_BAs.loc[df_BAs['Name']==name,'Abbreviation'].values[0]
                 weight = sample['BA Wind Weight']
-                w += weight        
+                w += weight  
+                dx = BAs.index(name)
+                BA_sums[dx] = BA_sums[dx] + weight
                 T[:,idx] = T[:,idx] + np.reshape(df_wind[abbr].values*weight.values[0],(8760,))
 
     except KeyError:
@@ -321,6 +363,10 @@ df_C.to_csv('nodal_wind.csv')
 
 ##################################
 # SOLAR ALLOCATION FROM BA TO NODE
+
+#### NOTE: TAMU DATASET DOES NOT INCLUDE ANY WIND IN: BANC, LADWP OR PSCO; EIA VALUES
+# FOR THESE BAs WERE MANUALLY ADDED TO CAISO AND WACM IN THE BA_wind.csv FILE.
+
 
 MWMax = []
 fuel_type = []
@@ -362,6 +408,11 @@ for i in range(0,len(combined)):
         W = combined.loc[i,'MWMax']/X
         weights.append(W)
 combined['BA Solar Weight'] = weights
+
+sums = []
+for i in BAs:
+    s = sum(combined.loc[combined['NAME']==i,'BA Solar Weight'])
+    sums.append(s)
 
 # selected nodes
 df_selected = pd.read_csv('remaining_buses.csv',header=0)
