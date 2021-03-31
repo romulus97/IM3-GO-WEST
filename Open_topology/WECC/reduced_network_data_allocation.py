@@ -18,32 +18,11 @@ from shapely.geometry import Point, Polygon
 # LOAD ALLOCATION FROM BALANCING AUTHORITY to NODES
 ########################################
 
-# read reduction algorithm summary and parse nodal operations
-df_summary = pd.read_csv('Reduction_Summary.csv',header=6)
-nodes=0
-merged = {}
-N = []
-for i in range(0,len(df_summary)):
-    test = df_summary.iloc[i,0]
-    res = [int(i) for i in test.split() if i.isdigit()] 
-    if res[1] in N:
-        pass
-    else:
-        N.append(res[1])
-for n in N:
-    k = []
-    for i in range(0,len(df_summary)):
-        test = df_summary.iloc[i,0]
-        res = [int(i) for i in test.split() if i.isdigit()] 
-        if res[1] == n:
-            k.append(res[0])
-        else:
-            pass
-    merged[n] = k
-
 df_load = pd.read_csv('BA_load.csv',header=0,index_col=0)
 df_BAs = pd.read_csv('BAs.csv',header=0)
 BAs = list(df_BAs['Name'])
+
+df_10k = pd.read_csv('10k_Load.csv',header=0)
 
 # calculate nodal weights within each BA
 
@@ -52,7 +31,18 @@ wind_nodes = list(df_gen.loc[df_gen['FuelType']=='WND (Wind)','BusNum'])
 solar_nodes = list(df_gen.loc[df_gen['FuelType']=='SUN (Solar)','BusNum'])
 
 
-df = pd.read_csv('10k_load.csv',header=0)
+df = pd.read_csv('reduced_buses.csv',header=0) 
+lat = []
+lon = []
+for i in range(0,len(df)):
+    a = df.loc[i,'bus_i']
+    b = df_10k.loc[df_10k['Number']==a,'Substation Latitude']
+    c = df_10k.loc[df_10k['Number']==a,'Substation Longitude']
+    lat.append(b)
+    lon.append(c)
+df['Substation Longitude'] = lon
+df['Substation Latitude'] = lat
+    
 crs = {'init':'epsg:4326'}
 # crs = {"init": "epsg:2163"}
 geometry = [Point(xy) for xy in zip(df['Substation Longitude'],df['Substation Latitude'])]
@@ -63,14 +53,19 @@ BAs_gdf = gpd.read_file('WECC.shp')
 BAs_gdf = BAs_gdf.to_crs(epsg=2163)
 
 joined = gpd.sjoin(nodes_df,BAs_gdf,how='left',op='within')
+joined=joined.reset_index(drop=True)
 
+nans = []
+for i in range(0,len(joined)):
+    a = joined.loc[i,'NAME']
+    if a in BAs:
+        pass
+    else:
+        n = joined.loc[i,'bus_i']
+        nans.append(n)
+        print(a)
 
-# wind_BAs = []
-# for i in range(0,len(wind_nodes)):
-#     a = joined.loc[joined['Number']==wind_nodes[i],'NAME']
-#     wind_BAs.append(a)
-
-buses = list(joined['Number'])
+buses = list(joined['bus_i'])
 B = []
 for b in buses:
     if b in B:
@@ -85,7 +80,7 @@ BAs_selected = []
 for b in B:
     
     print(B.index(b))
-    sample = joined[joined['Number'] == b]
+    sample = joined[joined['bus_i'] == b]
     sample = sample.reset_index(drop=True)
     
     if len(sample) > 1:
@@ -106,13 +101,22 @@ for b in B:
                 else:
                     s = t
             selection = sample.loc[s,:]
+            
             if sample.loc[s,'NAME'] in BAs_selected:
                 BAs_selected.append(sample.loc[s,'NAME'])
                     
     else:
+        
         selection = sample
-        if sample.loc[0,'NAME'] in BAs_selected:
-            BAs_selected.append(sample.loc[0,'NAME'])
+        
+        if sample.loc[0,'NAME'] in BAs:
+            
+            if sample.loc[0,'NAME'] in BAs_selected:
+                pass
+            else:
+                BAs_selected.append(sample.loc[0,'NAME'])
+        else:
+            pass
         
     b_idx = B.index(b)
     # print(b_idx)
@@ -178,35 +182,9 @@ for b in buses:
     else:
         pass
     
-              
-    #add loads from merged nodes
-    try:
-        m_nodes = merged[b]
-        
-        for m in m_nodes:
-
-            #load for original node
-            sample = combined.loc[combined['Number'] == m]
-            sample = sample.reset_index(drop=True)
-            name = sample['NAME'][0]
-            if str(name) == 'nan':
-                pass
-            else:
-                abbr = df_BAs.loc[df_BAs['Name']==name,'Abbreviation'].values[0]
-                weight = sample['BA Load Weight'].values[0]
-                w+=weight
-        
-                T[:,idx] = T[:,idx] + np.reshape(df_load[abbr].values*weight,(8760,))
-
-    except KeyError:
-        # print (b)
-        pass
-    
-    idx+=1
-
-df_C = pd.DataFrame(T)
-df_C.columns = buses
-df_C.to_csv('nodal_load.csv')   
+# df_C = pd.DataFrame(T)
+# df_C.columns = buses
+# df_C.to_csv('nodal_load.csv')   
 
 #############
 # GENERATORS

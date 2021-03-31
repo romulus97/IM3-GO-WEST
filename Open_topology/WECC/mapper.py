@@ -8,10 +8,13 @@ This is a temporary script file.
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import descartes
+# import descartes
 import geopandas as gpd
 from shapely.geometry import Point, Polygon
 from matplotlib.colors import TwoSlopeNorm
+
+df_BAs = pd.read_csv('BAs.csv',header=0)
+BAs = list(df_BAs['Name'])
 
 df = pd.read_csv('10k_load.csv',header=0)
 crs = {'init':'epsg:4326'}
@@ -22,7 +25,6 @@ nodes_df = nodes_df.to_crs(epsg=2163)
 
 BAs_gdf = gpd.read_file('WECC.shp')
 BAs_gdf = BAs_gdf.to_crs(epsg=2163)
-
 
 states_gdf = gpd.read_file('geo_export_9ef76f60-e019-451c-be6b-5a879a5e7c07.shp')
 states_gdf = states_gdf.to_crs(epsg=2163)
@@ -39,22 +41,56 @@ for b in buses:
     else:
         B.append(b)
         
-#elimate redundant buses (overlapping BAs) based on peak load
+#elimate redundant buses (overlapping BAs) based on peak load and 
+#location within BAs
+
+selected_BAs = []
 
 for b in B:
     
     sample = joined[joined['Number'] == b]
+    sample = sample.reset_index(drop=True)
+    
+    TELL_ok = []
     
     if len(sample) > 1:
-        smallest = min(sample['PEAK_LOAD'])
-        selection = sample[sample['PEAK_LOAD']==smallest]
-    
+        
+        for i in range(0,len(sample)):
+            if sample.loc[i,'NAME'] in BAs:
+                TELL_ok.append(i)
+        
+        if len(TELL_ok)<1:
+            
+            smallest = min(sample['SHAPE_Area'])
+            selection = sample[sample['SHAPE_Area']==smallest]
+            
+        else:
+            
+            t = 0
+            m = 100000000000000000000
+            for i in range(0,len(TELL_ok)):
+                if sample.loc[TELL_ok[i],'NAME'] in selected_BAs:
+                    if sample.loc[TELL_ok[i],'SHAPE_Area'] < m:
+                        m = sample.loc[TELL_ok[i],'SHAPE_Area']
+                else:
+                    t = 1
+                    selection = sample.loc[TELL_ok[i],:]
+                    selected_BAs.append(sample.loc[TELL_ok[i],'NAME'])
+                    break 
+            if t < 1:
+                selection = sample.loc[sample['SHAPE_Area']==m]
+            
     else:
         
         selection = sample
         
+        if sample['NAME'][0] in selected_BAs:
+            pass
+        else:
+            selected_BAs.append(sample['NAME'][0])
+        
     b_idx = B.index(b)
-    # print(b_idx)
+    print(b_idx)
     
     if b_idx < 1:
         
@@ -63,8 +99,19 @@ for b in B:
     else:
         
         combined = combined.append(selection) 
-    
 
+###########################################
+# Remove any entry that is not in a TELL BA
+combined = combined.reset_index(drop=True)
+
+for i in range(0,len(combined)):
+    a = combined.loc[i,'NAME']
+    if a in BAs:
+        pass
+    else:
+        combined = combined.drop([i])
+
+combined = combined.reset_index(drop=True)    
 combined.to_csv('nodes_to_BA_state.csv')
 
 ##############################
@@ -76,6 +123,18 @@ from itertools import compress
 
 df_BA_states = pd.read_csv('nodes_to_BA_state.csv',index_col=0)
 df_gens = pd.read_csv('10k_Gen.csv')
+
+###########################################
+# Remove any entry that is not in a TELL BA
+nodes = list(df_BA_states['Number'])
+
+for i in range(0,len(df_gens)):
+    a = df_gens.loc[i,'BusNum']
+    if a in nodes:
+        pass
+    else:
+        df_gens = df_gens.drop([i])
+df_gens = df_gens.reset_index(drop=True)
 
 names = list(df_gens['BusName'])
 BAs = []
@@ -157,6 +216,14 @@ for n in unique_bus_names:
 ##################################
 
 df_load = pd.read_csv('10k_Load.csv')
+
+for i in range(0,len(df_load)):
+    a = df_load.loc[i,'Number']
+    if a in nodes:
+        pass
+    else:
+        df_load = df_load.drop([i])
+df_load = df_load.reset_index(drop=True)
 
 #pull all nodes with >0 load
 non_zero = list(df_load.loc[df_load['Load MW']>0,'Number'])
@@ -396,14 +463,16 @@ plt.axis('off')
 plt.savefig('SF_topology.jpg',dpi=330)
 
 selected_nodes = demand_nodes_selected + gen_nodes_selected + trans_nodes_selected
-full = list(df_BA_states['Number'])
+
+df = pd.read_csv('10k_load.csv',header=0)
+full = list(df['Number'])
 
 excluded = [i for i in full if i not in selected_nodes]
 
 df_excluded_nodes = pd.DataFrame(excluded)
 df_excluded_nodes.columns = ['ExcludedNodes']
-df_excluded_nodes.to_csv('excluded_nodes.csv')
+df_excluded_nodes.to_csv('excluded_nodes.csv',index=None)
 
 df_selected_nodes = pd.DataFrame(selected_nodes)
 df_selected_nodes.columns = ['SelectedNodes']
-df_selected_nodes.to_csv('selected_nodes.csv')
+df_selected_nodes.to_csv('selected_nodes.csv',index=None)
