@@ -13,126 +13,35 @@ import matplotlib.pyplot as plt
 import geopandas as gpd
 from shapely.geometry import Point, Polygon
 
-
 ########################################
 # LOAD ALLOCATION FROM BALANCING AUTHORITY to NODES
 ########################################
 
-df_load = pd.read_csv('BA_load.csv',header=0,index_col=0)
+df_load = pd.read_csv('BA_load.csv',header=0)
 df_BAs = pd.read_csv('BAs.csv',header=0)
 BAs = list(df_BAs['Name'])
 
-df_10k = pd.read_csv('10k_Load.csv',header=0)
+df_full = pd.read_csv('nodes_to_BA_state.csv',header=0,index_col=0)
 
-# calculate nodal weights within each BA
+# selected nodes
+df_selected = pd.read_csv('reduced_buses.csv',header=0)
+buses = list(df_selected['bus_i'])
 
-df_gen = pd.read_csv('10k_Gen.csv',header=0)
-wind_nodes = list(df_gen.loc[df_gen['FuelType']=='WND (Wind)','BusNum'])
-solar_nodes = list(df_gen.loc[df_gen['FuelType']=='SUN (Solar)','BusNum'])
-
-
-df = pd.read_csv('reduced_buses.csv',header=0) 
-lat = []
-lon = []
-for i in range(0,len(df)):
-    a = df.loc[i,'bus_i']
-    b = df_10k.loc[df_10k['Number']==a,'Substation Latitude']
-    c = df_10k.loc[df_10k['Number']==a,'Substation Longitude']
-    lat.append(b)
-    lon.append(c)
-df['Substation Longitude'] = lon
-df['Substation Latitude'] = lat
-    
-crs = {'init':'epsg:4326'}
-# crs = {"init": "epsg:2163"}
-geometry = [Point(xy) for xy in zip(df['Substation Longitude'],df['Substation Latitude'])]
-nodes_df = gpd.GeoDataFrame(df,crs=crs,geometry=geometry)
-nodes_df = nodes_df.to_crs(epsg=2163)
-
-BAs_gdf = gpd.read_file('WECC.shp')
-BAs_gdf = BAs_gdf.to_crs(epsg=2163)
-
-joined = gpd.sjoin(nodes_df,BAs_gdf,how='left',op='within')
-joined=joined.reset_index(drop=True)
-
-nans = []
-for i in range(0,len(joined)):
-    a = joined.loc[i,'NAME']
-    if a in BAs:
-        pass
-    else:
-        n = joined.loc[i,'bus_i']
-        nans.append(n)
-        print(a)
-
-buses = list(joined['bus_i'])
-B = []
+# pull selected nodes out of 
+selected_BAs = []
 for b in buses:
-    if b in B:
-        pass
-    else:
-        B.append(b)
-        
-BAs_selected = []
-# wind_BAs = []
-# solar_BAs = []
+    BA = df_full.loc[df_full['Number']==b,'NAME']
+    BA = BA.reset_index(drop=True)
+    selected_BAs.append(BA[0])
 
-for b in B:
+df_selected['BA'] = selected_BAs
     
-    print(B.index(b))
-    sample = joined[joined['bus_i'] == b]
-    sample = sample.reset_index(drop=True)
-    
-    if len(sample) > 1:
-        TELL_ok = []
-        sample_BAs = []
-        for i in range(0,len(sample)):
-            if sample.loc[i,'NAME'] in BAs:
-                TELL_ok.append(i)
-                
-        if len(TELL_ok)<1:
-            print('Remove me, I might not exist')         
-        
-        else:
-            for t in TELL_ok:
-                
-                if sample.loc[i,'NAME'] in BAs_selected:
-                    s = 0
-                else:
-                    s = t
-            selection = sample.loc[s,:]
-            
-            if sample.loc[s,'NAME'] in BAs_selected:
-                BAs_selected.append(sample.loc[s,'NAME'])
-                    
-    else:
-        
-        selection = sample
-        
-        if sample.loc[0,'NAME'] in BAs:
-            
-            if sample.loc[0,'NAME'] in BAs_selected:
-                pass
-            else:
-                BAs_selected.append(sample.loc[0,'NAME'])
-        else:
-            pass
-        
-    b_idx = B.index(b)
-    # print(b_idx)
-    
-    if b_idx < 1:
-        combined = selection
-    
-    else:  
-        combined = combined.append(selection) 
-
-combined = combined.reset_index(drop=True)
+# calculate nodal weights within each BA
 
 BA_totals = []
 for b in BAs:
-    sample = list(combined.loc[combined['NAME']==b,'Load MW'])
-    corrected = [0 if math.isnan(x) else x for x in sample]
+    sample = list(df_selected.loc[df_selected['BA']==b,'Pd'])
+    corrected = [0 if x<0 else x for x in sample]
     BA_totals.append(sum(corrected))
 
 BA_totals = np.column_stack((BAs,BA_totals))
@@ -140,51 +49,33 @@ df_BA_totals = pd.DataFrame(BA_totals)
 df_BA_totals.columns = ['Name','Total']
 
 weights = []
-for i in range(0,len(combined)):
-    area = combined.loc[i,'NAME']
-    if str(area) == 'nan':
-        weights.append(0)
-    elif str(combined.loc[i,'Load MW']) == 'nan':
+for i in range(0,len(df_selected)):
+    area = df_selected.loc[i,'BA']
+    if df_selected.loc[i,'Pd'] <0:
         weights.append(0)
     else:        
         X = float(df_BA_totals.loc[df_BA_totals['Name']==area,'Total'])
-        W = combined.loc[i,'Load MW']/X
+        W = df_selected.loc[i,'Pd']/X
         weights.append(W)
-combined['BA Load Weight'] = weights
-
-# sums = []
-# for i in BAs:
-#     s = sum(combined.loc[combined['NAME']==i,'BA Load Weight'])
-#     sums.append(s)
-
-# selected nodes
-df_selected = pd.read_csv('remaining_buses.csv',header=0)
-buses = list(df_selected['bus_i'])
-BAs = list(df_BAs['Name'])
+df_selected['BA Load Weight'] = weights
 
 idx = 0
 w= 0
 T = np.zeros((8760,len(buses)))
 
-for b in buses:
+for i in range(0,len(df_selected)):
         
     #load for original node
-    sample = combined.loc[combined['Number'] == b]
-    sample = sample.reset_index(drop=True)
-    name = sample['NAME'][0]
+    name = df_selected.loc[i,'BA']
     
-    if str(name) != 'nan':
-
-        abbr = df_BAs.loc[df_BAs['Name']==name,'Abbreviation'].values[0]
-        weight = sample['BA Load Weight'].values[0]
-        T[:,idx] = T[:,idx] + np.reshape(df_load[abbr].values*weight,(8760,))
+    abbr = df_BAs.loc[df_BAs['Name']==name,'Abbreviation'].values[0]
+    weight = df_selected.loc[i,'BA Load Weight']
+    T[:,i] = T[:,i] + np.reshape(df_load[abbr].values*weight,(8760,))
   
-    else:
-        pass
     
-# df_C = pd.DataFrame(T)
-# df_C.columns = buses
-# df_C.to_csv('nodal_load.csv')   
+df_C = pd.DataFrame(T)
+df_C.columns = buses
+df_C.to_csv('nodal_load.csv',index=None)   
 
 #############
 # GENERATORS
@@ -205,7 +96,8 @@ for i in range(0,c):
     df_solar.iloc[m[0][i],m[1][i]] = 0    
 
 # read reduction algorithm summary and parse nodal operations
-df_summary = pd.read_csv('Reduction_Summary.csv',header=6)
+df_summary = pd.read_csv('Reduction_Summary.csv',header=4)
+df_summary = df_summary.drop([len(df_summary)-1])
 nodes=0
 merged = {}
 N = []
@@ -238,9 +130,9 @@ MWMax = []
 fuel_type = []
 nums = list(df_gen['BusNum'])
 
-#add gen info to combined df
-for i in range(0,len(combined)):
-    bus = combined.loc[i,'Number']
+#add gen info to df
+for i in range(0,len(df_full)):
+    bus = df_full.loc[i,'Number']
     if bus in nums:
         MWMax.append(df_gen.loc[df_gen['BusNum']==bus,'MWMax'].values[0])
         fuel_type.append(df_gen.loc[df_gen['BusNum']==bus,'FuelType'].values[0])
@@ -248,40 +140,40 @@ for i in range(0,len(combined)):
         MWMax.append(0)
         fuel_type.append('none')
 
-combined['MWMax'] = MWMax
-combined['FuelType'] = fuel_type
+df_full['MWMax'] = MWMax
+df_full['FuelType'] = fuel_type
 
 BA_totals = []
 
 for b in BAs:
-    sample = list(combined.loc[(combined['NAME']==b) & (combined['FuelType'] == 'WND (Wind)'),'MWMax'])
-    corrected = [0 if math.isnan(x) else x for x in sample]
-    BA_totals.append(sum(corrected))
+    sample = list(df_full.loc[(df_full['NAME']==b) & (df_full['FuelType'] == 'WND (Wind)'),'MWMax'])
+    # corrected = [0 if math.isnan(x) else x for x in sample]
+    BA_totals.append(sum(sample))
 
 BA_totals = np.column_stack((BAs,BA_totals))
 df_BA_totals = pd.DataFrame(BA_totals)
 df_BA_totals.columns = ['Name','Total']
 
 weights = []
-for i in range(0,len(combined)):
-    area = combined.loc[i,'NAME']
+for i in range(0,len(df_full)):
+    area = df_full.loc[i,'NAME']
     if str(area) == 'nan':
         weights.append(0)
-    elif str(combined.loc[i,'FuelType']) != 'WND (Wind)':
+    elif str(df_full.loc[i,'FuelType']) != 'WND (Wind)':
         weights.append(0)
     else:        
         X = float(df_BA_totals.loc[df_BA_totals['Name']==area,'Total'])
-        W = combined.loc[i,'MWMax']/X
+        W = df_full.loc[i,'MWMax']/X
         weights.append(W)
-combined['BA Wind Weight'] = weights
+df_full['BA Wind Weight'] = weights
 
 sums = []
 for i in BAs:
-    s = sum(combined.loc[combined['NAME']==i,'BA Wind Weight'])
+    s = sum(df_full.loc[df_full['NAME']==i,'BA Wind Weight'])
     sums.append(s)
 
 # selected nodes
-df_selected = pd.read_csv('remaining_buses.csv',header=0)
+# df_selected = pd.read_csv('reduced_buses.csv',header=0)
 buses = list(df_selected['bus_i'])
 
 idx = 0
@@ -293,7 +185,7 @@ BA_sums = np.zeros((28,1))
 for b in buses:
     
     #load for original node
-    sample = combined.loc[combined['Number'] == b]
+    sample = df_full.loc[df_full['Number'] == b]
     sample = sample.reset_index(drop=True)
     name = sample['NAME'][0]
 
@@ -316,7 +208,7 @@ for b in buses:
         
         for m in m_nodes:
             #load for original node
-            sample = combined.loc[combined['Number'] == m]
+            sample = df_full.loc[df_full['Number'] == m]
             sample = sample.reset_index(drop=True)
             name = sample['NAME'][0]
             if str(name) == 'nan':
@@ -337,7 +229,7 @@ for b in buses:
 
 df_C = pd.DataFrame(T)
 df_C.columns = buses
-df_C.to_csv('nodal_wind.csv')   
+df_C.to_csv('nodal_wind.csv',index=None)   
 
 ##################################
 # SOLAR ALLOCATION FROM BA TO NODE
@@ -345,74 +237,61 @@ df_C.to_csv('nodal_wind.csv')
 #### NOTE: TAMU DATASET DOES NOT INCLUDE ANY WIND IN: BANC, LADWP OR PSCO; EIA VALUES
 # FOR THESE BAs WERE MANUALLY ADDED TO CAISO AND WACM IN THE BA_wind.csv FILE.
 
-
-MWMax = []
-fuel_type = []
-nums = list(df_gen['BusNum'])
-
-#add gen info to combined df
-for i in range(0,len(combined)):
-    bus = combined.loc[i,'Number']
-    if bus in nums:
-        MWMax.append(df_gen.loc[df_gen['BusNum']==bus,'MWMax'].values[0])
-        fuel_type.append(df_gen.loc[df_gen['BusNum']==bus,'FuelType'].values[0])
-    else:
-        MWMax.append(0)
-        fuel_type.append('none')
-
-combined['MWMax'] = MWMax
-combined['FuelType'] = fuel_type
-
 BA_totals = []
 
 for b in BAs:
-    sample = list(combined.loc[(combined['NAME']==b) & (combined['FuelType'] == 'SUN (Solar)'),'MWMax'])
-    corrected = [0 if math.isnan(x) else x for x in sample]
-    BA_totals.append(sum(corrected))
+    sample = list(df_full.loc[(df_full['NAME']==b) & (df_full['FuelType'] == 'SUN (Solar)'),'MWMax'])
+    # corrected = [0 if math.isnan(x) else x for x in sample]
+    BA_totals.append(sum(sample))
 
 BA_totals = np.column_stack((BAs,BA_totals))
 df_BA_totals = pd.DataFrame(BA_totals)
 df_BA_totals.columns = ['Name','Total']
 
 weights = []
-for i in range(0,len(combined)):
-    area = combined.loc[i,'NAME']
+for i in range(0,len(df_full)):
+    area = df_full.loc[i,'NAME']
     if str(area) == 'nan':
         weights.append(0)
-    elif str(combined.loc[i,'FuelType']) != 'SUN (Solar)':
+    elif str(df_full.loc[i,'FuelType']) != 'SUN (Solar)':
         weights.append(0)
     else:        
         X = float(df_BA_totals.loc[df_BA_totals['Name']==area,'Total'])
-        W = combined.loc[i,'MWMax']/X
+        W = df_full.loc[i,'MWMax']/X
         weights.append(W)
-combined['BA Solar Weight'] = weights
+df_full['BA Solar Weight'] = weights
 
 sums = []
 for i in BAs:
-    s = sum(combined.loc[combined['NAME']==i,'BA Solar Weight'])
+    s = sum(df_full.loc[df_full['NAME']==i,'BA Solar Weight'])
     sums.append(s)
 
 # selected nodes
-df_selected = pd.read_csv('remaining_buses.csv',header=0)
+# df_selected = pd.read_csv('reduced_buses.csv',header=0)
 buses = list(df_selected['bus_i'])
 
 idx = 0
 w= 0
 T = np.zeros((8760,len(buses)))
 
+BA_sums = np.zeros((28,1))
+
 for b in buses:
     
     #load for original node
-    sample = combined.loc[combined['Number'] == b]
+    sample = df_full.loc[df_full['Number'] == b]
     sample = sample.reset_index(drop=True)
     name = sample['NAME'][0]
+
     
     if str(name) != 'nan':
 
         abbr = df_BAs.loc[df_BAs['Name']==name,'Abbreviation'].values[0]
         weight = sample['BA Solar Weight'].values[0]
         T[:,idx] = T[:,idx] + np.reshape(df_solar[abbr].values*weight,(8760,))
-        w += weight 
+        w += weight
+        dx = BAs.index(name)
+        BA_sums[dx] = BA_sums[dx] + weight
         
     else:
         pass
@@ -423,7 +302,7 @@ for b in buses:
         
         for m in m_nodes:
             #load for original node
-            sample = combined.loc[combined['Number'] == m]
+            sample = df_full.loc[df_full['Number'] == m]
             sample = sample.reset_index(drop=True)
             name = sample['NAME'][0]
             if str(name) == 'nan':
@@ -431,7 +310,9 @@ for b in buses:
             else:
                 abbr = df_BAs.loc[df_BAs['Name']==name,'Abbreviation'].values[0]
                 weight = sample['BA Solar Weight']
-                w += weight        
+                w += weight  
+                dx = BAs.index(name)
+                BA_sums[dx] = BA_sums[dx] + weight
                 T[:,idx] = T[:,idx] + np.reshape(df_solar[abbr].values*weight.values[0],(8760,))
 
     except KeyError:
@@ -442,7 +323,8 @@ for b in buses:
 
 df_C = pd.DataFrame(T)
 df_C.columns = buses
-df_C.to_csv('nodal_solar.csv') 
+df_C.to_csv('nodal_solar.csv',index=None)   
+
 
 ##############################
 # THERMAL GENERATION
@@ -488,7 +370,7 @@ count = 2
 nbs = []
 marg = []
 f = []
-thermal = ['NG (Natural Gas)','NUC (Nuclear)','BIT (Bituminous Coal)']
+thermal = ['NG (Natural Gas)','NUC (Nuclear)','BIT (Bituminous Coal)','NUC (Nuclear)']
 
 for n in NB:
     sample = df_gens.loc[df_gens['NewBusNum'] == n]
@@ -519,10 +401,70 @@ C=np.column_stack((C,marg))
 
 df_C = pd.DataFrame(C)
 df_C.columns = ['Name','Bus','Fuel','Max_Cap','Min_Cap','MarginalCost']
-df_C.to_csv('Thermal_Gens.csv')
+df_C.to_csv('thermal_gens.csv')
     
 
 ##############################
-# TRANSMISSION PARAMETERS 
+# HYDROPOWER
 
+#EIA plants
+df_hydro = pd.read_csv('EIA_317_WECC_hydro_plants_to_10kbus_v2.csv',header=0)
+df_hydro_ts = pd.read_csv('p_mean_max_min_MW_WECC_317plants_2009water_weekly.csv',header=0)
+new_hydro_nodes = []
 
+for i in range(0,len(df_hydro)):
+    
+    name = df_hydro.loc[i,'plant']
+    new_name = re.sub(r'[^A-Z]',r'',name)
+    bus = df_hydro.loc[i,'bus']
+    
+    if bus in old_bus_num:
+        idx = old_bus_num.index(bus)
+        new_hydro_nodes.append(new_bus_num[idx])
+        pass
+    elif bus in buses:
+        new_hydro_nodes.append(bus)
+    else:
+        print(name+ ' Not found')
+
+# add mean/min/max by node
+H_min = np.zeros((52,len(buses)))
+H_max = np.zeros((52,len(buses)))
+H_mu = np.zeros((52,len(buses)))
+
+for i in range(0,len(df_hydro)):
+    b = new_hydro_nodes[i]
+    idx = buses.index(b)
+    plant = df_hydro.loc[i,'plant']
+    
+    ts = df_hydro_ts[df_hydro_ts['plant']==plant]
+    
+    H_min[:,idx] += ts['min']
+    H_max[:,idx] += ts['max']
+    H_mu[:,idx] += ts['mean']
+    
+# create daily time series by node
+H_min_hourly = np.zeros((365,len(buses)))
+H_max_hourly = np.zeros((365,len(buses)))
+H_mu_hourly = np.zeros((365,len(buses)))
+
+for i in range(0,len(H_min)):
+    for j in range(0,len(buses)):
+        H_min_hourly[i*7:i*7+7,j] = H_min[i,j]
+        H_max_hourly[i*7:i*7+7,j] = H_max[i,j]
+        H_mu_hourly[i*7:i*7+7,j] = H_mu[i,j]*24
+        
+H_min_hourly[364,:] = H_min_hourly[363,:]
+H_max_hourly[364,:] = H_max_hourly[363,:]
+H_mu_hourly[364,:] = H_mu_hourly[363,:] 
+
+H_min_df = pd.DataFrame(H_min_hourly)
+H_min_df.columns = buses
+H_max_df = pd.DataFrame(H_max_hourly)
+H_max_df.columns = buses
+H_mu_df = pd.DataFrame(H_mu_hourly) 
+H_mu_df.columns = buses       
+
+H_min_df.to_csv('Hydro_min.csv',index=None)
+H_max_df.to_csv('Hydro_max.csv',index=None)
+H_mu_df.to_csv('Hydro_mu.csv',index=None)
