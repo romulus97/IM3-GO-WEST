@@ -401,7 +401,7 @@ C=np.column_stack((C,marg))
 
 df_C = pd.DataFrame(C)
 df_C.columns = ['Name','Bus','Fuel','Max_Cap','Min_Cap','MarginalCost']
-df_C.to_csv('thermal_gens.csv')
+df_C.to_csv('thermal_gens.csv',index=None)
     
 
 ##############################
@@ -468,3 +468,200 @@ H_mu_df.columns = buses
 H_min_df.to_csv('Hydro_min.csv',index=None)
 H_max_df.to_csv('Hydro_max.csv',index=None)
 H_mu_df.to_csv('Hydro_mu.csv',index=None)
+
+
+#####################################
+# TRANSMISSION
+
+df = pd.read_csv('branches.csv',header=0)
+
+names = []
+caps = []
+xs = []
+repeats = {}
+
+count = 0
+
+for i in range(0,len(df)):
+    
+    a = df.loc[i,'fbus']
+    b = df.loc[i,'tbus']
+    x = df.loc[i,'x']
+    c = df.loc[i,'rateA']
+    
+    name = str(a) + '_' + str(b)
+    
+    if name in names:
+        name = name + '_' + str(count)
+        count += 1
+        
+    names.append(name)
+    xs.append(x)
+    caps.append(c)
+
+df_T = pd.DataFrame()
+df_T['line'] = names
+df_T['reactance'] = xs
+df_T['limit'] = caps
+
+df_T.to_csv('line_params.csv')
+    
+
+#########################################
+# Generator file setup
+
+df_G = pd.read_csv('Thermal_Gens.csv',header=0)
+
+names = []
+typs = []
+nodes = []
+maxcaps = []
+mincaps = []
+marginal_costs = []
+var_oms = []
+no_loads = []
+st_costs = []
+ramps = []
+minups = []
+mindns = []
+
+must_nodes = []
+must_caps = []
+
+for i in range(0,len(df_G)):
+    
+    name = df_G.loc[i,'Name']
+    t = df_G.loc[i,'Fuel']
+    if t == 'NG (Natural Gas)':
+        typ = 'ngcc'
+    elif t == 'BIT (Bituminous Coal)':
+        typ = 'coal'
+    else:
+        typ = 'nuclear'
+    node = df_G.loc[i,'Bus']
+    maxcap = df_G.loc[i,'Max_Cap']
+    mincap = df_G.loc[i,'Min_Cap']
+    mc = df_G.loc[i,'MarginalCost']
+    
+    if typ == 'ngcc':
+        var_om = 3
+        minup = 4
+        mindn = 4
+        ramp = maxcap
+    else:
+        var_om = 4
+        minup = 12
+        mindn = 12
+        ramp = 0.33*maxcap
+    
+    st_cost = 70*maxcap
+    no_load = 3*maxcap
+    
+    if typ != 'nuclear':
+        
+        names.append(name)
+        typs.append(typ)
+        nodes.append(node)
+        maxcaps.append(maxcap)
+        mincaps.append(mincap)
+        var_oms.append(var_om)
+        no_loads.append(no_load)
+        st_costs.append(st_cost)
+        ramps.append(ramp)
+        minups.append(minup)
+        mindns.append(mindn)
+        marginal_costs.append(mc)
+        
+    else:
+        
+        must_nodes.append(node)
+        must_caps.append(maxcap)
+    
+
+# wind
+
+df_W = pd.read_csv('nodal_wind.csv',header=0)
+buses = list(df_W.columns)
+for n in buses:
+    
+    if sum(df_W[n]) > 0:
+        name = n + '_WIND'
+        maxcap = 100000
+        names.append(name)
+        typs.append('wind')
+        nodes.append(n)
+        maxcaps.append(maxcap)
+        mincaps.append(0)
+        var_oms.append(0)
+        no_loads.append(0)
+        st_costs.append(0)
+        ramps.append(0)
+        minups.append(0)
+        mindns.append(0) 
+        marginal_costs.append(0)
+
+# solar
+
+df_S = pd.read_csv('nodal_solar.csv',header=0)
+buses = list(df_S.columns)
+for n in buses:
+    if sum(df_S[n]) > 0:
+        name = n + '_SOLAR'
+        maxcap = 100000
+        names.append(name)
+        typs.append('solar')
+        nodes.append(n)
+        maxcaps.append(maxcap)
+        mincaps.append(0)
+        var_oms.append(0)
+        no_loads.append(0)
+        st_costs.append(0)
+        ramps.append(0)
+        minups.append(0)
+        mindns.append(0)   
+        marginal_costs.append(0)
+
+# hydro
+
+df_H = pd.read_csv('Hydro_max.csv',header=0)
+buses = list(df_H.columns)
+for n in buses:
+    if sum(df_H[n]) > 0:
+        name = n + '_HYDRO'
+        maxcap = max(df_H[n])
+        names.append(name)
+        typs.append('hydro')
+        nodes.append(n)
+        maxcaps.append(maxcap)
+        mincaps.append(0)
+        var_oms.append(1)
+        no_loads.append(1)
+        st_costs.append(1)
+        ramps.append(maxcap)
+        minups.append(0)
+        mindns.append(0)   
+        marginal_costs.append(0)
+
+df_genparams = pd.DataFrame()
+df_genparams['name'] = names
+df_genparams['typ'] = typs
+df_genparams['node'] = nodes
+df_genparams['maxcap'] = maxcaps
+df_genparams['marginal_cost'] = marginal_costs
+df_genparams['mincap'] = mincaps
+df_genparams['var_om'] = var_oms
+df_genparams['no_load'] = no_loads
+df_genparams['st_cost'] = st_costs
+df_genparams['ramp'] = ramps
+df_genparams['minup'] = minups
+df_genparams['mindn'] = mindns
+
+df_genparams.to_csv('data_genparams.csv',index=None)
+
+df_must = pd.DataFrame()
+for i in range(0,len(must_nodes)):
+    df_must[must_nodes[i]] = must_caps[i]
+df_must.to_csv('must_run.csv',index=None)
+
+
+
