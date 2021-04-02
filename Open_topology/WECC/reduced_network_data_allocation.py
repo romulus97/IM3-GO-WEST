@@ -467,44 +467,8 @@ H_mu_df.columns = buses
 
 H_min_df.to_csv('Hydro_min.csv',index=None)
 H_max_df.to_csv('Hydro_max.csv',index=None)
-H_mu_df.to_csv('Hydro_mu.csv',index=None)
+H_mu_df.to_csv('Hydro_total.csv',index=None)
 
-
-#####################################
-# TRANSMISSION
-
-df = pd.read_csv('branches.csv',header=0)
-
-names = []
-caps = []
-xs = []
-repeats = {}
-
-count = 0
-
-for i in range(0,len(df)):
-    
-    a = df.loc[i,'fbus']
-    b = df.loc[i,'tbus']
-    x = df.loc[i,'x']
-    c = df.loc[i,'rateA']
-    
-    name = str(a) + '_' + str(b)
-    
-    if name in names:
-        name = name + '_' + str(count)
-        count += 1
-        
-    names.append(name)
-    xs.append(x)
-    caps.append(c)
-
-df_T = pd.DataFrame()
-df_T['line'] = names
-df_T['reactance'] = xs
-df_T['limit'] = caps
-
-df_T.to_csv('line_params.csv')
     
 
 #########################################
@@ -660,8 +624,158 @@ df_genparams.to_csv('data_genparams.csv',index=None)
 
 df_must = pd.DataFrame()
 for i in range(0,len(must_nodes)):
-    df_must[must_nodes[i]] = must_caps[i]
+    df_must[must_nodes[i]] = [must_caps[i]]
 df_must.to_csv('must_run.csv',index=None)
 
 
+######
+# create gen-to-bus matrix
+
+df = pd.read_csv('data_genparams.csv',header=0)
+gens = list(df.loc[:,'name'])
+
+df_nodes = pd.read_csv('reduced_buses.csv',header=0)
+all_nodes = list(df_nodes['bus_i'])
+
+A = np.zeros((len(gens),len(all_nodes)))
+
+df_A = pd.DataFrame(A)
+df_A.columns = all_nodes
+df_A['name'] = gens
+df_A.set_index('name',inplace=True)
+
+for i in range(0,len(gens)):
+    node = df.loc[i,'node']
+    g = gens[i]
+    df_A.loc[g,node] = 1
+
+df_A.to_csv('gen_mat.csv')
+
+#####################################
+# TRANSMISSION
+
+df = pd.read_csv('branches.csv',header=0)
+
+# eliminate repeats
+lines = []
+repeats = []
+index = []
+for i in range(0,len(df)):
+    
+    t=tuple((df.loc[i,'fbus'],df.loc[i,'tbus']))
+    
+    if t in lines:
+        df = df.drop([i])
+        repeats.append(t)
+        r = lines.index(t)
+        i = index[r]
+        df.loc[i,'rateA'] += df.loc[i,'rateA']
+    else:
+        lines.append(t)
+        index.append(i)
+
+df = df.reset_index(drop=True)
+    
+sources = df.loc[:,'fbus']
+sinks = df.loc[:,'tbus']
+combined = np.append(sources, sinks)
+df_combined = pd.DataFrame(combined,columns=['node'])
+unique_nodes = df_combined['node'].unique()
+unique_nodes.sort()
+
+A = np.zeros((len(df),len(unique_nodes)))
+
+df_line_to_bus = pd.DataFrame(A)
+df_line_to_bus.columns = unique_nodes
+
+negative = []
+positive = []
+lines = []
+ref_node = 0
+reactance = []
+limit = []
+
+for i in range(0,len(df)):
+    s = df.loc[i,'fbus']
+    k = df.loc[i,'tbus']
+    line = str(s) + '_' + str(k)
+    if s == df.loc[0,'fbus']: 
+        lines.append(line)
+        positive.append(s)
+        negative.append(k)
+        df_line_to_bus.loc[ref_node,s] = 1
+        df_line_to_bus.loc[ref_node,k] = -1
+        reactance.append(df.loc[i,'x'])
+        limit.append(df.loc[i,'rateA'])
+        ref_node += 1
+    elif k == df.loc[0,'fbus']:      
+        lines.append(line)
+        positive.append(k)
+        negative.append(s)
+        df_line_to_bus.loc[ref_node,k] = 1
+        df_line_to_bus.loc[ref_node,s] = -1
+        reactance.append(df.loc[i,'x'])
+        limit.append(df.loc[i,'rateA'])
+        ref_node += 1
+        
+for i in range(0,len(df)):
+    s = df.loc[i,'fbus']
+    k = df.loc[i,'tbus']
+    line = str(s) + '_' + str(k)
+    if s != df.loc[0,'fbus']:
+        if k != df.loc[0,'fbus']:
+            lines.append(line)
+            
+            if s in positive and k in negative:
+                df_line_to_bus.loc[ref_node,s] = 1
+                df_line_to_bus.loc[ref_node,k] = -1
+            
+            elif k in positive and s in negative:
+                df_line_to_bus.loc[ref_node,k] = 1
+                df_line_to_bus.loc[ref_node,s] = -1
+                
+            elif s in positive and k in positive:
+                df_line_to_bus.loc[ref_node,s] = 1
+                df_line_to_bus.loc[ref_node,k] = -1
+            
+            elif s in negative and k in negative:   
+                df_line_to_bus.loc[ref_node,s] = 1
+                df_line_to_bus.loc[ref_node,k] = -1
+                
+            elif s in positive:
+                df_line_to_bus.loc[ref_node,s] = 1
+                df_line_to_bus.loc[ref_node,k] = -1
+                negative.append(k)
+            elif s in negative:
+                df_line_to_bus.loc[ref_node,k] = 1
+                df_line_to_bus.loc[ref_node,s] = -1   
+                positive.append(k)
+            elif k in positive:
+                df_line_to_bus.loc[ref_node,k] = 1
+                df_line_to_bus.loc[ref_node,s] = -1  
+                negative.append(s)
+            elif k in negative:
+                df_line_to_bus.loc[ref_node,s] = 1
+                df_line_to_bus.loc[ref_node,k] = -1 
+                positive.append(s)
+            else:
+                positive.append(s)
+                negative.append(k)
+                df_line_to_bus.loc[ref_node,s] = 1
+                df_line_to_bus.loc[ref_node,k] = -1
+
+            reactance.append(df.loc[i,'x'])
+            limit.append(df.loc[i,'rateA'])
+            ref_node += 1
+
+df_line_to_bus['line'] = lines
+df_line_to_bus.set_index('line',inplace=True)
+df_line_to_bus.to_csv('line_to_bus.csv')
+
+
+df_line_params = pd.DataFrame()
+df_line_params['line'] = lines
+df_line_params['reactance'] = reactance
+df_line_params['limit'] = limit 
+df_line_params.to_csv('line_params.csv',index=None)
 
