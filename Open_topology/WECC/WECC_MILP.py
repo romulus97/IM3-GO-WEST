@@ -37,6 +37,9 @@ model.maxcap = Param(model.Generators)
 #Min capacity
 model.mincap = Param(model.Generators)
 
+#Marginal cost
+model.marginal_cost = Param(model.Generators)
+
 #Variable O&M
 model.var_om = Param(model.Generators)
 
@@ -228,18 +231,18 @@ model.MinCap= Constraint(model.Dispatchable,model.hh_periods,rule=MinC)
 #Max production constraints on domestic hydropower 
 def HydroP(model,j,i):
     daily = sum(model.mwh[j,i] for i in model.hh_periods)
-    return  daily <= model.Hydro_TOTAL[j]    
-model.HydroPROD= Constraint(model.Hydro_TOTAL,model.hh_periods,rule=HydroP)
+    return  daily <= model.HorizonHydro_TOTAL[j]    
+model.HydroPROD= Constraint(model.Hydro,model.hh_periods,rule=HydroP)
 
 #Max capacity constraints on domestic hydropower 
 def HydroX(model,j,i):
-    return  model.mwh[j,i] <= model.Hydro_MAX[j]    
-model.HydroMAX= Constraint(model.Hydro_MAX,model.hh_periods,rule=HydroX)
+    return  model.mwh[j,i] <= model.HorizonHydro_MAX[j]    
+model.HydroMAX= Constraint(model.Hydro,model.hh_periods,rule=HydroX)
 
 #Max capacity constraints on domestic hydropower 
 def HydroM(model,j,i):
-    return  model.mwh[j,i] >= model.Hydro_MIN[j]    
-model.HydroMIN= Constraint(model.Hydro_MIN,model.hh_periods,rule=HydroM)
+    return  model.mwh[j,i] >= model.HorizonHydro_MIN[j]    
+model.HydroMIN= Constraint(model.Hydro,model.hh_periods,rule=HydroM)
 
 
 #Max capacity constraints on solar
@@ -271,7 +274,7 @@ def Flow_line(model,l,i):
 model.FlowL_Constraint = Constraint(model.lines,model.hh_periods,rule=Flow_line)
 
 def Theta_bus(model,i):
-        return model.Theta['21129',i] == 0
+        return model.Theta['bus_10001',i] == 0
 model.ThetaB_Constraint = Constraint(model.hh_periods,rule=Theta_bus)
 
 def FlowUP_line(model,l,i):

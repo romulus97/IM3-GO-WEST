@@ -55,7 +55,7 @@ for i in range(0,len(df_selected)):
         weights.append(0)
     else:        
         X = float(df_BA_totals.loc[df_BA_totals['Name']==area,'Total'])
-        W = df_selected.loc[i,'Pd']/X
+        W = (df_selected.loc[i,'Pd']/X)
         weights.append(W)
 df_selected['BA Load Weight'] = weights
 
@@ -71,8 +71,11 @@ for i in range(0,len(df_selected)):
     abbr = df_BAs.loc[df_BAs['Name']==name,'Abbreviation'].values[0]
     weight = df_selected.loc[i,'BA Load Weight']
     T[:,i] = T[:,i] + np.reshape(df_load[abbr].values*weight,(8760,))
-  
-    
+    # T[:,i] = T[:,i] + np.reshape(df_load[abbr].values*weight,(8760,))*(float(df_BA_totals.loc[df_BA_totals['Name']==name,'Total'])/np.mean(df_load[abbr]))  
+
+for i in range(0,len(buses)):
+    buses[i] = 'bus_' + str(buses[i])
+
 df_C = pd.DataFrame(T)
 df_C.columns = buses
 df_C.to_csv('nodal_load.csv',index=None)   
@@ -227,8 +230,12 @@ for b in buses:
     
     idx +=1
 
+w_buses = []
+for i in range(0,len(buses)):
+    w_buses.append('bus_' + str(buses[i]))
+
 df_C = pd.DataFrame(T)
-df_C.columns = buses
+df_C.columns = w_buses
 df_C.to_csv('nodal_wind.csv',index=None)   
 
 ##################################
@@ -320,9 +327,14 @@ for b in buses:
         pass
     
     idx +=1
+    
+
+s_buses = []
+for i in range(0,len(buses)):
+    s_buses.append('bus_' + str(buses[i]))
 
 df_C = pd.DataFrame(T)
-df_C.columns = buses
+df_C.columns = s_buses
 df_C.to_csv('nodal_solar.csv',index=None)   
 
 
@@ -425,7 +437,7 @@ for i in range(0,len(df_hydro)):
     elif bus in buses:
         new_hydro_nodes.append(bus)
     else:
-        print(name+ ' Not found')
+        print(name + ' Not found')
 
 # add mean/min/max by node
 H_min = np.zeros((52,len(buses)))
@@ -443,6 +455,7 @@ for i in range(0,len(df_hydro)):
     H_max[:,idx] += ts['max']
     H_mu[:,idx] += ts['mean']
     
+
 # create daily time series by node
 H_min_hourly = np.zeros((365,len(buses)))
 H_max_hourly = np.zeros((365,len(buses)))
@@ -458,12 +471,16 @@ H_min_hourly[364,:] = H_min_hourly[363,:]
 H_max_hourly[364,:] = H_max_hourly[363,:]
 H_mu_hourly[364,:] = H_mu_hourly[363,:] 
 
+h_buses = []
+for i in range(0,len(buses)):
+    h_buses.append('bus_' + str(buses[i]))
+
 H_min_df = pd.DataFrame(H_min_hourly)
-H_min_df.columns = buses
+H_min_df.columns = h_buses
 H_max_df = pd.DataFrame(H_max_hourly)
-H_max_df.columns = buses
+H_max_df.columns = h_buses
 H_mu_df = pd.DataFrame(H_mu_hourly) 
-H_mu_df.columns = buses       
+H_mu_df.columns = h_buses       
 
 H_min_df.to_csv('Hydro_min.csv',index=None)
 H_max_df.to_csv('Hydro_max.csv',index=None)
@@ -502,7 +519,7 @@ for i in range(0,len(df_G)):
         typ = 'coal'
     else:
         typ = 'nuclear'
-    node = df_G.loc[i,'Bus']
+    node = 'bus_' + str(df_G.loc[i,'Bus'])
     maxcap = df_G.loc[i,'Max_Cap']
     mincap = df_G.loc[i,'Min_Cap']
     mc = df_G.loc[i,'MarginalCost']
@@ -624,7 +641,8 @@ df_genparams.to_csv('data_genparams.csv',index=None)
 
 df_must = pd.DataFrame()
 for i in range(0,len(must_nodes)):
-    df_must[must_nodes[i]] = [must_caps[i]]
+    n = must_nodes[i]
+    df_must[n] = [must_caps[i]]
 df_must.to_csv('must_run.csv',index=None)
 
 
@@ -636,6 +654,8 @@ gens = list(df.loc[:,'name'])
 
 df_nodes = pd.read_csv('reduced_buses.csv',header=0)
 all_nodes = list(df_nodes['bus_i'])
+for i in range(0,len(all_nodes)):
+    all_nodes[i] = 'bus_' + str(all_nodes[i])
 
 A = np.zeros((len(gens),len(all_nodes)))
 
@@ -768,6 +788,14 @@ for i in range(0,len(df)):
             limit.append(df.loc[i,'rateA'])
             ref_node += 1
 
+unique_nodes = list(unique_nodes)
+for i in range(0,len(unique_nodes)):
+    unique_nodes[i] = 'bus_' + str(unique_nodes[i])
+df_line_to_bus.columns = unique_nodes
+
+for i in range(0,len(lines)):
+    lines[i] = 'line_' + lines[i]
+    
 df_line_to_bus['line'] = lines
 df_line_to_bus.set_index('line',inplace=True)
 df_line_to_bus.to_csv('line_to_bus.csv')

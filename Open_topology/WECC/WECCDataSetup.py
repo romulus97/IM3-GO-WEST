@@ -32,7 +32,6 @@ df_linetobusmap = pd.read_csv('line_to_bus.csv',header=0)
 df_line_params = pd.read_csv('line_params.csv',header=0)
 lines = list(df_line_params['line'])
 
-
 ##daily ts of hydro at nodal-level
 df_hydro_MAX = pd.read_csv('Hydro_max.csv',header=0)
 df_hydro_MIN = pd.read_csv('Hydro_min.csv',header=0)
@@ -271,7 +270,7 @@ with open(''+str(data_name)+'.dat', 'w') as f:
     s_gens = df_solar.columns
     for z in s_gens:
         for h in range(0,len(df_solar)):
-            f.write(z + '\t' + str(h+1) + '\t' + str(df_solar.loc[h,z]) + '\n')
+            f.write(z + '_SOLAR' + '\t' + str(h+1) + '\t' + str(df_solar.loc[h,z]) + '\n')
     f.write(';\n\n')
     
     print('solar')
@@ -280,13 +279,13 @@ with open(''+str(data_name)+'.dat', 'w') as f:
     w_gens = df_wind.columns
     for z in w_gens:
         for h in range(0,len(df_wind)):
-            f.write(z + '\t' + str(h+1) + '\t' + str(df_wind.loc[h,z]) + '\n')
+            f.write(z + '_WIND' + '\t' + str(h+1) + '\t' + str(df_wind.loc[h,z]) + '\n')
     f.write(';\n\n')
     
     print('wind')
     
     # hydro (daily)
-    f.write('param:' + '\t' + 'SimHydro_Max:=' + '\n')
+    f.write('param:' + '\t' + 'SimHydro_MAX:=' + '\n')
     h_gens = df_hydro_MAX.columns      
     for z in h_gens:
         for h in range(0,len(df_hydro_MAX)): 
@@ -295,7 +294,7 @@ with open(''+str(data_name)+'.dat', 'w') as f:
     f.write(';\n\n')
 
     # hydro (daily)
-    f.write('param:' + '\t' + 'SimHydro_Min:=' + '\n')
+    f.write('param:' + '\t' + 'SimHydro_MIN:=' + '\n')
     h_gens = df_hydro_MIN.columns      
     for z in h_gens:
         for h in range(0,len(df_hydro_MIN)): 
