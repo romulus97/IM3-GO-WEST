@@ -33,8 +33,8 @@ K=range(1,H+1)
 
 #Space to store results
 mwh=[]
-on=[]
-switch=[]
+# on=[]
+# switch=[]
 flow=[]
 # srsv=[]
 # nrsv=[]
@@ -82,23 +82,23 @@ for day in range(1,days):
     print('MILP')
     
     
-    for j in instance.Dispatchable:
-        for t in K:
-            if instance.on[j,t] == 1:
-                instance2.on[j,t] = 1
-                instance2.on[j,t].fixed = True
-            else:
-                instance.on[j,t] = 0
-                instance2.on[j,t] = 0
-                instance2.on[j,t].fixed = True
+    # for j in instance.Dispatchable:
+    #     for t in K:
+    #         if instance.on[j,t] == 1:
+    #             instance2.on[j,t] = 1
+    #             instance2.on[j,t].fixed = True
+    #         else:
+    #             instance.on[j,t] = 0
+    #             instance2.on[j,t] = 0
+    #             instance2.on[j,t].fixed = True
 
-            if instance.switch[j,t] == 1:
-                instance2.switch[j,t] = 1
-                instance2.switch[j,t].fixed = True
-            else:
-                instance2.switch[j,t] = 0
-                instance2.switch[j,t] = 0
-                instance2.switch[j,t].fixed = True
+    #         if instance.switch[j,t] == 1:
+    #             instance2.switch[j,t] = 1
+    #             instance2.switch[j,t].fixed = True
+    #         else:
+    #             instance2.switch[j,t] = 0
+    #             instance2.switch[j,t] = 0
+    #             instance2.switch[j,t].fixed = True
                     
     results = opt.solve(instance2,tee=True,symbolic_solver_labels=True)
     instance2.solutions.load_from(results)
@@ -128,15 +128,15 @@ for day in range(1,days):
                 if int(index[1]>0 and index[1]<25):
                     mwh.append((index[0],index[1]+((day-1)*24),varobject[index].value))                                            
         
-        if a=='on':  
-            for index in varobject:
-                if int(index[1]>0 and index[1]<25):
-                    on.append((index[0],index[1]+((day-1)*24),varobject[index].value))
+        # if a=='on':  
+        #     for index in varobject:
+        #         if int(index[1]>0 and index[1]<25):
+        #             on.append((index[0],index[1]+((day-1)*24),varobject[index].value))
 
-        if a=='switch':
-            for index in varobject:
-                if int(index[1]>0 and index[1]<25):
-                    switch.append((index[0],index[1]+((day-1)*24),varobject[index].value))
+        # if a=='switch':
+        #     for index in varobject:
+        #         if int(index[1]>0 and index[1]<25):
+        #             switch.append((index[0],index[1]+((day-1)*24),varobject[index].value))
                     
         if a=='S':    
             for index in varobject:
@@ -160,47 +160,32 @@ for day in range(1,days):
         
         
         for j in instance.Dispatchable:
-            if instance.on[j,24] == 1:
-                instance.on[j,0] = 1
-            else:
-                instance.on[j,0] = 0
-            instance.on[j,0].fixed = True
+            # if instance.on[j,24] == 1:
+            #     instance.on[j,0] = 1
+            # else:
+            #     instance.on[j,0] = 0
+            # instance.on[j,0].fixed = True
 
-            if instance.mwh_1[j,24].value <=0 and instance.mwh_1[j,24].value>= -0.0001:
+            if instance.mwh[j,24].value <=0 and instance.mwh[j,24].value>= -0.0001:
                 newval_1=0
             else:
-                newval_1=instance.mwh_1[j,24].value
-            instance.mwh_1[j,0] = newval_1
-            instance.mwh_1[j,0].fixed = True
-
-            if instance.mwh_2[j,24].value <=0 and instance.mwh_2[j,24].value>= -0.0001:
-                newval=0
-            else:
-                newval=instance.mwh_2[j,24].value
-
-            if instance.mwh_3[j,24].value <=0 and instance.mwh_3[j,24].value>= -0.0001:
-                newval2=0
-            else:
-                newval2=instance.mwh_3[j,24].value
+                newval_1=instance.mwh[j,24].value
+            instance.mwh[j,0] = newval_1
+            instance.mwh[j,0].fixed = True
+            
+            # if instance.switch[j,24] == 1:
+            #     instance.switch[j,0] = 1
+            # else:
+            #     instance.switch[j,0] = 0
+            # instance.switch[j,0].fixed = True
 
 
-            instance.mwh_2[j,0] = newval
-            instance.mwh_2[j,0].fixed = True
-            instance.mwh_3[j,0] = newval2
-            instance.mwh_3[j,0].fixed = True
-            if instance.switch[j,24] == 1:
-                instance.switch[j,0] = 1
-            else:
-                instance.switch[j,0] = 0
-            instance.switch[j,0].fixed = True
-
-
-            if instance.nrsv[j,24].value <=0 and instance.nrsv[j,24].value>= -0.0001:
-                newval_nrsv=0
-            else:
-                newval_nrsv=instance.nrsv[j,24].value
-            instance.nrsv[j,0] = newval_nrsv
-            instance.nrsv[j,0].fixed = True
+            # if instance.nrsv[j,24].value <=0 and instance.nrsv[j,24].value>= -0.0001:
+            #     newval_nrsv=0
+            # else:
+            #     newval_nrsv=instance.nrsv[j,24].value
+            # instance.nrsv[j,0] = newval_nrsv
+            # instance.nrsv[j,0].fixed = True
 
 
     print(day)

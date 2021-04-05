@@ -70,8 +70,8 @@ for i in range(0,len(df_selected)):
     
     abbr = df_BAs.loc[df_BAs['Name']==name,'Abbreviation'].values[0]
     weight = df_selected.loc[i,'BA Load Weight']
-    T[:,i] = T[:,i] + np.reshape(df_load[abbr].values*weight,(8760,))
-    # T[:,i] = T[:,i] + np.reshape(df_load[abbr].values*weight,(8760,))*(float(df_BA_totals.loc[df_BA_totals['Name']==name,'Total'])/np.mean(df_load[abbr]))  
+    # T[:,i] = T[:,i] + np.reshape(df_load[abbr].values*weight,(8760,))
+    T[:,i] = T[:,i] + np.reshape(df_load[abbr].values*weight,(8760,))*(float(df_BA_totals.loc[df_BA_totals['Name']==name,'Total'])/max(df_load[abbr]))  
 
 for i in range(0,len(buses)):
     buses[i] = 'bus_' + str(buses[i])
