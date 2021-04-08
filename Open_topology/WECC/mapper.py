@@ -8,10 +8,14 @@ This is a temporary script file.
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from geopy import distance
 # import descartes
 import geopandas as gpd
 from shapely.geometry import Point, Polygon
 from matplotlib.colors import TwoSlopeNorm
+
+RTS = [300,275,250,225,200,175,150,125,100,75,50]
+distance_threshold = 5
 
 df_BAs = pd.read_csv('BAs.csv',header=0)
 BAs = list(df_BAs['Name'])
@@ -20,6 +24,7 @@ df = pd.read_csv('10k_load.csv',header=0)
 crs = {'init':'epsg:4326'}
 # crs = {"init": "epsg:2163"}
 geometry = [Point(xy) for xy in zip(df['Substation Longitude'],df['Substation Latitude'])]
+filter_nodes = gpd.GeoDataFrame(df,crs=crs,geometry=geometry)
 nodes_df = gpd.GeoDataFrame(df,crs=crs,geometry=geometry)
 nodes_df = nodes_df.to_crs(epsg=2163)
 
@@ -312,167 +317,244 @@ gen_weights = gens/sum(gens)
 #Nodal reduction
 ##############################
 
-#specify number of nodes 
-N = 300
-g_N = 100 #generation nodes
-l_N = 150 #demand nodes
-t_N = N - g_N - l_N
+for NN in RTS:
+    
+    #specify number of nodes 
+    g_N = int(np.floor(N*.30)) #generation nodes
+    l_N = int(np.floor(N*.50)) #demand nodes
+    t_N = N - g_N - l_N
 
-#1 - put one demand node in each state/BA pairing (max node in each)
-demand_nodes_selected = []
-for k in keys:
-    idx = keys.index(k)
-    demand_nodes_selected.append(max_loads[idx])
-    l_N += -1
-
-#2 - allocate remaining demand nodes based on MW ranking of individual nodes
-unallocated = [i for i in non_zero if i not in demand_nodes_selected]
-load_ranks = np.zeros((len(unallocated),2))
-
-for i in unallocated:
-    idx = unallocated.index(i)
-    load_ranks[idx,0] = i
-    load_ranks[idx,1] = df_load.loc[df_load['Number']==i,'Load MW'].values
-df_load_ranks = pd.DataFrame(load_ranks)
-df_load_ranks.columns = ['BusName','MW']
-df_load_ranks = df_load_ranks.sort_values(by='MW',ascending=False)
-df_load_ranks = df_load_ranks.reset_index(drop=True)
-
-added = 0
-while l_N > 0:
-    demand_nodes_selected.append(int(df_load_ranks.loc[added,'BusName']))
-    added += 1  
-    l_N += -1
-
-#3 - allocate generation based on reduced gens (screen for overlap)
-
-gen_nodes_selected = []
-unallocated_gens = [i for i in reduced_gen_buses if i not in demand_nodes_selected]
-unallocated_caps = []
-for i in unallocated_gens:
-    idx = reduced_gen_buses.index(i)
-    unallocated_caps.append(caps[idx])
-
-df_gen_ranks = pd.DataFrame()
-df_gen_ranks['BusName'] = unallocated_gens
-df_gen_ranks['MW'] = unallocated_caps
-
-df_gen_ranks = df_gen_ranks.sort_values(by='MW',ascending=False)
-df_gen_ranks = df_gen_ranks.reset_index(drop=True)
-
-added = 0
-while g_N > 0:
-    gen_nodes_selected.append(int(df_gen_ranks.loc[added,'BusName']))
-    added += 1  
-    g_N += -1
-
-#4 - allocate transmission nodes based on load as well (screen for overlap, make sure list is for >=345kV)
-trans_nodes_selected = []
-unallocated_trans = [i for i in non_zero if i not in demand_nodes_selected]
-unallocated_trans = [i for i in unallocated_trans if i not in gen_nodes_selected]
-
-load_ranks = np.zeros((len(unallocated_trans),2))
-
-for i in unallocated_trans:
-    idx = unallocated_trans.index(i)
-    load_ranks[idx,0] = i
-    load_ranks[idx,1] = df_load.loc[df_load['Number']==i,'Load MW'].values
-df_load_ranks = pd.DataFrame(load_ranks)
-df_load_ranks.columns = ['BusName','MW']
-df_load_ranks = df_load_ranks.sort_values(by='MW',ascending=False)
-df_load_ranks = df_load_ranks.reset_index(drop=True)
-
-added = 0
-while t_N > 0:
-    trans_nodes_selected.append(int(df_load_ranks.loc[added,'BusName']))
-    added += 1  
-    t_N += -1
-
-
-# plot (unique colors, and combos)
-
-fig,ax = plt.subplots()
-states_gdf.plot(ax=ax,color='white',edgecolor='black',linewidth=0.5)
-nodes_df.plot(ax=ax,color = 'lightgray',alpha=1)
-M=18
-
-G_NODES = nodes_df[nodes_df['Number'].isin(gen_nodes_selected)]
-G_NODES.plot(ax=ax,color = 'deepskyblue',markersize=M,alpha=1,edgecolor='black',linewidth=0.3)
-
-D_NODES = nodes_df[nodes_df['Number'].isin(demand_nodes_selected)]
-D_NODES.plot(ax=ax,color = 'deeppink',markersize=M,alpha=1,edgecolor='black',linewidth=0.3)
-
-T_NODES = nodes_df[nodes_df['Number'].isin(trans_nodes_selected)]
-T_NODES.plot(ax=ax,color = 'limegreen',markersize=M,alpha=1,edgecolor='black',linewidth=0.3)   
-
-ax.set_box_aspect(1)
-ax.set_xlim(-2000000,0)
-ax.set_ylim([-1750000,750000])
-plt.axis('off')
-plt.savefig('draft_topology.jpg',dpi=330)
-
-
-#SO-CAL
-fig,ax = plt.subplots()
-states_gdf.plot(ax=ax,color='white',edgecolor='black',linewidth=0.5)
-nodes_df.plot(ax=ax,color = 'lightgray',alpha=1)
-M=18
-
-G_NODES.plot(ax=ax,color = 'deepskyblue',markersize=M,alpha=1,edgecolor='black',linewidth=0.3)
-D_NODES.plot(ax=ax,color = 'deeppink',markersize=M,alpha=1,edgecolor='black',linewidth=0.3)
-T_NODES.plot(ax=ax,color = 'limegreen',markersize=M,alpha=1,edgecolor='black',linewidth=0.3)   
-
-ax.set_box_aspect(1)
-ax.set_xlim(-1800000,-1100000)
-ax.set_ylim([-1400000,-700000])
-plt.axis('off')
-plt.savefig('SOCAL_topology.jpg',dpi=330)
-
-
-#Mid-C
-fig,ax = plt.subplots()
-states_gdf.plot(ax=ax,color='white',edgecolor='black',linewidth=0.5)
-nodes_df.plot(ax=ax,color = 'lightgray',alpha=1)
-M=18
-
-G_NODES.plot(ax=ax,color = 'deepskyblue',markersize=M,alpha=1,edgecolor='black',linewidth=0.3)
-D_NODES.plot(ax=ax,color = 'deeppink',markersize=M,alpha=1,edgecolor='black',linewidth=0.3)
-T_NODES.plot(ax=ax,color = 'limegreen',markersize=M,alpha=1,edgecolor='black',linewidth=0.3)   
-
-ax.set_box_aspect(1)
-ax.set_xlim(-2000000,-1000000)
-ax.set_ylim([0,750000])
-plt.axis('off')
-plt.savefig('MIDC_topology.jpg',dpi=330)
-
-
-#SF Bay Area
-fig,ax = plt.subplots()
-states_gdf.plot(ax=ax,color='white',edgecolor='black',linewidth=0.5)
-nodes_df.plot(ax=ax,color = 'lightgray',alpha=1)
-M=18
-
-G_NODES.plot(ax=ax,color = 'deepskyblue',markersize=M,alpha=1,edgecolor='black',linewidth=0.3)
-D_NODES.plot(ax=ax,color = 'deeppink',markersize=M,alpha=1,edgecolor='black',linewidth=0.3)
-T_NODES.plot(ax=ax,color = 'limegreen',markersize=M,alpha=1,edgecolor='black',linewidth=0.3)   
-
-ax.set_box_aspect(1)
-ax.set_xlim(-2000000,-1500000)
-ax.set_ylim([-750000,0])
-plt.axis('off')
-plt.savefig('SF_topology.jpg',dpi=330)
-
-selected_nodes = demand_nodes_selected + gen_nodes_selected + trans_nodes_selected
-
-df = pd.read_csv('10k_load.csv',header=0)
-full = list(df['Number'])
-
-excluded = [i for i in full if i not in selected_nodes]
-
-df_excluded_nodes = pd.DataFrame(excluded)
-df_excluded_nodes.columns = ['ExcludedNodes']
-df_excluded_nodes.to_csv('excluded_nodes.csv',index=None)
-
-df_selected_nodes = pd.DataFrame(selected_nodes)
-df_selected_nodes.columns = ['SelectedNodes']
-df_selected_nodes.to_csv('selected_nodes.csv',index=None)
+    #1 - put one demand node in each state/BA pairing (max node in each)
+    demand_nodes_selected = []
+    for k in keys:
+        idx = keys.index(k)
+        demand_nodes_selected.append(max_loads[idx])
+        l_N += -1
+    
+    #2 - allocate remaining demand nodes based on MW ranking of individual nodes
+    unallocated = [i for i in non_zero if i not in demand_nodes_selected]
+    load_ranks = np.zeros((len(unallocated),2))
+    
+    for i in unallocated:
+        idx = unallocated.index(i)
+        load_ranks[idx,0] = i
+        load_ranks[idx,1] = df_load.loc[df_load['Number']==i,'Load MW'].values
+    df_load_ranks = pd.DataFrame(load_ranks)
+    df_load_ranks.columns = ['BusName','MW']
+    df_load_ranks = df_load_ranks.sort_values(by='MW',ascending=False)
+    df_load_ranks = df_load_ranks.reset_index(drop=True)
+    
+    added = 0
+    while l_N > 0:
+        
+        p = int(df_load_ranks.loc[added,'BusName'])
+        LA = filter_nodes.loc[filter_nodes['Number']==p,'Substation Latitude'].values[0]
+        LO = filter_nodes.loc[filter_nodes['Number']==p,'Substation Longitude'].values[0]
+        T1 = tuple((LA,LO))
+        
+        trigger = 0
+        
+        for d in demand_nodes_selected:
+            a = filter_nodes.loc[filter_nodes['Number']==d,'Substation Latitude'].values[0]
+            b = filter_nodes.loc[filter_nodes['Number']==d,'Substation Longitude'].values[0]
+            T2 = tuple((a,b))
+            
+            dist = distance.distance(T1,T2).km
+            
+            if dist < distance_threshold:
+                
+                trigger = 1
+        
+        if trigger > 0:
+            added += 1
+        else:
+            
+            demand_nodes_selected.append(int(df_load_ranks.loc[added,'BusName']))
+            added += 1  
+            l_N += -1
+    
+    #3 - allocate generation based on reduced gens (screen for overlap)
+    
+    gen_nodes_selected = []
+    unallocated_gens = [i for i in reduced_gen_buses if i not in demand_nodes_selected]
+    unallocated_caps = []
+    for i in unallocated_gens:
+        idx = reduced_gen_buses.index(i)
+        unallocated_caps.append(caps[idx])
+    
+    df_gen_ranks = pd.DataFrame()
+    df_gen_ranks['BusName'] = unallocated_gens
+    df_gen_ranks['MW'] = unallocated_caps
+    
+    df_gen_ranks = df_gen_ranks.sort_values(by='MW',ascending=False)
+    df_gen_ranks = df_gen_ranks.reset_index(drop=True)
+    
+    added = 0
+    while g_N > 0:
+           
+        p = int(df_gen_ranks.loc[added,'BusName'])
+        LA = filter_nodes.loc[filter_nodes['Number']==p,'Substation Latitude'].values[0]
+        LO = filter_nodes.loc[filter_nodes['Number']==p,'Substation Longitude'].values[0]
+        T1 = tuple((LA,LO))
+        
+        trigger = 0
+        
+        N = gen_nodes_selected + demand_nodes_selected
+        
+        for d in N:
+            a = filter_nodes.loc[filter_nodes['Number']==d,'Substation Latitude'].values[0]
+            b = filter_nodes.loc[filter_nodes['Number']==d,'Substation Longitude'].values[0]
+            T2 = tuple((a,b))
+            
+            dist = distance.distance(T1,T2).km
+            
+            if dist < distance_threshold:
+                
+                trigger = 1
+        
+        if trigger > 0:
+            added += 1
+        else:
+            
+            gen_nodes_selected.append(int(df_gen_ranks.loc[added,'BusName']))
+            added += 1  
+            g_N += -1
+        
+        
+    
+    #4 - allocate transmission nodes based on load as well (screen for overlap, make sure list is for >=345kV)
+    trans_nodes_selected = []
+    unallocated_trans = [i for i in non_zero if i not in demand_nodes_selected]
+    unallocated_trans = [i for i in unallocated_trans if i not in gen_nodes_selected]
+    
+    load_ranks = np.zeros((len(unallocated_trans),2))
+    
+    for i in unallocated_trans:
+        idx = unallocated_trans.index(i)
+        load_ranks[idx,0] = i
+        load_ranks[idx,1] = df_load.loc[df_load['Number']==i,'Load MW'].values
+    df_load_ranks = pd.DataFrame(load_ranks)
+    df_load_ranks.columns = ['BusName','MW']
+    df_load_ranks = df_load_ranks.sort_values(by='MW',ascending=False)
+    df_load_ranks = df_load_ranks.reset_index(drop=True)
+    
+    added = 0
+    while t_N > 0:
+    
+        p = int(df_load_ranks.loc[added,'BusName'])
+        LA = filter_nodes.loc[filter_nodes['Number']==p,'Substation Latitude'].values[0]
+        LO = filter_nodes.loc[filter_nodes['Number']==p,'Substation Longitude'].values[0]
+        T1 = tuple((LA,LO))
+        
+        trigger = 0
+        
+        N = gen_nodes_selected + demand_nodes_selected + trans_nodes_selected
+        
+        for d in N:
+            a = filter_nodes.loc[filter_nodes['Number']==d,'Substation Latitude'].values[0]
+            b = filter_nodes.loc[filter_nodes['Number']==d,'Substation Longitude'].values[0]
+            T2 = tuple((a,b))
+            
+            dist = distance.distance(T1,T2).km
+            
+            if dist < distance_threshold:
+                
+                trigger = 1
+        
+        if trigger > 0:
+            added += 1
+        else:
+            
+            trans_nodes_selected.append(int(df_load_ranks.loc[added,'BusName']))
+            added += 1  
+            t_N += -1
+        
+    # plot (unique colors, and combos)
+    
+    fig,ax = plt.subplots()
+    states_gdf.plot(ax=ax,color='white',edgecolor='black',linewidth=0.5)
+    nodes_df.plot(ax=ax,color = 'lightgray',alpha=1)
+    M=18
+    
+    G_NODES = nodes_df[nodes_df['Number'].isin(gen_nodes_selected)]
+    G_NODES.plot(ax=ax,color = 'deepskyblue',markersize=M,alpha=1,edgecolor='black',linewidth=0.3)
+    
+    D_NODES = nodes_df[nodes_df['Number'].isin(demand_nodes_selected)]
+    D_NODES.plot(ax=ax,color = 'deeppink',markersize=M,alpha=1,edgecolor='black',linewidth=0.3)
+    
+    T_NODES = nodes_df[nodes_df['Number'].isin(trans_nodes_selected)]
+    T_NODES.plot(ax=ax,color = 'limegreen',markersize=M,alpha=1,edgecolor='black',linewidth=0.3)   
+    
+    ax.set_box_aspect(1)
+    ax.set_xlim(-2000000,0)
+    ax.set_ylim([-1750000,750000])
+    plt.axis('off')
+    plt.savefig('draft_topology.jpg',dpi=330)
+    
+    
+    #SO-CAL
+    fig,ax = plt.subplots()
+    states_gdf.plot(ax=ax,color='white',edgecolor='black',linewidth=0.5)
+    nodes_df.plot(ax=ax,color = 'lightgray',alpha=1)
+    M=18
+    
+    G_NODES.plot(ax=ax,color = 'deepskyblue',markersize=M,alpha=1,edgecolor='black',linewidth=0.3)
+    D_NODES.plot(ax=ax,color = 'deeppink',markersize=M,alpha=1,edgecolor='black',linewidth=0.3)
+    T_NODES.plot(ax=ax,color = 'limegreen',markersize=M,alpha=1,edgecolor='black',linewidth=0.3)   
+    
+    ax.set_box_aspect(1)
+    ax.set_xlim(-1800000,-1100000)
+    ax.set_ylim([-1400000,-700000])
+    plt.axis('off')
+    plt.savefig('SOCAL_topology.jpg',dpi=330)
+    
+    
+    #Mid-C
+    fig,ax = plt.subplots()
+    states_gdf.plot(ax=ax,color='white',edgecolor='black',linewidth=0.5)
+    nodes_df.plot(ax=ax,color = 'lightgray',alpha=1)
+    M=18
+    
+    G_NODES.plot(ax=ax,color = 'deepskyblue',markersize=M,alpha=1,edgecolor='black',linewidth=0.3)
+    D_NODES.plot(ax=ax,color = 'deeppink',markersize=M,alpha=1,edgecolor='black',linewidth=0.3)
+    T_NODES.plot(ax=ax,color = 'limegreen',markersize=M,alpha=1,edgecolor='black',linewidth=0.3)   
+    
+    ax.set_box_aspect(1)
+    ax.set_xlim(-2000000,-1000000)
+    ax.set_ylim([0,750000])
+    plt.axis('off')
+    plt.savefig('MIDC_topology.jpg',dpi=330)
+    
+    
+    #SF Bay Area
+    fig,ax = plt.subplots()
+    states_gdf.plot(ax=ax,color='white',edgecolor='black',linewidth=0.5)
+    nodes_df.plot(ax=ax,color = 'lightgray',alpha=1)
+    M=18
+    
+    G_NODES.plot(ax=ax,color = 'deepskyblue',markersize=M,alpha=1,edgecolor='black',linewidth=0.3)
+    D_NODES.plot(ax=ax,color = 'deeppink',markersize=M,alpha=1,edgecolor='black',linewidth=0.3)
+    T_NODES.plot(ax=ax,color = 'limegreen',markersize=M,alpha=1,edgecolor='black',linewidth=0.3)   
+    
+    ax.set_box_aspect(1)
+    ax.set_xlim(-2000000,-1500000)
+    ax.set_ylim([-750000,0])
+    plt.axis('off')
+    plt.savefig('SF_topology.jpg',dpi=330)
+    
+    selected_nodes = demand_nodes_selected + gen_nodes_selected + trans_nodes_selected
+    
+    df = pd.read_csv('10k_load.csv',header=0)
+    full = list(df['Number'])
+    
+    excluded = [i for i in full if i not in selected_nodes]
+    
+    df_excluded_nodes = pd.DataFrame(excluded)
+    df_excluded_nodes.columns = ['ExcludedNodes']
+    f = 'excluded_nodes_' + str(NN) + '.csv'
+    df_excluded_nodes.to_csv(f,index=None)
+    
+    df_selected_nodes = pd.DataFrame(selected_nodes)
+    df_selected_nodes.columns = ['SelectedNodes']
+    f = 'selected_nodes_' + str(NN) + '.csv'
+    df_selected_nodes.to_csv(f,index=None)
