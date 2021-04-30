@@ -320,9 +320,9 @@ gen_weights = gens/sum(gens)
 for NN in RTS:
     
     #specify number of nodes 
-    g_N = int(np.floor(N*.30)) #generation nodes
-    l_N = int(np.floor(N*.50)) #demand nodes
-    t_N = N - g_N - l_N
+    g_N = int(np.floor(NN*.30)) #generation nodes
+    l_N = int(np.floor(NN*.50)) #demand nodes
+    t_N = NN - g_N - l_N
 
     #1 - put one demand node in each state/BA pairing (max node in each)
     demand_nodes_selected = []
