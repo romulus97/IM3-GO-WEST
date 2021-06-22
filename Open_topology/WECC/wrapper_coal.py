@@ -17,16 +17,23 @@ import numpy as np
 from datetime import datetime
 import pyomo.environ as pyo
 
-# Max = 365
-days = 365
+days = 365 # Max = 365
 
 instance = m1.create_instance('WECC_data.dat')
 instance2 = m2.create_instance('WECC_data.dat')
 instance2.dual = pyo.Suffix(direction=pyo.Suffix.IMPORT)
 
+Solvername = 'gurobi'
+Timelimit = 1800 # for the simulation of one day in seconds
+# Threadlimit = 8 # maximum number of threads to use
 
-opt = SolverFactory("gurobi")
-opt.options["threads"] = 8
+opt = SolverFactory(Solvername)
+if Solvername == 'cplex':
+    opt.options['timelimit'] = Timelimit
+elif Solvername == 'gurobi':           
+    opt.options['TimeLimit'] = Timelimit
+    
+# opt.options['threads'] = Threadlimit
 
 H = instance.HorizonHours
 D = 2
@@ -78,7 +85,7 @@ for day in range(1,days):
             instance.HorizonWind[z,i] = instance.SimWind[z,(day-1)*24+i]
             instance2.HorizonWind[z,i] = instance.SimWind[z,(day-1)*24+i]
 
-    result = opt.solve(instance,tee=True,symbolic_solver_labels=True) ##,tee=True to check number of variables\n",
+    result = opt.solve(instance,tee=True,symbolic_solver_labels=True, load_solutions=False) ##,tee=True to check number of variables\n",
     instance.solutions.load_from(result)  
     
     print('MILP')
@@ -102,7 +109,7 @@ for day in range(1,days):
                 instance2.switch[j,t] = 0
                 instance2.switch[j,t].fixed = True
                     
-    results = opt.solve(instance2,tee=True,symbolic_solver_labels=True)
+    results = opt.solve(instance2,tee=True,symbolic_solver_labels=True, load_solutions=False)
     instance2.solutions.load_from(results)
 
     for c in instance2.component_objects(Constraint, active=True):
@@ -111,9 +118,9 @@ for day in range(1,days):
             for index in cobject:
                  if int(index[1]>0 and index[1]<25):
                      try:
-                         duals.append((str(c),index[0],index[1]+((day-1)*24), instance2.dual[cobject[index]]))
+                         duals.append((index[0],index[1]+((day-1)*24), instance2.dual[cobject[index]]))
                      except KeyError:
-                         duals.append((str(c),index[0],index[1]+((day-1)*24),-999))
+                         duals.append((index[0],index[1]+((day-1)*24),-999))
 
     for v in instance.component_objects(Var, active=True):
         varobject = getattr(instance, str(v))
@@ -128,7 +135,18 @@ for day in range(1,days):
         if a=='mwh':
             for index in varobject:
                 if int(index[1]>0 and index[1]<25):
-                    mwh.append((index[0],index[1]+((day-1)*24),varobject[index].value))                                            
+                    if index[0] in instance.Gas:
+                        mwh.append((index[0],'Gas',index[1]+((day-1)*24),varobject[index].value))   
+                    elif index[0] in instance.Coal:
+                        mwh.append((index[0],'Coal',index[1]+((day-1)*24),varobject[index].value))  
+                    elif index[0] in instance.Oil:
+                        mwh.append((index[0],'Oil',index[1]+((day-1)*24),varobject[index].value))   
+                    elif index[0] in instance.Hydro:
+                        mwh.append((index[0],'Hydro',index[1]+((day-1)*24),varobject[index].value)) 
+                    elif index[0] in instance.Solar:
+                        mwh.append((index[0],'Solar',index[1]+((day-1)*24),varobject[index].value))
+                    elif index[0] in instance.Wind:
+                        mwh.append((index[0],'Wind',index[1]+((day-1)*24),varobject[index].value))                                            
         
         if a=='on':  
             for index in varobject:
@@ -201,25 +219,25 @@ for day in range(1,days):
     print(day)
         
 vlt_angle_pd=pd.DataFrame(vlt_angle,columns=('Node','Time','Value'))
-mwh_pd=pd.DataFrame(mwh,columns=('Generator','Time','Value'))
+mwh_pd=pd.DataFrame(mwh,columns=('Generator','Type','Time','Value'))
 # on_pd=pd.DataFrame(on,columns=('Generator','Time','Value'))
 # switch_pd=pd.DataFrame(switch,columns=('Generator','Time','Value'))
 # srsv_pd=pd.DataFrame(srsv,columns=('Generator','Time','Value'))
 # nrsv_pd=pd.DataFrame(nrsv,columns=('Generator','Time','Value'))
 slack_pd = pd.DataFrame(slack,columns=('Node','Time','Value'))
 flow_pd = pd.DataFrame(flow,columns=('Line','Time','Value'))
-duals_pd = pd.DataFrame(duals,columns=['Constraint','Bus','Time','Value'])
+duals_pd = pd.DataFrame(duals,columns=['Bus','Time','Value'])
 
 #to save outputs
-mwh_pd.to_csv('mwh.csv')
-vlt_angle_pd.to_csv('vlt_angle.csv')
-# on_pd.to_csv('on.csv')
-# switch_pd.to_csv('switch.csv')
-# srsv_pd.to_csv('srsv.csv')
-# nrsv_pd.to_csv('nrsv.csv')
-slack_pd.to_csv('slack.csv')
-flow_pd.to_csv('flow.csv')
-duals_pd.to_csv('duals.csv')
+mwh_pd.to_csv('mwh.csv', index=False)
+vlt_angle_pd.to_csv('vlt_angle.csv', index=False)
+# on_pd.to_csv('on.csv', index=False)
+# switch_pd.to_csv('switch.csv', index=False)
+# srsv_pd.to_csv('srsv.csv', index=False)
+# nrsv_pd.to_csv('nrsv.csv', index=False)
+slack_pd.to_csv('slack.csv', index=False)
+flow_pd.to_csv('flow.csv', index=False)
+duals_pd.to_csv('duals.csv', index=False)
 
 
 

@@ -439,8 +439,8 @@ for NN in NODE_NUMBER:
         # HYDROPOWER
         
         #EIA plants
-        df_hydro = pd.read_csv('EIA_317_WECC_hydro_plants_to_10kbus_v2.csv',header=0)
-        df_hydro_ts = pd.read_csv('p_mean_max_min_MW_WECC_317plants_2009water_weekly.csv',header=0)
+        df_hydro = pd.read_csv('EIA_302_WECC_hydro_plants.csv',header=0)
+        df_hydro_ts = pd.read_csv('p_mean_max_min_MW_WECC_302plants_weekly_2019.csv',header=0)
         new_hydro_nodes = []
         
         for i in range(0,len(df_hydro)):
