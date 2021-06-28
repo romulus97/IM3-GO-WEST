@@ -152,8 +152,11 @@ def SysCost(model):
     starts = sum(model.st_cost[j]*model.switch[j,i] for i in model.hh_periods for j in model.Coal)
     gen = sum(model.mwh[j,i]*(model.marginal_cost[j] + model.var_om[j]) for i in model.hh_periods for j in model.Thermal)  
     slack = sum(model.S[z,i]*10000 for i in model.hh_periods for z in model.buses)
+    hydro_cost = sum(model.mwh[j,i]*0.01 for i in model.hh_periods for j in model.Hydro)
+    wind_cost = sum(model.mwh[j,i]*0.01 for i in model.hh_periods for j in model.Wind)
+    solar_cost = sum(model.mwh[j,i]*0.01 for i in model.hh_periods for j in model.Solar)
     
-    return gen + slack + fixed + starts 
+    return fixed + starts + gen + slack + hydro_cost + wind_cost + solar_cost 
 
 model.SystemCost = Objective(rule=SysCost, sense=minimize)
 

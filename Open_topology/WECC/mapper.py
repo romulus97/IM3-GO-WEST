@@ -14,6 +14,7 @@ import geopandas as gpd
 from shapely.geometry import Point, Polygon
 from matplotlib.colors import TwoSlopeNorm
 
+
 #RTS = [150]
 RTS = [300,275,250,225,200,175,150,125,100,75,50]
 distance_threshold = 5
@@ -319,18 +320,23 @@ gen_weights = gens/sum(gens)
 ##############################
 
 for NN in RTS:
-    
-    #specify number of nodes 
-    g_N = int(np.floor(NN*.30)) #generation nodes
-    l_N = int(np.floor(NN*.50)) #demand nodes
-    t_N = NN - g_N - l_N
 
     #1 - put one demand node in each state/BA pairing (max node in each)
     demand_nodes_selected = []
     for k in keys:
         idx = keys.index(k)
         demand_nodes_selected.append(max_loads[idx])
-        l_N += -1
+        
+    # #specify number of nodes
+    remaining_nodes = NN - len(demand_nodes_selected)
+    g_N = int(np.floor(remaining_nodes*.33)) #generation nodes
+    l_N = int(np.floor(remaining_nodes*.33)) #demand nodes
+    t_N = int(np.floor(remaining_nodes*.33)) #transmission nodes
+    to_be_allocated_nodes = g_N + l_N + t_N
+    if to_be_allocated_nodes < remaining_nodes:
+        l_N += remaining_nodes - to_be_allocated_nodes
+    else:
+        pass
     
     #2 - allocate remaining demand nodes based on MW ranking of individual nodes
     unallocated = [i for i in non_zero if i not in demand_nodes_selected]
@@ -470,7 +476,7 @@ for NN in RTS:
             added += 1  
             t_N += -1
         
-    # plot (unique colors, and combos)
+    # # plot (unique colors, and combos)
     
     fig,ax = plt.subplots()
     states_gdf.plot(ax=ax,color='white',edgecolor='black',linewidth=0.5)
