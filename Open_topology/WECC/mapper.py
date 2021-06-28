@@ -14,6 +14,7 @@ import geopandas as gpd
 from shapely.geometry import Point, Polygon
 from matplotlib.colors import TwoSlopeNorm
 
+#RTS = [150]
 RTS = [300,275,250,225,200,175,150,125,100,75,50]
 distance_threshold = 5
 
@@ -535,6 +536,7 @@ for NN in RTS:
     G_NODES.plot(ax=ax,color = 'deepskyblue',markersize=M,alpha=1,edgecolor='black',linewidth=0.3)
     D_NODES.plot(ax=ax,color = 'deeppink',markersize=M,alpha=1,edgecolor='black',linewidth=0.3)
     T_NODES.plot(ax=ax,color = 'limegreen',markersize=M,alpha=1,edgecolor='black',linewidth=0.3)   
+  
     
     ax.set_box_aspect(1)
     ax.set_xlim(-2000000,-1500000)
