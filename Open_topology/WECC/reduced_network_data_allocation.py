@@ -867,6 +867,46 @@ for NN in NODE_NUMBER:
         df_line_params.to_csv('line_params.csv',index=None)
         copy('line_params.csv',path)
         
+        #####################################
+        # FUEL PRICES
+        
+        # Natural gas prices
+        NG_price = pd.read_csv('NG_price/Average_NG_prices_BAs.csv', header=0)
+        buses = list(df_selected['bus_i'])
+        for bus in buses:
+            
+            selected_node_BA = df_full.loc[df_full['Number']==bus,'NAME'].values[0]
+            specific_node_NG_price = NG_price.loc[:,selected_node_BA].copy()
+            
+            if buses.index(bus) == 0:
+                NG_prices_all = specific_node_NG_price.copy()
+            else:
+                NG_prices_all = pd.concat([NG_prices_all,specific_node_NG_price], axis=1)
+        
+        Fuel_buses = []
+        for i in range(0,len(buses)):
+            Fuel_buses.append('bus_' + str(buses[i]))
+        
+        NG_prices_all.columns = Fuel_buses
+        NG_prices_all.to_csv('NG_prices.csv',index=None)
+        copy('NG_prices.csv',path)
+        
+        # Coal prices
+        Coal_price = pd.read_csv('Coal_price/coal_prices_state.csv', header=0)
+
+        for bus in buses:
+            
+            selected_node_state = df_full.loc[df_full['Number']==bus,'STATE'].values[0]
+            specific_node_coal_price = Coal_price.loc[:,selected_node_state].copy()
+            
+            if buses.index(bus) == 0:
+                Coal_prices_all = specific_node_coal_price.copy()
+            else:
+                Coal_prices_all = pd.concat([Coal_prices_all,specific_node_coal_price], axis=1)
+        
+        Coal_prices_all.columns = Fuel_buses
+        Coal_prices_all.to_csv('Coal_prices.csv',index=None)
+        copy('Coal_prices.csv',path)
         
         #copy other files
         w = 'wrapper' + UC + '.py'
