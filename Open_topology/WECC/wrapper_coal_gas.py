@@ -54,7 +54,7 @@ duals=[]
 df_generators = pd.read_csv('data_genparams.csv',header=0)
 
 #max here can be (1,365)
-for day in range(1,days):
+for day in range(1,days+1):
     
     for z in instance.buses:
     #load Demand and Reserve time series data
@@ -84,6 +84,11 @@ for day in range(1,days):
         for i in K:
             instance.HorizonWind[z,i] = instance.SimWind[z,(day-1)*24+i]
             instance2.HorizonWind[z,i] = instance.SimWind[z,(day-1)*24+i]
+            
+    for z in instance.Thermal:
+    #load fuel prices for thermal generators
+        instance.FuelPrice[z] = instance.SimFuelPrice[z,day]
+        instance2.FuelPrice[z] = instance.SimFuelPrice[z,day]
 
     result = opt.solve(instance,tee=True,symbolic_solver_labels=True, load_solutions=False) ##,tee=True to check number of variables\n",
     instance.solutions.load_from(result)  
@@ -134,19 +139,32 @@ for day in range(1,days):
                         
         if a=='mwh':
             for index in varobject:
+                
+                gen_name = index[0]
+                gen_heatrate = df_generators[df_generators['name']==gen_name]['heat_rate'].values[0]
+                
                 if int(index[1]>0 and index[1]<25):
+                    
+                    fuel_price = instance.FuelPrice[z].value
+                    
                     if index[0] in instance.Gas:
-                        mwh.append((index[0],'Gas',index[1]+((day-1)*24),varobject[index].value))   
+                        marginal_cost = gen_heatrate*fuel_price
+                        mwh.append((index[0],'Gas',index[1]+((day-1)*24),varobject[index].value,marginal_cost))
                     elif index[0] in instance.Coal:
-                        mwh.append((index[0],'Coal',index[1]+((day-1)*24),varobject[index].value))  
+                        marginal_cost = gen_heatrate*fuel_price
+                        mwh.append((index[0],'Coal',index[1]+((day-1)*24),varobject[index].value,marginal_cost))
                     elif index[0] in instance.Oil:
-                        mwh.append((index[0],'Oil',index[1]+((day-1)*24),varobject[index].value))   
+                        marginal_cost = 0
+                        mwh.append((index[0],'Oil',index[1]+((day-1)*24),varobject[index].value,marginal_cost))
                     elif index[0] in instance.Hydro:
-                        mwh.append((index[0],'Hydro',index[1]+((day-1)*24),varobject[index].value)) 
+                        marginal_cost = 0
+                        mwh.append((index[0],'Hydro',index[1]+((day-1)*24),varobject[index].value,marginal_cost))
                     elif index[0] in instance.Solar:
-                        mwh.append((index[0],'Solar',index[1]+((day-1)*24),varobject[index].value))
+                        marginal_cost = 0
+                        mwh.append((index[0],'Solar',index[1]+((day-1)*24),varobject[index].value,marginal_cost))
                     elif index[0] in instance.Wind:
-                        mwh.append((index[0],'Wind',index[1]+((day-1)*24),varobject[index].value))                                            
+                        marginal_cost = 0
+                        mwh.append((index[0],'Wind',index[1]+((day-1)*24),varobject[index].value,marginal_cost))
         
         if a=='on':  
             for index in varobject:
@@ -219,7 +237,7 @@ for day in range(1,days):
     print(day)
         
 vlt_angle_pd=pd.DataFrame(vlt_angle,columns=('Node','Time','Value'))
-mwh_pd=pd.DataFrame(mwh,columns=('Generator','Type','Time','Value'))
+mwh_pd=pd.DataFrame(mwh,columns=('Generator','Type','Time','Value','$/MWh'))
 # on_pd=pd.DataFrame(on,columns=('Generator','Time','Value'))
 # switch_pd=pd.DataFrame(switch,columns=('Generator','Time','Value'))
 # srsv_pd=pd.DataFrame(srsv,columns=('Generator','Time','Value'))
