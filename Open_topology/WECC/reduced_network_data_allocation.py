@@ -22,8 +22,8 @@ BAs = list(df_BAs['Name'])
 
 df_full = pd.read_csv('nodes_to_BA_state.csv',header=0,index_col=0)
 
-NODE_NUMBER = [75,100,125,150,200,225,250,275,300]
-# NODE_NUMBER = [150]
+# NODE_NUMBER = [75,100,125,150,200,225,250,275,300]
+NODE_NUMBER = [150]
 
 UC_TREATMENTS = ['_simple','_coal']
 
@@ -894,8 +894,6 @@ for NN in NODE_NUMBER:
                 Fuel_buses.append('bus_' + str(buses[i]))
             
             NG_prices_all.columns = Fuel_buses
-            NG_prices_all.to_csv('NG_prices.csv',index=None)
-            copy('NG_prices.csv',path)
             
             # Coal prices
             Coal_price = pd.read_csv('Coal_price/coal_prices_state.csv', header=0)
@@ -911,9 +909,31 @@ for NN in NODE_NUMBER:
                     Coal_prices_all = pd.concat([Coal_prices_all,specific_node_coal_price], axis=1)
             
             Coal_prices_all.columns = Fuel_buses
-            Coal_prices_all.to_csv('Coal_prices.csv',index=None)
-            copy('Coal_prices.csv',path)
             
+            # getting generator based fuel prices
+            
+            thermal_gens_info = df_genparams.loc[(df_genparams['typ']=='ngcc') | (df_genparams['typ']=='coal')].copy()
+            thermal_gens_names = [*thermal_gens_info['name']]
+            
+            for ind, row in thermal_gens_info.iterrows():
+                
+                if row['typ'] == 'ngcc':
+                    gen_fuel_price = NG_prices_all.loc[:, row['node']].copy() 
+                elif row['typ'] == 'coal':
+                    gen_fuel_price = Coal_prices_all.loc[:, row['node']].copy() 
+                else:
+                    pass
+                
+                if thermal_gens_names.index(row['name']) == 0:
+                    Fuel_prices_all = gen_fuel_price.copy()
+                else:
+                    Fuel_prices_all = pd.concat([Fuel_prices_all,gen_fuel_price], axis=1)
+                    
+            Fuel_prices_all.columns = thermal_gens_names
+            
+            Fuel_prices_all.to_csv('Fuel_prices.csv',index=None)
+            copy('Fuel_prices.csv',path)       
+
             #copy other files
             w = 'wrapper' + UC + '.py'
             milp = 'WECC_MILP' + UC + '.py'

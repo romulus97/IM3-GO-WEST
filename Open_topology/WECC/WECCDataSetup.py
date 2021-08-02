@@ -87,21 +87,19 @@ df_load = pd.read_csv('nodal_load.csv',header=0)
 df_must = pd.read_csv('must_run.csv',header=0)
 h3 = df_must.columns
 
-## Natural gas prices at substation-level
-df_NG = pd.read_csv('NG_prices.csv',header=0)
-
-## Coal prices at substation-level
-df_coal = pd.read_csv('Coal_prices.csv',header=0)
+## Fuel prices at substation-level
+df_fuel = pd.read_csv('Fuel_prices.csv',header=0)
 
 
 ######=================================================########
 ######               Segment A.3                       ########
 ######=================================================########
 
-####======== Lists of Nodes of the Power System ========#######
+####======== Lists of Nodes and Thermal Units of the Power System ========#######
 
 all_nodes = list(df_load.columns)
 
+all_thermals = list(df_fuel.columns)
 
 ######=================================================########
 ######               Segment A.4                       ########
@@ -394,10 +392,10 @@ with open(''+str(data_name)+'.dat', 'w') as f:
 
 ####### Daily fuel prices
 
-    f.write('param:' + '\t' + 'SimGasPrice' + '\t' + 'SimCoalPrice:=' + '\n')      
-    for z in all_nodes:
+    f.write('param:' + '\t' +'SimFuelPrice:=' + '\n')      
+    for z in all_thermals:
         for d in range(0,int(SimHours/24)): 
-            f.write(z + '\t' + str(d+1) + '\t' + str(df_NG.loc[d,z]) + '\t' + str(df_coal.loc[d,z]) + '\n')
+            f.write(z + '\t' + str(d+1) + '\t' + str(df_fuel.loc[d,z]) + '\n')
     f.write(';\n\n')
     
     print('fuel prices')
