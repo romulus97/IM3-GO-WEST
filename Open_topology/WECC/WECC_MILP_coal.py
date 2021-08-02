@@ -36,8 +36,8 @@ model.maxcap = Param(model.Generators)
 #Min capacity
 model.mincap = Param(model.Generators)
 
-#Marginal cost
-model.marginal_cost = Param(model.Generators)
+#Heat rate
+model.heat_rate = Param(model.Generators)
 
 #Variable O&M
 model.var_om = Param(model.Generators)
@@ -112,6 +112,10 @@ model.HorizonWind = Param(model.Wind,model.hh_periods,within=NonNegativeReals,mu
 #Must run resources
 model.Must = Param(model.buses,within=NonNegativeReals)
 
+#Fuel prices over simulation period
+model.SimFuelPrice = Param(model.Thermal,model.SD_periods, within=NonNegativeReals)
+model.FuelPrice = Param(model.Thermal,within = NonNegativeReals, mutable=True)
+
 ######=================================================########
 ######               Segment B.7                       ########
 ######=================================================########
@@ -150,7 +154,7 @@ model.Theta= Var(model.buses,model.hh_periods)
 def SysCost(model):
     fixed = sum(model.no_load[j]*model.on[j,i] for i in model.hh_periods for j in model.Coal)
     starts = sum(model.st_cost[j]*model.switch[j,i] for i in model.hh_periods for j in model.Coal)
-    gen = sum(model.mwh[j,i]*(model.marginal_cost[j] + model.var_om[j]) for i in model.hh_periods for j in model.Thermal)  
+    gen = sum(model.mwh[j,i]*(model.heat_rate[j]*model.FuelPrice[j] + model.var_om[j]) for i in model.hh_periods for j in model.Thermal)  
     slack = sum(model.S[z,i]*10000 for i in model.hh_periods for z in model.buses)
     hydro_cost = sum(model.mwh[j,i]*0.01 for i in model.hh_periods for j in model.Hydro)
     wind_cost = sum(model.mwh[j,i]*0.01 for i in model.hh_periods for j in model.Wind)
@@ -159,7 +163,6 @@ def SysCost(model):
     return fixed + starts + gen + slack + hydro_cost + wind_cost + solar_cost 
 
 model.SystemCost = Objective(rule=SysCost, sense=minimize)
-
 
 
 ######=================================================########
