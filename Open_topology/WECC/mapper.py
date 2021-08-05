@@ -16,7 +16,7 @@ from matplotlib.colors import TwoSlopeNorm
 
 
 #RTS = [150]
-RTS = [300,275,250,225,200,175,150,125,100,75,50]
+RTS = [300,275,250,225,200,175,150,125,100,75]
 distance_threshold = 5
 
 df_BAs = pd.read_csv('BAs.csv',header=0)
