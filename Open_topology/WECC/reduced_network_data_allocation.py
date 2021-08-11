@@ -22,8 +22,8 @@ BAs = list(df_BAs['Name'])
 
 df_full = pd.read_csv('nodes_to_BA_state.csv',header=0,index_col=0)
 
-NODE_NUMBER = [75,100,125,150,175,200,225,250,275,300]
-# NODE_NUMBER = [150]
+# NODE_NUMBER = [75,100,125,150,175,200,225,250,275,300]
+NODE_NUMBER = [175]
 
 UC_TREATMENTS = ['_simple','_coal']
 
