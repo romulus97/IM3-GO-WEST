@@ -22,7 +22,7 @@ instance = m1.create_instance('WECC_data.dat')
 instance.dual = pyo.Suffix(direction=pyo.Suffix.IMPORT)
 
 Solvername = 'gurobi'
-Timelimit = 1800 # for the simulation of one day in seconds
+Timelimit = 3600 # for the simulation of one day in seconds
 # Threadlimit = 8 # maximum number of threads to use
 
 opt = SolverFactory(Solvername)
