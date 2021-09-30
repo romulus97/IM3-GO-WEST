@@ -16,6 +16,7 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 import pyomo.environ as pyo
+from pyomo.environ import value
 
 days = 365 # Max = 365
 
@@ -98,7 +99,7 @@ for day in range(1,days+1):
     
     for j in instance.UC:
         for t in K:
-            if instance.on[j,t] == 1:
+            if value(instance.on[j,t]) == 1:
                 instance2.on[j,t] = 1
                 instance2.on[j,t].fixed = True
             else:
@@ -106,7 +107,7 @@ for day in range(1,days+1):
                 instance2.on[j,t] = 0
                 instance2.on[j,t].fixed = True
 
-            if instance.switch[j,t] == 1:
+            if value(instance.switch[j,t]) == 1:
                 instance2.switch[j,t] = 1
                 instance2.switch[j,t].fixed = True
             else:
@@ -206,13 +207,13 @@ for day in range(1,days+1):
             instance.mwh[j,0] = newval_1
             instance.mwh[j,0].fixed = True
             
-            if instance.on[j,24] == 1:
+            if value(instance.on[j,24]) == 1:
                 instance.on[j,0] = 1
             else:
                 instance.on[j,0] = 0
             instance.on[j,0].fixed = True
             
-            if instance.switch[j,24] == 1:
+            if value(instance.switch[j,24]) == 1:
                 instance.switch[j,0] = 1
             else:
                 instance.switch[j,0] = 0

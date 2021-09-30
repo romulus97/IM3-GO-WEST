@@ -15,6 +15,7 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 import pyomo.environ as pyo
+from pyomo.environ import value
 
 days = 365 # Max = 365
 
