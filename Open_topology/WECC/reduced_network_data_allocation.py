@@ -905,7 +905,8 @@ for NN in NODE_NUMBER:
                         pass
             
             BA_to_BA_exhange_matrix.to_csv('BA_to_BA_transmission_matrix.csv')
-            copy('BA_to_BA_transmission_matrix.csv',path) 
+            copy('BA_to_BA_transmission_matrix.csv',path)
+            copy('BA_to_BA_transmission_limits.csv',path)
             
             #####################################
             # FUEL PRICES
@@ -982,6 +983,6 @@ for NN in NODE_NUMBER:
                 copy(milp,path)
                 copy(lp,path)
                 
-            copy('BA_to_BA_transmission_limits.csv',path) 
+            
 
     
