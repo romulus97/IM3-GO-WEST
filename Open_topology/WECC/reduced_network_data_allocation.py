@@ -16,11 +16,11 @@ from pathlib import Path
 # LOAD ALLOCATION FROM BALANCING AUTHORITY to NODES
 ########################################
 
-df_load = pd.read_csv('BA_load.csv',header=0)
-df_BAs = pd.read_csv('BAs.csv',header=0)
+df_load = pd.read_csv('BA_data/BA_load.csv',header=0)
+df_BAs = pd.read_csv('BA_data/BAs.csv',header=0)
 BAs = list(df_BAs['Name'])
 
-df_full = pd.read_csv('nodes_to_BA_state.csv',header=0,index_col=0)
+df_full = pd.read_csv('10k_topology_files/nodes_to_BA_state.csv',header=0,index_col=0)
 
 # NODE_NUMBER = [75,100,125,150,175,200,225,250,275,300]
 NODE_NUMBER = [75]
@@ -42,7 +42,7 @@ for NN in NODE_NUMBER:
             
             T_p = T_p/100
             
-            FN = 'Results_Excluded_Nodes_' + str(NN) + '.xlsx'
+            FN = 'Selected_nodes/Results_Excluded_Nodes_' + str(NN) + '.xlsx'
          
             # selected nodes
             df_selected = pd.read_excel(FN,sheet_name = 'Bus', header=0)
@@ -106,8 +106,8 @@ for NN in NODE_NUMBER:
             #############
             # GENERATORS
             
-            df_wind = pd.read_csv('BA_wind.csv',header=0,index_col=0)
-            df_solar = pd.read_csv('BA_solar.csv',header=0,index_col=0)
+            df_wind = pd.read_csv('BA_data/BA_wind.csv',header=0,index_col=0)
+            df_solar = pd.read_csv('BA_data/BA_solar.csv',header=0,index_col=0)
             
             #get rid of NaNs
             a = df_wind.values
@@ -151,7 +151,7 @@ for NN in NODE_NUMBER:
             #### NOTE: TAMU DATASET DOES NOT INCLUDE ANY WIND IN: LADWP OR PSCO; EIA VALUES
             # FOR THESE BAs WERE MANUALLY ADDED TO CAISO AND WACM IN THE BA_wind.csv FILE.
             
-            df_gen = pd.read_csv('10k_Gen.csv',header=0)
+            df_gen = pd.read_csv('10k_topology_files/10k_Gen.csv',header=0)
             MWMax = []
             fuel_type = []
             nums = list(df_gen['BusNum'])
@@ -369,7 +369,7 @@ for NN in NODE_NUMBER:
             
             import re
             
-            df_gens = pd.read_csv('10k_Gen.csv',header=0)
+            df_gens = pd.read_csv('10k_topology_files/10k_Gen.csv',header=0)
             df_gens = df_gens.replace('', np.nan, regex=True)
             df_gens_heat_rate = pd.read_excel('NG_Coal_heat_rates.xlsx',header=0)
             old_bus_num =[]
@@ -467,16 +467,16 @@ for NN in NODE_NUMBER:
             
             df_C = pd.DataFrame(C)
             df_C.columns = ['Name','Bus','Fuel','Max_Cap','Min_Cap','Heat_Rate']
-            df_C.to_csv('thermal_gens.csv',index=None)
-            copy('thermal_gens.csv',path)
+            df_C.to_csv('Thermal_gens.csv',index=None)
+            copy('Thermal_gens.csv',path)
                 
             
             ##############################
             # HYDROPOWER
             
             #EIA plants
-            df_hydro = pd.read_csv('EIA_302_WECC_hydro_plants.csv',header=0)
-            df_hydro_ts = pd.read_csv('p_mean_max_min_MW_WECC_302plants_weekly_2019.csv',header=0)
+            df_hydro = pd.read_csv('Hydro_gen_setup/EIA_302_WECC_hydro_plants.csv',header=0)
+            df_hydro_ts = pd.read_csv('Hydro_gen_setup/p_mean_max_min_MW_WECC_302plants_weekly_2019.csv',header=0)
             new_hydro_nodes = []
             
             for i in range(0,len(df_hydro)):

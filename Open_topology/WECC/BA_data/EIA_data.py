@@ -16,7 +16,7 @@ abbr = list(df_BAs['Abbreviation'])
 for a in abbr:
 
     idx = abbr.index(a)
-    filename = '../CSV_Files/' + a + '_Hourly_Load_Data.csv'
+    filename = '../../CSV_Files/' + a + '_Hourly_Load_Data.csv'
     b = pd.read_csv(filename,header=0)
     load = b.loc[b['Year']==2019,'Adjusted_Demand_MWh']
     
@@ -37,7 +37,7 @@ df_C.to_csv('BA_load.csv')
 for a in abbr:
     
     idx = abbr.index(a)
-    filename = '../Raw_Data/' + a + '.xlsx'
+    filename = '../../Raw_Data/' + a + '.xlsx'
     b = pd.read_excel(filename,header=0,sheet_name='Published Hourly Data')
     solar = b.loc[b['UTC time'].dt.year == 2019,'Adjusted SUN Gen']
     wind = b.loc[b['UTC time'].dt.year == 2019,'Adjusted WND Gen']

@@ -38,9 +38,9 @@ BA_wind[BA_wind < 0] = 0
 
 #filling 100 days missing solar data in PACE
 #reading data
-PACE_data_daily = pd.read_excel('../Raw_Data/PACE.xlsx', sheet_name='Published Daily Data',header=0,parse_dates=True)
+PACE_data_daily = pd.read_excel('../../Raw_Data/PACE.xlsx', sheet_name='Published Daily Data',header=0,parse_dates=True)
 PACE_data_daily.set_index('Local date', inplace=True, drop=True)
-PACE_data_hourly = pd.read_excel('../Raw_Data/PACE.xlsx', sheet_name='Published Hourly Data',header=0,parse_dates=True)
+PACE_data_hourly = pd.read_excel('../../Raw_Data/PACE.xlsx', sheet_name='Published Hourly Data',header=0,parse_dates=True)
 PACE_data_hourly.set_index('UTC time', inplace=True, drop=True)
 
 PACE_2019_hourly = PACE_data_hourly.loc['2019','Adjusted SUN Gen']
