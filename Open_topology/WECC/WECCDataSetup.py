@@ -91,7 +91,7 @@ h3 = df_must.columns
 df_fuel = pd.read_csv('Fuel_prices.csv',header=0)
 
 #BA to BA transmission limit data
-BA_to_BA_transmission_data = pd.read_csv('BA_to_BA_transmission_limits.csv',header=0)
+BA_to_BA_transmission_data = pd.read_csv('BA_to_BA_transmission_limits_scaled.csv',header=0)
 all_BA_BA_connections = list(BA_to_BA_transmission_data['BA_to_BA'])
 BA_to_BA_transmission_matrix = pd.read_csv('BA_to_BA_transmission_matrix.csv',header=0)
 
