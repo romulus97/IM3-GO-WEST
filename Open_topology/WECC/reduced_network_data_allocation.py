@@ -22,14 +22,17 @@ BAs = list(df_BAs['Name'])
 
 df_full = pd.read_csv('10k_topology_files/nodes_to_BA_state.csv',header=0,index_col=0)
 
+BA_to_BA_transmission_data = pd.read_csv('BA_to_BA_transmission_limits.csv',header=0)
+all_BA_BA_connections = list(BA_to_BA_transmission_data['BA_to_BA'])
+
 # NODE_NUMBER = [75,100,125,150,175,200,225,250,275,300]
-NODE_NUMBER = [75]
+NODE_NUMBER = [100]
 
 # UC_TREATMENTS = ['_simple','_coal']
-UC_TREATMENTS = ['_coal']
+UC_TREATMENTS = ['_simple']
 
 # trans_p = [25,50,75,100]
-trans_p = [750]
+trans_p = [900]
 
 for NN in NODE_NUMBER:
     
@@ -874,6 +877,52 @@ for NN in NODE_NUMBER:
             df_line_params['limit'] = limit 
             df_line_params.to_csv('line_params.csv',index=None)
             copy('line_params.csv',path)
+            
+            #Creating BA to BA transmission matrix for individual lines
+            exchange_columns = ['Exchange'] + lines
+            BA_to_BA_exhange_matrix = pd.DataFrame(np.zeros((len(all_BA_BA_connections),len(exchange_columns))),columns=exchange_columns,index=all_BA_BA_connections)
+            BA_to_BA_exhange_matrix.loc[:,'Exchange'] = all_BA_BA_connections
+            
+            for i in all_BA_BA_connections:
+                
+                weight_count = 0
+                line_count = 0
+                
+                splitted_str = i.split('_')
+                first_BA = splitted_str[0]
+                second_BA = splitted_str[1]
+                
+                for j in lines:
+                                        
+                    splitted_line = j.split('_')
+                    BA_first_line = df_selected.loc[df_selected['bus_i']==int(splitted_line[1])]['BA'].values[0]
+                    first_BA_abb = df_BAs.loc[df_BAs['Name']==BA_first_line]['Abbreviation'].values[0]
+                    
+                    a_bus = df_line_to_bus.loc[j,'bus_' + splitted_line[1]]
+                    
+                    BA_second_line = df_selected.loc[df_selected['bus_i']==int(splitted_line[2])]['BA'].values[0]
+                    second_BA_abb = df_BAs.loc[df_BAs['Name']==BA_second_line]['Abbreviation'].values[0]
+                    
+                    b_bus = df_line_to_bus.loc[j,'bus_' + splitted_line[2]]
+                    
+                    # print(a_bus + b_bus)
+                    
+                    #if flow on that line means flow from first BA to second BA, write 1, if vice versa write -1
+                    if first_BA_abb == first_BA and second_BA_abb == second_BA:
+                        line_count += 1
+                        BA_to_BA_exhange_matrix.loc[i,j] = int(a_bus)
+                    elif first_BA_abb == second_BA and second_BA_abb == first_BA:
+                        BA_to_BA_exhange_matrix.loc[i,j] = int(b_bus)
+                        line_count += 1
+                    else:
+                        pass
+                    
+                    weight_count += int(BA_to_BA_exhange_matrix.loc[i,j])
+                    
+            
+            BA_to_BA_exhange_matrix.to_csv('BA_to_BA_transmission_matrix.csv', index=False)
+            copy('BA_to_BA_transmission_matrix.csv',path)
+            copy('BA_to_BA_transmission_limits.csv',path)
             
             #####################################
             # FUEL PRICES
