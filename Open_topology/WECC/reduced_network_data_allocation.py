@@ -37,7 +37,7 @@ for NN in NODE_NUMBER:
         
         for T_p in trans_p:
     
-            path=str(Path.cwd()) + str(Path('/Exp' + str(NN) + UC + '_' + str(T_p)))
+            path=str(Path.cwd()) + str(Path('/Simulation_folders/Exp' + str(NN) + UC + '_' + str(T_p)))
             os.makedirs(path,exist_ok=True)
             
             T_p = T_p/100
