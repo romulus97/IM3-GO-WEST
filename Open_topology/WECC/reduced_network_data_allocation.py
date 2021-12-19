@@ -22,8 +22,8 @@ BAs = list(df_BAs['Name'])
 
 df_full = pd.read_csv('10k_topology_files/nodes_to_BA_state.csv',header=0,index_col=0)
 
-BA_to_BA_transmission_data = pd.read_csv('BA_to_BA_transmission_limits.csv',header=0)
-all_BA_BA_connections = list(BA_to_BA_transmission_data['BA_to_BA'])
+BA_to_BA_hurdle_data = pd.read_csv('BA_to_BA_hurdle.csv',header=0)
+all_BA_BA_connections = list(BA_to_BA_hurdle_data['BA_to_BA'])
 
 # NODE_NUMBER = [75,100,125,150,175,200,225,250,275,300]
 NODE_NUMBER = [100]
@@ -34,8 +34,8 @@ UC_TREATMENTS = ['_simple']
 # line_limit_scaling = [25,50,75,100]
 line_limit_scaling = [900]
 
-# BA_limit_scaling = list(range(0,1050,100))
-BA_limit_scaling = [0]
+# BA_hurdle_scaling = list(range(0,1050,100))
+BA_hurdle_scaling = [0]
 
 for NN in NODE_NUMBER:
     
@@ -43,13 +43,13 @@ for NN in NODE_NUMBER:
         
         for T_p in line_limit_scaling:
             
-            for BA_p in BA_limit_scaling:
+            for BA_hurd in BA_hurdle_scaling:
     
-                path=str(Path.cwd()) + str(Path('/Simulation_folders/Exp' + str(NN) + UC + '_' + str(T_p) + '_' + str(BA_p)))
+                path=str(Path.cwd()) + str(Path('/Simulation_folders/Exp' + str(NN) + UC + '_' + str(T_p) + '_' + str(BA_hurd)))
                 os.makedirs(path,exist_ok=True)
                 
                 T_p_new = T_p/100
-                BA_p_new = BA_p/100
+                BA_hurd_new = BA_hurd/100
                 
                 FN = 'Selected_nodes/Results_Excluded_Nodes_' + str(NN) + '.xlsx'
              
@@ -926,10 +926,10 @@ for NN in NODE_NUMBER:
                         weight_count += int(BA_to_BA_exhange_matrix.loc[i,j])
                         
                 
-                BA_to_BA_transmission_data_new = BA_to_BA_transmission_data.copy()
-                BA_to_BA_transmission_data_new['Limit_MW'] = BA_to_BA_transmission_data_new['Limit_MW']*(1+BA_p_new)
-                BA_to_BA_transmission_data_new.to_csv('BA_to_BA_transmission_limits_scaled.csv', index=False)
-                copy('BA_to_BA_transmission_limits_scaled.csv',path)
+                BA_to_BA_hurdle_data_new = BA_to_BA_hurdle_data.copy()
+                BA_to_BA_hurdle_data_new['Hurdle_$/MWh'] = BA_to_BA_hurdle_data_new['Hurdle_$/MWh']*(1+BA_hurd_new)
+                BA_to_BA_hurdle_data_new.to_csv('BA_to_BA_hurdle_scaled.csv', index=False)
+                copy('BA_to_BA_hurdle_scaled.csv',path)
                 
                 BA_to_BA_exhange_matrix.to_csv('BA_to_BA_transmission_matrix.csv', index=False)
                 copy('BA_to_BA_transmission_matrix.csv',path)
