@@ -90,6 +90,11 @@ h3 = df_must.columns
 ## Fuel prices at substation-level
 df_fuel = pd.read_csv('Fuel_prices.csv',header=0)
 
+#BA to BA transmission limit data
+BA_to_BA_transmission_data = pd.read_csv('BA_to_BA_transmission_limits.csv',header=0)
+all_BA_BA_connections = list(BA_to_BA_transmission_data['BA_to_BA'])
+BA_to_BA_transmission_matrix = pd.read_csv('BA_to_BA_transmission_matrix.csv',header=0)
+
 
 ######=================================================########
 ######               Segment A.3                       ########
@@ -199,6 +204,13 @@ with open(''+str(data_name)+'.dat', 'w') as f:
     
     print('lines')
     
+    #BA to BA exchange limit
+    f.write('set exchanges :=\n')
+    for z in all_BA_BA_connections:
+        f.write(z + ' ')
+    f.write(';\n\n')
+    
+    
 ######=================================================########
 ######               Segment A.6                       ########
 ######=================================================########
@@ -255,6 +267,15 @@ with open(''+str(data_name)+'.dat', 'w') as f:
     f.write(';\n\n')
 
     print('trans paths')
+    
+    #BA to BA exchange limits
+    f.write('param:' + '\t' +'ExchangeLimit :=' + '\n')
+    for z in all_BA_BA_connections:
+        idx = all_BA_BA_connections.index(z)
+        f.write(z + '\t' + str(BA_to_BA_transmission_data.loc[idx,'Limit_MW']) + '\n')
+    f.write(';\n\n')
+    
+    
 ######=================================================########
 ######               Segment A.9                       ########
 ######=================================================########
@@ -385,6 +406,20 @@ with open(''+str(data_name)+'.dat', 'w') as f:
     f.write(';\n\n')
     
     print('line to bus')
+    
+    #BA to BA exchange matrix
+    f.write('param ExchangeMap:' +'\n')
+    f.write('\t')
+
+    for j in BA_to_BA_transmission_matrix.columns:
+        if j!= 'Exchange':
+            f.write(j + '\t')
+    f.write(':=' + '\n')
+    for i in range(0,len(BA_to_BA_transmission_matrix)):   
+        for j in BA_to_BA_transmission_matrix.columns:
+            f.write(str(BA_to_BA_transmission_matrix.loc[i,j]) + '\t')
+        f.write('\n')
+    f.write(';\n\n')
     
 ######=================================================########
 ######               Segment A.10                       ########
