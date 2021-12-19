@@ -28,14 +28,14 @@ NODE_NUMBER = [75]
 # UC_TREATMENTS = ['_simple','_coal']
 UC_TREATMENTS = ['_coal']
 
-# trans_p = [25,50,75,100]
-trans_p = [750]
+# line_limit_scaling = [25,50,75,100]
+line_limit_scaling = [750]
 
 for NN in NODE_NUMBER:
     
     for UC in UC_TREATMENTS:
         
-        for T_p in trans_p:
+        for T_p in line_limit_scaling:
     
             path=str(Path.cwd()) + str(Path('/Simulation_folders/Exp' + str(NN) + UC + '_' + str(T_p)))
             os.makedirs(path,exist_ok=True)
