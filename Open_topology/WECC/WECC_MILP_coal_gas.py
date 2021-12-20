@@ -1,5 +1,7 @@
 # coding: utf-8
 from pyomo.environ import *
+from pyomo.environ import value
+import numpy as np
 
 model = AbstractModel()
 
@@ -66,7 +68,7 @@ model.Reactance = Param(model.lines)
 model.FlowLim = Param(model.lines)
 model.LinetoBusMap=Param(model.lines,model.buses)
 model.BustoUnitMap=Param(model.Generators,model.buses)
-model.ExchangeLimit=Param(model.exchanges)
+model.ExchangeHurdle=Param(model.exchanges)
 model.ExchangeMap=Param(model.exchanges,model.lines, mutable=True)
 
 ######=================================================########
@@ -146,7 +148,7 @@ model.S = Var(model.buses,model.hh_periods, within=NonNegativeReals,initialize=0
 
 
 # transmission line variables 
-model.Flow= Var(model.lines,model.hh_periods)
+model.Flow= Var(model.lines,model.hh_periods,initialize=0)
 model.Theta= Var(model.buses,model.hh_periods)
 
 
@@ -165,7 +167,12 @@ def SysCost(model):
     wind_cost = sum(model.mwh[j,i]*0.01 for i in model.hh_periods for j in model.Wind)
     solar_cost = sum(model.mwh[j,i]*0.01 for i in model.hh_periods for j in model.Solar)
     
-    return fixed + starts + gen + slack + hydro_cost + wind_cost + solar_cost 
+    exchange_cost = sum(model.Flow[l,i]*model.ExchangeMap[k,l]*model.ExchangeHurdle[k] for l in model.lines for i in model.hh_periods for k in model.exchanges)
+    if value(exchange_cost) >= 0:
+        exchange_cost_final = exchange_cost
+    else:
+        exchange_cost_final = np.abs(exchange_cost)
+    return fixed + starts + gen + slack + hydro_cost + wind_cost + solar_cost + exchange_cost_final
 
 model.SystemCost = Objective(rule=SysCost, sense=minimize)
 
@@ -291,11 +298,6 @@ model.FlowU_Constraint = Constraint(model.lines,model.hh_periods,rule=FlowUP_lin
 def FlowLow_line(model,l,i):
     return  -1*model.Flow[l,i] <= model.FlowLim[l]
 model.FlowLL_Constraint = Constraint(model.lines,model.hh_periods,rule=FlowLow_line)
-
-def BA_exchange(model,k,i):
-    exchange_flow = sum(model.Flow[l,i]*model.ExchangeMap[k,l] for l in model.lines)
-    return  exchange_flow <= model.ExchangeLimit[k]
-model.BA_exchange_Constraint = Constraint(model.exchanges,model.hh_periods,rule=BA_exchange)
 
 ######=================================================########
 ######               Segment B.13                      ########
