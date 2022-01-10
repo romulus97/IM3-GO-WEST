@@ -173,7 +173,7 @@ def SysCost(model):
         exchange_cost_final = exchange_cost
     else:
         exchange_cost_final = np.abs(exchange_cost)
-    return fixed + starts + gen + slack + hydro_cost + wind_cost + solar_cost + exchange_cost_final
+    return gen + slack + hydro_cost + wind_cost + solar_cost + exchange_cost_final
 
 model.SystemCost = Objective(rule=SysCost, sense=minimize)
 
