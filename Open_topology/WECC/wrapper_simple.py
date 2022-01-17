@@ -62,11 +62,11 @@ for day in range(1,days+1):
 
             # instance.HorizonReserves[i] = instance.SimReserves[(day-1)*24+i]
 
-    for z in instance.Hydro:
-    #load Hydropower time series data
-        instance.HorizonHydro_MAX[z] = instance.SimHydro_MAX[z,day]
-        instance.HorizonHydro_MIN[z] = instance.SimHydro_MIN[z,day]
-        instance.HorizonHydro_TOTAL[z] = instance.SimHydro_TOTAL[z,day]
+    # for z in instance.Hydro:
+    # #load Hydropower time series data
+    #     instance.HorizonHydro_MAX[z] = instance.SimHydro_MAX[z,day]
+    #     instance.HorizonHydro_MIN[z] = instance.SimHydro_MIN[z,day]
+    #     instance.HorizonHydro_TOTAL[z] = instance.SimHydro_TOTAL[z,day]
         
     for z in instance.Solar:
     #load Solar time series data
@@ -77,6 +77,13 @@ for day in range(1,days+1):
     #load Wind time series data
         for i in K:
             instance.HorizonWind[z,i] = instance.SimWind[z,(day-1)*24+i]
+            
+    for z in instance.Hydro:
+    #load Hydro time series data
+        for i in K:
+            instance.HorizonHydro[z,i] = instance.SimHydro[z,(day-1)*24+i]
+            
+            
             
     for z in instance.Thermal:
     #load fuel prices for thermal generators

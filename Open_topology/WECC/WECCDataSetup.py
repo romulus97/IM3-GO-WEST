@@ -32,22 +32,22 @@ df_linetobusmap = pd.read_csv('line_to_bus.csv',header=0)
 df_line_params = pd.read_csv('line_params.csv',header=0)
 lines = list(df_line_params['line'])
 
-##daily ts of hydro at nodal-level
-df_hydro_MAX = pd.read_csv('Hydro_max.csv',header=0)
-df_hydro_MIN = pd.read_csv('Hydro_min.csv',header=0)
-df_hydro_TOTAL = pd.read_csv('Hydro_total.csv',header=0)
+# ##daily ts of hydro at nodal-level
+# df_hydro_MAX = pd.read_csv('Hydro_max.csv',header=0)
+# df_hydro_MIN = pd.read_csv('Hydro_min.csv',header=0)
+# df_hydro_TOTAL = pd.read_csv('Hydro_total.csv',header=0)
 
-empty = []
-sites = list(df_hydro_MAX.columns)
-for i in sites:
-    if sum(df_hydro_MAX[i]) > 0:
-        pass
-    else:
-        empty.append(i)
+# empty = []
+# sites = list(df_hydro_MAX.columns)
+# for i in sites:
+#     if sum(df_hydro_MAX[i]) > 0:
+#         pass
+#     else:
+#         empty.append(i)
 
-df_hydro_MAX = df_hydro_MAX.drop(columns=empty)
-df_hydro_MIN = df_hydro_MIN.drop(columns=empty)
-df_hydro_TOTAL = df_hydro_TOTAL.drop(columns=empty)
+# df_hydro_MAX = df_hydro_MAX.drop(columns=empty)
+# df_hydro_MIN = df_hydro_MIN.drop(columns=empty)
+# df_hydro_TOTAL = df_hydro_TOTAL.drop(columns=empty)
 
 
 ##hourly ts of dispatchable solar-power at each plant
@@ -62,6 +62,19 @@ for i in sites:
         empty.append(i)
 
 df_solar = df_solar.drop(columns=empty)
+
+##hourly ts of dispatchable hydro-power at each plant
+df_hydro = pd.read_csv('nodal_hydro.csv',header=0)   
+
+empty = []
+sites = list(df_hydro.columns)
+for i in sites:
+    if sum(df_hydro[i]) > 0:
+        pass
+    else:
+        empty.append(i)
+
+df_hydro = df_hydro.drop(columns=empty)
 
 ##
 ##hourly ts of dispatchable wind-power at each plant
@@ -289,34 +302,45 @@ with open(''+str(data_name)+'.dat', 'w') as f:
     
     print('wind')
     
-    # hydro (daily)
-    f.write('param:' + '\t' + 'SimHydro_MAX:=' + '\n')
-    h_gens = df_hydro_MAX.columns      
+    #hydro (hourly)
+    f.write('param:' + '\t' + 'SimHydro:=' + '\n')
+    h_gens = df_hydro.columns
     for z in h_gens:
-        for h in range(0,len(df_hydro_MAX)): 
-        # for h in range(0,240):
-            f.write(z + '_HYDRO' + '\t' + str(h+1) + '\t' + str(df_hydro_MAX.loc[h,z]) + '\n')
-    f.write(';\n\n')
-
-    # hydro (daily)
-    f.write('param:' + '\t' + 'SimHydro_MIN:=' + '\n')
-    h_gens = df_hydro_MIN.columns      
-    for z in h_gens:
-        for h in range(0,len(df_hydro_MIN)): 
-        # for h in range(0,240):
-            f.write(z + '_HYDRO' + '\t' + str(h+1) + '\t' + str(df_hydro_MIN.loc[h,z]) + '\n')
-    f.write(';\n\n')
-    
-    # hydro (daily)
-    f.write('param:' + '\t' + 'SimHydro_TOTAL:=' + '\n')
-    h_gens = df_hydro_TOTAL.columns      
-    for z in h_gens:
-        for h in range(0,len(df_hydro_MAX)): 
-        # for h in range(0,240):
-            f.write(z + '_HYDRO' + '\t' + str(h+1) + '\t' + str(df_hydro_TOTAL.loc[h,z]) + '\n')
+        for h in range(0,len(df_hydro)):
+            f.write(z + '_HYDRO' + '\t' + str(h+1) + '\t' + str(df_hydro.loc[h,z]) + '\n')
     f.write(';\n\n')
     
     print('hydro')
+    
+    
+    # # hydro (daily)
+    # f.write('param:' + '\t' + 'SimHydro_MAX:=' + '\n')
+    # h_gens = df_hydro_MAX.columns      
+    # for z in h_gens:
+    #     for h in range(0,len(df_hydro_MAX)): 
+    #     # for h in range(0,240):
+    #         f.write(z + '_HYDRO' + '\t' + str(h+1) + '\t' + str(df_hydro_MAX.loc[h,z]) + '\n')
+    # f.write(';\n\n')
+
+    # # hydro (daily)
+    # f.write('param:' + '\t' + 'SimHydro_MIN:=' + '\n')
+    # h_gens = df_hydro_MIN.columns      
+    # for z in h_gens:
+    #     for h in range(0,len(df_hydro_MIN)): 
+    #     # for h in range(0,240):
+    #         f.write(z + '_HYDRO' + '\t' + str(h+1) + '\t' + str(df_hydro_MIN.loc[h,z]) + '\n')
+    # f.write(';\n\n')
+    
+    # # hydro (daily)
+    # f.write('param:' + '\t' + 'SimHydro_TOTAL:=' + '\n')
+    # h_gens = df_hydro_TOTAL.columns      
+    # for z in h_gens:
+    #     for h in range(0,len(df_hydro_MAX)): 
+    #     # for h in range(0,240):
+    #         f.write(z + '_HYDRO' + '\t' + str(h+1) + '\t' + str(df_hydro_TOTAL.loc[h,z]) + '\n')
+    # f.write(';\n\n')
+    
+    # print('hydro')
 
 ####### Nodal must run
      

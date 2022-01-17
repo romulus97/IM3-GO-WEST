@@ -23,13 +23,13 @@ BAs = list(df_BAs['Name'])
 df_full = pd.read_csv('10k_topology_files/nodes_to_BA_state.csv',header=0,index_col=0)
 
 # NODE_NUMBER = [75,100,125,150,175,200,225,250,275,300]
-NODE_NUMBER = [75]
+NODE_NUMBER = [100]
 
 # UC_TREATMENTS = ['_simple','_coal']
-UC_TREATMENTS = ['_coal']
+UC_TREATMENTS = ['_simple']
 
 # line_limit_scaling = [25,50,75,100]
-line_limit_scaling = [750]
+line_limit_scaling = [900]
 
 for NN in NODE_NUMBER:
     
@@ -108,6 +108,7 @@ for NN in NODE_NUMBER:
             
             df_wind = pd.read_csv('BA_data/BA_wind.csv',header=0,index_col=0)
             df_solar = pd.read_csv('BA_data/BA_solar.csv',header=0,index_col=0)
+            df_hydro = pd.read_csv('Hydro_gen_setup/BA_hydro.csv',header=0,index_col=0)
             
             #get rid of NaNs
             a = df_wind.values
@@ -115,11 +116,18 @@ for NN in NODE_NUMBER:
             r,c=np.shape(m)
             for i in range(0,c):
                 df_wind.iloc[m[0][i],m[1][i]] = 0
+            
             a = df_solar.values
             m=np.where(np.isnan(a))
             r,c=np.shape(m)
             for i in range(0,c):
-                df_solar.iloc[m[0][i],m[1][i]] = 0    
+                df_solar.iloc[m[0][i],m[1][i]] = 0   
+                                
+            a = df_hydro.values
+            m=np.where(np.isnan(a))
+            r,c=np.shape(m)
+            for i in range(0,c):
+                df_hydro.iloc[m[0][i],m[1][i]] = 0 
             
             # read reduction algorithm summary and parse nodal operations
             df_summary = pd.read_excel(FN,sheet_name='Summary',header=5)
@@ -364,6 +372,104 @@ for NN in NODE_NUMBER:
             copy('nodal_solar.csv',path)
             
             
+            ##################################
+            # HYDRO ALLOCATION FROM BA TO NODE
+            
+            BA_totals = []
+            
+            for b in BAs:
+                sample = list(df_full.loc[(df_full['NAME']==b) & (df_full['FuelType'] == 'WAT (Water)'),'MWMax'])
+                # corrected = [0 if math.isnan(x) else x for x in sample]
+                BA_totals.append(sum(sample))
+            
+            BA_totals = np.column_stack((BAs,BA_totals))
+            df_BA_totals = pd.DataFrame(BA_totals)
+            df_BA_totals.columns = ['Name','Total']
+            
+            weights = []
+            for i in range(0,len(df_full)):
+                area = df_full.loc[i,'NAME']
+                if str(area) == 'nan':
+                    weights.append(0)
+                elif str(df_full.loc[i,'FuelType']) != 'WAT (Water)':
+                    weights.append(0)
+                else:        
+                    X = float(df_BA_totals.loc[df_BA_totals['Name']==area,'Total'])
+                    W = df_full.loc[i,'MWMax']/X
+                    weights.append(W)
+            df_full['BA Hydro Weight'] = weights
+            
+            sums = []
+            for i in BAs:
+                s = sum(df_full.loc[df_full['NAME']==i,'BA Hydro Weight'])
+                sums.append(s)
+            
+            # selected nodes
+            # df_selected = pd.read_csv('reduced_buses.csv',header=0)
+            buses = list(df_selected['bus_i'])
+            
+            idx = 0
+            w= 0
+            T = np.zeros((8760,len(buses)))
+            
+            BA_sums = np.zeros((28,1))
+            
+            for b in buses:
+                
+                #load for original node
+                sample = df_full.loc[df_full['Number'] == b]
+                sample = sample.reset_index(drop=True)
+                name = sample['NAME'][0]
+            
+                
+                if str(name) != 'nan':
+            
+                    abbr = df_BAs.loc[df_BAs['Name']==name,'Abbreviation'].values[0]
+                    weight = sample['BA Hydro Weight'].values[0]
+                    T[:,idx] = T[:,idx] + np.reshape(df_hydro[abbr].values*weight,(8760,))
+                    w += weight
+                    dx = BAs.index(name)
+                    BA_sums[dx] = BA_sums[dx] + weight
+                    
+                else:
+                    pass
+                          
+                #add hydro capacity from merged nodes
+                try:
+                    m_nodes = merged[b]
+                    
+                    for m in m_nodes:
+                        #load for original node
+                        sample = df_full.loc[df_full['Number'] == m]
+                        sample = sample.reset_index(drop=True)
+                        name = sample['NAME'][0]
+                        if str(name) == 'nan':
+                            pass
+                        else:
+                            abbr = df_BAs.loc[df_BAs['Name']==name,'Abbreviation'].values[0]
+                            weight = sample['BA Hydro Weight']
+                            w += weight  
+                            dx = BAs.index(name)
+                            BA_sums[dx] = BA_sums[dx] + weight
+                            T[:,idx] = T[:,idx] + np.reshape(df_hydro[abbr].values*weight.values[0],(8760,))
+            
+                except KeyError:
+                    # print (b)
+                    pass
+                
+                idx +=1
+                
+            
+            h_buses = []
+            for i in range(0,len(buses)):
+                h_buses.append('bus_' + str(buses[i]))
+            
+            df_C = pd.DataFrame(T)
+            df_C.columns = h_buses
+            df_C.to_csv('nodal_hydro.csv',index=None)  
+            copy('nodal_hydro.csv',path)
+                                                  
+            
             ##############################
             # THERMAL GENERATION
             
@@ -472,78 +578,78 @@ for NN in NODE_NUMBER:
                 
             
             ##############################
-            # HYDROPOWER
+            # # HYDROPOWER
             
-            #EIA plants
-            df_hydro = pd.read_csv('Hydro_gen_setup/EIA_302_WECC_hydro_plants.csv',header=0)
-            df_hydro_ts = pd.read_csv('Hydro_gen_setup/p_mean_max_min_MW_WECC_302plants_weekly_2019.csv',header=0)
-            new_hydro_nodes = []
+            # #EIA plants
+            # df_hydro = pd.read_csv('Hydro_gen_setup/EIA_302_WECC_hydro_plants.csv',header=0)
+            # df_hydro_ts = pd.read_csv('Hydro_gen_setup/p_mean_max_min_MW_WECC_302plants_weekly_2019.csv',header=0)
+            # new_hydro_nodes = []
             
-            for i in range(0,len(df_hydro)):
+            # for i in range(0,len(df_hydro)):
                 
-                name = df_hydro.loc[i,'plant']
-                new_name = re.sub(r'[^A-Z]',r'',name)
-                bus = df_hydro.loc[i,'bus']
+            #     name = df_hydro.loc[i,'plant']
+            #     new_name = re.sub(r'[^A-Z]',r'',name)
+            #     bus = df_hydro.loc[i,'bus']
                 
-                if bus in old_bus_num:
-                    idx = old_bus_num.index(bus)
-                    new_hydro_nodes.append(new_bus_num[idx])
-                    pass
-                elif bus in buses:
-                    new_hydro_nodes.append(bus)
-                else:
-                    print(name + ' Not found')
+            #     if bus in old_bus_num:
+            #         idx = old_bus_num.index(bus)
+            #         new_hydro_nodes.append(new_bus_num[idx])
+            #         pass
+            #     elif bus in buses:
+            #         new_hydro_nodes.append(bus)
+            #     else:
+            #         print(name + ' Not found')
             
-            # add mean/min/max by node
-            H_min = np.zeros((52,len(buses)))
-            H_max = np.zeros((52,len(buses)))
-            H_mu = np.zeros((52,len(buses)))
+            # # add mean/min/max by node
+            # H_min = np.zeros((52,len(buses)))
+            # H_max = np.zeros((52,len(buses)))
+            # H_mu = np.zeros((52,len(buses)))
             
-            for i in range(0,len(df_hydro)):
-                b = new_hydro_nodes[i]
-                idx = buses.index(b)
-                plant = df_hydro.loc[i,'plant']
+            # for i in range(0,len(df_hydro)):
+            #     b = new_hydro_nodes[i]
+            #     idx = buses.index(b)
+            #     plant = df_hydro.loc[i,'plant']
                 
-                ts = df_hydro_ts[df_hydro_ts['plant']==plant]
+            #     ts = df_hydro_ts[df_hydro_ts['plant']==plant]
                 
-                H_min[:,idx] += ts['min']
-                H_max[:,idx] += ts['max']
-                H_mu[:,idx] += ts['mean']
+            #     H_min[:,idx] += ts['min']
+            #     H_max[:,idx] += ts['max']
+            #     H_mu[:,idx] += ts['mean']
                 
             
-            # create daily time series by node
-            H_min_hourly = np.zeros((365,len(buses)))
-            H_max_hourly = np.zeros((365,len(buses)))
-            H_mu_hourly = np.zeros((365,len(buses)))
+            # # create daily time series by node
+            # H_min_hourly = np.zeros((365,len(buses)))
+            # H_max_hourly = np.zeros((365,len(buses)))
+            # H_mu_hourly = np.zeros((365,len(buses)))
             
-            for i in range(0,len(H_min)):
-                for j in range(0,len(buses)):
-                    H_min_hourly[i*7:i*7+7,j] = H_min[i,j]
-                    H_max_hourly[i*7:i*7+7,j] = H_max[i,j]
-                    H_mu_hourly[i*7:i*7+7,j] = H_mu[i,j]*24
+            # for i in range(0,len(H_min)):
+            #     for j in range(0,len(buses)):
+            #         H_min_hourly[i*7:i*7+7,j] = H_min[i,j]
+            #         H_max_hourly[i*7:i*7+7,j] = H_max[i,j]
+            #         H_mu_hourly[i*7:i*7+7,j] = H_mu[i,j]*24
                     
-            H_min_hourly[364,:] = H_min_hourly[363,:]
-            H_max_hourly[364,:] = H_max_hourly[363,:]
-            H_mu_hourly[364,:] = H_mu_hourly[363,:] 
+            # H_min_hourly[364,:] = H_min_hourly[363,:]
+            # H_max_hourly[364,:] = H_max_hourly[363,:]
+            # H_mu_hourly[364,:] = H_mu_hourly[363,:] 
             
-            h_buses = []
-            for i in range(0,len(buses)):
-                h_buses.append('bus_' + str(buses[i]))
+            # h_buses = []
+            # for i in range(0,len(buses)):
+            #     h_buses.append('bus_' + str(buses[i]))
             
-            H_min_df = pd.DataFrame(H_min_hourly)
-            H_min_df.columns = h_buses
-            H_max_df = pd.DataFrame(H_max_hourly)
-            H_max_df.columns = h_buses
-            H_mu_df = pd.DataFrame(H_mu_hourly) 
-            H_mu_df.columns = h_buses       
+            # H_min_df = pd.DataFrame(H_min_hourly)
+            # H_min_df.columns = h_buses
+            # H_max_df = pd.DataFrame(H_max_hourly)
+            # H_max_df.columns = h_buses
+            # H_mu_df = pd.DataFrame(H_mu_hourly) 
+            # H_mu_df.columns = h_buses       
             
-            H_min_df.to_csv('Hydro_min.csv',index=None)
-            H_max_df.to_csv('Hydro_max.csv',index=None)
-            H_mu_df.to_csv('Hydro_total.csv',index=None)
+            # H_min_df.to_csv('Hydro_min.csv',index=None)
+            # H_max_df.to_csv('Hydro_max.csv',index=None)
+            # H_mu_df.to_csv('Hydro_total.csv',index=None)
             
-            copy('Hydro_min.csv',path)
-            copy('Hydro_max.csv',path)
-            copy('Hydro_total.csv',path)
+            # copy('Hydro_min.csv',path)
+            # copy('Hydro_max.csv',path)
+            # copy('Hydro_total.csv',path)
             
                 
             
@@ -663,7 +769,7 @@ for NN in NODE_NUMBER:
             
             # hydro
             
-            df_H = pd.read_csv('Hydro_max.csv',header=0)
+            df_H = pd.read_csv('nodal_hydro.csv',header=0)
             buses = list(df_H.columns)
             for n in buses:
                 if sum(df_H[n]) > 0:

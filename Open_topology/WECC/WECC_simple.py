@@ -105,18 +105,20 @@ model.HorizonDemand = Param(model.buses*model.hh_periods,within=NonNegativeReals
 # model.HorizonReserves = Param(model.hh_periods, within=NonNegativeReals,mutable=True)
 
 ##Variable resources over simulation period
-model.SimHydro_MAX = Param(model.Hydro, model.SH_periods, within=NonNegativeReals)
-model.SimHydro_MIN = Param(model.Hydro, model.SH_periods, within=NonNegativeReals)
-model.SimHydro_TOTAL = Param(model.Hydro, model.SH_periods, within=NonNegativeReals)
+# model.SimHydro_MAX = Param(model.Hydro, model.SH_periods, within=NonNegativeReals)
+# model.SimHydro_MIN = Param(model.Hydro, model.SH_periods, within=NonNegativeReals)
+# model.SimHydro_TOTAL = Param(model.Hydro, model.SH_periods, within=NonNegativeReals)
 model.SimSolar = Param(model.Solar, model.SH_periods, within=NonNegativeReals)
 model.SimWind = Param(model.Wind, model.SH_periods, within=NonNegativeReals)
+model.SimHydro = Param(model.Hydro, model.SH_periods, within=NonNegativeReals)
 
 #Variable resources over horizon
-model.HorizonHydro_MAX = Param(model.Hydro,within=NonNegativeReals,mutable=True)
-model.HorizonHydro_MIN = Param(model.Hydro,within=NonNegativeReals,mutable=True)
-model.HorizonHydro_TOTAL = Param(model.Hydro,within=NonNegativeReals,mutable=True)
+# model.HorizonHydro_MAX = Param(model.Hydro,within=NonNegativeReals,mutable=True)
+# model.HorizonHydro_MIN = Param(model.Hydro,within=NonNegativeReals,mutable=True)
+# model.HorizonHydro_TOTAL = Param(model.Hydro,within=NonNegativeReals,mutable=True)
 model.HorizonSolar = Param(model.Solar,model.hh_periods,within=NonNegativeReals,mutable=True)
 model.HorizonWind = Param(model.Wind,model.hh_periods,within=NonNegativeReals,mutable=True)
+model.HorizonHydro = Param(model.Hydro,model.hh_periods,within=NonNegativeReals,mutable=True)
 
 #Must run resources
 model.Must = Param(model.buses,within=NonNegativeReals)
@@ -197,21 +199,21 @@ def MaxC(model,j,i):
 model.MaxCap= Constraint(model.Dispatchable,model.hh_periods,rule=MaxC)
 
 
-#Max production constraints on domestic hydropower 
-def HydroP(model,j,i):
-    daily = sum(model.mwh[j,i] for i in model.hh_periods)
-    return  daily <= model.HorizonHydro_TOTAL[j]    
-model.HydroPROD= Constraint(model.Hydro,model.hh_periods,rule=HydroP)
+# #Max production constraints on domestic hydropower 
+# def HydroP(model,j,i):
+#     daily = sum(model.mwh[j,i] for i in model.hh_periods)
+#     return  daily <= model.HorizonHydro_TOTAL[j]    
+# model.HydroPROD= Constraint(model.Hydro,model.hh_periods,rule=HydroP)
 
-#Max capacity constraints on domestic hydropower 
-def HydroX(model,j,i):
-    return  model.mwh[j,i] <= model.HorizonHydro_MAX[j]    
-model.HydroMAX= Constraint(model.Hydro,model.hh_periods,rule=HydroX)
+# #Max capacity constraints on domestic hydropower 
+# def HydroX(model,j,i):
+#     return  model.mwh[j,i] <= model.HorizonHydro_MAX[j]    
+# model.HydroMAX= Constraint(model.Hydro,model.hh_periods,rule=HydroX)
 
-#Max capacity constraints on domestic hydropower 
-def HydroM(model,j,i):
-    return  model.mwh[j,i] >= model.HorizonHydro_MIN[j]    
-model.HydroMIN= Constraint(model.Hydro,model.hh_periods,rule=HydroM)
+# #Max capacity constraints on domestic hydropower 
+# def HydroM(model,j,i):
+#     return  model.mwh[j,i] >= model.HorizonHydro_MIN[j]    
+# model.HydroMIN= Constraint(model.Hydro,model.hh_periods,rule=HydroM)
 
 
 #Max capacity constraints on solar
@@ -223,6 +225,11 @@ model.SolarConstraint= Constraint(model.Solar,model.hh_periods,rule=SolarC)
 def WindC(model,j,i): 
     return  model.mwh[j,i] <= model.HorizonWind[j,i]    
 model.WindConstraint= Constraint(model.Wind,model.hh_periods,rule=WindC)
+
+#Max capacity constraints on hydro
+def HydroC(model,j,i): 
+    return  model.mwh[j,i] <= model.HorizonHydro[j,i]    
+model.HydroConstraint= Constraint(model.Hydro,model.hh_periods,rule=HydroC)
 
 
 ######=================================================########
