@@ -916,9 +916,9 @@ for NN in NODE_NUMBER:
                         #if flow on that line means flow from first BA to second BA, write 1, if vice versa write -1
                         if first_BA_abb == first_BA and second_BA_abb == second_BA:
                             line_count += 1
-                            BA_to_BA_exhange_matrix.loc[i,j] = int(a_bus)
-                        elif first_BA_abb == second_BA and second_BA_abb == first_BA:
                             BA_to_BA_exhange_matrix.loc[i,j] = int(b_bus)
+                        elif first_BA_abb == second_BA and second_BA_abb == first_BA:
+                            BA_to_BA_exhange_matrix.loc[i,j] = int(a_bus)
                             line_count += 1
                         else:
                             pass
