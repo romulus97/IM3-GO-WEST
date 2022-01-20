@@ -93,6 +93,7 @@ df_fuel = pd.read_csv('Fuel_prices.csv',header=0)
 #BA to BA transmission limit data
 BA_to_BA_hurdle_data = pd.read_csv('BA_to_BA_hurdle_scaled.csv',header=0)
 all_BA_BA_connections = list(BA_to_BA_hurdle_data['BA_to_BA'])
+BA_to_BA_transmission_data = pd.read_csv('BA_to_BA_transmission_limits_scaled.csv',header=0)
 BA_to_BA_transmission_matrix = pd.read_csv('BA_to_BA_transmission_matrix.csv',header=0)
 
 
@@ -273,6 +274,13 @@ with open(''+str(data_name)+'.dat', 'w') as f:
     for z in all_BA_BA_connections:
         idx = all_BA_BA_connections.index(z)
         f.write(z + '\t' + str(BA_to_BA_hurdle_data.loc[idx,'Hurdle_$/MWh']) + '\n')
+    f.write(';\n\n')
+    
+    #BA to BA exchange limits
+    f.write('param:' + '\t' +'ExchangeLimit :=' + '\n')
+    for z in all_BA_BA_connections:
+        idx = all_BA_BA_connections.index(z)
+        f.write(z + '\t' + str(BA_to_BA_transmission_data.loc[idx,'Limit_MW']) + '\n')
     f.write(';\n\n')
     
     

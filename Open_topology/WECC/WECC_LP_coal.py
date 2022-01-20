@@ -68,6 +68,7 @@ model.FlowLim = Param(model.lines)
 model.LinetoBusMap=Param(model.lines,model.buses)
 model.BustoUnitMap=Param(model.Generators,model.buses)
 model.ExchangeHurdle=Param(model.exchanges)
+model.ExchangeLimit=Param(model.exchanges)
 model.ExchangeMap=Param(model.exchanges,model.lines, mutable=True)
 
 # ### Transmission Loss as a %discount on production
@@ -284,6 +285,11 @@ model.FlowU_Constraint = Constraint(model.lines,model.hh_periods,rule=FlowUP_lin
 def FlowLow_line(model,l,i):
     return  -1*model.Flow[l,i] <= model.FlowLim[l]
 model.FlowLL_Constraint = Constraint(model.lines,model.hh_periods,rule=FlowLow_line)
+
+def BA_exchange(model,k,i):
+    exchange_flow = sum(model.Flow[l,i]*model.ExchangeMap[k,l] for l in model.lines)
+    return  exchange_flow <= model.ExchangeLimit[k]
+model.BA_exchange_Constraint = Constraint(model.exchanges,model.hh_periods,rule=BA_exchange)
 
 ######=================================================########
 ######               Segment B.13                      ########
