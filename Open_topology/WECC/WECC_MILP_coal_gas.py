@@ -25,6 +25,9 @@ model.UC = model.Coal | model.Gas
 model.lines = Set() 
 model.buses = Set()
 
+# BA to BA transmission sets
+model.exchanges = Set() 
+
 #Generator type
 model.typ = Param(model.Generators,within=Any)
 
@@ -63,6 +66,8 @@ model.Reactance = Param(model.lines)
 model.FlowLim = Param(model.lines)
 model.LinetoBusMap=Param(model.lines,model.buses)
 model.BustoUnitMap=Param(model.Generators,model.buses)
+model.ExchangeHurdle=Param(model.exchanges)
+model.ExchangeMap=Param(model.exchanges,model.lines, mutable=True)
 
 
 ######=================================================########
@@ -163,7 +168,12 @@ def SysCost(model):
     wind_cost = sum(model.mwh[j,i]*0.01 for i in model.hh_periods for j in model.Wind)
     solar_cost = sum(model.mwh[j,i]*0.01 for i in model.hh_periods for j in model.Solar)
     
-    return fixed + starts + gen + slack + hydro_cost + wind_cost + solar_cost 
+    exchange_cost = sum(model.Flow[l,i]*model.ExchangeMap[k,l]*model.ExchangeHurdle[k] for l in model.lines for i in model.hh_periods for k in model.exchanges)
+    # if value(exchange_cost) >= 0:
+    #     exchange_cost_final = exchange_cost
+    # else:
+    #     exchange_cost_final = np.abs(exchange_cost)
+    return fixed + starts + gen + slack + hydro_cost + wind_cost + solar_cost + exchange_cost
 
 model.SystemCost = Objective(rule=SysCost, sense=minimize)
 
