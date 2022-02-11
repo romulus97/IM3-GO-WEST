@@ -31,7 +31,7 @@ UC_TREATMENTS = ['_simple']
 # line_limit_scaling = [25,50,75,100]
 line_limit_scaling = [*range(0,150,50)]
 
-congested_line_scaling = [*range(50,950)]
+congested_line_scaling = [*range(50,950,50)]
 
 for NN in NODE_NUMBER:
     
