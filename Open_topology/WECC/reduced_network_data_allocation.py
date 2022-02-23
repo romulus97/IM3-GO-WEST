@@ -817,11 +817,11 @@ for NN in NODE_NUMBER:
                                 negative.append(k)
                                 df_line_to_bus.loc[ref_node,s] = 1
                                 df_line_to_bus.loc[ref_node,k] = -1
-                                reactance.append(df.loc[i,'x'])
+                                reactance.append(0.001189)
                                 if line_name in uncongested:
-                                    MW = (1/df.loc[i,'x'])*100*(1+T_p_new)
+                                    MW = 2200*(1+T_p_new)
                                 elif line_name in congested:
-                                    MW = (1/df.loc[i,'x'])*100*(1+L_s_new)
+                                    MW = 2200*(1+L_s_new)
                                 limit.append(MW)
                                 ref_node += 1
                             elif k == df.loc[0,'fbus']:      
@@ -830,11 +830,11 @@ for NN in NODE_NUMBER:
                                 negative.append(s)
                                 df_line_to_bus.loc[ref_node,k] = 1
                                 df_line_to_bus.loc[ref_node,s] = -1
-                                reactance.append(df.loc[i,'x'])
+                                reactance.append(0.001189)
                                 if line_name in uncongested:
-                                    MW = (1/df.loc[i,'x'])*100*(1+T_p_new)
+                                    MW = 2200*(1+T_p_new)
                                 elif line_name in congested:
-                                    MW = (1/df.loc[i,'x'])*100*(1+L_s_new)
+                                    MW = 2200*(1+L_s_new)
                                 limit.append(MW)
                                 ref_node += 1
                                 
@@ -885,11 +885,11 @@ for NN in NODE_NUMBER:
                                         df_line_to_bus.loc[ref_node,s] = 1
                                         df_line_to_bus.loc[ref_node,k] = -1
                         
-                                    reactance.append(df.loc[i,'x'])
+                                    reactance.append(0.001189)
                                     if line_name in uncongested:
-                                        MW = (1/df.loc[i,'x'])*100*(1+T_p_new)
+                                        MW = 2200*(1+T_p_new)
                                     elif line_name in congested:
-                                        MW = (1/df.loc[i,'x'])*100*(1+L_s_new)
+                                        MW = 2200*(1+L_s_new)
                                     limit.append(MW)
                                     ref_node += 1
                         
