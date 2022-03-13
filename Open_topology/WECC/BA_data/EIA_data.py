@@ -70,22 +70,15 @@ for a in abbr:
 #Turning timeseries into dataframe, changing negative values to 0 and saving the timeseries
 df_S = pd.DataFrame(S_end, columns=abbr)
 df_S[df_S < 0] = 0
-df_S.fillna(0,inplace=True)
 df_S.to_csv('BA_solar.csv')
 
 df_W = pd.DataFrame(W_end, columns=abbr)
 df_W[df_W < 0] = 0
-df_W.fillna(0,inplace=True)
 df_W.to_csv('BA_wind.csv')
 
 df_L = pd.DataFrame(L_end, columns=abbr)
 df_L[df_L < 0] = 0
-df_L.fillna(0,inplace=True)
 df_L.to_csv('BA_load.csv')
-
-
-
-
 
 
 
