@@ -10,7 +10,6 @@ import numpy as np
 from datetime import timedelta
 from sklearn import linear_model
 
-
 #reading the solar and wind time series
 BA_solar = pd.read_csv('BA_solar.csv',header=0)
 del BA_solar['Unnamed: 0']
@@ -159,122 +158,172 @@ if missing_value_count_solar > 0:
                     BA_solar.loc[time,BA] = new_val
     
     if BA_solar.isna().sum().sum() == 0:
-        print('Solar time series are filled successfully.')
+        print('Solar time series is filled successfully.')
     else:
         print('Filling failed. There are still invalid values.')
     
 else:
     print('Solar time series does not include missing data.')
 
-# #selecting which BAs to exclude
-# solar_BAs = BAs.copy()
-# solar_BAs.remove('BPAT')
-# solar_BAs.remove('NWMT')
-# solar_BAs.remove('AVA')
+#selecting which BAs to include
+solar_BAs = ['AZPS','BANC','PACE','PACW']
 
-# #filtering out anomalies (really high values) from solar data, replacing them with values from a different day but at the same hour
-# for BA in solar_BAs:
+#filtering out anomalies (really high values) from solar data, replacing them with values from a different day but at the same hour
+for BA in solar_BAs:
     
-#     for time in hours_2019:
+    for time in hours_2019:
         
-#         solar_val = BA_solar.loc[time,BA]
+        solar_val = BA_solar.loc[time,BA]
         
-#         time_before = time - timedelta(days=10)
-#         time_after = time - timedelta(days=10)
-#         max_gen_before = BA_solar.loc[time_before:time - timedelta(days=1),BA].max()
-#         max_gen_after = BA_solar.loc[time:time + timedelta(days=1),BA].max()
+        time_before = time - timedelta(days=10)
+        time_after = time + timedelta(days=10)
+        max_gen_before = BA_solar.loc[time_before:time - timedelta(hours=1),BA].max()
+        max_gen_after = BA_solar.loc[time + timedelta(hours=1):time_after,BA].max()
         
-#         min_gen_before = BA_solar.loc[time_before:time - timedelta(days=1),BA].min()
-#         min_gen_after = BA_solar.loc[time:time + timedelta(days=1),BA].min()
+        min_gen_before = BA_solar.loc[time_before:time - timedelta(hours=1),BA].min()
+        min_gen_after = BA_solar.loc[time + timedelta(hours=1):time_after,BA].min()
         
-#         if solar_val > 1.25*max_gen_before or solar_val > 1.25*max_gen_after:
+        if solar_val > 1.25*max_gen_before or solar_val > 1.25*max_gen_after:
             
-#             new_val = 0
+            new_val = 0
             
-#             for i in range(1,6):
+            for i in range(1,8):
 
-#                 try:
-#                     day_before = time - timedelta(days=i)
-#                     new_val = BA_solar.loc[day_before,BA]
-#                     if new_val <= max_gen_before or new_val <= max_gen_after:
-#                         break
+                try:
+                    day_before = time - timedelta(days=i)
+                    new_val = BA_solar.loc[day_before,BA]
+                    if new_val <= max_gen_before or new_val <= max_gen_after:
+                        break
                     
-#                 except KeyError:
-#                     try: 
-#                         day_after = time + timedelta(days=i)
-#                         new_val = BA_solar.loc[day_after,BA]
-#                         if new_val <= max_gen_before or new_val <= max_gen_after:
-#                             break
-#                     except KeyError:
-#                         pass
+                except KeyError:
+                    try: 
+                        day_after = time + timedelta(days=i)
+                        new_val = BA_solar.loc[day_after,BA]
+                        if new_val <= max_gen_before or new_val <= max_gen_after:
+                            break
+                    except KeyError:
+                        pass
                         
-#             BA_solar.loc[time,BA] = new_val
+            BA_solar.loc[time,BA] = new_val
                
-#         else:
-#             pass
+        else:
+            pass
 
 
 
-# #checking if there are any missing values in wind data
-# missing_value_count_wind = BA_wind.isna().sum().sum()
+#checking if there are any missing values in wind data
+missing_value_count_wind = BA_wind.isna().sum().sum()
 
-# if missing_value_count_wind > 0:
-#     print('Wind time series includes {} missing values.'.format(missing_value_count_wind))
-# else:
-#     print('Wind time series does not include missing data.')
-
-
-# #selecting which BAs to include
-# wind_BAs = ['CHPD','PACE','PACW','WACM']
-
-# #filtering out anomalies (really high values) from wind data by using percentiles
-# for BA in wind_BAs:
+if missing_value_count_wind > 0:
+    print('Wind time series includes {} missing values, trying to fill those...'.format(missing_value_count_wind))
     
-#     if BA == 'CHPD' or BA == 'WACM':
-    
-#         exteme_value_limit = np.percentile(BA_wind.loc[:,BA], 99.9)
-    
-#     elif BA == 'PACE' or BA == 'PACW':
-    
-#         exteme_value_limit = np.percentile(BA_wind.loc[:,BA], 99.95)
-    
-#     for time in hours_2019:
+    for BA in BAs:
         
-#         wind_val = BA_wind.loc[time,BA]
-           
-#         if wind_val > exteme_value_limit:
+        BA_sp_wind = BA_wind.loc[:,BA].copy()
+        missing_value_number = BA_sp_wind.isnull().sum()
+        
+        if missing_value_number == 8760:
+            BA_wind[BA] = np.repeat(0,8760)
+            continue
+        
+        else:
+            missing_times = BA_sp_wind[BA_sp_wind[:].isnull()].index.tolist()
+    
+            for time in hours_2019:
             
-#             new_val = 0
-            
-#             for i in range(1,6):
-
-#                 try:
-#                     day_before = time - timedelta(days=i)
-#                     new_val = BA_wind.loc[day_before,BA]
-#                     if new_val <= exteme_value_limit:
-#                         break
+                wind_val = BA_wind.loc[time,BA]
+                
+                
+                
+                #searching for a valid demand value by looking at 1 day before and after. If not available, the algorithm continues to look for a valid value up to 90 days before or after           
+                if pd.isnull(wind_val):
                     
-#                 except KeyError:
-#                     try: 
-#                         day_after = time + timedelta(days=i)
-#                         new_val = BA_wind.loc[day_after,BA]
-#                         if new_val <= exteme_value_limit:
-#                             break
-#                     except KeyError:
-#                         pass
-                        
-#             BA_wind.loc[time,BA] = new_val
-            
-#         else:
-#             pass
-
-
-# #exporting the data
-# BA_wind.reset_index(drop=True,inplace=True)
-# BA_wind.to_csv('BA_wind_corrected.csv')
-
-# BA_solar.reset_index(drop=True,inplace=True)
-# BA_solar.to_csv('BA_solar_corrected.csv')           
+                    new_val = 0
+                    
+                    for i in range(1,91):
         
+                        try:
+                            day_before = time - timedelta(days=i)
+                            new_val = BA_wind.loc[day_before,BA]
+                            if pd.notnull(new_val) and day_before not in missing_times:
+                                break
+                            else:
+                                new_val = 0
+                            
+                        except KeyError:
+                            try: 
+                                day_after = time + timedelta(days=i)
+                                new_val = BA_wind.loc[day_after,BA]
+                                if pd.notnull(new_val) and day_after not in missing_times:
+                                    break
+                                else:
+                                    new_val = 0
+                            except KeyError:
+                                pass
+                                
+                    BA_wind.loc[time,BA] = new_val
+    
+    if BA_wind.isna().sum().sum() == 0:
+        print('Wind time series is filled successfully.')
+    else:
+        print('Filling failed. There are still invalid values.')
+    
+else:
+    print('Wind time series does not include missing data.')
+
+
+#selecting which BAs to include
+wind_BAs = ['CHPD','PACE','PACW','WACM']
+
+#filtering out anomalies (really high values) from wind data by using percentiles
+for BA in wind_BAs:
+    
+    if BA == 'CHPD' or BA == 'WACM':
+    
+        exteme_value_limit = np.percentile(BA_wind.loc[:,BA], 99.9)
+    
+    elif BA == 'PACE' or BA == 'PACW':
+    
+        exteme_value_limit = np.percentile(BA_wind.loc[:,BA], 99.95)
+    
+    for time in hours_2019:
+        
+        wind_val = BA_wind.loc[time,BA]
+           
+        if wind_val > exteme_value_limit:
             
+            new_val = 0
+            
+            for i in range(1,6):
+
+                try:
+                    day_before = time - timedelta(days=i)
+                    new_val = BA_wind.loc[day_before,BA]
+                    if new_val <= exteme_value_limit:
+                        break
+                    
+                except KeyError:
+                    try: 
+                        day_after = time + timedelta(days=i)
+                        new_val = BA_wind.loc[day_after,BA]
+                        if new_val <= exteme_value_limit:
+                            break
+                    except KeyError:
+                        pass
+                        
+            BA_wind.loc[time,BA] = new_val
+            
+        else:
+            pass
+
+
+#exporting the data
+BA_wind.reset_index(drop=True,inplace=True)
+BA_wind.to_csv('BA_wind_corrected.csv')
+
+BA_solar.reset_index(drop=True,inplace=True)
+BA_solar.to_csv('BA_solar_corrected.csv')           
+        
+
+
 
