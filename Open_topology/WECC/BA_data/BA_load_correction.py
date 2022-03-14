@@ -28,21 +28,19 @@ for BA in BAs:
         
         if load_val <= 0:
             
-            day_count = 0
             new_val = 0
             
             for i in range(1,31):
 
-                day_count += i
                 try:
-                    day_before = time - timedelta(days=day_count)
+                    day_before = time - timedelta(days=i)
                     new_val = load_data.loc[day_before,BA]
                     if new_val > 0:
                         break
                     
                 except KeyError:
                     try: 
-                        day_after = time + timedelta(days=day_count)
+                        day_after = time + timedelta(days=i)
                         new_val = load_data.loc[day_after,BA]
                         if new_val > 0:
                             break
@@ -75,21 +73,19 @@ for BA in BAs:
         
         if load_val > 1.2*max_load_before or load_val > 1.2*max_load_after:
             
-            day_count = 0
             new_val = 0
             
             for i in range(1,6):
 
-                day_count += i
                 try:
-                    day_before = time - timedelta(days=day_count)
+                    day_before = time - timedelta(days=i)
                     new_val = load_data.loc[day_before,BA]
                     if new_val <= max_load_before or new_val <= max_load_after:
                         break
                     
                 except KeyError:
                     try: 
-                        day_after = time + timedelta(days=day_count)
+                        day_after = time + timedelta(days=i)
                         new_val = load_data.loc[day_after,BA]
                         if new_val <= max_load_before or new_val <= max_load_after:
                             break
@@ -100,21 +96,19 @@ for BA in BAs:
             
         elif load_val < 0.8*min_load_before or load_val < 0.8*min_load_after:
             
-            day_count = 0
             new_val = 0
             
             for i in range(1,6):
 
-                day_count += i
                 try:
-                    day_before = time - timedelta(days=day_count)
+                    day_before = time - timedelta(days=i)
                     new_val = load_data.loc[day_before,BA]
                     if new_val >= min_load_before or new_val >= min_load_after:
                         break
                     
                 except KeyError:
                     try: 
-                        day_after = time + timedelta(days=day_count)
+                        day_after = time + timedelta(days=i)
                         new_val = load_data.loc[day_after,BA]
                         if new_val >= min_load_before or new_val >= min_load_after:
                             break
