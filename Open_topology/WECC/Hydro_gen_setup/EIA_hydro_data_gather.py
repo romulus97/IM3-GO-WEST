@@ -7,7 +7,6 @@ Created on Thu Nov 11 12:04:16 2021
 
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
 from datetime import timedelta
 
 #getting BA names and abbreviations
@@ -24,11 +23,49 @@ for BA in BA_abb:
     #reading historical generation data
     idx = BA_abb.index(BA)
     hydro_data_all = pd.read_excel('../../Raw_Data/{}.xlsx'.format(BA), sheet_name='Published Hourly Data',header=0,parse_dates=True)
-    hydro_data_all.set_index('UTC time',drop=True,inplace=True)
-    hydro_data = hydro_data_all.loc[hours_2019,'Adjusted WAT Gen']
+    # hydro_data_all.set_index('Local time',drop=True,inplace=True)
+    # hydro_data = hydro_data_all.loc[hours_2019,'Adjusted WAT Gen'].copy()
+    hydro_data = hydro_data_all.loc[hydro_data_all['Local time'].dt.year == 2019,'Adjusted WAT Gen'].copy()
+    #saving the time zone
+    tz = hydro_data_all.loc[0,'Time zone']
     
-    #filtering negative values and writing 0 in place of those
-    hydro_data[hydro_data < 0] = 0
+    #checking the time zone of the BA and shifting load, solar and wind timeseries accordingly 
+    #(Pacific time zone is selected as standard time zone)
+    
+    if tz == 'Pacific':
+        #copying relevant timeseries as is if time zone is Pacific
+        H = np.array(hydro_data)
+    
+    elif tz == 'Mountain' or tz == 'Arizona':
+        #shifting revelant timeseries for 1 hour if time zone is Mountain or Arizona
+  
+        hydro_ind = [*hydro_data.index]
+        fixed_hydro_ind = [c+1 for c in hydro_ind]
+        hydro_data = hydro_data_all.loc[fixed_hydro_ind,'Adjusted WAT Gen'].copy()
+        H = np.array(hydro_data)
+    
+    else:
+        #if timezone is any of the above, show the BA and time zone
+        print([BA,tz])
+        
+    #copying all BA level data side by side
+    if idx < 1:
+        H_end = H
+        
+    else:
+        H_end = np.column_stack((H_end,H))
+
+#saving time corrected hydro data
+hydro_data_all_df = pd.DataFrame(H_end, columns=BA_abb)
+
+#filtering negative values and writing 0 in place of those
+hydro_data_all_df[hydro_data_all_df < 0] = 0
+hydro_data_all_df.index = hours_2019
+
+for BA in BA_abb:
+    
+    idx = BA_abb.index(BA)
+    hydro_data = hydro_data_all_df[BA].copy()
     
     #writing 0 for all hours for the excluded BAs (they have either no data or will be defined from another dataset)
     if BA in excluded_BAs:
@@ -45,15 +82,11 @@ for BA in BA_abb:
             
             for hour in missing_hours_all:
                 
-                hour_count = 0
-                
                 #trying to find a valid value within +-30 days of the missing value
                 for i in range(1,30*24):
 
-                    hour_count += i
-                    
                     try:
-                        hour_before = hour - timedelta(hours=hour_count)
+                        hour_before = hour - timedelta(hours=i)
                         new_val = hydro_data.loc[hour_before]
                         if pd.notnull(new_val) and hour_before not in missing_hours_all:
                             break
@@ -63,7 +96,7 @@ for BA in BA_abb:
                         
                     except KeyError:
                         try: 
-                            hour_after = hour + timedelta(hours=hour_count)
+                            hour_after = hour + timedelta(hours=i)
                             new_val = hydro_data.loc[hour_after]
                             if pd.notnull(new_val) and hour_after not in missing_hours_all:
                                 break
@@ -76,22 +109,19 @@ for BA in BA_abb:
                 if pd.isnull(new_val):
                     
                     years = int(len(hydro_data_all)/8760)
-                    year_count = 0
-                    
+    
                     #trying to find a valid value from another years on the same day
                     for i in range(1,years):
-
-                        year_count += i
                     
                         try:
-                            year_before = hour - timedelta(years=year_count)
+                            year_before = hour - timedelta(years=i)
                             new_val = hydro_data_all.loc[year_before, 'Adjusted WAT Gen']
                             if pd.notnull(new_val):
                                 break
                             
                         except KeyError:
                             try:
-                                year_after = hour + timedelta(years=year_count)
+                                year_after = hour + timedelta(years=i)
                                 new_val = hydro_data_all.loc[year_after, 'Adjusted WAT Gen']
                                 if pd.notnull(new_val):
                                     break
@@ -110,6 +140,7 @@ for BA in BA_abb:
         else:
             pass
     
+    hydro_data = np.array(hydro_data)
     #merging all data together 
     if idx < 1:
         hydro = hydro_data
@@ -155,21 +186,19 @@ for BA in BAs_extreme_high:
            
         if val > exteme_value_limit:
             
-            day_count = 0
             new_val = 0
             
             for i in range(1,8):
 
-                day_count += i
                 try:
-                    day_before = time - timedelta(days=day_count)
+                    day_before = time - timedelta(days=i)
                     new_val = final_hydro_df.loc[day_before,BA]
                     if new_val <= exteme_value_limit:
                         break
                     
                 except KeyError:
                     try: 
-                        day_after = time + timedelta(days=day_count)
+                        day_after = time + timedelta(days=i)
                         new_val = final_hydro_df.loc[day_after,BA]
                         if new_val <= exteme_value_limit:
                             break
@@ -199,21 +228,19 @@ for BA in BAs_extreme_low:
            
         if val < exteme_value_limit:
             
-            day_count = 0
             new_val = 0
             
             for i in range(1,8):
 
-                day_count += i
                 try:
-                    day_before = time - timedelta(days=day_count)
+                    day_before = time - timedelta(days=i)
                     new_val = final_hydro_df.loc[day_before,BA]
                     if new_val >= exteme_value_limit:
                         break
                     
                 except KeyError:
                     try: 
-                        day_after = time + timedelta(days=day_count)
+                        day_after = time + timedelta(days=i)
                         new_val = final_hydro_df.loc[day_after,BA]
                         if new_val >= exteme_value_limit:
                             break
@@ -228,14 +255,5 @@ for BA in BAs_extreme_low:
 #exporting the data
 final_hydro_df.reset_index(drop=True,inplace=True)
 final_hydro_df.to_csv('BA_hydro.csv')
-
-
-
-
-
-
-
-
-
 
 
