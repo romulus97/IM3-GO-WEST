@@ -166,7 +166,6 @@ for NN in NODE_NUMBER:
                     ##################################
                     # WIND ALLOCATION FROM BA TO NODE
 
-                    df_gen = pd.read_csv('10k_topology_files/10k_Gen.csv',header=0)
                     MWMax = []
                     fuel_type = []
                     nums = list(df_gen['BusNum'])
