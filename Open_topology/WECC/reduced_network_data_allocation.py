@@ -457,19 +457,30 @@ for NN in NODE_NUMBER:
                 sample = sample.reset_index(drop=True)
                 name = sample['NAME'][0]
             
-                
-                if str(name) != 'nan':
-            
-                    abbr = df_BAs.loc[df_BAs['Name']==name,'Abbreviation'].values[0]
-                    weight = sample['BA Hydro Weight'].values[0]
-                    T[:,idx] = T[:,idx] + np.reshape(df_hydro[abbr].values*weight,(8760,))
-                    w += weight
-                    dx = BAs.index(name)
-                    BA_sums[dx] = BA_sums[dx] + weight
+                if name in BAs:
                     
+                    if float(df_BA_totals.loc[df_BA_totals['Name']==name,'Total'].values[0]) < 1:
+                        
+                        if df_solar_wind_cap_EIA.loc[name,'Hydro'] < 1:
+                            pass
+                        
+                        else:
+                            node_count_BA_sp = node_count_BA[name]
+                            abbr = df_BAs.loc[df_BAs['Name']==name,'Abbreviation'].values[0]
+                            T[:,idx] = T[:,idx] + np.reshape(df_hydro[abbr].values/node_count_BA_sp,(8760,))
+                    
+                    else:
+            
+                        abbr = df_BAs.loc[df_BAs['Name']==name,'Abbreviation'].values[0]
+                        weight = sample['BA Hydro Weight'].values[0]
+                        T[:,idx] = T[:,idx] + np.reshape(df_hydro[abbr].values*weight,(8760,))
+                        w += weight
+                        dx = BAs.index(name)
+                        BA_sums[dx] = BA_sums[dx] + weight
+                        
                 else:
                     pass
-                          
+            
                 #add hydro capacity from merged nodes
                 try:
                     m_nodes = merged[b]
@@ -479,16 +490,20 @@ for NN in NODE_NUMBER:
                         sample = df_full.loc[df_full['Number'] == m]
                         sample = sample.reset_index(drop=True)
                         name = sample['NAME'][0]
-                        if str(name) == 'nan':
-                            pass
-                        else:
-                            abbr = df_BAs.loc[df_BAs['Name']==name,'Abbreviation'].values[0]
-                            weight = sample['BA Hydro Weight']
-                            w += weight  
-                            dx = BAs.index(name)
-                            BA_sums[dx] = BA_sums[dx] + weight
-                            T[:,idx] = T[:,idx] + np.reshape(df_hydro[abbr].values*weight.values[0],(8760,))
-            
+ 
+                        if name in BAs:
+                        
+                            if float(df_BA_totals.loc[df_BA_totals['Name']==str(name),'Total'].values[0]) < 1:
+                                pass
+                            
+                            else:
+                                abbr = df_BAs.loc[df_BAs['Name']==name,'Abbreviation'].values[0]
+                                weight = sample['BA Hydro Weight']
+                                w += weight  
+                                dx = BAs.index(name)
+                                BA_sums[dx] = BA_sums[dx] + weight
+                                T[:,idx] = T[:,idx] + np.reshape(df_hydro[abbr].values*weight.values[0],(8760,))
+                            
                 except KeyError:
                     # print (b)
                     pass
