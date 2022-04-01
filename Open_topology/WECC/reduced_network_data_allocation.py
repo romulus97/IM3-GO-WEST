@@ -20,6 +20,11 @@ df_load = pd.read_csv('BA_data/BA_load.csv',header=0)
 df_BAs = pd.read_csv('BA_data/BAs.csv',header=0)
 BAs = list(df_BAs['Name'])
 
+df_wind = pd.read_csv('BA_data/BA_wind.csv',header=0,index_col=0)
+df_solar = pd.read_csv('BA_data/BA_solar.csv',header=0,index_col=0)
+df_solar_wind_cap_EIA = pd.read_csv('BA_data/BA_solar_wind_capacity_EIA.csv',header=0,index_col=0)
+
+df_gen = pd.read_csv('10k_topology_files/10k_Gen.csv',header=0)
 df_full = pd.read_csv('10k_topology_files/nodes_to_BA_state.csv',header=0,index_col=0)
 
 BA_to_BA_hurdle_data = pd.read_csv('BA_to_BA_hurdle.csv',header=0)
@@ -103,14 +108,21 @@ for NN in NODE_NUMBER:
                     T = np.zeros((8760,len(buses)))
                     
                     for i in range(0,len(df_selected)):
-                            
+                    
                         #load for original node
                         name = df_selected.loc[i,'BA']
                         
-                        abbr = df_BAs.loc[df_BAs['Name']==name,'Abbreviation'].values[0]
-                        weight = df_selected.loc[i,'BA Load Weight']
-                        # T[:,i] = T[:,i] + np.reshape(df_load[abbr].values*weight,(8760,))
-                        T[:,i] = T[:,i] + np.reshape(df_load[abbr].values*weight,(8760,))*(float(df_BA_totals.loc[df_BA_totals['Name']==name,'Total'])/max(df_load[abbr]))  
+                        if float(df_BA_totals.loc[df_BA_totals['Name']==str(name),'Total'].values[0]) < 1:
+                            pass
+                        else: 
+                            
+                            abbr = df_BAs.loc[df_BAs['Name']==name,'Abbreviation'].values[0]
+                            weight = df_selected.loc[i,'BA Load Weight']
+                            
+                            if max(df_load[abbr]) < 1:
+                                T[:,i] = T[:,i] + np.reshape(df_load[abbr].values,(8760,))                    
+                            else:                    
+                                T[:,i] = T[:,i] + np.reshape(df_load[abbr].values*weight,(8760,)) 
                     
                     for i in range(0,len(buses)):
                         buses[i] = 'bus_' + str(buses[i])
@@ -122,26 +134,11 @@ for NN in NODE_NUMBER:
                     copy('nodal_load.csv',path)
                     
                     #############
-                    # GENERATORS
-                    
-                    df_wind = pd.read_csv('BA_data/BA_wind.csv',header=0,index_col=0)
-                    df_solar = pd.read_csv('BA_data/BA_solar.csv',header=0,index_col=0)
-                    
-                    #get rid of NaNs
-                    a = df_wind.values
-                    m=np.where(np.isnan(a))
-                    r,c=np.shape(m)
-                    for i in range(0,c):
-                        df_wind.iloc[m[0][i],m[1][i]] = 0
-                    a = df_solar.values
-                    m=np.where(np.isnan(a))
-                    r,c=np.shape(m)
-                    for i in range(0,c):
-                        df_solar.iloc[m[0][i],m[1][i]] = 0    
+                    # GENERATORS  
                     
                     # read reduction algorithm summary and parse nodal operations
                     df_summary = pd.read_excel(FN,sheet_name='Summary',header=5)
-                    df_summary = df_summary.drop([len(df_summary)-1])
+                    # df_summary = df_summary.drop([len(df_summary)-1])
                     nodes=0
                     merged = {}
                     N = []
@@ -165,11 +162,7 @@ for NN in NODE_NUMBER:
                     
                     ##################################
                     # WIND ALLOCATION FROM BA TO NODE
-                    
-                    #### NOTE: TAMU DATASET DOES NOT INCLUDE ANY WIND IN: LADWP OR PSCO; EIA VALUES
-                    # FOR THESE BAs WERE MANUALLY ADDED TO CAISO AND WACM IN THE BA_wind.csv FILE.
-                    
-                    df_gen = pd.read_csv('10k_topology_files/10k_Gen.csv',header=0)
+
                     MWMax = []
                     fuel_type = []
                     nums = list(df_gen['BusNum'])
@@ -201,14 +194,15 @@ for NN in NODE_NUMBER:
                     weights = []
                     for i in range(0,len(df_full)):
                         area = df_full.loc[i,'NAME']
-                        if str(area) == 'nan':
+                        if area in BAs:
+                            if str(df_full.loc[i,'FuelType']) != 'WND (Wind)':
+                                weights.append(0)
+                            else:        
+                                X = float(df_BA_totals.loc[df_BA_totals['Name']==area,'Total'])
+                                W = df_full.loc[i,'MWMax']/X
+                                weights.append(W)
+                        else:
                             weights.append(0)
-                        elif str(df_full.loc[i,'FuelType']) != 'WND (Wind)':
-                            weights.append(0)
-                        else:        
-                            X = float(df_BA_totals.loc[df_BA_totals['Name']==area,'Total'])
-                            W = df_full.loc[i,'MWMax']/X
-                            weights.append(W)
                     df_full['BA Wind Weight'] = weights
                     
                     sums = []
@@ -224,7 +218,11 @@ for NN in NODE_NUMBER:
                     w= 0
                     T = np.zeros((8760,len(buses)))
                     
-                    BA_sums = np.zeros((28,1))
+                    BA_sums = np.zeros((len(BAs),1))
+            
+                    #finding how many nodes in each BA
+                    selected_nodes = df_full.loc[df_full['Number'].isin(buses)]
+                    node_count_BA = selected_nodes['NAME'].value_counts()
                     
                     for b in buses:
                         
@@ -234,14 +232,24 @@ for NN in NODE_NUMBER:
                         name = sample['NAME'][0]
                     
                         
-                        if str(name) != 'nan':
+                        if name in BAs:
                     
-                            abbr = df_BAs.loc[df_BAs['Name']==name,'Abbreviation'].values[0]
-                            weight = sample['BA Wind Weight'].values[0]
-                            T[:,idx] = T[:,idx] + np.reshape(df_wind[abbr].values*weight,(8760,))
-                            w += weight
-                            dx = BAs.index(name)
-                            BA_sums[dx] = BA_sums[dx] + weight
+                            if float(df_BA_totals.loc[df_BA_totals['Name']==name,'Total'].values[0]) < 1:
+                                
+                                if df_solar_wind_cap_EIA.loc[name,'Wind'] < 1:
+                                    pass
+                                else:
+                                    node_count_BA_sp = node_count_BA[name]
+                                    abbr = df_BAs.loc[df_BAs['Name']==name,'Abbreviation'].values[0]
+                                    T[:,idx] = T[:,idx] + np.reshape(df_wind[abbr].values/node_count_BA_sp,(8760,))
+                                                    
+                            else:
+                                abbr = df_BAs.loc[df_BAs['Name']==name,'Abbreviation'].values[0]
+                                weight = sample['BA Wind Weight'].values[0]
+                                T[:,idx] = T[:,idx] + np.reshape(df_wind[abbr].values*weight,(8760,))
+                                w += weight
+                                dx = BAs.index(name)
+                                BA_sums[dx] = BA_sums[dx] + weight
                             
                         else:
                             pass
@@ -255,16 +263,20 @@ for NN in NODE_NUMBER:
                                 sample = df_full.loc[df_full['Number'] == m]
                                 sample = sample.reset_index(drop=True)
                                 name = sample['NAME'][0]
-                                if str(name) == 'nan':
-                                    pass
+                                if name in BAs:
+                            
+                                    if float(df_BA_totals.loc[df_BA_totals['Name']==str(name),'Total'].values[0]) < 1:
+                                        pass
+                                    else:
+                                        abbr = df_BAs.loc[df_BAs['Name']==name,'Abbreviation'].values[0]
+                                        weight = sample['BA Wind Weight']
+                                        w += weight  
+                                        dx = BAs.index(name)
+                                        BA_sums[dx] = BA_sums[dx] + weight
+                                        T[:,idx] = T[:,idx] + np.reshape(df_wind[abbr].values*weight.values[0],(8760,))
                                 else:
-                                    abbr = df_BAs.loc[df_BAs['Name']==name,'Abbreviation'].values[0]
-                                    weight = sample['BA Wind Weight']
-                                    w += weight  
-                                    dx = BAs.index(name)
-                                    BA_sums[dx] = BA_sums[dx] + weight
-                                    T[:,idx] = T[:,idx] + np.reshape(df_wind[abbr].values*weight.values[0],(8760,))
-                    
+                                    pass
+                        
                         except KeyError:
                             # print (b)
                             pass
@@ -283,10 +295,7 @@ for NN in NODE_NUMBER:
                     
                     ##################################
                     # SOLAR ALLOCATION FROM BA TO NODE
-                    
-                    #### NOTE: TAMU DATASET DOES NOT INCLUDE ANY WIND IN: BANC, LADWP OR PSCO; EIA VALUES
-                    # FOR THESE BAs WERE MANUALLY ADDED TO CAISO AND WACM IN THE BA_wind.csv FILE.
-                    
+
                     BA_totals = []
                     
                     for b in BAs:
@@ -301,14 +310,15 @@ for NN in NODE_NUMBER:
                     weights = []
                     for i in range(0,len(df_full)):
                         area = df_full.loc[i,'NAME']
-                        if str(area) == 'nan':
+                        if area in BAs:
+                            if str(df_full.loc[i,'FuelType']) != 'SUN (Solar)':
+                                weights.append(0)
+                            else:
+                                X = float(df_BA_totals.loc[df_BA_totals['Name']==area,'Total'])
+                                W = df_full.loc[i,'MWMax']/X
+                                weights.append(W)
+                        else:  
                             weights.append(0)
-                        elif str(df_full.loc[i,'FuelType']) != 'SUN (Solar)':
-                            weights.append(0)
-                        else:        
-                            X = float(df_BA_totals.loc[df_BA_totals['Name']==area,'Total'])
-                            W = df_full.loc[i,'MWMax']/X
-                            weights.append(W)
                     df_full['BA Solar Weight'] = weights
                     
                     sums = []
@@ -324,7 +334,11 @@ for NN in NODE_NUMBER:
                     w= 0
                     T = np.zeros((8760,len(buses)))
                     
-                    BA_sums = np.zeros((28,1))
+                    BA_sums = np.zeros((len(BAs),1))
+            
+                    #finding how many nodes in each BA
+                    selected_nodes = df_full.loc[df_full['Number'].isin(buses)]
+                    node_count_BA = selected_nodes['NAME'].value_counts()
                     
                     for b in buses:
                         
@@ -333,16 +347,27 @@ for NN in NODE_NUMBER:
                         sample = sample.reset_index(drop=True)
                         name = sample['NAME'][0]
                     
-                        
-                        if str(name) != 'nan':
+                        if name in BAs:
                     
-                            abbr = df_BAs.loc[df_BAs['Name']==name,'Abbreviation'].values[0]
-                            weight = sample['BA Solar Weight'].values[0]
-                            T[:,idx] = T[:,idx] + np.reshape(df_solar[abbr].values*weight,(8760,))
-                            w += weight
-                            dx = BAs.index(name)
-                            BA_sums[dx] = BA_sums[dx] + weight
+                            if float(df_BA_totals.loc[df_BA_totals['Name']==name,'Total'].values[0]) < 1:
+                                
+                                if df_solar_wind_cap_EIA.loc[name,'Solar'] < 1:
+                                    pass
+                                
+                                else:
+                                    node_count_BA_sp = node_count_BA[name]
+                                    abbr = df_BAs.loc[df_BAs['Name']==name,'Abbreviation'].values[0]
+                                    T[:,idx] = T[:,idx] + np.reshape(df_solar[abbr].values/node_count_BA_sp,(8760,))
                             
+                            else:
+                    
+                                abbr = df_BAs.loc[df_BAs['Name']==name,'Abbreviation'].values[0]
+                                weight = sample['BA Solar Weight'].values[0]
+                                T[:,idx] = T[:,idx] + np.reshape(df_solar[abbr].values*weight,(8760,))
+                                w += weight
+                                dx = BAs.index(name)
+                                BA_sums[dx] = BA_sums[dx] + weight
+                                
                         else:
                             pass
                                   
@@ -355,16 +380,22 @@ for NN in NODE_NUMBER:
                                 sample = df_full.loc[df_full['Number'] == m]
                                 sample = sample.reset_index(drop=True)
                                 name = sample['NAME'][0]
-                                if str(name) == 'nan':
-                                    pass
+                                if name in BAs:
+                            
+                                    if float(df_BA_totals.loc[df_BA_totals['Name']==str(name),'Total'].values[0]) < 1:
+                                        pass
+                                    
+                                    else:
+                                        abbr = df_BAs.loc[df_BAs['Name']==name,'Abbreviation'].values[0]
+                                        weight = sample['BA Solar Weight']
+                                        w += weight  
+                                        dx = BAs.index(name)
+                                        BA_sums[dx] = BA_sums[dx] + weight
+                                        T[:,idx] = T[:,idx] + np.reshape(df_solar[abbr].values*weight.values[0],(8760,))
+                                
                                 else:
-                                    abbr = df_BAs.loc[df_BAs['Name']==name,'Abbreviation'].values[0]
-                                    weight = sample['BA Solar Weight']
-                                    w += weight  
-                                    dx = BAs.index(name)
-                                    BA_sums[dx] = BA_sums[dx] + weight
-                                    T[:,idx] = T[:,idx] + np.reshape(df_solar[abbr].values*weight.values[0],(8760,))
-                    
+                                    pass
+                        
                         except KeyError:
                             # print (b)
                             pass
