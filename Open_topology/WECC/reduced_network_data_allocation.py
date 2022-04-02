@@ -39,8 +39,8 @@ UC_TREATMENTS = ['_simple']
 # line_limit_MW_scaling = [25,50,75,100]
 line_limit_MW_scaling = [900]
 
-# BA_hurdle_scaling = list(range(0,1050,100))
-BA_hurdle_scaling = [0]
+# BA_hurdle_MW_scaling = list(range(0,1050,100))
+BA_hurdle_MW_scaling = [0]
 
 for NN in NODE_NUMBER:
     
@@ -48,13 +48,13 @@ for NN in NODE_NUMBER:
         
         for T_p in line_limit_MW_scaling:
             
-            for BA_hurd in BA_hurdle_scaling:
+            for BA_hurd in BA_hurdle_MW_scaling:
     
                 path=str(Path.cwd()) + str(Path('/Simulation_folders/Exp' + str(NN) + UC + '_' + str(T_p) + '_' + str(BA_hurd)))
                 os.makedirs(path,exist_ok=True)
                 
                 T_p_new = T_p
-                BA_hurd_new = BA_hurd/100
+                BA_hurd_new = BA_hurd
                 
                 FN = 'Selected_nodes/Results_Excluded_Nodes_' + str(NN) + '.xlsx'
              
@@ -959,7 +959,7 @@ for NN in NODE_NUMBER:
                         
                 
                 BA_to_BA_hurdle_data_new = BA_to_BA_hurdle_data.copy()
-                BA_to_BA_hurdle_data_new['Hurdle_$/MWh'] = BA_to_BA_hurdle_data_new['Hurdle_$/MWh']*(1+BA_hurd_new)
+                BA_to_BA_hurdle_data_new['Hurdle_$/MWh'] = BA_to_BA_hurdle_data_new['Hurdle_$/MWh']+BA_hurd_new
                 BA_to_BA_hurdle_data_new.to_csv('BA_to_BA_hurdle_scaled.csv', index=False)
                 copy('BA_to_BA_hurdle_scaled.csv',path)
                 
