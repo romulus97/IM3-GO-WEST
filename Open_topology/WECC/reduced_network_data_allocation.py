@@ -39,31 +39,31 @@ NODE_NUMBER = [100]
 # UC_TREATMENTS = ['_simple','_coal']
 UC_TREATMENTS = ['_simple']
 
-# line_limit_scaling = [25,50,75,100]
-line_limit_scaling = [900]
+# line_limit_MWscaling = [25,50,75,100]
+line_limit_MWscaling = [900]
 
 # BA_hurdle_scaling = list(range(0,1050,100))
-BA_hurdle_scaling = [0]
+BA_hurdle_scaling = [150]
 
-# BA_limit_scaling = list(range(0,1050,100))
-BA_limit_scaling = [0]
+# BA_limit_MW_scaling = list(range(0,1050,100))
+BA_limit_MW_scaling = [0]
 
 for NN in NODE_NUMBER:
     
     for UC in UC_TREATMENTS:
         
-        for T_p in line_limit_scaling:
+        for T_p in line_limit_MWscaling:
             
             for BA_hurd in BA_hurdle_scaling:
                 
-                for BA_p in BA_limit_scaling:
+                for BA_p in BA_limit_MW_scaling:
     
                     path=str(Path.cwd()) + str(Path('/Simulation_folders/Exp' + str(NN) + UC + '_' + str(T_p) + '_' + str(BA_hurd) + '_' + str(BA_p)))
                     os.makedirs(path,exist_ok=True)
                     
-                    T_p_new = T_p/100
+                    T_p_new = T_p
                     BA_hurd_new = BA_hurd/100
-                    BA_p_new = BA_p/100
+                    BA_p_new = BA_p
                     
                     FN = 'Selected_nodes/Results_Excluded_Nodes_' + str(NN) + '.xlsx'
                  
@@ -838,7 +838,7 @@ for NN in NODE_NUMBER:
                             df_line_to_bus.loc[ref_node,s] = 1
                             df_line_to_bus.loc[ref_node,k] = -1
                             reactance.append(df.loc[i,'x'])
-                            MW = (1/df.loc[i,'x'])*100*(1+T_p_new)
+                            MW = ((1/df.loc[i,'x'])*100)+T_p_new
                             limit.append(MW)
                             ref_node += 1
                         elif k == df.loc[0,'fbus']:      
@@ -848,7 +848,7 @@ for NN in NODE_NUMBER:
                             df_line_to_bus.loc[ref_node,k] = 1
                             df_line_to_bus.loc[ref_node,s] = -1
                             reactance.append(df.loc[i,'x'])
-                            MW = (1/df.loc[i,'x'])*100*(1+T_p_new)
+                            MW = ((1/df.loc[i,'x'])*100)+T_p_new
                             limit.append(MW)
                             ref_node += 1
                             
@@ -899,7 +899,7 @@ for NN in NODE_NUMBER:
                                     df_line_to_bus.loc[ref_node,k] = -1
                     
                                 reactance.append(df.loc[i,'x'])
-                                MW = (1/df.loc[i,'x'])*100*(1+T_p_new)
+                                MW = ((1/df.loc[i,'x'])*100)+T_p_new
                                 limit.append(MW)
                                 ref_node += 1
                     
@@ -972,7 +972,7 @@ for NN in NODE_NUMBER:
                     copy('BA_to_BA_hurdle_scaled.csv',path)
                     
                     BA_to_BA_transmission_data_new = BA_to_BA_transmission_data.copy()
-                    BA_to_BA_transmission_data_new['Limit_MW'] = BA_to_BA_transmission_data_new['Limit_MW']*(1+BA_p_new)
+                    BA_to_BA_transmission_data_new['Limit_MW'] = BA_to_BA_transmission_data_new['Limit_MW']+BA_p_new
                     BA_to_BA_transmission_data_new.to_csv('BA_to_BA_transmission_limits_scaled.csv', index=False)
                     copy('BA_to_BA_transmission_limits_scaled.csv',path)
                     
