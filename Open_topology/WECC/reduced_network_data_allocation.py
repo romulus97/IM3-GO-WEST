@@ -36,8 +36,8 @@ NODE_NUMBER = [100]
 # UC_TREATMENTS = ['_simple','_coal']
 UC_TREATMENTS = ['_simple']
 
-# line_limit_scaling = [25,50,75,100]
-line_limit_scaling = [900]
+# line_limit_MW_scaling = [25,50,75,100]
+line_limit_MW_scaling = [900]
 
 # BA_hurdle_scaling = list(range(0,1050,100))
 BA_hurdle_scaling = [0]
@@ -46,14 +46,14 @@ for NN in NODE_NUMBER:
     
     for UC in UC_TREATMENTS:
         
-        for T_p in line_limit_scaling:
+        for T_p in line_limit_MW_scaling:
             
             for BA_hurd in BA_hurdle_scaling:
     
                 path=str(Path.cwd()) + str(Path('/Simulation_folders/Exp' + str(NN) + UC + '_' + str(T_p) + '_' + str(BA_hurd)))
                 os.makedirs(path,exist_ok=True)
                 
-                T_p_new = T_p/100
+                T_p_new = T_p
                 BA_hurd_new = BA_hurd/100
                 
                 FN = 'Selected_nodes/Results_Excluded_Nodes_' + str(NN) + '.xlsx'
@@ -830,7 +830,7 @@ for NN in NODE_NUMBER:
                         df_line_to_bus.loc[ref_node,s] = 1
                         df_line_to_bus.loc[ref_node,k] = -1
                         reactance.append(df.loc[i,'x'])
-                        MW = (1/df.loc[i,'x'])*100*(1+T_p_new)
+                        MW = ((1/df.loc[i,'x'])*100)+T_p_new
                         limit.append(MW)
                         ref_node += 1
                     elif k == df.loc[0,'fbus']:      
@@ -840,7 +840,7 @@ for NN in NODE_NUMBER:
                         df_line_to_bus.loc[ref_node,k] = 1
                         df_line_to_bus.loc[ref_node,s] = -1
                         reactance.append(df.loc[i,'x'])
-                        MW = (1/df.loc[i,'x'])*100*(1+T_p_new)
+                        MW = ((1/df.loc[i,'x'])*100)+T_p_new
                         limit.append(MW)
                         ref_node += 1
                         
@@ -891,7 +891,7 @@ for NN in NODE_NUMBER:
                                 df_line_to_bus.loc[ref_node,k] = -1
                 
                             reactance.append(df.loc[i,'x'])
-                            MW = (1/df.loc[i,'x'])*100*(1+T_p_new)
+                            MW = ((1/df.loc[i,'x'])*100)+T_p_new
                             limit.append(MW)
                             ref_node += 1
                 
