@@ -37,10 +37,10 @@ NODE_NUMBER = [100]
 UC_TREATMENTS = ['_simple']
 
 # line_limit_MW_scaling = [25,50,75,100]
-line_limit_MW_scaling = [900]
+line_limit_MW_scaling = [2500]
 
 # BA_hurdle_scaling = list(range(0,1050,100))
-BA_hurdle_scaling = [0]
+BA_hurdle_scaling = [150]
 
 for NN in NODE_NUMBER:
     
