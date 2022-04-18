@@ -153,7 +153,7 @@ model.switch = Var(model.Coal,model.HH_periods, within=NonNegativeReals,initiali
 # model.nrsv = Var(model.Generators,model.HH_periods, within=NonNegativeReals,initialize=0)
 
 # slack variables
-model.S = Var(model.buses,model.hh_periods, within=NonNegativeReals,initialize=0)
+model.S = Var(model.hh_periods, within=NonNegativeReals,initialize=0)
 
 
 # transmission line variables 
@@ -171,7 +171,7 @@ def SysCost(model):
     fixed = sum(model.no_load[j]*model.on[j,i] for i in model.hh_periods for j in model.Coal)
     starts = sum(model.st_cost[j]*model.switch[j,i] for i in model.hh_periods for j in model.Coal)
     gen = sum(model.mwh[j,i]*(model.heat_rate[j]*model.FuelPrice[j] + model.var_om[j]) for i in model.hh_periods for j in model.Thermal)  
-    slack = sum(model.S[z,i]*1000 for i in model.hh_periods for z in model.buses)
+    slack = sum(model.S[i]*1000 for i in model.hh_periods)
     hydro_cost = sum(model.mwh[j,i]*0.01 for i in model.hh_periods for j in model.Hydro)
     wind_cost = sum(model.mwh[j,i]*0.01 for i in model.hh_periods for j in model.Wind)
     solar_cost = sum(model.mwh[j,i]*0.01 for i in model.hh_periods for j in model.Solar)
@@ -258,7 +258,7 @@ model.WindConstraint= Constraint(model.Wind,model.hh_periods,rule=WindC)
 def Nodal_Balance(model,z,i):
     power_flow = sum(model.Flow[l,i]*model.LinetoBusMap[l,z] for l in model.lines)   
     gen = sum(model.mwh[j,i]*model.BustoUnitMap[j,z] for j in model.Generators)    
-    slack = model.S[z,i]
+    slack = model.S[i]
     must_run = model.Must[z]
     return gen + slack + must_run - power_flow == model.HorizonDemand[z,i] 
 model.Node_Constraint = Constraint(model.buses,model.hh_periods,rule=Nodal_Balance)

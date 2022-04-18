@@ -179,8 +179,7 @@ for day in range(1,days+1):
                     
         if a=='S':    
             for index in varobject:
-                if index[0] in instance.buses:
-                        slack.append((index[0],index[1]+((day-1)*24),varobject[index].value))
+                slack.append((index+((day-1)*24),varobject[index].value))
 
         if a=='Flow':    
             for index in varobject:
@@ -243,7 +242,7 @@ mwh_pd=pd.DataFrame(mwh,columns=('Generator','Type','Time','Value','$/MWh'))
 # switch_pd=pd.DataFrame(switch,columns=('Generator','Time','Value'))
 # srsv_pd=pd.DataFrame(srsv,columns=('Generator','Time','Value'))
 # nrsv_pd=pd.DataFrame(nrsv,columns=('Generator','Time','Value'))
-slack_pd = pd.DataFrame(slack,columns=('Node','Time','Value'))
+slack_pd = pd.DataFrame(slack,columns=('Time','Value'))
 flow_pd = pd.DataFrame(flow,columns=('Line','Time','Value'))
 duals_pd = pd.DataFrame(duals,columns=['Bus','Time','Value'])
 
