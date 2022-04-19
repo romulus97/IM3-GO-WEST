@@ -638,11 +638,13 @@ for NN in NODE_NUMBER:
                             minup = 4
                             mindn = 4
                             ramp = maxcap
+                            hr_2 = hr_2*2.098
                         else:
                             var_om = 4
                             minup = 12
                             mindn = 12
                             ramp = 0.33*maxcap
+                            hr_2 = hr_2*1.310
                         
                         st_cost = 70*maxcap
                         no_load = 3*maxcap
