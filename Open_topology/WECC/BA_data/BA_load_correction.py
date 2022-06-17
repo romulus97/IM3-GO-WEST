@@ -11,6 +11,7 @@ from datetime import timedelta
 #importing BA load data
 load_data = pd.read_csv('BA_load.csv',header=0)
 del load_data['Unnamed: 0']
+load_data = load_data.fillna(0)
 
 #reindexing BA load data and getting the BA names
 hours_2019 = pd.date_range(start='1-1-2019 00:00:00',end='12-31-2019 23:00:00', freq='H')

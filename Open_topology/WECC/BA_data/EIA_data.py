@@ -15,19 +15,15 @@ for a in abbr:
     
     #saving BA index and reading hourly demand, solar and wind data for 2019
     idx = abbr.index(a)
-    filename = '../../Raw_Data/' + a + '.xlsx'
-    renewable_data = pd.read_excel(filename,header=0,sheet_name='Published Hourly Data')
+    filename = '../Raw_BA_files/' + a + '.xlsx'
+    BA_dataset = pd.read_excel(filename,header=0,sheet_name='Published Hourly Data')
     
-    solar = renewable_data.loc[renewable_data['Local time'].dt.year == 2019,'Adjusted SUN Gen'].copy()
-    wind = renewable_data.loc[renewable_data['Local time'].dt.year == 2019,'Adjusted WND Gen'].copy()
+    solar = BA_dataset.loc[BA_dataset['Local time'].dt.year == 2019,'Adjusted SUN Gen'].copy()
+    wind = BA_dataset.loc[BA_dataset['Local time'].dt.year == 2019,'Adjusted WND Gen'].copy()
+    load = BA_dataset.loc[BA_dataset['Local time'].dt.year == 2019,'Adjusted D'].copy()
     
     #saving the time zone
-    tz = renewable_data.loc[0,'Time zone']
-    
-    #reading hourly load data for 2019
-    filename = '../../CSV_Files/' + a + '_Hourly_Load_Data.csv'
-    load_data = pd.read_csv(filename,header=0)
-    load = load_data.loc[load_data['Year']==2019,'Adjusted_Demand_MWh'].copy()
+    tz = BA_dataset.loc[0,'Time zone']
     
     #checking the time zone of the BA and shifting load, solar and wind timeseries accordingly 
     #(Pacific time zone is selected as standard time zone)
@@ -42,16 +38,13 @@ for a in abbr:
         #shifting revelant timeseries for 1 hour if time zone is Mountain or Arizona
         renewable_ind = [*solar.index]
         fixed_renewable_ind = [c+1 for c in renewable_ind]
-        solar = renewable_data.loc[fixed_renewable_ind,'Adjusted SUN Gen'].copy()
-        wind = renewable_data.loc[fixed_renewable_ind,'Adjusted WND Gen'].copy()
+        solar = BA_dataset.loc[fixed_renewable_ind,'Adjusted SUN Gen'].copy()
+        wind = BA_dataset.loc[fixed_renewable_ind,'Adjusted WND Gen'].copy()
+        load = BA_dataset.loc[fixed_renewable_ind,'Adjusted D'].copy()
         S = np.array(solar)
         W = np.array(wind)
-        
-        load_ind = [*load.index]
-        fixed_load_ind = [c+1 for c in load_ind]
-        load = load_data.loc[fixed_load_ind,'Adjusted_Demand_MWh'].copy()
         L = np.array(load)
-    
+        
     else:
         #if timezone is any of the above, show the BA and time zone
         print([abbr,tz])
