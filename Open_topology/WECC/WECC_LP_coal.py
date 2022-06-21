@@ -171,7 +171,7 @@ def SysCost(model):
     fixed = sum(model.no_load[j]*model.on[j,i] for i in model.hh_periods for j in model.Coal)
     starts = sum(model.st_cost[j]*model.switch[j,i] for i in model.hh_periods for j in model.Coal)
     gen = sum(model.mwh[j,i]*(model.heat_rate[j]*model.FuelPrice[j] + model.var_om[j]) for i in model.hh_periods for j in model.Thermal)  
-    slack = sum(model.S[z,i]*1000 for i in model.hh_periods for z in model.buses)
+    slack = sum(model.S[z,i]*2000 for i in model.hh_periods for z in model.buses)
     hydro_cost = sum(model.mwh[j,i]*0.01 for i in model.hh_periods for j in model.Hydro)
     wind_cost = sum(model.mwh[j,i]*0.01 for i in model.hh_periods for j in model.Wind)
     solar_cost = sum(model.mwh[j,i]*0.01 for i in model.hh_periods for j in model.Solar)
