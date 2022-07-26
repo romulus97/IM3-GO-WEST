@@ -31,7 +31,7 @@ df_full = pd.read_csv('10k_topology_files/nodes_to_BA_state.csv',header=0,index_
 NODE_NUMBER = [100]
 
 # UC_TREATMENTS = ['_simple','_coal']
-UC_TREATMENTS = ['_coal']
+UC_TREATMENTS = ['_simple']
 
 # line_limit_scaling = [25,50,75,100]
 line_limit_scaling = [750]
@@ -443,17 +443,48 @@ for NN in NODE_NUMBER:
             df_gens_heat_rate['NewBusNum'] = NB_hr
     
             names = list(df_gens['BusName'])
+            fts = list(df_gens['FuelType'])
             names_hr = list(df_gens_heat_rate['BusName'])
             
             # remove numbers and spaces
             for n in names:
                 i = names.index(n)
                 corrected = re.sub(r'[^A-Z]',r'',n)
+                f = fts[i]
+                if f == 'NUC (Nuclear)':
+                    f = 'Nuc'
+                elif f == 'NG (Natural Gas)':
+                    f = 'NG'
+                elif f == 'BIT (Bituminous Coal)':
+                    f = 'NG'
+                elif f == 'SUN (Solar)':
+                    f = 'S'
+                elif f == 'WAT (Water)':
+                    f = 'H'
+                elif f == 'WND (Wind)':
+                    f = 'W'
+                    
+                corrected = corrected + '_' + f
                 names[i] = corrected
                 
             for n in names_hr:
                 i = names_hr.index(n)
                 corrected = re.sub(r'[^A-Z]',r'',n)
+                f = fts[i]
+                if f == 'NUC (Nuclear)':
+                    f = 'Nuc'
+                elif f == 'NG (Natural Gas)':
+                    f = 'NG'
+                elif f == 'BIT (Bituminous Coal)':
+                    f = 'NG'
+                elif f == 'SUN (Solar)':
+                    f = 'S'
+                elif f == 'WAT (Water)':
+                    f = 'H'
+                elif f == 'WND (Wind)':
+                    f = 'W'
+                    
+                corrected = corrected + '_' + f
                 names_hr[i] = corrected
             
             df_gens['PlantNames'] = names
