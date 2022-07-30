@@ -415,6 +415,7 @@ for NN in NODE_NUMBER:
             old_bus_num_hr =[]
             new_bus_num_hr = []
             NB_hr = []
+
             
             for n in N:
                 k = merged[n]
@@ -445,6 +446,7 @@ for NN in NODE_NUMBER:
             names = list(df_gens['BusName'])
             fts = list(df_gens['FuelType'])
             names_hr = list(df_gens_heat_rate['BusName'])
+            fts_hr = list(df_gens_heat_rate['FuelType'])
             
             # remove numbers and spaces
             for n in names:
@@ -456,7 +458,7 @@ for NN in NODE_NUMBER:
                 elif f == 'NG (Natural Gas)':
                     f = 'NG'
                 elif f == 'BIT (Bituminous Coal)':
-                    f = 'NG'
+                    f = 'C'
                 elif f == 'SUN (Solar)':
                     f = 'S'
                 elif f == 'WAT (Water)':
@@ -470,13 +472,13 @@ for NN in NODE_NUMBER:
             for n in names_hr:
                 i = names_hr.index(n)
                 corrected = re.sub(r'[^A-Z]',r'',n)
-                f = fts[i]
+                f = fts_hr[i]
                 if f == 'NUC (Nuclear)':
                     f = 'Nuc'
                 elif f == 'NG (Natural Gas)':
                     f = 'NG'
                 elif f == 'BIT (Bituminous Coal)':
-                    f = 'NG'
+                    f = 'C'
                 elif f == 'SUN (Solar)':
                     f = 'S'
                 elif f == 'WAT (Water)':
