@@ -448,17 +448,49 @@ for NN in NODE_NUMBER:
                 df_gens_heat_rate['NewBusNum'] = NB_hr
         
                 names = list(df_gens['BusName'])
+                fts = list(df_gens['FuelType'])
                 names_hr = list(df_gens_heat_rate['BusName'])
+                fts_hr = list(df_gens_heat_rate['FuelType'])
                 
                 # remove numbers and spaces
                 for n in names:
                     i = names.index(n)
                     corrected = re.sub(r'[^A-Z]',r'',n)
+                    f = fts[i]
+                    if f == 'NUC (Nuclear)':
+                        f = 'Nuc'
+                    elif f == 'NG (Natural Gas)':
+                        f = 'NG'
+                    elif f == 'BIT (Bituminous Coal)':
+                        f = 'C'
+                    elif f == 'SUN (Solar)':
+                        f = 'S'
+                    elif f == 'WAT (Water)':
+                        f = 'H'
+                    elif f == 'WND (Wind)':
+                        f = 'W'
+                    
+                    corrected = corrected + '_' + f
                     names[i] = corrected
                     
                 for n in names_hr:
                     i = names_hr.index(n)
                     corrected = re.sub(r'[^A-Z]',r'',n)
+                    f = fts_hr[i]
+                    if f == 'NUC (Nuclear)':
+                        f = 'Nuc'
+                    elif f == 'NG (Natural Gas)':
+                        f = 'NG'
+                    elif f == 'BIT (Bituminous Coal)':
+                        f = 'C'
+                    elif f == 'SUN (Solar)':
+                        f = 'S'
+                    elif f == 'WAT (Water)':
+                        f = 'H'
+                    elif f == 'WND (Wind)':
+                        f = 'W'
+                        
+                    corrected = corrected + '_' + f
                     names_hr[i] = corrected
                 
                 df_gens['PlantNames'] = names
