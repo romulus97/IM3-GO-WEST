@@ -9,7 +9,7 @@ import pandas as pd
 from datetime import timedelta
 
 #importing BA load data
-load_data = pd.read_csv('BA_load.csv',header=0)
+load_data = pd.read_csv('Initial_data/BA_load_2019_init.csv',header=0)
 del load_data['Unnamed: 0']
 load_data = load_data.fillna(0)
 
@@ -121,9 +121,28 @@ for BA in BAs:
         else:
             pass
         
-#exporting corrected data
+
+#Fixing stable demand issue in BANC 
 load_data.reset_index(drop=True,inplace=True)
-load_data.to_csv('BA_load_corrected.csv')
+load_data.loc[2100:2200,'BANC'] = load_data.loc[1999:2099,'BANC'].values
+load_data.loc[2200:2303,'BANC'] = load_data.loc[2304:2407,'BANC'].values
+
+#exporting corrected data
+load_data.to_csv('Corrected_data/BA_load_2019.csv')
+
+# #Checking load profiles
+# import matplotlib.pyplot as plt
+# for BA in BAs:
+#     plt.plot(load_data[BA])
+#     plt.title(BA)
+#     plt.show()
+#     plt.clf()
+
+
+
+
+
+
 
 
 
