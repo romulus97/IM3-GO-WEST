@@ -18,7 +18,13 @@ for year in years:
         
         #saving BA index and reading hourly demand, solar and wind data for the year
         idx = abbr.index(a)
-        filename = '../Raw_BA_files/' + a + '.xlsx'
+        
+        if (a == 'PSEI') and (year == 2020):
+            filename = '../Raw_BA_files/PSEI_2020.xlsx'
+            
+        else:
+            filename = '../Raw_BA_files/' + a + '.xlsx'
+        
         BA_dataset = pd.read_excel(filename,header=0,sheet_name='Published Hourly Data')
         
         solar = BA_dataset.loc[BA_dataset['Local time'].dt.year == year,'Adjusted SUN Gen'].copy()

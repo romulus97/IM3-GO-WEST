@@ -58,7 +58,7 @@ else:
 #selecting which BAs to include    
 load_BAs = ['AZPS','CHPD','CISO','EPE','NWMT','PACE','PGE','SCL','SRP','TPWR','WACM','WALC']
 #filtering out anomalies (really high and low values) from the data, replacing them with values from a different day but at the same hour
-for BA in BAs:
+for BA in load_BAs:
     
     for time in hours_2019:
         
