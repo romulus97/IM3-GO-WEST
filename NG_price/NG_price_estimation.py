@@ -102,7 +102,14 @@ for year in years:
             BA_NG_coeff_matrix_df.loc[BA_name,'PORTLAND GENERAL ELECTRIC COMPANY']+ \
             final_NG_prices.loc[:,'PUGET SOUND ENERGY']* \
             BA_NG_coeff_matrix_df.loc[BA_name,'PUGET SOUND ENERGY']
-                
+            
+    if year == 2020:
+        feb_29 = pd.date_range(start='2-29-2020',end='2-29-2020', freq='D')
+        final_NG_prices.drop(feb_29,inplace=True)
+        
+    else:
+        pass
+    
     final_NG_prices.to_csv('Estimated_NG_prices/Average_NG_prices_BAs_{}.csv'.format(year))
 
     

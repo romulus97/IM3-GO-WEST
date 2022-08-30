@@ -19,6 +19,7 @@ del BA_wind['Unnamed: 0']
 
 #reindexing BA renewables data and getting the BA names
 hours_2020 = pd.date_range(start='1-1-2020 00:00:00',end='12-31-2020 23:00:00', freq='H')
+feb_29_hours = pd.date_range(start='2-29-2020 00:00:00',end='2-29-2020 23:00:00', freq='H')
 BA_solar.index = hours_2020
 BA_wind.index = hours_2020
 BAs = list(BA_solar.columns)
@@ -254,9 +255,11 @@ for BA in wind_BAs:
 
 
 #exporting the data
+BA_wind.drop(feb_29_hours,inplace=True)
 BA_wind.reset_index(drop=True,inplace=True)
 BA_wind.to_csv('Corrected_data/BA_wind_2020.csv')
 
+BA_solar.drop(feb_29_hours,inplace=True)
 BA_solar.reset_index(drop=True,inplace=True)
 BA_solar.to_csv('Corrected_data/BA_solar_2020.csv')           
 

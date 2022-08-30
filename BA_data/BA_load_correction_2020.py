@@ -15,6 +15,7 @@ load_data = load_data.fillna(0)
 
 #reindexing BA load data and getting the BA names
 hours_2020 = pd.date_range(start='1-1-2020 00:00:00',end='12-31-2020 23:00:00', freq='H')
+feb_29_hours = pd.date_range(start='2-29-2020 00:00:00',end='2-29-2020 23:00:00', freq='H')
 load_data.index = hours_2020
 BAs = list(load_data.columns)
 
@@ -123,6 +124,7 @@ for BA in load_BAs:
         
 
 #exporting corrected data
+load_data.drop(feb_29_hours,inplace=True)
 load_data.reset_index(drop=True,inplace=True)
 load_data.to_csv('Corrected_data/BA_load_2020.csv')
 
