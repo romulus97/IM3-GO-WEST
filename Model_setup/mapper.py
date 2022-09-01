@@ -19,10 +19,10 @@ from matplotlib.colors import TwoSlopeNorm
 RTS = [300,275,250,225,200,175,150,125,100,75]
 distance_threshold = 5
 
-df_BAs = pd.read_csv('BA_data/BAs.csv',header=0)
+df_BAs = pd.read_csv('../Data_setup/Time_series_data/BA_data/BAs.csv',header=0)
 BAs = list(df_BAs['Name'])
 
-df = pd.read_csv('10k_topology_files/10k_load.csv',header=0)
+df = pd.read_csv('../Data_setup/10k_topology_files/10k_load.csv',header=0)
 crs = {'init':'epsg:4326'}
 # crs = {"init": "epsg:2163"}
 geometry = [Point(xy) for xy in zip(df['Substation Longitude'],df['Substation Latitude'])]
@@ -30,10 +30,10 @@ filter_nodes = gpd.GeoDataFrame(df,crs=crs,geometry=geometry)
 nodes_df = gpd.GeoDataFrame(df,crs=crs,geometry=geometry)
 nodes_df = nodes_df.to_crs(epsg=2163)
 
-BAs_gdf = gpd.read_file('Shapefiles/WECC.shp')
+BAs_gdf = gpd.read_file('../Data_setup/Shapefiles/WECC.shp')
 BAs_gdf = BAs_gdf.to_crs(epsg=2163)
 
-states_gdf = gpd.read_file('Shapefiles/geo_export_9ef76f60-e019-451c-be6b-5a879a5e7c07.shp')
+states_gdf = gpd.read_file('../Data_setup/Shapefiles/geo_export_9ef76f60-e019-451c-be6b-5a879a5e7c07.shp')
 states_gdf = states_gdf.to_crs(epsg=2163)
 
 joined = gpd.sjoin(nodes_df,BAs_gdf,how='left',op='within')
@@ -119,7 +119,7 @@ for i in range(0,len(combined)):
         combined = combined.drop([i])
 
 combined = combined.reset_index(drop=True)    
-combined.to_csv('10k_topology_files/nodes_to_BA_state.csv')
+combined.to_csv('../Data_setup/10k_topology_files/nodes_to_BA_state.csv')
 
 ##############################
 #  Generators
@@ -128,8 +128,8 @@ combined.to_csv('10k_topology_files/nodes_to_BA_state.csv')
 import re
 from itertools import compress
 
-df_BA_states = pd.read_csv('10k_topology_files/nodes_to_BA_state.csv',index_col=0)
-df_gens = pd.read_csv('10k_topology_files/10k_Gen.csv')
+df_BA_states = pd.read_csv('../Data_setup/10k_topology_files/nodes_to_BA_state.csv',index_col=0)
+df_gens = pd.read_csv('../Data_setup/10k_topology_files/10k_Gen.csv')
 
 ###########################################
 # Remove any entry that is not in a TELL BA
@@ -222,7 +222,7 @@ for n in unique_bus_names:
 #LOAD
 ##################################
 
-df_load = pd.read_csv('10k_topology_files/10k_Load.csv')
+df_load = pd.read_csv('../Data_setup/10k_topology_files/10k_Load.csv')
 
 for i in range(0,len(df_load)):
     a = df_load.loc[i,'Number']
@@ -552,7 +552,7 @@ for NN in RTS:
     
     selected_nodes = demand_nodes_selected + gen_nodes_selected + trans_nodes_selected
     
-    df = pd.read_csv('10k_topology_files/10k_load.csv',header=0)
+    df = pd.read_csv('../Data_setup/10k_topology_files/10k_load.csv',header=0)
     full = list(df['Number'])
     
     excluded = [i for i in full if i not in selected_nodes]
