@@ -54,7 +54,7 @@ for YY in Years:
                 
                 for BA_hurd in BA_hurdle_scaling:
         
-                    path=str(Path.cwd()) + str(Path('/UCED/Simulation_folders/Exp' + str(NN) + UC + '_' + str(T_p) + '_' + str(BA_hurd) + '_' + str(YY)))
+                    path=str(Path.cwd().parent) + str(Path('/UCED/Simulation_folders/Exp' + str(NN) + UC + '_' + str(T_p) + '_' + str(BA_hurd) + '_' + str(YY)))
                     os.makedirs(path,exist_ok=True)
                     
                     T_p_new = T_p
