@@ -54,7 +54,7 @@ for YY in Years:
                 
                 for BA_hurd in BA_hurdle_scaling:
         
-                    path=str(Path.cwd()) + str(Path('../UCED/Simulation_folders/Exp' + str(NN) + UC + '_' + str(T_p) + '_' + str(BA_hurd) + '_' + str(YY)))
+                    path=str(Path.cwd()) + str(Path('/UCED/Simulation_folders/Exp' + str(NN) + UC + '_' + str(T_p) + '_' + str(BA_hurd) + '_' + str(YY)))
                     os.makedirs(path,exist_ok=True)
                     
                     T_p_new = T_p
@@ -544,6 +544,10 @@ for YY in Years:
                     
                     df_thermal = pd.DataFrame(C)
                     df_thermal.columns = ['Name','Bus','Fuel','Max_Cap','Min_Cap','Heat_Rate']
+                    df_thermal["Bus"] = pd.to_numeric(df_thermal["Bus"])
+                    df_thermal["Max_Cap"] = pd.to_numeric(df_thermal["Max_Cap"])
+                    df_thermal["Min_Cap"] = pd.to_numeric(df_thermal["Min_Cap"])
+                    df_thermal["Heat_Rate"] = pd.to_numeric(df_thermal["Heat_Rate"])
                     # df_thermal.to_csv('Thermal_gens.csv',index=None)
                     # copy('Thermal_gens.csv',path)
                         
