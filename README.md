@@ -5,7 +5,7 @@ GO WECC model is written by using Pyomo package in Python. It utilizes [10,000 n
 GO WECC model allows users to choose:
 * Number of nodes to retain in the system
 * Mathematical formulation (users can choose to formulate the problem as linear programming (LP) or mixed integer linear programming (MILP))
-* Transmission line limit scaling factors
+* Transmission line capacity scaling factors
 * BA to BA hurdle rate scaling factors
 
 ## Running GO WECC Model
