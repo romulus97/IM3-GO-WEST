@@ -1,5 +1,5 @@
 # GO WECC
-The grid operations model of the U.S. Western Interconnection (GO WECC) is created through the IM3 program at Pacific Northwest National Laboratory and NC State University. It is developed to address weather and water dynamics, and associated vulnerabilities in this bulk power system. It is a security-constrained unit commitment and economic dispatch (UC/ED) model and includes 28 balancing authorities (BA) and 12 states.
+The grid operations model of the U.S. Western Interconnection (GO WECC) is created through the IM3 program at Pacific Northwest National Laboratory and NC State University. It is developed to address weather and water dynamics, and associated vulnerabilities in this bulk power system. It is a security-constrained unit commitment and economic dispatch (UC/ED) model, and includes 28 balancing authorities (BA) and 12 states.
 GO WECC model is written by using Pyomo package in Python. It utilizes [10,000 nodal topology dataset of U.S. Western Interconnection](https://electricgrids.engr.tamu.edu/electric-grid-test-cases/activsg10k/) created by Texas A&M University (TAMU). The current optimization solver is Gurobi but users can select another solver to run the model.
 
 GO WECC model allows users to choose:
@@ -23,7 +23,7 @@ In "Simulation_folders", the script named "WECCDataSetup.py" is used to merge al
 | File Name      | Description |
 | ----------- | ----------- |
 | BA_to_BA_hurdle_scaled.csv | Scaled hurdle rates between BAs |
-| BA_to_BA_transmission_matrix.csv   | Binary file showing which lines are between which BAs |
+| BA_to_BA_transmission_matrix.csv   | Binary file showing which lines are connected to which BAs |
 | data_genparams.csv | Names and parameters of generators |
 | Fuel_prices.csv | Daily coal and natural gas prices identified for each generator |
 | gen_mat.csv | Binary file showing which generators are connected to which buses |
@@ -31,7 +31,7 @@ In "Simulation_folders", the script named "WECCDataSetup.py" is used to merge al
 | Hydro_min.csv | Minimum hourly hydropower availability at each node |
 | Hydro_total.csv | Daily total hydropower availability at each node |
 | line_params.csv | Scaled hurdle rates between BAs |
-| line_to_bus.csv | Binary file showing which lines are between which buses |
+| line_to_bus.csv | Binary file showing which lines are connected to which buses |
 | must_run.csv | Available nodal must-run generation (from nuclear generators) |
 | nodal_load.csv | Hourly electricity demand at each node |
 | nodal_solar.csv | Hourly available solar power generation at each node |
