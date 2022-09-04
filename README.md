@@ -24,29 +24,22 @@ In Simulation_folders, the script named "WECCDataSetup.py" is used to merge all 
 | ----------- | ----------- |
 | BA_to_BA_hurdle_scaled.csv | Scaled hurdle rates between BAs |
 | BA_to_BA_transmission_matrix.csv   | Binary file showing which lines are between which BAs |
-| BA_to_BA_hurdle_scaled.csv | Scaled hurdle rates between BAs |
-| BA_to_BA_hurdle_scaled.csv | Scaled hurdle rates between BAs |
-| BA_to_BA_hurdle_scaled.csv | Scaled hurdle rates between BAs |
-| BA_to_BA_hurdle_scaled.csv | Scaled hurdle rates between BAs |
-| BA_to_BA_hurdle_scaled.csv | Scaled hurdle rates between BAs |
-| BA_to_BA_hurdle_scaled.csv | Scaled hurdle rates between BAs |
-| BA_to_BA_hurdle_scaled.csv | Scaled hurdle rates between BAs |
-| BA_to_BA_hurdle_scaled.csv | Scaled hurdle rates between BAs |
-| BA_to_BA_hurdle_scaled.csv | Scaled hurdle rates between BAs |
-| BA_to_BA_hurdle_scaled.csv | Scaled hurdle rates between BAs |
-| BA_to_BA_hurdle_scaled.csv | Scaled hurdle rates between BAs |
-| BA_to_BA_hurdle_scaled.csv | Scaled hurdle rates between BAs |
-| BA_to_BA_hurdle_scaled.csv | Scaled hurdle rates between BAs |
-| BA_to_BA_hurdle_scaled.csv | Scaled hurdle rates between BAs |
-| BA_to_BA_hurdle_scaled.csv | Scaled hurdle rates between BAs |
-| BA_to_BA_hurdle_scaled.csv | Scaled hurdle rates between BAs |
-| BA_to_BA_hurdle_scaled.csv | Scaled hurdle rates between BAs |
-| BA_to_BA_hurdle_scaled.csv | Scaled hurdle rates between BAs |
-| BA_to_BA_hurdle_scaled.csv | Scaled hurdle rates between BAs |
-| BA_to_BA_hurdle_scaled.csv | Scaled hurdle rates between BAs |
-| BA_to_BA_hurdle_scaled.csv | Scaled hurdle rates between BAs |
-| BA_to_BA_hurdle_scaled.csv | Scaled hurdle rates between BAs |
-| BA_to_BA_hurdle_scaled.csv | Scaled hurdle rates between BAs |
+| data_genparams.csv | Names and parameters of generators |
+| Fuel_prices.csv | Daily coal and natural gas prices identified for each generator |
+| gen_mat.csv | Binary file showing which generators are connected to which buses |
+| Hydro_max.csv | Maximum hourly hydropower availability at each node |
+| Hydro_min.csv | Minimum hourly hydropower availability at each node |
+| Hydro_total.csv | Daily total hydropower availability at each node |
+| line_params.csv | Scaled hurdle rates between BAs |
+| line_to_bus.csv | Binary file showing which lines are between which buses |
+| must_run.csv | Available nodal must-run generation (from nuclear generators) |
+| nodal_load.csv | Hourly electricity demand at each node |
+| nodal_solar.csv | Hourly available solar power generation at each node |
+| nodal_wind.csv | Hourly available wind power generation at each node |
+| WECCDataSetup.py | Python script that creates “WECC_data.dat” file which includes all data above in a format accessible by Pyomo |
+| (WECC_LP_coal.py AND WECC_MILP_coal.py) OR WECC_simple.py | They are created depending on modeling type (if mixed-integer linear programming is used, first two, otherwise, last one). These contain the Pyomo formulation of the GO model (objective function, constraints, etc.) |
+| wrapper_coal.py OR wrapper_simple.py | Calls optimization solver, starts the simulations and returns the model outputs |
+
 
 
 
