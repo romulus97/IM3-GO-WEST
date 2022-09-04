@@ -1,17 +1,17 @@
 # GO WECC
-The grid operations (GO) model of the U.S. Western Interconnection is created through the IM3 program at Pacific Northwest National Laboratory and NC State University. It is developed to address weather and water dynamics, and associated vulnerabilities in this bulk power system. It is a security constrained unit commitment and economic dispatch (UC/ED) model and includes 28 balancing authorities (BA) and 12 states.
+The grid operations (GO) model of the U.S. Western Interconnection is created through the IM3 program at Pacific Northwest National Laboratory and NC State University. It is developed to address weather and water dynamics, and associated vulnerabilities in this bulk power system. It is a security-constrained unit commitment and economic dispatch (UC/ED) model and includes 28 balancing authorities (BA) and 12 states.
 GO WECC model is written by using Pyomo package in Python. It utilizes [10,000 nodal topology dataset of U.S. Western Interconnection](https://electricgrids.engr.tamu.edu/electric-grid-test-cases/activsg10k/) created by Texas A&M University (TAMU). The current optimization solver is Gurobi but users can select another solver to run the model.
 
 GO WECC model allows users to choose:
 * Number of nodes to retain in the system
-* Mathematical formulation (users can choose to formulate the problem as linear programming (LP) or mixed interger linear prograaming (MILP))
+* Mathematical formulation (users can choose to formulate the problem as linear programming (LP) or mixed integer linear programming (MILP))
 * Transmission line limit scaling factors
 * BA to BA hurdle rate scaling factors
 
 ## Running GO WECC Model
 Running GO WECC model includes two main steps:
 ### Preprocessing of data
-1. The first step is to use "mapper.py" script in Model_setup folder. This script selects a prespecified number of nodes to retain from TAMU synthetic network. Outputs of this script are "excluded_nodes.csv" and "selected_nodes.csv" files for each model configuration. Those outputs are saved into "Selected_nodes" folder.
+1. The first step is to use "mapper.py" script in Model_setup folder. This script selects a prespecified number of nodes to retain from TAMU synthetic network. Outputs of this script are "excluded_nodes.csv" and "selected_nodes.csv" files for each model configuration. Those outputs are saved in "Selected_nodes" folder.
 
 2. Selected nodes are used in Arizona State University (ASU) network reduction algorithm. This algorithm simplifies the WECC network and reduces the number of nodes, transmission lines, and generators in the model to decrease computational requirements. Output of this algorithm ("Results_Excluded_Nodes.xlsx") provides detailed information about the retained nodes, which is used in the next steps. 
 
@@ -42,13 +42,6 @@ In "Simulation_folders", the script named "WECCDataSetup.py" is used to merge al
 | WECC_MILP_coal.py | This is only present if user selects to include only coal power plants in the unit commitment (UC) process. This contains the MILP problem formulation of GO WECC model. |
 | WECC_MILP_coal_gas.py | This is only present if user selects to include both natural gas and coal power plants in the unit commitment (UC) process. This contains the MILP problem formulation of GO WECC model. |
 | WECC_simple.py | This is only present if user selects to skip unit commitment (UC) process and model only economic dispatch (ED) process. This contains the LP problem formulation of GO WECC model. |
-| wrapper_coal.py | This is only present if user selects to include only coal power plants in the unit commitment (UC) process. This script calls optimization solver, starts the simulations and returns the model outputs. |
-| wrapper_coal_gas.py | This is only present if user selects to include both natural gas and coal power plants in the unit commitment (UC) process. This script calls optimization solver, starts the simulations and returns the model outputs. |
-| wrapper_simple.py | This is only present if user selects to skip unit commitment (UC) process and model only economic dispatch (ED) process. This script calls optimization solver, starts the simulations and returns the model outputs. |
-
-
-
-
-
-
-
+| wrapper_coal.py | This is only present if user selects to include only coal power plants in the unit commitment (UC) process. This script calls an optimization solver, starts the simulations and returns the model outputs. |
+| wrapper_coal_gas.py | This is only present if user selects to include both natural gas and coal power plants in the unit commitment (UC) process. This script calls an optimization solver, starts the simulations and returns the model outputs. |
+| wrapper_simple.py | This is only present if user selects to skip unit commitment (UC) process and model only economic dispatch (ED) process. This script calls an optimization solver, starts the simulations and returns the model outputs. |
