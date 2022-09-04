@@ -18,7 +18,11 @@ Running GO WECC model includes two main steps:
 3. Results from ASU network reduction algorithm are utilized in “reduced_etwork_data_allocation.py” script to create model files such as generator parameters, available hourly solar and wind power at each node, and hourly demand at each node, etc. This script also creates different folders for each model configuration and populates those with relevant scripts and data to run the model. 
 
 ### Starting the simulation
-In "Simulation_folders", the script named "WECCDataSetup.py" is used to merge all relevant data into "WECC_data.dat" file, which is interpreted by Pyomo. Finally, "wrapper.py" is run to call the optimization solver and start the simulation. For reference, the files in the "Simulation_folders" and their purpose is explained below.
+In "Simulation_folders", the script named "WECCDataSetup.py" is used to merge all relevant data into "WECC_data.dat" file, which is interpreted by Pyomo. Finally, "wrapper.py" is run to call the optimization solver and start the simulation. The process of running GO model is illustrated in the figure below. 
+
+![GO_process](https://user-images.githubusercontent.com/56842236/188332405-580e2386-7796-43f2-97c2-d591eec76197.png)
+
+For reference, the files in the "Simulation_folders" and their purpose is explained in the table below.
 
 | File Name      | Description |
 | ----------- | ----------- |
