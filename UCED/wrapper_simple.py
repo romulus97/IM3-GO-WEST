@@ -181,26 +181,26 @@ for day in range(1,days+1):
                 
                 if int(index[1]>0 and index[1]<25):
                     
-                    fuel_price = instance.FuelPrice[z].value
+                    # fuel_price = instance.FuelPrice[z].value
                     
                     if index[0] in instance.Gas:
-                        marginal_cost = gen_heatrate*fuel_price
-                        mwh.append((index[0],'Gas',index[1]+((day-1)*24),varobject[index].value,marginal_cost))   
+                        # marginal_cost = gen_heatrate*fuel_price
+                        mwh.append((index[0],'Gas',index[1]+((day-1)*24),varobject[index].value))   
                     elif index[0] in instance.Coal:
-                        marginal_cost = gen_heatrate*fuel_price
-                        mwh.append((index[0],'Coal',index[1]+((day-1)*24),varobject[index].value,marginal_cost))  
+                        # marginal_cost = gen_heatrate*fuel_price
+                        mwh.append((index[0],'Coal',index[1]+((day-1)*24),varobject[index].value))  
                     elif index[0] in instance.Oil:
-                        marginal_cost = 0
-                        mwh.append((index[0],'Oil',index[1]+((day-1)*24),varobject[index].value,marginal_cost))   
+                        # marginal_cost = 0
+                        mwh.append((index[0],'Oil',index[1]+((day-1)*24),varobject[index].value))   
                     elif index[0] in instance.Hydro:
-                        marginal_cost = 0
-                        mwh.append((index[0],'Hydro',index[1]+((day-1)*24),varobject[index].value,marginal_cost)) 
+                        # marginal_cost = 0
+                        mwh.append((index[0],'Hydro',index[1]+((day-1)*24),varobject[index].value)) 
                     elif index[0] in instance.Solar:
-                        marginal_cost = 0
-                        mwh.append((index[0],'Solar',index[1]+((day-1)*24),varobject[index].value,marginal_cost))
+                        # marginal_cost = 0
+                        mwh.append((index[0],'Solar',index[1]+((day-1)*24),varobject[index].value))
                     elif index[0] in instance.Wind:
-                        marginal_cost = 0
-                        mwh.append((index[0],'Wind',index[1]+((day-1)*24),varobject[index].value,marginal_cost))                                            
+                        # marginal_cost = 0
+                        mwh.append((index[0],'Wind',index[1]+((day-1)*24),varobject[index].value))                                            
         
         if a=='on':  
             for index in varobject:
@@ -246,7 +246,7 @@ for day in range(1,days+1):
     print(day)
         
 vlt_angle_pd=pd.DataFrame(vlt_angle,columns=('Node','Time','Value'))
-mwh_pd=pd.DataFrame(mwh,columns=('Generator','Type','Time','Value','$/MWh'))
+mwh_pd=pd.DataFrame(mwh,columns=('Generator','Type','Time','Value'))
 # on_pd=pd.DataFrame(on,columns=('Generator','Time','Value'))
 # switch_pd=pd.DataFrame(switch,columns=('Generator','Time','Value'))
 # srsv_pd=pd.DataFrame(srsv,columns=('Generator','Time','Value'))
