@@ -183,6 +183,36 @@ with open(''+str(data_name)+'.dat', 'w') as f:
 
     print('Gen sets')
 
+
+######=================================================########
+######               Unit outage sets                  ########
+######=================================================########
+    df_dict= np.load('df_dict2.npy',allow_pickle='TRUE').item()
+    
+    group_list=df_dict.keys()
+    
+    for g in group_list:
+        
+        set_text = 'set ' + g + ' :='
+        f.write(set_text)
+        
+        # pull relevant generators
+        
+        generators= df_dict[g]
+        unit_name = unit_name.replace(' ','_')
+        f.write('\n')
+    
+        generators= df_dict[g]
+        for n in generators:
+            unit_name = n
+            unit_name = unit_name.replace(' ','_')
+            f.write(unit_name + ' ')
+        f.write(';\n\n')
+    print('Outage sets')
+    
+    
+######=================================================########
+
 ######=================================================########
 ######               Segment A.5                       ########
 ######=================================================########
