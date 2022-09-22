@@ -19,7 +19,7 @@ Hydro_2021 = pd.read_csv('Hydropower_raw_data/hydro923plus_WEEKLY_2021.csv',head
 #Omitting 53rd weeks
 Hydro_2019_filter = Hydro_2019.loc[Hydro_2019['epiweek']!=53].copy()
 Hydro_2020_filter = Hydro_2020.loc[Hydro_2020['epiweek']!=53].copy()
-Hydro_2021_filter = Hydro_2021.loc[Hydro_2021['week']!=0].copy()
+Hydro_2021_filter = Hydro_2021.loc[Hydro_2021['epiweek']!=53].copy()
 
 #Organizing the data for every year
 years = [2019,2020,2021]
