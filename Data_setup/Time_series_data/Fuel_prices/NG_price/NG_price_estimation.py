@@ -6,6 +6,7 @@ Created on Wed Jul  7 11:12:22 2021
 """
 
 import pandas as pd
+import numpy as np
 
 # reading fuel region name data
 fuel_region_data = pd.read_excel('FuelRegion_ElectricRegionDefinitions.xlsx',sheet_name='GPI_Fuel_Region',\
@@ -109,6 +110,17 @@ for year in years:
         
     else:
         pass
+    
+    #Finding non positive values, and interpolating those
+    final_NG_prices[final_NG_prices <= 0] = np.nan
+    final_NG_prices.interpolate(method='linear',inplace=True)
+    
+    #Checking if there are any invalid values
+    if ((final_NG_prices<=0).sum().sum()) > 0 or (final_NG_prices.isna().sum().sum()) > 0:
+        print('{} data includes some missing or non-positive values.'.format(year))
+        
+    else:
+        print('{} data is free from errors.'.format(year))
     
     final_NG_prices.to_csv('Estimated_NG_prices/Average_NG_prices_BAs_{}.csv'.format(year))
 
