@@ -25,6 +25,8 @@ data_name = 'WECC_data'
 
 #read parameters for dispatchable resources
 df_gen = pd.read_csv('data_genparams.csv',header=0)
+thermal_generators_df = df_gen.loc[(df_gen['typ']=='coal') | (df_gen['typ']=='ngcc')].copy()
+thermal_generators_names = [*thermal_generators_df['name']]
 
 #read generation and transmission data
 df_bustounitmap = pd.read_csv('gen_mat.csv',header=0)
@@ -179,8 +181,7 @@ with open(''+str(data_name)+'.dat', 'w') as f:
             unit_name = unit_name.replace(' ','_')
             f.write(unit_name + ' ')
     f.write(';\n\n') 
-
-
+    
     print('Gen sets')
 
 
@@ -281,8 +282,27 @@ with open(''+str(data_name)+'.dat', 'w') as f:
             else:
                 f.write(str((df_gen.loc[i,c])) + '\t')               
         f.write('\n')
-    f.write(';\n\n')     
+    f.write(';\n\n')  
     
+    #Hourly generator capacity
+    f.write('param:' + '\t' + 'SimGenLimit:=' + '\n')
+    for z in thermal_generators_names:
+        thermal_gen_capacity = thermal_generators_df.loc[thermal_generators_df['name']==z]['maxcap'].values[0]
+        for h in range(0,8760):
+            f.write(z + '\t' + str(h+1) + '\t' + str(thermal_gen_capacity) + '\n')
+    f.write(';\n\n')
+    
+    #Hourly mustrun capacity
+    f.write('param:' + '\t' + 'SimMustrunLimit:=' + '\n')
+    for z in all_nodes:  
+        if z in h3:
+            for h in range(0,8760):
+                f.write(z + '\t' + str(h+1) + '\t' + str(df_must.loc[0,z]) + '\n')
+        else:
+            for h in range(0,8760):
+                f.write(z + '\t' + str(h+1) + '\t' + str(0) + '\n')
+    f.write(';\n\n')
+ 
     print('Gen params')
 
 ######=================================================########
@@ -369,16 +389,6 @@ with open(''+str(data_name)+'.dat', 'w') as f:
     
     print('hydro')
 
-####### Nodal must run
-     
-    f.write('param:' + '\t' + 'Must:=' + '\n')
-    for z in all_nodes:
-        if z in h3:
-            f.write(z + '\t' + str(df_must.loc[0,z]) + '\n')
-        else:
-            f.write(z + '\t' + str(0) + '\n')
-    f.write(';\n\n')
-    
     
 ##    # solar (hourly)
 ##    f.write('param:' + '\t' + 'SimSolar:=' + '\n')      

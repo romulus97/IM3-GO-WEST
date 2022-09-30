@@ -25,7 +25,8 @@ df_full = pd.read_csv('../Data_setup/10k_topology_files/nodes_to_BA_state.csv',h
 BA_to_BA_hurdle_data = pd.read_csv('../Data_setup/BA_to_BA_data/BA_to_BA_hurdle.csv',header=0)
 all_BA_BA_connections = list(BA_to_BA_hurdle_data['BA_to_BA'])
 
-Years = [2019,2020,2021]
+# Years = [2019,2020,2021]
+Years = [2019]
 
 # NODE_NUMBER = [75,100,125,150,175,200,225,250,275,300]
 NODE_NUMBER = [100]
@@ -34,7 +35,7 @@ NODE_NUMBER = [100]
 UC_TREATMENTS = ['_simple']
 
 # line_limit_MW_scaling = [25,50,75,100]
-line_limit_MW_scaling = [900]
+line_limit_MW_scaling = [2000]
 
 # BA_hurdle_scaling = list(range(0,1050,100))
 BA_hurdle_scaling = [0]
@@ -645,7 +646,6 @@ for YY in Years:
                     ramps = []
                     minups = []
                     mindns = []
-                    losscaps = []
                     
                     must_nodes = []
                     must_caps = []
@@ -695,7 +695,6 @@ for YY in Years:
                             minups.append(minup)
                             mindns.append(mindn)
                             heat_rates.append(hr_2)
-                            losscaps.append(maxcap)
                             
                         else:
                             
@@ -724,7 +723,6 @@ for YY in Years:
                             minups.append(0)
                             mindns.append(0) 
                             heat_rates.append(0)
-                            losscaps.append(maxcap)
                     
                     # solar
                     
@@ -746,7 +744,6 @@ for YY in Years:
                             minups.append(0)
                             mindns.append(0)   
                             heat_rates.append(0)
-                            losscaps.append(maxcap)
                     
                     # hydro
                     
@@ -768,14 +765,12 @@ for YY in Years:
                             minups.append(0)
                             mindns.append(0)   
                             heat_rates.append(0)
-                            losscaps.append(maxcap)
                     
                     df_genparams = pd.DataFrame()
                     df_genparams['name'] = names
                     df_genparams['typ'] = typs
                     df_genparams['node'] = nodes
                     df_genparams['maxcap'] = maxcaps
-                    df_genparams['losscap'] = maxcaps
                     df_genparams['heat_rate'] = heat_rates
                     df_genparams['mincap'] = mincaps
                     df_genparams['var_om'] = var_oms
@@ -794,8 +789,6 @@ for YY in Years:
                         df_must[n] = [must_caps[i]]
                     df_must.to_csv('Model_inputs/must_run.csv',index=None)
                     copy('Model_inputs/must_run.csv',path)
-                    
-                    
                     
                     ######
                     # create gen-to-bus matrix
