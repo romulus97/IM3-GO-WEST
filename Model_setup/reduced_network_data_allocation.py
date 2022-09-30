@@ -1087,7 +1087,7 @@ for YY in Years:
                         copy(milp,path)
                         copy(lp,path)
                         
-                    copy('Model_inputs/west_2019_lostcap.csv',path)
+                    copy('../Data_setup/Time_series_data/Generator_outages/west_{}_lostcap.csv'.format(YY),path)
                     #importing a function created in another script to generate a dictionary from the data_genparams file
                     from dict_creator import dict_funct
                     df_loss_dict=dict_funct(df_genparams)

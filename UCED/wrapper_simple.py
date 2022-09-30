@@ -16,6 +16,9 @@ import numpy as np
 from datetime import datetime
 import pyomo.environ as pyo
 from pyomo.environ import value
+import os
+
+my_cwd = os.getcwd()
 
 days = 365 # Max = 365
 
@@ -57,7 +60,7 @@ df_thermal = pd.read_csv('thermal_gens.csv',header=0)
 nucs = df_thermal[df_thermal['Fuel']=='NUC (Nuclear)']
 #df_loss_dict = pd.read_csv('df_dict.csv',header=None,index_col=0)
 df_loss_dict= np.load('df_dict2.npy',allow_pickle='TRUE').item()
-df_losses = pd.read_csv('west_2019_lostcap.csv',header=0,index_col=0)
+df_losses = pd.read_csv('west_{}_lostcap.csv'.format(my_cwd[-4:]),header=0,index_col=0)
 
 #max here can be (1,365)
 for day in range(1,days+1):
