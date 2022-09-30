@@ -24,20 +24,20 @@ data_name = 'WECC_data'
 ######=================================================########
 
 #read parameters for dispatchable resources
-df_gen = pd.read_csv('data_genparams.csv',header=0)
+df_gen = pd.read_csv('Inputs/data_genparams.csv',header=0)
 thermal_generators_df = df_gen.loc[(df_gen['typ']=='coal') | (df_gen['typ']=='ngcc')].copy()
 thermal_generators_names = [*thermal_generators_df['name']]
 
 #read generation and transmission data
-df_bustounitmap = pd.read_csv('gen_mat.csv',header=0)
-df_linetobusmap = pd.read_csv('line_to_bus.csv',header=0)
-df_line_params = pd.read_csv('line_params.csv',header=0)
+df_bustounitmap = pd.read_csv('Inputs/gen_mat.csv',header=0)
+df_linetobusmap = pd.read_csv('Inputs/line_to_bus.csv',header=0)
+df_line_params = pd.read_csv('Inputs/line_params.csv',header=0)
 lines = list(df_line_params['line'])
 
 ##daily ts of hydro at nodal-level
-df_hydro_MAX = pd.read_csv('Hydro_max.csv',header=0)
-df_hydro_MIN = pd.read_csv('Hydro_min.csv',header=0)
-df_hydro_TOTAL = pd.read_csv('Hydro_total.csv',header=0)
+df_hydro_MAX = pd.read_csv('Inputs/Hydro_max.csv',header=0)
+df_hydro_MIN = pd.read_csv('Inputs/Hydro_min.csv',header=0)
+df_hydro_TOTAL = pd.read_csv('Inputs/Hydro_total.csv',header=0)
 
 empty = []
 sites = list(df_hydro_MAX.columns)
@@ -53,7 +53,7 @@ df_hydro_TOTAL = df_hydro_TOTAL.drop(columns=empty)
 
 
 ##hourly ts of dispatchable solar-power at each plant
-df_solar = pd.read_csv('nodal_solar.csv',header=0)   
+df_solar = pd.read_csv('Inputs/nodal_solar.csv',header=0)   
 
 empty = []
 sites = list(df_solar.columns)
@@ -67,7 +67,7 @@ df_solar = df_solar.drop(columns=empty)
 
 ##
 ##hourly ts of dispatchable wind-power at each plant
-df_wind = pd.read_csv('nodal_wind.csv',header=0)
+df_wind = pd.read_csv('Inputs/nodal_wind.csv',header=0)
 
 empty = []
 sites = list(df_wind.columns)
@@ -80,22 +80,22 @@ for i in sites:
 df_wind = df_wind.drop(columns=empty)
 
 ##hourly ts of load at substation-level
-df_load = pd.read_csv('nodal_load.csv',header=0) 
+df_load = pd.read_csv('Inputs/nodal_load.csv',header=0) 
 
 # #hourly minimum reserve as a function of load (e.g., 15% of current load)
 # df_reserves = pd.DataFrame((df_load.iloc[:,:].sum(axis=1)*res_margin).values,columns=['Reserve'])
 
 ##must run at substation-level
-df_must = pd.read_csv('must_run.csv',header=0)
+df_must = pd.read_csv('Inputs/must_run.csv',header=0)
 h3 = df_must.columns
 
 ## Fuel prices at substation-level
-df_fuel = pd.read_csv('Fuel_prices.csv',header=0)
+df_fuel = pd.read_csv('Inputs/Fuel_prices.csv',header=0)
 
 #BA to BA transmission limit data
-BA_to_BA_hurdle_data = pd.read_csv('BA_to_BA_hurdle_scaled.csv',header=0)
+BA_to_BA_hurdle_data = pd.read_csv('Inputs/BA_to_BA_hurdle_scaled.csv',header=0)
 all_BA_BA_connections = list(BA_to_BA_hurdle_data['BA_to_BA'])
-BA_to_BA_transmission_matrix = pd.read_csv('BA_to_BA_transmission_matrix.csv',header=0)
+BA_to_BA_transmission_matrix = pd.read_csv('Inputs/BA_to_BA_transmission_matrix.csv',header=0)
 
 
 ######=================================================########
@@ -188,7 +188,7 @@ with open(''+str(data_name)+'.dat', 'w') as f:
 ######=================================================########
 ######               Unit outage sets                  ########
 ######=================================================########
-    df_dict= np.load('df_dict2.npy',allow_pickle='TRUE').item()
+    df_dict= np.load('Inputs/df_dict2.npy',allow_pickle='TRUE').item()
     
     group_list=df_dict.keys()
     

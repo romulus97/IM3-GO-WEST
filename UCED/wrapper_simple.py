@@ -53,14 +53,13 @@ slack = []
 vlt_angle=[]
 duals=[]
 
-df_generators = pd.read_csv('data_genparams.csv',header=0)
+df_generators = pd.read_csv('Inputs/data_genparams.csv',header=0)
 
 #Outage
-df_thermal = pd.read_csv('thermal_gens.csv',header=0)
+df_thermal = pd.read_csv('Inputs/thermal_gens.csv',header=0)
 nucs = df_thermal[df_thermal['Fuel']=='NUC (Nuclear)']
-#df_loss_dict = pd.read_csv('df_dict.csv',header=None,index_col=0)
-df_loss_dict= np.load('df_dict2.npy',allow_pickle='TRUE').item()
-df_losses = pd.read_csv('west_{}_lostcap.csv'.format(my_cwd[-4:]),header=0,index_col=0)
+df_loss_dict= np.load('Inputs/df_dict2.npy',allow_pickle='TRUE').item()
+df_losses = pd.read_csv('Inputs/west_{}_lostcap.csv'.format(my_cwd[-4:]),header=0,index_col=0)
 
 #max here can be (1,365)
 for day in range(1,days+1):
@@ -289,15 +288,15 @@ flow_pd = pd.DataFrame(flow,columns=('Line','Time','Value'))
 duals_pd = pd.DataFrame(duals,columns=['Bus','Time','Value'])
 
 #to save outputs
-mwh_pd.to_csv('mwh.csv', index=False)
-vlt_angle_pd.to_csv('vlt_angle.csv', index=False)
-# on_pd.to_csv('on.csv', index=False)
-# switch_pd.to_csv('switch.csv', index=False)
-# srsv_pd.to_csv('srsv.csv', index=False)
-# nrsv_pd.to_csv('nrsv.csv', index=False)
-slack_pd.to_csv('slack.csv', index=False)
-flow_pd.to_csv('flow.csv', index=False)
-duals_pd.to_csv('duals.csv', index=False)
+mwh_pd.to_csv('Outputs/mwh.csv', index=False)
+vlt_angle_pd.to_csv('Outputs/vlt_angle.csv', index=False)
+# on_pd.to_csv('Outputs/on.csv', index=False)
+# switch_pd.to_csv('Outputs/switch.csv', index=False)
+# srsv_pd.to_csv('Outputs/srsv.csv', index=False)
+# nrsv_pd.to_csv('Outputs/nrsv.csv', index=False)
+slack_pd.to_csv('Outputs/slack.csv', index=False)
+flow_pd.to_csv('Outputs/flow.csv', index=False)
+duals_pd.to_csv('Outputs/duals.csv', index=False)
 
 
 

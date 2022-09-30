@@ -58,6 +58,12 @@ for YY in Years:
                     path=str(Path.cwd().parent) + str(Path('/UCED/Simulation_folders/Exp' + str(NN) + UC + '_' + str(T_p) + '_' + str(BA_hurd) + '_' + str(YY)))
                     os.makedirs(path,exist_ok=True)
                     
+                    path_2=str(Path.cwd().parent) + str(Path('/UCED/Simulation_folders/Exp' + str(NN) + UC + '_' + str(T_p) + '_' + str(BA_hurd) + '_' + str(YY))) + str(Path('/Inputs'))
+                    os.makedirs(path_2,exist_ok=True)
+                    
+                    path_3=str(Path.cwd().parent) + str(Path('/UCED/Simulation_folders/Exp' + str(NN) + UC + '_' + str(T_p) + '_' + str(BA_hurd) + '_' + str(YY))) + str(Path('/Outputs'))
+                    os.makedirs(path_3,exist_ok=True)
+                    
                     T_p_new = T_p
                     BA_hurd_new = BA_hurd/100
                     
@@ -127,7 +133,7 @@ for YY in Years:
                     df_C.columns = buses
                     df_C.to_csv('Model_inputs/nodal_load.csv',index=None)   
                     
-                    copy('Model_inputs/nodal_load.csv',path)
+                    copy('Model_inputs/nodal_load.csv',path+str(Path('/Inputs')))
                     
                     #############
                     # GENERATORS  
@@ -286,7 +292,7 @@ for YY in Years:
                     df_C = pd.DataFrame(T)
                     df_C.columns = w_buses
                     df_C.to_csv('Model_inputs/nodal_wind.csv',index=None)   
-                    copy('Model_inputs/nodal_wind.csv',path)
+                    copy('Model_inputs/nodal_wind.csv',path+str(Path('/Inputs')))
                     
                     
                     ##################################
@@ -407,7 +413,7 @@ for YY in Years:
                     df_C = pd.DataFrame(T)
                     df_C.columns = s_buses
                     df_C.to_csv('Model_inputs/nodal_solar.csv',index=None)  
-                    copy('Model_inputs/nodal_solar.csv',path)
+                    copy('Model_inputs/nodal_solar.csv',path+str(Path('/Inputs')))
                     
                     
                     ##############################
@@ -550,7 +556,7 @@ for YY in Years:
                     df_thermal["Min_Cap"] = pd.to_numeric(df_thermal["Min_Cap"])
                     df_thermal["Heat_Rate"] = pd.to_numeric(df_thermal["Heat_Rate"])
                     df_thermal.to_csv('Model_inputs/thermal_gens.csv',index=None)
-                    copy('Model_inputs/thermal_gens.csv',path)
+                    copy('Model_inputs/thermal_gens.csv',path+str(Path('/Inputs')))
                         
                     
                     ##############################
@@ -623,9 +629,9 @@ for YY in Years:
                     H_max_df.to_csv('Model_inputs/Hydro_max.csv',index=None)
                     H_mu_df.to_csv('Model_inputs/Hydro_total.csv',index=None)
                     
-                    copy('Model_inputs/Hydro_min.csv',path)
-                    copy('Model_inputs/Hydro_max.csv',path)
-                    copy('Model_inputs/Hydro_total.csv',path)
+                    copy('Model_inputs/Hydro_min.csv',path+str(Path('/Inputs')))
+                    copy('Model_inputs/Hydro_max.csv',path+str(Path('/Inputs')))
+                    copy('Model_inputs/Hydro_total.csv',path+str(Path('/Inputs')))
                     
                         
                     
@@ -781,14 +787,14 @@ for YY in Years:
                     df_genparams['mindn'] = mindns
                     
                     df_genparams.to_csv('Model_inputs/data_genparams.csv',index=None)
-                    copy('Model_inputs/data_genparams.csv',path)
+                    copy('Model_inputs/data_genparams.csv',path+str(Path('/Inputs')))
                     
                     df_must = pd.DataFrame()
                     for i in range(0,len(must_nodes)):
                         n = must_nodes[i]
                         df_must[n] = [must_caps[i]]
                     df_must.to_csv('Model_inputs/must_run.csv',index=None)
-                    copy('Model_inputs/must_run.csv',path)
+                    copy('Model_inputs/must_run.csv',path+str(Path('/Inputs')))
                     
                     ######
                     # create gen-to-bus matrix
@@ -814,7 +820,7 @@ for YY in Years:
                         df_A.loc[g,node] = 1
                     
                     df_A.to_csv('Model_inputs/gen_mat.csv')
-                    copy('Model_inputs/gen_mat.csv',path)
+                    copy('Model_inputs/gen_mat.csv',path+str(Path('/Inputs')))
                     
                     #####################################
                     # TRANSMISSION
@@ -947,7 +953,7 @@ for YY in Years:
                     df_line_to_bus['line'] = lines
                     df_line_to_bus.set_index('line',inplace=True)
                     df_line_to_bus.to_csv('Model_inputs/line_to_bus.csv')
-                    copy('Model_inputs/line_to_bus.csv',path)
+                    copy('Model_inputs/line_to_bus.csv',path+str(Path('/Inputs')))
                     
                     
                     df_line_params = pd.DataFrame()
@@ -955,7 +961,7 @@ for YY in Years:
                     df_line_params['reactance'] = reactance
                     df_line_params['limit'] = limit 
                     df_line_params.to_csv('Model_inputs/line_params.csv',index=None)
-                    copy('Model_inputs/line_params.csv',path)
+                    copy('Model_inputs/line_params.csv',path+str(Path('/Inputs')))
                     
                     #Creating BA to BA transmission matrix for individual lines
                     exchange_columns = ['Exchange'] + lines
@@ -1002,10 +1008,10 @@ for YY in Years:
                     BA_to_BA_hurdle_data_new = BA_to_BA_hurdle_data.copy()
                     BA_to_BA_hurdle_data_new['Hurdle_$/MWh'] = BA_to_BA_hurdle_data_new['Hurdle_$/MWh']*(1+BA_hurd_new)
                     BA_to_BA_hurdle_data_new.to_csv('Model_inputs/BA_to_BA_hurdle_scaled.csv', index=False)
-                    copy('Model_inputs/BA_to_BA_hurdle_scaled.csv',path)
+                    copy('Model_inputs/BA_to_BA_hurdle_scaled.csv',path+str(Path('/Inputs')))
                     
                     BA_to_BA_exhange_matrix.to_csv('Model_inputs/BA_to_BA_transmission_matrix.csv', index=False)
-                    copy('Model_inputs/BA_to_BA_transmission_matrix.csv',path)
+                    copy('Model_inputs/BA_to_BA_transmission_matrix.csv',path+str(Path('/Inputs')))
                     
                     #####################################
                     # FUEL PRICES
@@ -1071,7 +1077,7 @@ for YY in Years:
                     Fuel_prices_all.columns = thermal_gens_names
                     
                     Fuel_prices_all.to_csv('Model_inputs/Fuel_prices.csv',index=None)
-                    copy('Model_inputs/Fuel_prices.csv',path)       
+                    copy('Model_inputs/Fuel_prices.csv',path+str(Path('/Inputs')))       
         
                     #copy other files
                     w = '../UCED/wrapper' + UC + '.py'
@@ -1087,13 +1093,13 @@ for YY in Years:
                         copy(milp,path)
                         copy(lp,path)
                         
-                    copy('../Data_setup/Time_series_data/Generator_outages/west_{}_lostcap.csv'.format(YY),path)
+                    copy('../Data_setup/Time_series_data/Generator_outages/west_{}_lostcap.csv'.format(YY),path+str(Path('/Inputs')))
                     #importing a function created in another script to generate a dictionary from the data_genparams file
                     from dict_creator import dict_funct
                     df_loss_dict=dict_funct(df_genparams)
                     #save the dictionary as a .npy file
                     np.save('Model_inputs/df_dict2.npy', df_loss_dict)
-                    copy('Model_inputs/df_dict2.npy',path)
+                    copy('Model_inputs/df_dict2.npy',path+str(Path('/Inputs')))
                     
                 
     
