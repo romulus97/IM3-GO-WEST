@@ -1098,8 +1098,8 @@ for YY in Years:
                     from dict_creator import dict_funct
                     df_loss_dict=dict_funct(df_genparams)
                     #save the dictionary as a .npy file
-                    np.save('Model_inputs/df_dict2.npy', df_loss_dict)
-                    copy('Model_inputs/df_dict2.npy',path+str(Path('/Inputs')))
+                    np.save('Model_inputs/gen_outage_cat.npy', df_loss_dict)
+                    copy('Model_inputs/gen_outage_cat.npy',path+str(Path('/Inputs')))
                     
                 
     

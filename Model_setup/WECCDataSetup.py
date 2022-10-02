@@ -188,7 +188,7 @@ with open(''+str(data_name)+'.dat', 'w') as f:
 ######=================================================########
 ######               Unit outage sets                  ########
 ######=================================================########
-    df_dict= np.load('Inputs/df_dict2.npy',allow_pickle='TRUE').item()
+    df_dict= np.load('Inputs/gen_outage_cat.npy',allow_pickle='TRUE').item()
     
     group_list=df_dict.keys()
     
