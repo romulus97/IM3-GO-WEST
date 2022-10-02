@@ -29,7 +29,7 @@ For reference, the files in the "Simulation_folders" and their purpose is explai
 | BA_to_BA_hurdle_scaled.csv | Scaled hurdle rates between BAs |
 | BA_to_BA_transmission_matrix.csv   | Binary file showing which lines are connected to which BAs |
 | data_genparams.csv | Names and parameters of generators |
-| df_dict2.npy | Generator capacity categories and names for outage modeling |
+| gen_outage_cat.npy | Generator capacity categories and names for outage modeling |
 | Fuel_prices.csv | Daily coal and natural gas prices identified for each generator |
 | gen_mat.csv | Binary file showing which generators are connected to which buses |
 | Hydro_max.csv | Maximum hourly hydropower availability at each node |
