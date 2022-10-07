@@ -23,6 +23,32 @@ model.Generators = model.Thermal | model.Hydro | model.Solar | model.Wind
 model.Dispatchable = model.Hydro | model.Oil 
 model.UC = model.Coal | model.Gas
 
+#Outage sets
+model.Gas_below_50 = Set()
+model.Gas_50_100 = Set()
+model.Gas_100_200 = Set()
+model.Gas_200_300 = Set()
+model.Gas_300_400 = Set()
+model.Gas_400_600 = Set()
+model.Gas_600_800 = Set()
+model.Gas_800_1000 = Set()
+model.Gas_ovr_1000 = Set()
+model.Gas_All_n_0_100 = Set()
+model.Gas_All_n_100_200 = Set()
+model.Gas_All_n_ovr_200 = Set()
+model.Coal_below_50 = Set()
+model.Coal_50_100 = Set()
+model.Coal_100_200 = Set()
+model.Coal_200_300 = Set()
+model.Coal_300_400 = Set()
+model.Coal_400_600 = Set()
+model.Coal_600_800 = Set()
+model.Coal_800_1000 = Set()
+model.Coal_ovr_1000 = Set()
+model.Coal_All_n_0_100 = Set()
+model.Coal_All_n_100_200 = Set()
+model.Coal_All_n_ovr_200 = Set()
+
 # transmission sets
 model.lines = Set() 
 model.buses = Set()
@@ -118,6 +144,9 @@ model.SimHydro_MIN = Param(model.Hydro, model.SH_periods, within=NonNegativeReal
 model.SimHydro_TOTAL = Param(model.Hydro, model.SH_periods, within=NonNegativeReals)
 model.SimSolar = Param(model.Solar, model.SH_periods, within=NonNegativeReals)
 model.SimWind = Param(model.Wind, model.SH_periods, within=NonNegativeReals)
+#Lost capacity due to outage
+model.SimGenLimit = Param(model.Thermal,model.SH_periods, within=NonNegativeReals)
+model.SimMustrunLimit = Param(model.buses,model.SH_periods, within=NonNegativeReals)
 
 #Variable resources over horizon
 model.HorizonHydro_MAX = Param(model.Hydro,within=NonNegativeReals,mutable=True)
@@ -125,9 +154,9 @@ model.HorizonHydro_MIN = Param(model.Hydro,within=NonNegativeReals,mutable=True)
 model.HorizonHydro_TOTAL = Param(model.Hydro,within=NonNegativeReals,mutable=True)
 model.HorizonSolar = Param(model.Solar,model.hh_periods,within=NonNegativeReals,mutable=True)
 model.HorizonWind = Param(model.Wind,model.hh_periods,within=NonNegativeReals,mutable=True)
-
-#Must run resources
-model.Must = Param(model.buses,within=NonNegativeReals)
+#Lost capacity due to outage
+model.HorizonGenLimit = Param(model.Thermal,model.hh_periods, within=NonNegativeReals,mutable=True)
+model.HorizonMustrunLimit = Param(model.buses,model.hh_periods, within=NonNegativeReals,mutable=True)
 
 #Fuel prices over simulation period
 model.SimFuelPrice = Param(model.Thermal,model.SD_periods, within=NonNegativeReals)
@@ -222,8 +251,8 @@ model.MinCap= Constraint(model.UC,model.hh_periods,rule=MinC)
 #####=========== Capacity Constraints ============##########
 # Constraints for Max & Min Capacity of dispatchable resources
 def MaxC(model,j,i):
-    return model.mwh[j,i]  <= model.maxcap[j] 
-model.MaxCap= Constraint(model.Dispatchable,model.hh_periods,rule=MaxC)
+    return model.mwh[j,i]  <= model.HorizonGenLimit[j,i]
+model.MaxCap= Constraint(model.Thermal,model.hh_periods,rule=MaxC)
 
 
 #Max production constraints on domestic hydropower 
@@ -262,7 +291,7 @@ def Nodal_Balance(model,z,i):
     power_flow = sum(model.Flow[l,i]*model.LinetoBusMap[l,z] for l in model.lines)   
     gen = sum(model.mwh[j,i]*model.BustoUnitMap[j,z] for j in model.Generators)    
     slack = model.S[z,i]
-    must_run = model.Must[z]
+    must_run = model.HorizonMustrunLimit[z,i]
     return gen + slack + must_run - power_flow == model.HorizonDemand[z,i] 
 model.Node_Constraint = Constraint(model.buses,model.hh_periods,rule=Nodal_Balance)
 

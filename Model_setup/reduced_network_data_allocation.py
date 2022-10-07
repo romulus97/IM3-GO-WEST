@@ -31,7 +31,7 @@ Years = [2019]
 # NODE_NUMBER = [75,100,125,150,175,200,225,250,275,300]
 NODE_NUMBER = [100]
 
-# UC_TREATMENTS = ['_simple','_coal']
+# UC_TREATMENTS = ['_simple','_coal','_coal_gas']
 UC_TREATMENTS = ['_simple']
 
 # line_limit_MW_scaling = [25,50,75,100]
