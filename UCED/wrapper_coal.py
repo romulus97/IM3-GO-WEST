@@ -373,15 +373,15 @@ flow_pd = pd.DataFrame(flow,columns=('Line','Time','Value'))
 duals_pd = pd.DataFrame(duals,columns=['Bus','Time','Value'])
 
 #to save outputs
-mwh_pd.to_csv('Outputs/mwh.csv', index=False)
-vlt_angle_pd.to_csv('Outputs/vlt_angle.csv', index=False)
-# on_pd.to_csv('Outputs/on.csv', index=False)
-# switch_pd.to_csv('Outputs/switch.csv', index=False)
-# srsv_pd.to_csv('Outputs/srsv.csv', index=False)
-# nrsv_pd.to_csv('Outputs/nrsv.csv', index=False)
-slack_pd.to_csv('Outputs/slack.csv', index=False)
-flow_pd.to_csv('Outputs/flow.csv', index=False)
-duals_pd.to_csv('Outputs/duals.csv', index=False)
+mwh_pd.to_parquet('Outputs/mwh.parquet', index=False)
+vlt_angle_pd.to_parquet('Outputs/vlt_angle.parquet', index=False)
+# on_pd.to_parquet('Outputs/on.parquet', index=False)
+# switch_pd.to_parquet('Outputs/switch.parquet', index=False)
+# srsv_pd.to_parquet('Outputs/srsv.parquet', index=False)
+# nrsv_pd.to_parquet('Outputs/nrsv.parquet', index=False)
+slack_pd.to_parquet('Outputs/slack.parquet', index=False)
+flow_pd.to_parquet('Outputs/flow.parquet', index=False)
+duals_pd.to_parquet('Outputs/duals.parquet', index=False)
 
 
 
