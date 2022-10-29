@@ -301,7 +301,7 @@ def Flow_line(model,l,i):
 model.FlowL_Constraint = Constraint(model.lines,model.hh_periods,rule=Flow_line)
 
 def Theta_bus(model,i):
-        return model.Theta['bus_10001',i] == 0
+        return model.Theta['bus_100011',i] == 0
 model.ThetaB_Constraint = Constraint(model.hh_periods,rule=Theta_bus)
 
 def FlowUP_line(model,l,i):
