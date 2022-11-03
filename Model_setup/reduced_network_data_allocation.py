@@ -40,6 +40,8 @@ line_limit_MW_scaling = [2000]
 # BA_hurdle_scaling = list(range(0,1050,100))
 BA_hurdle_scaling = [0]
 
+Hydro_year = 2015
+
 for YY in Years:
     
     df_load = pd.read_csv('../Data_setup/Time_series_data/BA_data/BA_organized_data/BA_load_{}.csv'.format(YY),header=0)
@@ -564,7 +566,7 @@ for YY in Years:
                     
                     #EIA plants
                     df_hydro = pd.read_csv('../Data_setup/Time_series_data/Hydro_generation/EIA_302_WECC_hydro_plants.csv',header=0)
-                    df_hydro_ts = pd.read_csv('../Data_setup/Time_series_data/Hydro_generation/Hydropower_organized_data/p_mean_max_min_MW_WECC_302plants_weekly_{}.csv'.format(YY),header=0)
+                    df_hydro_ts = pd.read_csv('../Data_setup/Time_series_data/Hydro_generation/Hydropower_organized_data/p_mean_max_min_MW_WECC_302plants_weekly_{}.csv'.format(Hydro_year),header=0)
                     new_hydro_nodes = []
                     
                     for i in range(0,len(df_hydro)):
