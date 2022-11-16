@@ -87,6 +87,11 @@ for day in range(1,days+1):
         for i in K:
             instance.HorizonWind[z,i] = instance.SimWind[z,(day-1)*24+i]
             
+    for z in instance.OffshoreWind:
+    #load OffshoreWind time series data
+        for i in K:
+            instance.HorizonOffshoreWind[z,i] = instance.SimOffshoreWind[z,(day-1)*24+i]
+            
     for z in instance.Thermal:
     #load fuel prices for thermal generators
         instance.FuelPrice[z] = instance.SimFuelPrice[z,day]
@@ -232,7 +237,16 @@ for day in range(1,days+1):
                         mwh.append((index[0],'Solar',index[1]+((day-1)*24),varobject[index].value))
                     elif index[0] in instance.Wind:
                         # marginal_cost = 0
-                        mwh.append((index[0],'Wind',index[1]+((day-1)*24),varobject[index].value))                                            
+                        mwh.append((index[0],'Wind',index[1]+((day-1)*24),varobject[index].value))  
+                    elif index[0] in instance.OffshoreWind:
+                        # marginal_cost = 0
+                        mwh.append((index[0],'OffshoreWind',index[1]+((day-1)*24),varobject[index].value)) 
+                    elif index[0] in instance.Biomass:
+                        # marginal_cost = gen_heatrate*fuel_price
+                        mwh.append((index[0],'Biomass',index[1]+((day-1)*24),varobject[index].value)) 
+                    elif index[0] in instance.Geothermal:
+                        # marginal_cost = gen_heatrate*fuel_price
+                        mwh.append((index[0],'Geothermal',index[1]+((day-1)*24),varobject[index].value))                                           
         
         if a=='on':  
             for index in varobject:
@@ -275,7 +289,7 @@ for day in range(1,days+1):
             
 
 
-    print(day)
+    print('Day {} is finished.'.format(day))
         
 vlt_angle_pd=pd.DataFrame(vlt_angle,columns=('Node','Time','Value'))
 mwh_pd=pd.DataFrame(mwh,columns=('Generator','Type','Time','Value'))

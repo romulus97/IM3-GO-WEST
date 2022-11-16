@@ -79,6 +79,21 @@ for i in sites:
 
 df_wind = df_wind.drop(columns=empty)
 
+
+##
+##hourly ts of dispatchable offshore wind-power at each plant
+df_offshorewind = pd.read_csv('Inputs/nodal_offshorewind.csv',header=0)
+
+empty = []
+sites = list(df_offshorewind.columns)
+for i in sites:
+    if sum(df_offshorewind[i]) > 0:
+        pass
+    else:
+        empty.append(i)
+
+df_offshorewind = df_offshorewind.drop(columns=empty)
+
 ##hourly ts of load at substation-level
 df_load = pd.read_csv('Inputs/nodal_load.csv',header=0) 
 
@@ -89,7 +104,7 @@ df_load = pd.read_csv('Inputs/nodal_load.csv',header=0)
 df_must = pd.read_csv('Inputs/must_run.csv',header=0)
 h3 = df_must.columns
 
-## Fuel prices at substation-level
+## Fuel prices at each generator
 df_fuel = pd.read_csv('Inputs/Fuel_prices.csv',header=0)
 
 #BA to BA transmission limit data
@@ -136,6 +151,26 @@ with open(''+str(data_name)+'.dat', 'w') as f:
             unit_name = unit_name.replace(' ','_')
             f.write(unit_name + ' ')
     f.write(';\n\n')  
+    
+    # Biomass
+    f.write('set Biomass :=\n')
+    # pull relevant generators
+    for gen in range(0,len(df_gen)):
+        if df_gen.loc[gen,'typ'] == 'biomass':
+            unit_name = df_gen.loc[gen,'name']
+            unit_name = unit_name.replace(' ','_')
+            f.write(unit_name + ' ')
+    f.write(';\n\n')  
+    
+    # Geothermal
+    f.write('set Geothermal :=\n')
+    # pull relevant generators
+    for gen in range(0,len(df_gen)):
+        if df_gen.loc[gen,'typ'] == 'geothermal':
+            unit_name = df_gen.loc[gen,'name']
+            unit_name = unit_name.replace(' ','_')
+            f.write(unit_name + ' ')
+    f.write(';\n\n')  
 
     # Gas_cc
     f.write('set Gas :=\n')
@@ -150,7 +185,6 @@ with open(''+str(data_name)+'.dat', 'w') as f:
             unit_name = unit_name.replace(' ','_')
             f.write(unit_name + ' ')        
     f.write(';\n\n')  
-
 
     # Hydro
     f.write('set Hydro :=\n')
@@ -181,6 +215,17 @@ with open(''+str(data_name)+'.dat', 'w') as f:
             unit_name = unit_name.replace(' ','_')
             f.write(unit_name + ' ')
     f.write(';\n\n') 
+    
+    # Offshore Wind
+    f.write('set OffshoreWind :=\n')
+    # pull relevant generators
+    for gen in range(0,len(df_gen)):
+        if df_gen.loc[gen,'typ'] == 'offshorewind':
+            unit_name = df_gen.loc[gen,'name']
+            unit_name = unit_name.replace(' ','_')
+            f.write(unit_name + ' ')
+    f.write(';\n\n') 
+    
     
     print('Gen sets')
 
@@ -359,6 +404,15 @@ with open(''+str(data_name)+'.dat', 'w') as f:
     f.write(';\n\n')
     
     print('wind')
+    
+    f.write('param:' + '\t' + 'SimOffshoreWind:=' + '\n')
+    ow_gens = df_offshorewind.columns
+    for z in ow_gens:
+        for h in range(0,len(df_offshorewind)):
+            f.write(z + '_OFFSHOREWIND' + '\t' + str(h+1) + '\t' + str(df_offshorewind.loc[h,z]) + '\n')
+    f.write(';\n\n')
+    
+    print('offshorewind')
     
     # hydro (daily)
     f.write('param:' + '\t' + 'SimHydro_MAX:=' + '\n')
