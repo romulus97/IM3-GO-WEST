@@ -61,7 +61,7 @@ df_generators = pd.read_csv('Inputs/data_genparams.csv',header=0)
 df_thermal = pd.read_csv('Inputs/thermal_gens.csv',header=0)
 nucs = df_thermal[df_thermal['Fuel']=='NUC (Nuclear)']
 df_loss_dict= np.load('Inputs/gen_outage_cat.npy',allow_pickle='TRUE').item()
-df_losses = pd.read_csv('Inputs/west_{}_lostcap.csv'.format(my_cwd[-4:]),header=0,index_col=0)
+df_losses = pd.read_csv('Inputs/west_2020_lostcap.csv',header=0,index_col=0)
 
 #max here can be (1,365)
 for day in range(1,days+1):

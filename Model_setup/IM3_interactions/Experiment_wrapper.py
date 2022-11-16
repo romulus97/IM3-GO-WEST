@@ -19,7 +19,7 @@ from TELL_extractor import TELL_extract
 ################### USER INPUTS ###################
 
 #Defining case name and details
-Years = [2019] #This does not affect the IM3 experiment year, it's just a notation to select the correct folder created by reduced network data allocation script
+Years = [2020] #This does not affect the IM3 experiment year, it's just a notation to select the correct folder created by reduced network data allocation script
 NODE_NUMBER = [100]
 
 # UC_TREATMENTS = ['_simple','_coal','_coal_gas']
@@ -29,11 +29,12 @@ line_limit_MW_scaling = [2000]
 BA_hurdle_scaling = [0]
 
 # Climate_scenarios = ['rcp85cooler_ssp3', 'rcp85cooler_ssp5', 'rcp85hotter_ssp3','rcp85hotter_ssp5', 'rcp45cooler_ssp3', 'rcp45cooler_ssp5','rcp45hotter_ssp3', 'rcp45hotter_ssp5']
-Climate_scenarios = ['rcp85cooler_ssp3']
+Climate_scenarios = ['rcp45cooler_ssp3']
 
 Hydro_year = 2015
+
 CERF_year = 2015 #IM3 experiment year
-TELL_year = CERF_year + 5
+TELL_year = 2020
 GCAM_year = CERF_year
 
 ###################################################
@@ -72,7 +73,7 @@ for YY in Years:
                         copy('../../UCED/Simulation_folders/Exp{}/Inputs/BA_to_BA_transmission_matrix.csv'.format(case_name),path_2)
                         copy('../../UCED/Simulation_folders/Exp{}/Inputs/line_params.csv'.format(case_name),path_2)
                         copy('../../UCED/Simulation_folders/Exp{}/Inputs/line_to_bus.csv'.format(case_name),path_2)
-                        copy('../../UCED/Simulation_folders/Exp{}/Inputs/west_2019_lostcap.csv'.format(case_name),path_2) #This needs to be changed
+                        copy('../../UCED/Simulation_folders/Exp{}/Inputs/west_2020_lostcap.csv'.format(case_name),path_2) #This needs to be changed
     
                         #Calling CERF extractor
                         CERF_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,CERF_year,CS)

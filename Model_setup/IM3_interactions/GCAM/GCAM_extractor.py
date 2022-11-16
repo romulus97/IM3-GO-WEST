@@ -32,10 +32,10 @@ def GCAM_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,GCAM_year,CS):
     
     #Filtering for fuel cost and and climate scenario
     GCAM_initial_filter = GCAM_outputs_df.loc[(GCAM_outputs_df['scenario']==CS) & (GCAM_outputs_df['param']=='elec_fuel_price_2015USDperMBTU')].copy()
-    GCAM_year_filter = GCAM_initial_filter.loc[GCAM_initial_filter['vintage']=='Vint_{}'.format(GCAM_year)].copy()
+    GCAM_year_filter = GCAM_initial_filter.loc[(GCAM_initial_filter['vintage']=='Vint_{}'.format(GCAM_year)) & (GCAM_initial_filter['x']==GCAM_year)].copy()
     
     #Filtering for thermal generators to find fuel costs
-    thermal_gen_list = ['coal', 'oil', 'ngcc', 'biomass']
+    thermal_gen_list = ['coal', 'oil', 'ngcc', 'biomass','geothermal']
     datagenparams_filter = datagenparams_df.loc[datagenparams_df['typ'].isin(thermal_gen_list)].copy()
     datagenparams_filter.reset_index(drop=True,inplace=True)
     
@@ -57,7 +57,7 @@ def GCAM_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,GCAM_year,CS):
         
         CERF_gen_name = datagenparams_filter.loc[i,'name']
         CERF_gen_type = datagenparams_filter.loc[i,'typ']
-        CERF_gen_state = CERF_generators.loc[CERF_generators['plant_id']==CERF_gen_name]['region_name'].values[0]
+        CERF_gen_state = CERF_generators.loc[CERF_generators['plant_id']==CERF_gen_name[3:]]['region_name'].values[0]
         GCAM_gen_state = states_dict[CERF_gen_state]
         
         GCAM_state_filter = GCAM_year_filter.loc[GCAM_year_filter['subRegion']==GCAM_gen_state].copy()
@@ -70,16 +70,16 @@ def GCAM_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,GCAM_year,CS):
             GCAM_fuel_price = GCAM_state_filter.loc[GCAM_state_filter['class1']=='wholesale gas']['value'].values[0]
         elif CERF_gen_type == 'biomass':
             GCAM_fuel_price = GCAM_state_filter.loc[GCAM_state_filter['class1']=='regional biomass']['value'].values[0]
+        elif CERF_gen_type == 'geothermal':
+            GCAM_fuel_price = 0.001 #Fuel price of geothermal assumed to be negligible
         else:
             pass
         
-        fuel_prices_df.loc[:,CERF_gen_name] = GCAM_fuel_price.repeat(365)
+        fuel_prices_df.loc[:,CERF_gen_name] = [GCAM_fuel_price]*365
         
     #Exporting fuel prices
     fuel_prices_df.to_csv('../Altered_simulation_folders/Exp{}{}_{}_{}_{}_{}/Inputs/Fuel_prices.csv'.format(NN,UC,T_p,BA_hurd,GCAM_year,CS),index=None)
         
-    #Fuel price for geothermal?
-    
     return None
     
     

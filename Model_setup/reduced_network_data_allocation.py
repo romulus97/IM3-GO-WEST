@@ -26,7 +26,7 @@ BA_to_BA_hurdle_data = pd.read_csv('../Data_setup/BA_to_BA_data/BA_to_BA_hurdle.
 all_BA_BA_connections = list(BA_to_BA_hurdle_data['BA_to_BA'])
 
 # Years = [2019,2020,2021]
-Years = [2019]
+Years = [2020]
 
 # NODE_NUMBER = [75,100,125,150,175,200,225,250,275,300]
 NODE_NUMBER = [100]

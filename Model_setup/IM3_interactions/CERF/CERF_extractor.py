@@ -96,77 +96,77 @@ def CERF_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,CERF_year,CS):
         for j in range(0,len(CERF_generators_WEST)):
             
             CERF_gen_type = CERF_generators_WEST.loc[j,'tech_name']
-            CERF_gen_cap = CERF_generators_WEST.loc[j,'unit_size_mw']
+            CERF_gen_cap = round(CERF_generators_WEST.loc[j,'unit_size_mw'],2)
             CERF_gen_name = CERF_generators_WEST.loc[j,'plant_id']
             CERF_gen_bus = CERF_generators_WEST.loc[j,'lmp_zone']
             
             if CERF_gen_type in Biomass_CERF_types:
-                gen_name.append(CERF_gen_name)
+                gen_name.append('ID_{}'.format(CERF_gen_name))
                 gen_node.append('bus_{}'.format(CERF_gen_bus))
                 gen_maxcap.append(CERF_gen_cap)
                 gen_typ.append('biomass')
                 gen_heatrate.append(generic_params.loc['Heat rate (MMBtu/MWh)','Biomass'])
-                gen_mincap.append(generic_params.loc['Minimum capacity (%)','Biomass']*CERF_gen_cap)
+                gen_mincap.append(round(generic_params.loc['Minimum capacity (%)','Biomass']*CERF_gen_cap/100,2))
                 gen_var_om.append(generic_params.loc['Variable operation and maintenance costs ($/MWh)','Biomass'])
-                gen_no_load.append(generic_params.loc['No load cost ($)','Biomass'])
-                gen_st_cost.append(generic_params.loc['Start-up cost ($)','Biomass'])
-                gen_ramp.append(generic_params.loc['Hourly ramp rate (%)','Biomass']*CERF_gen_cap)
+                gen_no_load.append(round(generic_params.loc['No load cost (Capacity Multiplier)','Biomass']*CERF_gen_cap,0))
+                gen_st_cost.append(round(generic_params.loc['Start-up cost (Capacity Multiplier)','Biomass']*CERF_gen_cap,0))
+                gen_ramp.append(round(generic_params.loc['Hourly ramp rate (%)','Biomass']*CERF_gen_cap/100,2))
                 gen_minup.append(generic_params.loc['Minimum up time (hours)','Biomass'])
                 gen_mindown.append(generic_params.loc['Minimum down time (hours)','Biomass'])
                 
             elif CERF_gen_type in Coal_CERF_types:
-                gen_name.append(CERF_gen_name)
+                gen_name.append('ID_{}'.format(CERF_gen_name))
                 gen_node.append('bus_{}'.format(CERF_gen_bus))
                 gen_maxcap.append(CERF_gen_cap)
                 gen_typ.append('coal')
                 gen_heatrate.append(generic_params.loc['Heat rate (MMBtu/MWh)','Coal'])
-                gen_mincap.append(generic_params.loc['Minimum capacity (%)','Coal']*CERF_gen_cap)
+                gen_mincap.append(round(generic_params.loc['Minimum capacity (%)','Coal']*CERF_gen_cap/100,2))
                 gen_var_om.append(generic_params.loc['Variable operation and maintenance costs ($/MWh)','Coal'])
-                gen_no_load.append(generic_params.loc['No load cost ($)','Coal'])
-                gen_st_cost.append(generic_params.loc['Start-up cost ($)','Coal'])
-                gen_ramp.append(generic_params.loc['Hourly ramp rate (%)','Coal']*CERF_gen_cap)
+                gen_no_load.append(round(generic_params.loc['No load cost (Capacity Multiplier)','Coal']*CERF_gen_cap,0))
+                gen_st_cost.append(round(generic_params.loc['Start-up cost (Capacity Multiplier)','Coal']*CERF_gen_cap,0))
+                gen_ramp.append(round(generic_params.loc['Hourly ramp rate (%)','Coal']*CERF_gen_cap/100,2))
                 gen_minup.append(generic_params.loc['Minimum up time (hours)','Coal'])
                 gen_mindown.append(generic_params.loc['Minimum down time (hours)','Coal'])
                 
             elif CERF_gen_type in NG_CERF_types:
-                gen_name.append(CERF_gen_name)
+                gen_name.append('ID_{}'.format(CERF_gen_name))
                 gen_node.append('bus_{}'.format(CERF_gen_bus))
                 gen_maxcap.append(CERF_gen_cap)
                 gen_typ.append('ngcc')
                 gen_heatrate.append(generic_params.loc['Heat rate (MMBtu/MWh)','Natural Gas'])
-                gen_mincap.append(generic_params.loc['Minimum capacity (%)','Natural Gas']*CERF_gen_cap)
+                gen_mincap.append(round(generic_params.loc['Minimum capacity (%)','Natural Gas']*CERF_gen_cap/100,2))
                 gen_var_om.append(generic_params.loc['Variable operation and maintenance costs ($/MWh)','Natural Gas'])
-                gen_no_load.append(generic_params.loc['No load cost ($)','Natural Gas'])
-                gen_st_cost.append(generic_params.loc['Start-up cost ($)','Natural Gas'])
-                gen_ramp.append(generic_params.loc['Hourly ramp rate (%)','Natural Gas']*CERF_gen_cap)
+                gen_no_load.append(round(generic_params.loc['No load cost (Capacity Multiplier)','Natural Gas']*CERF_gen_cap,0))
+                gen_st_cost.append(round(generic_params.loc['Start-up cost (Capacity Multiplier)','Natural Gas']*CERF_gen_cap,0))
+                gen_ramp.append(round(generic_params.loc['Hourly ramp rate (%)','Natural Gas']*CERF_gen_cap/100,2))
                 gen_minup.append(generic_params.loc['Minimum up time (hours)','Natural Gas'])
                 gen_mindown.append(generic_params.loc['Minimum down time (hours)','Natural Gas'])
                 
             elif CERF_gen_type in Geothermal_CERF_types:
-                gen_name.append(CERF_gen_name)
+                gen_name.append('ID_{}'.format(CERF_gen_name))
                 gen_node.append('bus_{}'.format(CERF_gen_bus))
                 gen_maxcap.append(CERF_gen_cap)
                 gen_typ.append('geothermal')
                 gen_heatrate.append(generic_params.loc['Heat rate (MMBtu/MWh)','Geothermal'])
-                gen_mincap.append(generic_params.loc['Minimum capacity (%)','Geothermal']*CERF_gen_cap)
+                gen_mincap.append(round(generic_params.loc['Minimum capacity (%)','Geothermal']*CERF_gen_cap/100,2))
                 gen_var_om.append(generic_params.loc['Variable operation and maintenance costs ($/MWh)','Geothermal'])
-                gen_no_load.append(generic_params.loc['No load cost ($)','Geothermal'])
-                gen_st_cost.append(generic_params.loc['Start-up cost ($)','Geothermal'])
-                gen_ramp.append(generic_params.loc['Hourly ramp rate (%)','Geothermal']*CERF_gen_cap)
+                gen_no_load.append(round(generic_params.loc['No load cost (Capacity Multiplier)','Geothermal']*CERF_gen_cap,0))
+                gen_st_cost.append(round(generic_params.loc['Start-up cost (Capacity Multiplier)','Geothermal']*CERF_gen_cap,0))
+                gen_ramp.append(round(generic_params.loc['Hourly ramp rate (%)','Geothermal']*CERF_gen_cap/100,2))
                 gen_minup.append(generic_params.loc['Minimum up time (hours)','Geothermal'])
                 gen_mindown.append(generic_params.loc['Minimum down time (hours)','Geothermal'])
                 
             elif CERF_gen_type in Oil_CERF_types:
-                gen_name.append(CERF_gen_name)
+                gen_name.append('ID_{}'.format(CERF_gen_name))
                 gen_node.append('bus_{}'.format(CERF_gen_bus))
                 gen_maxcap.append(CERF_gen_cap)
                 gen_typ.append('oil')
                 gen_heatrate.append(generic_params.loc['Heat rate (MMBtu/MWh)','Oil'])
-                gen_mincap.append(generic_params.loc['Minimum capacity (%)','Oil']*CERF_gen_cap)
+                gen_mincap.append(round(generic_params.loc['Minimum capacity (%)','Oil']*CERF_gen_cap/100,2))
                 gen_var_om.append(generic_params.loc['Variable operation and maintenance costs ($/MWh)','Oil'])
-                gen_no_load.append(generic_params.loc['No load cost ($)','Oil'])
-                gen_st_cost.append(generic_params.loc['Start-up cost ($)','Oil'])
-                gen_ramp.append(generic_params.loc['Hourly ramp rate (%)','Oil']*CERF_gen_cap)
+                gen_no_load.append(round(generic_params.loc['No load cost (Capacity Multiplier)','Oil']*CERF_gen_cap,0))
+                gen_st_cost.append(round(generic_params.loc['Start-up cost (Capacity Multiplier)','Oil']*CERF_gen_cap,0))
+                gen_ramp.append(round(generic_params.loc['Hourly ramp rate (%)','Oil']*CERF_gen_cap/100,2))
                 gen_minup.append(generic_params.loc['Minimum up time (hours)','Oil'])
                 gen_mindown.append(generic_params.loc['Minimum down time (hours)','Oil'])
             
@@ -467,7 +467,7 @@ def CERF_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,CERF_year,CS):
         
         for j in range(0,len(nuclear_gens_filter)):
             
-            thermal_name.append(nuclear_gens_filter.loc[j,'plant_id'])
+            thermal_name.append('ID_{}'.format(nuclear_gens_filter.loc[j,'plant_id']))
             thermal_bus.append(nuclear_gens_filter.loc[j,'lmp_zone'])
             thermal_fuel.append('NUC (Nuclear)')
             thermal_maxcap.append(nuclear_gens_filter.loc[j,'unit_size_mw'])
