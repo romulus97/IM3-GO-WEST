@@ -442,14 +442,10 @@ def CERF_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,CERF_year,CS):
             mean_hydro_timeseries = df_hydro_ts.loc[df_hydro_ts['EIA_ID']==p]['mean'].repeat(7).reset_index(drop=True)
             mean_hydro_timeseries = mean_hydro_timeseries*24
             
-            try:
-                hydro_timeseries_df_max.loc[0:363,sp_hydro_plant_node] = max_hydro_timeseries + hydro_timeseries_df_max.loc[0:363,sp_hydro_plant_node]
-                hydro_timeseries_df_min.loc[0:363,sp_hydro_plant_node] = min_hydro_timeseries + hydro_timeseries_df_min.loc[0:363,sp_hydro_plant_node]
-                hydro_timeseries_df_mean.loc[0:363,sp_hydro_plant_node] = mean_hydro_timeseries + hydro_timeseries_df_mean.loc[0:363,sp_hydro_plant_node]
+            hydro_timeseries_df_max.loc[0:363,sp_hydro_plant_node] = max_hydro_timeseries + hydro_timeseries_df_max.loc[0:363,sp_hydro_plant_node]
+            hydro_timeseries_df_min.loc[0:363,sp_hydro_plant_node] = min_hydro_timeseries + hydro_timeseries_df_min.loc[0:363,sp_hydro_plant_node]
+            hydro_timeseries_df_mean.loc[0:363,sp_hydro_plant_node] = mean_hydro_timeseries + hydro_timeseries_df_mean.loc[0:363,sp_hydro_plant_node]
                 
-            except KeyError:
-                pass
-
         else:
             pass
         
@@ -479,26 +475,31 @@ def CERF_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,CERF_year,CS):
             pass
         
         else:
-            #Adding relevant parameters to generators dataset
-            total_nodal_hydro_cap = sp_hydro_nodal['unit_size_mw'].sum()
-            nodal_hydro_name = 'bus_{}_HYDRO'.format(q)
-            gen_name.append(nodal_hydro_name)
-            gen_node.append('bus_{}'.format(q))
-            gen_maxcap.append(total_nodal_hydro_cap)
-            gen_typ.append('hydro')
-            gen_heatrate.append(0)
-            gen_mincap.append(0)
             
-            if CERF_hydro_VOM<0:
-                gen_var_om.append(1)
+            if hydro_timeseries_df_max.loc[:,'bus_{}'.format(q)].sum()<=0:
+                pass
+            
             else:
-                gen_var_om.append(CERF_hydro_VOM)
-            
-            gen_no_load.append(1)
-            gen_st_cost.append(1)
-            gen_ramp.append(total_nodal_hydro_cap)
-            gen_minup.append(0)
-            gen_mindown.append(0)
+                #Adding relevant parameters to generators dataset
+                total_nodal_hydro_cap = hydro_timeseries_df_max.loc[0,'bus_{}'.format(q)]
+                nodal_hydro_name = 'bus_{}_HYDRO'.format(q)
+                gen_name.append(nodal_hydro_name)
+                gen_node.append('bus_{}'.format(q))
+                gen_maxcap.append(total_nodal_hydro_cap)
+                gen_typ.append('hydro')
+                gen_heatrate.append(0)
+                gen_mincap.append(0)
+                
+                if CERF_hydro_VOM<0:
+                    gen_var_om.append(1)
+                else:
+                    gen_var_om.append(CERF_hydro_VOM)
+                
+                gen_no_load.append(1)
+                gen_st_cost.append(1)
+                gen_ramp.append(total_nodal_hydro_cap)
+                gen_minup.append(0)
+                gen_mindown.append(0)
     
     #Creating datagenparams file and exporting
     generators_df = pd.DataFrame(list(zip(gen_name,gen_typ,gen_node,gen_maxcap,gen_heatrate,gen_mincap,\
