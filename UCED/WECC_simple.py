@@ -24,6 +24,7 @@ model.OffshoreWind = Set()
 model.Thermal = model.Coal | model.Oil | model.Gas | model.Biomass | model.Geothermal 
 model.Generators = model.Thermal | model.Hydro | model.Solar | model.Wind | model.OffshoreWind
 model.Dispatchable = model.Hydro | model.Oil | model.Gas | model.Coal | model.Biomass | model.Geothermal 
+model.Outage = model.Coal | model.Gas
 
 #outage sets
 model.Gas_below_50 = Set()
@@ -148,7 +149,7 @@ model.SimSolar = Param(model.Solar, model.SH_periods, within=NonNegativeReals)
 model.SimWind = Param(model.Wind, model.SH_periods, within=NonNegativeReals)
 model.SimOffshoreWind = Param(model.OffshoreWind, model.SH_periods, within=NonNegativeReals)
 #Lost capacity due to outage
-model.SimGenLimit = Param(model.Thermal,model.SH_periods, within=NonNegativeReals)
+model.SimGenLimit = Param(model.Outage,model.SH_periods, within=NonNegativeReals)
 model.SimMustrunLimit = Param(model.buses,model.SH_periods, within=NonNegativeReals)
 
 #Variable resources over horizon
@@ -159,7 +160,7 @@ model.HorizonSolar = Param(model.Solar,model.hh_periods,within=NonNegativeReals,
 model.HorizonWind = Param(model.Wind,model.hh_periods,within=NonNegativeReals,mutable=True)
 model.HorizonOffshoreWind = Param(model.OffshoreWind,model.hh_periods,within=NonNegativeReals,mutable=True)
 #Lost capacity due to outage
-model.HorizonGenLimit = Param(model.Thermal,model.hh_periods, within=NonNegativeReals,mutable=True)
+model.HorizonGenLimit = Param(model.Outage,model.hh_periods, within=NonNegativeReals,mutable=True)
 model.HorizonMustrunLimit = Param(model.buses,model.hh_periods, within=NonNegativeReals,mutable=True)
 
 #Fuel prices over simulation period
@@ -235,9 +236,16 @@ model.RampCon2 = Constraint(model.Thermal,model.ramp_periods,rule=Ramp2)
 
 #####=========== Capacity Constraints ============##########
 # Constraints for Max & Min Capacity of dispatchable resources
+
+#Max capacity constraint for outage set generators (coal, NG)
 def MaxC(model,j,i):
     return model.mwh[j,i]  <= model.HorizonGenLimit[j,i] 
-model.MaxCap= Constraint(model.Thermal,model.hh_periods,rule=MaxC)
+model.MaxCap= Constraint(model.Outage,model.hh_periods,rule=MaxC)
+
+#Max capacity constraint for other dispatchable generators
+def MaxC2(model,j,i):
+    return model.mwh[j,i]  <= model.maxcap[j]
+model.MaxCap2= Constraint(model.Dispatchable,model.hh_periods,rule=MaxC2)
 
 
 #Max production constraints on domestic hydropower 

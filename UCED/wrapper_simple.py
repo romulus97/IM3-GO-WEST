@@ -98,7 +98,7 @@ for day in range(1,days+1):
     
     #Organizing outage data
     #load gen and mustrun capacity time series data
-    for z in instance.Thermal:
+    for z in instance.Outage:
         for i in K:
             instance.HorizonGenLimit[z,i] = instance.SimGenLimit[z,(day-1)*24+i]
     
@@ -311,7 +311,5 @@ vlt_angle_pd.to_parquet('Outputs/vlt_angle.parquet', index=False)
 slack_pd.to_parquet('Outputs/slack.parquet', index=False)
 flow_pd.to_parquet('Outputs/flow.parquet', index=False)
 duals_pd.to_parquet('Outputs/duals.parquet', index=False)
-
-
 
 
