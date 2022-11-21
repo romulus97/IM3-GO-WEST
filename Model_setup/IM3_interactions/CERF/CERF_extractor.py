@@ -64,7 +64,11 @@ def CERF_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,CERF_year,CS):
     generic_params = pd.read_excel('Reference_files/Generator_parameters.xlsx',header=0,index_col=0)
     
     #Reading solar and wind generator profiles
-    solar_wind_profiles = pd.read_csv('CERF_outputs/generation_profiles_2015.zip',header=0)
+    if CERF_year==2015:
+        solar_wind_profiles = pd.read_csv('CERF_outputs/generation_profiles_2015.zip',header=0)
+    else:
+        solar_wind_profiles = pd.read_csv('CERF_outputs/{}_generation_profile_{}.zip'.format(CS,CERF_year),header=0)
+        
     
     #Defining all node numbers
     bus_information_df = pd.read_excel('../../Selected_nodes/Results_Excluded_Nodes_{}.xlsx'.format(NN),sheet_name='Bus',header=0)
