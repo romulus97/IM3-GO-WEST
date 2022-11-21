@@ -29,7 +29,7 @@ line_limit_MW_scaling = [2000]
 BA_hurdle_scaling = [0]
 
 # Climate_scenarios = ['rcp85cooler_ssp3', 'rcp85cooler_ssp5', 'rcp85hotter_ssp3','rcp85hotter_ssp5', 'rcp45cooler_ssp3', 'rcp45cooler_ssp5','rcp45hotter_ssp3', 'rcp45hotter_ssp5']
-Climate_scenarios = ['rcp45cooler_ssp3']
+Climate_scenarios = ['rcp85hotter_ssp5']
 
 Hydro_year = 2015
 

@@ -28,7 +28,7 @@ def GCAM_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,GCAM_year,CS):
     if GCAM_year == 2015:
         CERF_generators = pd.read_csv('../CERF/CERF_outputs/power_plant_initialization_{}.csv'.format(GCAM_year),header=0)
     else:
-        CERF_generators = pd.read_csv('../CERF/CERF_outputs/operational_power_plants_ssp2_{}.csv'.format(GCAM_year),header=0)
+        CERF_generators = pd.read_csv('../CERF/CERF_outputs/cerf_for_go_{}_{}.csv'.format(CS,GCAM_year),header=0)
     
     #Filtering for fuel cost and and climate scenario
     GCAM_initial_filter = GCAM_outputs_df.loc[(GCAM_outputs_df['scenario']==CS) & (GCAM_outputs_df['param']=='elec_fuel_price_2015USDperMBTU')].copy()
