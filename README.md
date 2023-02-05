@@ -35,7 +35,7 @@ For reference, the files in the "Simulation_folders" and their purpose is explai
 | Hydro_max.csv | Maximum hourly hydropower availability at each node |
 | Hydro_min.csv | Minimum hourly hydropower availability at each node |
 | Hydro_total.csv | Daily total hydropower availability at each node |
-| line_params.csv | Scaled hurdle rates between BAs |
+| line_params.csv | Thermal limits and reactances for each transmission line |
 | line_to_bus.csv | Binary file showing which lines are connected to which buses |
 | must_run.csv | Available nodal must-run generation (from nuclear generators) |
 | nodal_load.csv | Hourly electricity demand at each node |
