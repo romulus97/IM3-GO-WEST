@@ -35,7 +35,7 @@ Hydro_year = 2015
 
 CERF_year = 2015 #IM3 experiment year
 TELL_year = 2020
-GCAM_year = CERF_year
+GCAM_year = 2020
 
 ###################################################
 
