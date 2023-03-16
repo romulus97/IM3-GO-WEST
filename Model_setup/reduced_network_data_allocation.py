@@ -25,20 +25,22 @@ df_full = pd.read_csv('../Data_setup/10k_topology_files/nodes_to_BA_state.csv',h
 BA_to_BA_hurdle_data = pd.read_csv('../Data_setup/BA_to_BA_data/BA_to_BA_hurdle.csv',header=0)
 all_BA_BA_connections = list(BA_to_BA_hurdle_data['BA_to_BA'])
 
+###User defined variables###
 # Years = [2019,2020,2021]
-Years = [2019]
+Years = [2019] #Years to be simulated
 
 # NODE_NUMBER = [75,100,125,150,175,200,225,250,275,300]
-NODE_NUMBER = [100]
+NODE_NUMBER = [100] #Number of nodes to be simulated (can be more than one to create job folders automatically)
 
 # UC_TREATMENTS = ['_simple','_coal','_coal_gas']
-UC_TREATMENTS = ['_simple']
+UC_TREATMENTS = ['_simple'] #Defining mathematical formulation (LP vs MILP for only coal vs MILP for coal and natural gas)
 
 # line_limit_MW_scaling = [25,50,75,100]
-line_limit_MW_scaling = [2000]
+line_limit_MW_scaling = [2000] #Transmission line limit scaling factor that is added to every line in MW
 
 # BA_hurdle_scaling = list(range(0,1050,100))
-BA_hurdle_scaling = [0]
+BA_hurdle_scaling = [0] #Hurdle rate scaling factor that scales hurdle rates by %
+############################
 
 for YY in Years:
     
