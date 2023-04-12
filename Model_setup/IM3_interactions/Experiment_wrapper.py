@@ -59,14 +59,14 @@ for YY in Years:
                         os.makedirs(path_3,exist_ok=True)
                         
                         #Copying model files
-                        copy('../../UCED/wrapper{}.py'.format(UC),path)
-                        copy('../WECCDataSetup.py',path)
+                        copy('../../UCED/wrapper{}_multimodel.py'.format(UC),path)
+                        copy('../WECCDataSetup_multimodel.py',path)
                         
                         if UC == '_simple':
-                            copy('../../UCED/WECC{}.py'.format(UC),path)
+                            copy('../../UCED/WECC{}_multimodel.py'.format(UC),path)
                         else:          
-                            copy('../../UCED/WECC_MILP{}.py'.format(UC),path)
-                            copy('../../UCED/WECC_LP{}.py'.format(UC),path)
+                            copy('../../UCED/WECC_MILP{}_multimodel.py'.format(UC),path)
+                            copy('../../UCED/WECC_LP{}_multimodel.py'.format(UC),path)
                             
                         #Copying topology related and generic inputs
                         copy('../../UCED/Simulation_folders/Exp{}/Inputs/BA_to_BA_hurdle_scaled.csv'.format(case_name),path_2)

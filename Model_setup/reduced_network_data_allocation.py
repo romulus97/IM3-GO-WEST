@@ -1082,15 +1082,15 @@ for YY in Years:
                     copy('Model_inputs/Fuel_prices.csv',path+str(Path('/Inputs')))       
         
                     #copy other files
-                    w = '../UCED/wrapper' + UC + '.py'
-                    milp = '../UCED/WECC_MILP' + UC + '.py'
-                    lp = '../UCED/WECC_LP' + UC + '.py'
+                    w = '../UCED/wrapper' + UC + '_singlemodel' + '.py'
+                    milp = '../UCED/WECC_MILP' + UC + '_singlemodel' + '.py'
+                    lp = '../UCED/WECC_LP' + UC + '_singlemodel' + '.py'
                     
                     copy(w,path)
-                    copy('WECCDataSetup.py',path)
+                    copy('WECCDataSetup_singlemodel.py',path)
                     
                     if UC == '_simple':
-                        copy('../UCED/WECC' + UC + '.py',path)
+                        copy('../UCED/WECC' + UC + '_singlemodel' + '.py',path)
                     else:          
                         copy(milp,path)
                         copy(lp,path)

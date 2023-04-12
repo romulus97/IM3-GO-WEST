@@ -6,8 +6,8 @@ Created on Tue Jun 20 22:14:07 2017
 """
 
 from pyomo.opt import SolverFactory
-from WECC_MILP_coal_gas import model as m1
-from WECC_LP_coal_gas import model as m2
+from WECC_MILP_coal_multimodel import model as m1
+from WECC_LP_coal_multimodel import model as m2
 from pyomo.core import Var
 from pyomo.core import Constraint
 from pyomo.core import Param
@@ -56,6 +56,7 @@ vlt_angle=[]
 duals=[]
 
 df_generators = pd.read_csv('Inputs/data_genparams.csv',header=0)
+
 #Outage
 df_thermal = pd.read_csv('Inputs/thermal_gens.csv',header=0)
 nucs = df_thermal[df_thermal['Fuel']=='NUC (Nuclear)']
@@ -97,14 +98,14 @@ for day in range(1,days+1):
     for z in instance.OffshoreWind:
     #load OffshoreWind time series data
         for i in K:
-            instance.HorizoOffshorenWind[z,i] = instance.SimOffshoreWind[z,(day-1)*24+i]
+            instance.HorizonOffshoreWind[z,i] = instance.SimOffshoreWind[z,(day-1)*24+i]
             instance2.HorizonOffshoreWind[z,i] = instance.SimOffshoreWind[z,(day-1)*24+i]
             
     for z in instance.Thermal:
     #load fuel prices for thermal generators
         instance.FuelPrice[z] = instance.SimFuelPrice[z,day]
         instance2.FuelPrice[z] = instance.SimFuelPrice[z,day]
-        
+    
     #Organizing outage data
     #load gen and mustrun capacity time series data
     for z in instance.Outage:
@@ -220,14 +221,14 @@ for day in range(1,days+1):
         for i in K:
             instance.HorizonMustrunLimit[z,i] = max(0,instance.HorizonMustrunLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Nuclear_ovr_1000']/len(nucs))        
             instance2.HorizonMustrunLimit[z,i] = max(0,instance.HorizonMustrunLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Nuclear_ovr_1000']/len(nucs))        
-     
+    
     result = opt.solve(instance,tee=True,symbolic_solver_labels=True, load_solutions=False) ##,tee=True to check number of variables\n",
     instance.solutions.load_from(result)  
     
     print('MILP')
     
     
-    for j in instance.UC:
+    for j in instance.Coal:
         for t in K:
             if value(instance.on[j,t]) == 1:
                 instance2.on[j,t] = 1
@@ -277,25 +278,25 @@ for day in range(1,days+1):
                 if int(index[1]>0 and index[1]<25):
                     
                     # fuel_price = instance.FuelPrice[z].value
-                    
+
                     if index[0] in instance.Gas:
                         # marginal_cost = gen_heatrate*fuel_price
-                        mwh.append((index[0],'Gas',index[1]+((day-1)*24),varobject[index].value))
+                        mwh.append((index[0],'Gas',index[1]+((day-1)*24),varobject[index].value))   
                     elif index[0] in instance.Coal:
                         # marginal_cost = gen_heatrate*fuel_price
-                        mwh.append((index[0],'Coal',index[1]+((day-1)*24),varobject[index].value))
+                        mwh.append((index[0],'Coal',index[1]+((day-1)*24),varobject[index].value))  
                     elif index[0] in instance.Oil:
                         # marginal_cost = 0
-                        mwh.append((index[0],'Oil',index[1]+((day-1)*24),varobject[index].value))
+                        mwh.append((index[0],'Oil',index[1]+((day-1)*24),varobject[index].value))   
                     elif index[0] in instance.Hydro:
                         # marginal_cost = 0
-                        mwh.append((index[0],'Hydro',index[1]+((day-1)*24),varobject[index].value))
+                        mwh.append((index[0],'Hydro',index[1]+((day-1)*24),varobject[index].value)) 
                     elif index[0] in instance.Solar:
                         # marginal_cost = 0
                         mwh.append((index[0],'Solar',index[1]+((day-1)*24),varobject[index].value))
                     elif index[0] in instance.Wind:
                         # marginal_cost = 0
-                        mwh.append((index[0],'Wind',index[1]+((day-1)*24),varobject[index].value))
+                        mwh.append((index[0],'Wind',index[1]+((day-1)*24),varobject[index].value))  
                     elif index[0] in instance.OffshoreWind:
                         # marginal_cost = 0
                         mwh.append((index[0],'OffshoreWind',index[1]+((day-1)*24),varobject[index].value)) 
@@ -337,7 +338,7 @@ for day in range(1,days+1):
         #             nrsv.append((index[0],index[1]+((day-1)*24),varobject[index].value))
         
         
-        for j in instance.UC:
+        for j in instance.Coal:
             
             if instance.mwh[j,24].value <=0 and instance.mwh[j,24].value>= -0.0001:
                 newval_1=0

@@ -6,8 +6,7 @@ Created on Tue Jun 20 22:14:07 2017
 """
 
 from pyomo.opt import SolverFactory
-from WECC_MILP_coal import model as m1
-from WECC_LP_coal import model as m2
+from WECC_simple_singlemodel import model as m1
 from pyomo.core import Var
 from pyomo.core import Constraint
 from pyomo.core import Param
@@ -24,8 +23,7 @@ my_cwd = os.getcwd()
 days = 365 # Max = 365
 
 instance = m1.create_instance('WECC_data.dat')
-instance2 = m2.create_instance('WECC_data.dat')
-instance2.dual = pyo.Suffix(direction=pyo.Suffix.IMPORT)
+instance.dual = pyo.Suffix(direction=pyo.Suffix.IMPORT)
 
 Solvername = 'gurobi'
 Timelimit = 3600 # for the simulation of one day in seconds
@@ -61,7 +59,7 @@ df_generators = pd.read_csv('Inputs/data_genparams.csv',header=0)
 df_thermal = pd.read_csv('Inputs/thermal_gens.csv',header=0)
 nucs = df_thermal[df_thermal['Fuel']=='NUC (Nuclear)']
 df_loss_dict= np.load('Inputs/gen_outage_cat.npy',allow_pickle='TRUE').item()
-df_losses = pd.read_csv('Inputs/west_2020_lostcap.csv',header=0,index_col=0)
+df_losses = pd.read_csv('Inputs/west_{}_lostcap.csv'.format(my_cwd[-4:]),header=0,index_col=0)
 
 #max here can be (1,365)
 for day in range(1,days+1):
@@ -70,192 +68,130 @@ for day in range(1,days+1):
     #load Demand and Reserve time series data
         for i in K:
             instance.HorizonDemand[z,i] = instance.SimDemand[z,(day-1)*24+i]
-            instance2.HorizonDemand[z,i] = instance.SimDemand[z,(day-1)*24+i]
 
             # instance.HorizonReserves[i] = instance.SimReserves[(day-1)*24+i]
 
     for z in instance.Hydro:
     #load Hydropower time series data
         instance.HorizonHydro_MAX[z] = instance.SimHydro_MAX[z,day]
-        instance2.HorizonHydro_MAX[z] = instance.SimHydro_MAX[z,day]
         instance.HorizonHydro_MIN[z] = instance.SimHydro_MIN[z,day]
-        instance2.HorizonHydro_MIN[z] = instance.SimHydro_MIN[z,day]
         instance.HorizonHydro_TOTAL[z] = instance.SimHydro_TOTAL[z,day]
-        instance2.HorizonHydro_TOTAL[z] = instance.SimHydro_TOTAL[z,day]
         
     for z in instance.Solar:
     #load Solar time series data
         for i in K:
             instance.HorizonSolar[z,i] = instance.SimSolar[z,(day-1)*24+i]
-            instance2.HorizonSolar[z,i] = instance.SimSolar[z,(day-1)*24+i]
 
     for z in instance.Wind:
     #load Wind time series data
         for i in K:
             instance.HorizonWind[z,i] = instance.SimWind[z,(day-1)*24+i]
-            instance2.HorizonWind[z,i] = instance.SimWind[z,(day-1)*24+i]
-            
-    for z in instance.OffshoreWind:
-    #load OffshoreWind time series data
-        for i in K:
-            instance.HorizonOffshoreWind[z,i] = instance.SimOffshoreWind[z,(day-1)*24+i]
-            instance2.HorizonOffshoreWind[z,i] = instance.SimOffshoreWind[z,(day-1)*24+i]
             
     for z in instance.Thermal:
     #load fuel prices for thermal generators
         instance.FuelPrice[z] = instance.SimFuelPrice[z,day]
-        instance2.FuelPrice[z] = instance.SimFuelPrice[z,day]
     
     #Organizing outage data
     #load gen and mustrun capacity time series data
-    for z in instance.Outage:
+    for z in instance.Thermal:
         for i in K:
             instance.HorizonGenLimit[z,i] = instance.SimGenLimit[z,(day-1)*24+i]
-            instance2.HorizonGenLimit[z,i] = instance.SimGenLimit[z,(day-1)*24+i]        
     
     for z in instance.buses:
         for i in K:
             instance.HorizonMustrunLimit[z,i] = instance.SimMustrunLimit[z,(day-1)*24+i]
-            instance2.HorizonMustrunLimit[z,i] = instance.SimMustrunLimit[z,(day-1)*24+i]   
     
     # subtract real or historical capacity losses
     for z in instance.Gas_below_50:
         for i in K:
             instance.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Gas_below_50']/len(df_loss_dict['Gas_below_50']))
-            instance2.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Gas_below_50']/len(df_loss_dict['Gas_below_50']))    
     for z in instance.Gas_50_100:
         for i in K:
             instance.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Gas_50_100']/len(df_loss_dict['Gas_50_100']))
-            instance2.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Gas_50_100']/len(df_loss_dict['Gas_50_100']))
     for z in instance.Gas_100_200:
         for i in K:
             instance.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Gas_100_200']/len(df_loss_dict['Gas_100_200']))  
-            instance2.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Gas_100_200']/len(df_loss_dict['Gas_100_200']))  
     for z in instance.Gas_200_300:
         for i in K:
             instance.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Gas_200_300']/len(df_loss_dict['Gas_200_300'])) 
-            instance2.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Gas_200_300']/len(df_loss_dict['Gas_200_300'])) 
     for z in instance.Gas_300_400:
         for i in K:
             instance.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Gas_300_400']/len(df_loss_dict['Gas_300_400'])) 
-            instance2.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Gas_300_400']/len(df_loss_dict['Gas_300_400'])) 
     for z in instance.Gas_400_600:
         for i in K:
             instance.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Gas_400_600']/len(df_loss_dict['Gas_400_600'])) 
-            instance2.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Gas_400_600']/len(df_loss_dict['Gas_400_600'])) 
     for z in instance.Gas_600_800:
         for i in K:
             instance.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Gas_600_800']/len(df_loss_dict['Gas_600_800'])) 
-            instance2.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Gas_600_800']/len(df_loss_dict['Gas_600_800'])) 
     for z in instance.Gas_800_1000:
         for i in K:
             instance.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Gas_800_1000']/len(df_loss_dict['Gas_800_1000'])) 
-            instance2.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Gas_800_1000']/len(df_loss_dict['Gas_800_1000'])) 
     for z in instance.Gas_ovr_1000:
         for i in K:
             instance.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Gas_ovr_1000']/len(df_loss_dict['Gas_ovr_1000'])) 
-            instance2.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Gas_ovr_1000']/len(df_loss_dict['Gas_ovr_1000'])) 
     for z in instance.Gas_All_n_0_100:
         for i in K:
             instance.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Gas_All_n_0_100']/len(df_loss_dict['Gas_All_n_0_100']))
-            instance2.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Gas_All_n_0_100']/len(df_loss_dict['Gas_All_n_0_100']))
     for z in instance.Gas_All_n_100_200:
         for i in K:
             instance.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Gas_All_n_100_200']/len(df_loss_dict['Gas_All_n_100_200'])) 
-            instance2.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Gas_All_n_100_200']/len(df_loss_dict['Gas_All_n_100_200'])) 
     for z in instance.Gas_All_n_ovr_200:
         for i in K:
             instance.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Gas_All_n_ovr_200']/len(df_loss_dict['Gas_All_n_ovr_200'])) 
-            instance2.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Gas_All_n_ovr_200']/len(df_loss_dict['Gas_All_n_ovr_200'])) 
     for z in instance.Coal_below_50:
         for i in K:
             instance.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Coal_below_50']/len(df_loss_dict['Coal_below_50'])) 
-            instance2.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Coal_below_50']/len(df_loss_dict['Coal_below_50'])) 
     for z in instance.Coal_50_100:
         for i in K:
             instance.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Coal_50_100']/len(df_loss_dict['Coal_50_100'])) 
-            instance2.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Coal_50_100']/len(df_loss_dict['Coal_50_100'])) 
     for z in instance.Coal_100_200:
         for i in K:
             instance.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Coal_100_200']/len(df_loss_dict['Coal_100_200'])) 
-            instance2.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Coal_100_200']/len(df_loss_dict['Coal_100_200'])) 
     for z in instance.Coal_200_300:
         for i in K:
             instance.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Coal_200_300']/len(df_loss_dict['Coal_200_300'])) 
-            instance2.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Coal_200_300']/len(df_loss_dict['Coal_200_300'])) 
     for z in instance.Coal_300_400:
         for i in K:
             instance.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Coal_300_400']/len(df_loss_dict['Coal_300_400'])) 
-            instance2.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Coal_300_400']/len(df_loss_dict['Coal_300_400'])) 
     for z in instance.Coal_400_600:
         for i in K:
             instance.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Coal_400_600']/len(df_loss_dict['Coal_400_600'])) 
-            instance2.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Coal_400_600']/len(df_loss_dict['Coal_400_600'])) 
     for z in instance.Coal_600_800:
         for i in K:
             instance.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Coal_600_800']/len(df_loss_dict['Coal_600_800'])) 
-            instance2.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Coal_600_800']/len(df_loss_dict['Coal_600_800'])) 
     for z in instance.Coal_800_1000:
         for i in K:
             instance.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Coal_800_1000']/len(df_loss_dict['Coal_800_1000'])) 
-            instance2.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Coal_800_1000']/len(df_loss_dict['Coal_800_1000'])) 
     for z in instance.Coal_ovr_1000:
         for i in K:
             instance.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Coal_ovr_1000']/len(df_loss_dict['Coal_ovr_1000'])) 
-            instance2.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Coal_ovr_1000']/len(df_loss_dict['Coal_ovr_1000'])) 
     for z in instance.Coal_All_n_0_100:
         for i in K:
             instance.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Coal_All_n_0_100']/len(df_loss_dict['Coal_All_n_0_100'])) 
-            instance2.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Coal_All_n_0_100']/len(df_loss_dict['Coal_All_n_0_100'])) 
     for z in instance.Coal_All_n_100_200:
         for i in K:
             instance.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Coal_All_n_100_200']/len(df_loss_dict['Coal_All_n_100_200'])) 
-            instance2.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Coal_All_n_100_200']/len(df_loss_dict['Coal_All_n_100_200'])) 
-    for z in instance.Coal_All_n_ovr_200:
         for i in K:
             instance.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Coal_All_n_ovr_200']/len(df_loss_dict['Coal_All_n_ovr_200'])) 
-            instance2.HorizonGenLimit[z,i] = max(0, instance.HorizonGenLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Coal_All_n_ovr_200']/len(df_loss_dict['Coal_All_n_ovr_200'])) 
 
    #NEED TO ADD MUST RUN GENERATION OUTAGES     
     for z in instance.buses:
         for i in K:
             instance.HorizonMustrunLimit[z,i] = max(0,instance.HorizonMustrunLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Nuclear_ovr_1000']/len(nucs))        
-            instance2.HorizonMustrunLimit[z,i] = max(0,instance.HorizonMustrunLimit[z,i].value - df_losses.loc[(day-1)*24+i,'Nuclear_ovr_1000']/len(nucs))        
     
     result = opt.solve(instance,tee=True,symbolic_solver_labels=True, load_solutions=False) ##,tee=True to check number of variables\n",
     instance.solutions.load_from(result)  
     
-    print('MILP')
-    
-    
-    for j in instance.Coal:
-        for t in K:
-            if value(instance.on[j,t]) == 1:
-                instance2.on[j,t] = 1
-                instance2.on[j,t].fixed = True
-            else:
-                instance.on[j,t] = 0
-                instance2.on[j,t] = 0
-                instance2.on[j,t].fixed = True
+    print('LP')
+                        
 
-            if value(instance.switch[j,t]) == 1:
-                instance2.switch[j,t] = 1
-                instance2.switch[j,t].fixed = True
-            else:
-                instance2.switch[j,t] = 0
-                instance2.switch[j,t] = 0
-                instance2.switch[j,t].fixed = True
-                    
-    results = opt.solve(instance2,tee=True,symbolic_solver_labels=True, load_solutions=False)
-    instance2.solutions.load_from(results)
-
-    for c in instance2.component_objects(Constraint, active=True):
-        cobject = getattr(instance2, str(c))
+    for c in instance.component_objects(Constraint, active=True):
+        cobject = getattr(instance, str(c))
         if str(c) in ['Node_Constraint']:
             for index in cobject:
                  if int(index[1]>0 and index[1]<25):
                      try:
-                         duals.append((index[0],index[1]+((day-1)*24), instance2.dual[cobject[index]]))
+                         duals.append((index[0],index[1]+((day-1)*24), instance.dual[cobject[index]]))
                      except KeyError:
                          duals.append((index[0],index[1]+((day-1)*24),-999))
 
@@ -278,7 +214,7 @@ for day in range(1,days+1):
                 if int(index[1]>0 and index[1]<25):
                     
                     # fuel_price = instance.FuelPrice[z].value
-
+                    
                     if index[0] in instance.Gas:
                         # marginal_cost = gen_heatrate*fuel_price
                         mwh.append((index[0],'Gas',index[1]+((day-1)*24),varobject[index].value))   
@@ -296,16 +232,7 @@ for day in range(1,days+1):
                         mwh.append((index[0],'Solar',index[1]+((day-1)*24),varobject[index].value))
                     elif index[0] in instance.Wind:
                         # marginal_cost = 0
-                        mwh.append((index[0],'Wind',index[1]+((day-1)*24),varobject[index].value))  
-                    elif index[0] in instance.OffshoreWind:
-                        # marginal_cost = 0
-                        mwh.append((index[0],'OffshoreWind',index[1]+((day-1)*24),varobject[index].value)) 
-                    elif index[0] in instance.Biomass:
-                        # marginal_cost = gen_heatrate*fuel_price
-                        mwh.append((index[0],'Biomass',index[1]+((day-1)*24),varobject[index].value)) 
-                    elif index[0] in instance.Geothermal:
-                        # marginal_cost = gen_heatrate*fuel_price
-                        mwh.append((index[0],'Geothermal',index[1]+((day-1)*24),varobject[index].value)) 
+                        mwh.append((index[0],'Wind',index[1]+((day-1)*24),varobject[index].value))                                            
         
         if a=='on':  
             for index in varobject:
@@ -337,28 +264,7 @@ for day in range(1,days+1):
         #         if int(index[1]>0 and index[1]<25):
         #             nrsv.append((index[0],index[1]+((day-1)*24),varobject[index].value))
         
-        
-        for j in instance.Coal:
-            
-            if instance.mwh[j,24].value <=0 and instance.mwh[j,24].value>= -0.0001:
-                newval_1=0
-            else:
-                newval_1=instance.mwh[j,24].value
-            instance.mwh[j,0] = newval_1
-            instance.mwh[j,0].fixed = True
-            
-            if value(instance.on[j,24]) == 1:
-                instance.on[j,0] = 1
-            else:
-                instance.on[j,0] = 0
-            instance.on[j,0].fixed = True
-            
-            if value(instance.switch[j,24]) == 1:
-                instance.switch[j,0] = 1
-            else:
-                instance.switch[j,0] = 0
-            instance.switch[j,0].fixed = True
-            
+                                
         for j in instance.Dispatchable:
             if instance.mwh[j,24].value <=0 and instance.mwh[j,24].value>= -0.0001:
                 newval_1=0
@@ -367,15 +273,9 @@ for day in range(1,days+1):
             instance.mwh[j,0] = newval_1
             instance.mwh[j,0].fixed = True
             
-            # if instance.nrsv[j,24].value <=0 and instance.nrsv[j,24].value>= -0.0001:
-            #     newval_nrsv=0
-            # else:
-            #     newval_nrsv=instance.nrsv[j,24].value
-            # instance.nrsv[j,0] = newval_nrsv
-            # instance.nrsv[j,0].fixed = True
 
 
-    print('Day {} is finished.'.format(day))
+    print(day)
         
 vlt_angle_pd=pd.DataFrame(vlt_angle,columns=('Node','Time','Value'))
 mwh_pd=pd.DataFrame(mwh,columns=('Generator','Type','Time','Value'))
