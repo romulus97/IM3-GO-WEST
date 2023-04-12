@@ -35,7 +35,7 @@ Hydro_year = 2015
 
 CERF_year = 2015 #IM3 experiment year
 TELL_year = 2020
-GCAM_year = 2020
+GCAM_year = 2015
 
 ###################################################
 
@@ -79,10 +79,10 @@ for YY in Years:
                         CERF_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,CERF_year,CS)
                         print('CERF extractor finished.')
                         #Calling GCAM extractor
-                        GCAM_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,GCAM_year,CS)
+                        GCAM_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,GCAM_year,CS,CERF_year)
                         print('GCAM extractor finished.')
                         #Calling TELL extractor
-                        TELL_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,TELL_year,CS)
+                        TELL_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,TELL_year,CS,CERF_year)
                         print('TELL extractor finished.')
                     
 

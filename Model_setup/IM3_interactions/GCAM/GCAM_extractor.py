@@ -12,7 +12,7 @@ from shutil import copy
 from pathlib import Path
 import sys
 
-def GCAM_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,GCAM_year,CS):
+def GCAM_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,GCAM_year,CS,CERF_year):
     
     #Correcting the directory
     cwd = os.getcwd()
@@ -22,13 +22,13 @@ def GCAM_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,GCAM_year,CS):
     GCAM_outputs_df = pd.read_csv('GCAM_outputs/dataGCAM_go.csv',header=0)
     
     #Reading generator params file
-    datagenparams_df = pd.read_csv('../Altered_simulation_folders/Exp{}{}_{}_{}_{}_{}/Inputs/data_genparams.csv'.format(NN,UC,T_p,BA_hurd,GCAM_year,CS))
+    datagenparams_df = pd.read_csv('../Altered_simulation_folders/Exp{}{}_{}_{}_{}_{}/Inputs/data_genparams.csv'.format(NN,UC,T_p,BA_hurd,CERF_year,CS))
     
     #Reading CERF generators file for location information
-    if GCAM_year == 2015:
-        CERF_generators = pd.read_csv('../CERF/CERF_outputs/power_plant_initialization_{}.csv'.format(GCAM_year),header=0)
+    if CERF_year == 2015:
+        CERF_generators = pd.read_csv('../CERF/CERF_outputs/power_plant_initialization_{}.csv'.format(CERF_year),header=0)
     else:
-        CERF_generators = pd.read_csv('../CERF/CERF_outputs/cerf_for_go_{}_{}.csv'.format(CS,GCAM_year),header=0)
+        CERF_generators = pd.read_csv('../CERF/CERF_outputs/cerf_for_go_{}_{}.csv'.format(CS,CERF_year),header=0)
     
     #Filtering for fuel cost and and climate scenario
     GCAM_initial_filter = GCAM_outputs_df.loc[(GCAM_outputs_df['scenario']==CS) & (GCAM_outputs_df['param']=='elec_fuel_price_2015USDperMBTU')].copy()
@@ -52,33 +52,87 @@ def GCAM_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,GCAM_year,CS):
     #Creating dataframe to store fuel prices
     fuel_prices_df = pd.DataFrame(np.zeros((365,len(datagenparams_filter))),columns=[*datagenparams_filter['name']])
     
-    #Saving relevant fuel prices for each generator (fuel price stays the same for 365 days)
+    #Read NG price seasonality
+    NG_monthly = pd.read_excel('Reference_files/NG_monthly_seasonality.xlsx',header=0)
+    
+    #Saving relevant fuel prices for each generator (fuel price stays the same for 365 days except for natural gas prices)
     for i in range(0,len(datagenparams_filter)):
         
         CERF_gen_name = datagenparams_filter.loc[i,'name']
         CERF_gen_type = datagenparams_filter.loc[i,'typ']
         CERF_gen_state = CERF_generators.loc[CERF_generators['plant_id']==CERF_gen_name[3:]]['region_name'].values[0]
         GCAM_gen_state = states_dict[CERF_gen_state]
-        
         GCAM_state_filter = GCAM_year_filter.loc[GCAM_year_filter['subRegion']==GCAM_gen_state].copy()
         
         if CERF_gen_type == 'coal':
             GCAM_fuel_price = GCAM_state_filter.loc[GCAM_state_filter['class1']=='regional coal']['value'].values[0]
+            fuel_prices_df.loc[:,CERF_gen_name] = [GCAM_fuel_price]*365
+            
         elif CERF_gen_type == 'oil':
             GCAM_fuel_price = GCAM_state_filter.loc[GCAM_state_filter['class1']=='refined liquids industrial']['value'].values[0]
+            fuel_prices_df.loc[:,CERF_gen_name] = [GCAM_fuel_price]*365
+            
         elif CERF_gen_type == 'ngcc':
             GCAM_fuel_price = GCAM_state_filter.loc[GCAM_state_filter['class1']=='wholesale gas']['value'].values[0]
+            
+            try:
+                daily_gen_NG_price = []
+                
+                Jan_NG = NG_monthly.loc[0,GCAM_gen_state]*GCAM_fuel_price
+                daily_gen_NG_price.extend([Jan_NG]*31)
+                
+                Feb_NG = NG_monthly.loc[1,GCAM_gen_state]*GCAM_fuel_price
+                daily_gen_NG_price.extend([Feb_NG]*28)
+                
+                Mar_NG = NG_monthly.loc[2,GCAM_gen_state]*GCAM_fuel_price
+                daily_gen_NG_price.extend([Mar_NG]*31)
+                
+                Apr_NG = NG_monthly.loc[3,GCAM_gen_state]*GCAM_fuel_price
+                daily_gen_NG_price.extend([Apr_NG]*30)
+                
+                May_NG = NG_monthly.loc[4,GCAM_gen_state]*GCAM_fuel_price
+                daily_gen_NG_price.extend([May_NG]*31)
+                
+                Jun_NG = NG_monthly.loc[5,GCAM_gen_state]*GCAM_fuel_price
+                daily_gen_NG_price.extend([Jun_NG]*30)
+                
+                Jul_NG = NG_monthly.loc[6,GCAM_gen_state]*GCAM_fuel_price
+                daily_gen_NG_price.extend([Jul_NG]*31)
+                
+                Aug_NG = NG_monthly.loc[7,GCAM_gen_state]*GCAM_fuel_price
+                daily_gen_NG_price.extend([Aug_NG]*31)
+                
+                Sep_NG = NG_monthly.loc[8,GCAM_gen_state]*GCAM_fuel_price
+                daily_gen_NG_price.extend([Sep_NG]*30)
+                
+                Oct_NG = NG_monthly.loc[9,GCAM_gen_state]*GCAM_fuel_price
+                daily_gen_NG_price.extend([Oct_NG]*31)
+                
+                Nov_NG = NG_monthly.loc[10,GCAM_gen_state]*GCAM_fuel_price
+                daily_gen_NG_price.extend([Nov_NG]*30)
+                
+                Dec_NG = NG_monthly.loc[11,GCAM_gen_state]*GCAM_fuel_price
+                daily_gen_NG_price.extend([Dec_NG]*31)
+                
+                fuel_prices_df.loc[:,CERF_gen_name] = daily_gen_NG_price
+                
+            except KeyError:
+                fuel_prices_df.loc[:,CERF_gen_name] = [GCAM_fuel_price]*365
+                
+            
         elif CERF_gen_type == 'biomass':
             GCAM_fuel_price = GCAM_state_filter.loc[GCAM_state_filter['class1']=='regional biomass']['value'].values[0]
+            fuel_prices_df.loc[:,CERF_gen_name] = [GCAM_fuel_price]*365
+            
         elif CERF_gen_type == 'geothermal':
             GCAM_fuel_price = 0.001 #Fuel price of geothermal assumed to be negligible
+            fuel_prices_df.loc[:,CERF_gen_name] = [GCAM_fuel_price]*365
+            
         else:
             pass
         
-        fuel_prices_df.loc[:,CERF_gen_name] = [GCAM_fuel_price]*365
-        
     #Exporting fuel prices
-    fuel_prices_df.to_csv('../Altered_simulation_folders/Exp{}{}_{}_{}_{}_{}/Inputs/Fuel_prices.csv'.format(NN,UC,T_p,BA_hurd,GCAM_year,CS),index=None)
+    fuel_prices_df.to_csv('../Altered_simulation_folders/Exp{}{}_{}_{}_{}_{}/Inputs/Fuel_prices.csv'.format(NN,UC,T_p,BA_hurd,CERF_year,CS),index=None)
         
     return None
     

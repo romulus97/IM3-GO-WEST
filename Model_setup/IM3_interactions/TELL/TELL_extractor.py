@@ -12,7 +12,7 @@ from shutil import copy
 from pathlib import Path
 import sys
 
-def TELL_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,TELL_year,CS):
+def TELL_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,TELL_year,CS,CERF_year):
     
     #Correcting the directory
     cwd = os.getcwd()
@@ -109,28 +109,11 @@ def TELL_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,TELL_year,CS):
     buses_str = ['bus_{}'.format(i) for i in buses]
     
     df_C = pd.DataFrame(T,columns=buses_str)
-    df_C.to_csv('../Altered_simulation_folders/Exp{}{}_{}_{}_{}_{}/Inputs/nodal_load.csv'.format(NN,UC,T_p,BA_hurd,TELL_year-5,CS),index=None)   
+    df_C.to_csv('../Altered_simulation_folders/Exp{}{}_{}_{}_{}_{}/Inputs/nodal_load.csv'.format(NN,UC,T_p,BA_hurd,CERF_year,CS),index=None)   
     
     return None
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     
