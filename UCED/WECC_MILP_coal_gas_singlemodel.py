@@ -180,6 +180,8 @@ model.S = Var(model.buses,model.hh_periods, within=NonNegativeReals,initialize=0
 model.Flow= Var(model.lines,model.hh_periods,initialize=0)
 model.Theta= Var(model.buses,model.hh_periods)
 
+#This is created to enforce a penalty on power flows, which prevents slack generation to be transmitted elsewhere in the grid. 
+model.DummyFlow = Var(model.lines,model.hh_periods,initialize=0)
 
 ######=================================================########
 ######               Segment B.8                       ########
@@ -196,8 +198,8 @@ def SysCost(model):
     wind_cost = sum(model.mwh[j,i]*0.01 for i in model.hh_periods for j in model.Wind)
     solar_cost = sum(model.mwh[j,i]*0.01 for i in model.hh_periods for j in model.Solar)
     exchange_cost = sum(model.Flow[l,i]*model.ExchangeMap[k,l]*model.ExchangeHurdle[k] for l in model.lines for i in model.hh_periods for k in model.exchanges)
-
-    return fixed + starts + gen + slack + hydro_cost + wind_cost + solar_cost + exchange_cost
+    powerflow_cost = sum(model.DummyFlow[l,i]*0.01 for l in model.lines for i in model.hh_periods)
+    return fixed + starts + gen + slack + hydro_cost + wind_cost + solar_cost + exchange_cost + powerflow_cost
 
 model.SystemCost = Objective(rule=SysCost, sense=minimize)
 
@@ -323,6 +325,15 @@ model.FlowU_Constraint = Constraint(model.lines,model.hh_periods,rule=FlowUP_lin
 def FlowLow_line(model,l,i):
     return  -1*model.Flow[l,i] <= model.FlowLim[l]
 model.FlowLL_Constraint = Constraint(model.lines,model.hh_periods,rule=FlowLow_line)
+
+#Making sure that dummy flow is equal to actual flow on the lines
+def DummyFlow1(model,l,i):
+    return  model.DummyFlow[l,i] >= model.Flow[l,i]
+model.DummyFlow1_Constraint = Constraint(model.lines,model.hh_periods,rule=DummyFlow1)
+
+def DummyFlow2(model,l,i):
+    return  model.DummyFlow[l,i] >= model.Flow[l,i]*-1
+model.DummyFlow2_Constraint = Constraint(model.lines,model.hh_periods,rule=DummyFlow2)
 
 ######=================================================########
 ######               Segment B.13                      ########
