@@ -33,7 +33,9 @@ def CERF_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,CERF_year,CS):
                        'cerf_coal_conventional_no-ccs_recirculating','cerf_coal_igcc_no-ccs_dry',\
                        'cerf_coal_igcc_no-ccs_oncethrough','cerf_coal_igcc_no-ccs_recirculating',\
                        'cerf_coal_igcc_with-ccs_dry','cerf_coal_igcc_with-ccs_oncethrough',\
-                       'cerf_coal_igcc_with-ccs_recirculating']
+                       'cerf_coal_igcc_with-ccs_recirculating', 'coal (conv pulv) (pre_1970)',\
+                       'coal (conv pulv) (1970s)', 'coal (conv pulv) (2000s)', 'coal (conv pulv) (1980s)',\
+                       'coal (conv pulv) (1990s)', 'coal (conv pulv) (2010s)']
         
     NG_CERF_types = ['gas (CT)','gas (steam)','gas (CC)','cerf_gas_cc_ccs_dry','cerf_gas_cc_ccs_oncethrough',\
                      'cerf_gas_cc_ccs_recirculating','cerf_gas_cc_no-ccs_dry','cerf_gas_cc_no-ccs_oncethrough',\
