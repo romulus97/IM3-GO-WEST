@@ -11,67 +11,25 @@ import os
 from shutil import copy
 from pathlib import Path
 import sys
+import yaml
 
-def CERF_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,CERF_year,CS):
+def CERF_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,CERF_year,CS,Solar_wind_year):
     
     #Correcting the directory
     cwd = os.getcwd()
     os.chdir("{}\\CERF".format(cwd))
-    
-    #Defining CERF generation types
-    Biomass_CERF_types = ['biomass (conv)','biomass (IGCC)','cerf_biomass_conventional_ccs_dry',\
-                          'cerf_biomass_conventional_ccs_oncethrough','cerf_biomass_conventional_ccs_recirculating',\
-                          'cerf_biomass_conventional_no-ccs_dry','cerf_biomass_conventional_no-ccs_oncethrough',\
-                          'cerf_biomass_conventional_no-ccs_pond','cerf_biomass_conventional_no-ccs_recirculating',\
-                          'cerf_biomass_igcc_no-ccs_dry','cerf_biomass_igcc_no-ccs_oncethrough',\
-                          'cerf_biomass_igcc_no-ccs_recirculating','cerf_biomass_igcc_with-ccs_dry',\
-                          'cerf_biomass_igcc_with-ccs_oncethrough','cerf_biomass_igcc_with-ccs_recirculating']
-    
-    Coal_CERF_types = ['coal (conv pulv)','coal (IGCC)','cerf_coal_conventional_ccs_dry','cerf_coal_conventional_ccs_oncethrough',\
-                       'cerf_coal_conventional_ccs_recirculating','cerf_coal_conventional_no-ccs_dry',\
-                       'cerf_coal_conventional_no-ccs_oncethrough','cerf_coal_conventional_no-ccs_pond',\
-                       'cerf_coal_conventional_no-ccs_recirculating','cerf_coal_igcc_no-ccs_dry',\
-                       'cerf_coal_igcc_no-ccs_oncethrough','cerf_coal_igcc_no-ccs_recirculating',\
-                       'cerf_coal_igcc_with-ccs_dry','cerf_coal_igcc_with-ccs_oncethrough',\
-                       'cerf_coal_igcc_with-ccs_recirculating', 'coal (conv pulv) (pre_1970)',\
-                       'coal (conv pulv) (1970s)', 'coal (conv pulv) (2000s)', 'coal (conv pulv) (1980s)',\
-                       'coal (conv pulv) (1990s)', 'coal (conv pulv) (2010s)']
-        
-    NG_CERF_types = ['gas (CT)','gas (steam)','gas (CC)','cerf_gas_cc_ccs_dry','cerf_gas_cc_ccs_oncethrough',\
-                     'cerf_gas_cc_ccs_recirculating','cerf_gas_cc_no-ccs_dry','cerf_gas_cc_no-ccs_oncethrough',\
-                     'cerf_gas_cc_no-ccs_pond','cerf_gas_cc_no-ccs_recirculating','cerf_gas_turbine_dry',\
-                     'cerf_gas_turbine_oncethrough','cerf_gas_turbine_pond','cerf_gas_turbine_recirculating']   
-        
-    Nuclear_CERF_types = ['Gen_II_LWR','cerf_nuclear_gen3_oncethrough','cerf_nuclear_gen3_pond','cerf_nuclear_gen3_recirculating']
-    
-    Geothermal_CERF_types = ['geothermal','cerf_geothermal_recirculating']   
-    
-    Hydro_CERF_types = ['hydro']
-       
-    Oil_CERF_types = ['refined liquids (CT)','refined liquids (steam)','refined liquids (CC)','cerf_refinedliquids_cc_ccs_dry',\
-                      'cerf_refinedliquids_cc_ccs_oncethrough','cerf_refinedliquids_cc_ccs_recirculating',\
-                      'cerf_refinedliquids_cc_no-ccs_dry','cerf_refinedliquids_cc_no-ccs_oncethrough',\
-                      'cerf_refinedliquids_cc_no-ccs_recirculating','cerf_refinedliquids_ct_dry','cerf_refinedliquids_ct_oncethrough',\
-                      'cerf_refinedliquids_ct_pond','cerf_refinedliquids_ct_recirculating'] 
-    
-    Solar_CERF_types = ['solar_PV','solar_CSP','cerf_solar_csp_centralized_dry-hybrid','cerf_solar_csp_centralized_recirculating',\
-                        'cerf_solar_pv_centralized']
-    
-    OnshoreWind_CERF_types = ['wind_onshore','cerf_wind_onshore_hubheight080m',\
-                       'cerf_wind_onshore_hubheight110m','cerf_wind_onshore_hubheight140m']   
-        
-    OffshoreWind_CERF_types = ['cerf_wind_offshore_hubheight100m']   
-    
+
+    #Reading CERF generator types from YAML file
+    with open('Reference_files/cerf_generation_types.yml') as f:
+        CERF_gen_dict = yaml.full_load(f)
+
     #Reading generic generator parameters
     generic_params = pd.read_excel('Reference_files/Generator_parameters.xlsx',header=0,index_col=0)
     
     #Reading solar and wind generator profiles
-    if CERF_year==2015:
-        solar_wind_profiles = pd.read_csv('CERF_outputs/generation_profiles_2015.zip',header=0)
-    else:
-        solar_wind_profiles = pd.read_csv('CERF_outputs/{}_generation_profile_{}.zip'.format(CS,CERF_year),header=0)
+    solar_cf_profiles = pd.read_csv('CERF_outputs/solar_gen_cf_{}.csv'.format(Solar_wind_year),header=0)
+    wind_cf_profiles = pd.read_csv('CERF_outputs/wind_gen_cf_{}.csv'.format(Solar_wind_year),header=0)
         
-    
     #Defining all node numbers
     bus_information_df = pd.read_excel('../../Selected_nodes/Results_Excluded_Nodes_{}.xlsx'.format(NN),sheet_name='Bus',header=0)
     all_buses_int = [*bus_information_df['bus_i']]
@@ -79,7 +37,7 @@ def CERF_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,CERF_year,CS):
     
     #Reading CERF generator outputs and organizing the generator related files depending on the year
     if CERF_year == 2015:
-        CERF_generators = pd.read_csv('CERF_outputs/power_plant_initialization_{}.csv'.format(CERF_year),header=0)
+        CERF_generators = pd.read_csv('CERF_outputs/infrastructure_{}_{}.csv'.format(CERF_year,CS),header=0)
     else:
         CERF_generators = pd.read_csv('CERF_outputs/cerf_for_go_{}_{}.csv'.format(CS,CERF_year),header=0)
         
@@ -106,7 +64,7 @@ def CERF_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,CERF_year,CS):
         
         CERF_gen_type = CERF_generators_WEST.loc[j,'tech_name']
         CERF_gen_cap = round(CERF_generators_WEST.loc[j,'unit_size_mw'],2)
-        CERF_gen_name = CERF_generators_WEST.loc[j,'plant_id']
+        CERF_gen_name = CERF_generators_WEST.loc[j,'cerf_plant_id']
         CERF_gen_bus = CERF_generators_WEST.loc[j,'lmp_zone']
         
         try:
@@ -116,7 +74,7 @@ def CERF_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,CERF_year,CS):
             CERF_heatrate = -999
             CERF_VOM = -999
             
-        if CERF_gen_type in Biomass_CERF_types:
+        if CERF_gen_type in CERF_gen_dict['Biomass_CERF_types']:
             gen_name.append('ID_{}'.format(CERF_gen_name))
             gen_node.append('bus_{}'.format(CERF_gen_bus))
             gen_maxcap.append(CERF_gen_cap)
@@ -140,7 +98,7 @@ def CERF_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,CERF_year,CS):
             gen_minup.append(generic_params.loc['Minimum up time (hours)','Biomass'])
             gen_mindown.append(generic_params.loc['Minimum down time (hours)','Biomass'])
             
-        elif CERF_gen_type in Coal_CERF_types:
+        elif CERF_gen_type in CERF_gen_dict['Coal_CERF_types']:
             gen_name.append('ID_{}'.format(CERF_gen_name))
             gen_node.append('bus_{}'.format(CERF_gen_bus))
             gen_maxcap.append(CERF_gen_cap)
@@ -164,7 +122,7 @@ def CERF_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,CERF_year,CS):
             gen_minup.append(generic_params.loc['Minimum up time (hours)','Coal'])
             gen_mindown.append(generic_params.loc['Minimum down time (hours)','Coal'])
             
-        elif CERF_gen_type in NG_CERF_types:
+        elif CERF_gen_type in CERF_gen_dict['NG_CERF_types']:
             gen_name.append('ID_{}'.format(CERF_gen_name))
             gen_node.append('bus_{}'.format(CERF_gen_bus))
             gen_maxcap.append(CERF_gen_cap)
@@ -188,7 +146,7 @@ def CERF_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,CERF_year,CS):
             gen_minup.append(generic_params.loc['Minimum up time (hours)','Natural Gas'])
             gen_mindown.append(generic_params.loc['Minimum down time (hours)','Natural Gas'])
             
-        elif CERF_gen_type in Geothermal_CERF_types:
+        elif CERF_gen_type in CERF_gen_dict['Geothermal_CERF_types']:
             gen_name.append('ID_{}'.format(CERF_gen_name))
             gen_node.append('bus_{}'.format(CERF_gen_bus))
             gen_maxcap.append(CERF_gen_cap)
@@ -212,7 +170,7 @@ def CERF_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,CERF_year,CS):
             gen_minup.append(generic_params.loc['Minimum up time (hours)','Geothermal'])
             gen_mindown.append(generic_params.loc['Minimum down time (hours)','Geothermal'])
             
-        elif CERF_gen_type in Oil_CERF_types:
+        elif CERF_gen_type in CERF_gen_dict['Oil_CERF_types']:
             gen_name.append('ID_{}'.format(CERF_gen_name))
             gen_node.append('bus_{}'.format(CERF_gen_bus))
             gen_maxcap.append(CERF_gen_cap)
@@ -236,25 +194,25 @@ def CERF_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,CERF_year,CS):
             gen_minup.append(generic_params.loc['Minimum up time (hours)','Oil'])
             gen_mindown.append(generic_params.loc['Minimum down time (hours)','Oil'])
         
-        elif CERF_gen_type in Nuclear_CERF_types:
+        elif CERF_gen_type in CERF_gen_dict['Nuclear_CERF_types']:
             pass
         
-        elif CERF_gen_type in Solar_CERF_types:
+        elif CERF_gen_type in CERF_gen_dict['Solar_CERF_types']:
             pass
             
-        elif CERF_gen_type in OnshoreWind_CERF_types:
+        elif CERF_gen_type in CERF_gen_dict['OnshoreWind_CERF_types']:
             pass
             
-        elif CERF_gen_type in OffshoreWind_CERF_types:
+        elif CERF_gen_type in CERF_gen_dict['OffshoreWind_CERF_types']:
             pass
 
-        elif CERF_gen_type in Hydro_CERF_types:
+        elif CERF_gen_type in CERF_gen_dict['Hydro_CERF_types']:
             pass
             
     
     #Creating mustrun (nuclear) file and copying it to relevant folder
     #Filtering nuclear generators
-    mustrun_filter = CERF_generators_WEST.loc[CERF_generators_WEST['tech_name'].isin(Nuclear_CERF_types)].copy()
+    mustrun_filter = CERF_generators_WEST.loc[CERF_generators_WEST['tech_name'].isin(CERF_gen_dict['Nuclear_CERF_types'])].copy()
     #Grouping nuclear generators and creating a dataframe to store bulk nuclear capacity at each node
     mustrun_selected = mustrun_filter.loc[:,['unit_size_mw','lmp_zone']].copy()
     mustrun_total = mustrun_selected.groupby('lmp_zone').sum()
@@ -270,7 +228,7 @@ def CERF_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,CERF_year,CS):
     
     #Creating solar timeseries and aggragating solar generators and adding those to datagenparams file
     #Filtering solar generators and finding unique solar nodes
-    solar_filter = CERF_generators_WEST.loc[CERF_generators_WEST['tech_name'].isin(Solar_CERF_types)].copy()
+    solar_filter = CERF_generators_WEST.loc[CERF_generators_WEST['tech_name'].isin(CERF_gen_dict['Solar_CERF_types'])].copy()
     
     #Creating empty solar timeseries for each bus
     solar_timeseries_df = pd.DataFrame(np.zeros((8760,len(all_buses_int))),columns=all_buses_int)
@@ -310,9 +268,15 @@ def CERF_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,CERF_year,CS):
             gen_mindown.append(0)
             
             #Altering solar timeseries by looking at generation
-            plant_IDs_nodal_solar = [*sp_solar_nodal['plant_id']]
-            total_nodal_solar_generation = solar_wind_profiles.loc[:,plant_IDs_nodal_solar].sum(axis=1)
-            solar_timeseries_df.loc[:,q] = total_nodal_solar_generation.values
+            plant_IDs_nodal_solar = [*sp_solar_nodal['cerf_plant_id']]
+            
+            total_nodal_solar_generation = np.zeros(8760)
+            
+            for scp in plant_IDs_nodal_solar:
+                ind_solar_timeseries = solar_cf_profiles.loc[:,scp]*sp_solar_nodal.loc[sp_solar_nodal['cerf_plant_id']==scp]['unit_size_mw'].values[0]
+                total_nodal_solar_generation = total_nodal_solar_generation+ind_solar_timeseries.values
+                
+            solar_timeseries_df.loc[:,q] = total_nodal_solar_generation
     
     solar_timeseries_df.columns = ['bus_{}'.format(z) for z in solar_timeseries_df.columns]
     solar_timeseries_df.to_csv('../Altered_simulation_folders/Exp{}{}_{}_{}_{}_{}/Inputs/nodal_solar.csv'.format(NN,UC,T_p,BA_hurd,CERF_year,CS),index=None)
@@ -320,7 +284,7 @@ def CERF_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,CERF_year,CS):
     
     #Creating wind timeseries and aggragating wind generators and adding those to datagenparams file
     #Filtering wind generators and finding unique wind nodes
-    wind_filter = CERF_generators_WEST.loc[CERF_generators_WEST['tech_name'].isin(OnshoreWind_CERF_types)].copy()
+    wind_filter = CERF_generators_WEST.loc[CERF_generators_WEST['tech_name'].isin(CERF_gen_dict['OnshoreWind_CERF_types'])].copy()
     
     #Creating empty wind timeseries for each bus
     wind_timeseries_df = pd.DataFrame(np.zeros((8760,len(all_buses_int))),columns=all_buses_int)
@@ -360,9 +324,15 @@ def CERF_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,CERF_year,CS):
             gen_mindown.append(0)
             
             #Altering wind timeseries by looking at generation
-            plant_IDs_nodal_wind = [*sp_wind_nodal['plant_id']]
-            total_nodal_wind_generation = solar_wind_profiles.loc[:,plant_IDs_nodal_wind].sum(axis=1)
-            wind_timeseries_df.loc[:,q] = total_nodal_wind_generation.values
+            plant_IDs_nodal_wind = [*sp_wind_nodal['cerf_plant_id']]
+            
+            total_nodal_wind_generation = np.zeros(8760)
+            
+            for wcp in plant_IDs_nodal_wind:
+                ind_wind_timeseries = wind_cf_profiles.loc[:,wcp]*sp_wind_nodal.loc[sp_wind_nodal['cerf_plant_id']==wcp]['unit_size_mw'].values[0]
+                total_nodal_wind_generation = total_nodal_wind_generation+ind_wind_timeseries.values
+                
+            wind_timeseries_df.loc[:,q] = total_nodal_wind_generation
     
     wind_timeseries_df.columns = ['bus_{}'.format(z) for z in wind_timeseries_df.columns]
     wind_timeseries_df.to_csv('../Altered_simulation_folders/Exp{}{}_{}_{}_{}_{}/Inputs/nodal_wind.csv'.format(NN,UC,T_p,BA_hurd,CERF_year,CS),index=None)
@@ -370,7 +340,7 @@ def CERF_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,CERF_year,CS):
     
     #Creating offshorewind timeseries and aggragating offshorewind generators and adding those to datagenparams file
     #Filtering offshorewind generators and finding unique offshorewind nodes
-    offshorewind_filter = CERF_generators_WEST.loc[CERF_generators_WEST['tech_name'].isin(OffshoreWind_CERF_types)].copy()
+    offshorewind_filter = CERF_generators_WEST.loc[CERF_generators_WEST['tech_name'].isin(CERF_gen_dict['OffshoreWind_CERF_types'])].copy()
     
     #Creating empty offshorewind timeseries for each bus
     offshorewind_timeseries_df = pd.DataFrame(np.zeros((8760,len(all_buses_int))),columns=all_buses_int)
@@ -410,9 +380,15 @@ def CERF_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,CERF_year,CS):
             gen_mindown.append(0)
             
             #Altering offshorewind timeseries by looking at generation
-            plant_IDs_nodal_offshorewind = [*sp_offshorewind_nodal['plant_id']]
-            total_nodal_offshorewind_generation = solar_wind_profiles.loc[:,plant_IDs_nodal_offshorewind].sum(axis=1)
-            offshorewind_timeseries_df.loc[:,q] = total_nodal_offshorewind_generation.values
+            plant_IDs_nodal_offshorewind = [*sp_offshorewind_nodal['cerf_plant_id']]
+            
+            total_nodal_offshorewind_generation = np.zeros(8760)
+            
+            for owcp in plant_IDs_nodal_offshorewind:
+                ind_offshorewind_timeseries = wind_cf_profiles.loc[:,owcp]*sp_offshorewind_nodal.loc[sp_offshorewind_nodal['cerf_plant_id']==owcp]['unit_size_mw'].values[0]
+                total_nodal_offshorewind_generation = total_nodal_offshorewind_generation+ind_offshorewind_timeseries.values
+                
+            offshorewind_timeseries_df.loc[:,q] = total_nodal_offshorewind_generation
     
     offshorewind_timeseries_df.columns = ['bus_{}'.format(z) for z in offshorewind_timeseries_df.columns]
     offshorewind_timeseries_df.to_csv('../Altered_simulation_folders/Exp{}{}_{}_{}_{}_{}/Inputs/nodal_offshorewind.csv'.format(NN,UC,T_p,BA_hurd,CERF_year,CS),index=None)
@@ -420,9 +396,9 @@ def CERF_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,CERF_year,CS):
     
     #Creating hydro timeseries and aggragating hydro generators and adding those to datagenparams file
     #Saving EIA IDs in a different column
-    CERF_generators_WEST['EIA_ID'] = [int(r.split('-')[0]) for r in CERF_generators_WEST['plant_id']]
+    CERF_generators_WEST['EIA_ID'] = [int(r.split('_')[0]) for r in CERF_generators_WEST['cerf_plant_id']]
     #Filtering hydro generators and finding unique hydro nodes
-    hydro_filter = CERF_generators_WEST.loc[CERF_generators_WEST['tech_name'].isin(Hydro_CERF_types)].copy()
+    hydro_filter = CERF_generators_WEST.loc[CERF_generators_WEST['tech_name'].isin(CERF_gen_dict['Hydro_CERF_types'])].copy()
     
     #Reading EIA hydro data
     df_hydro = pd.read_csv('../../../Data_setup/Time_series_data/Hydro_generation/EIA_302_WECC_hydro_plants.csv',header=0)
@@ -463,9 +439,9 @@ def CERF_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,CERF_year,CS):
     hydro_timeseries_df_min.columns = ['bus_{}'.format(z) for z in hydro_timeseries_df_min.columns]
     hydro_timeseries_df_mean.columns = ['bus_{}'.format(z) for z in hydro_timeseries_df_mean.columns]
     
-    hydro_timeseries_df_max.to_csv('../Altered_simulation_folders/Exp{}{}_{}_{}_{}_{}/Inputs/hydro_max.csv'.format(NN,UC,T_p,BA_hurd,CERF_year,CS),index=None)
-    hydro_timeseries_df_min.to_csv('../Altered_simulation_folders/Exp{}{}_{}_{}_{}_{}/Inputs/hydro_min.csv'.format(NN,UC,T_p,BA_hurd,CERF_year,CS),index=None)
-    hydro_timeseries_df_mean.to_csv('../Altered_simulation_folders/Exp{}{}_{}_{}_{}_{}/Inputs/hydro_total.csv'.format(NN,UC,T_p,BA_hurd,CERF_year,CS),index=None)
+    hydro_timeseries_df_max.to_csv('../Altered_simulation_folders/Exp{}{}_{}_{}_{}_{}/Inputs/Hydro_max.csv'.format(NN,UC,T_p,BA_hurd,CERF_year,CS),index=None)
+    hydro_timeseries_df_min.to_csv('../Altered_simulation_folders/Exp{}{}_{}_{}_{}_{}/Inputs/Hydro_min.csv'.format(NN,UC,T_p,BA_hurd,CERF_year,CS),index=None)
+    hydro_timeseries_df_mean.to_csv('../Altered_simulation_folders/Exp{}{}_{}_{}_{}_{}/Inputs/Hydro_total.csv'.format(NN,UC,T_p,BA_hurd,CERF_year,CS),index=None)
     
     #Adding hydropower parameters to datagenparams file
     for q in all_buses_int:
@@ -565,12 +541,12 @@ def CERF_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,CERF_year,CS):
         thermal_mincap.append(thermal_gens_filter.loc[i,'mincap'])
         thermal_heatrate.append(thermal_gens_filter.loc[i,'heat_rate'])
     
-    nuclear_gens_filter = CERF_generators_WEST.loc[CERF_generators_WEST['tech_name'].isin(Nuclear_CERF_types)].copy()
+    nuclear_gens_filter = CERF_generators_WEST.loc[CERF_generators_WEST['tech_name'].isin(CERF_gen_dict['Nuclear_CERF_types'])].copy()
     nuclear_gens_filter.reset_index(drop=True,inplace=True)
     
     for j in range(0,len(nuclear_gens_filter)):
         
-        thermal_name.append('ID_{}'.format(nuclear_gens_filter.loc[j,'plant_id']))
+        thermal_name.append('ID_{}'.format(nuclear_gens_filter.loc[j,'cerf_plant_id']))
         thermal_bus.append(nuclear_gens_filter.loc[j,'lmp_zone'])
         thermal_fuel.append('NUC (Nuclear)')
         thermal_maxcap.append(nuclear_gens_filter.loc[j,'unit_size_mw'])

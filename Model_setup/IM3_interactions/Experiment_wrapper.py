@@ -20,13 +20,13 @@ from TELL_extractor import TELL_extract
 
 #Defining case name and details
 Years = [2020] #This does not affect the IM3 experiment year, it's just a notation to select the correct folder created by reduced network data allocation script
-NODE_NUMBER = [100]
+NODE_NUMBER = [125]
 
 # UC_TREATMENTS = ['_simple','_coal','_coal_gas']
 UC_TREATMENTS = ['_simple']
 
-line_limit_MW_scaling = [2000]
-BA_hurdle_scaling = [0]
+line_limit_MW_scaling = [500]
+BA_hurdle_scaling = [-100]
 
 # Climate_scenarios = ['rcp85cooler_ssp3', 'rcp85cooler_ssp5', 'rcp85hotter_ssp3','rcp85hotter_ssp5', 'rcp45cooler_ssp3', 'rcp45cooler_ssp5','rcp45hotter_ssp3', 'rcp45hotter_ssp5']
 Climate_scenarios = ['rcp45cooler_ssp3']
@@ -35,7 +35,9 @@ Hydro_year = 2015
 
 CERF_year = 2015 #IM3 experiment year
 TELL_year = 2020
-GCAM_year = 2015
+TELL_year_scaled = 2020
+GCAM_year = 2020
+Solar_wind_year = 2020
 
 ###################################################
 
@@ -76,13 +78,13 @@ for YY in Years:
                         copy('../../UCED/Simulation_folders/Exp{}/Inputs/west_2020_lostcap.csv'.format(case_name),path_2) #This needs to be changed
     
                         #Calling CERF extractor
-                        CERF_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,CERF_year,CS)
+                        CERF_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,CERF_year,CS,Solar_wind_year)
                         print('CERF extractor finished.')
                         #Calling GCAM extractor
                         GCAM_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,GCAM_year,CS,CERF_year)
                         print('GCAM extractor finished.')
                         #Calling TELL extractor
-                        TELL_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,TELL_year,CS,CERF_year)
+                        TELL_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,TELL_year,CS,CERF_year,TELL_year_scaled)
                         print('TELL extractor finished.')
                     
 

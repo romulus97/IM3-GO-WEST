@@ -1,0 +1,113 @@
+Biomass_CERF_types: 
+  - biomass (conv)
+  - biomass (IGCC)
+  - gridcerf_biomass_conventional_ccs_dry
+  - gridcerf_biomass_conventional_ccs_oncethrough
+  - gridcerf_biomass_conventional_ccs_recirculating
+  - gridcerf_biomass_conventional_ccs_recirculating-seawater
+  - gridcerf_biomass_conventional_no-ccs_dry
+  - gridcerf_biomass_conventional_no-ccs_oncethrough
+  - gridcerf_biomass_conventional_no-ccs_pond
+  - gridcerf_biomass_conventional_no-ccs_recirculating
+  - gridcerf_biomass_conventional_no-ccs_recirculating-seawater
+  - gridcerf_biomass_igcc_ccs_dry
+  - gridcerf_biomass_igcc_ccs_oncethrough
+  - gridcerf_biomass_igcc_ccs_recirculating
+  - gridcerf_biomass_igcc_ccs_recirculating-seawater
+  - gridcerf_biomass_igcc_no-ccs_dry
+  - gridcerf_biomass_igcc_no-ccs_oncethrough
+  - gridcerf_biomass_igcc_no-ccs_recirculating
+  - gridcerf_biomass_igcc_no-ccs_recirculating-seawater
+    
+Coal_CERF_types: 
+  - coal (conv pulv)
+  - coal (IGCC)
+  - coal (conv pulv) (pre_1970)
+  - coal (conv pulv) (1970s)
+  - coal (conv pulv) (2000s)
+  - coal (conv pulv) (1980s)
+  - coal (conv pulv) (1990s)
+  - coal (conv pulv) (2010s)
+  - gridcerf_coal_conventional_ccs_dry
+  - gridcerf_coal_conventional_ccs_oncethrough
+  - gridcerf_coal_conventional_ccs_recirculating
+  - gridcerf_coal_conventional_ccs_recirculating-seawater
+  - gridcerf_coal_conventional_no-ccs_dry
+  - gridcerf_coal_conventional_no-ccs_oncethrough
+  - gridcerf_coal_conventional_no-ccs_pond
+  - gridcerf_coal_conventional_no-ccs_recirculating
+  - gridcerf_coal_conventional_no-ccs_recirculating-seawater
+  - gridcerf_coal_igcc_ccs_dry
+  - gridcerf_coal_igcc_ccs_oncethrough
+  - gridcerf_coal_igcc_ccs_recirculating
+  - gridcerf_coal_igcc_ccs_recirculating-seawater
+  - gridcerf_coal_igcc_no-ccs_dry
+  - gridcerf_coal_igcc_no-ccs_recirculating
+  - gridcerf_coal_igcc_no-ccs_recirculating-seawater
+        
+NG_CERF_types:
+  - gas (CT)
+  - gas (steam)
+  - gas (CC)
+  - gridcerf_gas_cc_ccs_dry
+  - gridcerf_gas_cc_ccs_oncethrough
+  - gridcerf_gas_cc_ccs_recirculating
+  - gridcerf_gas_cc_ccs_recirculating-seawater
+  - gridcerf_gas_cc_no-ccs_dry
+  - gridcerf_gas_cc_no-ccs_oncethrough
+  - gridcerf_gas_cc_no-ccs_pond
+  - gridcerf_gas_cc_no-ccs_recirculating
+  - gridcerf_gas_cc_no-ccs_recirculating-seawater
+  - gridcerf_gas_turbine_no-ccs_no-cooling
+        
+Nuclear_CERF_types:
+  - Gen_II_LWR
+  - gridcerf_nuclear_gen3_smr_oncethrough
+  - gridcerf_nuclear_gen3_smr_pond
+  - gridcerf_nuclear_gen3_smr_recirculating
+  - gridcerf_nuclear_gen3_smr_recirculating-seawater
+    
+Geothermal_CERF_types:
+  - geothermal
+  - gridcerf_geothermal_centralized_enhanced_dry-hybrid
+  - gridcerf_geothermal_centralized_enhanced_recirculating
+    
+Hydro_CERF_types:
+  - hydro
+       
+Oil_CERF_types:
+  - refined liquids (CT)
+  - refined liquids (steam)
+  - refined liquids (CC)
+  - gridcerf_refinedliquids_cc_ccs_dry
+  - gridcerf_refinedliquids_cc_ccs_oncethrough
+  - gridcerf_refinedliquids_cc_ccs_recirculating
+  - gridcerf_refinedliquids_cc_ccs_recirculating-seawater
+  - gridcerf_refinedliquids_cc_no-ccs_dry
+  - gridcerf_refinedliquids_cc_no-ccs_oncethrough
+  - gridcerf_refinedliquids_cc_no-ccs_recirculating
+  - gridcerf_refinedliquids_cc_no-ccs_recirculating-seawater
+  - gridcerf_refinedliquids_turbine_no-ccs_no-coolin
+    
+Solar_CERF_types:
+  - solar_PV
+  - solar_CSP
+  - PV
+  - CSP (recirculating)
+  - CSP (dry_hybrid)
+  - gridcerf_solar_csp_centralized_dry-hybrid
+  - gridcerf_solar_csp_centralized_recirculating
+  - gridcerf_solar_pv_centralized_no-cooling
+    
+OnshoreWind_CERF_types:
+  - wind_onshore
+  - wind
+  - gridcerf_wind_onshore_hubheight80_no-cooling
+  - gridcerf_wind_onshore_hubheight100_no-cooling
+  - gridcerf_wind_onshore_hubheight120_no-cooling
+  - gridcerf_wind_onshore_hubheight140_no-cooling
+        
+OffshoreWind_CERF_types:
+  - gridcerf_wind_offshore_hubheight100_no-cooling
+  - gridcerf_wind_offshore_hubheight120_no-cooling
+  - gridcerf_wind_offshore_hubheight140_no-cooling

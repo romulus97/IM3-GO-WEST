@@ -26,7 +26,7 @@ def GCAM_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,GCAM_year,CS,CERF_year):
     
     #Reading CERF generators file for location information
     if CERF_year == 2015:
-        CERF_generators = pd.read_csv('../CERF/CERF_outputs/power_plant_initialization_{}.csv'.format(CERF_year),header=0)
+        CERF_generators = pd.read_csv('../CERF/CERF_outputs/infrastructure_{}_{}.csv'.format(CERF_year,CS),header=0)
     else:
         CERF_generators = pd.read_csv('../CERF/CERF_outputs/cerf_for_go_{}_{}.csv'.format(CS,CERF_year),header=0)
     
@@ -60,7 +60,7 @@ def GCAM_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,GCAM_year,CS,CERF_year):
         
         CERF_gen_name = datagenparams_filter.loc[i,'name']
         CERF_gen_type = datagenparams_filter.loc[i,'typ']
-        CERF_gen_state = CERF_generators.loc[CERF_generators['plant_id']==CERF_gen_name[3:]]['region_name'].values[0]
+        CERF_gen_state = CERF_generators.loc[CERF_generators['cerf_plant_id']==CERF_gen_name[3:]]['region_name'].values[0]
         GCAM_gen_state = states_dict[CERF_gen_state]
         GCAM_state_filter = GCAM_year_filter.loc[GCAM_year_filter['subRegion']==GCAM_gen_state].copy()
         
