@@ -269,15 +269,9 @@ def CERF_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,CERF_year,CS,Solar_wind_year):
             
             #Altering solar timeseries by looking at generation
             plant_IDs_nodal_solar = [*sp_solar_nodal['cerf_plant_id']]
-            
-            total_nodal_solar_generation = np.zeros(8760)
-            
-            for scp in plant_IDs_nodal_solar:
-                ind_solar_timeseries = solar_cf_profiles.loc[:,scp]*sp_solar_nodal.loc[sp_solar_nodal['cerf_plant_id']==scp]['unit_size_mw'].values[0]
-                total_nodal_solar_generation = total_nodal_solar_generation+ind_solar_timeseries.values
-                
-            solar_timeseries_df.loc[:,q] = total_nodal_solar_generation
-    
+            total_nodal_solar_generation = solar_cf_profiles.loc[:,plant_IDs_nodal_solar].sum(axis=1)
+            solar_timeseries_df.loc[:,q] = total_nodal_solar_generation.values
+
     solar_timeseries_df.columns = ['bus_{}'.format(z) for z in solar_timeseries_df.columns]
     solar_timeseries_df.to_csv('../Altered_simulation_folders/Exp{}{}_{}_{}_{}_{}/Inputs/nodal_solar.csv'.format(NN,UC,T_p,BA_hurd,CERF_year,CS),index=None)
     
@@ -325,15 +319,9 @@ def CERF_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,CERF_year,CS,Solar_wind_year):
             
             #Altering wind timeseries by looking at generation
             plant_IDs_nodal_wind = [*sp_wind_nodal['cerf_plant_id']]
-            
-            total_nodal_wind_generation = np.zeros(8760)
-            
-            for wcp in plant_IDs_nodal_wind:
-                ind_wind_timeseries = wind_cf_profiles.loc[:,wcp]*sp_wind_nodal.loc[sp_wind_nodal['cerf_plant_id']==wcp]['unit_size_mw'].values[0]
-                total_nodal_wind_generation = total_nodal_wind_generation+ind_wind_timeseries.values
-                
-            wind_timeseries_df.loc[:,q] = total_nodal_wind_generation
-    
+            total_nodal_wind_generation = wind_cf_profiles.loc[:,plant_IDs_nodal_wind].sum(axis=1)
+            wind_timeseries_df.loc[:,q] = total_nodal_wind_generation.values
+ 
     wind_timeseries_df.columns = ['bus_{}'.format(z) for z in wind_timeseries_df.columns]
     wind_timeseries_df.to_csv('../Altered_simulation_folders/Exp{}{}_{}_{}_{}_{}/Inputs/nodal_wind.csv'.format(NN,UC,T_p,BA_hurd,CERF_year,CS),index=None)
     
@@ -381,15 +369,9 @@ def CERF_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,CERF_year,CS,Solar_wind_year):
             
             #Altering offshorewind timeseries by looking at generation
             plant_IDs_nodal_offshorewind = [*sp_offshorewind_nodal['cerf_plant_id']]
-            
-            total_nodal_offshorewind_generation = np.zeros(8760)
-            
-            for owcp in plant_IDs_nodal_offshorewind:
-                ind_offshorewind_timeseries = wind_cf_profiles.loc[:,owcp]*sp_offshorewind_nodal.loc[sp_offshorewind_nodal['cerf_plant_id']==owcp]['unit_size_mw'].values[0]
-                total_nodal_offshorewind_generation = total_nodal_offshorewind_generation+ind_offshorewind_timeseries.values
-                
-            offshorewind_timeseries_df.loc[:,q] = total_nodal_offshorewind_generation
-    
+            total_nodal_offshorewind_generation = wind_cf_profiles.loc[:,plant_IDs_nodal_offshorewind].sum(axis=1)
+            offshorewind_timeseries_df.loc[:,q] = total_nodal_offshorewind_generation.values
+
     offshorewind_timeseries_df.columns = ['bus_{}'.format(z) for z in offshorewind_timeseries_df.columns]
     offshorewind_timeseries_df.to_csv('../Altered_simulation_folders/Exp{}{}_{}_{}_{}_{}/Inputs/nodal_offshorewind.csv'.format(NN,UC,T_p,BA_hurd,CERF_year,CS),index=None)
     
