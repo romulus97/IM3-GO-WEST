@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10067714.svg)](https://doi.org/10.5281/zenodo.10067714)
+
 # GO WEST
 The grid operations model of the U.S. Western Interconnection (GO WEST) is created through the IM3 program at Pacific Northwest National Laboratory and NC State University. It is developed to address weather and water dynamics, and associated vulnerabilities in this bulk power system. It is a security-constrained unit commitment and economic dispatch (UC/ED) model, and covers 28 balancing authorities (BA) and 12 states.
 GO WEST model is written by using Pyomo package in Python. It utilizes [10,000 nodal topology dataset of U.S. Western Interconnection](https://electricgrids.engr.tamu.edu/electric-grid-test-cases/activsg10k/) created by Texas A&M University (TAMU). The current optimization solver is Gurobi but users can select another solver to run the model.
