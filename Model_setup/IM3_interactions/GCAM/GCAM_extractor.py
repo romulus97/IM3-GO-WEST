@@ -19,7 +19,7 @@ def GCAM_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,GCAM_year,CS,CERF_year):
     os.chdir("{}\\GCAM".format(cwd[:-4]))
     
     #Read GCAM outputs
-    GCAM_outputs_df = pd.read_csv('GCAM_outputs/dataGCAM_go.csv',header=0)
+    GCAM_outputs_df = pd.read_csv('GCAM_outputs/dataGCAM_go.zip',header=0)
     
     #Reading generator params file
     datagenparams_df = pd.read_csv('../Altered_simulation_folders/Exp{}{}_{}_{}_{}_{}/Inputs/data_genparams.csv'.format(NN,UC,T_p,BA_hurd,CERF_year,CS))
