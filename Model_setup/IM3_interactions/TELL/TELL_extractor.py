@@ -83,7 +83,7 @@ def TELL_extract(NN,UC,T_p,BA_hurd,YY,Hydro_year,TELL_year,CS,CERF_year,TELL_yea
         if df_selected.loc[i,'Pd'] <0:
             weights.append(0)
         else:        
-            X = float(df_BA_totals.loc[df_BA_totals['Name']==area,'Total'])
+            X = float(df_BA_totals.loc[df_BA_totals['Name']==area,'Total'].iloc[0])
             W = (df_selected.loc[i,'Pd']/X)
             weights.append(W)
     df_selected['BA Load Weight'] = weights
