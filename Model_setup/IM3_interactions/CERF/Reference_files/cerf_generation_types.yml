@@ -66,6 +66,10 @@ Nuclear_CERF_types:
   - gridcerf_nuclear_gen3_smr_pond
   - gridcerf_nuclear_gen3_smr_recirculating
   - gridcerf_nuclear_gen3_smr_recirculating-seawater
+  - gridcerf_nuclear_gen3_ap1000_oncethrough
+  - gridcerf_nuclear_gen3_ap1000_pond
+  - gridcerf_nuclear_gen3_ap1000_recirculating
+  - gridcerf_nuclear_gen3_ap1000_recirculating-seawater
     
 Geothermal_CERF_types:
   - geothermal
